@@ -1,9 +1,9 @@
 ----------------------------------------------
-Chantilly Robotics Code for 2012 FRC Challenge
+Chantilly Robotics Code for 2013 FRC Challenge
 ----------------------------------------------
 
 This project contains all of `FIRST Team 612 Chantilly Robotics`_' code for the
-2012 FRC Challenge.
+2013 FRC Challenge.
 
 Usage
 ++++++++++++++++
@@ -31,7 +31,7 @@ License
 ++++++++++++++++
 
 All code in this project is licensed under the ISC License (see 'LICENSE.rst')
-and is Copyright |c| 2012 Chantilly Robotics unless otherwise noted.
+and is Copyright |c| 2013 Chantilly Robotics unless otherwise noted.
 
 Contributors
 ++++++++++++++++
