@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['qrcellfiltermode',['QRCellFilterMode',['../nivision_8h.html#a764513062f1bc0b520e295374719ae8f',1,'nivision.h']]],
+  ['qrcellsamplesize',['QRCellSampleSize',['../nivision_8h.html#a9c4cc4f9fe86c4c98c998b316d7f10a3',1,'nivision.h']]],
+  ['qrcodedatatoken',['QRCodeDataToken',['../nivision_8h.html#a154518852dff7216f092e4f7b354b50c',1,'nivision.h']]],
+  ['qrcodedescriptionoptions',['QRCodeDescriptionOptions',['../nivision_8h.html#a0ac747a6748c2ad7b7df0eac8c93e5de',1,'nivision.h']]],
+  ['qrcodereport',['QRCodeReport',['../nivision_8h.html#ae1ac96733c9b8ceb8803f67b8ef518c7',1,'nivision.h']]],
+  ['qrcodesearchoptions',['QRCodeSearchOptions',['../nivision_8h.html#a1cb005cab203bca152d006344ce01bbb',1,'nivision.h']]],
+  ['qrcodesizeoptions',['QRCodeSizeOptions',['../nivision_8h.html#a01fdef8c95d10788b11c600432810a46',1,'nivision.h']]],
+  ['qrdemodulationmode',['QRDemodulationMode',['../nivision_8h.html#a77175382bf8ffb17a3d40d20aa96a542',1,'nivision.h']]],
+  ['qrdimensions',['QRDimensions',['../nivision_8h.html#a971158875b9b13ff5cbba4e6de9af0c0',1,'nivision.h']]],
+  ['qrgradingmode',['QRGradingMode',['../nivision_8h.html#a657bee1b6194d4a3a93308d97dfa5366',1,'nivision.h']]],
+  ['qrmirrormode',['QRMirrorMode',['../nivision_8h.html#ac5c49a7c5fc8dc1957895ab16ce6ab2b',1,'nivision.h']]],
+  ['qrmodeltype',['QRModelType',['../nivision_8h.html#aaf89c7cf40aca38eaea26dc068962db0',1,'nivision.h']]],
+  ['qrpolarities',['QRPolarities',['../nivision_8h.html#a9209d2f427185dcfd0deea216accbfd6',1,'nivision.h']]],
+  ['qrrotationmode',['QRRotationMode',['../nivision_8h.html#a057d550c192cd270b073d4fb7e8c96b6',1,'nivision.h']]],
+  ['qrstreammode',['QRStreamMode',['../nivision_8h.html#ab7ece71c75dd0fa7b531c14b4e2245d5',1,'nivision.h']]],
+  ['quantifydata',['QuantifyData',['../nivision_8h.html#aeea050b5663df1253e8b412064c69678',1,'nivision.h']]],
+  ['quantifyreport',['QuantifyReport',['../nivision_8h.html#a3c9c1811a7087afeb9bcd225a43620eb',1,'nivision.h']]]
+];

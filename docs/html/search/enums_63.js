@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['calibrationmode2_5fenum',['CalibrationMode2_enum',['../nivision_8h.html#ac92052df3a3adbb3687f23312eb92a4c',1,'nivision.h']]],
+  ['calibrationmode_5fenum',['CalibrationMode_enum',['../nivision_8h.html#aad4196f988a601dd09508a1c2bcfb80d',1,'nivision.h']]],
+  ['calibrationroi_5fenum',['CalibrationROI_enum',['../nivision_8h.html#a90821c728cbed515bf5d48783d4951af',1,'nivision.h']]],
+  ['calibrationthumbnailtype_5fenum',['CalibrationThumbnailType_enum',['../nivision_8h.html#adc56061624454d15b9bf0af3d1578b58',1,'nivision.h']]],
+  ['calibrationunit_5fenum',['CalibrationUnit_enum',['../nivision_8h.html#ae5b9ba06192fe9d70f1378448b93f8c5',1,'nivision.h']]],
+  ['classifierenginetype_5fenum',['ClassifierEngineType_enum',['../nivision_8h.html#ae542977cd422948946a5f8be0849bf70',1,'nivision.h']]],
+  ['classifiertype_5fenum',['ClassifierType_enum',['../nivision_8h.html#aeb0d741efc5cd9df192b8621800c7c88',1,'nivision.h']]],
+  ['colorclassificationresolution_5fenum',['ColorClassificationResolution_enum',['../nivision_8h.html#a91f512ce30ef71e474dcfee6c81f1461',1,'nivision.h']]],
+  ['colorignoremode_5fenum',['ColorIgnoreMode_enum',['../nivision_8h.html#a2e49c4293f4c66f962ede9a76c6fa7b8',1,'nivision.h']]],
+  ['colormode_5fenum',['ColorMode_enum',['../nivision_8h.html#ac5cab753e3bb533a08fd353fe3529fbc',1,'nivision.h']]],
+  ['colorsensitivity_5fenum',['ColorSensitivity_enum',['../nivision_8h.html#ab2c6050877c5323348b36fab2fe6b821',1,'nivision.h']]],
+  ['columnprocessingmode_5fenum',['ColumnProcessingMode_enum',['../nivision_8h.html#a7d76acc78588ebb6d24c1ae34967299a',1,'nivision.h']]],
+  ['comparisonfunction_5fenum',['ComparisonFunction_enum',['../nivision_8h.html#ab4b04b07af400e322e2f742479116b57',1,'nivision.h']]],
+  ['complexplane_5fenum',['ComplexPlane_enum',['../nivision_8h.html#a5d2245ec64ac559db615df041841fb30',1,'nivision.h']]],
+  ['complextype',['ComplexType',['../class_dashboard.html#ad6f01995ee9054d4a500d28b87b47d5a',1,'Dashboard']]],
+  ['compressiontype_5fenum',['CompressionType_enum',['../nivision_8h.html#a014d192ce44a01a946ed51226c999985',1,'nivision.h']]],
+  ['concentricrakedirection_5fenum',['ConcentricRakeDirection_enum',['../nivision_8h.html#af0ebe0e27b1b859d36b5a23f1e8de9b9',1,'nivision.h']]],
+  ['connectionconstrainttype_5fenum',['ConnectionConstraintType_enum',['../nivision_8h.html#af612a21a1eb76cca35b2908e9970629e',1,'nivision.h']]],
+  ['connectivity_5fenum',['Connectivity_enum',['../nivision_8h.html#ab0e82e3fd251dbf3376c3f446e93c06a',1,'nivision.h']]],
+  ['contourtype_5fenum',['ContourType_enum',['../nivision_8h.html#abc7743b73b1e12633a9f2d43e44f9914',1,'nivision.h']]],
+  ['contrastmode_5fenum',['ContrastMode_enum',['../nivision_8h.html#a3e3428ce72c2225e7aa435cc90662652',1,'nivision.h']]],
+  ['controlmode',['ControlMode',['../class_c_a_n_jaguar.html#a5e9c0a553539cbc855d7bc232df3b222',1,'CANJaguar']]]
+];

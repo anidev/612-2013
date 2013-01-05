@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['scalingmethod_5fenum',['ScalingMethod_enum',['../nivision_8h.html#adf9905b0f97cdb45ce3cc27a12cf0803',1,'nivision.h']]],
+  ['scalingmode_5fenum',['ScalingMode_enum',['../nivision_8h.html#aa97bdd141df8d7f93b4e03f5410c6b99',1,'nivision.h']]],
+  ['searchdirection_5fenum',['SearchDirection_enum',['../nivision_8h.html#a1ae3fc3c28ac90ac6ea954cc507522f5',1,'nivision.h']]],
+  ['searchstrategy_5fenum',['SearchStrategy_enum',['../nivision_8h.html#abb0a786d24a2b9aed3e87ac87a13d4d3',1,'nivision.h']]],
+  ['segmentationdistancelevel_5fenum',['SegmentationDistanceLevel_enum',['../nivision_8h.html#a9ccc6c2feffc69abd2ad94ce9498f218',1,'nivision.h']]],
+  ['sequence',['Sequence',['../class_command_group_entry.html#a0c435eb6049bef341e92b3550e8f20b1',1,'CommandGroupEntry']]],
+  ['settingtype_5fenum',['SettingType_enum',['../nivision_8h.html#abf0aea2f70087a81c2126836201cdcfc',1,'nivision.h']]],
+  ['shapemode_5fenum',['ShapeMode_enum',['../nivision_8h.html#a21d08b310ca16c3f658e5839ec114ef1',1,'nivision.h']]],
+  ['sizetype_5fenum',['SizeType_enum',['../nivision_8h.html#abd16b91218a1eaab3576be4522ac45ec',1,'nivision.h']]],
+  ['skeletonmethod_5fenum',['SkeletonMethod_enum',['../nivision_8h.html#a1ef69e6a09cdb6c24ee1aa5ad91c6384',1,'nivision.h']]],
+  ['skeletonquality',['SkeletonQuality',['../class_kinect.html#a909ddf0b76347a65d1d00b88170f9e33',1,'Kinect']]],
+  ['skeletontrackingstate',['SkeletonTrackingState',['../class_kinect.html#a4ceb60dfce374f9c5354d94d4c0ef701',1,'Kinect']]],
+  ['speedreference',['SpeedReference',['../class_c_a_n_jaguar.html#ab28bdccaa349cf26270059912ea9ebbe',1,'CANJaguar']]],
+  ['spiaddressfields',['SPIAddressFields',['../class_a_d_x_l345___s_p_i.html#afdac19ebc89ae39dfb092fb2e8889461',1,'ADXL345_SPI']]],
+  ['spokedirection_5fenum',['SpokeDirection_enum',['../nivision_8h.html#acfd78fb6dee34f6210cadb0d7caca34e',1,'nivision.h']]],
+  ['stopbits',['StopBits',['../class_serial_port.html#ae4c869e855a54ff8574bc93991b7b006',1,'SerialPort']]],
+  ['straightedgesearchmode_5fenum',['StraightEdgeSearchMode_enum',['../nivision_8h.html#abaa204646fdca2fce8020ea72eeeca4c',1,'nivision.h']]]
+];

@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['wpi_5fassert',['wpi_assert',['../_utility_8h.html#a34b13bd29631329c597428636401bbba',1,'Utility.h']]],
+  ['wpi_5fassertequal',['wpi_assertEqual',['../_utility_8h.html#a8b2195e13ec78b75d26e5ce8cbf96fe3',1,'Utility.h']]],
+  ['wpi_5fassertequalwithmessage',['wpi_assertEqualWithMessage',['../_utility_8h.html#a37ace1581a778762b216de22bbcd4bff',1,'Utility.h']]],
+  ['wpi_5fassertnotequal',['wpi_assertNotEqual',['../_utility_8h.html#a6cbe6363d7a6f0c0fd49c4b3ec583b63',1,'Utility.h']]],
+  ['wpi_5fassertnotequalwithmessage',['wpi_assertNotEqualWithMessage',['../_utility_8h.html#a40efc0cb979cb092f81db5850dc5d0ac',1,'Utility.h']]],
+  ['wpi_5fassertwithmessage',['wpi_assertWithMessage',['../_utility_8h.html#adb72b7a6a07a3ec4af137fc278e1db44',1,'Utility.h']]],
+  ['wpi_5ferrors_5fdefine_5fstrings',['WPI_ERRORS_DEFINE_STRINGS',['../_error_base_8cpp.html#a64c606197c2fbea2ae0f750455438068',1,'ErrorBase.cpp']]],
+  ['wpi_5fseterrnoerror',['wpi_setErrnoError',['../_error_base_8h.html#a669a63a1b6391ee0eeec238e11e776d1',1,'ErrorBase.h']]],
+  ['wpi_5fseterrnoerrorwithcontext',['wpi_setErrnoErrorWithContext',['../_error_base_8h.html#ac3a74447ed26830bf9851d3efcab1d78',1,'ErrorBase.h']]],
+  ['wpi_5fseterror',['wpi_setError',['../_error_base_8h.html#a84096a903e635d89e18a4abd22537fa4',1,'ErrorBase.h']]],
+  ['wpi_5fseterrorwithcontext',['wpi_setErrorWithContext',['../_error_base_8h.html#af1ea4d4ab08f530c3a3e79e94e10e438',1,'ErrorBase.h']]],
+  ['wpi_5fsetglobalerror',['wpi_setGlobalError',['../_error_base_8h.html#a9597cd2a3816d77054b81d033641eff7',1,'ErrorBase.h']]],
+  ['wpi_5fsetglobalerrorwithcontext',['wpi_setGlobalErrorWithContext',['../_error_base_8h.html#af04a668fe1e5646d21c1192b6a4f2e21',1,'ErrorBase.h']]],
+  ['wpi_5fsetglobalwpierror',['wpi_setGlobalWPIError',['../_error_base_8h.html#a73cb9e8b47db164b51134f34fffc8dae',1,'ErrorBase.h']]],
+  ['wpi_5fsetglobalwpierrorwithcontext',['wpi_setGlobalWPIErrorWithContext',['../_error_base_8h.html#a88897729a8a2c2f33dd2656851c6f0ef',1,'ErrorBase.h']]],
+  ['wpi_5fsetimaqerrorwithcontext',['wpi_setImaqErrorWithContext',['../_error_base_8h.html#afc1dff9a66b5fb41dd4fa7907d77d936',1,'ErrorBase.h']]],
+  ['wpi_5fsetstaticerror',['wpi_setStaticError',['../_error_base_8h.html#aad50333104085eaa59551975d84b75ff',1,'ErrorBase.h']]],
+  ['wpi_5fsetstaticerrorwithcontext',['wpi_setStaticErrorWithContext',['../_error_base_8h.html#a53e75dcf32541138e81c60549a53814b',1,'ErrorBase.h']]],
+  ['wpi_5fsetstaticwpierror',['wpi_setStaticWPIError',['../_error_base_8h.html#ace6a44f99865d8adade16052c8623b23',1,'ErrorBase.h']]],
+  ['wpi_5fsetstaticwpierrorwithcontext',['wpi_setStaticWPIErrorWithContext',['../_error_base_8h.html#a01f894fbf9a91c3877c05afaec686a7f',1,'ErrorBase.h']]],
+  ['wpi_5fsetwpierror',['wpi_setWPIError',['../_error_base_8h.html#a30c73bc37a870c1b5b3dc4a866d3a947',1,'ErrorBase.h']]],
+  ['wpi_5fsetwpierrorwithcontext',['wpi_setWPIErrorWithContext',['../_error_base_8h.html#a495fcc362032eea3b1dadc34be9bd058',1,'ErrorBase.h']]]
+];

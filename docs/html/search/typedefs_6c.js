@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['labeltoroireport',['LabelToROIReport',['../nivision_8h.html#a5e293a2d424c7730e546b03bf296936a',1,'nivision.h']]],
+  ['lcdoptions',['LCDOptions',['../nivision_8h.html#aaa3ce0a2ba425c09e16683eb9a65b858',1,'nivision.h']]],
+  ['lcdreport',['LCDReport',['../nivision_8h.html#a8bec28eeb0437e0fc40177923e57c92d',1,'nivision.h']]],
+  ['lcdsegments',['LCDSegments',['../nivision_8h.html#a52dc96535da0eb8768fb45d97e481ad1',1,'nivision.h']]],
+  ['learncalibrationoptions',['LearnCalibrationOptions',['../nivision_8h.html#afac80df95a4b166758af8e68c78a427a',1,'nivision.h']]],
+  ['learncolorpatternoptions',['LearnColorPatternOptions',['../nivision_8h.html#a6ca40662dca8edd71e633aba67db706d',1,'nivision.h']]],
+  ['learngeometricpatternadvancedoptions',['LearnGeometricPatternAdvancedOptions',['../nivision_8h.html#a394286c01394588a3ac0ac1d49b7b82a',1,'nivision.h']]],
+  ['learngeometricpatternadvancedoptions2',['LearnGeometricPatternAdvancedOptions2',['../nivision_8h.html#ae1ebb091439f430e851012d8aa86784a',1,'nivision.h']]],
+  ['learningmode',['LearningMode',['../nivision_8h.html#a0645ec2a0d2f9d7ff7772e91ec92cb5a',1,'nivision.h']]],
+  ['learnpatternadvancedoptions',['LearnPatternAdvancedOptions',['../nivision_8h.html#a4ecb2f6fb10aa389f78cccda126a7c4a',1,'nivision.h']]],
+  ['learnpatternadvancedrotationoptions',['LearnPatternAdvancedRotationOptions',['../nivision_8h.html#a11d6cec781d3da21a5c2797139d61ff0',1,'nivision.h']]],
+  ['learnpatternadvancedshiftoptions',['LearnPatternAdvancedShiftOptions',['../nivision_8h.html#af1e1e438fdba54eaa804b3495361c864',1,'nivision.h']]],
+  ['legfeature',['LegFeature',['../nivision_8h.html#a1ab9e288ad849c08a4172a372e48e44c',1,'nivision.h']]],
+  ['leveltype',['LevelType',['../nivision_8h.html#ae4b077296d11f290ca4997af72e6906b',1,'nivision.h']]],
+  ['line',['Line',['../nivision_8h.html#a38131fb0373f08bcee39a79665b990a1',1,'nivision.h']]],
+  ['linearaverages',['LinearAverages',['../nivision_8h.html#af41b7cd85e84c90cec588c9dd19457dd',1,'nivision.h']]],
+  ['linearaveragesmode',['LinearAveragesMode',['../nivision_8h.html#a29f01f91fa394a77ddca33c7b3fec682',1,'nivision.h']]],
+  ['linedescriptor',['LineDescriptor',['../nivision_8h.html#afbe78ced018bd1dcb9eb8ae1bb86c619',1,'nivision.h']]],
+  ['lineequation',['LineEquation',['../nivision_8h.html#a14ffe21d2c9c3e6fa21e8841fbf73165',1,'nivision.h']]],
+  ['linefeature',['LineFeature',['../nivision_8h.html#aa5f4503a8b633f2ff5049b64ec91cf32',1,'nivision.h']]],
+  ['linefloat',['LineFloat',['../nivision_8h.html#a386678d12111381a5f8220f39a4aeb61',1,'nivision.h']]],
+  ['linegaugemethod',['LineGaugeMethod',['../nivision_8h.html#aed2eeb32b069e1c23184fb464eb9fcfd',1,'nivision.h']]],
+  ['linematch',['LineMatch',['../nivision_8h.html#a6d079e6cb43690dc1331cbbb73538048',1,'nivision.h']]],
+  ['lineprofile',['LineProfile',['../nivision_8h.html#a5ea6683e1dd20d41f78fa80bb2a41651',1,'nivision.h']]],
+  ['localthresholdmethod',['LocalThresholdMethod',['../nivision_8h.html#a19de5df1d763d70207d53e2457e926ce',1,'nivision.h']]]
+];

@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['barcode2dcellshape',['Barcode2DCellShape',['../nivision_8h.html#a5f9ba34587002c10ed16709f7da3bde3',1,'nivision.h']]],
+  ['barcode2dcontrast',['Barcode2DContrast',['../nivision_8h.html#ad28c83fc173c5c978d492408f8c76431',1,'nivision.h']]],
+  ['barcode2dinfo',['Barcode2DInfo',['../nivision_8h.html#af0715efb641de180e7d3f4b7a1606132',1,'nivision.h']]],
+  ['barcode2dsearchmode',['Barcode2DSearchMode',['../nivision_8h.html#aa22649c886f4475a04074466c40c158e',1,'nivision.h']]],
+  ['barcode2dshape',['Barcode2DShape',['../nivision_8h.html#ab96135c6de1b4f88b37dd3be7fcc6c73',1,'nivision.h']]],
+  ['barcode2dtype',['Barcode2DType',['../nivision_8h.html#a52d4fc8fbe37f4bbf3c942159627c143',1,'nivision.h']]],
+  ['barcodeinfo',['BarcodeInfo',['../nivision_8h.html#a4a1f3d7f07322244abd5705febfc834f',1,'nivision.h']]],
+  ['barcodetype',['BarcodeType',['../nivision_8h.html#ae171244c93b06fc593914ce99e0b383f',1,'nivision.h']]],
+  ['bcgoptions',['BCGOptions',['../nivision_8h.html#aa29d63a3fcce1c909c6702a7fd18ae39',1,'nivision.h']]],
+  ['bestcircle',['BestCircle',['../nivision_8h.html#ae9784641a13048b9d88828fa840feacf',1,'nivision.h']]],
+  ['bestcircle2',['BestCircle2',['../nivision_8h.html#a134b25f59fb1eef17141d39e8ef7e44e',1,'nivision.h']]],
+  ['bestellipse',['BestEllipse',['../nivision_8h.html#a751bec1855c847acf84b30408b945ed8',1,'nivision.h']]],
+  ['bestellipse2',['BestEllipse2',['../nivision_8h.html#aac4d240e37bb747ded3a7b550b3aba0e',1,'nivision.h']]],
+  ['bestline',['BestLine',['../nivision_8h.html#a9e2323a006441ccc01b715d762adf99b',1,'nivision.h']]],
+  ['bordermethod',['BorderMethod',['../nivision_8h.html#afd660d7830e00b0fae634281f268f5b3',1,'nivision.h']]],
+  ['browserframestyle',['BrowserFrameStyle',['../nivision_8h.html#a6f233f3d68d2fd8c74ecaa3082e5920c',1,'nivision.h']]],
+  ['browserlocation',['BrowserLocation',['../nivision_8h.html#a2b6102a45efe5c3a2a32cdae7bb1b6c4',1,'nivision.h']]],
+  ['browseroptions',['BrowserOptions',['../nivision_8h.html#aa0280530975d4080d144546c37bc35d7',1,'nivision.h']]],
+  ['buttonlabel',['ButtonLabel',['../nivision_8h.html#a4ae7004055b4da78b7b6e33445ccd904',1,'nivision.h']]]
+];
