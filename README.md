@@ -1,6 +1,8 @@
+# FIRST Team 612 Chantilly Robotics - Code for FRC 2013 Competition (Ultimate Ascent)
+
 ### Usage
 
-For now, this project assumes that you already have ucpp_ installed and
+For now, this project assumes that you already have [ucpp][1] installed and
 configured for your system.  The build process is as follows:
 
     $ ucpp init               #run once
