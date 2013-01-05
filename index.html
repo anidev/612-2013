@@ -1,95 +1,74 @@
 <!DOCTYPE html>
 <html>
-
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="612-2013 : FRC Team 612 robot code, 2013 competition" />
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
 
-    <title>612-2013</title>
+    <title>612-2013 by anidev</title>
   </head>
 
   <body>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/anidev/612-2013">View on GitHub</a>
+    <header>
+      <div class="container">
+        <h1>612-2013</h1>
+        <h2>FRC Team 612 Chantilly Robotics code for the 2013 competition (Ultimate Ascent)</h2>
 
-          <h1 id="project_title">612-2013</h1>
-          <h2 id="project_tagline">FRC Team 612 robot code, 2013 competition</h2>
+        <section id="downloads">
+          <a href="https://github.com/anidev/612-2013/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/anidev/612-2013/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/anidev/612-2013" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/anidev/612-2013/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/anidev/612-2013/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+    <div class="container">
+      <section id="main_content">
+        <p>This project contains all of <strong><a href="http://www.chantillyrobotics.org/">FIRST Team 612 Chantilly Robotics</a></strong> code for the 2013 FRC Challenge.</p>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>Chantilly Robotics Code for 2013 FRC Challenge</h1>
-
-<p>This project contains all of <em>FIRST Team 612 Chantilly Robotics</em> code for the 2013 FRC Challenge.</p>
-
-<h2>Usage</h2>
+<h3>Usage</h3>
 
 <p>For now, this project assumes that you already have ucpp_ installed and
 configured for your system.  The build process is as follows:</p>
 
-<p><code>$ ucpp init               #run once
-  $ ucpp configure          #run each time the files in the project have changed
-  $ make                    #compile and link all code (debug)
-  $ make DEBUG_MODE=0       #compile and link all code (release)
-  $ make deploy             #deploy code to robot</code></p>
+<pre><code>$ ucpp init               #run once
+$ ucpp configure          #run each time the files in the project have changed
+$ make                    #compile and link all code (debug)
+$ make DEBUG_MODE=0       #compile and link all code (release)
+$ make deploy             #deploy code to robot 
+</code></pre>
 
-<p>For more information regarding ucpp, see 'ucpp.rst'.</p>
+<h3>Configuring</h3>
 
-<p>Configuring
-++++++++++++++++</p>
-
+<blockquote>
 <ul>
-<li>When imaging it is necessary to select the option for WindRiver C++, and please
-enable NetConsole (except for in perhaps release builds).</li>
+<li>When imaging it is necessary to select the option for WindRiver C++, and please enable NetConsole (except for in perhaps release builds).</li>
 <li>Remember that the cRIO runs an ftp server that allows anonymous ftp access.</li>
 <li>The robot needs to be imaged with version 43 of the firmware to be legal.</li>
-</ul><p>License
-++++++++++++++++</p>
+</ul>
+</blockquote>
+
+<h3>License</h3>
 
 <p>All code in this project is licensed under the ISC License (see 'LICENSE.rst')
-and is Copyright |c| 2013 Chantilly Robotics unless otherwise noted.</p>
+and is Copyright © 2013 Chantilly Robotics unless otherwise noted.</p>
 
-<p>Contributors
-++++++++++++++++</p>
+<h3>Contributors</h3>
 
 <p>A full list of contributors is in 'AUTHORS.rst'.</p>
 
-<p>Thanks
-++++++++++++++++
-Thanks go out to nikitakit and all the other developers of the ucpp_ project.
-Thanks to github_ for providing hosting of our code.
-And finally, a big thanks to the entire organization of FIRST_.</p>
+<h3>Thanks</h3>
 
-<p>.. _<code>FIRST Team 612 Chantilly Robotics</code>: <a href="http://www.chantillyrobotics.org/">http://www.chantillyrobotics.org/</a>
-.. _ucpp: <a href="https://github.com/nikitakit/ucpp">https://github.com/nikitakit/ucpp</a>
-.. _github: <a href="https://github.com/">https://github.com/</a>
-.. _FIRST: <a href="http://usfirst.org/">http://usfirst.org/</a>
-.. |c| unicode:: 0xA9 .. (Copyright (c) Sign)</p>
+<p>Thanks go out to nikitakit and all the other developers of the <a href="https://github.com/nikitakit/ucpp">ucpp</a> project.
+Thanks to <a href="https://github.com/">github</a> for providing hosting of our code.
+And finally, a big thanks to the entire organization of <a href="http://usfirst.org/">FIRST</a>.</p>
       </section>
     </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">612-2013 maintained by <a href="https://github.com/anidev">anidev</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
     
-
   </body>
 </html>
