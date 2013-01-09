@@ -1,5 +1,5 @@
-#include "ports.h"
 #include <Joystick.h>
+#include "ports.h"
 
 Joystick left_joystick(1);
 Joystick right_joystick(2);
