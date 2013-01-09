@@ -16,3 +16,4 @@ Programming Team
 - BorahHong (Borah) <zalmon111@gmail.com>
 - AdrianDeVera (Adrian) <addv1992@gmail.com>
 - XanMead (Xan) <x.m.mead@gmail.com>
+-jbramnick (Jim) <jbramnick412@gmail.com>
