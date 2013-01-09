@@ -1,8 +1,7 @@
-#ifndef INC_MAIN_H_INC
-#define INC_MAIN_H_INC
+#ifndef MAIN_H
+#define MAIN_H
 
 #include <IterativeRobot.h>
-#include <RobotDrive.h>
 
 class robot_class : public IterativeRobot {
 public:

@@ -1,16 +1,16 @@
 #ifndef PORTS_H
 #define PORTS_H
 
-struct protectedCANJaguar {
-	UINT8 deviceNumber
-};
-struct protectedTalon {
-	UINT8  moduleNumber,
-	UINT32 channel 
+#include <Joystick.h>
+
+typedef int canport_t;
+struct hw_info {
+    UINT8 moduleNumber,
+    UINT8  channel,
 };
 
-extern left_joystick
-extern right_joystick
-extern gunner_joystick
+extern Joystick left_joystick;
+extern Joystick right_joystick;
+extern Joystick gunner_joystick;
 
 #endif
