@@ -14,4 +14,8 @@ Programming Team
 - JeffTolbert (Jeff) <cobras7@verizon.net>
 - lollipopkbh (Katherine) <kbhogue@gmail.com>
 - BorahHong (Borah) <zalmon111@gmail.com>
+- AdrianDeVera (Adrian) <addv1992@gmail.com>
+- XanMead (Xan) <x.m.mead@gmail.com>
+- jbramnick (Jim) <jbramnick412@gmail.com>
 - AlexMaxseiner(Alex) <flyamonkey2mars@gmail.com>
+- bqtruong (Brian) <bqtruong@cox.net>
