@@ -18,4 +18,5 @@ Programming Team
 - XanMead (Xan) <x.m.mead@gmail.com>
 - jbramnick (Jim) <jbramnick412@gmail.com>
 - AlexMaxseiner(Alex) <flyamonkey2mars@gmail.com>
-- bqtruong (Brian) <bqtruong@cox.net>
+- bqtruong (Brian) bqtruong@cox.net
+- SherryFeng (Sherry) sherryyfengg@gmail.com  
