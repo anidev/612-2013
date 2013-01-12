@@ -11,6 +11,8 @@ struct hw_info {
 
 extern Joystick left_joystick;
 extern Joystick right_joystick;
-extern Joystick gunner_joystick;
+extern Joystick gunner_joystick
+
+extern FrisbeeShooter shooter
 
 #endif
