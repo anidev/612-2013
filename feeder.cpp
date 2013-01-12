@@ -1,9 +1,5 @@
 #include "feeder.h"
 
-bool feeder::is_frisbee_loaded(bool sensor_feed) { 
-	//is the frisbee loaded? We'll probably use a sensor for this. Note: make sure to learn documentation for sensoris
-	return sensor_feed;
-}
 void feeder::load_frisbee(double button_index){
 	//this would power certain motors in order to load a frisbee. We will probably use something like "roller_motor"
 	//the parameter is the index of the button used to shift the loader either back or forth

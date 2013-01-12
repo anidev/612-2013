@@ -5,8 +5,7 @@ class feeder {
 private:
 
 public:
-    bool is_frisbee_loaded(bool sensor_feed);
-	void load_frisbee(double button_index);	
+    void load_frisbee(double button_index);	
 };
 
-#endif
+#endif // FEEDER_H
