@@ -1,18 +1,19 @@
 #ifndef LAUNCHER_H
 #define LAUNCHER_H
+
 #include <cstdio>
 
 class Launcher {
 private:
-    const int COUNT_THRESHOLD = 70; //rpm
-    const int ON_SPEED = 100;//rpm
-    const float AT_SPEED_TOLERANCE = 2; //rpm
-    unsigned int count = 0;
+    static const int COUNT_THRESHOLD = 70; //rpm
+    static const int ON_SPEED = 100;//rpm
+    static const float AT_SPEED_TOLERANCE = 2; //rpm
+    unsigned int count;
     float getSpeed();
 
 public:
-    launcher();
-    ~launcher();
+    Launcher();
+    ~Launcher();
     void start();
     void stop();
     void update();

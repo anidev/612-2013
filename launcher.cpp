@@ -1,5 +1,11 @@
-#include "launcher.h"
-
+#include "Launcher.h"
+#include <math.h>
+Launcher::Launcher() {
+	count = 0;
+}
+Launcher::~Launcher() {
+	
+}
 
 void Launcher::start() {
     //insert code here
@@ -11,7 +17,7 @@ void Launcher::stop() {
 
 
 bool Launcher::atSpeed(){
-    if(abs(getSpeed()-ON_SPEED) < AT_SPEED_TOLERANCE){
+    if(fabs(getSpeed()-ON_SPEED) < AT_SPEED_TOLERANCE){
         return true;
     }
     return false;
