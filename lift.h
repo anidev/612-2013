@@ -1,7 +1,7 @@
 #ifndef LIFT_H_INCLUDED
 #define LIFT_H_INCLUDED
 
-class lift {
+class Lift {
 
 public:
     void lifp_up ();

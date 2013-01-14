@@ -1,12 +1,12 @@
 #include "state.h"
 
-robotState::robotState() {
+RobotState::RobotState() {
     // do initializations
     state = DRIVE;
     number_of_disks = 0;
 }
 
-robotState::~robotState() {
+RobotState::~RobotState() {
     // do cleanup
 }
 
