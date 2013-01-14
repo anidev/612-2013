@@ -1,7 +1,7 @@
 #include "lift.h"
 
-lift::lift_up() {
+Lift::lift_up() {
 }
 
-lift::lift_down() {
+Lift::lift_down() {
 }
