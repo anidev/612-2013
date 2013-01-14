@@ -3,31 +3,18 @@
 RobotState::RobotState() {
     // do initializations
     state = DRIVE;
-    number_of_disks = 0;
 }
 
 RobotState::~RobotState() {
     // do cleanup
 }
 
-void robotState::turn_on_led (int led_no)
+void RobotState::change_state (robot_state new_state)
 {
-    // turn on led
+    state = new_state;
 }
 
-void robotState::increment_disk_count (void)
+robot_state RobotState::get_state ()
 {
-    number_of_disks++;
+    return state;
 }
-
-int robotState::get_disk_count (void)
-{
-    return number_of_disks;
-}
-
-void robotState::delete_all_disks (void)
-{
-    number_of_disks = 0;
-}
-
-

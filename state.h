@@ -8,10 +8,8 @@ class RobotState {
 public:
     RobotState();   // constructor
 
-    void turn_on_led (int led_no);
-    void increment_disk_count (void);
-    int get_disk_count (void);
-    void delete_all_disks (void);
+    void RobotState::change_state (robot_state new_state);
+    robot_state RobotState::get_state ();
 
     ~RobotState();  // destructor
 private:
