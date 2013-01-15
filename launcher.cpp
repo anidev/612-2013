@@ -1,5 +1,6 @@
 #include "Launcher.h"
-#include <math.h>
+#include <cmath>
+
 Launcher::Launcher() {
 	count = 0;
 }

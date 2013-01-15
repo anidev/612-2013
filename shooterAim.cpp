@@ -1,3 +1,4 @@
+#if 0
 #include "ShooterAim.h"
 #include "ports.h"
 
@@ -66,3 +67,4 @@ void shooterAim::setAngle() {
 	if(heightDifference > 0)
 		angle = standardTrajectory(groundDistance,heightDifference);
 }
+#endif

@@ -1,3 +1,4 @@
+#if 0
 #ifndef SHOOTERAIM_H
 #define SHOOTERAIM_H
 
@@ -36,6 +37,7 @@ class ShooterAim {
 	void update();
 	
 };
+#endif
 #endif
 /*		Assumes
  * 1. vision.h has target class

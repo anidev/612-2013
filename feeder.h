@@ -1,7 +1,7 @@
 #ifndef FEEDER_H
 #define FEEDER_H
 
-class feeder {
+class Feeder {
 private:
 
 public:

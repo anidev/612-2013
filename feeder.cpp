@@ -1,6 +1,6 @@
 #include "feeder.h"
 
-void feeder::load_frisbee(double button_index){
+void Feeder::load_frisbee(double button_index){
 	//this would power certain motors in order to load a frisbee. We will probably use something like "roller_motor"
 	//the parameter is the index of the button used to shift the loader either back or forth
 	//if button x is used, the motor will be set to a negative amount, positive if button y.
