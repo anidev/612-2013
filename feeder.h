@@ -10,7 +10,7 @@ public:
     ~Feeder();
     void feeder_up();
     void feeder_down();
-    void feeder_stop_move();
+    void feeder_stop();
 };
 
 #endif // FEEDER_H

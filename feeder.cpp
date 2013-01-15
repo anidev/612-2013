@@ -16,7 +16,7 @@ void Feeder::feeder_down() {
     set_direction(-1);
 }
 
-void Feeder::feeder_stop_move() {
+void Feeder::feeder_stop() {
     set_direction(0);
 }
 
