@@ -47,11 +47,14 @@ void Lift::set_direction(int direction) {
 }
 
 void Lift::automatic_update() {
+	if(manual) {
+		return;
+	}
     float cur_angle=get_current_angle();
     if(at_angle()) {
         set_direction(0);
-	manual=true;
-	return;
+		manual=true;
+		return;
     }
     if(cur_angle<target_angle) {
         set_direction(1);
