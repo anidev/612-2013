@@ -9,7 +9,7 @@ typedef int canport_t;
 
 struct hw_info {
     UINT8 moduleNumber;
-    UINT8  channel;
+    UINT8 channel;
 };
 
 extern Joystick left_joystick;
