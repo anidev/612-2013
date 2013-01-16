@@ -86,7 +86,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">DoubleSolenoid Class Reference</div>  </div>
 </div><!--header-->
@@ -155,6 +157,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab67204acd1eb87ffe6fc45c2d22e517e inherit pub_methods_class_error_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the current error information associated with this sensor.  <a href="#ab67204acd1eb87ffe6fc45c2d22e517e"></a><br/></td></tr>
 <tr class="memitem:a05790f219c9e436a09752f73f7344024 inherit pub_methods_class_error_base"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_base.html#a05790f219c9e436a09752f73f7344024">StatusIsFatal</a> () const </td></tr>
 <tr class="memdesc:a05790f219c9e436a09752f73f7344024 inherit pub_methods_class_error_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the current error code represents a fatal error.  <a href="#a05790f219c9e436a09752f73f7344024"></a><br/></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a8f1ff27cf695ca0f3c6ff9226eaa6925"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_double_solenoid.html#a8f1ff27cf695ca0f3c6ff9226eaa6925">InitSolenoid</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a6ccf7120749deab3ff3ea2a7143665d9"><td class="memItemLeft" align="right" valign="top">UINT32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_double_solenoid.html#a6ccf7120749deab3ff3ea2a7143665d9">m_forwardChannel</a></td></tr>
+<tr class="memdesc:a6ccf7120749deab3ff3ea2a7143665d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The forward channel on the module to control.  <a href="#a6ccf7120749deab3ff3ea2a7143665d9"></a><br/></td></tr>
+<tr class="memitem:a4240091f9facc5b19f97d36e78067523"><td class="memItemLeft" align="right" valign="top">UINT32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_double_solenoid.html#a4240091f9facc5b19f97d36e78067523">m_reverseChannel</a></td></tr>
+<tr class="memdesc:a4240091f9facc5b19f97d36e78067523"><td class="mdescLeft">&#160;</td><td class="mdescRight">The reverse channel on the module to control.  <a href="#a4240091f9facc5b19f97d36e78067523"></a><br/></td></tr>
+<tr class="memitem:ad4bd5958a2a5ec78b78a987bb09324e3"><td class="memItemLeft" align="right" valign="top">UINT8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_double_solenoid.html#ad4bd5958a2a5ec78b78a987bb09324e3">m_forwardMask</a></td></tr>
+<tr class="memdesc:ad4bd5958a2a5ec78b78a987bb09324e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The mask for the forward channel.  <a href="#ad4bd5958a2a5ec78b78a987bb09324e3"></a><br/></td></tr>
+<tr class="memitem:ae84083bbb565bfa6f752498929fdadc3"><td class="memItemLeft" align="right" valign="top">UINT8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_double_solenoid.html#ae84083bbb565bfa6f752498929fdadc3">m_reverseMask</a></td></tr>
+<tr class="memdesc:ae84083bbb565bfa6f752498929fdadc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The mask for the reverse channel.  <a href="#ae84083bbb565bfa6f752498929fdadc3"></a><br/></td></tr>
+<tr class="memitem:abb50514ecaa932d06989becfeaf1cfc9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_table.html">ITable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_double_solenoid.html#abb50514ecaa932d06989becfeaf1cfc9">m_table</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -400,6 +418,34 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a8f1ff27cf695ca0f3c6ff9226eaa6925"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> DoubleSolenoid::InitSolenoid </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Common function to implement constructor behavior. </p>
+
+<p>Implements <a class="el" href="class_solenoid_base.html#a7ca79c91469bd82dc13163c3c7144d5e">SolenoidBase</a>.</p>
+
+<p>Definition at line <a class="el" href="_double_solenoid_8cpp_source.html#l00015">15</a> of file <a class="el" href="_double_solenoid_8cpp_source.html">DoubleSolenoid.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="af969e57bea71834b4423a6fe9d0815fc"></a>
 <div class="memitem">
 <div class="memproto">
@@ -612,6 +658,125 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a6ccf7120749deab3ff3ea2a7143665d9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">UINT32 DoubleSolenoid::m_forwardChannel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The forward channel on the module to control. </p>
+
+<p>Definition at line <a class="el" href="_double_solenoid_8h_source.html#l00043">43</a> of file <a class="el" href="_double_solenoid_8h_source.html">DoubleSolenoid.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad4bd5958a2a5ec78b78a987bb09324e3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">UINT8 DoubleSolenoid::m_forwardMask</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The mask for the forward channel. </p>
+
+<p>Definition at line <a class="el" href="_double_solenoid_8h_source.html#l00045">45</a> of file <a class="el" href="_double_solenoid_8h_source.html">DoubleSolenoid.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4240091f9facc5b19f97d36e78067523"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">UINT32 DoubleSolenoid::m_reverseChannel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The reverse channel on the module to control. </p>
+
+<p>Definition at line <a class="el" href="_double_solenoid_8h_source.html#l00044">44</a> of file <a class="el" href="_double_solenoid_8h_source.html">DoubleSolenoid.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae84083bbb565bfa6f752498929fdadc3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">UINT8 DoubleSolenoid::m_reverseMask</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The mask for the reverse channel. </p>
+
+<p>Definition at line <a class="el" href="_double_solenoid_8h_source.html#l00046">46</a> of file <a class="el" href="_double_solenoid_8h_source.html">DoubleSolenoid.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abb50514ecaa932d06989becfeaf1cfc9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i_table.html">ITable</a>* DoubleSolenoid::m_table</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_double_solenoid_8h_source.html#l00048">48</a> of file <a class="el" href="_double_solenoid_8h_source.html">DoubleSolenoid.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>WPILib/<a class="el" href="_double_solenoid_8h_source.html">DoubleSolenoid.h</a></li>
 <li>WPILib/<a class="el" href="_double_solenoid_8cpp_source.html">DoubleSolenoid.cpp</a></li>
@@ -619,7 +784,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:14 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:46 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

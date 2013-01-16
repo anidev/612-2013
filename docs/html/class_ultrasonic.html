@@ -87,7 +87,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a>  </div>
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">Ultrasonic Class Reference</div>  </div>
 </div><!--header-->
@@ -182,6 +186,39 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ab1a827a11e8c3ba905ef88cac9583c4f inherit pub_static_methods_class_error_base"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_base.html#ab1a827a11e8c3ba905ef88cac9583c4f">SetGlobalError</a> (<a class="el" href="class_error.html#ad0ca95bfda335aaedd0d6c5c52b5d95b">Error::Code</a> code, const char *contextMessage, const char *filename, const char *function, UINT32 lineNumber)</td></tr>
 <tr class="memitem:a3cc8960dee0edd4b57b494aa139e5887 inherit pub_static_methods_class_error_base"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_base.html#a3cc8960dee0edd4b57b494aa139e5887">SetGlobalWPIError</a> (const char *errorMessage, const char *contextMessage, const char *filename, const char *function, UINT32 lineNumber)</td></tr>
 <tr class="memitem:ab85de5de437f0293356753b2ebab874c inherit pub_static_methods_class_error_base"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_error.html">Error</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_base.html#ab85de5de437f0293356753b2ebab874c">GetGlobalError</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ac82c315e5df6423a9e1c0cba20d962b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasonic.html#ac82c315e5df6423a9e1c0cba20d962b3">Initialize</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:af9b71113f951d2f60dd598754900a4f6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasonic.html#af9b71113f951d2f60dd598754900a4f6">UltrasonicChecker</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a80a131db7f835f23c98b63596edbb4a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_digital_input.html">DigitalInput</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasonic.html#a80a131db7f835f23c98b63596edbb4a9">m_echoChannel</a></td></tr>
+<tr class="memitem:a7bfdf1c85663ee516af60010f68bbf20"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_digital_output.html">DigitalOutput</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasonic.html#a7bfdf1c85663ee516af60010f68bbf20">m_pingChannel</a></td></tr>
+<tr class="memitem:a0a4c1d3082374ce4fb9f85f0d5d6f6b3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasonic.html#a0a4c1d3082374ce4fb9f85f0d5d6f6b3">m_allocatedChannels</a></td></tr>
+<tr class="memitem:a59f8e931b874ab9a54dfb03b3e53fc45"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasonic.html#a59f8e931b874ab9a54dfb03b3e53fc45">m_enabled</a></td></tr>
+<tr class="memitem:ad1734f778375fee53f7512d9b37b16f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_counter.html">Counter</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasonic.html#ad1734f778375fee53f7512d9b37b16f5">m_counter</a></td></tr>
+<tr class="memitem:afe014910152b4712467e9f1c5068b9ef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ultrasonic.html">Ultrasonic</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasonic.html#afe014910152b4712467e9f1c5068b9ef">m_nextSensor</a></td></tr>
+<tr class="memitem:ac17d2023bdc2e3eaaabffcbbd7ac4298"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ultrasonic.html#ab8d5fd69150bb99cea252ce600ca1280">DistanceUnit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasonic.html#ac17d2023bdc2e3eaaabffcbbd7ac4298">m_units</a></td></tr>
+<tr class="memitem:a4b0c4f743ad798f67bee25a0cb03903f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_table.html">ITable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasonic.html#a4b0c4f743ad798f67bee25a0cb03903f">m_table</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a76cc112331b37ba9df08ef4ef32270c4"><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasonic.html#a76cc112331b37ba9df08ef4ef32270c4">kPingTime</a> = 10 * 1e-6</td></tr>
+<tr class="memdesc:a76cc112331b37ba9df08ef4ef32270c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time (sec) for the ping trigger pulse.  <a href="#a76cc112331b37ba9df08ef4ef32270c4"></a><br/></td></tr>
+<tr class="memitem:a2d60e9ea055c97e3be3a2e98c95dd072"><td class="memItemLeft" align="right" valign="top">static const UINT32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasonic.html#a2d60e9ea055c97e3be3a2e98c95dd072">kPriority</a> = 90</td></tr>
+<tr class="memdesc:a2d60e9ea055c97e3be3a2e98c95dd072"><td class="mdescLeft">&#160;</td><td class="mdescRight">Priority that the ultrasonic round robin task runs.  <a href="#a2d60e9ea055c97e3be3a2e98c95dd072"></a><br/></td></tr>
+<tr class="memitem:a41ac4435cc5a0ba281ca4ec2df70f10d"><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasonic.html#a41ac4435cc5a0ba281ca4ec2df70f10d">kMaxUltrasonicTime</a> = 0.1</td></tr>
+<tr class="memdesc:a41ac4435cc5a0ba281ca4ec2df70f10d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Max time (ms) between readings.  <a href="#a41ac4435cc5a0ba281ca4ec2df70f10d"></a><br/></td></tr>
+<tr class="memitem:a5d2b33da10ab5ec9f83aa6cc84e7f1e8"><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasonic.html#a5d2b33da10ab5ec9f83aa6cc84e7f1e8">kSpeedOfSoundInchesPerSec</a> = 1130.0 * 12.0</td></tr>
+<tr class="memitem:a59230e159ddc43f00ed86c1fdf3b8532"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_task.html">Task</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasonic.html#a59230e159ddc43f00ed86c1fdf3b8532">m_task</a></td></tr>
+<tr class="memitem:af4720b3dc94e53de760b4a02bda77f70"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_ultrasonic.html">Ultrasonic</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasonic.html#af4720b3dc94e53de760b4a02bda77f70">m_firstSensor</a> = <a class="el" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="memitem:aa7b8c72615344d1ebfa835dfb9814dd4"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasonic.html#aa7b8c72615344d1ebfa835dfb9814dd4">m_automaticEnabled</a> = false</td></tr>
+<tr class="memitem:a5d12c7ec04a4fcfb049f64afd32f7b6a"><td class="memItemLeft" align="right" valign="top">static SEM_ID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ultrasonic.html#a5d12c7ec04a4fcfb049f64afd32f7b6a">m_semaphore</a> = 0</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -556,6 +593,32 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ac82c315e5df6423a9e1c0cba20d962b3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> Ultrasonic::Initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Initialize the <a class="el" href="class_ultrasonic.html">Ultrasonic</a> Sensor. This is the common code that initializes the ultrasonic sensor given that there are two digital I/O channels allocated. If the system was running in automatic mode (round robin) when the new sensor is added, it is stopped, the sensor is added, then automatic mode is restored. </p>
+
+<p>Definition at line <a class="el" href="_ultrasonic_8cpp_source.html#l00056">56</a> of file <a class="el" href="_ultrasonic_8cpp_source.html">Ultrasonic.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a63320495a2d314cbc09cc9e4b6d1569d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -821,6 +884,33 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="af9b71113f951d2f60dd598754900a4f6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> Ultrasonic::UltrasonicChecker </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Background task that goes through the list of ultrasonic sensors and pings each one in turn. The counter is configured to read the timing of the returned echo pulse.</p>
+<p>DANGER WILL ROBINSON, DANGER WILL ROBINSON: This code runs as a task and assumes that none of the ultrasonic sensors will change while it's running. If one does, then this will certainly break. Make sure to disable automatic mode before changing anything with the sensors!! </p>
+
+<p>Definition at line <a class="el" href="_ultrasonic_8cpp_source.html#l00035">35</a> of file <a class="el" href="_ultrasonic_8cpp_source.html">Ultrasonic.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="aa91dcad8c1595bd3c4bdd3e798afb736"></a>
 <div class="memitem">
 <div class="memproto">
@@ -849,6 +939,365 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a41ac4435cc5a0ba281ca4ec2df70f10d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double Ultrasonic::kMaxUltrasonicTime = 0.1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Max time (ms) between readings. </p>
+
+<p>Definition at line <a class="el" href="_ultrasonic_8h_source.html#l00070">70</a> of file <a class="el" href="_ultrasonic_8h_source.html">Ultrasonic.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a76cc112331b37ba9df08ef4ef32270c4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double Ultrasonic::kPingTime = 10 * 1e-6</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Time (sec) for the ping trigger pulse. </p>
+
+<p>Definition at line <a class="el" href="_ultrasonic_8h_source.html#l00068">68</a> of file <a class="el" href="_ultrasonic_8h_source.html">Ultrasonic.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2d60e9ea055c97e3be3a2e98c95dd072"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const UINT32 Ultrasonic::kPriority = 90</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Priority that the ultrasonic round robin task runs. </p>
+
+<p>Definition at line <a class="el" href="_ultrasonic_8h_source.html#l00069">69</a> of file <a class="el" href="_ultrasonic_8h_source.html">Ultrasonic.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5d2b33da10ab5ec9f83aa6cc84e7f1e8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double Ultrasonic::kSpeedOfSoundInchesPerSec = 1130.0 * 12.0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ultrasonic_8h_source.html#l00071">71</a> of file <a class="el" href="_ultrasonic_8h_source.html">Ultrasonic.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0a4c1d3082374ce4fb9f85f0d5d6f6b3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Ultrasonic::m_allocatedChannels</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ultrasonic_8h_source.html#l00080">80</a> of file <a class="el" href="_ultrasonic_8h_source.html">Ultrasonic.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa7b8c72615344d1ebfa835dfb9814dd4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Ultrasonic::m_automaticEnabled = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ultrasonic_8h_source.html#l00075">75</a> of file <a class="el" href="_ultrasonic_8h_source.html">Ultrasonic.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad1734f778375fee53f7512d9b37b16f5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_counter.html">Counter</a>* Ultrasonic::m_counter</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ultrasonic_8h_source.html#l00082">82</a> of file <a class="el" href="_ultrasonic_8h_source.html">Ultrasonic.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a80a131db7f835f23c98b63596edbb4a9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_digital_input.html">DigitalInput</a>* Ultrasonic::m_echoChannel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ultrasonic_8h_source.html#l00078">78</a> of file <a class="el" href="_ultrasonic_8h_source.html">Ultrasonic.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a59f8e931b874ab9a54dfb03b3e53fc45"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Ultrasonic::m_enabled</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ultrasonic_8h_source.html#l00081">81</a> of file <a class="el" href="_ultrasonic_8h_source.html">Ultrasonic.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af4720b3dc94e53de760b4a02bda77f70"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ultrasonic.html">Ultrasonic</a> * Ultrasonic::m_firstSensor = <a class="el" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ultrasonic_8h_source.html#l00074">74</a> of file <a class="el" href="_ultrasonic_8h_source.html">Ultrasonic.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afe014910152b4712467e9f1c5068b9ef"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ultrasonic.html">Ultrasonic</a>* Ultrasonic::m_nextSensor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ultrasonic_8h_source.html#l00083">83</a> of file <a class="el" href="_ultrasonic_8h_source.html">Ultrasonic.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7bfdf1c85663ee516af60010f68bbf20"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_digital_output.html">DigitalOutput</a>* Ultrasonic::m_pingChannel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ultrasonic_8h_source.html#l00079">79</a> of file <a class="el" href="_ultrasonic_8h_source.html">Ultrasonic.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5d12c7ec04a4fcfb049f64afd32f7b6a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SEM_ID Ultrasonic::m_semaphore = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ultrasonic_8h_source.html#l00076">76</a> of file <a class="el" href="_ultrasonic_8h_source.html">Ultrasonic.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4b0c4f743ad798f67bee25a0cb03903f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i_table.html">ITable</a>* Ultrasonic::m_table</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ultrasonic_8h_source.html#l00086">86</a> of file <a class="el" href="_ultrasonic_8h_source.html">Ultrasonic.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a59230e159ddc43f00ed86c1fdf3b8532"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_task.html">Task</a> Ultrasonic::m_task</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ultrasonic_8h_source.html#l00073">73</a> of file <a class="el" href="_ultrasonic_8h_source.html">Ultrasonic.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac17d2023bdc2e3eaaabffcbbd7ac4298"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ultrasonic.html#ab8d5fd69150bb99cea252ce600ca1280">DistanceUnit</a> Ultrasonic::m_units</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_ultrasonic_8h_source.html#l00084">84</a> of file <a class="el" href="_ultrasonic_8h_source.html">Ultrasonic.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>WPILib/<a class="el" href="_ultrasonic_8h_source.html">Ultrasonic.h</a></li>
 <li>WPILib/<a class="el" href="_ultrasonic_8cpp_source.html">Ultrasonic.cpp</a></li>
@@ -856,7 +1305,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:17 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:49 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

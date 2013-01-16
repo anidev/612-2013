@@ -86,7 +86,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-attribs">Static Public Attributes</a>  </div>
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">NetworkTableConnection Class Reference</div>  </div>
 </div><!--header-->
@@ -98,7 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afc6e9569c5b798650bd590c9beec747f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_table_connection.html#afc6e9569c5b798650bd590c9beec747f">NetworkTableConnection</a> (<a class="el" href="class_i_o_stream.html">IOStream</a> *stream, <a class="el" href="class_network_table_entry_type_manager.html">NetworkTableEntryTypeManager</a> &amp;typeManager)</td></tr>
+<tr class="memitem:afc6e9569c5b798650bd590c9beec747f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_table_connection.html#afc6e9569c5b798650bd590c9beec747f">NetworkTableConnection</a> (<a class="el" href="class_i_o_stream.html">IOStream</a> *stream, <a class="el" href="class_network_table_entry_type_manager.html">NetworkTableEntryTypeManager</a> &amp;<a class="el" href="class_network_table_connection.html#aa295f2667f80182ce77d2598935c7e2d">typeManager</a>)</td></tr>
 <tr class="memitem:a1aab3b09f7036c0bc8137e3fcf6905d9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_table_connection.html#a1aab3b09f7036c0bc8137e3fcf6905d9">~NetworkTableConnection</a> ()</td></tr>
 <tr class="memitem:aac5ad0702151ed8c5bae67e62e8d0350"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_table_connection.html#aac5ad0702151ed8c5bae67e62e8d0350">close</a> ()</td></tr>
 <tr class="memitem:a39429a41bf366ab01c6d0777ad61120c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_table_connection.html#a39429a41bf366ab01c6d0777ad61120c">flush</a> ()</td></tr>
@@ -113,6 +115,17 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a9594932029e67848d2ba863c47c1fa88"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_network_table_connection_8h.html#a7449e9af3775fd273a33c3c2cc8f5ca8">ProtocolVersion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_table_connection.html#a9594932029e67848d2ba863c47c1fa88">PROTOCOL_REVISION</a> = 0x0200</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a2bb0562ae13c558df4c6ff7f54de85ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_table_connection.html#a2bb0562ae13c558df4c6ff7f54de85ee">sendMessageHeader</a> (<a class="el" href="_network_table_message_type_8h.html#acabcbab7af56a3c3269e44e44d2c708c">NetworkTableMessageType</a> messageType)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a86e87c81ccb5c74d48bb8a22475806be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_reentrant_semaphore.html">ReentrantSemaphore</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_table_connection.html#a86e87c81ccb5c74d48bb8a22475806be">WRITE_LOCK</a></td></tr>
+<tr class="memitem:ac531c6aff012d0b84c94ab89e9dd24db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_data_i_o_stream.html">DataIOStream</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_table_connection.html#ac531c6aff012d0b84c94ab89e9dd24db">ioStream</a></td></tr>
+<tr class="memitem:aa295f2667f80182ce77d2598935c7e2d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_network_table_entry_type_manager.html">NetworkTableEntryTypeManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_table_connection.html#aa295f2667f80182ce77d2598935c7e2d">typeManager</a></td></tr>
+<tr class="memitem:a40e6677bb411c0a9a758fcff455d0d05"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_table_connection.html#a40e6677bb411c0a9a758fcff455d0d05">isValid</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
@@ -288,6 +301,32 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a2bb0562ae13c558df4c6ff7f54de85ee"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> NetworkTableConnection::sendMessageHeader </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_network_table_message_type_8h.html#acabcbab7af56a3c3269e44e44d2c708c">NetworkTableMessageType</a>&#160;</td>
+          <td class="paramname"><em>messageType</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_network_table_connection_8cpp_source.html#l00036">36</a> of file <a class="el" href="_network_table_connection_8cpp_source.html">NetworkTableConnection.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ab17ef7f8a9b220606b1fe200d7f32532"></a>
 <div class="memitem">
 <div class="memproto">
@@ -323,6 +362,50 @@ Static Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="ac531c6aff012d0b84c94ab89e9dd24db"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_data_i_o_stream.html">DataIOStream</a>* const NetworkTableConnection::ioStream</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_network_table_connection_8h_source.html#l00047">47</a> of file <a class="el" href="_network_table_connection_8h_source.html">NetworkTableConnection.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a40e6677bb411c0a9a758fcff455d0d05"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NetworkTableConnection::isValid</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_network_table_connection_8h_source.html#l00049">49</a> of file <a class="el" href="_network_table_connection_8h_source.html">NetworkTableConnection.h</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a9594932029e67848d2ba863c47c1fa88"></a>
 <div class="memitem">
 <div class="memproto">
@@ -345,6 +428,50 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aa295f2667f80182ce77d2598935c7e2d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_network_table_entry_type_manager.html">NetworkTableEntryTypeManager</a>&amp; NetworkTableConnection::typeManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_network_table_connection_8h_source.html#l00048">48</a> of file <a class="el" href="_network_table_connection_8h_source.html">NetworkTableConnection.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a86e87c81ccb5c74d48bb8a22475806be"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_reentrant_semaphore.html">ReentrantSemaphore</a> NetworkTableConnection::WRITE_LOCK</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_network_table_connection_8h_source.html#l00046">46</a> of file <a class="el" href="_network_table_connection_8h_source.html">NetworkTableConnection.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>WPILib/networktables2/connection/<a class="el" href="_network_table_connection_8h_source.html">NetworkTableConnection.h</a></li>
 <li>WPILib/networktables2/connection/<a class="el" href="_network_table_connection_8cpp_source.html">NetworkTableConnection.cpp</a></li>
@@ -352,7 +479,7 @@ Static Public Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:15 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:47 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

@@ -86,7 +86,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a>  </div>
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">Scheduler Class Reference</div>  </div>
 </div><!--header-->
@@ -141,6 +145,34 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a3cc8960dee0edd4b57b494aa139e5887 inherit pub_static_methods_class_error_base"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_base.html#a3cc8960dee0edd4b57b494aa139e5887">SetGlobalWPIError</a> (const char *errorMessage, const char *contextMessage, const char *filename, const char *function, UINT32 lineNumber)</td></tr>
 <tr class="memitem:ab85de5de437f0293356753b2ebab874c inherit pub_static_methods_class_error_base"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_error.html">Error</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_base.html#ab85de5de437f0293356753b2ebab874c">GetGlobalError</a> ()</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:a644bf4c099c317d36eb45e2f0f889c29"><td class="memItemLeft" align="right" valign="top">typedef std::vector<br class="typebreak"/>
+&lt; <a class="el" href="class_button_scheduler.html">ButtonScheduler</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scheduler.html#a644bf4c099c317d36eb45e2f0f889c29">ButtonVector</a></td></tr>
+<tr class="memitem:a54a2b57a159433cf96ffbe9dcb6fd65a"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="class_command.html">Command</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scheduler.html#a54a2b57a159433cf96ffbe9dcb6fd65a">CommandVector</a></td></tr>
+<tr class="memitem:a69b75c18d4128194321b321ee1672c7b"><td class="memItemLeft" align="right" valign="top">typedef std::set&lt; <a class="el" href="class_command.html">Command</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scheduler.html#a69b75c18d4128194321b321ee1672c7b">CommandSet</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a3b61aac11466cd45ae42ab8c2b0013f6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scheduler.html#a3b61aac11466cd45ae42ab8c2b0013f6">Scheduler</a> ()</td></tr>
+<tr class="memitem:afc8187779b46f64039d3ffa58f0dbe51"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scheduler.html#afc8187779b46f64039d3ffa58f0dbe51">~Scheduler</a> ()</td></tr>
+<tr class="memitem:a2ff1c71a75f7dfc8f798fc7272c1fa60"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scheduler.html#a2ff1c71a75f7dfc8f798fc7272c1fa60">ProcessCommandAddition</a> (<a class="el" href="class_command.html">Command</a> *command)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a6d5c74a466dae81110ef8ef440f62bd3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_command.html#a189a03bfe86bc5cf292994ba141a8b25">Command::SubsystemSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scheduler.html#a6d5c74a466dae81110ef8ef440f62bd3">m_subsystems</a></td></tr>
+<tr class="memitem:ac1dcf0ae2ddc3838c9aee9330beb17a7"><td class="memItemLeft" align="right" valign="top">SEM_ID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scheduler.html#ac1dcf0ae2ddc3838c9aee9330beb17a7">m_buttonsLock</a></td></tr>
+<tr class="memitem:a888d362f3b910f90bfe2666cd980cb49"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_scheduler.html#a644bf4c099c317d36eb45e2f0f889c29">ButtonVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scheduler.html#a888d362f3b910f90bfe2666cd980cb49">m_buttons</a></td></tr>
+<tr class="memitem:a0d9279248bed35a4f301a2da5a69f7b6"><td class="memItemLeft" align="right" valign="top">SEM_ID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scheduler.html#a0d9279248bed35a4f301a2da5a69f7b6">m_additionsLock</a></td></tr>
+<tr class="memitem:ad9fd14286c96a02c667775b25dae634c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_scheduler.html#a54a2b57a159433cf96ffbe9dcb6fd65a">CommandVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scheduler.html#ad9fd14286c96a02c667775b25dae634c">m_additions</a></td></tr>
+<tr class="memitem:a0bc6256c76bb6a9ecbc98a2918940765"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_scheduler.html#a69b75c18d4128194321b321ee1672c7b">CommandSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scheduler.html#a0bc6256c76bb6a9ecbc98a2918940765">m_commands</a></td></tr>
+<tr class="memitem:a4bbdf02233b65bff55d7cf5490edb56f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scheduler.html#a4bbdf02233b65bff55d7cf5490edb56f">m_adding</a></td></tr>
+<tr class="memitem:a5ed9f558d2e3e717be130a57e4429baa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scheduler.html#a5ed9f558d2e3e717be130a57e4429baa">m_enabled</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a2ad71916d33881473eed3f1103c96737"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_scheduler.html">Scheduler</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scheduler.html#a2ad71916d33881473eed3f1103c96737">_instance</a> = <a class="el" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_class_error_base"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_error_base')"><img src="closed.png" alt="-"/>&nbsp;Protected Member Functions inherited from <a class="el" href="class_error_base.html">ErrorBase</a></td></tr>
@@ -155,7 +187,125 @@ Additional Inherited Members</h2></td></tr>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
 <p>Definition at line <a class="el" href="_scheduler_8h_source.html#l00021">21</a> of file <a class="el" href="_scheduler_8h_source.html">Scheduler.h</a>.</p>
-</div><hr/><h2>Member Function Documentation</h2>
+</div><hr/><h2>Member Typedef Documentation</h2>
+<a class="anchor" id="a644bf4c099c317d36eb45e2f0f889c29"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt;<a class="el" href="class_button_scheduler.html">ButtonScheduler</a> *&gt; <a class="el" href="class_scheduler.html#a644bf4c099c317d36eb45e2f0f889c29">Scheduler::ButtonVector</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8h_source.html#l00043">43</a> of file <a class="el" href="_scheduler_8h_source.html">Scheduler.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a69b75c18d4128194321b321ee1672c7b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::set&lt;<a class="el" href="class_command.html">Command</a> *&gt; <a class="el" href="class_scheduler.html#a69b75c18d4128194321b321ee1672c7b">Scheduler::CommandSet</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8h_source.html#l00048">48</a> of file <a class="el" href="_scheduler_8h_source.html">Scheduler.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a54a2b57a159433cf96ffbe9dcb6fd65a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt;<a class="el" href="class_command.html">Command</a> *&gt; <a class="el" href="class_scheduler.html#a54a2b57a159433cf96ffbe9dcb6fd65a">Scheduler::CommandVector</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8h_source.html#l00045">45</a> of file <a class="el" href="_scheduler_8h_source.html">Scheduler.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a3b61aac11466cd45ae42ab8c2b0013f6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Scheduler::Scheduler </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8cpp_source.html#l00021">21</a> of file <a class="el" href="_scheduler_8cpp_source.html">Scheduler.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afc8187779b46f64039d3ffa58f0dbe51"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Scheduler::~Scheduler </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8cpp_source.html#l00034">34</a> of file <a class="el" href="_scheduler_8cpp_source.html">Scheduler.cpp</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a5ee42f6fbe43cd34cf463be23107a079"></a>
 <div class="memitem">
 <div class="memproto">
@@ -223,6 +373,32 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns:</dt><dd>the <a class="el" href="class_scheduler.html">Scheduler</a> </dd></dl>
 
 <p>Definition at line <a class="el" href="_scheduler_8cpp_source.html#l00047">47</a> of file <a class="el" href="_scheduler_8cpp_source.html">Scheduler.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2ff1c71a75f7dfc8f798fc7272c1fa60"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> Scheduler::ProcessCommandAddition </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_command.html">Command</a> *&#160;</td>
+          <td class="paramname"><em>command</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8cpp_source.html#l00078">78</a> of file <a class="el" href="_scheduler_8cpp_source.html">Scheduler.cpp</a>.</p>
 
 </div>
 </div>
@@ -341,6 +517,205 @@ Add Defaults  </li>
 
 </div>
 </div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a2ad71916d33881473eed3f1103c96737"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_scheduler.html">Scheduler</a> * Scheduler::_instance = <a class="el" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8h_source.html#l00040">40</a> of file <a class="el" href="_scheduler_8h_source.html">Scheduler.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4bbdf02233b65bff55d7cf5490edb56f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Scheduler::m_adding</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8h_source.html#l00050">50</a> of file <a class="el" href="_scheduler_8h_source.html">Scheduler.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad9fd14286c96a02c667775b25dae634c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_scheduler.html#a54a2b57a159433cf96ffbe9dcb6fd65a">CommandVector</a> Scheduler::m_additions</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8h_source.html#l00047">47</a> of file <a class="el" href="_scheduler_8h_source.html">Scheduler.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0d9279248bed35a4f301a2da5a69f7b6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SEM_ID Scheduler::m_additionsLock</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8h_source.html#l00046">46</a> of file <a class="el" href="_scheduler_8h_source.html">Scheduler.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a888d362f3b910f90bfe2666cd980cb49"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_scheduler.html#a644bf4c099c317d36eb45e2f0f889c29">ButtonVector</a> Scheduler::m_buttons</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8h_source.html#l00044">44</a> of file <a class="el" href="_scheduler_8h_source.html">Scheduler.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac1dcf0ae2ddc3838c9aee9330beb17a7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SEM_ID Scheduler::m_buttonsLock</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8h_source.html#l00042">42</a> of file <a class="el" href="_scheduler_8h_source.html">Scheduler.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0bc6256c76bb6a9ecbc98a2918940765"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_scheduler.html#a69b75c18d4128194321b321ee1672c7b">CommandSet</a> Scheduler::m_commands</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8h_source.html#l00049">49</a> of file <a class="el" href="_scheduler_8h_source.html">Scheduler.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5ed9f558d2e3e717be130a57e4429baa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Scheduler::m_enabled</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8h_source.html#l00051">51</a> of file <a class="el" href="_scheduler_8h_source.html">Scheduler.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6d5c74a466dae81110ef8ef440f62bd3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_command.html#a189a03bfe86bc5cf292994ba141a8b25">Command::SubsystemSet</a> Scheduler::m_subsystems</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scheduler_8h_source.html#l00041">41</a> of file <a class="el" href="_scheduler_8h_source.html">Scheduler.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>WPILib/Commands/<a class="el" href="_scheduler_8h_source.html">Scheduler.h</a></li>
 <li>WPILib/Commands/<a class="el" href="_scheduler_8cpp_source.html">Scheduler.cpp</a></li>
@@ -348,7 +723,7 @@ Add Defaults  </li>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:16 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:48 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

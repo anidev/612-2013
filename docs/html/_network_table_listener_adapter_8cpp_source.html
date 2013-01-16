@@ -108,18 +108,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00016"></a><span class="lineno"><a class="code" href="class_network_table_listener_adapter.html#a7139fd37fd65fab3884ef0e67e19032c">   16</a></span>&#160;<a class="code" href="class_network_table_listener_adapter.html#a7139fd37fd65fab3884ef0e67e19032c">NetworkTableListenerAdapter::~NetworkTableListenerAdapter</a>(){}</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="class_network_table_listener_adapter.html#af956975148f5638d4935dd2fb96446ed">   18</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_network_table_listener_adapter.html#af956975148f5638d4935dd2fb96446ed">NetworkTableListenerAdapter::ValueChanged</a>(<a class="code" href="class_i_table.html">ITable</a>* source, <span class="keyword">const</span> std::string&amp; key, <a class="code" href="union_entry_value.html">EntryValue</a> value, <span class="keywordtype">bool</span> isNew) {<span class="comment">//TODO use string cache</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">if</span>(key.compare(0,prefix.size(),prefix)==0){</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                std::string relativeKey = key.substr(prefix.length());</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">if</span>(key.compare(0,<a class="code" href="class_network_table_listener_adapter.html#a773255f7ece827428d1c462cc7e8208d">prefix</a>.size(),<a class="code" href="class_network_table_listener_adapter.html#a773255f7ece827428d1c462cc7e8208d">prefix</a>)==0){</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                std::string relativeKey = key.substr(<a class="code" href="class_network_table_listener_adapter.html#a773255f7ece827428d1c462cc7e8208d">prefix</a>.length());</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                <span class="keywordflow">if</span>(std::string::npos != relativeKey.find(<a class="code" href="class_network_table.html#acf1f39cbd3cc6c8a453fab5b8b0b2e35">NetworkTable::PATH_SEPARATOR_CHAR</a>))</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                targetListener-&gt;<a class="code" href="class_i_table_listener.html#a5ba676cd8d3f1e6ebbfd4c5c4ed60973">ValueChanged</a>(targetSource, relativeKey, value, isNew);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                <a class="code" href="class_network_table_listener_adapter.html#afc242a9faf21140d84d86b2b364a8eb6">targetListener</a>-&gt;<a class="code" href="class_i_table_listener.html#a5ba676cd8d3f1e6ebbfd4c5c4ed60973">ValueChanged</a>(<a class="code" href="class_network_table_listener_adapter.html#a43696351ee63d7b5f8d297c481060a82">targetSource</a>, relativeKey, value, isNew);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:10 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:43 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

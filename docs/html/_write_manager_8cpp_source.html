@@ -106,48 +106,48 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="code" href="class_write_manager.html#a7be00a32a72f298de804f5975e89295b">   14</a></span>&#160;<a class="code" href="class_write_manager.html#a7be00a32a72f298de804f5975e89295b">WriteManager::WriteManager</a>(<a class="code" href="class_flushable_outgoing_entry_receiver.html">FlushableOutgoingEntryReceiver</a>&amp; _receiver, <a class="code" href="class_n_t_thread_manager.html">NTThreadManager</a>&amp; _threadManager, <a class="code" href="class_abstract_network_table_entry_store.html">AbstractNetworkTableEntryStore</a>&amp; _entryStore, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> _keepAliveDelay)</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        : receiver(_receiver), threadManager(_threadManager), entryStore(_entryStore), keepAliveDelay(_keepAliveDelay){</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        thread = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        lastWrite = 0;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="class_write_manager.html#ad424c5aa67f8137608ce77cae4acc4a8">thread</a> = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="class_write_manager.html#aab60b8bf37ef49a3448be52c2637a829">lastWrite</a> = 0;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        incomingAssignmentQueue = <span class="keyword">new</span> std::queue&lt;NetworkTableEntry*&gt;();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        incomingUpdateQueue = <span class="keyword">new</span> std::queue&lt;NetworkTableEntry*&gt;();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        outgoingAssignmentQueue = <span class="keyword">new</span> std::queue&lt;NetworkTableEntry*&gt;();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        outgoingUpdateQueue = <span class="keyword">new</span> std::queue&lt;NetworkTableEntry*&gt;();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="class_write_manager.html#ac01a94dd7a7290a1e0ed13646ce4117d">incomingAssignmentQueue</a> = <span class="keyword">new</span> std::queue&lt;NetworkTableEntry*&gt;();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="class_write_manager.html#ad8007baabe8441d1ed7f72b2be89a1ac">incomingUpdateQueue</a> = <span class="keyword">new</span> std::queue&lt;NetworkTableEntry*&gt;();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="class_write_manager.html#a3a3bdefd7d4c890d00440c3c90de6daa">outgoingAssignmentQueue</a> = <span class="keyword">new</span> std::queue&lt;NetworkTableEntry*&gt;();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="class_write_manager.html#a679a0d186dbf1c8ade2bab4ead7b8d2d">outgoingUpdateQueue</a> = <span class="keyword">new</span> std::queue&lt;NetworkTableEntry*&gt;();</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="class_write_manager.html#af26761c3387c7d2952643e554467cda6">   26</a></span>&#160;<a class="code" href="class_write_manager.html#af26761c3387c7d2952643e554467cda6">WriteManager::~WriteManager</a>(){</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        transactionsLock.<a class="code" href="class_reentrant_semaphore.html#a0b8fe103afe4ada288da15942b49b4db">take</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="class_write_manager.html#a0b09fbdb11549a7507efb74236c753a0">transactionsLock</a>.<a class="code" href="class_reentrant_semaphore.html#a0b8fe103afe4ada288da15942b49b4db">take</a>();</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="class_write_manager.html#ae8fbe88a330dfe5873ddeb45f26b9679">stop</a>();</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">delete</span> incomingAssignmentQueue;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">delete</span> incomingUpdateQueue;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">delete</span> outgoingAssignmentQueue;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">delete</span> outgoingUpdateQueue;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">delete</span> <a class="code" href="class_write_manager.html#ac01a94dd7a7290a1e0ed13646ce4117d">incomingAssignmentQueue</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">delete</span> <a class="code" href="class_write_manager.html#ad8007baabe8441d1ed7f72b2be89a1ac">incomingUpdateQueue</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">delete</span> <a class="code" href="class_write_manager.html#a3a3bdefd7d4c890d00440c3c90de6daa">outgoingAssignmentQueue</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">delete</span> <a class="code" href="class_write_manager.html#a679a0d186dbf1c8ade2bab4ead7b8d2d">outgoingUpdateQueue</a>;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 <div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="class_write_manager.html#aa2ee822bd21e3b5a3d81ad0287ea9f89">   37</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_write_manager.html#aa2ee822bd21e3b5a3d81ad0287ea9f89">WriteManager::start</a>(){</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">if</span>(thread!=<a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="class_write_manager.html#ad424c5aa67f8137608ce77cae4acc4a8">thread</a>!=<a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <a class="code" href="class_write_manager.html#ae8fbe88a330dfe5873ddeb45f26b9679">stop</a>();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        lastWrite = <a class="code" href="_system_8cpp.html#abc0cbd0ff1743666d722d55b15b2ba4c">currentTimeMillis</a>();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        thread = threadManager.<a class="code" href="class_n_t_thread_manager.html#a74d38ce03429091b416d6d40f78ef143">newBlockingPeriodicThread</a>(<span class="keyword">this</span>, <span class="stringliteral">&quot;Write Manager Thread&quot;</span>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="class_write_manager.html#aab60b8bf37ef49a3448be52c2637a829">lastWrite</a> = <a class="code" href="_system_8cpp.html#abc0cbd0ff1743666d722d55b15b2ba4c">currentTimeMillis</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="class_write_manager.html#ad424c5aa67f8137608ce77cae4acc4a8">thread</a> = <a class="code" href="class_write_manager.html#a44cc1f0398ecaa21ce119c836c0c56bc">threadManager</a>.<a class="code" href="class_n_t_thread_manager.html#a74d38ce03429091b416d6d40f78ef143">newBlockingPeriodicThread</a>(<span class="keyword">this</span>, <span class="stringliteral">&quot;Write Manager Thread&quot;</span>);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
 <div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="class_write_manager.html#ae8fbe88a330dfe5873ddeb45f26b9679">   44</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_write_manager.html#ae8fbe88a330dfe5873ddeb45f26b9679">WriteManager::stop</a>(){</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordflow">if</span>(thread!=<a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>){</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    thread-&gt;<a class="code" href="class_n_t_thread.html#a83228e1012d57ebc364ea9639ee326dd">stop</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="class_write_manager.html#ad424c5aa67f8137608ce77cae4acc4a8">thread</a>!=<a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>){</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="class_write_manager.html#ad424c5aa67f8137608ce77cae4acc4a8">thread</a>-&gt;<a class="code" href="class_n_t_thread.html#a83228e1012d57ebc364ea9639ee326dd">stop</a>();</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">//delete thread;</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    thread = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="class_write_manager.html#ad424c5aa67f8137608ce77cae4acc4a8">thread</a> = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  }</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
 <div class="line"><a name="l00053"></a><span class="lineno"><a class="code" href="class_write_manager.html#a35ec875b6c9f839ed5f53776011cb2ad">   53</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_write_manager.html#a35ec875b6c9f839ed5f53776011cb2ad">WriteManager::offerOutgoingAssignment</a>(<a class="code" href="class_network_table_entry.html">NetworkTableEntry</a>* entry) {</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        { </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <a class="code" href="class_synchronized.html">Synchronized</a> sync(transactionsLock);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                ((std::queue&lt;NetworkTableEntry*&gt;*)incomingAssignmentQueue)-&gt;push(entry);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_write_manager.html#a0b09fbdb11549a7507efb74236c753a0">transactionsLock</a>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                ((std::queue&lt;NetworkTableEntry*&gt;*)<a class="code" href="class_write_manager.html#ac01a94dd7a7290a1e0ed13646ce4117d">incomingAssignmentQueue</a>)-&gt;push(entry);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keywordflow">if</span>(((std::queue&lt;NetworkTableEntry*&gt;*)incomingAssignmentQueue)-&gt;size()&gt;=queueSize){</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keywordflow">if</span>(((std::queue&lt;NetworkTableEntry*&gt;*)<a class="code" href="class_write_manager.html#ac01a94dd7a7290a1e0ed13646ce4117d">incomingAssignmentQueue</a>)-&gt;size()&gt;=<a class="code" href="class_write_manager.html#acda93c17b1f970b644049c5acade2ea3">queueSize</a>){</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                        <a class="code" href="class_write_manager.html#af1da6961c3a6bf1051918f5ff0eb2788">run</a>();</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                        <a class="code" href="_system_8cpp.html#a8bb4ef21c7e8a2bd4c3481b59928887c">writeWarning</a>(<span class="stringliteral">&quot;assignment queue overflowed. decrease the rate at which you create new entries or increase the write buffer size&quot;</span>);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                }</div>
@@ -157,9 +157,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
 <div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="class_write_manager.html#ad712a9df68d791b127b3651156db43ee">   66</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_write_manager.html#ad712a9df68d791b127b3651156db43ee">WriteManager::offerOutgoingUpdate</a>(<a class="code" href="class_network_table_entry.html">NetworkTableEntry</a>* entry) {</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        { </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <a class="code" href="class_synchronized.html">Synchronized</a> sync(transactionsLock);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                ((std::queue&lt;NetworkTableEntry*&gt;*)incomingUpdateQueue)-&gt;push(entry);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keywordflow">if</span>(((std::queue&lt;NetworkTableEntry*&gt;*)incomingUpdateQueue)-&gt;size()&gt;=queueSize){</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_write_manager.html#a0b09fbdb11549a7507efb74236c753a0">transactionsLock</a>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                ((std::queue&lt;NetworkTableEntry*&gt;*)<a class="code" href="class_write_manager.html#ad8007baabe8441d1ed7f72b2be89a1ac">incomingUpdateQueue</a>)-&gt;push(entry);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keywordflow">if</span>(((std::queue&lt;NetworkTableEntry*&gt;*)<a class="code" href="class_write_manager.html#ad8007baabe8441d1ed7f72b2be89a1ac">incomingUpdateQueue</a>)-&gt;size()&gt;=<a class="code" href="class_write_manager.html#acda93c17b1f970b644049c5acade2ea3">queueSize</a>){</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        <a class="code" href="class_write_manager.html#af1da6961c3a6bf1051918f5ff0eb2788">run</a>();</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                        <a class="code" href="_system_8cpp.html#a8bb4ef21c7e8a2bd4c3481b59928887c">writeWarning</a>(<span class="stringliteral">&quot;update queue overflowed. decrease the rate at which you update entries or increase the write buffer size&quot;</span>);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                }</div>
@@ -169,50 +169,50 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
 <div class="line"><a name="l00078"></a><span class="lineno"><a class="code" href="class_write_manager.html#af1da6961c3a6bf1051918f5ff0eb2788">   78</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_write_manager.html#af1da6961c3a6bf1051918f5ff0eb2788">WriteManager::run</a>() {</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <a class="code" href="class_synchronized.html">Synchronized</a> sync(transactionsLock);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_write_manager.html#a0b09fbdb11549a7507efb74236c753a0">transactionsLock</a>);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="comment">//swap the assignment and update queue</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="keyword">volatile</span> std::queue&lt;NetworkTableEntry*&gt;* tmp = incomingAssignmentQueue;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                incomingAssignmentQueue = outgoingAssignmentQueue;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                outgoingAssignmentQueue = tmp;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="keyword">volatile</span> std::queue&lt;NetworkTableEntry*&gt;* tmp = <a class="code" href="class_write_manager.html#ac01a94dd7a7290a1e0ed13646ce4117d">incomingAssignmentQueue</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <a class="code" href="class_write_manager.html#ac01a94dd7a7290a1e0ed13646ce4117d">incomingAssignmentQueue</a> = <a class="code" href="class_write_manager.html#a3a3bdefd7d4c890d00440c3c90de6daa">outgoingAssignmentQueue</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <a class="code" href="class_write_manager.html#a3a3bdefd7d4c890d00440c3c90de6daa">outgoingAssignmentQueue</a> = tmp;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                tmp = incomingUpdateQueue;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                incomingUpdateQueue = outgoingUpdateQueue;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                outgoingUpdateQueue = tmp;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                tmp = <a class="code" href="class_write_manager.html#ad8007baabe8441d1ed7f72b2be89a1ac">incomingUpdateQueue</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <a class="code" href="class_write_manager.html#ad8007baabe8441d1ed7f72b2be89a1ac">incomingUpdateQueue</a> = <a class="code" href="class_write_manager.html#a679a0d186dbf1c8ade2bab4ead7b8d2d">outgoingUpdateQueue</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <a class="code" href="class_write_manager.html#a679a0d186dbf1c8ade2bab4ead7b8d2d">outgoingUpdateQueue</a> = tmp;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        }</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        </div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordtype">bool</span> wrote = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="class_network_table_entry.html">NetworkTableEntry</a>* entry;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">while</span>(!((std::queue&lt;NetworkTableEntry*&gt;*)outgoingAssignmentQueue)-&gt;empty()){</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                entry = ((std::queue&lt;NetworkTableEntry*&gt;*)outgoingAssignmentQueue)-&gt;front();</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                ((std::queue&lt;NetworkTableEntry*&gt;*)outgoingAssignmentQueue)-&gt;pop();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">while</span>(!((std::queue&lt;NetworkTableEntry*&gt;*)<a class="code" href="class_write_manager.html#a3a3bdefd7d4c890d00440c3c90de6daa">outgoingAssignmentQueue</a>)-&gt;empty()){</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                entry = ((std::queue&lt;NetworkTableEntry*&gt;*)<a class="code" href="class_write_manager.html#a3a3bdefd7d4c890d00440c3c90de6daa">outgoingAssignmentQueue</a>)-&gt;front();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                ((std::queue&lt;NetworkTableEntry*&gt;*)<a class="code" href="class_write_manager.html#a3a3bdefd7d4c890d00440c3c90de6daa">outgoingAssignmentQueue</a>)-&gt;pop();</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                        <a class="code" href="class_synchronized.html">Synchronized</a> sync(entryStore.<a class="code" href="class_abstract_network_table_entry_store.html#aa4e3d61c107d01499863b42e173e3d07">LOCK</a>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                        <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_write_manager.html#a225090271f48c7a153f59a9f009f4596">entryStore</a>.<a class="code" href="class_abstract_network_table_entry_store.html#aa4e3d61c107d01499863b42e173e3d07">LOCK</a>);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                        entry-&gt;<a class="code" href="class_network_table_entry.html#aad0ffd41670a077f437f117eb46e9ec5">MakeClean</a>();</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                }</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                wrote = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                receiver.<a class="code" href="class_outgoing_entry_receiver.html#a39474826d105bf2909fecbba07fb0dc7">offerOutgoingAssignment</a>(entry);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <a class="code" href="class_write_manager.html#a54e1b3bc66cd124a75bcdafb8473efc9">receiver</a>.<a class="code" href="class_outgoing_entry_receiver.html#a39474826d105bf2909fecbba07fb0dc7">offerOutgoingAssignment</a>(entry);</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">while</span>(!((std::queue&lt;NetworkTableEntry*&gt;*)outgoingUpdateQueue)-&gt;empty()){</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                entry = ((std::queue&lt;NetworkTableEntry*&gt;*)outgoingUpdateQueue)-&gt;front();</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                ((std::queue&lt;NetworkTableEntry*&gt;*)outgoingUpdateQueue)-&gt;pop();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">while</span>(!((std::queue&lt;NetworkTableEntry*&gt;*)<a class="code" href="class_write_manager.html#a679a0d186dbf1c8ade2bab4ead7b8d2d">outgoingUpdateQueue</a>)-&gt;empty()){</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                entry = ((std::queue&lt;NetworkTableEntry*&gt;*)<a class="code" href="class_write_manager.html#a679a0d186dbf1c8ade2bab4ead7b8d2d">outgoingUpdateQueue</a>)-&gt;front();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                ((std::queue&lt;NetworkTableEntry*&gt;*)<a class="code" href="class_write_manager.html#a679a0d186dbf1c8ade2bab4ead7b8d2d">outgoingUpdateQueue</a>)-&gt;pop();</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                { </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                        <a class="code" href="class_synchronized.html">Synchronized</a> sync(entryStore.<a class="code" href="class_abstract_network_table_entry_store.html#aa4e3d61c107d01499863b42e173e3d07">LOCK</a>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                        <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_write_manager.html#a225090271f48c7a153f59a9f009f4596">entryStore</a>.<a class="code" href="class_abstract_network_table_entry_store.html#aa4e3d61c107d01499863b42e173e3d07">LOCK</a>);</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                        entry-&gt;<a class="code" href="class_network_table_entry.html#aad0ffd41670a077f437f117eb46e9ec5">MakeClean</a>();</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                }</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                wrote = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                receiver.<a class="code" href="class_outgoing_entry_receiver.html#a62ddd194f9e6c7ce64278c5c4e64b6a0">offerOutgoingUpdate</a>(entry);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <a class="code" href="class_write_manager.html#a54e1b3bc66cd124a75bcdafb8473efc9">receiver</a>.<a class="code" href="class_outgoing_entry_receiver.html#a62ddd194f9e6c7ce64278c5c4e64b6a0">offerOutgoingUpdate</a>(entry);</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        }</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        </div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        </div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        </div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordflow">if</span>(wrote){</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                receiver.<a class="code" href="class_flushable_outgoing_entry_receiver.html#aa1d92adc0bd545e3ba25115ddc61822a">flush</a>();</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                lastWrite = <a class="code" href="_system_8cpp.html#abc0cbd0ff1743666d722d55b15b2ba4c">currentTimeMillis</a>();</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <a class="code" href="class_write_manager.html#a54e1b3bc66cd124a75bcdafb8473efc9">receiver</a>.<a class="code" href="class_flushable_outgoing_entry_receiver.html#aa1d92adc0bd545e3ba25115ddc61822a">flush</a>();</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                <a class="code" href="class_write_manager.html#aab60b8bf37ef49a3448be52c2637a829">lastWrite</a> = <a class="code" href="_system_8cpp.html#abc0cbd0ff1743666d722d55b15b2ba4c">currentTimeMillis</a>();</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        }</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="_system_8cpp.html#abc0cbd0ff1743666d722d55b15b2ba4c">currentTimeMillis</a>()-lastWrite&gt;keepAliveDelay)</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                receiver.<a class="code" href="class_flushable_outgoing_entry_receiver.html#a6242a2cdc0aa976bd9f45ee1f254d01f">ensureAlive</a>();</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="_system_8cpp.html#abc0cbd0ff1743666d722d55b15b2ba4c">currentTimeMillis</a>()-<a class="code" href="class_write_manager.html#aab60b8bf37ef49a3448be52c2637a829">lastWrite</a>&gt;<a class="code" href="class_write_manager.html#a21e5dd2529286ede026ce0422b166c56">keepAliveDelay</a>)</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                <a class="code" href="class_write_manager.html#a54e1b3bc66cd124a75bcdafb8473efc9">receiver</a>.<a class="code" href="class_flushable_outgoing_entry_receiver.html#a6242a2cdc0aa976bd9f45ee1f254d01f">ensureAlive</a>();</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        </div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <a class="code" href="_system_8cpp.html#af3d745e5e15817a64ff4a9ee221900dc">sleep_ms</a>(20);</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;}</div>
@@ -220,7 +220,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:10 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:43 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

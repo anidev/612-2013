@@ -15,6 +15,8 @@ var searchData=
   ['joystickbutton_2ecpp',['JoystickButton.cpp',['../_joystick_button_8cpp.html',1,'']]],
   ['joystickbutton_2eh',['JoystickButton.h',['../_joystick_button_8h.html',1,'']]],
   ['joystickhand',['JoystickHand',['../class_generic_h_i_d.html#a60a5b4cb6352d1b7dc9223084a96d850',1,'GenericHID']]],
+  ['joysticks',['joysticks',['../_joystick_8cpp.html#a4e33f8e71b4660f089a17b9384df7422',1,'Joystick.cpp']]],
+  ['joysticksinitialized',['joySticksInitialized',['../_joystick_8cpp.html#a68d88b0058f9d5a082d02e08af70c6d8',1,'Joystick.cpp']]],
   ['jpeg2000fileadvancedoptions',['JPEG2000FileAdvancedOptions',['../nivision_8h.html#a0e1d074f480597fce2b017535290f756',1,'nivision.h']]],
   ['jpeg2000fileadvancedoptions_5fstruct',['JPEG2000FileAdvancedOptions_struct',['../struct_j_p_e_g2000_file_advanced_options__struct.html',1,'']]]
 ];

@@ -138,34 +138,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_preferences.html#a20020f4fceeefb048a5eeddec6c28376">~Preferences</a>();</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        std::string Get(<span class="keyword">const</span> <span class="keywordtype">char</span> *key);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">void</span> Put(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, std::string value);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        std::string <a class="code" href="class_preferences.html#a58dafa16003015a156b832a8b86cb16e">Get</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_preferences.html#ae601c39a3e2820bd6e1d628c450bf6a0">Put</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, std::string value);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">void</span> ReadTaskRun();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordtype">void</span> WriteTaskRun();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_preferences.html#aa0b8513b1a98d0c60fce91712d16c8d7">ReadTaskRun</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_preferences.html#a676dacef1c28985ba79693bdb0a0c0af">WriteTaskRun</a>();</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">int</span> InitReadTask(<a class="code" href="class_preferences.html">Preferences</a> *obj) {obj-&gt;ReadTaskRun();<span class="keywordflow">return</span> 0;}</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">int</span> InitWriteTask(<a class="code" href="class_preferences.html">Preferences</a> *obj) {obj-&gt;WriteTaskRun();<span class="keywordflow">return</span> 0;}</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="code" href="class_preferences.html#a2454003a3d3eb083b6e81cfbaad913bd">   70</a></span>&#160;        <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_preferences.html#a2454003a3d3eb083b6e81cfbaad913bd">InitReadTask</a>(<a class="code" href="class_preferences.html">Preferences</a> *obj) {obj-&gt;<a class="code" href="class_preferences.html#aa0b8513b1a98d0c60fce91712d16c8d7">ReadTaskRun</a>();<span class="keywordflow">return</span> 0;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="code" href="class_preferences.html#ac862bc3ac2d7dbf9f39b36bdab9da54c">   71</a></span>&#160;        <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_preferences.html#ac862bc3ac2d7dbf9f39b36bdab9da54c">InitWriteTask</a>(<a class="code" href="class_preferences.html">Preferences</a> *obj) {obj-&gt;<a class="code" href="class_preferences.html#a676dacef1c28985ba79693bdb0a0c0af">WriteTaskRun</a>();<span class="keywordflow">return</span> 0;}</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keyword">static</span> <a class="code" href="class_preferences.html">Preferences</a> *_instance;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="class_preferences.html#a194dc62cc42c2fae06048ad324ccc50b">   73</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="class_preferences.html">Preferences</a> *<a class="code" href="class_preferences.html#a194dc62cc42c2fae06048ad324ccc50b">_instance</a>;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        SEM_ID m_fileLock;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        SEM_ID m_fileOpStarted;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        SEM_ID m_tableLock;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keyword">typedef</span> std::map&lt;std::string, std::string&gt; StringMap;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        StringMap m_values;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        std::vector&lt;std::string&gt; m_keys;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        StringMap m_comments;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        std::string m_endComment;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="class_task.html">Task</a> m_readTask;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="class_task.html">Task</a> m_writeTask;</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="class_preferences.html#a1a142dcfac236b5dbe64901659a5deae">   76</a></span>&#160;        SEM_ID <a class="code" href="class_preferences.html#a1a142dcfac236b5dbe64901659a5deae">m_fileLock</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="code" href="class_preferences.html#a828d8507e0c043f723237ea22c33444d">   78</a></span>&#160;        SEM_ID <a class="code" href="class_preferences.html#a828d8507e0c043f723237ea22c33444d">m_fileOpStarted</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="code" href="class_preferences.html#a93db422aeb7bbd05a9c0de6c2a647e41">   80</a></span>&#160;        SEM_ID <a class="code" href="class_preferences.html#a93db422aeb7bbd05a9c0de6c2a647e41">m_tableLock</a>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="code" href="class_preferences.html#af26a32c9f0f75cd8ad6f40b27c817720">   81</a></span>&#160;        <span class="keyword">typedef</span> std::map&lt;std::string, std::string&gt; <a class="code" href="class_preferences.html#af26a32c9f0f75cd8ad6f40b27c817720">StringMap</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="code" href="class_preferences.html#aa1242875588637407d673a5bfad716f0">   83</a></span>&#160;        <a class="code" href="class_preferences.html#af26a32c9f0f75cd8ad6f40b27c817720">StringMap</a> <a class="code" href="class_preferences.html#aa1242875588637407d673a5bfad716f0">m_values</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="code" href="class_preferences.html#ad0d0902edb63701eb9bc003135701e87">   85</a></span>&#160;        std::vector&lt;std::string&gt; <a class="code" href="class_preferences.html#ad0d0902edb63701eb9bc003135701e87">m_keys</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="code" href="class_preferences.html#ad5a4b8f805c9b58d52f82e5f062e5a09">   87</a></span>&#160;        <a class="code" href="class_preferences.html#af26a32c9f0f75cd8ad6f40b27c817720">StringMap</a> <a class="code" href="class_preferences.html#ad5a4b8f805c9b58d52f82e5f062e5a09">m_comments</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="code" href="class_preferences.html#ac6c8df267923960bc6419345fac89f2b">   89</a></span>&#160;        std::string <a class="code" href="class_preferences.html#ac6c8df267923960bc6419345fac89f2b">m_endComment</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="code" href="class_preferences.html#ac53abe1082b46294027769196ff315c5">   90</a></span>&#160;        <a class="code" href="class_task.html">Task</a> <a class="code" href="class_preferences.html#ac53abe1082b46294027769196ff315c5">m_readTask</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="code" href="class_preferences.html#a1baf3a891020c33cc357da2d048a5779">   91</a></span>&#160;        <a class="code" href="class_task.html">Task</a> <a class="code" href="class_preferences.html#a1baf3a891020c33cc357da2d048a5779">m_writeTask</a>;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;};</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:10 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:43 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

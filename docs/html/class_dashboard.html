@@ -86,7 +86,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">Dashboard Class Reference</div>  </div>
 </div><!--header-->
@@ -171,6 +174,31 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab67204acd1eb87ffe6fc45c2d22e517e inherit pub_methods_class_error_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the current error information associated with this sensor.  <a href="#ab67204acd1eb87ffe6fc45c2d22e517e"></a><br/></td></tr>
 <tr class="memitem:a05790f219c9e436a09752f73f7344024 inherit pub_methods_class_error_base"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_base.html#a05790f219c9e436a09752f73f7344024">StatusIsFatal</a> () const </td></tr>
 <tr class="memdesc:a05790f219c9e436a09752f73f7344024 inherit pub_methods_class_error_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the current error code represents a fatal error.  <a href="#a05790f219c9e436a09752f73f7344024"></a><br/></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a3abdc5b7654bff3a8fb6f3f25673f10b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dashboard.html#a3abdc5b7654bff3a8fb6f3f25673f10b">DISALLOW_COPY_AND_ASSIGN</a> (<a class="el" href="class_dashboard.html">Dashboard</a>)</td></tr>
+<tr class="memitem:af85acfd870e1599bdf27c2469de96490"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dashboard.html#af85acfd870e1599bdf27c2469de96490">ValidateAdd</a> (INT32 size)</td></tr>
+<tr class="memitem:a8e26b72cd83e9a8f5a435fcd70bb1eca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dashboard.html#a8e26b72cd83e9a8f5a435fcd70bb1eca">AddedElement</a> (<a class="el" href="class_dashboard.html#a515096dee940d0b3e21b2b228106671f">Type</a> type)</td></tr>
+<tr class="memitem:af63feb3ebf2ffeb304f946fd6b94c995"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dashboard.html#af63feb3ebf2ffeb304f946fd6b94c995">IsArrayRoot</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aa84dba63f5e4d0e18d013698f5abadc0"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dashboard.html#aa84dba63f5e4d0e18d013698f5abadc0">m_userStatusData</a></td></tr>
+<tr class="memitem:aff38bb91a43945528436db84ae1341ce"><td class="memItemLeft" align="right" valign="top">INT32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dashboard.html#aff38bb91a43945528436db84ae1341ce">m_userStatusDataSize</a></td></tr>
+<tr class="memitem:ae1f61a0012e6fa61baa3129ba6907c1c"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dashboard.html#ae1f61a0012e6fa61baa3129ba6907c1c">m_localBuffer</a></td></tr>
+<tr class="memitem:ab9bb70787def50b54639048457519c7d"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dashboard.html#ab9bb70787def50b54639048457519c7d">m_localPrintBuffer</a></td></tr>
+<tr class="memitem:a507bd63dab61cdcf8f3b753578bd00db"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dashboard.html#a507bd63dab61cdcf8f3b753578bd00db">m_packPtr</a></td></tr>
+<tr class="memitem:aa57465fb479d6d5e8ac941b5bb55bae2"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_dashboard.html#a515096dee940d0b3e21b2b228106671f">Type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dashboard.html#aa57465fb479d6d5e8ac941b5bb55bae2">m_expectedArrayElementType</a></td></tr>
+<tr class="memitem:af9af7a288394bab816ca7706768f5c00"><td class="memItemLeft" align="right" valign="top">std::vector&lt; INT32 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dashboard.html#af9af7a288394bab816ca7706768f5c00">m_arrayElementCount</a></td></tr>
+<tr class="memitem:a59d67ba05b840a78263c3a56fa5f21d1"><td class="memItemLeft" align="right" valign="top">std::vector&lt; INT32 * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dashboard.html#a59d67ba05b840a78263c3a56fa5f21d1">m_arraySizePtr</a></td></tr>
+<tr class="memitem:ae21b58e58b4583e7687b92f178c29b5a"><td class="memItemLeft" align="right" valign="top">std::stack&lt; <a class="el" href="class_dashboard.html#ad6f01995ee9054d4a500d28b87b47d5a">ComplexType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dashboard.html#ae21b58e58b4583e7687b92f178c29b5a">m_complexTypeStack</a></td></tr>
+<tr class="memitem:a66c9c97b892dae5677a4cd4bb1ea0cf5"><td class="memItemLeft" align="right" valign="top">SEM_ID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dashboard.html#a66c9c97b892dae5677a4cd4bb1ea0cf5">m_printSemaphore</a></td></tr>
+<tr class="memitem:a9ca42cbb31f85bb6256ad45560fe021a"><td class="memItemLeft" align="right" valign="top">SEM_ID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dashboard.html#a9ca42cbb31f85bb6256ad45560fe021a">m_statusDataSemaphore</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a7d26cb2b2459ca44282afada926c5b5f"><td class="memItemLeft" align="right" valign="top">static const INT32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dashboard.html#a7d26cb2b2459ca44282afada926c5b5f">kMaxDashboardDataSize</a> = <a class="el" href="_f_r_c_comm_8h.html#a9cb612db91a893f80aa5a0bbda719b5b">USER_STATUS_DATA_SIZE</a> - sizeof(UINT32) * 3 - sizeof(UINT8)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -389,6 +417,33 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 
 <p>Definition at line <a class="el" href="_dashboard_8cpp_source.html#l00143">143</a> of file <a class="el" href="_dashboard_8cpp_source.html">Dashboard.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8e26b72cd83e9a8f5a435fcd70bb1eca"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> Dashboard::AddedElement </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_dashboard.html#a515096dee940d0b3e21b2b228106671f">Type</a>&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Check for consistent types when adding elements to an array and keep track of the number of elements in the array. </p>
+
+<p>Definition at line <a class="el" href="_dashboard_8cpp_source.html#l00373">373</a> of file <a class="el" href="_dashboard_8cpp_source.html">Dashboard.cpp</a>.</p>
 
 </div>
 </div>
@@ -628,6 +683,30 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a3abdc5b7654bff3a8fb6f3f25673f10b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Dashboard::DISALLOW_COPY_AND_ASSIGN </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_dashboard.html">Dashboard</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a033de13c5a7165c3455e7ec52115167c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -752,6 +831,32 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="af63feb3ebf2ffeb304f946fd6b94c995"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Dashboard::IsArrayRoot </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>If the top of the type stack an array? </p>
+
+<p>Definition at line <a class="el" href="_dashboard_8cpp_source.html#l00395">395</a> of file <a class="el" href="_dashboard_8cpp_source.html">Dashboard.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="af6090d34e555c1fd33e8a6e0d3fec733"></a>
 <div class="memitem">
 <div class="memproto">
@@ -782,6 +887,298 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="af85acfd870e1599bdf27c2469de96490"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Dashboard::ValidateAdd </td>
+          <td>(</td>
+          <td class="paramtype">INT32&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Validate that the data being packed will fit in the buffer. </p>
+
+<p>Definition at line <a class="el" href="_dashboard_8cpp_source.html#l00354">354</a> of file <a class="el" href="_dashboard_8cpp_source.html">Dashboard.cpp</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a7d26cb2b2459ca44282afada926c5b5f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const INT32 Dashboard::kMaxDashboardDataSize = <a class="el" href="_f_r_c_comm_8h.html#a9cb612db91a893f80aa5a0bbda719b5b">USER_STATUS_DATA_SIZE</a> - sizeof(UINT32) * 3 - sizeof(UINT8)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_dashboard_8h_source.html#l00052">52</a> of file <a class="el" href="_dashboard_8h_source.html">Dashboard.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af9af7a288394bab816ca7706768f5c00"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;INT32&gt; Dashboard::m_arrayElementCount</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_dashboard_8h_source.html#l00067">67</a> of file <a class="el" href="_dashboard_8h_source.html">Dashboard.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a59d67ba05b840a78263c3a56fa5f21d1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;INT32*&gt; Dashboard::m_arraySizePtr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_dashboard_8h_source.html#l00068">68</a> of file <a class="el" href="_dashboard_8h_source.html">Dashboard.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae21b58e58b4583e7687b92f178c29b5a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::stack&lt;<a class="el" href="class_dashboard.html#ad6f01995ee9054d4a500d28b87b47d5a">ComplexType</a>&gt; Dashboard::m_complexTypeStack</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_dashboard_8h_source.html#l00069">69</a> of file <a class="el" href="_dashboard_8h_source.html">Dashboard.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa57465fb479d6d5e8ac941b5bb55bae2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="class_dashboard.html#a515096dee940d0b3e21b2b228106671f">Type</a>&gt; Dashboard::m_expectedArrayElementType</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_dashboard_8h_source.html#l00066">66</a> of file <a class="el" href="_dashboard_8h_source.html">Dashboard.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae1f61a0012e6fa61baa3129ba6907c1c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* Dashboard::m_localBuffer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_dashboard_8h_source.html#l00063">63</a> of file <a class="el" href="_dashboard_8h_source.html">Dashboard.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab9bb70787def50b54639048457519c7d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* Dashboard::m_localPrintBuffer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_dashboard_8h_source.html#l00064">64</a> of file <a class="el" href="_dashboard_8h_source.html">Dashboard.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a507bd63dab61cdcf8f3b753578bd00db"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* Dashboard::m_packPtr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_dashboard_8h_source.html#l00065">65</a> of file <a class="el" href="_dashboard_8h_source.html">Dashboard.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a66c9c97b892dae5677a4cd4bb1ea0cf5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SEM_ID Dashboard::m_printSemaphore</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_dashboard_8h_source.html#l00070">70</a> of file <a class="el" href="_dashboard_8h_source.html">Dashboard.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9ca42cbb31f85bb6256ad45560fe021a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SEM_ID Dashboard::m_statusDataSemaphore</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_dashboard_8h_source.html#l00071">71</a> of file <a class="el" href="_dashboard_8h_source.html">Dashboard.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa84dba63f5e4d0e18d013698f5abadc0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* Dashboard::m_userStatusData</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_dashboard_8h_source.html#l00061">61</a> of file <a class="el" href="_dashboard_8h_source.html">Dashboard.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aff38bb91a43945528436db84ae1341ce"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">INT32 Dashboard::m_userStatusDataSize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_dashboard_8h_source.html#l00062">62</a> of file <a class="el" href="_dashboard_8h_source.html">Dashboard.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>WPILib/<a class="el" href="_dashboard_8h_source.html">Dashboard.h</a></li>
 <li>WPILib/<a class="el" href="_dashboard_8cpp_source.html">Dashboard.cpp</a></li>
@@ -789,7 +1186,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:14 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:46 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

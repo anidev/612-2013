@@ -101,25 +101,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_usage_reporting_8h.html">NetworkCommunication/UsageReporting.h</a>&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_w_p_i_errors_8h.html">WPIErrors.h</a>&quot;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">void</span> Accelerometer::InitAccelerometer()</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="class_accelerometer.html#aaa51a31a0c7a3f0202b7f04fe74629ed">   15</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_accelerometer.html#aaa51a31a0c7a3f0202b7f04fe74629ed">Accelerometer::InitAccelerometer</a>()</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        m_voltsPerG = 1.0;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        m_zeroGVoltage = 2.5;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="namespacen_usage_reporting.html#a99be0607a35214dd8b718c6645ae53b3">nUsageReporting::report</a>(<a class="code" href="namespacen_usage_reporting.html#ac80f9386b7fe4c6222088527f119c0c2aa21a27fe4424d0df4c0482225bf78d78">nUsageReporting::kResourceType_Accelerometer</a>, m_analogChannel-&gt;<a class="code" href="class_analog_channel.html#a5d191a8fb04536a9c20355e6e5b97262">GetChannel</a>(), m_analogChannel-&gt;<a class="code" href="class_analog_channel.html#a5731d3c308e74c9011b81238aedcbd0e">GetModuleNumber</a>() - 1);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="class_accelerometer.html#a5845541beeca256512c0477fca577674">m_voltsPerG</a> = 1.0;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="class_accelerometer.html#a11ee6dd11e539fe871849ec4fda59d03">m_zeroGVoltage</a> = 2.5;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="namespacen_usage_reporting.html#a99be0607a35214dd8b718c6645ae53b3">nUsageReporting::report</a>(<a class="code" href="namespacen_usage_reporting.html#ac80f9386b7fe4c6222088527f119c0c2aa21a27fe4424d0df4c0482225bf78d78">nUsageReporting::kResourceType_Accelerometer</a>, <a class="code" href="class_accelerometer.html#a95ff1107b5229fe4c923aff707f9b5f8">m_analogChannel</a>-&gt;<a class="code" href="class_analog_channel.html#a5d191a8fb04536a9c20355e6e5b97262">GetChannel</a>(), <a class="code" href="class_accelerometer.html#a95ff1107b5229fe4c923aff707f9b5f8">m_analogChannel</a>-&gt;<a class="code" href="class_analog_channel.html#a5731d3c308e74c9011b81238aedcbd0e">GetModuleNumber</a>() - 1);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="class_accelerometer.html#a39b9a1d97af754f9e65d38e20fc7d4c6">   28</a></span>&#160;<a class="code" href="class_accelerometer.html#a39b9a1d97af754f9e65d38e20fc7d4c6">Accelerometer::Accelerometer</a>(UINT32 channel)</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        m_analogChannel = <span class="keyword">new</span> <a class="code" href="class_analog_channel.html">AnalogChannel</a>(channel);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        m_allocatedChannel = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        InitAccelerometer();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="class_accelerometer.html#a95ff1107b5229fe4c923aff707f9b5f8">m_analogChannel</a> = <span class="keyword">new</span> <a class="code" href="class_analog_channel.html">AnalogChannel</a>(channel);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="class_accelerometer.html#aa2a72f498834c1caef28a10920d16ad9">m_allocatedChannel</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="class_accelerometer.html#aaa51a31a0c7a3f0202b7f04fe74629ed">InitAccelerometer</a>();</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
 <div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="class_accelerometer.html#a4a7005c25c8b1b20ae725b5808ab9bff">   44</a></span>&#160;<a class="code" href="class_accelerometer.html#a39b9a1d97af754f9e65d38e20fc7d4c6">Accelerometer::Accelerometer</a>(UINT8 moduleNumber, UINT32 channel)</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        m_analogChannel = <span class="keyword">new</span> <a class="code" href="class_analog_channel.html">AnalogChannel</a>(moduleNumber, channel);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        m_allocatedChannel = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        InitAccelerometer();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="class_accelerometer.html#a95ff1107b5229fe4c923aff707f9b5f8">m_analogChannel</a> = <span class="keyword">new</span> <a class="code" href="class_analog_channel.html">AnalogChannel</a>(moduleNumber, channel);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="class_accelerometer.html#aa2a72f498834c1caef28a10920d16ad9">m_allocatedChannel</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="class_accelerometer.html#aaa51a31a0c7a3f0202b7f04fe74629ed">InitAccelerometer</a>();</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
 <div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="class_accelerometer.html#a69cce3af6adfffca56d41dd4ff6c3a3a">   57</a></span>&#160;<a class="code" href="class_accelerometer.html#a39b9a1d97af754f9e65d38e20fc7d4c6">Accelerometer::Accelerometer</a>(<a class="code" href="class_analog_channel.html">AnalogChannel</a> *channel)</div>
@@ -130,33 +130,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                m_analogChannel = channel;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                InitAccelerometer();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <a class="code" href="class_accelerometer.html#a95ff1107b5229fe4c923aff707f9b5f8">m_analogChannel</a> = channel;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <a class="code" href="class_accelerometer.html#aaa51a31a0c7a3f0202b7f04fe74629ed">InitAccelerometer</a>();</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        m_allocatedChannel = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="class_accelerometer.html#aa2a72f498834c1caef28a10920d16ad9">m_allocatedChannel</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        </div>
 <div class="line"><a name="l00074"></a><span class="lineno"><a class="code" href="class_accelerometer.html#acb6a7d9c61f2084ec4aec4a8ff35d622">   74</a></span>&#160;<a class="code" href="class_accelerometer.html#acb6a7d9c61f2084ec4aec4a8ff35d622">Accelerometer::~Accelerometer</a>()</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">if</span> (m_allocatedChannel)</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_accelerometer.html#aa2a72f498834c1caef28a10920d16ad9">m_allocatedChannel</a>)</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keyword">delete</span> m_analogChannel;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keyword">delete</span> <a class="code" href="class_accelerometer.html#a95ff1107b5229fe4c923aff707f9b5f8">m_analogChannel</a>;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
 <div class="line"><a name="l00089"></a><span class="lineno"><a class="code" href="class_accelerometer.html#a9a898749542f5338504895fc4debbf95">   89</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="class_accelerometer.html#a9a898749542f5338504895fc4debbf95">Accelerometer::GetAcceleration</a>()</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">return</span> (m_analogChannel-&gt;<a class="code" href="class_analog_channel.html#aba0ed352ce011170556c039c939f8731">GetAverageVoltage</a>() - m_zeroGVoltage) / m_voltsPerG;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="class_accelerometer.html#a95ff1107b5229fe4c923aff707f9b5f8">m_analogChannel</a>-&gt;<a class="code" href="class_analog_channel.html#aba0ed352ce011170556c039c939f8731">GetAverageVoltage</a>() - <a class="code" href="class_accelerometer.html#a11ee6dd11e539fe871849ec4fda59d03">m_zeroGVoltage</a>) / <a class="code" href="class_accelerometer.html#a5845541beeca256512c0477fca577674">m_voltsPerG</a>;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
 <div class="line"><a name="l00102"></a><span class="lineno"><a class="code" href="class_accelerometer.html#ad34599b5f2dbd1cd62de2c05b4d8e430">  102</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_accelerometer.html#ad34599b5f2dbd1cd62de2c05b4d8e430">Accelerometer::SetSensitivity</a>(<span class="keywordtype">float</span> sensitivity)</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;{</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        m_voltsPerG = sensitivity;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="class_accelerometer.html#a5845541beeca256512c0477fca577674">m_voltsPerG</a> = sensitivity;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
 <div class="line"><a name="l00114"></a><span class="lineno"><a class="code" href="class_accelerometer.html#aa769546f0fd9e93a25e8f696102ff8dd">  114</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_accelerometer.html#aa769546f0fd9e93a25e8f696102ff8dd">Accelerometer::SetZero</a>(<span class="keywordtype">float</span> zero)</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;{</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        m_zeroGVoltage = zero;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <a class="code" href="class_accelerometer.html#a11ee6dd11e539fe871849ec4fda59d03">m_zeroGVoltage</a> = zero;</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
 <div class="line"><a name="l00124"></a><span class="lineno"><a class="code" href="class_accelerometer.html#a4842f8338d2bb3922d8d8d793584d626">  124</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_accelerometer.html#a4842f8338d2bb3922d8d8d793584d626">Accelerometer::PIDGet</a>()</div>
@@ -165,8 +165,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
 <div class="line"><a name="l00129"></a><span class="lineno"><a class="code" href="class_accelerometer.html#a98738a80562729219ee765d94af16f6b">  129</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_accelerometer.html#a98738a80562729219ee765d94af16f6b">Accelerometer::UpdateTable</a>() {</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">if</span> (m_table != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                m_table-&gt;<a class="code" href="class_i_table.html#a6dc108b7478fbeaed97457dbc52e2811">PutNumber</a>(<span class="stringliteral">&quot;Value&quot;</span>, <a class="code" href="class_accelerometer.html#a9a898749542f5338504895fc4debbf95">GetAcceleration</a>());</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_accelerometer.html#a9d6b5a5eeaf120925359bcf6b6cb45f8">m_table</a> != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                <a class="code" href="class_accelerometer.html#a9d6b5a5eeaf120925359bcf6b6cb45f8">m_table</a>-&gt;<a class="code" href="class_i_table.html#a6dc108b7478fbeaed97457dbc52e2811">PutNumber</a>(<span class="stringliteral">&quot;Value&quot;</span>, <a class="code" href="class_accelerometer.html#a9a898749542f5338504895fc4debbf95">GetAcceleration</a>());</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        }</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
@@ -181,18 +181,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;}</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
 <div class="line"><a name="l00145"></a><span class="lineno"><a class="code" href="class_accelerometer.html#a604b2ba2df58cf9708d62d6e336a9428">  145</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_accelerometer.html#a604b2ba2df58cf9708d62d6e336a9428">Accelerometer::InitTable</a>(<a class="code" href="class_i_table.html">ITable</a> *subTable) {</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        m_table = subTable;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <a class="code" href="class_accelerometer.html#a9d6b5a5eeaf120925359bcf6b6cb45f8">m_table</a> = subTable;</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <a class="code" href="class_accelerometer.html#a98738a80562729219ee765d94af16f6b">UpdateTable</a>();</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;}</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
 <div class="line"><a name="l00150"></a><span class="lineno"><a class="code" href="class_accelerometer.html#a07dab7b9e135f50d31e7ffaffed9b616">  150</a></span>&#160;<a class="code" href="class_i_table.html">ITable</a> * <a class="code" href="class_accelerometer.html#a07dab7b9e135f50d31e7ffaffed9b616">Accelerometer::GetTable</a>() {</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keywordflow">return</span> m_table;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_accelerometer.html#a9d6b5a5eeaf120925359bcf6b6cb45f8">m_table</a>;</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;}</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:08 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:42 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

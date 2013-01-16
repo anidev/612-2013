@@ -1,6 +1,20 @@
 var searchData=
 [
+  ['_5fbitfile',['_Bitfile',['../classn_f_p_g_a_1_1t_system.html#a735bc4245cadfc10768fb9c57abddcf8',1,'nFPGA::tSystem']]],
   ['_5fdevicehandle',['_DeviceHandle',['../classn_f_p_g_a_1_1t_system.html#afb41b1612083b63400ecfae9cffd281f',1,'nFPGA::tSystem']]],
+  ['_5fenabled',['_enabled',['../classn_f_p_g_a_1_1t_interrupt_manager.html#af3ca5d30aba3030f88db1e27938bc472',1,'nFPGA::tInterruptManager']]],
+  ['_5ffilename',['_FileName',['../classn_f_p_g_a_1_1t_system.html#a3d899b5926d4cde48be7172261365316',1,'nFPGA::tSystem']]],
   ['_5fglobalerror',['_globalError',['../class_error_base.html#a5e60c928a7eb8e94b243aa6a729bf6f6',1,'ErrorBase']]],
-  ['_5fglobalerrormutex',['_globalErrorMutex',['../class_error_base.html#ae473c401d7462d6a353ab3c904d570b8',1,'ErrorBase']]]
+  ['_5fglobalerrormutex',['_globalErrorMutex',['../class_error_base.html#ae473c401d7462d6a353ab3c904d570b8',1,'ErrorBase']]],
+  ['_5fglobalinterruptmask',['_globalInterruptMask',['../classn_f_p_g_a_1_1t_interrupt_manager.html#afb336baf77d43c52a1db1a34a5c47d07',1,'nFPGA::tInterruptManager']]],
+  ['_5fglobalinterruptmasksemaphore',['_globalInterruptMaskSemaphore',['../classn_f_p_g_a_1_1t_interrupt_manager.html#a37a5f5aca58466ef11bdc118890bfa0a',1,'nFPGA::tInterruptManager']]],
+  ['_5fhandler',['_handler',['../classn_f_p_g_a_1_1t_interrupt_manager.html#a0aef6835eb8d484c23832231668a4fcc',1,'nFPGA::tInterruptManager']]],
+  ['_5finstance',['_instance',['../class_scheduler.html#a2ad71916d33881473eed3f1103c96737',1,'Scheduler::_instance()'],['../class_kinect.html#a3f93872ff94b9d9e169f3eb76c2c24ed',1,'Kinect::_instance()'],['../class_preferences.html#a194dc62cc42c2fae06048ad324ccc50b',1,'Preferences::_instance()'],['../class_axis_camera.html#ada8e6c776b78608c5464d097462cc039',1,'AxisCamera::_instance()']]],
+  ['_5finterruptmask',['_interruptMask',['../classn_f_p_g_a_1_1t_interrupt_manager.html#a5d0813051d1e4dd764e0e203394b4938',1,'nFPGA::tInterruptManager']]],
+  ['_5frecentpacketnumber',['_recentPacketNumber',['../class_kinect_stick.html#a59c83c42dfb84f3dda69300cdb969971',1,'KinectStick']]],
+  ['_5friocontext',['_rioContext',['../classn_f_p_g_a_1_1t_interrupt_manager.html#af04a8f48160358c23ca53af446c1a0f3',1,'nFPGA::tInterruptManager']]],
+  ['_5fsticks',['_sticks',['../class_kinect_stick.html#aebed7eff1e44f9a0ee6514b63e3c469e',1,'KinectStick']]],
+  ['_5ftaskid',['_taskId',['../classn_f_p_g_a_1_1t_interrupt_manager.html#a17be9c778d515974f9b2f75abd479d51',1,'nFPGA::tInterruptManager']]],
+  ['_5fuserparam',['_userParam',['../classn_f_p_g_a_1_1t_interrupt_manager.html#a8feed4dc9aadbde891db3d566b10857f',1,'nFPGA::tInterruptManager']]],
+  ['_5fwatcher',['_watcher',['../classn_f_p_g_a_1_1t_interrupt_manager.html#ad7375a101489356e61e11bae127eda8d',1,'nFPGA::tInterruptManager']]]
 ];

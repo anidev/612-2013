@@ -88,7 +88,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">Utility.cpp File Reference</div>  </div>
 </div><!--header-->
@@ -112,10 +113,13 @@ Macros</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:ab4b7220ac0050e8733e86d011ff25a98"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utility_8cpp.html#ab4b7220ac0050e8733e86d011ff25a98">cplusDemangle</a> (char *source, char *dest, INT32 n)</td></tr>
 <tr class="memitem:ad0467ac8694231c6d4face2e05805e86"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utility_8cpp.html#ad0467ac8694231c6d4face2e05805e86">wpi_getLabel</a> (UINT addr, INT32 *found)</td></tr>
+<tr class="memitem:a95f443d4957068c621d4de26c670647a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utility_8cpp.html#a95f443d4957068c621d4de26c670647a">wpiCleanTracePrint</a> (INSTR *caller, INT32 func, INT32 nargs, INT32 *args, INT32 taskId, BOOL isKernelAdrs)</td></tr>
 <tr class="memitem:ac4be901b80aa84b89ef50f4454e563f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utility_8cpp.html#ac4be901b80aa84b89ef50f4454e563f6">trcStack</a> (REG_SET *pRegs, FUNCPTR printRtn, INT32 tid)</td></tr>
+<tr class="memitem:a801a5ec6fa0904157fcae2b6495a935c"><td class="memItemLeft" align="right" valign="top">static INT32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utility_8cpp.html#a801a5ec6fa0904157fcae2b6495a935c">wpiStackTask</a> (INT32 taskId)</td></tr>
 <tr class="memitem:ae2eaf14469e7e787e1258e8697d001f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utility_8cpp.html#ae2eaf14469e7e787e1258e8697d001f5">wpi_selfTrace</a> ()</td></tr>
 <tr class="memitem:a93d92bb37097bea573fb4e8936ee343a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utility_8cpp.html#a93d92bb37097bea573fb4e8936ee343a">wpi_stackTraceOnAssertEnable</a> (bool enabled)</td></tr>
 <tr class="memitem:ad7653b809dbdc53929cbd3f388f1dd5a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utility_8cpp.html#ad7653b809dbdc53929cbd3f388f1dd5a">wpi_suspendOnAssertEnabled</a> (bool enabled)</td></tr>
+<tr class="memitem:a7dfb344c9c8003bcf2335b8563114dd8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utility_8cpp.html#a7dfb344c9c8003bcf2335b8563114dd8">wpi_handleTracing</a> ()</td></tr>
 <tr class="memitem:a25234ae53c6f3354ad0f8ee9434aa11e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utility_8cpp.html#a25234ae53c6f3354ad0f8ee9434aa11e">wpi_assert_impl</a> (bool conditionValue, const char *conditionText, const char *message, const char *fileName, UINT32 lineNumber, const char *funcName)</td></tr>
 <tr class="memitem:a31f2564ce0c4398fe026e364057ebe42"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utility_8cpp.html#a31f2564ce0c4398fe026e364057ebe42">wpi_assertEqual_common_impl</a> (<a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> valueA, <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> valueB, const char *equalityType, const char *message, const char *fileName, UINT32 lineNumber, const char *funcName)</td></tr>
 <tr class="memitem:ac8b23e1eee8b1275b5b811abe08a9a2a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utility_8cpp.html#ac8b23e1eee8b1275b5b811abe08a9a2a">wpi_assertEqual_impl</a> (<a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> valueA, <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> valueB, const char *message, const char *fileName, UINT32 lineNumber, const char *funcName)</td></tr>
@@ -133,6 +137,11 @@ Functions</h2></td></tr>
 <tr class="memitem:ae8ebe419e59d55ddd87e0ac8b0eb6130"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utility_8cpp.html#ae8ebe419e59d55ddd87e0ac8b0eb6130">SetRIO_FPGA_LED</a> (UINT32 state)</td></tr>
 <tr class="memitem:ac36c810f3ea3af6bb294b7be6ff192a5"><td class="memItemLeft" align="right" valign="top">INT32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utility_8cpp.html#ac36c810f3ea3af6bb294b7be6ff192a5">GetRIO_FPGA_LED</a> ()</td></tr>
 <tr class="memitem:a8fb6f311480ab6fd0f902bc76776cadc"><td class="memItemLeft" align="right" valign="top">INT32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utility_8cpp.html#a8fb6f311480ab6fd0f902bc76776cadc">ToggleRIO_FPGA_LED</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a2c8025156adf8b93ad35028c3c9a7ccd"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utility_8cpp.html#a2c8025156adf8b93ad35028c3c9a7ccd">stackTraceEnabled</a> = false</td></tr>
+<tr class="memitem:a3d937d2305d84c9a3ff9bbb632332ae0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utility_8cpp.html#a3d937d2305d84c9a3ff9bbb632332ae0">suspendOnAssertEnabled</a> = false</td></tr>
 </table>
 <hr/><h2>Macro Definition Documentation</h2>
 <a class="anchor" id="a39198bd7ee804898f1a7282de4f4fc15"></a>
@@ -707,6 +716,31 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a7dfb344c9c8003bcf2335b8563114dd8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> wpi_handleTracing </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_utility_8cpp_source.html#l00185">185</a> of file <a class="el" href="_utility_8cpp_source.html">Utility.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ae2eaf14469e7e787e1258e8697d001f5"></a>
 <div class="memitem">
 <div class="memproto">
@@ -762,10 +796,141 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a95f443d4957068c621d4de26c670647a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> wpiCleanTracePrint </td>
+          <td>(</td>
+          <td class="paramtype">INSTR *&#160;</td>
+          <td class="paramname"><em>caller</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">INT32&#160;</td>
+          <td class="paramname"><em>func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">INT32&#160;</td>
+          <td class="paramname"><em>nargs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">INT32 *&#160;</td>
+          <td class="paramname"><em>args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">INT32&#160;</td>
+          <td class="paramname"><em>taskId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BOOL&#160;</td>
+          <td class="paramname"><em>isKernelAdrs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_utility_8cpp_source.html#l00072">72</a> of file <a class="el" href="_utility_8cpp_source.html">Utility.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a801a5ec6fa0904157fcae2b6495a935c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static INT32 wpiStackTask </td>
+          <td>(</td>
+          <td class="paramtype">INT32&#160;</td>
+          <td class="paramname"><em>taskId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_utility_8cpp_source.html#l00136">136</a> of file <a class="el" href="_utility_8cpp_source.html">Utility.cpp</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Variable Documentation</h2>
+<a class="anchor" id="a2c8025156adf8b93ad35028c3c9a7ccd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool stackTraceEnabled = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_utility_8cpp_source.html#l00163">163</a> of file <a class="el" href="_utility_8cpp_source.html">Utility.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3d937d2305d84c9a3ff9bbb632332ae0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool suspendOnAssertEnabled = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_utility_8cpp_source.html#l00164">164</a> of file <a class="el" href="_utility_8cpp_source.html">Utility.cpp</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:12 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:45 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

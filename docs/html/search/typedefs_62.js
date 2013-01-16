@@ -18,5 +18,6 @@ var searchData=
   ['browserframestyle',['BrowserFrameStyle',['../nivision_8h.html#a6f233f3d68d2fd8c74ecaa3082e5920c',1,'nivision.h']]],
   ['browserlocation',['BrowserLocation',['../nivision_8h.html#a2b6102a45efe5c3a2a32cdae7bb1b6c4',1,'nivision.h']]],
   ['browseroptions',['BrowserOptions',['../nivision_8h.html#aa0280530975d4080d144546c37bc35d7',1,'nivision.h']]],
-  ['buttonlabel',['ButtonLabel',['../nivision_8h.html#a4ae7004055b4da78b7b6e33445ccd904',1,'nivision.h']]]
+  ['buttonlabel',['ButtonLabel',['../nivision_8h.html#a4ae7004055b4da78b7b6e33445ccd904',1,'nivision.h']]],
+  ['buttonvector',['ButtonVector',['../class_scheduler.html#a644bf4c099c317d36eb45e2f0f889c29',1,'Scheduler']]]
 ];

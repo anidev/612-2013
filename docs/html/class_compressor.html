@@ -85,7 +85,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">Compressor Class Reference</div>  </div>
 </div><!--header-->
@@ -144,6 +146,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab67204acd1eb87ffe6fc45c2d22e517e inherit pub_methods_class_error_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the current error information associated with this sensor.  <a href="#ab67204acd1eb87ffe6fc45c2d22e517e"></a><br/></td></tr>
 <tr class="memitem:a05790f219c9e436a09752f73f7344024 inherit pub_methods_class_error_base"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_base.html#a05790f219c9e436a09752f73f7344024">StatusIsFatal</a> () const </td></tr>
 <tr class="memdesc:a05790f219c9e436a09752f73f7344024 inherit pub_methods_class_error_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the current error code represents a fatal error.  <a href="#a05790f219c9e436a09752f73f7344024"></a><br/></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a089da4baf72bb0a34f112b90a681f45c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_compressor.html#a089da4baf72bb0a34f112b90a681f45c">InitCompressor</a> (UINT8 pressureSwitchModuleNumber, UINT32 pressureSwitchChannel, UINT8 compresssorRelayModuleNumber, UINT32 compressorRelayChannel)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a5cde98eb04912da41732bf5c89180456"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_digital_input.html">DigitalInput</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_compressor.html#a5cde98eb04912da41732bf5c89180456">m_pressureSwitch</a></td></tr>
+<tr class="memitem:ad993319c598786e76fa0dc18e5f3ad51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_relay.html">Relay</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_compressor.html#ad993319c598786e76fa0dc18e5f3ad51">m_relay</a></td></tr>
+<tr class="memitem:a31f9d7071e64a5b143d484bb7cf77464"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_compressor.html#a31f9d7071e64a5b143d484bb7cf77464">m_enabled</a></td></tr>
+<tr class="memitem:a8f5382ee2e3cd8fb8fedaa6b347b6fec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_task.html">Task</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_compressor.html#a8f5382ee2e3cd8fb8fedaa6b347b6fec">m_task</a></td></tr>
+<tr class="memitem:a70570738a2fc833234789196730154ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_table.html">ITable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_compressor.html#a70570738a2fc833234789196730154ea">m_table</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -389,6 +403,56 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a089da4baf72bb0a34f112b90a681f45c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> Compressor::InitCompressor </td>
+          <td>(</td>
+          <td class="paramtype">UINT8&#160;</td>
+          <td class="paramname"><em>pressureSwitchModuleNumber</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UINT32&#160;</td>
+          <td class="paramname"><em>pressureSwitchChannel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UINT8&#160;</td>
+          <td class="paramname"><em>compresssorRelayModuleNumber</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UINT32&#160;</td>
+          <td class="paramname"><em>compressorRelayChannel</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Initialize the <a class="el" href="class_compressor.html">Compressor</a> object. This method is the common initialization code for all the constructors for the <a class="el" href="class_compressor.html">Compressor</a> object. It takes the relay channel and pressure switch channel and spawns a task that polls the compressor and sensor.</p>
+<p>You MUST start the compressor by calling the <a class="el" href="class_compressor.html#a710bb74699442b508062a109ed24e6a0">Start()</a> method. </p>
+
+<p>Definition at line <a class="el" href="_compressor_8cpp_source.html#l00045">45</a> of file <a class="el" href="_compressor_8cpp_source.html">Compressor.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a3451f6fd6d08e77febe909ba1a3f8ee1"></a>
 <div class="memitem">
 <div class="memproto">
@@ -563,6 +627,117 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a31f9d7071e64a5b143d484bb7cf77464"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Compressor::m_enabled</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_compressor_8h_source.html#l00053">53</a> of file <a class="el" href="_compressor_8h_source.html">Compressor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5cde98eb04912da41732bf5c89180456"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_digital_input.html">DigitalInput</a>* Compressor::m_pressureSwitch</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_compressor_8h_source.html#l00051">51</a> of file <a class="el" href="_compressor_8h_source.html">Compressor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad993319c598786e76fa0dc18e5f3ad51"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_relay.html">Relay</a>* Compressor::m_relay</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_compressor_8h_source.html#l00052">52</a> of file <a class="el" href="_compressor_8h_source.html">Compressor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a70570738a2fc833234789196730154ea"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i_table.html">ITable</a>* Compressor::m_table</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_compressor_8h_source.html#l00056">56</a> of file <a class="el" href="_compressor_8h_source.html">Compressor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8f5382ee2e3cd8fb8fedaa6b347b6fec"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_task.html">Task</a> Compressor::m_task</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_compressor_8h_source.html#l00054">54</a> of file <a class="el" href="_compressor_8h_source.html">Compressor.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>WPILib/<a class="el" href="_compressor_8h_source.html">Compressor.h</a></li>
 <li>WPILib/<a class="el" href="_compressor_8cpp_source.html">Compressor.cpp</a></li>
@@ -570,7 +745,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:13 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:46 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

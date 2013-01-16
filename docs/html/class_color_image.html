@@ -85,7 +85,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ColorImage Class Reference</div>  </div>
 </div><!--header-->
@@ -171,6 +172,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a05790f219c9e436a09752f73f7344024 inherit pub_methods_class_error_base"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_base.html#a05790f219c9e436a09752f73f7344024">StatusIsFatal</a> () const </td></tr>
 <tr class="memdesc:a05790f219c9e436a09752f73f7344024 inherit pub_methods_class_error_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the current error code represents a fatal error.  <a href="#a05790f219c9e436a09752f73f7344024"></a><br/></td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a45cb456f40d3a63e9890bc9fea25cc58"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_binary_image.html">BinaryImage</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_image.html#a45cb456f40d3a63e9890bc9fea25cc58">ComputeThreshold</a> (<a class="el" href="nivision_8h.html#a281fb2cd945305d1abf7fec808639e86">ColorMode</a> colorMode, <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> low1, <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> high1, <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> low2, <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> high2, <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> low3, <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> high3)</td></tr>
+<tr class="memitem:ac50004d33367b86a3f3f0a21746d4af6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_image.html#ac50004d33367b86a3f3f0a21746d4af6">Equalize</a> (bool allPlanes)</td></tr>
+<tr class="memitem:a57bd13dc791080382ec0e8b7e521fbe5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_mono_image.html">MonoImage</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_image.html#a57bd13dc791080382ec0e8b7e521fbe5">ExtractColorPlane</a> (<a class="el" href="nivision_8h.html#a281fb2cd945305d1abf7fec808639e86">ColorMode</a> mode, <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> planeNumber)</td></tr>
+<tr class="memitem:ad276397a6cd175acd8eda546b239ff73"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_mono_image.html">MonoImage</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_image.html#ad276397a6cd175acd8eda546b239ff73">ExtractFirstColorPlane</a> (<a class="el" href="nivision_8h.html#a281fb2cd945305d1abf7fec808639e86">ColorMode</a> mode)</td></tr>
+<tr class="memitem:ae9fb027a0370f36e38ef765786be5c28"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_mono_image.html">MonoImage</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_image.html#ae9fb027a0370f36e38ef765786be5c28">ExtractSecondColorPlane</a> (<a class="el" href="nivision_8h.html#a281fb2cd945305d1abf7fec808639e86">ColorMode</a> mode)</td></tr>
+<tr class="memitem:ab5df486338c2d40d67257d7f03837bbb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_mono_image.html">MonoImage</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_image.html#ab5df486338c2d40d67257d7f03837bbb">ExtractThirdColorPlane</a> (<a class="el" href="nivision_8h.html#a281fb2cd945305d1abf7fec808639e86">ColorMode</a> mode)</td></tr>
+<tr class="memitem:a071cf7dea3b5833a6752aaa491d42881"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_image.html#a071cf7dea3b5833a6752aaa491d42881">ReplacePlane</a> (<a class="el" href="nivision_8h.html#a281fb2cd945305d1abf7fec808639e86">ColorMode</a> mode, <a class="el" href="class_mono_image.html">MonoImage</a> *plane, <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> planeNumber)</td></tr>
+<tr class="memitem:a3e02d0a237e29cc1849d6a0c47cd4b6a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_image.html#a3e02d0a237e29cc1849d6a0c47cd4b6a">ReplaceFirstColorPlane</a> (<a class="el" href="nivision_8h.html#a281fb2cd945305d1abf7fec808639e86">ColorMode</a> mode, <a class="el" href="class_mono_image.html">MonoImage</a> *plane)</td></tr>
+<tr class="memitem:adc0d51484c40353a510e817185d9419a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_image.html#adc0d51484c40353a510e817185d9419a">ReplaceSecondColorPlane</a> (<a class="el" href="nivision_8h.html#a281fb2cd945305d1abf7fec808639e86">ColorMode</a> mode, <a class="el" href="class_mono_image.html">MonoImage</a> *plane)</td></tr>
+<tr class="memitem:a811cff94311badabadbca2d3b2f1c27b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_image.html#a811cff94311badabadbca2d3b2f1c27b">ReplaceThirdColorPlane</a> (<a class="el" href="nivision_8h.html#a281fb2cd945305d1abf7fec808639e86">ColorMode</a> mode, <a class="el" href="class_mono_image.html">MonoImage</a> *plane)</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_class_image_base"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_image_base')"><img src="closed.png" alt="-"/>&nbsp;Protected Attributes inherited from <a class="el" href="class_image_base.html">ImageBase</a></td></tr>
@@ -240,6 +254,229 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="_color_image_8cpp_source.html#l00457">457</a> of file <a class="el" href="_color_image_8cpp_source.html">ColorImage.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a45cb456f40d3a63e9890bc9fea25cc58"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_binary_image.html">BinaryImage</a> * ColorImage::ComputeThreshold </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="nivision_8h.html#a281fb2cd945305d1abf7fec808639e86">ColorMode</a>&#160;</td>
+          <td class="paramname"><em>colorMode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td>
+          <td class="paramname"><em>low1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td>
+          <td class="paramname"><em>high1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td>
+          <td class="paramname"><em>low2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td>
+          <td class="paramname"><em>high2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td>
+          <td class="paramname"><em>low3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td>
+          <td class="paramname"><em>high3</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Perform a threshold operation on a <a class="el" href="class_color_image.html">ColorImage</a>. Perform a threshold operation on a <a class="el" href="class_color_image.html">ColorImage</a> using the ColorMode supplied as a parameter. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">colorMode</td><td>The type of colorspace this operation should be performed in </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns:</dt><dd>a pointer to a binary image </dd></dl>
+
+<p>Definition at line <a class="el" href="_color_image_8cpp_source.html#l00026">26</a> of file <a class="el" href="_color_image_8cpp_source.html">ColorImage.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac50004d33367b86a3f3f0a21746d4af6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> ColorImage::Equalize </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>allPlanes</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_color_image_8cpp_source.html#l00450">450</a> of file <a class="el" href="_color_image_8cpp_source.html">ColorImage.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a57bd13dc791080382ec0e8b7e521fbe5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_mono_image.html">MonoImage</a> * ColorImage::ExtractColorPlane </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="nivision_8h.html#a281fb2cd945305d1abf7fec808639e86">ColorMode</a>&#160;</td>
+          <td class="paramname"><em>mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td>
+          <td class="paramname"><em>planeNumber</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Extract a color plane from the image </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>The ColorMode to use for the plane extraction </td></tr>
+    <tr><td class="paramname">planeNumber</td><td>Which plane is to be extracted </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns:</dt><dd>A pointer to a <a class="el" href="class_mono_image.html">MonoImage</a> that represents the extracted plane. </dd></dl>
+
+<p>Definition at line <a class="el" href="_color_image_8cpp_source.html#l00155">155</a> of file <a class="el" href="_color_image_8cpp_source.html">ColorImage.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad276397a6cd175acd8eda546b239ff73"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_mono_image.html">MonoImage</a> * ColorImage::ExtractFirstColorPlane </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="nivision_8h.html#a281fb2cd945305d1abf7fec808639e86">ColorMode</a>&#160;</td>
+          <td class="paramname"><em>mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_color_image_8cpp_source.html#l00174">174</a> of file <a class="el" href="_color_image_8cpp_source.html">ColorImage.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae9fb027a0370f36e38ef765786be5c28"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_mono_image.html">MonoImage</a> * ColorImage::ExtractSecondColorPlane </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="nivision_8h.html#a281fb2cd945305d1abf7fec808639e86">ColorMode</a>&#160;</td>
+          <td class="paramname"><em>mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_color_image_8cpp_source.html#l00184">184</a> of file <a class="el" href="_color_image_8cpp_source.html">ColorImage.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab5df486338c2d40d67257d7f03837bbb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_mono_image.html">MonoImage</a> * ColorImage::ExtractThirdColorPlane </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="nivision_8h.html#a281fb2cd945305d1abf7fec808639e86">ColorMode</a>&#160;</td>
+          <td class="paramname"><em>mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_color_image_8cpp_source.html#l00194">194</a> of file <a class="el" href="_color_image_8cpp_source.html">ColorImage.cpp</a>.</p>
 
 </div>
 </div>
@@ -484,6 +721,50 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a3e02d0a237e29cc1849d6a0c47cd4b6a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> ColorImage::ReplaceFirstColorPlane </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="nivision_8h.html#a281fb2cd945305d1abf7fec808639e86">ColorMode</a>&#160;</td>
+          <td class="paramname"><em>mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_mono_image.html">MonoImage</a> *&#160;</td>
+          <td class="paramname"><em>plane</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Replace the first color plane with a <a class="el" href="class_mono_image.html">MonoImage</a>. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>The color mode in which to operate. </td></tr>
+    <tr><td class="paramname">plane</td><td>A pointer to a <a class="el" href="class_mono_image.html">MonoImage</a> that will replace the specified color plane. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_color_image_8cpp_source.html#l00302">302</a> of file <a class="el" href="_color_image_8cpp_source.html">ColorImage.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a1f4101a81cc10874824cf1ab015a4075"></a>
 <div class="memitem">
 <div class="memproto">
@@ -718,6 +999,57 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a071cf7dea3b5833a6752aaa491d42881"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> ColorImage::ReplacePlane </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="nivision_8h.html#a281fb2cd945305d1abf7fec808639e86">ColorMode</a>&#160;</td>
+          <td class="paramname"><em>mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_mono_image.html">MonoImage</a> *&#160;</td>
+          <td class="paramname"><em>plane</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td>
+          <td class="paramname"><em>planeNumber</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Replace a plane in the <a class="el" href="class_color_image.html">ColorImage</a> with a <a class="el" href="class_mono_image.html">MonoImage</a> Replaces a single plane in the image with a <a class="el" href="class_mono_image.html">MonoImage</a> </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>The ColorMode in which to operate </td></tr>
+    <tr><td class="paramname">plane</td><td>The pointer to the replacement plane as a <a class="el" href="class_mono_image.html">MonoImage</a> </td></tr>
+    <tr><td class="paramname">planeNumber</td><td>The plane number (1, 2, 3) to replace </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_color_image_8cpp_source.html#l00287">287</a> of file <a class="el" href="_color_image_8cpp_source.html">ColorImage.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a55052912bd0ffdc235f58716da9f61b1"></a>
 <div class="memitem">
 <div class="memproto">
@@ -741,6 +1073,94 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 
 <p>Definition at line <a class="el" href="_color_image_8cpp_source.html#l00332">332</a> of file <a class="el" href="_color_image_8cpp_source.html">ColorImage.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adc0d51484c40353a510e817185d9419a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> ColorImage::ReplaceSecondColorPlane </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="nivision_8h.html#a281fb2cd945305d1abf7fec808639e86">ColorMode</a>&#160;</td>
+          <td class="paramname"><em>mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_mono_image.html">MonoImage</a> *&#160;</td>
+          <td class="paramname"><em>plane</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Replace the second color plane with a <a class="el" href="class_mono_image.html">MonoImage</a>. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>The color mode in which to operate. </td></tr>
+    <tr><td class="paramname">plane</td><td>A pointer to a <a class="el" href="class_mono_image.html">MonoImage</a> that will replace the specified color plane. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_color_image_8cpp_source.html#l00312">312</a> of file <a class="el" href="_color_image_8cpp_source.html">ColorImage.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a811cff94311badabadbca2d3b2f1c27b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> ColorImage::ReplaceThirdColorPlane </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="nivision_8h.html#a281fb2cd945305d1abf7fec808639e86">ColorMode</a>&#160;</td>
+          <td class="paramname"><em>mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_mono_image.html">MonoImage</a> *&#160;</td>
+          <td class="paramname"><em>plane</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Replace the third color plane with a <a class="el" href="class_mono_image.html">MonoImage</a>. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>The color mode in which to operate. </td></tr>
+    <tr><td class="paramname">plane</td><td>A pointer to a <a class="el" href="class_mono_image.html">MonoImage</a> that will replace the specified color plane. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_color_image_8cpp_source.html#l00322">322</a> of file <a class="el" href="_color_image_8cpp_source.html">ColorImage.cpp</a>.</p>
 
 </div>
 </div>
@@ -1141,7 +1561,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:13 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:46 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

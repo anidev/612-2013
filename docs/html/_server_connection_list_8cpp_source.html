@@ -108,25 +108,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="class_server_connection_list.html#a49449e9d10d301ea54b862176b74eaf3">   17</a></span>&#160;<a class="code" href="class_server_connection_list.html#a49449e9d10d301ea54b862176b74eaf3">ServerConnectionList::~ServerConnectionList</a>()</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        connectionsLock.<a class="code" href="class_reentrant_semaphore.html#a0b8fe103afe4ada288da15942b49b4db">take</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="class_server_connection_list.html#aecf66e21d167574d9822faf846350562">connectionsLock</a>.<a class="code" href="class_reentrant_semaphore.html#a0b8fe103afe4ada288da15942b49b4db">take</a>();</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="class_server_connection_list.html#a7de569b32e1d52ea34c9c87d0263c81a">closeAll</a>();</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="class_server_connection_list.html#a4929dc54d51962e4fbd23b71b7dce32a">   23</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_server_connection_list.html#a4929dc54d51962e4fbd23b71b7dce32a">ServerConnectionList::add</a>(<a class="code" href="class_server_connection_adapter.html">ServerConnectionAdapter</a>&amp; connection)</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{ </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(connectionsLock);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        connections.push_back(&amp;connection);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_server_connection_list.html#aecf66e21d167574d9822faf846350562">connectionsLock</a>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="class_server_connection_list.html#afb1bd33db717e32d1eb97392907d27f4">connections</a>.push_back(&amp;connection);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
 <div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="class_server_connection_list.html#a1ca97e65305537447c08e46be977a84c">   29</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_server_connection_list.html#a1ca97e65305537447c08e46be977a84c">ServerConnectionList::close</a>(<a class="code" href="class_server_connection_adapter.html">ServerConnectionAdapter</a>&amp; connectionAdapter, <span class="keywordtype">bool</span> closeStream)</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{ </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(connectionsLock);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        std::vector&lt;ServerConnectionAdapter*&gt;::iterator connectionPosition = std::find(connections.begin(), connections.end(), &amp;connectionAdapter);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">if</span> (connectionPosition != connections.end() &amp;&amp; (*connectionPosition)==&amp;connectionAdapter)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_server_connection_list.html#aecf66e21d167574d9822faf846350562">connectionsLock</a>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        std::vector&lt;ServerConnectionAdapter*&gt;::iterator connectionPosition = std::find(<a class="code" href="class_server_connection_list.html#afb1bd33db717e32d1eb97392907d27f4">connections</a>.begin(), <a class="code" href="class_server_connection_list.html#afb1bd33db717e32d1eb97392907d27f4">connections</a>.end(), &amp;connectionAdapter);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">if</span> (connectionPosition != <a class="code" href="class_server_connection_list.html#afb1bd33db717e32d1eb97392907d27f4">connections</a>.end() &amp;&amp; (*connectionPosition)==&amp;connectionAdapter)</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                fprintf(stdout, <span class="stringliteral">&quot;Close: %p\n&quot;</span>, &amp;connectionAdapter);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                fflush(stdout);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                connections.erase(connectionPosition);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <a class="code" href="class_server_connection_list.html#afb1bd33db717e32d1eb97392907d27f4">connections</a>.erase(connectionPosition);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                connectionAdapter.<a class="code" href="class_server_connection_adapter.html#aaec30e6f14a94e6274ba6c5e7d0ec11a">shutdown</a>(closeStream);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="keyword">delete</span> &amp;connectionAdapter;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        }</div>
@@ -134,49 +134,49 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
 <div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="class_server_connection_list.html#a7de569b32e1d52ea34c9c87d0263c81a">   43</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_server_connection_list.html#a7de569b32e1d52ea34c9c87d0263c81a">ServerConnectionList::closeAll</a>()</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{ </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(connectionsLock);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">while</span>(connections.size() &gt; 0)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_server_connection_list.html#aecf66e21d167574d9822faf846350562">connectionsLock</a>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">while</span>(<a class="code" href="class_server_connection_list.html#afb1bd33db717e32d1eb97392907d27f4">connections</a>.size() &gt; 0)</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <a class="code" href="class_server_connection_list.html#a1ca97e65305537447c08e46be977a84c">close</a>(*connections[0], <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <a class="code" href="class_server_connection_list.html#a1ca97e65305537447c08e46be977a84c">close</a>(*<a class="code" href="class_server_connection_list.html#afb1bd33db717e32d1eb97392907d27f4">connections</a>[0], <span class="keyword">true</span>);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
 <div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="class_server_connection_list.html#a103200b809363ff8ba88fc91bd0bdffc">   52</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_server_connection_list.html#a103200b809363ff8ba88fc91bd0bdffc">ServerConnectionList::offerOutgoingAssignment</a>(<a class="code" href="class_network_table_entry.html">NetworkTableEntry</a>* entry)</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{ </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(connectionsLock);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; connections.size(); ++i)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_server_connection_list.html#aecf66e21d167574d9822faf846350562">connectionsLock</a>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="class_server_connection_list.html#afb1bd33db717e32d1eb97392907d27f4">connections</a>.size(); ++i)</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                connections[i]-&gt;offerOutgoingAssignment(entry);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <a class="code" href="class_server_connection_list.html#afb1bd33db717e32d1eb97392907d27f4">connections</a>[i]-&gt;offerOutgoingAssignment(entry);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
 <div class="line"><a name="l00060"></a><span class="lineno"><a class="code" href="class_server_connection_list.html#a600a3dc10896bb73d7d2bd759742a55c">   60</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_server_connection_list.html#a600a3dc10896bb73d7d2bd759742a55c">ServerConnectionList::offerOutgoingUpdate</a>(<a class="code" href="class_network_table_entry.html">NetworkTableEntry</a>* entry)</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{ </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(connectionsLock);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; connections.size(); ++i)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_server_connection_list.html#aecf66e21d167574d9822faf846350562">connectionsLock</a>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="class_server_connection_list.html#afb1bd33db717e32d1eb97392907d27f4">connections</a>.size(); ++i)</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                connections[i]-&gt;offerOutgoingUpdate(entry);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <a class="code" href="class_server_connection_list.html#afb1bd33db717e32d1eb97392907d27f4">connections</a>[i]-&gt;offerOutgoingUpdate(entry);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
 <div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="class_server_connection_list.html#a1056076bcce9f23d4f192011a9061da0">   68</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_server_connection_list.html#a1056076bcce9f23d4f192011a9061da0">ServerConnectionList::flush</a>()</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{ </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(connectionsLock);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; connections.size(); ++i)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_server_connection_list.html#aecf66e21d167574d9822faf846350562">connectionsLock</a>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="class_server_connection_list.html#afb1bd33db717e32d1eb97392907d27f4">connections</a>.size(); ++i)</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                connections[i]-&gt;flush();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <a class="code" href="class_server_connection_list.html#afb1bd33db717e32d1eb97392907d27f4">connections</a>[i]-&gt;flush();</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
 <div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="class_server_connection_list.html#a890d63fcd281453d5ae181cff3a68fc5">   76</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_server_connection_list.html#a890d63fcd281453d5ae181cff3a68fc5">ServerConnectionList::ensureAlive</a>()</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{ </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(connectionsLock);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; connections.size(); ++i)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_server_connection_list.html#aecf66e21d167574d9822faf846350562">connectionsLock</a>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="class_server_connection_list.html#afb1bd33db717e32d1eb97392907d27f4">connections</a>.size(); ++i)</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                connections[i]-&gt;ensureAlive();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <a class="code" href="class_server_connection_list.html#afb1bd33db717e32d1eb97392907d27f4">connections</a>[i]-&gt;ensureAlive();</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        }</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:10 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:43 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

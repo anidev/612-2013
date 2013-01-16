@@ -86,7 +86,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a>  </div>
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">CommandGroup Class Reference</div>  </div>
 </div><!--header-->
@@ -184,6 +187,23 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:af49991441156c7832d7017951427cef2 inherit pro_methods_class_error_base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_base.html#af49991441156c7832d7017951427cef2">ErrorBase</a> ()</td></tr>
 <tr class="memdesc:af49991441156c7832d7017951427cef2 inherit pro_methods_class_error_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the instance status to 0 for now.  <a href="#af49991441156c7832d7017951427cef2"></a><br/></td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:a830a3599e7a1395417fadfbee87b95a6"><td class="memItemLeft" align="right" valign="top">typedef std::vector<br class="typebreak"/>
+&lt; <a class="el" href="class_command_group_entry.html">CommandGroupEntry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_command_group.html#a830a3599e7a1395417fadfbee87b95a6">CommandVector</a></td></tr>
+<tr class="memitem:a23f433db1a587d14396c52564a75989d"><td class="memItemLeft" align="right" valign="top">typedef std::list<br class="typebreak"/>
+&lt; <a class="el" href="class_command_group_entry.html">CommandGroupEntry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_command_group.html#a23f433db1a587d14396c52564a75989d">CommandList</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a95d7672a2b2f7d3cbca51383632ae1c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_command_group.html#a95d7672a2b2f7d3cbca51383632ae1c4">CancelConflicts</a> (<a class="el" href="class_command.html">Command</a> *command)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a1bcd19d5d9743670d765742249e7280e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_command_group.html#a830a3599e7a1395417fadfbee87b95a6">CommandVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_command_group.html#a1bcd19d5d9743670d765742249e7280e">m_commands</a></td></tr>
+<tr class="memitem:ac22d67a12ba16653eaaf8f3b344a982c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_command_group.html#a23f433db1a587d14396c52564a75989d">CommandList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_command_group.html#ac22d67a12ba16653eaaf8f3b344a982c">m_children</a></td></tr>
+<tr class="memitem:a94cd3c3564a59d9f883b7ef1bba02da4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_command_group.html#a94cd3c3564a59d9f883b7ef1bba02da4">m_currentCommandIndex</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_types_class_command"><td colspan="2" onclick="javascript:toggleInherit('pub_types_class_command')"><img src="closed.png" alt="-"/>&nbsp;Public Types inherited from <a class="el" href="class_command.html">Command</a></td></tr>
@@ -203,7 +223,52 @@ Additional Inherited Members</h2></td></tr>
 <a class="el" href="class_subsystem.html">Subsystem</a> </dd></dl>
 
 <p>Definition at line <a class="el" href="_command_group_8h_source.html#l00033">33</a> of file <a class="el" href="_command_group_8h_source.html">CommandGroup.h</a>.</p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+</div><hr/><h2>Member Typedef Documentation</h2>
+<a class="anchor" id="a23f433db1a587d14396c52564a75989d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::list&lt;<a class="el" href="class_command_group_entry.html">CommandGroupEntry</a>&gt; <a class="el" href="class_command_group.html#a23f433db1a587d14396c52564a75989d">CommandGroup::CommandList</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_command_group_8h_source.html#l00064">64</a> of file <a class="el" href="_command_group_8h_source.html">CommandGroup.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a830a3599e7a1395417fadfbee87b95a6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt;<a class="el" href="class_command_group_entry.html">CommandGroupEntry</a>&gt; <a class="el" href="class_command_group.html#a830a3599e7a1395417fadfbee87b95a6">CommandGroup::CommandVector</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_command_group_8h_source.html#l00061">61</a> of file <a class="el" href="_command_group_8h_source.html">CommandGroup.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a862143e691209986739c234cb0fc4cc8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -515,6 +580,32 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a95d7672a2b2f7d3cbca51383632ae1c4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> CommandGroup::CancelConflicts </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_command.html">Command</a> *&#160;</td>
+          <td class="paramname"><em>command</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_command_group_8cpp_source.html#l00354">354</a> of file <a class="el" href="_command_group_8cpp_source.html">CommandGroup.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a340f5e4fc0ca9ee2d4eaf1c09e5dfe7b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -698,6 +789,76 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="ac22d67a12ba16653eaaf8f3b344a982c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_command_group.html#a23f433db1a587d14396c52564a75989d">CommandList</a> CommandGroup::m_children</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The active children in this group (stored in entries) </p>
+
+<p>Definition at line <a class="el" href="_command_group_8h_source.html#l00066">66</a> of file <a class="el" href="_command_group_8h_source.html">CommandGroup.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1bcd19d5d9743670d765742249e7280e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_command_group.html#a830a3599e7a1395417fadfbee87b95a6">CommandVector</a> CommandGroup::m_commands</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The commands in this group (stored in entries) </p>
+
+<p>Definition at line <a class="el" href="_command_group_8h_source.html#l00063">63</a> of file <a class="el" href="_command_group_8h_source.html">CommandGroup.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a94cd3c3564a59d9f883b7ef1bba02da4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> CommandGroup::m_currentCommandIndex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The current command, -1 signifies that none have been run </p>
+
+<p>Definition at line <a class="el" href="_command_group_8h_source.html#l00068">68</a> of file <a class="el" href="_command_group_8h_source.html">CommandGroup.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>WPILib/Commands/<a class="el" href="_command_group_8h_source.html">CommandGroup.h</a></li>
 <li>WPILib/Commands/<a class="el" href="_command_group_8cpp_source.html">CommandGroup.cpp</a></li>
@@ -705,7 +866,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:13 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:46 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

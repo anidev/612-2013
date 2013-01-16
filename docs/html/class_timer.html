@@ -86,7 +86,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a>  </div>
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">Timer Class Reference</div>  </div>
 </div><!--header-->
@@ -110,6 +112,17 @@ Public Member Functions</h2></td></tr>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a7fa6e6dffec055e5104ccd6bcadec9aa"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_timer.html#a7fa6e6dffec055e5104ccd6bcadec9aa">GetFPGATimestamp</a> ()</td></tr>
 <tr class="memitem:a6a326db4fa89871033bda5a0538c77c4"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_timer.html#a6a326db4fa89871033bda5a0538c77c4">GetPPCTimestamp</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:afb94bc515652d34b9dff9b769a3c916a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_timer.html#afb94bc515652d34b9dff9b769a3c916a">DISALLOW_COPY_AND_ASSIGN</a> (<a class="el" href="class_timer.html">Timer</a>)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a07439c3b872acfdbc408c7612e483991"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_timer.html#a07439c3b872acfdbc408c7612e483991">m_startTime</a></td></tr>
+<tr class="memitem:a16fed9b4793cea02cd8886ea6aa63676"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_timer.html#a16fed9b4793cea02cd8886ea6aa63676">m_accumulatedTime</a></td></tr>
+<tr class="memitem:aaaaae685c2b6c6427301ab018bdf098f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_timer.html#aaaaae685c2b6c6427301ab018bdf098f">m_running</a></td></tr>
+<tr class="memitem:a5fb53f01e767c4bf55a893f27e3092e9"><td class="memItemLeft" align="right" valign="top">SEM_ID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_timer.html#a5fb53f01e767c4bf55a893f27e3092e9">m_semaphore</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_timer.html">Timer</a> objects measure accumulated time in seconds. The timer object functions like a stopwatch. It can be started, stopped, and cleared. When the timer is running its value counts up in seconds. When stopped, the timer holds the current value. The implementation simply records the time when started and subtracts the current time whenever the value is requested. </p>
@@ -161,6 +174,30 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="afb94bc515652d34b9dff9b769a3c916a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Timer::DISALLOW_COPY_AND_ASSIGN </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_timer.html">Timer</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="aadc180bcac64bc164f134d9c8076e1a3"></a>
 <div class="memitem">
 <div class="memproto">
@@ -311,6 +348,95 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a16fed9b4793cea02cd8886ea6aa63676"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Timer::m_accumulatedTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_timer_8h_source.html#l00043">43</a> of file <a class="el" href="_timer_8h_source.html">Timer.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aaaaae685c2b6c6427301ab018bdf098f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Timer::m_running</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_timer_8h_source.html#l00044">44</a> of file <a class="el" href="_timer_8h_source.html">Timer.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5fb53f01e767c4bf55a893f27e3092e9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SEM_ID Timer::m_semaphore</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_timer_8h_source.html#l00045">45</a> of file <a class="el" href="_timer_8h_source.html">Timer.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a07439c3b872acfdbc408c7612e483991"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Timer::m_startTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_timer_8h_source.html#l00042">42</a> of file <a class="el" href="_timer_8h_source.html">Timer.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>WPILib/<a class="el" href="_timer_8h_source.html">Timer.h</a></li>
 <li>WPILib/<a class="el" href="_timer_8cpp_source.html">Timer.cpp</a></li>
@@ -318,7 +444,7 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:17 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:49 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

@@ -105,8 +105,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_utility_8h.html">Utility.h</a>&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_w_p_i_errors_8h.html">WPIErrors.h</a>&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;UINT32 KinectStick::_recentPacketNumber = 0;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;KinectStick::KinectStickData KinectStick::_sticks;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;UINT32 <a class="code" href="class_kinect_stick.html#a59c83c42dfb84f3dda69300cdb969971">KinectStick::_recentPacketNumber</a> = 0;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<a class="code" href="union_kinect_stick_1_1_kinect_stick_data.html">KinectStick::KinectStickData</a> <a class="code" href="class_kinect_stick.html#aebed7eff1e44f9a0ee6514b63e3c469e">KinectStick::_sticks</a>;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="_kinect_stick_8cpp.html#add6b2236c42a851cd95012a28c6af059">   19</a></span>&#160;<span class="preprocessor">#define kJoystickBundleID kFRC_NetworkCommunication_DynamicType_Kinect_Joystick</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="_kinect_stick_8cpp.html#af1c744d3461c33e54dc9ad785502a982">   20</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define kTriggerMask 1</span></div>
@@ -119,7 +119,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <a class="code" href="_error_base_8h.html#a495fcc362032eea3b1dadc34be9bd058">wpi_setWPIErrorWithContext</a>(ParameterOutOfRange, <span class="stringliteral">&quot;KinectStick ID must be 1 or 2&quot;</span>);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        m_id = id;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="class_kinect_stick.html#ad8ff173508be35b7db92d1b77fd3751e">m_id</a> = id;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="namespacen_usage_reporting.html#a99be0607a35214dd8b718c6645ae53b3">nUsageReporting::report</a>(<a class="code" href="namespacen_usage_reporting.html#ac80f9386b7fe4c6222088527f119c0c2aa1fb99a1f26696bf67d5638db83883d4">nUsageReporting::kResourceType_KinectStick</a>, <span class="keywordtype">id</span>);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
@@ -153,8 +153,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;{</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_error_base.html#a05790f219c9e436a09752f73f7344024" title="Check if the current error code represents a fatal error.">StatusIsFatal</a>()) <span class="keywordflow">return</span> 0.0;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        GetData();</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordtype">float</span> value = ConvertRawToFloat(_sticks.formatted.rawSticks[m_id - 1].axis[axis-1]);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <a class="code" href="class_kinect_stick.html#affb9cd7c1bd2f1bbed28f96ef700fd59">GetData</a>();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordtype">float</span> value = <a class="code" href="class_kinect_stick.html#a5b0de1d0058eca8fac76604ec11b12b5">ConvertRawToFloat</a>(<a class="code" href="class_kinect_stick.html#aebed7eff1e44f9a0ee6514b63e3c469e">_sticks</a>.<a class="code" href="union_kinect_stick_1_1_kinect_stick_data.html#aa627223c0904e8c523b38595e70d64b7">formatted</a>.<a class="code" href="union_kinect_stick_1_1_kinect_stick_data.html#abfa87822609406e22b1d3b65f456a19d">rawSticks</a>[<a class="code" href="class_kinect_stick.html#ad8ff173508be35b7db92d1b77fd3751e">m_id</a> - 1].axis[axis-1]);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">return</span> value;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
@@ -178,25 +178,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;{</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_error_base.html#a05790f219c9e436a09752f73f7344024" title="Check if the current error code represents a fatal error.">StatusIsFatal</a>()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        GetData();</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keywordflow">return</span> (_sticks.formatted.rawSticks[m_id - 1].buttons &amp; (1 &lt;&lt; button)) != 0;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <a class="code" href="class_kinect_stick.html#affb9cd7c1bd2f1bbed28f96ef700fd59">GetData</a>();</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="class_kinect_stick.html#aebed7eff1e44f9a0ee6514b63e3c469e">_sticks</a>.<a class="code" href="union_kinect_stick_1_1_kinect_stick_data.html#aa627223c0904e8c523b38595e70d64b7">formatted</a>.<a class="code" href="union_kinect_stick_1_1_kinect_stick_data.html#abfa87822609406e22b1d3b65f456a19d">rawSticks</a>[<a class="code" href="class_kinect_stick.html#ad8ff173508be35b7db92d1b77fd3751e">m_id</a> - 1].buttons &amp; (1 &lt;&lt; button)) != 0;</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;}</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="keywordtype">void</span> KinectStick::GetData()</div>
+<div class="line"><a name="l00166"></a><span class="lineno"><a class="code" href="class_kinect_stick.html#affb9cd7c1bd2f1bbed28f96ef700fd59">  166</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_kinect_stick.html#affb9cd7c1bd2f1bbed28f96ef700fd59">KinectStick::GetData</a>()</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;{</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        UINT32 packetNumber = <a class="code" href="class_driver_station.html#ab0995c2d3f0b40cb13ac5aff656e46d0">DriverStation::GetInstance</a>()-&gt;<a class="code" href="class_driver_station.html#a103fd8e73107d268cda8a6ecbd324aaa">GetPacketNumber</a>();</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keywordflow">if</span> (_recentPacketNumber != packetNumber)</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_kinect_stick.html#a59c83c42dfb84f3dda69300cdb969971">_recentPacketNumber</a> != packetNumber)</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        {</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                _recentPacketNumber = packetNumber;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                <span class="keywordtype">int</span> retVal = <a class="code" href="_f_r_c_comm_8h.html#aa66729f37a31aaa38ba1642fd7dd495b">getDynamicControlData</a>(<a class="code" href="_kinect_stick_8cpp.html#add6b2236c42a851cd95012a28c6af059">kJoystickBundleID</a>, _sticks.data, <span class="keyword">sizeof</span>(_sticks.data), 5);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                <a class="code" href="class_kinect_stick.html#a59c83c42dfb84f3dda69300cdb969971">_recentPacketNumber</a> = packetNumber;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                <span class="keywordtype">int</span> retVal = <a class="code" href="_f_r_c_comm_8h.html#aa66729f37a31aaa38ba1642fd7dd495b">getDynamicControlData</a>(<a class="code" href="_kinect_stick_8cpp.html#add6b2236c42a851cd95012a28c6af059">kJoystickBundleID</a>, <a class="code" href="class_kinect_stick.html#aebed7eff1e44f9a0ee6514b63e3c469e">_sticks</a>.<a class="code" href="union_kinect_stick_1_1_kinect_stick_data.html#a00e65f28c3bca6bae90481679117303b">data</a>, <span class="keyword">sizeof</span>(<a class="code" href="class_kinect_stick.html#aebed7eff1e44f9a0ee6514b63e3c469e">_sticks</a>.<a class="code" href="union_kinect_stick_1_1_kinect_stick_data.html#a00e65f28c3bca6bae90481679117303b">data</a>), 5);</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                <span class="keywordflow">if</span> (retVal == 0)</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                {</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                        <a class="code" href="_utility_8h.html#a34b13bd29631329c597428636401bbba">wpi_assert</a>(_sticks.formatted.size == <span class="keyword">sizeof</span>(_sticks.data) - 1);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                        <a class="code" href="_utility_8h.html#a34b13bd29631329c597428636401bbba">wpi_assert</a>(<a class="code" href="class_kinect_stick.html#aebed7eff1e44f9a0ee6514b63e3c469e">_sticks</a>.<a class="code" href="union_kinect_stick_1_1_kinect_stick_data.html#aa627223c0904e8c523b38595e70d64b7">formatted</a>.<a class="code" href="union_kinect_stick_1_1_kinect_stick_data.html#aa4e7c3be54484ea397ecfb778b3539c6">size</a> == <span class="keyword">sizeof</span>(<a class="code" href="class_kinect_stick.html#aebed7eff1e44f9a0ee6514b63e3c469e">_sticks</a>.<a class="code" href="union_kinect_stick_1_1_kinect_stick_data.html#a00e65f28c3bca6bae90481679117303b">data</a>) - 1);</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                }</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        }</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;}</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="keywordtype">float</span> KinectStick::ConvertRawToFloat(INT8 value)</div>
+<div class="line"><a name="l00184"></a><span class="lineno"><a class="code" href="class_kinect_stick.html#a5b0de1d0058eca8fac76604ec11b12b5">  184</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="class_kinect_stick.html#a5b0de1d0058eca8fac76604ec11b12b5">KinectStick::ConvertRawToFloat</a>(INT8 value)</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;{</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keywordtype">float</span> result;</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div>
@@ -217,7 +217,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:09 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:42 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

@@ -86,7 +86,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a>  </div>
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">PIDSubsystem Class Reference</div>  </div>
 </div><!--header-->
@@ -167,6 +168,10 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:abc33f5534d764995fd769ccfd4dc51a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_p_i_d_controller.html">PIDController</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_subsystem.html#abc33f5534d764995fd769ccfd4dc51a7">GetPIDController</a> ()</td></tr>
 <tr class="memitem:a53cc637e0f64f37031e238ca785dd3e0"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_subsystem.html#a53cc637e0f64f37031e238ca785dd3e0">ReturnPIDInput</a> ()=0</td></tr>
 <tr class="memitem:a6a374b62609ebb1979e43b136658e4ef"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_subsystem.html#a6a374b62609ebb1979e43b136658e4ef">UsePIDOutput</a> (double output)=0</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a79ef2a4c3b76c6cc9e86089dabac6a5d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_p_i_d_controller.html">PIDController</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_subsystem.html#a79ef2a4c3b76c6cc9e86089dabac6a5d">m_controller</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -957,6 +962,30 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a79ef2a4c3b76c6cc9e86089dabac6a5d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_p_i_d_controller.html">PIDController</a>* PIDSubsystem::m_controller</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The internal <a class="el" href="class_p_i_d_controller.html">PIDController</a> </p>
+
+<p>Definition at line <a class="el" href="_p_i_d_subsystem_8h_source.html#l00062">62</a> of file <a class="el" href="_p_i_d_subsystem_8h_source.html">PIDSubsystem.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>WPILib/Commands/<a class="el" href="_p_i_d_subsystem_8h_source.html">PIDSubsystem.h</a></li>
 <li>WPILib/Commands/<a class="el" href="_p_i_d_subsystem_8cpp_source.html">PIDSubsystem.cpp</a></li>
@@ -964,7 +993,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:16 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:48 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

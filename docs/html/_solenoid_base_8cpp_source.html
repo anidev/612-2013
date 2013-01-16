@@ -99,51 +99,51 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_solenoid_base_8h.html">SolenoidBase.h</a>&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// Needs to be global since the protected resource spans all Solenoid objects.</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<a class="code" href="class_reentrant_semaphore.html">ReentrantSemaphore</a> SolenoidBase::m_semaphore;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<a class="code" href="class_reentrant_semaphore.html">ReentrantSemaphore</a> <a class="code" href="class_solenoid_base.html#abfd1aa6ff65e7cad34011ef2d63cc522">SolenoidBase::m_semaphore</a>;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<a class="code" href="class_resource.html">Resource</a> *<a class="code" href="class_solenoid_base.html#aea1b158d126f24e89dc145871511e35c">SolenoidBase::m_allocated</a> = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<a class="code" href="classn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_solenoid.html">tSolenoid</a> *SolenoidBase::m_fpgaSolenoidModule = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;UINT32 SolenoidBase::m_refCount = 0;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<a class="code" href="classn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_solenoid.html">tSolenoid</a> *<a class="code" href="class_solenoid_base.html#aeb4ada57827c6d312a9ea94488250383" title="FPGA Solenoid Module object.">SolenoidBase::m_fpgaSolenoidModule</a> = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;UINT32 <a class="code" href="class_solenoid_base.html#a16e1751f4ffab49775f577755719b2c0" title="Reference count for the chip object.">SolenoidBase::m_refCount</a> = 0;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
 <div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="class_solenoid_base.html#ae623dcc8b967d5a1f23f58f2f23317ae">   22</a></span>&#160;<a class="code" href="class_solenoid_base.html#ae623dcc8b967d5a1f23f58f2f23317ae">SolenoidBase::SolenoidBase</a>(UINT8 moduleNumber)</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        : m_moduleNumber (moduleNumber)</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(m_semaphore);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        m_refCount++;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">if</span> (m_refCount == 1)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_solenoid_base.html#abfd1aa6ff65e7cad34011ef2d63cc522">m_semaphore</a>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="class_solenoid_base.html#a16e1751f4ffab49775f577755719b2c0" title="Reference count for the chip object.">m_refCount</a>++;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_solenoid_base.html#a16e1751f4ffab49775f577755719b2c0" title="Reference count for the chip object.">m_refCount</a> == 1)</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <a class="code" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> localStatus = NiFpga_Status_Success;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                m_fpgaSolenoidModule = tSolenoid::create(&amp;localStatus);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <a class="code" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> localStatus = <a class="code" href="_ni_fpga_8h.html#aea860abd4cffdc6f0f5d6a7c024f6248">NiFpga_Status_Success</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                <a class="code" href="class_solenoid_base.html#aeb4ada57827c6d312a9ea94488250383" title="FPGA Solenoid Module object.">m_fpgaSolenoidModule</a> = tSolenoid::create(&amp;localStatus);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <a class="code" href="_error_base_8h.html#a84096a903e635d89e18a4abd22537fa4">wpi_setError</a>(localStatus);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
 <div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="class_solenoid_base.html#aa3ff4e46bc52588243bfb6ea511864fa">   38</a></span>&#160;<a class="code" href="class_solenoid_base.html#aa3ff4e46bc52588243bfb6ea511864fa">SolenoidBase::~SolenoidBase</a>()</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(m_semaphore);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_solenoid_base.html#abfd1aa6ff65e7cad34011ef2d63cc522">m_semaphore</a>);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_sensor_base.html#a93b945da6cc5fc0e8eca68bf2749ff65">CheckSolenoidModule</a>(<a class="code" href="class_solenoid_base.html#a0687ad7201f53c533a21eacdd1d6cf42" title="Slot number where the module is plugged into the chassis.">m_moduleNumber</a>))</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordflow">if</span> (m_refCount == 1)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="class_solenoid_base.html#a16e1751f4ffab49775f577755719b2c0" title="Reference count for the chip object.">m_refCount</a> == 1)</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                        <span class="keyword">delete</span> m_fpgaSolenoidModule;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                        m_fpgaSolenoidModule = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                        <span class="keyword">delete</span> <a class="code" href="class_solenoid_base.html#aeb4ada57827c6d312a9ea94488250383" title="FPGA Solenoid Module object.">m_fpgaSolenoidModule</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                        <a class="code" href="class_solenoid_base.html#aeb4ada57827c6d312a9ea94488250383" title="FPGA Solenoid Module object.">m_fpgaSolenoidModule</a> = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                m_refCount--;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <a class="code" href="class_solenoid_base.html#a16e1751f4ffab49775f577755719b2c0" title="Reference count for the chip object.">m_refCount</a>--;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
 <div class="line"><a name="l00058"></a><span class="lineno"><a class="code" href="class_solenoid_base.html#a7aa6f30b9b7337867667f24fec115058">   58</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_solenoid_base.html#a7aa6f30b9b7337867667f24fec115058">SolenoidBase::Set</a>(UINT8 value, UINT8 mask)</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> localStatus = NiFpga_Status_Success;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> localStatus = <a class="code" href="_ni_fpga_8h.html#aea860abd4cffdc6f0f5d6a7c024f6248">NiFpga_Status_Success</a>;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_sensor_base.html#a93b945da6cc5fc0e8eca68bf2749ff65">CheckSolenoidModule</a>(<a class="code" href="class_solenoid_base.html#a0687ad7201f53c533a21eacdd1d6cf42" title="Slot number where the module is plugged into the chassis.">m_moduleNumber</a>))</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <a class="code" href="class_synchronized.html">Synchronized</a> sync(m_semaphore);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                UINT8 currentValue = m_fpgaSolenoidModule-&gt;<a class="code" href="classn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_solenoid.html#a7fedded39e26a3bc5ade0500c8276f64">readDO7_0</a>(<a class="code" href="class_solenoid_base.html#a0687ad7201f53c533a21eacdd1d6cf42" title="Slot number where the module is plugged into the chassis.">m_moduleNumber</a> - 1, &amp;localStatus);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_solenoid_base.html#abfd1aa6ff65e7cad34011ef2d63cc522">m_semaphore</a>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                UINT8 currentValue = <a class="code" href="class_solenoid_base.html#aeb4ada57827c6d312a9ea94488250383" title="FPGA Solenoid Module object.">m_fpgaSolenoidModule</a>-&gt;<a class="code" href="classn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_solenoid.html#a7fedded39e26a3bc5ade0500c8276f64">readDO7_0</a>(<a class="code" href="class_solenoid_base.html#a0687ad7201f53c533a21eacdd1d6cf42" title="Slot number where the module is plugged into the chassis.">m_moduleNumber</a> - 1, &amp;localStatus);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="comment">// Zero out the values to change</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                currentValue = currentValue &amp; ~mask;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                currentValue = currentValue | (value &amp; mask);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                m_fpgaSolenoidModule-&gt;<a class="code" href="classn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_solenoid.html#a920545638b9d0dcece7d34852146993d">writeDO7_0</a>(<a class="code" href="class_solenoid_base.html#a0687ad7201f53c533a21eacdd1d6cf42" title="Slot number where the module is plugged into the chassis.">m_moduleNumber</a> - 1, currentValue, &amp;localStatus);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <a class="code" href="class_solenoid_base.html#aeb4ada57827c6d312a9ea94488250383" title="FPGA Solenoid Module object.">m_fpgaSolenoidModule</a>-&gt;<a class="code" href="classn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_solenoid.html#a920545638b9d0dcece7d34852146993d">writeDO7_0</a>(<a class="code" href="class_solenoid_base.html#a0687ad7201f53c533a21eacdd1d6cf42" title="Slot number where the module is plugged into the chassis.">m_moduleNumber</a> - 1, currentValue, &amp;localStatus);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="_error_base_8h.html#a84096a903e635d89e18a4abd22537fa4">wpi_setError</a>(localStatus);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
@@ -152,8 +152,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_sensor_base.html#a93b945da6cc5fc0e8eca68bf2749ff65">CheckSolenoidModule</a>(<a class="code" href="class_solenoid_base.html#a0687ad7201f53c533a21eacdd1d6cf42" title="Slot number where the module is plugged into the chassis.">m_moduleNumber</a>))</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <a class="code" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> localStatus = NiFpga_Status_Success;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                UINT8 solenoids = m_fpgaSolenoidModule-&gt;<a class="code" href="classn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_solenoid.html#a7fedded39e26a3bc5ade0500c8276f64">readDO7_0</a>(<a class="code" href="class_solenoid_base.html#a0687ad7201f53c533a21eacdd1d6cf42" title="Slot number where the module is plugged into the chassis.">m_moduleNumber</a> - 1, &amp;localStatus);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <a class="code" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> localStatus = <a class="code" href="_ni_fpga_8h.html#aea860abd4cffdc6f0f5d6a7c024f6248">NiFpga_Status_Success</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                UINT8 solenoids = <a class="code" href="class_solenoid_base.html#aeb4ada57827c6d312a9ea94488250383" title="FPGA Solenoid Module object.">m_fpgaSolenoidModule</a>-&gt;<a class="code" href="classn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_solenoid.html#a7fedded39e26a3bc5ade0500c8276f64">readDO7_0</a>(<a class="code" href="class_solenoid_base.html#a0687ad7201f53c533a21eacdd1d6cf42" title="Slot number where the module is plugged into the chassis.">m_moduleNumber</a> - 1, &amp;localStatus);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <a class="code" href="_error_base_8h.html#a84096a903e635d89e18a4abd22537fa4">wpi_setError</a>(localStatus);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <span class="keywordflow">return</span> solenoids;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
@@ -162,7 +162,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:11 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:43 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

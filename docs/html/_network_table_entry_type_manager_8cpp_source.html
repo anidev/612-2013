@@ -102,23 +102,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="code" href="class_network_table_entry_type_manager.html#ac29179c4c5b9ae19f4043196dddb65e1">   12</a></span>&#160;<a class="code" href="class_network_table_entry_type.html">NetworkTableEntryType</a>* <a class="code" href="class_network_table_entry_type_manager.html#ac29179c4c5b9ae19f4043196dddb65e1">NetworkTableEntryTypeManager::GetType</a>(<a class="code" href="_network_table_entry_type_8h.html#a94451b78d8274e53bd5f7672002f75b4">TypeId</a> <span class="keywordtype">id</span>){</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordflow">return</span> entryTypes[id];</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_network_table_entry_type_manager.html#a80719fe75d6bbe058fa75fd4331e58ca">entryTypes</a>[id];</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
 <div class="line"><a name="l00016"></a><span class="lineno"><a class="code" href="class_network_table_entry_type_manager.html#a3bfde5f62bf24c10e15c252e12a9cb37">   16</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_network_table_entry_type_manager.html#a3bfde5f62bf24c10e15c252e12a9cb37">NetworkTableEntryTypeManager::RegisterType</a>(<a class="code" href="class_network_table_entry_type.html">NetworkTableEntryType</a>&amp; type){</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        entryTypes[type.<a class="code" href="class_network_table_entry_type.html#a5ad3e7ef5f8a01949001152bfbed388f">id</a>] = &amp;type;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="class_network_table_entry_type_manager.html#a80719fe75d6bbe058fa75fd4331e58ca">entryTypes</a>[type.<a class="code" href="class_network_table_entry_type.html#a5ad3e7ef5f8a01949001152bfbed388f">id</a>] = &amp;type;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
 <div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="class_network_table_entry_type_manager.html#ab839550c43a63b3c3f44b2f64c0bef0d">   20</a></span>&#160;<a class="code" href="class_network_table_entry_type_manager.html#ab839550c43a63b3c3f44b2f64c0bef0d">NetworkTableEntryTypeManager::NetworkTableEntryTypeManager</a>(){</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i&lt;<a class="code" href="_network_table_entry_type_8h.html#a3dd632fe6a50b577b87223cdace2b791">MAX_NUM_TABLE_ENTRY_TYPES</a>; ++i)</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                entryTypes[i] = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                <a class="code" href="class_network_table_entry_type_manager.html#a80719fe75d6bbe058fa75fd4331e58ca">entryTypes</a>[i] = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="class_default_entry_types.html#a469fca471105bec6272b0aa8452b3158">DefaultEntryTypes::registerTypes</a>(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:10 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:43 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

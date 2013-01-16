@@ -112,7 +112,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
 <div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="class_f_d_i_o_stream.html#aab7c4af5b66b4a3d58789c07bbfc19bc">   22</a></span>&#160;<a class="code" href="class_f_d_i_o_stream.html#aab7c4af5b66b4a3d58789c07bbfc19bc">FDIOStream::FDIOStream</a>(<span class="keywordtype">int</span> _fd){</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  fd = _fd;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <a class="code" href="class_f_d_i_o_stream.html#ac46619621b93ae7f4c693f0c1ffd469f">fd</a> = _fd;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="comment">//    f = fdopen(_fd, &quot;rbwb&quot;);</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="comment">//    if(f==NULL)</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="comment">//            throw IOException(&quot;Could not open stream from file descriptor&quot;, errno);</span></div>
@@ -127,7 +127,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">char</span>* bufferPointer = (<span class="keywordtype">char</span>*)ptr;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">int</span> totalRead = 0;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">while</span> (totalRead &lt; numbytes) {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="keywordtype">int</span> numRead = <a class="code" href="class_f_d_i_o_stream.html#ae476782665b40a54aad50828184070b6">::read</a>(fd, bufferPointer, numbytes-totalRead);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="keywordtype">int</span> numRead = <a class="code" href="class_f_d_i_o_stream.html#ae476782665b40a54aad50828184070b6">::read</a>(<a class="code" href="class_f_d_i_o_stream.html#ac46619621b93ae7f4c693f0c1ffd469f">fd</a>, bufferPointer, numbytes-totalRead);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="keywordflow">if</span>(numRead == 0){</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                        <span class="keywordflow">throw</span> <a class="code" href="class_e_o_f_exception.html">EOFException</a>();</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                }</div>
@@ -142,7 +142,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">return</span> totalRead;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 <div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="class_f_d_i_o_stream.html#a3d6efe0d74d2414f30ca036c468d4fe5">   52</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_f_d_i_o_stream.html#a3d6efe0d74d2414f30ca036c468d4fe5">FDIOStream::write</a>(<span class="keyword">const</span> <span class="keywordtype">void</span>* ptr, <span class="keywordtype">int</span> numbytes){</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordtype">int</span> numWrote = <a class="code" href="class_f_d_i_o_stream.html#a3d6efe0d74d2414f30ca036c468d4fe5">::write</a>(fd, (<span class="keywordtype">char</span>*)ptr, numbytes);<span class="comment">//TODO: this is bad</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordtype">int</span> numWrote = <a class="code" href="class_f_d_i_o_stream.html#a3d6efe0d74d2414f30ca036c468d4fe5">::write</a>(<a class="code" href="class_f_d_i_o_stream.html#ac46619621b93ae7f4c693f0c1ffd469f">fd</a>, (<span class="keywordtype">char</span>*)ptr, numbytes);<span class="comment">//TODO: this is bad</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="comment">//int numWrote = fwrite(ptr, 1, numbytes, f);</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordflow">if</span>(numWrote==numbytes)</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span> numWrote;</div>
@@ -157,13 +157,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
 <div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="class_f_d_i_o_stream.html#af854623b4edf14fcadcc2fb79192aa73">   66</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_f_d_i_o_stream.html#af854623b4edf14fcadcc2fb79192aa73">FDIOStream::close</a>(){</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="comment">//fclose(f);//ignore any errors closing</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <a class="code" href="class_f_d_i_o_stream.html#af854623b4edf14fcadcc2fb79192aa73">::close</a>(fd);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <a class="code" href="class_f_d_i_o_stream.html#af854623b4edf14fcadcc2fb79192aa73">::close</a>(<a class="code" href="class_f_d_i_o_stream.html#ac46619621b93ae7f4c693f0c1ffd469f">fd</a>);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:10 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:43 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

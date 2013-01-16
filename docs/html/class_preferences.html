@@ -87,7 +87,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a>  </div>
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">Preferences Class Reference</div>  </div>
 </div><!--header-->
@@ -162,6 +167,39 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:af49991441156c7832d7017951427cef2 inherit pro_methods_class_error_base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_base.html#af49991441156c7832d7017951427cef2">ErrorBase</a> ()</td></tr>
 <tr class="memdesc:af49991441156c7832d7017951427cef2 inherit pro_methods_class_error_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the instance status to 0 for now.  <a href="#af49991441156c7832d7017951427cef2"></a><br/></td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:af26a32c9f0f75cd8ad6f40b27c817720"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; std::string, <br class="typebreak"/>
+std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preferences.html#af26a32c9f0f75cd8ad6f40b27c817720">StringMap</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a58dafa16003015a156b832a8b86cb16e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preferences.html#a58dafa16003015a156b832a8b86cb16e">Get</a> (const char *key)</td></tr>
+<tr class="memitem:ae601c39a3e2820bd6e1d628c450bf6a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preferences.html#ae601c39a3e2820bd6e1d628c450bf6a0">Put</a> (const char *key, std::string value)</td></tr>
+<tr class="memitem:aa0b8513b1a98d0c60fce91712d16c8d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preferences.html#aa0b8513b1a98d0c60fce91712d16c8d7">ReadTaskRun</a> ()</td></tr>
+<tr class="memitem:a676dacef1c28985ba79693bdb0a0c0af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preferences.html#a676dacef1c28985ba79693bdb0a0c0af">WriteTaskRun</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a2454003a3d3eb083b6e81cfbaad913bd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preferences.html#a2454003a3d3eb083b6e81cfbaad913bd">InitReadTask</a> (<a class="el" href="class_preferences.html">Preferences</a> *obj)</td></tr>
+<tr class="memitem:ac862bc3ac2d7dbf9f39b36bdab9da54c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preferences.html#ac862bc3ac2d7dbf9f39b36bdab9da54c">InitWriteTask</a> (<a class="el" href="class_preferences.html">Preferences</a> *obj)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a1a142dcfac236b5dbe64901659a5deae"><td class="memItemLeft" align="right" valign="top">SEM_ID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preferences.html#a1a142dcfac236b5dbe64901659a5deae">m_fileLock</a></td></tr>
+<tr class="memitem:a828d8507e0c043f723237ea22c33444d"><td class="memItemLeft" align="right" valign="top">SEM_ID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preferences.html#a828d8507e0c043f723237ea22c33444d">m_fileOpStarted</a></td></tr>
+<tr class="memitem:a93db422aeb7bbd05a9c0de6c2a647e41"><td class="memItemLeft" align="right" valign="top">SEM_ID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preferences.html#a93db422aeb7bbd05a9c0de6c2a647e41">m_tableLock</a></td></tr>
+<tr class="memitem:aa1242875588637407d673a5bfad716f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_preferences.html#af26a32c9f0f75cd8ad6f40b27c817720">StringMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preferences.html#aa1242875588637407d673a5bfad716f0">m_values</a></td></tr>
+<tr class="memitem:ad0d0902edb63701eb9bc003135701e87"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preferences.html#ad0d0902edb63701eb9bc003135701e87">m_keys</a></td></tr>
+<tr class="memitem:ad5a4b8f805c9b58d52f82e5f062e5a09"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_preferences.html#af26a32c9f0f75cd8ad6f40b27c817720">StringMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preferences.html#ad5a4b8f805c9b58d52f82e5f062e5a09">m_comments</a></td></tr>
+<tr class="memitem:ac6c8df267923960bc6419345fac89f2b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preferences.html#ac6c8df267923960bc6419345fac89f2b">m_endComment</a></td></tr>
+<tr class="memitem:ac53abe1082b46294027769196ff315c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_task.html">Task</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preferences.html#ac53abe1082b46294027769196ff315c5">m_readTask</a></td></tr>
+<tr class="memitem:a1baf3a891020c33cc357da2d048a5779"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_task.html">Task</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preferences.html#a1baf3a891020c33cc357da2d048a5779">m_writeTask</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a194dc62cc42c2fae06048ad324ccc50b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_preferences.html">Preferences</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preferences.html#a194dc62cc42c2fae06048ad324ccc50b">_instance</a> = <a class="el" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_class_error_base"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_error_base')"><img src="closed.png" alt="-"/>&nbsp;Protected Attributes inherited from <a class="el" href="class_error_base.html">ErrorBase</a></td></tr>
@@ -177,7 +215,30 @@ Additional Inherited Members</h2></td></tr>
 <p>This will also interact with <a class="el" href="class_network_table.html">NetworkTable</a> by creating a table called "Preferences" with all the key-value pairs. To save using <a class="el" href="class_network_table.html">NetworkTable</a>, simply set the boolean at position "~S A V E~" to true. Also, if the value of any variable is " in the <a class="el" href="class_network_table.html">NetworkTable</a>, then that represents non-existence in the <a class="el" href="class_preferences.html">Preferences</a> table</p>
 
 <p>Definition at line <a class="el" href="_preferences_8h_source.html#l00034">34</a> of file <a class="el" href="_preferences_8h_source.html">Preferences.h</a>.</p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+</div><hr/><h2>Member Typedef Documentation</h2>
+<a class="anchor" id="af26a32c9f0f75cd8ad6f40b27c817720"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::map&lt;std::string, std::string&gt; <a class="el" href="class_preferences.html#af26a32c9f0f75cd8ad6f40b27c817720">Preferences::StringMap</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_preferences_8h_source.html#l00081">81</a> of file <a class="el" href="_preferences_8h_source.html">Preferences.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a9ca3b7029509bc36da1a57ed296c2fa8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -252,6 +313,40 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns:</dt><dd>if there is a value at the given key </dd></dl>
 
 <p>Definition at line <a class="el" href="_preferences_8cpp_source.html#l00338">338</a> of file <a class="el" href="_preferences_8cpp_source.html">Preferences.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a58dafa16003015a156b832a8b86cb16e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Preferences::Get </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns the value at the given key. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>the key </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns:</dt><dd>the value (or empty if none exists) </dd></dl>
+
+<p>Definition at line <a class="el" href="_preferences_8cpp_source.html#l00366">366</a> of file <a class="el" href="_preferences_8cpp_source.html">Preferences.cpp</a>.</p>
 
 </div>
 </div>
@@ -574,6 +669,102 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a2454003a3d3eb083b6e81cfbaad913bd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> Preferences::InitReadTask </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_preferences.html">Preferences</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_preferences_8h_source.html#l00070">70</a> of file <a class="el" href="_preferences_8h_source.html">Preferences.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac862bc3ac2d7dbf9f39b36bdab9da54c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> Preferences::InitWriteTask </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_preferences.html">Preferences</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_preferences_8h_source.html#l00071">71</a> of file <a class="el" href="_preferences_8h_source.html">Preferences.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae601c39a3e2820bd6e1d628c450bf6a0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> Preferences::Put </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Puts the given value into the given key position </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>the key </td></tr>
+    <tr><td class="paramname">value</td><td>the value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_preferences_8cpp_source.html#l00382">382</a> of file <a class="el" href="_preferences_8cpp_source.html">Preferences.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a74bec1555c91e100ff9091484fcaac91"></a>
 <div class="memitem">
 <div class="memproto">
@@ -802,6 +993,32 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aa0b8513b1a98d0c60fce91712d16c8d7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> Preferences::ReadTaskRun </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The internal method to read from a file. This will be called in its own thread when the preferences singleton is first created. </p>
+
+<p>Definition at line <a class="el" href="_preferences_8cpp_source.html#l00412">412</a> of file <a class="el" href="_preferences_8cpp_source.html">Preferences.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ae2b5f7567f130301c50869916571c81b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -907,6 +1124,261 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a676dacef1c28985ba79693bdb0a0c0af"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> Preferences::WriteTaskRun </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Internal method that actually writes the table to a file. This is called in its own thread when <a class="el" href="class_preferences.html#ae8ce1d8967e205e584e9cca1dbf86919">Save()</a> is called. </p>
+
+<p>Definition at line <a class="el" href="_preferences_8cpp_source.html#l00533">533</a> of file <a class="el" href="_preferences_8cpp_source.html">Preferences.cpp</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a194dc62cc42c2fae06048ad324ccc50b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_preferences.html">Preferences</a> * Preferences::_instance = <a class="el" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The singleton instance </p>
+
+<p>Definition at line <a class="el" href="_preferences_8h_source.html#l00073">73</a> of file <a class="el" href="_preferences_8h_source.html">Preferences.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad5a4b8f805c9b58d52f82e5f062e5a09"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_preferences.html#af26a32c9f0f75cd8ad6f40b27c817720">StringMap</a> Preferences::m_comments</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The comments that were in the file sorted by which key they appeared over (String-&gt;Comment) </p>
+
+<p>Definition at line <a class="el" href="_preferences_8h_source.html#l00087">87</a> of file <a class="el" href="_preferences_8h_source.html">Preferences.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac6c8df267923960bc6419345fac89f2b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Preferences::m_endComment</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The comment at the end of the file </p>
+
+<p>Definition at line <a class="el" href="_preferences_8h_source.html#l00089">89</a> of file <a class="el" href="_preferences_8h_source.html">Preferences.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1a142dcfac236b5dbe64901659a5deae"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SEM_ID Preferences::m_fileLock</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The semaphore for accessing the file </p>
+
+<p>Definition at line <a class="el" href="_preferences_8h_source.html#l00076">76</a> of file <a class="el" href="_preferences_8h_source.html">Preferences.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a828d8507e0c043f723237ea22c33444d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SEM_ID Preferences::m_fileOpStarted</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The semaphore for beginning reads and writes to the file </p>
+
+<p>Definition at line <a class="el" href="_preferences_8h_source.html#l00078">78</a> of file <a class="el" href="_preferences_8h_source.html">Preferences.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad0d0902edb63701eb9bc003135701e87"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::string&gt; Preferences::m_keys</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The keys in the order they were read from the file </p>
+
+<p>Definition at line <a class="el" href="_preferences_8h_source.html#l00085">85</a> of file <a class="el" href="_preferences_8h_source.html">Preferences.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac53abe1082b46294027769196ff315c5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_task.html">Task</a> Preferences::m_readTask</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_preferences_8h_source.html#l00090">90</a> of file <a class="el" href="_preferences_8h_source.html">Preferences.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a93db422aeb7bbd05a9c0de6c2a647e41"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SEM_ID Preferences::m_tableLock</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The semaphore for reading from the table </p>
+
+<p>Definition at line <a class="el" href="_preferences_8h_source.html#l00080">80</a> of file <a class="el" href="_preferences_8h_source.html">Preferences.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa1242875588637407d673a5bfad716f0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_preferences.html#af26a32c9f0f75cd8ad6f40b27c817720">StringMap</a> Preferences::m_values</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The actual values (String-&gt;String) </p>
+
+<p>Definition at line <a class="el" href="_preferences_8h_source.html#l00083">83</a> of file <a class="el" href="_preferences_8h_source.html">Preferences.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1baf3a891020c33cc357da2d048a5779"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_task.html">Task</a> Preferences::m_writeTask</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_preferences_8h_source.html#l00091">91</a> of file <a class="el" href="_preferences_8h_source.html">Preferences.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>WPILib/<a class="el" href="_preferences_8h_source.html">Preferences.h</a></li>
 <li>WPILib/<a class="el" href="_preferences_8cpp_source.html">Preferences.cpp</a></li>
@@ -914,7 +1386,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:16 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:48 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

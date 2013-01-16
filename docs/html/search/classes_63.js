@@ -78,6 +78,7 @@ var searchData=
   ['contouroverlaysettings_5fstruct',['ContourOverlaySettings_struct',['../struct_contour_overlay_settings__struct.html',1,'']]],
   ['contourpoint_5fstruct',['ContourPoint_struct',['../struct_contour_point__struct.html',1,'']]],
   ['contourunion_5funion',['ContourUnion_union',['../union_contour_union__union.html',1,'']]],
+  ['control_5fblock_5ft',['control_block_t',['../struct_driver_station_enhanced_i_o_1_1control__block__t.html',1,'DriverStationEnhancedIO']]],
   ['controller',['Controller',['../class_controller.html',1,'']]],
   ['cooccurrenceoptions_5fstruct',['CooccurrenceOptions_struct',['../struct_cooccurrence_options__struct.html',1,'']]],
   ['coordinatesystem_5fstruct',['CoordinateSystem_struct',['../struct_coordinate_system__struct.html',1,'']]],

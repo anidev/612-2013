@@ -101,13 +101,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno"><a class="code" href="class_command_group.html#a862143e691209986739c234cb0fc4cc8">   13</a></span>&#160;<a class="code" href="class_command_group.html#a862143e691209986739c234cb0fc4cc8">CommandGroup::CommandGroup</a>()</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        m_currentCommandIndex = -1;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="class_command_group.html#a94cd3c3564a59d9f883b7ef1bba02da4">m_currentCommandIndex</a> = -1;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
 <div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="class_command_group.html#a050293db5f70536289063006684d9d48">   22</a></span>&#160;<a class="code" href="class_command_group.html#a862143e691209986739c234cb0fc4cc8">CommandGroup::CommandGroup</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *name) :</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="class_command.html">Command</a>(name)</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        m_currentCommandIndex = -1;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="class_command_group.html#a94cd3c3564a59d9f883b7ef1bba02da4">m_currentCommandIndex</a> = -1;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="class_command_group.html#a201f887b2cfebd59b7bfdddd8d6f9282">   28</a></span>&#160;<a class="code" href="class_command_group.html#a201f887b2cfebd59b7bfdddd8d6f9282">CommandGroup::~CommandGroup</a>()</div>
@@ -126,7 +126,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        command-&gt;<a class="code" href="class_command.html#a5992f2282e4132517e933cc39cb3c774">SetParent</a>(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        m_commands.push_back(<a class="code" href="class_command_group_entry.html">CommandGroupEntry</a>(command, <a class="code" href="class_command_group_entry.html#a0c435eb6049bef341e92b3550e8f20b1a88aa8647af6ba782f9faf0eb8986a730">CommandGroupEntry::kSequence_InSequence</a>));</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="class_command_group.html#a1bcd19d5d9743670d765742249e7280e">m_commands</a>.push_back(<a class="code" href="class_command_group_entry.html">CommandGroupEntry</a>(command, <a class="code" href="class_command_group_entry.html#a0c435eb6049bef341e92b3550e8f20b1a88aa8647af6ba782f9faf0eb8986a730">CommandGroupEntry::kSequence_InSequence</a>));</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="comment">// Iterate through command-&gt;GetRequirements() and call Requires() on each required subsystem</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="class_command.html#a189a03bfe86bc5cf292994ba141a8b25">Command::SubsystemSet</a> requirements = command-&gt;<a class="code" href="class_command.html#afb520de2e4173f9342a94dd98d76dc0f">GetRequirements</a>();</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        Command::SubsystemSet::iterator iter = requirements.begin();</div>
@@ -151,7 +151,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        command-&gt;<a class="code" href="class_command.html#a5992f2282e4132517e933cc39cb3c774">SetParent</a>(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        m_commands.push_back(<a class="code" href="class_command_group_entry.html">CommandGroupEntry</a>(command, <a class="code" href="class_command_group_entry.html#a0c435eb6049bef341e92b3550e8f20b1a88aa8647af6ba782f9faf0eb8986a730">CommandGroupEntry::kSequence_InSequence</a>, timeout));</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="class_command_group.html#a1bcd19d5d9743670d765742249e7280e">m_commands</a>.push_back(<a class="code" href="class_command_group_entry.html">CommandGroupEntry</a>(command, <a class="code" href="class_command_group_entry.html#a0c435eb6049bef341e92b3550e8f20b1a88aa8647af6ba782f9faf0eb8986a730">CommandGroupEntry::kSequence_InSequence</a>, timeout));</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="comment">// Iterate through command-&gt;GetRequirements() and call Requires() on each required subsystem</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="class_command.html#a189a03bfe86bc5cf292994ba141a8b25">Command::SubsystemSet</a> requirements = command-&gt;<a class="code" href="class_command.html#afb520de2e4173f9342a94dd98d76dc0f">GetRequirements</a>();</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        Command::SubsystemSet::iterator iter = requirements.begin();</div>
@@ -171,7 +171,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        command-&gt;<a class="code" href="class_command.html#a5992f2282e4132517e933cc39cb3c774">SetParent</a>(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        m_commands.push_back(<a class="code" href="class_command_group_entry.html">CommandGroupEntry</a>(command, <a class="code" href="class_command_group_entry.html#a0c435eb6049bef341e92b3550e8f20b1aefaaffa9ce1d3fa3933660d2fe6e3128">CommandGroupEntry::kSequence_BranchChild</a>));</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <a class="code" href="class_command_group.html#a1bcd19d5d9743670d765742249e7280e">m_commands</a>.push_back(<a class="code" href="class_command_group_entry.html">CommandGroupEntry</a>(command, <a class="code" href="class_command_group_entry.html#a0c435eb6049bef341e92b3550e8f20b1aefaaffa9ce1d3fa3933660d2fe6e3128">CommandGroupEntry::kSequence_BranchChild</a>));</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="comment">// Iterate through command-&gt;GetRequirements() and call Requires() on each required subsystem</span></div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <a class="code" href="class_command.html#a189a03bfe86bc5cf292994ba141a8b25">Command::SubsystemSet</a> requirements = command-&gt;<a class="code" href="class_command.html#afb520de2e4173f9342a94dd98d76dc0f">GetRequirements</a>();</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        Command::SubsystemSet::iterator iter = requirements.begin();</div>
@@ -196,7 +196,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        command-&gt;<a class="code" href="class_command.html#a5992f2282e4132517e933cc39cb3c774">SetParent</a>(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        m_commands.push_back(<a class="code" href="class_command_group_entry.html">CommandGroupEntry</a>(command, <a class="code" href="class_command_group_entry.html#a0c435eb6049bef341e92b3550e8f20b1aefaaffa9ce1d3fa3933660d2fe6e3128">CommandGroupEntry::kSequence_BranchChild</a>, timeout));</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <a class="code" href="class_command_group.html#a1bcd19d5d9743670d765742249e7280e">m_commands</a>.push_back(<a class="code" href="class_command_group_entry.html">CommandGroupEntry</a>(command, <a class="code" href="class_command_group_entry.html#a0c435eb6049bef341e92b3550e8f20b1aefaaffa9ce1d3fa3933660d2fe6e3128">CommandGroupEntry::kSequence_BranchChild</a>, timeout));</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="comment">// Iterate through command-&gt;GetRequirements() and call Requires() on each required subsystem</span></div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <a class="code" href="class_command.html#a189a03bfe86bc5cf292994ba141a8b25">Command::SubsystemSet</a> requirements = command-&gt;<a class="code" href="class_command.html#afb520de2e4173f9342a94dd98d76dc0f">GetRequirements</a>();</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        Command::SubsystemSet::iterator iter = requirements.begin();</div>
@@ -206,7 +206,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;</div>
 <div class="line"><a name="l00194"></a><span class="lineno"><a class="code" href="class_command_group.html#a28b8b3ff819a64555fd6341589cfc455">  194</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_command_group.html#a28b8b3ff819a64555fd6341589cfc455">CommandGroup::_Initialize</a>()</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;{</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        m_currentCommandIndex = -1;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <a class="code" href="class_command_group.html#a94cd3c3564a59d9f883b7ef1bba02da4">m_currentCommandIndex</a> = -1;</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;}</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
 <div class="line"><a name="l00199"></a><span class="lineno"><a class="code" href="class_command_group.html#ad9b5deb4bcefe5e00a63e0eec9300523">  199</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_command_group.html#ad9b5deb4bcefe5e00a63e0eec9300523">CommandGroup::_Execute</a>()</div>
@@ -215,13 +215,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <a class="code" href="class_command.html">Command</a> *cmd = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="keywordtype">bool</span> firstRun = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keywordflow">if</span> (m_currentCommandIndex == -1)</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_command_group.html#a94cd3c3564a59d9f883b7ef1bba02da4">m_currentCommandIndex</a> == -1)</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        {</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                firstRun = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                m_currentCommandIndex = 0;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                <a class="code" href="class_command_group.html#a94cd3c3564a59d9f883b7ef1bba02da4">m_currentCommandIndex</a> = 0;</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        }</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="keywordflow">while</span> ((<span class="keywordtype">unsigned</span>)m_currentCommandIndex &lt; m_commands.size())</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="keywordflow">while</span> ((<span class="keywordtype">unsigned</span>)<a class="code" href="class_command_group.html#a94cd3c3564a59d9f883b7ef1bba02da4">m_currentCommandIndex</a> &lt; <a class="code" href="class_command_group.html#a1bcd19d5d9743670d765742249e7280e">m_commands</a>.size())</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        {</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                <span class="keywordflow">if</span> (cmd != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                {</div>
@@ -234,15 +234,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                        }</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                        {</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                                cmd-&gt;Removed();</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                                m_currentCommandIndex++;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                                cmd-&gt;<a class="code" href="class_command.html#a91fe691675881d99b6ac23f8b21487d8">Removed</a>();</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                                <a class="code" href="class_command_group.html#a94cd3c3564a59d9f883b7ef1bba02da4">m_currentCommandIndex</a>++;</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                                firstRun = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                                cmd = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                                <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                        }</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                }</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                entry = m_commands[m_currentCommandIndex];</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                entry = <a class="code" href="class_command_group.html#a1bcd19d5d9743670d765742249e7280e">m_commands</a>[<a class="code" href="class_command_group.html#a94cd3c3564a59d9f883b7ef1bba02da4">m_currentCommandIndex</a>];</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                cmd = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                <span class="keywordflow">switch</span> (entry.<a class="code" href="class_command_group_entry.html#a3366b587d3828a04ad4f7d0c825590b9">m_state</a>)</div>
@@ -251,29 +251,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                                cmd = entry.<a class="code" href="class_command_group_entry.html#ab26677062ebee008ec137472bad3da7d">m_command</a>;</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                                <span class="keywordflow">if</span> (firstRun)</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                                {</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                                        cmd-&gt;StartRunning();</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                                        CancelConflicts(cmd);</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                                        cmd-&gt;<a class="code" href="class_command.html#a02f9cd9b026e0046e80979685cbf07d2">StartRunning</a>();</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                                        <a class="code" href="class_command_group.html#a95d7672a2b2f7d3cbca51383632ae1c4">CancelConflicts</a>(cmd);</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                                        firstRun = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                                }</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="class_command_group_entry.html#a0c435eb6049bef341e92b3550e8f20b1ae0496c16dec845c834b71e8abdb1f4a6">CommandGroupEntry::kSequence_BranchPeer</a>:</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                                m_currentCommandIndex++;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                                <a class="code" href="class_command_group.html#a94cd3c3564a59d9f883b7ef1bba02da4">m_currentCommandIndex</a>++;</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                                entry.<a class="code" href="class_command_group_entry.html#ab26677062ebee008ec137472bad3da7d">m_command</a>-&gt;<a class="code" href="class_command.html#ad61704023f2e6acfcfda4bc88c0b77fc">Start</a>();</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="class_command_group_entry.html#a0c435eb6049bef341e92b3550e8f20b1aefaaffa9ce1d3fa3933660d2fe6e3128">CommandGroupEntry::kSequence_BranchChild</a>:</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                                m_currentCommandIndex++;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                                CancelConflicts(entry.<a class="code" href="class_command_group_entry.html#ab26677062ebee008ec137472bad3da7d">m_command</a>);</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                                entry.<a class="code" href="class_command_group_entry.html#ab26677062ebee008ec137472bad3da7d">m_command</a>-&gt;StartRunning();</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                                m_children.push_back(entry);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                                <a class="code" href="class_command_group.html#a94cd3c3564a59d9f883b7ef1bba02da4">m_currentCommandIndex</a>++;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                                <a class="code" href="class_command_group.html#a95d7672a2b2f7d3cbca51383632ae1c4">CancelConflicts</a>(entry.<a class="code" href="class_command_group_entry.html#ab26677062ebee008ec137472bad3da7d">m_command</a>);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                                entry.<a class="code" href="class_command_group_entry.html#ab26677062ebee008ec137472bad3da7d">m_command</a>-&gt;<a class="code" href="class_command.html#a02f9cd9b026e0046e80979685cbf07d2">StartRunning</a>();</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                                <a class="code" href="class_command_group.html#ac22d67a12ba16653eaaf8f3b344a982c">m_children</a>.push_back(entry);</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                }</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        }</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="comment">// Run Children</span></div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        CommandList::iterator iter = m_children.begin();</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <span class="keywordflow">for</span> (; iter != m_children.end();)</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        CommandList::iterator iter = <a class="code" href="class_command_group.html#ac22d67a12ba16653eaaf8f3b344a982c">m_children</a>.begin();</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <span class="keywordflow">for</span> (; iter != <a class="code" href="class_command_group.html#ac22d67a12ba16653eaaf8f3b344a982c">m_children</a>.end();)</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        {</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                entry = *iter;</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                <a class="code" href="class_command.html">Command</a> *child = entry.<a class="code" href="class_command_group_entry.html#ab26677062ebee008ec137472bad3da7d">m_command</a>;</div>
@@ -282,8 +282,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                <span class="keywordflow">if</span> (!child-&gt;<a class="code" href="class_command.html#ae10d99a6cec39f82aa9cb3dc289a45eb">Run</a>())</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                {</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                        child-&gt;Removed();</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                        iter = m_children.erase(iter);</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                        child-&gt;<a class="code" href="class_command.html#a91fe691675881d99b6ac23f8b21487d8">Removed</a>();</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                        iter = <a class="code" href="class_command_group.html#ac22d67a12ba16653eaaf8f3b344a982c">m_children</a>.erase(iter);</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                }</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                {</div>
@@ -295,21 +295,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00282"></a><span class="lineno"><a class="code" href="class_command_group.html#a7c85be5c78703c542bbda74fc4173202">  282</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_command_group.html#a7c85be5c78703c542bbda74fc4173202">CommandGroup::_End</a>()</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;{</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <span class="comment">// Theoretically, we don&#39;t have to check this, but we do if teams override the IsFinished method</span></div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <span class="keywordflow">if</span> (m_currentCommandIndex != -1 &amp;&amp; (<span class="keywordtype">unsigned</span>)m_currentCommandIndex &lt; m_commands.size())</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_command_group.html#a94cd3c3564a59d9f883b7ef1bba02da4">m_currentCommandIndex</a> != -1 &amp;&amp; (<span class="keywordtype">unsigned</span>)<a class="code" href="class_command_group.html#a94cd3c3564a59d9f883b7ef1bba02da4">m_currentCommandIndex</a> &lt; <a class="code" href="class_command_group.html#a1bcd19d5d9743670d765742249e7280e">m_commands</a>.size())</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        {</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                <a class="code" href="class_command.html">Command</a> *cmd = m_commands[m_currentCommandIndex].m_command;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                <a class="code" href="class_command.html">Command</a> *cmd = <a class="code" href="class_command_group.html#a1bcd19d5d9743670d765742249e7280e">m_commands</a>[<a class="code" href="class_command_group.html#a94cd3c3564a59d9f883b7ef1bba02da4">m_currentCommandIndex</a>].m_command;</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                cmd-&gt;<a class="code" href="class_command.html#a2e36a819254da2bb9badb3227bdfe336">_Cancel</a>();</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                cmd-&gt;Removed();</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                cmd-&gt;<a class="code" href="class_command.html#a91fe691675881d99b6ac23f8b21487d8">Removed</a>();</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        }</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        CommandList::iterator iter = m_children.begin();</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="keywordflow">for</span> (; iter != m_children.end(); iter++)</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        CommandList::iterator iter = <a class="code" href="class_command_group.html#ac22d67a12ba16653eaaf8f3b344a982c">m_children</a>.begin();</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="keywordflow">for</span> (; iter != <a class="code" href="class_command_group.html#ac22d67a12ba16653eaaf8f3b344a982c">m_children</a>.end(); iter++)</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        {</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                <a class="code" href="class_command.html">Command</a> *cmd = iter-&gt;m_command;</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                cmd-&gt;<a class="code" href="class_command.html#a2e36a819254da2bb9badb3227bdfe336">_Cancel</a>();</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                cmd-&gt;Removed();</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                cmd-&gt;<a class="code" href="class_command.html#a91fe691675881d99b6ac23f8b21487d8">Removed</a>();</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        }</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        m_children.clear();</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        <a class="code" href="class_command_group.html#ac22d67a12ba16653eaaf8f3b344a982c">m_children</a>.clear();</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;}</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;</div>
 <div class="line"><a name="l00302"></a><span class="lineno"><a class="code" href="class_command_group.html#ad3ff13abeb2f4b051e88cb5d3c874347">  302</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_command_group.html#ad3ff13abeb2f4b051e88cb5d3c874347">CommandGroup::_Interrupted</a>()</div>
@@ -339,7 +339,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;</div>
 <div class="line"><a name="l00327"></a><span class="lineno"><a class="code" href="class_command_group.html#a708bf0bb9ca1285bdfb9a548f3437811">  327</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_command_group.html#a708bf0bb9ca1285bdfb9a548f3437811">CommandGroup::IsFinished</a>()</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;{</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="keywordflow">return</span> (<span class="keywordtype">unsigned</span>)m_currentCommandIndex &gt;= m_commands.size() &amp;&amp; m_children.empty();</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="keywordflow">return</span> (<span class="keywordtype">unsigned</span>)<a class="code" href="class_command_group.html#a94cd3c3564a59d9f883b7ef1bba02da4">m_currentCommandIndex</a> &gt;= <a class="code" href="class_command_group.html#a1bcd19d5d9743670d765742249e7280e">m_commands</a>.size() &amp;&amp; <a class="code" href="class_command_group.html#ac22d67a12ba16653eaaf8f3b344a982c">m_children</a>.empty();</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;}</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;</div>
 <div class="line"><a name="l00332"></a><span class="lineno"><a class="code" href="class_command_group.html#ab02206bb10bc9ef6784ec08037580b75">  332</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_command_group.html#ab02206bb10bc9ef6784ec08037580b75">CommandGroup::IsInterruptible</a>()</div>
@@ -347,15 +347,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="class_command.html#ad9ec101c651f2a591bcdebe5db2f0d27">Command::IsInterruptible</a>())</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <span class="keywordflow">if</span> (m_currentCommandIndex != -1 &amp;&amp; (<span class="keywordtype">unsigned</span>)m_currentCommandIndex &lt; m_commands.size())</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_command_group.html#a94cd3c3564a59d9f883b7ef1bba02da4">m_currentCommandIndex</a> != -1 &amp;&amp; (<span class="keywordtype">unsigned</span>)<a class="code" href="class_command_group.html#a94cd3c3564a59d9f883b7ef1bba02da4">m_currentCommandIndex</a> &lt; <a class="code" href="class_command_group.html#a1bcd19d5d9743670d765742249e7280e">m_commands</a>.size())</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        {</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                <a class="code" href="class_command.html">Command</a> *cmd = m_commands[m_currentCommandIndex].m_command;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                <a class="code" href="class_command.html">Command</a> *cmd = <a class="code" href="class_command_group.html#a1bcd19d5d9743670d765742249e7280e">m_commands</a>[<a class="code" href="class_command_group.html#a94cd3c3564a59d9f883b7ef1bba02da4">m_currentCommandIndex</a>].m_command;</div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                <span class="keywordflow">if</span> (!cmd-&gt;<a class="code" href="class_command.html#ad9ec101c651f2a591bcdebe5db2f0d27">IsInterruptible</a>())</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        }</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        CommandList::iterator iter = m_children.begin();</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        <span class="keywordflow">for</span> (; iter != m_children.end(); iter++)</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        CommandList::iterator iter = <a class="code" href="class_command_group.html#ac22d67a12ba16653eaaf8f3b344a982c">m_children</a>.begin();</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        <span class="keywordflow">for</span> (; iter != <a class="code" href="class_command_group.html#ac22d67a12ba16653eaaf8f3b344a982c">m_children</a>.end(); iter++)</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        {</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                <span class="keywordflow">if</span> (!iter-&gt;m_command-&gt;IsInterruptible())</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -364,10 +364,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;}</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="keywordtype">void</span> CommandGroup::CancelConflicts(<a class="code" href="class_command.html">Command</a> *command)</div>
+<div class="line"><a name="l00354"></a><span class="lineno"><a class="code" href="class_command_group.html#a95d7672a2b2f7d3cbca51383632ae1c4">  354</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_command_group.html#a95d7672a2b2f7d3cbca51383632ae1c4">CommandGroup::CancelConflicts</a>(<a class="code" href="class_command.html">Command</a> *command)</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;{</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        CommandList::iterator childIter = m_children.begin();</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        <span class="keywordflow">for</span> (; childIter != m_children.end();)</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        CommandList::iterator childIter = <a class="code" href="class_command_group.html#ac22d67a12ba16653eaaf8f3b344a982c">m_children</a>.begin();</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        <span class="keywordflow">for</span> (; childIter != <a class="code" href="class_command_group.html#ac22d67a12ba16653eaaf8f3b344a982c">m_children</a>.end();)</div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        {</div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                <a class="code" href="class_command.html">Command</a> *child = childIter-&gt;m_command;</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                <span class="keywordtype">bool</span> erased = <span class="keyword">false</span>;</div>
@@ -379,8 +379,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                        <span class="keywordflow">if</span> (child-&gt;<a class="code" href="class_command.html#a123a105353e91112a00a838da44901d9">DoesRequire</a>(*requirementIter))</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                        {</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                                child-&gt;<a class="code" href="class_command.html#a2e36a819254da2bb9badb3227bdfe336">_Cancel</a>();</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                                child-&gt;Removed();</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;                                childIter = m_children.erase(childIter);</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                                child-&gt;<a class="code" href="class_command.html#a91fe691675881d99b6ac23f8b21487d8">Removed</a>();</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;                                childIter = <a class="code" href="class_command_group.html#ac22d67a12ba16653eaaf8f3b344a982c">m_children</a>.erase(childIter);</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                                erased = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                        }</div>
@@ -392,12 +392,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;</div>
 <div class="line"><a name="l00380"></a><span class="lineno"><a class="code" href="class_command_group.html#a8d10c609973d9de158ae46d9374cef56">  380</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_command_group.html#a8d10c609973d9de158ae46d9374cef56">CommandGroup::GetSize</a>()</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;{</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        <span class="keywordflow">return</span> m_children.size();</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_command_group.html#ac22d67a12ba16653eaaf8f3b344a982c">m_children</a>.size();</div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:09 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:42 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

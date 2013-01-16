@@ -87,6 +87,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#friends">Friends</a>  </div>
   <div class="headertitle">
 <div class="title">Subsystem Class Reference</div>  </div>
@@ -146,6 +148,17 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a950ef5641b4df7471e3de05c95bfba86"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_table.html">ITable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_subsystem.html#a950ef5641b4df7471e3de05c95bfba86">m_table</a></td></tr>
 <tr class="inherit_header pro_attribs_class_error_base"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_error_base')"><img src="closed.png" alt="-"/>&nbsp;Protected Attributes inherited from <a class="el" href="class_error_base.html">ErrorBase</a></td></tr>
 <tr class="memitem:a4996df94b6e5fc5375e9c33ff5386374 inherit pro_attribs_class_error_base"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_error.html">Error</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_base.html#a4996df94b6e5fc5375e9c33ff5386374">m_error</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a569548ab981805f2e3332863da1a0d1e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_subsystem.html#a569548ab981805f2e3332863da1a0d1e">ConfirmCommand</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a70775868e98fa2cefaca4fdb7607439d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_command.html">Command</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_subsystem.html#a70775868e98fa2cefaca4fdb7607439d">m_currentCommand</a></td></tr>
+<tr class="memitem:ae7eb31465d8052a9d135b3f8374712b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_command.html">Command</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_subsystem.html#ae7eb31465d8052a9d135b3f8374712b2">m_defaultCommand</a></td></tr>
+<tr class="memitem:a888202bcc8b3bd919130cba93d49948d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_subsystem.html#a888202bcc8b3bd919130cba93d49948d">m_name</a></td></tr>
+<tr class="memitem:ab94bfacf7333dacb22d5054bcd59a5df"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_subsystem.html#ab94bfacf7333dacb22d5054bcd59a5df">m_initializedDefaultCommand</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
@@ -219,6 +232,32 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a569548ab981805f2e3332863da1a0d1e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> Subsystem::ConfirmCommand </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Call this to alert <a class="el" href="class_subsystem.html">Subsystem</a> that the current command is actually the command. Sometimes, the <a class="el" href="class_subsystem.html">Subsystem</a> is told that it has no command while the <a class="el" href="class_scheduler.html">Scheduler</a> is going through the loop, only to be soon after given a new one. This will avoid that situation. </p>
+
+<p>Definition at line <a class="el" href="_subsystem_8cpp_source.html#l00125">125</a> of file <a class="el" href="_subsystem_8cpp_source.html">Subsystem.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a3acb9f816199df44fd1dc5f452a2a6c8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -482,6 +521,94 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a70775868e98fa2cefaca4fdb7607439d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_command.html">Command</a>* Subsystem::m_currentCommand</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_subsystem_8h_source.html#l00033">33</a> of file <a class="el" href="_subsystem_8h_source.html">Subsystem.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae7eb31465d8052a9d135b3f8374712b2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_command.html">Command</a>* Subsystem::m_defaultCommand</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_subsystem_8h_source.html#l00034">34</a> of file <a class="el" href="_subsystem_8h_source.html">Subsystem.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab94bfacf7333dacb22d5054bcd59a5df"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Subsystem::m_initializedDefaultCommand</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_subsystem_8h_source.html#l00036">36</a> of file <a class="el" href="_subsystem_8h_source.html">Subsystem.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a888202bcc8b3bd919130cba93d49948d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Subsystem::m_name</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_subsystem_8h_source.html#l00035">35</a> of file <a class="el" href="_subsystem_8h_source.html">Subsystem.h</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a950ef5641b4df7471e3de05c95bfba86"></a>
 <div class="memitem">
 <div class="memproto">
@@ -511,7 +638,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:17 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:49 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

@@ -86,7 +86,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a>  </div>
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">ServerConnectionAdapter Class Reference</div>  </div>
 </div><!--header-->
@@ -109,7 +111,7 @@ Inheritance diagram for ServerConnectionAdapter:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a23fbbd595ec131f400a41cd27acb025c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_server_connection_adapter.html#a23fbbd595ec131f400a41cd27acb025c">ServerConnectionAdapter</a> (<a class="el" href="class_i_o_stream.html">IOStream</a> *stream, <a class="el" href="class_server_network_table_entry_store.html">ServerNetworkTableEntryStore</a> &amp;entryStore, <a class="el" href="class_incoming_entry_receiver.html">IncomingEntryReceiver</a> &amp;transactionReceiver, <a class="el" href="class_server_adapter_manager.html">ServerAdapterManager</a> &amp;adapterListener, <a class="el" href="class_network_table_entry_type_manager.html">NetworkTableEntryTypeManager</a> &amp;typeManager, <a class="el" href="class_n_t_thread_manager.html">NTThreadManager</a> &amp;threadManager)</td></tr>
+<tr class="memitem:a23fbbd595ec131f400a41cd27acb025c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_server_connection_adapter.html#a23fbbd595ec131f400a41cd27acb025c">ServerConnectionAdapter</a> (<a class="el" href="class_i_o_stream.html">IOStream</a> *stream, <a class="el" href="class_server_network_table_entry_store.html">ServerNetworkTableEntryStore</a> &amp;<a class="el" href="class_server_connection_adapter.html#abd557263af07323d24152137375a5d97">entryStore</a>, <a class="el" href="class_incoming_entry_receiver.html">IncomingEntryReceiver</a> &amp;<a class="el" href="class_server_connection_adapter.html#a6a53da33cd5c1be36ecf4c5fe266a267">transactionReceiver</a>, <a class="el" href="class_server_adapter_manager.html">ServerAdapterManager</a> &amp;<a class="el" href="class_server_connection_adapter.html#a100d410238a3e26d40a7e386280a3e52">adapterListener</a>, <a class="el" href="class_network_table_entry_type_manager.html">NetworkTableEntryTypeManager</a> &amp;typeManager, <a class="el" href="class_n_t_thread_manager.html">NTThreadManager</a> &amp;threadManager)</td></tr>
 <tr class="memitem:accb23890f86f089b1f337a421c4e33d5"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_server_connection_adapter.html#accb23890f86f089b1f337a421c4e33d5">~ServerConnectionAdapter</a> ()</td></tr>
 <tr class="memitem:a70513584f429ff332396edc07ed96b58"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_server_connection_adapter.html#a70513584f429ff332396edc07ed96b58">badMessage</a> (<a class="el" href="class_bad_message_exception.html">BadMessageException</a> &amp;e)</td></tr>
 <tr class="memitem:a1b255d4df3a388e5186e849953cae512"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_server_connection_adapter.html#a1b255d4df3a388e5186e849953cae512">ioException</a> (<a class="el" href="class_i_o_exception.html">IOException</a> &amp;e)</td></tr>
@@ -131,8 +133,9 @@ Public Member Functions</h2></td></tr>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a0f43234108f3972c7643df47f52a7aa6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_network_table_connection.html">NetworkTableConnection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_server_connection_adapter.html#a0f43234108f3972c7643df47f52a7aa6">connection</a></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a2c258672a449508e6baa35d26d689fc4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_server_connection_adapter.html#a2c258672a449508e6baa35d26d689fc4">gotoState</a> (<a class="el" href="class_server_connection_state.html">ServerConnectionState</a> *newState)</td></tr>
 <tr class="inherit_header pub_methods_class_connection_adapter"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_connection_adapter')"><img src="closed.png" alt="-"/>&nbsp;Private Member Functions inherited from <a class="el" href="class_connection_adapter.html">ConnectionAdapter</a></td></tr>
 <tr class="memitem:a05ceb091b23ceb6f0453947017346b5e inherit pub_methods_class_connection_adapter"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connection_adapter.html#a05ceb091b23ceb6f0453947017346b5e">~ConnectionAdapter</a> ()</td></tr>
 <tr class="inherit_header pub_methods_class_incoming_entry_receiver"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_incoming_entry_receiver')"><img src="closed.png" alt="-"/>&nbsp;Private Member Functions inherited from <a class="el" href="class_incoming_entry_receiver.html">IncomingEntryReceiver</a></td></tr>
@@ -141,6 +144,15 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a70bb6a8b962bfe46245368638d891f20 inherit pub_methods_class_flushable_outgoing_entry_receiver"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flushable_outgoing_entry_receiver.html#a70bb6a8b962bfe46245368638d891f20">~FlushableOutgoingEntryReceiver</a> ()</td></tr>
 <tr class="inherit_header pub_methods_class_outgoing_entry_receiver"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_outgoing_entry_receiver')"><img src="closed.png" alt="-"/>&nbsp;Private Member Functions inherited from <a class="el" href="class_outgoing_entry_receiver.html">OutgoingEntryReceiver</a></td></tr>
 <tr class="memitem:a59f40ce7c1e0a1b52d0c81d5c7589f82 inherit pub_methods_class_outgoing_entry_receiver"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outgoing_entry_receiver.html#a59f40ce7c1e0a1b52d0c81d5c7589f82">~OutgoingEntryReceiver</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:abd557263af07323d24152137375a5d97"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_server_network_table_entry_store.html">ServerNetworkTableEntryStore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_server_connection_adapter.html#abd557263af07323d24152137375a5d97">entryStore</a></td></tr>
+<tr class="memitem:a6a53da33cd5c1be36ecf4c5fe266a267"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_incoming_entry_receiver.html">IncomingEntryReceiver</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_server_connection_adapter.html#a6a53da33cd5c1be36ecf4c5fe266a267">transactionReceiver</a></td></tr>
+<tr class="memitem:a100d410238a3e26d40a7e386280a3e52"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_server_adapter_manager.html">ServerAdapterManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_server_connection_adapter.html#a100d410238a3e26d40a7e386280a3e52">adapterListener</a></td></tr>
+<tr class="memitem:a1b6eb51c9e19891b97e4c529302e496f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_t_thread.html">NTThread</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_server_connection_adapter.html#a1b6eb51c9e19891b97e4c529302e496f">readThread</a></td></tr>
+<tr class="memitem:a3755e91b62d13b3ce789a90fd7c11d83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_connection_monitor_thread.html">ConnectionMonitorThread</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_server_connection_adapter.html#a3755e91b62d13b3ce789a90fd7c11d83">monitorThread</a></td></tr>
+<tr class="memitem:a147fdd734248cdf650993817ea926a5f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_server_connection_state.html">ServerConnectionState</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_server_connection_adapter.html#a147fdd734248cdf650993817ea926a5f">connectionState</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Object that adapts messages from a client to the server</p>
@@ -398,6 +410,32 @@ Additional Inherited Members</h2></td></tr>
 <p>Implements <a class="el" href="class_connection_adapter.html#a5b3aee0f2c070f78d3339cd26257ff2f">ConnectionAdapter</a>.</p>
 
 <p>Definition at line <a class="el" href="_server_connection_adapter_8cpp_source.html#l00090">90</a> of file <a class="el" href="_server_connection_adapter_8cpp_source.html">ServerConnectionAdapter.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2c258672a449508e6baa35d26d689fc4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> ServerConnectionAdapter::gotoState </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_server_connection_state.html">ServerConnectionState</a> *&#160;</td>
+          <td class="paramname"><em>newState</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_server_connection_adapter_8cpp_source.html#l00012">12</a> of file <a class="el" href="_server_connection_adapter_8cpp_source.html">ServerConnectionAdapter.cpp</a>.</p>
 
 </div>
 </div>
@@ -666,6 +704,28 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a100d410238a3e26d40a7e386280a3e52"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_server_adapter_manager.html">ServerAdapterManager</a>&amp; ServerConnectionAdapter::adapterListener</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_server_connection_adapter_8h_source.html#l00037">37</a> of file <a class="el" href="_server_connection_adapter_8h_source.html">ServerConnectionAdapter.h</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a0f43234108f3972c7643df47f52a7aa6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -681,6 +741,116 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a147fdd734248cdf650993817ea926a5f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_server_connection_state.html">ServerConnectionState</a>* ServerConnectionAdapter::connectionState</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_server_connection_adapter_8h_source.html#l00048">48</a> of file <a class="el" href="_server_connection_adapter_8h_source.html">ServerConnectionAdapter.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abd557263af07323d24152137375a5d97"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_server_network_table_entry_store.html">ServerNetworkTableEntryStore</a>&amp; ServerConnectionAdapter::entryStore</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_server_connection_adapter_8h_source.html#l00035">35</a> of file <a class="el" href="_server_connection_adapter_8h_source.html">ServerConnectionAdapter.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3755e91b62d13b3ce789a90fd7c11d83"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_connection_monitor_thread.html">ConnectionMonitorThread</a> ServerConnectionAdapter::monitorThread</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_server_connection_adapter_8h_source.html#l00045">45</a> of file <a class="el" href="_server_connection_adapter_8h_source.html">ServerConnectionAdapter.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1b6eb51c9e19891b97e4c529302e496f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_t_thread.html">NTThread</a>* ServerConnectionAdapter::readThread</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_server_connection_adapter_8h_source.html#l00044">44</a> of file <a class="el" href="_server_connection_adapter_8h_source.html">ServerConnectionAdapter.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6a53da33cd5c1be36ecf4c5fe266a267"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_incoming_entry_receiver.html">IncomingEntryReceiver</a>&amp; ServerConnectionAdapter::transactionReceiver</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_server_connection_adapter_8h_source.html#l00036">36</a> of file <a class="el" href="_server_connection_adapter_8h_source.html">ServerConnectionAdapter.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>WPILib/networktables2/server/<a class="el" href="_server_connection_adapter_8h_source.html">ServerConnectionAdapter.h</a></li>
 <li>WPILib/networktables2/server/<a class="el" href="_server_connection_adapter_8cpp_source.html">ServerConnectionAdapter.cpp</a></li>
@@ -688,7 +858,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:17 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:48 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

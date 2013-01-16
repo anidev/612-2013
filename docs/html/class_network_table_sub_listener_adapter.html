@@ -85,7 +85,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">NetworkTableSubListenerAdapter Class Reference</div>  </div>
 </div><!--header-->
@@ -106,9 +107,16 @@ Inheritance diagram for NetworkTableSubListenerAdapter:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aafdbdfe11ca4727debcb26cbcbb740d3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_table_sub_listener_adapter.html#aafdbdfe11ca4727debcb26cbcbb740d3">NetworkTableSubListenerAdapter</a> (std::string &amp;prefix, <a class="el" href="class_network_table.html">NetworkTable</a> *targetSource, <a class="el" href="class_i_table_listener.html">ITableListener</a> *targetListener)</td></tr>
+<tr class="memitem:aafdbdfe11ca4727debcb26cbcbb740d3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_table_sub_listener_adapter.html#aafdbdfe11ca4727debcb26cbcbb740d3">NetworkTableSubListenerAdapter</a> (std::string &amp;<a class="el" href="class_network_table_sub_listener_adapter.html#adf59b44533e9a3298ffd6e2ed0ca053f">prefix</a>, <a class="el" href="class_network_table.html">NetworkTable</a> *<a class="el" href="class_network_table_sub_listener_adapter.html#a7477a1a7fc080a59c5315b38e51f0e7d">targetSource</a>, <a class="el" href="class_i_table_listener.html">ITableListener</a> *<a class="el" href="class_network_table_sub_listener_adapter.html#a1658daed312a57f8cda57bf7f3b4fd58">targetListener</a>)</td></tr>
 <tr class="memitem:a4a14b6896f659d6a5e27ab28f13ab6e5"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_table_sub_listener_adapter.html#a4a14b6896f659d6a5e27ab28f13ab6e5">~NetworkTableSubListenerAdapter</a> ()</td></tr>
 <tr class="memitem:a8a79504411317bd0fb54d3eab236d108"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_table_sub_listener_adapter.html#a8a79504411317bd0fb54d3eab236d108">ValueChanged</a> (<a class="el" href="class_i_table.html">ITable</a> *source, const std::string &amp;key, <a class="el" href="union_entry_value.html">EntryValue</a> value, bool isNew)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:adf59b44533e9a3298ffd6e2ed0ca053f"><td class="memItemLeft" align="right" valign="top">std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_table_sub_listener_adapter.html#adf59b44533e9a3298ffd6e2ed0ca053f">prefix</a></td></tr>
+<tr class="memitem:a7477a1a7fc080a59c5315b38e51f0e7d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_network_table.html">NetworkTable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_table_sub_listener_adapter.html#a7477a1a7fc080a59c5315b38e51f0e7d">targetSource</a></td></tr>
+<tr class="memitem:a1658daed312a57f8cda57bf7f3b4fd58"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_table_listener.html">ITableListener</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_table_sub_listener_adapter.html#a1658daed312a57f8cda57bf7f3b4fd58">targetListener</a></td></tr>
+<tr class="memitem:a30883d4f7efd4c772c38d6b27ec278c7"><td class="memItemLeft" align="right" valign="top">set&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_table_sub_listener_adapter.html#a30883d4f7efd4c772c38d6b27ec278c7">notifiedTables</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
@@ -243,6 +251,95 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a30883d4f7efd4c772c38d6b27ec278c7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">set&lt;std::string&gt; NetworkTableSubListenerAdapter::notifiedTables</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_network_table_sub_listener_adapter_8h_source.html#l00028">28</a> of file <a class="el" href="_network_table_sub_listener_adapter_8h_source.html">NetworkTableSubListenerAdapter.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adf59b44533e9a3298ffd6e2ed0ca053f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string&amp; NetworkTableSubListenerAdapter::prefix</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_network_table_sub_listener_adapter_8h_source.html#l00025">25</a> of file <a class="el" href="_network_table_sub_listener_adapter_8h_source.html">NetworkTableSubListenerAdapter.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1658daed312a57f8cda57bf7f3b4fd58"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i_table_listener.html">ITableListener</a>* NetworkTableSubListenerAdapter::targetListener</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_network_table_sub_listener_adapter_8h_source.html#l00027">27</a> of file <a class="el" href="_network_table_sub_listener_adapter_8h_source.html">NetworkTableSubListenerAdapter.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7477a1a7fc080a59c5315b38e51f0e7d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_network_table.html">NetworkTable</a>* NetworkTableSubListenerAdapter::targetSource</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_network_table_sub_listener_adapter_8h_source.html#l00026">26</a> of file <a class="el" href="_network_table_sub_listener_adapter_8h_source.html">NetworkTableSubListenerAdapter.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>WPILib/networktables/<a class="el" href="_network_table_sub_listener_adapter_8h_source.html">NetworkTableSubListenerAdapter.h</a></li>
 <li>WPILib/networktables/<a class="el" href="_network_table_sub_listener_adapter_8cpp_source.html">NetworkTableSubListenerAdapter.cpp</a></li>
@@ -250,7 +347,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:16 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:48 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

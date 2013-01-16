@@ -101,50 +101,50 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *kDefault = <span class="stringliteral">&quot;default&quot;</span>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *kOptions = <span class="stringliteral">&quot;options&quot;</span>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *kSelected = <span class="stringliteral">&quot;selected&quot;</span>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="code" href="_sendable_chooser_8cpp.html#afebb2a44d483256e42a2e5dc8501926b">   12</a></span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="_sendable_chooser_8cpp.html#afebb2a44d483256e42a2e5dc8501926b">kDefault</a> = <span class="stringliteral">&quot;default&quot;</span>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="code" href="_sendable_chooser_8cpp.html#a15e0511588fdbac79c487fb9ce02c463">   13</a></span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="_sendable_chooser_8cpp.html#a15e0511588fdbac79c487fb9ce02c463">kOptions</a> = <span class="stringliteral">&quot;options&quot;</span>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="code" href="_sendable_chooser_8cpp.html#a975a77fcf830a2017b147f7b6e0afa76">   14</a></span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="_sendable_chooser_8cpp.html#a975a77fcf830a2017b147f7b6e0afa76">kSelected</a> = <span class="stringliteral">&quot;selected&quot;</span>;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
 <div class="line"><a name="l00016"></a><span class="lineno"><a class="code" href="class_sendable_chooser.html#abb3ba58d51fe4728ba1102afdaa6e9b0">   16</a></span>&#160;<a class="code" href="class_sendable_chooser.html#abb3ba58d51fe4728ba1102afdaa6e9b0">SendableChooser::SendableChooser</a>()</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        m_defaultChoice = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="class_sendable_chooser.html#a0fa2aaef63a19b5e2b250feb6019b6d8">m_defaultChoice</a> = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
 <div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="class_sendable_chooser.html#aacaffd7663116d16ef33f2d0d0964c9f">   27</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_sendable_chooser.html#aacaffd7663116d16ef33f2d0d0964c9f">SendableChooser::AddObject</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *name, <span class="keywordtype">void</span> *<span class="keywordtype">object</span>)</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        m_choices[name] = object;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="class_sendable_chooser.html#a51eb1f36baf7928456f82cbb43526d6d">m_choices</a>[name] = object;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
 <div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="class_sendable_chooser.html#a89291124e5927cba8a208ddfde09cbb8">   39</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_sendable_chooser.html#a89291124e5927cba8a208ddfde09cbb8">SendableChooser::AddDefault</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *name, <span class="keywordtype">void</span> *<span class="keywordtype">object</span>)</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        m_defaultChoice = name;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="class_sendable_chooser.html#a0fa2aaef63a19b5e2b250feb6019b6d8">m_defaultChoice</a> = name;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="class_sendable_chooser.html#aacaffd7663116d16ef33f2d0d0964c9f">AddObject</a>(name, <span class="keywordtype">object</span>);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
 <div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="class_sendable_chooser.html#ae388f11b28cebcc31f8a180ff78a03ef">   50</a></span>&#160;<span class="keywordtype">void</span> *<a class="code" href="class_sendable_chooser.html#ae388f11b28cebcc31f8a180ff78a03ef">SendableChooser::GetSelected</a>()</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        std::string selected = m_table-&gt;<a class="code" href="class_i_table.html#a0d75b646afae46d38d828fa38f03de05">GetString</a>(kSelected, m_defaultChoice);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        std::string selected = <a class="code" href="class_sendable_chooser.html#aae6bf919361d9852a92353ef1e6003e8">m_table</a>-&gt;<a class="code" href="class_i_table.html#a0d75b646afae46d38d828fa38f03de05">GetString</a>(<a class="code" href="_sendable_chooser_8cpp.html#a975a77fcf830a2017b147f7b6e0afa76">kSelected</a>, <a class="code" href="class_sendable_chooser.html#a0fa2aaef63a19b5e2b250feb6019b6d8">m_defaultChoice</a>);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">if</span> (selected == <span class="stringliteral">&quot;&quot;</span>)</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keywordflow">return</span> m_choices[selected];</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="class_sendable_chooser.html#a51eb1f36baf7928456f82cbb43526d6d">m_choices</a>[selected];</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
 <div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="class_sendable_chooser.html#a3adc63c59c8fa38faa6268190f9a0102">   59</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_sendable_chooser.html#a3adc63c59c8fa38faa6268190f9a0102">SendableChooser::InitTable</a>(<a class="code" href="class_i_table.html">ITable</a>* subtable) {</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="class_string_array.html">StringArray</a> keys;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        m_table = subtable;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">if</span> (m_table != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="class_sendable_chooser.html#aae6bf919361d9852a92353ef1e6003e8">m_table</a> = subtable;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_sendable_chooser.html#aae6bf919361d9852a92353ef1e6003e8">m_table</a> != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                std::map&lt;std::string, void *&gt;::iterator iter;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="keywordflow">for</span> (iter = m_choices.begin(); iter != m_choices.end(); iter++) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="keywordflow">for</span> (iter = <a class="code" href="class_sendable_chooser.html#a51eb1f36baf7928456f82cbb43526d6d">m_choices</a>.begin(); iter != <a class="code" href="class_sendable_chooser.html#a51eb1f36baf7928456f82cbb43526d6d">m_choices</a>.end(); iter++) {</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                        keys.<a class="code" href="class_string_array.html#a4dc897731d6a505f2fae03bb0532cdb7">add</a>(iter-&gt;first);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                m_table-&gt;<a class="code" href="class_i_table.html#a2c29f8fd14b80adec9cf90dc33e0b133">PutValue</a>(kOptions, keys);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                m_table-&gt;<a class="code" href="class_i_table.html#a28c01ff0d7bff0662dbe708e80c1fffe">PutString</a>(kDefault, m_defaultChoice);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <a class="code" href="class_sendable_chooser.html#aae6bf919361d9852a92353ef1e6003e8">m_table</a>-&gt;<a class="code" href="class_i_table.html#a2c29f8fd14b80adec9cf90dc33e0b133">PutValue</a>(<a class="code" href="_sendable_chooser_8cpp.html#a15e0511588fdbac79c487fb9ce02c463">kOptions</a>, keys);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <a class="code" href="class_sendable_chooser.html#aae6bf919361d9852a92353ef1e6003e8">m_table</a>-&gt;<a class="code" href="class_i_table.html#a28c01ff0d7bff0662dbe708e80c1fffe">PutString</a>(<a class="code" href="_sendable_chooser_8cpp.html#afebb2a44d483256e42a2e5dc8501926b">kDefault</a>, <a class="code" href="class_sendable_chooser.html#a0fa2aaef63a19b5e2b250feb6019b6d8">m_defaultChoice</a>);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
 <div class="line"><a name="l00072"></a><span class="lineno"><a class="code" href="class_sendable_chooser.html#a3a22434a01daf37e03543404d479302b">   72</a></span>&#160;<a class="code" href="class_i_table.html">ITable</a>* <a class="code" href="class_sendable_chooser.html#a3a22434a01daf37e03543404d479302b">SendableChooser::GetTable</a>() {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span> m_table;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_sendable_chooser.html#aae6bf919361d9852a92353ef1e6003e8">m_table</a>;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
 <div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="class_sendable_chooser.html#a091b790f59926650bc1d5d3b51a8a44a">   76</a></span>&#160;std::string <a class="code" href="class_sendable_chooser.html#a091b790f59926650bc1d5d3b51a8a44a">SendableChooser::GetSmartDashboardType</a>() {</div>
@@ -153,7 +153,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:11 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:43 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

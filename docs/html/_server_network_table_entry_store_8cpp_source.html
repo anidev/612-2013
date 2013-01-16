@@ -102,7 +102,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00010"></a><span class="lineno"><a class="code" href="class_server_network_table_entry_store.html#ae14eb6d0b8a508a0ee58462148a4b74a">   10</a></span>&#160;<a class="code" href="class_server_network_table_entry_store.html#ae14eb6d0b8a508a0ee58462148a4b74a">ServerNetworkTableEntryStore::ServerNetworkTableEntryStore</a>(<a class="code" href="class_table_listener_manager.html">TableListenerManager</a>&amp; _listenerManager) :</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <a class="code" href="class_abstract_network_table_entry_store.html">AbstractNetworkTableEntryStore</a>(_listenerManager)</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        nextId = (<a class="code" href="_network_table_entry_8h.html#a21360279e4497753be6bd519e8ea24f4">EntryId</a>)0;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <a class="code" href="class_server_network_table_entry_store.html#a377914c64d0d10f4cc8da0cd53c6c483">nextId</a> = (<a class="code" href="_network_table_entry_8h.html#a21360279e4497753be6bd519e8ea24f4">EntryId</a>)0;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
 <div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="class_server_network_table_entry_store.html#a37431d7693732aa87da76063142327c1">   15</a></span>&#160;<a class="code" href="class_server_network_table_entry_store.html#a37431d7693732aa87da76063142327c1">ServerNetworkTableEntryStore::~ServerNetworkTableEntryStore</a>()</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
@@ -115,7 +115,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">if</span> (entry == <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                newEntry-&gt;<a class="code" href="class_network_table_entry.html#a8739b83c51d49e168c5276e9239fcf65">SetId</a>(nextId++);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                newEntry-&gt;<a class="code" href="class_network_table_entry.html#a8739b83c51d49e168c5276e9239fcf65">SetId</a>(<a class="code" href="class_server_network_table_entry_store.html#a377914c64d0d10f4cc8da0cd53c6c483">nextId</a>++);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <a class="code" href="class_abstract_network_table_entry_store.html#adbcdde5e27a5bbc550e675294cf4411f">idEntries</a>[newEntry-&gt;<a class="code" href="class_network_table_entry.html#a59fcace610cc1a9e83ac5640dba25d49">GetId</a>()] = newEntry;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                <a class="code" href="class_abstract_network_table_entry_store.html#a24c72236344f6334d4b2d99a1d9a7a4d">namedEntries</a>[newEntry-&gt;<a class="code" href="class_network_table_entry.html#a55f32535dbdc413ae57ca4e8214ebb74">name</a>] = newEntry;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
@@ -144,7 +144,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:10 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:43 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

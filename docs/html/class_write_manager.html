@@ -85,7 +85,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">WriteManager Class Reference</div>  </div>
 </div><!--header-->
@@ -107,7 +109,7 @@ Inheritance diagram for WriteManager:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7be00a32a72f298de804f5975e89295b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_write_manager.html#a7be00a32a72f298de804f5975e89295b">WriteManager</a> (<a class="el" href="class_flushable_outgoing_entry_receiver.html">FlushableOutgoingEntryReceiver</a> &amp;receiver, <a class="el" href="class_n_t_thread_manager.html">NTThreadManager</a> &amp;threadManager, <a class="el" href="class_abstract_network_table_entry_store.html">AbstractNetworkTableEntryStore</a> &amp;entryStore, unsigned long keepAliveDelay)</td></tr>
+<tr class="memitem:a7be00a32a72f298de804f5975e89295b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_write_manager.html#a7be00a32a72f298de804f5975e89295b">WriteManager</a> (<a class="el" href="class_flushable_outgoing_entry_receiver.html">FlushableOutgoingEntryReceiver</a> &amp;<a class="el" href="class_write_manager.html#a54e1b3bc66cd124a75bcdafb8473efc9">receiver</a>, <a class="el" href="class_n_t_thread_manager.html">NTThreadManager</a> &amp;<a class="el" href="class_write_manager.html#a44cc1f0398ecaa21ce119c836c0c56bc">threadManager</a>, <a class="el" href="class_abstract_network_table_entry_store.html">AbstractNetworkTableEntryStore</a> &amp;<a class="el" href="class_write_manager.html#a225090271f48c7a153f59a9f009f4596">entryStore</a>, unsigned long <a class="el" href="class_write_manager.html#a21e5dd2529286ede026ce0422b166c56">keepAliveDelay</a>)</td></tr>
 <tr class="memitem:af26761c3387c7d2952643e554467cda6"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_write_manager.html#af26761c3387c7d2952643e554467cda6">~WriteManager</a> ()</td></tr>
 <tr class="memitem:aa2ee822bd21e3b5a3d81ad0287ea9f89"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_write_manager.html#aa2ee822bd21e3b5a3d81ad0287ea9f89">start</a> ()</td></tr>
 <tr class="memitem:ae8fbe88a330dfe5873ddeb45f26b9679"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_write_manager.html#ae8fbe88a330dfe5873ddeb45f26b9679">stop</a> ()</td></tr>
@@ -118,6 +120,28 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a59f40ce7c1e0a1b52d0c81d5c7589f82 inherit pub_methods_class_outgoing_entry_receiver"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outgoing_entry_receiver.html#a59f40ce7c1e0a1b52d0c81d5c7589f82">~OutgoingEntryReceiver</a> ()</td></tr>
 <tr class="inherit_header pub_methods_class_periodic_runnable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_periodic_runnable')"><img src="closed.png" alt="-"/>&nbsp;Public Member Functions inherited from <a class="el" href="class_periodic_runnable.html">PeriodicRunnable</a></td></tr>
 <tr class="memitem:aad844c67d45f7e92c8ffdc2452b85393 inherit pub_methods_class_periodic_runnable"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_periodic_runnable.html#aad844c67d45f7e92c8ffdc2452b85393">~PeriodicRunnable</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a0b09fbdb11549a7507efb74236c753a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_reentrant_semaphore.html">ReentrantSemaphore</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_write_manager.html#a0b09fbdb11549a7507efb74236c753a0">transactionsLock</a></td></tr>
+<tr class="memitem:ad424c5aa67f8137608ce77cae4acc4a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_t_thread.html">NTThread</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_write_manager.html#ad424c5aa67f8137608ce77cae4acc4a8">thread</a></td></tr>
+<tr class="memitem:a54e1b3bc66cd124a75bcdafb8473efc9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_flushable_outgoing_entry_receiver.html">FlushableOutgoingEntryReceiver</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_write_manager.html#a54e1b3bc66cd124a75bcdafb8473efc9">receiver</a></td></tr>
+<tr class="memitem:a44cc1f0398ecaa21ce119c836c0c56bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_t_thread_manager.html">NTThreadManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_write_manager.html#a44cc1f0398ecaa21ce119c836c0c56bc">threadManager</a></td></tr>
+<tr class="memitem:a225090271f48c7a153f59a9f009f4596"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_abstract_network_table_entry_store.html">AbstractNetworkTableEntryStore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_write_manager.html#a225090271f48c7a153f59a9f009f4596">entryStore</a></td></tr>
+<tr class="memitem:a21e5dd2529286ede026ce0422b166c56"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_write_manager.html#a21e5dd2529286ede026ce0422b166c56">keepAliveDelay</a></td></tr>
+<tr class="memitem:ac01a94dd7a7290a1e0ed13646ce4117d"><td class="memItemLeft" align="right" valign="top">volatile std::queue<br class="typebreak"/>
+&lt; <a class="el" href="class_network_table_entry.html">NetworkTableEntry</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_write_manager.html#ac01a94dd7a7290a1e0ed13646ce4117d">incomingAssignmentQueue</a></td></tr>
+<tr class="memitem:ad8007baabe8441d1ed7f72b2be89a1ac"><td class="memItemLeft" align="right" valign="top">volatile std::queue<br class="typebreak"/>
+&lt; <a class="el" href="class_network_table_entry.html">NetworkTableEntry</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_write_manager.html#ad8007baabe8441d1ed7f72b2be89a1ac">incomingUpdateQueue</a></td></tr>
+<tr class="memitem:a3a3bdefd7d4c890d00440c3c90de6daa"><td class="memItemLeft" align="right" valign="top">volatile std::queue<br class="typebreak"/>
+&lt; <a class="el" href="class_network_table_entry.html">NetworkTableEntry</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_write_manager.html#a3a3bdefd7d4c890d00440c3c90de6daa">outgoingAssignmentQueue</a></td></tr>
+<tr class="memitem:a679a0d186dbf1c8ade2bab4ead7b8d2d"><td class="memItemLeft" align="right" valign="top">volatile std::queue<br class="typebreak"/>
+&lt; <a class="el" href="class_network_table_entry.html">NetworkTableEntry</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_write_manager.html#a679a0d186dbf1c8ade2bab4ead7b8d2d">outgoingUpdateQueue</a></td></tr>
+<tr class="memitem:aab60b8bf37ef49a3448be52c2637a829"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_write_manager.html#aab60b8bf37ef49a3448be52c2637a829">lastWrite</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:acda93c17b1f970b644049c5acade2ea3"><td class="memItemLeft" align="right" valign="top">static const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_write_manager.html#acda93c17b1f970b644049c5acade2ea3">queueSize</a> = 500</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>A write manager is a <a class="el" href="class_incoming_entry_receiver.html">IncomingEntryReceiver</a> that buffers transactions and then and then dispatches them to a flushable transaction receiver that is periodically offered all queued transaction and then flushed</p>
@@ -321,6 +345,271 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a225090271f48c7a153f59a9f009f4596"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_abstract_network_table_entry_store.html">AbstractNetworkTableEntryStore</a>&amp; WriteManager::entryStore</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_write_manager_8h_source.html#l00042">42</a> of file <a class="el" href="_write_manager_8h_source.html">WriteManager.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac01a94dd7a7290a1e0ed13646ce4117d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile std::queue&lt;<a class="el" href="class_network_table_entry.html">NetworkTableEntry</a>*&gt;* WriteManager::incomingAssignmentQueue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_write_manager_8h_source.html#l00046">46</a> of file <a class="el" href="_write_manager_8h_source.html">WriteManager.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad8007baabe8441d1ed7f72b2be89a1ac"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile std::queue&lt;<a class="el" href="class_network_table_entry.html">NetworkTableEntry</a>*&gt;* WriteManager::incomingUpdateQueue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_write_manager_8h_source.html#l00047">47</a> of file <a class="el" href="_write_manager_8h_source.html">WriteManager.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a21e5dd2529286ede026ce0422b166c56"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long WriteManager::keepAliveDelay</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_write_manager_8h_source.html#l00044">44</a> of file <a class="el" href="_write_manager_8h_source.html">WriteManager.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aab60b8bf37ef49a3448be52c2637a829"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long WriteManager::lastWrite</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_write_manager_8h_source.html#l00051">51</a> of file <a class="el" href="_write_manager_8h_source.html">WriteManager.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3a3bdefd7d4c890d00440c3c90de6daa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile std::queue&lt;<a class="el" href="class_network_table_entry.html">NetworkTableEntry</a>*&gt;* WriteManager::outgoingAssignmentQueue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_write_manager_8h_source.html#l00048">48</a> of file <a class="el" href="_write_manager_8h_source.html">WriteManager.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a679a0d186dbf1c8ade2bab4ead7b8d2d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile std::queue&lt;<a class="el" href="class_network_table_entry.html">NetworkTableEntry</a>*&gt;* WriteManager::outgoingUpdateQueue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_write_manager_8h_source.html#l00049">49</a> of file <a class="el" href="_write_manager_8h_source.html">WriteManager.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acda93c17b1f970b644049c5acade2ea3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t WriteManager::queueSize = 500</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_write_manager_8h_source.html#l00034">34</a> of file <a class="el" href="_write_manager_8h_source.html">WriteManager.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a54e1b3bc66cd124a75bcdafb8473efc9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_flushable_outgoing_entry_receiver.html">FlushableOutgoingEntryReceiver</a>&amp; WriteManager::receiver</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_write_manager_8h_source.html#l00040">40</a> of file <a class="el" href="_write_manager_8h_source.html">WriteManager.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad424c5aa67f8137608ce77cae4acc4a8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_t_thread.html">NTThread</a>* WriteManager::thread</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_write_manager_8h_source.html#l00038">38</a> of file <a class="el" href="_write_manager_8h_source.html">WriteManager.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a44cc1f0398ecaa21ce119c836c0c56bc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_t_thread_manager.html">NTThreadManager</a>&amp; WriteManager::threadManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_write_manager_8h_source.html#l00041">41</a> of file <a class="el" href="_write_manager_8h_source.html">WriteManager.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0b09fbdb11549a7507efb74236c753a0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_reentrant_semaphore.html">ReentrantSemaphore</a> WriteManager::transactionsLock</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_write_manager_8h_source.html#l00036">36</a> of file <a class="el" href="_write_manager_8h_source.html">WriteManager.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>WPILib/networktables2/<a class="el" href="_write_manager_8h_source.html">WriteManager.h</a></li>
 <li>WPILib/networktables2/<a class="el" href="_write_manager_8cpp_source.html">WriteManager.cpp</a></li>
@@ -328,7 +617,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:17 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:49 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

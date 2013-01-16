@@ -101,7 +101,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_digital_module_8h.html">DigitalModule.h</a>&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_usage_reporting_8h.html">NetworkCommunication/UsageReporting.h</a>&quot;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">void</span> Victor::InitVictor() {</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="class_victor.html#a9d97a04d9e1f5ca071d2c4978fa72398">   27</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_victor.html#a9d97a04d9e1f5ca071d2c4978fa72398">Victor::InitVictor</a>() {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="comment">// TODO: compute the appropriate values based on digital loop timing</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="class_p_w_m.html#a57047fe0445577e94cebad0aa96165be">SetBounds</a>(206, 131, 128, 125, 56);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="class_p_w_m.html#a274fbac1ce527d1b08fab2ef4d66c35b">SetPeriodMultiplier</a>(<a class="code" href="class_p_w_m.html#aca2359104d9b65186aaf3c38921ad860a0fbfad7933d16f34d658df2a16036fc5">kPeriodMultiplier_2X</a>);</div>
@@ -112,12 +112,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
 <div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="class_victor.html#a76d5403d48eba19d889866c240dca391">   41</a></span>&#160;<a class="code" href="class_victor.html#a76d5403d48eba19d889866c240dca391">Victor::Victor</a>(UINT32 channel) : <a class="code" href="class_safe_p_w_m.html">SafePWM</a>(channel)</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        InitVictor();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="class_victor.html#a9d97a04d9e1f5ca071d2c4978fa72398">InitVictor</a>();</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
 <div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="class_victor.html#ada64e804b34473c6ef78061796c30401">   52</a></span>&#160;<a class="code" href="class_victor.html#a76d5403d48eba19d889866c240dca391">Victor::Victor</a>(UINT8 moduleNumber, UINT32 channel) : <a class="code" href="class_safe_p_w_m.html">SafePWM</a>(moduleNumber, channel)</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        InitVictor();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="class_victor.html#a9d97a04d9e1f5ca071d2c4978fa72398">InitVictor</a>();</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
 <div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="class_victor.html#adbeb8361b0da87cf6fc028b9762664b1">   57</a></span>&#160;<a class="code" href="class_victor.html#adbeb8361b0da87cf6fc028b9762664b1">Victor::~Victor</a>()</div>
@@ -147,7 +147,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:11 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:43 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

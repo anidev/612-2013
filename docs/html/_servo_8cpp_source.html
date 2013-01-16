@@ -100,10 +100,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_usage_reporting_8h.html">NetworkCommunication/UsageReporting.h</a>&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">const</span> <span class="keywordtype">float</span> Servo::kMaxServoAngle;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">const</span> <span class="keywordtype">float</span> Servo::kMinServoAngle;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="class_servo.html#a6f44d7c55ede18d5f74c1b862563290a">Servo::kMaxServoAngle</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="class_servo.html#ae16f8a97debeebcc727e602ef17d3f46">Servo::kMinServoAngle</a>;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">void</span> Servo::InitServo()</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="class_servo.html#aedb7fca43ec9b75e7a4a679efee4edbb">   20</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_servo.html#aedb7fca43ec9b75e7a4a679efee4edbb">Servo::InitServo</a>()</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="comment">// TODO: compute the appropriate values based on digital loop timing</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="class_p_w_m.html#a57047fe0445577e94cebad0aa96165be">SetBounds</a>(245, 0, 0, 0, 11);</div>
@@ -114,12 +114,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
 <div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="class_servo.html#ac28728fe000cd4e1fbe37c7471c6ed42">   34</a></span>&#160;<a class="code" href="class_servo.html#ac28728fe000cd4e1fbe37c7471c6ed42">Servo::Servo</a>(UINT32 channel) : <a class="code" href="class_safe_p_w_m.html">SafePWM</a>(channel)</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        InitServo();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="class_servo.html#aedb7fca43ec9b75e7a4a679efee4edbb">InitServo</a>();</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
 <div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="class_servo.html#a3724431be0be92edb3a533a54f4b7909">   45</a></span>&#160;<a class="code" href="class_servo.html#ac28728fe000cd4e1fbe37c7471c6ed42">Servo::Servo</a>(UINT8 moduleNumber, UINT32 channel) : <a class="code" href="class_safe_p_w_m.html">SafePWM</a>(moduleNumber, channel)</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        InitServo();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="class_servo.html#aedb7fca43ec9b75e7a4a679efee4edbb">InitServo</a>();</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
 <div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="class_servo.html#acb51bf4d970b071741ba76349a431fb0">   50</a></span>&#160;<a class="code" href="class_servo.html#acb51bf4d970b071741ba76349a431fb0">Servo::~Servo</a>()</div>
@@ -142,21 +142,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
 <div class="line"><a name="l00098"></a><span class="lineno"><a class="code" href="class_servo.html#a0046f9431e42de3fe63f8ce1b3995eb5">   98</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_servo.html#a0046f9431e42de3fe63f8ce1b3995eb5">Servo::SetAngle</a>(<span class="keywordtype">float</span> degrees)</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;{</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">if</span> (degrees &lt; kMinServoAngle)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">if</span> (degrees &lt; <a class="code" href="class_servo.html#ae16f8a97debeebcc727e602ef17d3f46">kMinServoAngle</a>)</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                degrees = kMinServoAngle;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                degrees = <a class="code" href="class_servo.html#ae16f8a97debeebcc727e602ef17d3f46">kMinServoAngle</a>;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (degrees &gt; kMaxServoAngle)</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (degrees &gt; <a class="code" href="class_servo.html#a6f44d7c55ede18d5f74c1b862563290a">kMaxServoAngle</a>)</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                degrees = kMaxServoAngle;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                degrees = <a class="code" href="class_servo.html#a6f44d7c55ede18d5f74c1b862563290a">kMaxServoAngle</a>;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        }</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <a class="code" href="class_p_w_m.html#a93e43862c48e9a06d95bd916b77c183a">SetPosition</a>(((<span class="keywordtype">float</span>) (degrees - kMinServoAngle)) / GetServoAngleRange());</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <a class="code" href="class_p_w_m.html#a93e43862c48e9a06d95bd916b77c183a">SetPosition</a>(((<span class="keywordtype">float</span>) (degrees - <a class="code" href="class_servo.html#ae16f8a97debeebcc727e602ef17d3f46">kMinServoAngle</a>)) / <a class="code" href="class_servo.html#aca629f2fc8533bab376774302f83d314">GetServoAngleRange</a>());</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
 <div class="line"><a name="l00118"></a><span class="lineno"><a class="code" href="class_servo.html#a0ccee0191f0026d94db4646e6662700c">  118</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="class_servo.html#a0ccee0191f0026d94db4646e6662700c">Servo::GetAngle</a>()</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;{</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">return</span> (<span class="keywordtype">float</span>)<a class="code" href="class_p_w_m.html#a2f5dcbf84dc82c4b19098c4cc99d0390">GetPosition</a>() * GetServoAngleRange() + kMinServoAngle;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">return</span> (<span class="keywordtype">float</span>)<a class="code" href="class_p_w_m.html#a2f5dcbf84dc82c4b19098c4cc99d0390">GetPosition</a>() * <a class="code" href="class_servo.html#aca629f2fc8533bab376774302f83d314">GetServoAngleRange</a>() + <a class="code" href="class_servo.html#ae16f8a97debeebcc727e602ef17d3f46">kMinServoAngle</a>;</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
 <div class="line"><a name="l00123"></a><span class="lineno"><a class="code" href="class_servo.html#a6bcd8398fb958f5046f36ca749e07745">  123</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_servo.html#a6bcd8398fb958f5046f36ca749e07745">Servo::ValueChanged</a>(<a class="code" href="class_i_table.html">ITable</a>* source, <span class="keyword">const</span> std::string&amp; key, <a class="code" href="union_entry_value.html">EntryValue</a> value, <span class="keywordtype">bool</span> isNew) {</div>
@@ -194,7 +194,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:10 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:43 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

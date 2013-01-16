@@ -154,7 +154,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_counter.html#a6701899f12600eabff3345223d65d4db">SetUpdateWhenEmpty</a>(<span class="keywordtype">bool</span> enabled);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_counter.html#ae6bea5b908b1c276e8592e18656aaf21">GetStopped</a>();</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_counter.html#acdfa2215fb973249a5f0d2a9f2f3c6b6">GetDirection</a>();</div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="code" href="class_counter.html#a9a3efd0a01f93b5d232000ad9d05a2c4">   71</a></span>&#160;        UINT32 <a class="code" href="class_counter.html#a9a3efd0a01f93b5d232000ad9d05a2c4">GetIndex</a>() {<span class="keywordflow">return</span> m_index;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="code" href="class_counter.html#a9a3efd0a01f93b5d232000ad9d05a2c4">   71</a></span>&#160;        UINT32 <a class="code" href="class_counter.html#a9a3efd0a01f93b5d232000ad9d05a2c4">GetIndex</a>() {<span class="keywordflow">return</span> <a class="code" href="class_counter.html#a89138c5cda2c8745508e757ed7f3d322" title="The index of this counter.">m_index</a>;}</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        </div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_counter.html#ad12237795429a020d8a924348204ec79">UpdateTable</a>();</div>
@@ -165,23 +165,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="class_i_table.html">ITable</a> * <a class="code" href="class_counter.html#a858bef8055955c800b3a7a9deedcfe17">GetTable</a>();</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">void</span> InitCounter(<a class="code" href="class_counter.html#a843bf430e8d2828c39f8bd2b7cf382f6">Mode</a> mode = <a class="code" href="class_counter.html#a843bf430e8d2828c39f8bd2b7cf382f6a1f2ec90867ee52429b067c33ffa20e49">kTwoPulse</a>);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_counter.html#ab5a9481f8b36a832cb61d07617648061">InitCounter</a>(<a class="code" href="class_counter.html#a843bf430e8d2828c39f8bd2b7cf382f6">Mode</a> mode = <a class="code" href="class_counter.html#a843bf430e8d2828c39f8bd2b7cf382f6a1f2ec90867ee52429b067c33ffa20e49">kTwoPulse</a>);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="class_digital_source.html">DigitalSource</a> *m_upSource;              </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="class_digital_source.html">DigitalSource</a> *m_downSource;    </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordtype">bool</span> m_allocatedUpSource;               </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordtype">bool</span> m_allocatedDownSource;     </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="classn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_counter.html">tCounter</a> *m_counter;                            </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        UINT32 m_index;                                 </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="code" href="class_counter.html#a2df9bd57f9087245937f592f0ce94411">   84</a></span>&#160;        <a class="code" href="class_digital_source.html">DigitalSource</a> *<a class="code" href="class_counter.html#a2df9bd57f9087245937f592f0ce94411" title="What makes the counter count up.">m_upSource</a>;              </div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="code" href="class_counter.html#a335589e09e0a49039c7119bbaff8ab15">   85</a></span>&#160;        <a class="code" href="class_digital_source.html">DigitalSource</a> *<a class="code" href="class_counter.html#a335589e09e0a49039c7119bbaff8ab15" title="What makes the counter count down.">m_downSource</a>;    </div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="code" href="class_counter.html#a48b6c6ca34e369afb3e71d46e4c8763f">   86</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_counter.html#a48b6c6ca34e369afb3e71d46e4c8763f" title="Was the upSource allocated locally?">m_allocatedUpSource</a>;               </div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="code" href="class_counter.html#a5521efc14f1bf070500b96e94aac157b">   87</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_counter.html#a5521efc14f1bf070500b96e94aac157b" title="Was the downSource allocated locally?">m_allocatedDownSource</a>;     </div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="code" href="class_counter.html#abae7026958bf55bd28f15443d81de738">   88</a></span>&#160;        <a class="code" href="classn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_counter.html">tCounter</a> *<a class="code" href="class_counter.html#abae7026958bf55bd28f15443d81de738" title="The FPGA counter object.">m_counter</a>;                            </div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="code" href="class_counter.html#a89138c5cda2c8745508e757ed7f3d322">   89</a></span>&#160;        UINT32 <a class="code" href="class_counter.html#a89138c5cda2c8745508e757ed7f3d322" title="The index of this counter.">m_index</a>;                                 </div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="class_i_table.html">ITable</a> *m_table;</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="code" href="class_counter.html#af8d73c29b76e4ec7b0326d7303249498">   91</a></span>&#160;        <a class="code" href="class_i_table.html">ITable</a> *<a class="code" href="class_counter.html#af8d73c29b76e4ec7b0326d7303249498">m_table</a>;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;};</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:09 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:42 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

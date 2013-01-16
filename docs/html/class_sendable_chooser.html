@@ -85,7 +85,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">SendableChooser Class Reference</div>  </div>
 </div><!--header-->
@@ -114,6 +115,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3adc63c59c8fa38faa6268190f9a0102"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sendable_chooser.html#a3adc63c59c8fa38faa6268190f9a0102">InitTable</a> (<a class="el" href="class_i_table.html">ITable</a> *subtable)</td></tr>
 <tr class="memitem:a3a22434a01daf37e03543404d479302b"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_i_table.html">ITable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sendable_chooser.html#a3a22434a01daf37e03543404d479302b">GetTable</a> ()</td></tr>
 <tr class="memitem:a091b790f59926650bc1d5d3b51a8a44a"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sendable_chooser.html#a091b790f59926650bc1d5d3b51a8a44a">GetSmartDashboardType</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a0fa2aaef63a19b5e2b250feb6019b6d8"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sendable_chooser.html#a0fa2aaef63a19b5e2b250feb6019b6d8">m_defaultChoice</a></td></tr>
+<tr class="memitem:a51eb1f36baf7928456f82cbb43526d6d"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, <a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sendable_chooser.html#a51eb1f36baf7928456f82cbb43526d6d">m_choices</a></td></tr>
+<tr class="memitem:aae6bf919361d9852a92353ef1e6003e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_table.html">ITable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sendable_chooser.html#aae6bf919361d9852a92353ef1e6003e8">m_table</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="class_sendable_chooser.html">SendableChooser</a> class is a useful tool for presenting a selection of options to the <a class="el" href="class_smart_dashboard.html">SmartDashboard</a>.</p>
@@ -349,6 +356,73 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a51eb1f36baf7928456f82cbb43526d6d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;std::string, <a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> *&gt; SendableChooser::m_choices</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_sendable_chooser_8h_source.html#l00043">43</a> of file <a class="el" href="_sendable_chooser_8h_source.html">SendableChooser.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0fa2aaef63a19b5e2b250feb6019b6d8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string SendableChooser::m_defaultChoice</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_sendable_chooser_8h_source.html#l00042">42</a> of file <a class="el" href="_sendable_chooser_8h_source.html">SendableChooser.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aae6bf919361d9852a92353ef1e6003e8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i_table.html">ITable</a>* SendableChooser::m_table</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_sendable_chooser_8h_source.html#l00044">44</a> of file <a class="el" href="_sendable_chooser_8h_source.html">SendableChooser.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>WPILib/SmartDashboard/<a class="el" href="_sendable_chooser_8h_source.html">SendableChooser.h</a></li>
 <li>WPILib/SmartDashboard/<a class="el" href="_sendable_chooser_8cpp_source.html">SendableChooser.cpp</a></li>
@@ -356,7 +430,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:16 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:48 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

@@ -85,7 +85,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">BinaryImage Class Reference</div>  </div>
 </div><!--header-->
@@ -148,6 +150,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab67204acd1eb87ffe6fc45c2d22e517e inherit pub_methods_class_error_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the current error information associated with this sensor.  <a href="#ab67204acd1eb87ffe6fc45c2d22e517e"></a><br/></td></tr>
 <tr class="memitem:a05790f219c9e436a09752f73f7344024 inherit pub_methods_class_error_base"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_base.html#a05790f219c9e436a09752f73f7344024">StatusIsFatal</a> () const </td></tr>
 <tr class="memdesc:a05790f219c9e436a09752f73f7344024 inherit pub_methods_class_error_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the current error code represents a fatal error.  <a href="#a05790f219c9e436a09752f73f7344024"></a><br/></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ad8c60129901e8e5c0ab0d46a69b380ec"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_binary_image.html#ad8c60129901e8e5c0ab0d46a69b380ec">ParticleMeasurement</a> (<a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> particleNumber, <a class="el" href="nivision_8h.html#a9becfba8da35106e4f7c734f825132be">MeasurementType</a> whatToMeasure, <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> *result)</td></tr>
+<tr class="memitem:a1966549902341c79a2e7005d2e42b9ea"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_binary_image.html#a1966549902341c79a2e7005d2e42b9ea">ParticleMeasurement</a> (<a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> particleNumber, <a class="el" href="nivision_8h.html#a9becfba8da35106e4f7c734f825132be">MeasurementType</a> whatToMeasure, double *result)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a78d13b16bddde8377d844495cc9b27fe"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_binary_image.html#a78d13b16bddde8377d844495cc9b27fe">NormalizeFromRange</a> (double position, <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> range)</td></tr>
+<tr class="memitem:ac9ea6df3f78210fa35980865225b893d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_binary_image.html#ac9ea6df3f78210fa35980865225b893d">CompareParticleSizes</a> (<a class="el" href="_vision_a_p_i_8h.html#af878c7fb201a3da80d4ae796201d3aa9">ParticleAnalysisReport</a> particle1, <a class="el" href="_vision_a_p_i_8h.html#af878c7fb201a3da80d4ae796201d3aa9">ParticleAnalysisReport</a> particle2)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
@@ -196,6 +208,51 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ac9ea6df3f78210fa35980865225b893d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BinaryImage::CompareParticleSizes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_vision_a_p_i_8h.html#af878c7fb201a3da80d4ae796201d3aa9">ParticleAnalysisReport</a>&#160;</td>
+          <td class="paramname"><em>particle1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_vision_a_p_i_8h.html#af878c7fb201a3da80d4ae796201d3aa9">ParticleAnalysisReport</a>&#160;</td>
+          <td class="paramname"><em>particle2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The compare helper function for sort. This function compares two particle analysis reports as a helper for the sort function. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">particle1</td><td>The first particle to compare </td></tr>
+    <tr><td class="paramname">particle2</td><td>the second particle to compare </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns:</dt><dd>true if particle1 is greater than particle2 </dd></dl>
+
+<p>Definition at line <a class="el" href="_binary_image_8cpp_source.html#l00183">183</a> of file <a class="el" href="_binary_image_8cpp_source.html">BinaryImage.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a05115c533cd8769ff65913274137b45a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -314,6 +371,42 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a78d13b16bddde8377d844495cc9b27fe"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double BinaryImage::NormalizeFromRange </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td>
+          <td class="paramname"><em>range</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_binary_image_8cpp_source.html#l00171">171</a> of file <a class="el" href="_binary_image_8cpp_source.html">BinaryImage.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ad64f6680de1d83a57173c5770d9abb9c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -339,6 +432,110 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="_binary_image_8cpp_source.html#l00213">213</a> of file <a class="el" href="_binary_image_8cpp_source.html">BinaryImage.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad8c60129901e8e5c0ab0d46a69b380ec"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BinaryImage::ParticleMeasurement </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td>
+          <td class="paramname"><em>particleNumber</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="nivision_8h.html#a9becfba8da35106e4f7c734f825132be">MeasurementType</a>&#160;</td>
+          <td class="paramname"><em>whatToMeasure</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> *&#160;</td>
+          <td class="paramname"><em>result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Measure a single parameter for an image. Get the measurement for a single parameter about an image by calling the imaqMeasureParticle function for the selected parameter. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">particleNumber</td><td>which particle in the set of particles </td></tr>
+    <tr><td class="paramname">whatToMeasure</td><td>the imaq MeasurementType (what to measure) </td></tr>
+    <tr><td class="paramname">result</td><td>the value of the measurement </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns:</dt><dd>false on failure, true on success </dd></dl>
+
+<p>Definition at line <a class="el" href="_binary_image_8cpp_source.html#l00145">145</a> of file <a class="el" href="_binary_image_8cpp_source.html">BinaryImage.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1966549902341c79a2e7005d2e42b9ea"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BinaryImage::ParticleMeasurement </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td>
+          <td class="paramname"><em>particleNumber</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="nivision_8h.html#a9becfba8da35106e4f7c734f825132be">MeasurementType</a>&#160;</td>
+          <td class="paramname"><em>whatToMeasure</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Measure a single parameter for an image. Get the measurement for a single parameter about an image by calling the imaqMeasureParticle function for the selected parameter. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">particleNumber</td><td>which particle in the set of particles </td></tr>
+    <tr><td class="paramname">whatToMeasure</td><td>the imaq MeasurementType (what to measure) </td></tr>
+    <tr><td class="paramname">result</td><td>the value of the measurement </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns:</dt><dd>true on failure, false on success </dd></dl>
+
+<p>Definition at line <a class="el" href="_binary_image_8cpp_source.html#l00162">162</a> of file <a class="el" href="_binary_image_8cpp_source.html">BinaryImage.cpp</a>.</p>
 
 </div>
 </div>
@@ -440,7 +637,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:13 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:45 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

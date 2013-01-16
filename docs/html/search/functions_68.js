@@ -1,6 +1,9 @@
 var searchData=
 [
   ['hadreceiveoverflow',['HadReceiveOverflow',['../class_s_p_i.html#aec0f909f191fec08bb1a069bdb35fd8e',1,'SPI']]],
+  ['handleerror',['HandleError',['../class_task.html#a9e65574e16522df871f679f5991ff249',1,'Task']]],
+  ['handler',['handler',['../classn_f_p_g_a_1_1t_interrupt_manager.html#a35bbe927538f52177bb41bf8b7cce58b',1,'nFPGA::tInterruptManager']]],
+  ['handlerwrapper',['handlerWrapper',['../classn_f_p_g_a_1_1t_interrupt_manager.html#a4fda4a2063995ac27bfa0a09a8b93bfb',1,'nFPGA::tInterruptManager']]],
   ['hasperiodpassed',['HasPeriodPassed',['../class_timer.html#a044e56cf40905d2f5037745e44cc3881',1,'Timer']]],
   ['heldbuttonscheduler',['HeldButtonScheduler',['../class_held_button_scheduler.html#a8d29bc2bf8f5aaa7b7c4b0175188223d',1,'HeldButtonScheduler']]],
   ['hitechniccolorsensor',['HiTechnicColorSensor',['../class_hi_technic_color_sensor.html#aaa04d8f87a4a448adda9c72a554291ea',1,'HiTechnicColorSensor']]],

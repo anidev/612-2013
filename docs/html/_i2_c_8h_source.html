@@ -117,14 +117,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_i2_c.html#a0d2101f590b7df2034c4239896f071c3">VerifySensor</a>(UINT8 registerAddress, UINT8 count, <span class="keyword">const</span> UINT8 *expected);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">static</span> SEM_ID m_semaphore;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">static</span> UINT32 m_objCount;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="class_i2_c.html#a867754fd3e5b1b7e87f726aa5e94938f">   36</a></span>&#160;        <span class="keyword">static</span> SEM_ID <a class="code" href="class_i2_c.html#a867754fd3e5b1b7e87f726aa5e94938f">m_semaphore</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="class_i2_c.html#a43297ff8f6d16aa6ffa0e609de398e69">   37</a></span>&#160;        <span class="keyword">static</span> UINT32 <a class="code" href="class_i2_c.html#a43297ff8f6d16aa6ffa0e609de398e69">m_objCount</a>;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="class_digital_module.html#af7fa5a7b20f73e730df04145e24f8151">I2C</a>(<a class="code" href="class_digital_module.html">DigitalModule</a> *module, UINT8 deviceAddress);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="class_i2_c.html#a7fae2736be26493080b2c644c5f4edb0">I2C</a>(<a class="code" href="class_digital_module.html">DigitalModule</a> *module, UINT8 deviceAddress);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="class_digital_module.html">DigitalModule</a> *m_module;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        UINT8 m_deviceAddress;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">bool</span> m_compatibilityMode;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="class_i2_c.html#a772d906c525c3589fc0efb4c6c41ef61">   41</a></span>&#160;        <a class="code" href="class_digital_module.html">DigitalModule</a> *<a class="code" href="class_i2_c.html#a772d906c525c3589fc0efb4c6c41ef61">m_module</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="class_i2_c.html#afc4a3cd55cbd3b360b74db0e64753f38">   42</a></span>&#160;        UINT8 <a class="code" href="class_i2_c.html#afc4a3cd55cbd3b360b74db0e64753f38">m_deviceAddress</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="class_i2_c.html#a645d0240dc127efd381999ed03c57ca5">   43</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_i2_c.html#a645d0240dc127efd381999ed03c57ca5">m_compatibilityMode</a>;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -132,7 +132,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:09 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:42 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

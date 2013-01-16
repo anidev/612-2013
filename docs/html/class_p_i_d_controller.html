@@ -87,7 +87,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a>  </div>
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">PIDController Class Reference</div>  </div>
 </div><!--header-->
@@ -146,13 +150,93 @@ Protected Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a0ecfc56bc938611a80cb4bcacdbdd9de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_table.html">ITable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#a0ecfc56bc938611a80cb4bcacdbdd9de">m_table</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:a10f6d281513c2ca0451d6e83cfa9298c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="class_p_i_d_controller.html#a10f6d281513c2ca0451d6e83cfa9298ca4628a38b3608c5d8261c0dc59be5b608">kAbsoluteTolerance</a>, 
+<a class="el" href="class_p_i_d_controller.html#a10f6d281513c2ca0451d6e83cfa9298caf644c9f75c596daee418dc58d026d17d">kPercentTolerance</a>, 
+<a class="el" href="class_p_i_d_controller.html#a10f6d281513c2ca0451d6e83cfa9298caf72327f4a2d4e6c4c89a9ac1ebadffed">kNoTolerance</a>
+ }</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aae57d842e56ef46acefadebe0f183e5b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#aae57d842e56ef46acefadebe0f183e5b">Initialize</a> (float p, float i, float d, float f, <a class="el" href="class_p_i_d_source.html">PIDSource</a> *source, <a class="el" href="class_p_i_d_output.html">PIDOutput</a> *output, float period=0.05)</td></tr>
+<tr class="memitem:a27ef2d32c04adb4e904f3036fd3cabf3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#a27ef2d32c04adb4e904f3036fd3cabf3">Calculate</a> ()</td></tr>
+<tr class="memitem:a9902ad5d1844cf52c60e136c78a641cd"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_i_table.html">ITable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#a9902ad5d1844cf52c60e136c78a641cd">GetTable</a> ()</td></tr>
+<tr class="memitem:afedfe898ff41272b8213904fc07963b9"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#afedfe898ff41272b8213904fc07963b9">GetSmartDashboardType</a> ()</td></tr>
+<tr class="memitem:aa40bd171fd9b207ed9948a50cca8f984"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#aa40bd171fd9b207ed9948a50cca8f984">ValueChanged</a> (<a class="el" href="class_i_table.html">ITable</a> *source, const std::string &amp;key, <a class="el" href="union_entry_value.html">EntryValue</a> value, bool isNew)</td></tr>
+<tr class="memitem:a7c36ae644b389b2f16d1f62e8f63ce88"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#a7c36ae644b389b2f16d1f62e8f63ce88">UpdateTable</a> ()</td></tr>
+<tr class="memitem:a30bee1eaaa42fb55f84a1fdf5c2d7558"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#a30bee1eaaa42fb55f84a1fdf5c2d7558">StartLiveWindowMode</a> ()</td></tr>
+<tr class="memitem:a1af3169b7fb8cb133e20e9835842b7b8"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#a1af3169b7fb8cb133e20e9835842b7b8">StopLiveWindowMode</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:ac438fd75fa4c3f90df2f5d82af255dd0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#ac438fd75fa4c3f90df2f5d82af255dd0">CallCalculate</a> (<a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> *controller)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a67228f710626b4b17e335162825d1704"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#a67228f710626b4b17e335162825d1704">m_P</a></td></tr>
+<tr class="memitem:a7daae5f41b37d804f08ff12ad3f04f67"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#a7daae5f41b37d804f08ff12ad3f04f67">m_I</a></td></tr>
+<tr class="memitem:acf1793111563789ebdbbdfcc5721602a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#acf1793111563789ebdbbdfcc5721602a">m_D</a></td></tr>
+<tr class="memitem:a738f6e8adc86534aa7356891442590a3"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#a738f6e8adc86534aa7356891442590a3">m_F</a></td></tr>
+<tr class="memitem:a646f901fa66aefb39c9cb4ab722f9a51"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#a646f901fa66aefb39c9cb4ab722f9a51">m_maximumOutput</a></td></tr>
+<tr class="memitem:a40c185c736dcdbb7ba15ec995511ef91"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#a40c185c736dcdbb7ba15ec995511ef91">m_minimumOutput</a></td></tr>
+<tr class="memitem:aaa82b30aad06955695f56a8e08e4fd83"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#aaa82b30aad06955695f56a8e08e4fd83">m_maximumInput</a></td></tr>
+<tr class="memitem:aa237e668f8617b62c029e207c4925203"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#aa237e668f8617b62c029e207c4925203">m_minimumInput</a></td></tr>
+<tr class="memitem:a2b006b49aab6682146c1b609b04a060b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#a2b006b49aab6682146c1b609b04a060b">m_continuous</a></td></tr>
+<tr class="memitem:a6518833317b56929492be94ee982f260"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#a6518833317b56929492be94ee982f260">m_enabled</a></td></tr>
+<tr class="memitem:a633beaab6926eb83df509132408a28f1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#a633beaab6926eb83df509132408a28f1">m_prevError</a></td></tr>
+<tr class="memitem:a93d301b9277aaaa781d82986ede9ff83"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#a93d301b9277aaaa781d82986ede9ff83">m_totalError</a></td></tr>
+<tr class="memitem:a2b638bd95608721243d137ec4d0346e5"><td class="memItemLeft" align="right" valign="top">enum PIDController:: { ... } &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#a2b638bd95608721243d137ec4d0346e5">m_toleranceType</a></td></tr>
+<tr class="memitem:a2639fceb0f9cb9f140bf1f80f5cd0374"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#a2639fceb0f9cb9f140bf1f80f5cd0374">m_tolerance</a></td></tr>
+<tr class="memitem:a17a9d178ece027b89a4b17fc769a6f76"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#a17a9d178ece027b89a4b17fc769a6f76">m_setpoint</a></td></tr>
+<tr class="memitem:a850ef79cbce019a3bac0b5e867f56e40"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#a850ef79cbce019a3bac0b5e867f56e40">m_error</a></td></tr>
+<tr class="memitem:ab9cb19720ec483d4f6b7c8605f11d946"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#ab9cb19720ec483d4f6b7c8605f11d946">m_result</a></td></tr>
+<tr class="memitem:a6bb92aae652fdf279c1fa4f27a81637f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#a6bb92aae652fdf279c1fa4f27a81637f">m_period</a></td></tr>
+<tr class="memitem:a94788bcc04abbe1f5f326055cb5c4059"><td class="memItemLeft" align="right" valign="top">SEM_ID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#a94788bcc04abbe1f5f326055cb5c4059">m_semaphore</a></td></tr>
+<tr class="memitem:ad2c269cd146d67e31444cf82cf7d54d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_p_i_d_source.html">PIDSource</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#ad2c269cd146d67e31444cf82cf7d54d0">m_pidInput</a></td></tr>
+<tr class="memitem:a2066543606104f24c9c05229e27ae7e5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_p_i_d_output.html">PIDOutput</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#a2066543606104f24c9c05229e27ae7e5">m_pidOutput</a></td></tr>
+<tr class="memitem:a6bc1c9b33c3f3f317018465083fd011b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_notifier.html">Notifier</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_i_d_controller.html#a6bc1c9b33c3f3f317018465083fd011b">m_controlLoop</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Class implements a PID Control Loop.</p>
 <p>Creates a separate thread which reads the given <a class="el" href="class_p_i_d_source.html">PIDSource</a> and takes care of the integral calculations, as well as writing the given <a class="el" href="class_p_i_d_output.html">PIDOutput</a> </p>
 
 <p>Definition at line <a class="el" href="_p_i_d_controller_8h_source.html#l00026">26</a> of file <a class="el" href="_p_i_d_controller_8h_source.html">PIDController.h</a>.</p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+</div><hr/><h2>Member Enumeration Documentation</h2>
+<a class="anchor" id="a10f6d281513c2ca0451d6e83cfa9298c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a10f6d281513c2ca0451d6e83cfa9298ca4628a38b3608c5d8261c0dc59be5b608"></a>kAbsoluteTolerance</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a10f6d281513c2ca0451d6e83cfa9298caf644c9f75c596daee418dc58d026d17d"></a>kPercentTolerance</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a10f6d281513c2ca0451d6e83cfa9298caf72327f4a2d4e6c4c89a9ac1ebadffed"></a>kNoTolerance</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_p_i_d_controller_8h_source.html#l00078">78</a> of file <a class="el" href="_p_i_d_controller_8h_source.html">PIDController.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aeb0e62ab4c39e61826b71b4177eb97d5"></a>
 <div class="memitem">
 <div class="memproto">
@@ -314,6 +398,65 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a27ef2d32c04adb4e904f3036fd3cabf3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> PIDController::Calculate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Read the input, calculate the output accordingly, and write to the output. This should only be called by the <a class="el" href="class_notifier.html">Notifier</a> indirectly through CallCalculate and is created during initialization. </p>
+
+<p>Definition at line <a class="el" href="_p_i_d_controller_8cpp_source.html#l00131">131</a> of file <a class="el" href="_p_i_d_controller_8cpp_source.html">PIDController.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac438fd75fa4c3f90df2f5d82af255dd0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> PIDController::CallCalculate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> *&#160;</td>
+          <td class="paramname"><em>controller</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Call the Calculate method as a non-static method. This avoids having to prepend all local variables in that method with the class pointer. This way the "this" pointer will be set up and class variables can be called more easily. This method is static and called by the <a class="el" href="class_notifier.html">Notifier</a> class. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">controller</td><td>the address of the PID controller object to use in the background loop </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_p_i_d_controller_8cpp_source.html#l00120">120</a> of file <a class="el" href="_p_i_d_controller_8cpp_source.html">PIDController.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ad13d5e8f8b465a00ad2c21a14cb832c4"></a>
 <div class="memitem">
 <div class="memproto">
@@ -580,6 +723,128 @@ Protected Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns:</dt><dd>the current setpoint </dd></dl>
 
 <p>Definition at line <a class="el" href="_p_i_d_controller_8cpp_source.html#l00402">402</a> of file <a class="el" href="_p_i_d_controller_8cpp_source.html">PIDController.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afedfe898ff41272b8213904fc07963b9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string PIDController::GetSmartDashboardType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns:</dt><dd>the string representation of the named data type that will be used by the smart dashboard for this sendable </dd></dl>
+
+<p>Implements <a class="el" href="class_sendable.html#a51bd7fbeacbe87da45824a9cfbdcbbfe">Sendable</a>.</p>
+
+<p>Definition at line <a class="el" href="_p_i_d_controller_8cpp_source.html#l00564">564</a> of file <a class="el" href="_p_i_d_controller_8cpp_source.html">PIDController.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9902ad5d1844cf52c60e136c78a641cd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i_table.html">ITable</a> * PIDController::GetTable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns:</dt><dd>the table that is currently associated with the sendable </dd></dl>
+
+<p>Implements <a class="el" href="class_sendable.html#af17a1c5cb9b0d8ef2d45583072213629">Sendable</a>.</p>
+
+<p>Definition at line <a class="el" href="_p_i_d_controller_8cpp_source.html#l00583">583</a> of file <a class="el" href="_p_i_d_controller_8cpp_source.html">PIDController.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aae57d842e56ef46acefadebe0f183e5b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> PIDController::Initialize </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_p_i_d_source.html">PIDSource</a> *&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_p_i_d_output.html">PIDOutput</a> *&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>period</em> = <code>0.05</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_p_i_d_controller_8cpp_source.html#l00060">60</a> of file <a class="el" href="_p_i_d_controller_8cpp_source.html">PIDController.cpp</a>.</p>
 
 </div>
 </div>
@@ -1036,7 +1301,569 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a30bee1eaaa42fb55f84a1fdf5c2d7558"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> PIDController::StartLiveWindowMode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Start having this sendable object automatically respond to value changes reflect the value on the table. </p>
+
+<p>Implements <a class="el" href="class_live_window_sendable.html#a72221db5da0b5937e612c527a65a54f7">LiveWindowSendable</a>.</p>
+
+<p>Definition at line <a class="el" href="_p_i_d_controller_8cpp_source.html#l00607">607</a> of file <a class="el" href="_p_i_d_controller_8cpp_source.html">PIDController.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1af3169b7fb8cb133e20e9835842b7b8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> PIDController::StopLiveWindowMode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Stop having this sendable object automatically respond to value changes. </p>
+
+<p>Implements <a class="el" href="class_live_window_sendable.html#abf89872ae81e40d4db0fffff9ddddc77">LiveWindowSendable</a>.</p>
+
+<p>Definition at line <a class="el" href="_p_i_d_controller_8cpp_source.html#l00611">611</a> of file <a class="el" href="_p_i_d_controller_8cpp_source.html">PIDController.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7c36ae644b389b2f16d1f62e8f63ce88"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> PIDController::UpdateTable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Update the table for this sendable object with the latest values. </p>
+
+<p>Implements <a class="el" href="class_live_window_sendable.html#af86ac7639042d72c8445850b1eec6c77">LiveWindowSendable</a>.</p>
+
+<p>Definition at line <a class="el" href="_p_i_d_controller_8cpp_source.html#l00603">603</a> of file <a class="el" href="_p_i_d_controller_8cpp_source.html">PIDController.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa40bd171fd9b207ed9948a50cca8f984"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> PIDController::ValueChanged </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_i_table.html">ITable</a> *&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="union_entry_value.html">EntryValue</a>&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isNew</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Called when a key-value pair is changed in a <a class="el" href="class_i_table.html">ITable</a> WARNING: If a new key-value is put in this method value changed will immediatly be called which could lead to recursive code </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>the table the key-value pair exists in </td></tr>
+    <tr><td class="paramname">key</td><td>the key associated with the value that changed </td></tr>
+    <tr><td class="paramname">value</td><td>the new value </td></tr>
+    <tr><td class="paramname">isNew</td><td>true if the key did not previously exist in the table, otherwise it is false </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_i_table_listener.html#a5ba676cd8d3f1e6ebbfd4c5c4ed60973">ITableListener</a>.</p>
+
+<p>Definition at line <a class="el" href="_p_i_d_controller_8cpp_source.html#l00587">587</a> of file <a class="el" href="_p_i_d_controller_8cpp_source.html">PIDController.cpp</a>.</p>
+
+</div>
+</div>
 <hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a2b006b49aab6682146c1b609b04a060b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PIDController::m_continuous</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_p_i_d_controller_8h_source.html#l00074">74</a> of file <a class="el" href="_p_i_d_controller_8h_source.html">PIDController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6bc1c9b33c3f3f317018465083fd011b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_notifier.html">Notifier</a>* PIDController::m_controlLoop</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_p_i_d_controller_8h_source.html#l00089">89</a> of file <a class="el" href="_p_i_d_controller_8h_source.html">PIDController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acf1793111563789ebdbbdfcc5721602a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PIDController::m_D</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_p_i_d_controller_8h_source.html#l00068">68</a> of file <a class="el" href="_p_i_d_controller_8h_source.html">PIDController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6518833317b56929492be94ee982f260"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PIDController::m_enabled</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_p_i_d_controller_8h_source.html#l00075">75</a> of file <a class="el" href="_p_i_d_controller_8h_source.html">PIDController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a850ef79cbce019a3bac0b5e867f56e40"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PIDController::m_error</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_p_i_d_controller_8h_source.html#l00081">81</a> of file <a class="el" href="_p_i_d_controller_8h_source.html">PIDController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a738f6e8adc86534aa7356891442590a3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PIDController::m_F</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_p_i_d_controller_8h_source.html#l00069">69</a> of file <a class="el" href="_p_i_d_controller_8h_source.html">PIDController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7daae5f41b37d804f08ff12ad3f04f67"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PIDController::m_I</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_p_i_d_controller_8h_source.html#l00067">67</a> of file <a class="el" href="_p_i_d_controller_8h_source.html">PIDController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aaa82b30aad06955695f56a8e08e4fd83"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PIDController::m_maximumInput</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_p_i_d_controller_8h_source.html#l00072">72</a> of file <a class="el" href="_p_i_d_controller_8h_source.html">PIDController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a646f901fa66aefb39c9cb4ab722f9a51"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PIDController::m_maximumOutput</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_p_i_d_controller_8h_source.html#l00070">70</a> of file <a class="el" href="_p_i_d_controller_8h_source.html">PIDController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa237e668f8617b62c029e207c4925203"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PIDController::m_minimumInput</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_p_i_d_controller_8h_source.html#l00073">73</a> of file <a class="el" href="_p_i_d_controller_8h_source.html">PIDController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a40c185c736dcdbb7ba15ec995511ef91"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PIDController::m_minimumOutput</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_p_i_d_controller_8h_source.html#l00071">71</a> of file <a class="el" href="_p_i_d_controller_8h_source.html">PIDController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a67228f710626b4b17e335162825d1704"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PIDController::m_P</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_p_i_d_controller_8h_source.html#l00066">66</a> of file <a class="el" href="_p_i_d_controller_8h_source.html">PIDController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6bb92aae652fdf279c1fa4f27a81637f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PIDController::m_period</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_p_i_d_controller_8h_source.html#l00083">83</a> of file <a class="el" href="_p_i_d_controller_8h_source.html">PIDController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad2c269cd146d67e31444cf82cf7d54d0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_p_i_d_source.html">PIDSource</a>* PIDController::m_pidInput</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_p_i_d_controller_8h_source.html#l00087">87</a> of file <a class="el" href="_p_i_d_controller_8h_source.html">PIDController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2066543606104f24c9c05229e27ae7e5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_p_i_d_output.html">PIDOutput</a>* PIDController::m_pidOutput</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_p_i_d_controller_8h_source.html#l00088">88</a> of file <a class="el" href="_p_i_d_controller_8h_source.html">PIDController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a633beaab6926eb83df509132408a28f1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PIDController::m_prevError</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_p_i_d_controller_8h_source.html#l00076">76</a> of file <a class="el" href="_p_i_d_controller_8h_source.html">PIDController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab9cb19720ec483d4f6b7c8605f11d946"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PIDController::m_result</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_p_i_d_controller_8h_source.html#l00082">82</a> of file <a class="el" href="_p_i_d_controller_8h_source.html">PIDController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a94788bcc04abbe1f5f326055cb5c4059"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SEM_ID PIDController::m_semaphore</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_p_i_d_controller_8h_source.html#l00085">85</a> of file <a class="el" href="_p_i_d_controller_8h_source.html">PIDController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a17a9d178ece027b89a4b17fc769a6f76"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PIDController::m_setpoint</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_p_i_d_controller_8h_source.html#l00080">80</a> of file <a class="el" href="_p_i_d_controller_8h_source.html">PIDController.h</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a0ecfc56bc938611a80cb4bcacdbdd9de"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1059,6 +1886,62 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a2639fceb0f9cb9f140bf1f80f5cd0374"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PIDController::m_tolerance</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_p_i_d_controller_8h_source.html#l00079">79</a> of file <a class="el" href="_p_i_d_controller_8h_source.html">PIDController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2b638bd95608721243d137ec4d0346e5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum { ... }   PIDController::m_toleranceType</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a93d301b9277aaaa781d82986ede9ff83"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PIDController::m_totalError</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_p_i_d_controller_8h_source.html#l00077">77</a> of file <a class="el" href="_p_i_d_controller_8h_source.html">PIDController.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>WPILib/<a class="el" href="_p_i_d_controller_8h_source.html">PIDController.h</a></li>
 <li>WPILib/<a class="el" href="_p_i_d_controller_8cpp_source.html">PIDController.cpp</a></li>
@@ -1066,7 +1949,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:16 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:48 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

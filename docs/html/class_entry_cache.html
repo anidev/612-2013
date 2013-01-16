@@ -85,7 +85,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">EntryCache Class Reference</div>  </div>
 </div><!--header-->
@@ -97,9 +98,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4be6ec2a4ca62ffd65828817421d39b6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entry_cache.html#a4be6ec2a4ca62ffd65828817421d39b6">EntryCache</a> (std::string &amp;path)</td></tr>
+<tr class="memitem:a4be6ec2a4ca62ffd65828817421d39b6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entry_cache.html#a4be6ec2a4ca62ffd65828817421d39b6">EntryCache</a> (std::string &amp;<a class="el" href="class_entry_cache.html#a8500e66acf9e76f07364bdeb89ad2a1c">path</a>)</td></tr>
 <tr class="memitem:a588a16287c6614da24c41fd8227f4dff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entry_cache.html#a588a16287c6614da24c41fd8227f4dff">~EntryCache</a> ()</td></tr>
 <tr class="memitem:a513b2721b042760b4fe20980a83a36ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_network_table_entry.html">NetworkTableEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entry_cache.html#a513b2721b042760b4fe20980a83a36ed">Get</a> (std::string &amp;key)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a86378b3e101a94f73cc477a56ea200b9"><td class="memItemLeft" align="right" valign="top">map&lt; std::string, <br class="typebreak"/>
+<a class="el" href="class_network_table_entry.html">NetworkTableEntry</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entry_cache.html#a86378b3e101a94f73cc477a56ea200b9">cache</a></td></tr>
+<tr class="memitem:a8500e66acf9e76f07364bdeb89ad2a1c"><td class="memItemLeft" align="right" valign="top">std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entry_cache.html#a8500e66acf9e76f07364bdeb89ad2a1c">path</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
@@ -159,6 +166,51 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a86378b3e101a94f73cc477a56ea200b9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">map&lt;std::string, <a class="el" href="class_network_table_entry.html">NetworkTableEntry</a>*&gt; EntryCache::cache</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_network_table_8h_source.html#l00042">42</a> of file <a class="el" href="_network_table_8h_source.html">NetworkTable.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8500e66acf9e76f07364bdeb89ad2a1c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string&amp; EntryCache::path</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_network_table_8h_source.html#l00043">43</a> of file <a class="el" href="_network_table_8h_source.html">NetworkTable.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>WPILib/networktables/<a class="el" href="_network_table_8h_source.html">NetworkTable.h</a></li>
 <li>WPILib/networktables/<a class="el" href="_network_table_8cpp_source.html">NetworkTable.cpp</a></li>
@@ -166,7 +218,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:14 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:46 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

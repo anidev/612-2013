@@ -125,23 +125,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_error.html#afd919c7b9e33c2e630edee8072c31922">Clear</a>();</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_error.html#ac3def8d75185839aecc68a1d5af75f6f">Set</a>(<a class="code" href="class_error.html#ad0ca95bfda335aaedd0d6c5c52b5d95b">Code</a> code, <span class="keyword">const</span> <span class="keywordtype">char</span>* contextMessage, <span class="keyword">const</span> <span class="keywordtype">char</span>* filename,</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">char</span> *<span class="keyword">function</span>, UINT32 lineNumber, <span class="keyword">const</span> <a class="code" href="class_error_base.html">ErrorBase</a>* originatingObject);</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="class_error.html#a38b410fa32e0365bcd6dd682e207f86a">   39</a></span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_error.html#a38b410fa32e0365bcd6dd682e207f86a">EnableStackTrace</a>(<span class="keywordtype">bool</span> enable) { m_stackTraceEnabled=enable; }</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="class_error.html#a2ab6731cd4059176d321bd30b9f8968d">   40</a></span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_error.html#a2ab6731cd4059176d321bd30b9f8968d">EnableSuspendOnError</a>(<span class="keywordtype">bool</span> enable) { m_suspendOnErrorEnabled=enable; }</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="class_error.html#a38b410fa32e0365bcd6dd682e207f86a">   39</a></span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_error.html#a38b410fa32e0365bcd6dd682e207f86a">EnableStackTrace</a>(<span class="keywordtype">bool</span> enable) { <a class="code" href="class_error.html#aaf0d059e9f49457437caaf9e0cf07bbd">m_stackTraceEnabled</a>=enable; }</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="class_error.html#a2ab6731cd4059176d321bd30b9f8968d">   40</a></span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_error.html#a2ab6731cd4059176d321bd30b9f8968d">EnableSuspendOnError</a>(<span class="keywordtype">bool</span> enable) { <a class="code" href="class_error.html#ae064588dcbd547a34f8b471603180bf2">m_suspendOnErrorEnabled</a>=enable; }</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">void</span> Report();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_error.html#a1e5c39b02e21abec4239473199425631">Report</a>();</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="class_error.html#ad0ca95bfda335aaedd0d6c5c52b5d95b">Code</a> m_code;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        std::string m_message;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        std::string m_filename;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        std::string m_function;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        UINT32 m_lineNumber;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">const</span> <a class="code" href="class_error_base.html">ErrorBase</a>* m_originatingObject;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">double</span> m_timestamp;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="class_error.html#a9f3241f7a61571f6a0d7814ace5d596a">   45</a></span>&#160;        <a class="code" href="class_error.html#ad0ca95bfda335aaedd0d6c5c52b5d95b">Code</a> <a class="code" href="class_error.html#a9f3241f7a61571f6a0d7814ace5d596a">m_code</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="class_error.html#a6fa4cae6e1a453e56c2deb2b2f0a4f36">   46</a></span>&#160;        std::string <a class="code" href="class_error.html#a6fa4cae6e1a453e56c2deb2b2f0a4f36">m_message</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="class_error.html#a8878272d6d51f900052cb57dd5b99d7a">   47</a></span>&#160;        std::string <a class="code" href="class_error.html#a8878272d6d51f900052cb57dd5b99d7a">m_filename</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="class_error.html#a5186da63731269f3a15d9ff01fbbcd5f">   48</a></span>&#160;        std::string <a class="code" href="class_error.html#a5186da63731269f3a15d9ff01fbbcd5f">m_function</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="class_error.html#a543d8b81d391ff782b5db1c532482a37">   49</a></span>&#160;        UINT32 <a class="code" href="class_error.html#a543d8b81d391ff782b5db1c532482a37">m_lineNumber</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="class_error.html#afa366d119f2768226c1bcbca8aceb01d">   50</a></span>&#160;        <span class="keyword">const</span> <a class="code" href="class_error_base.html">ErrorBase</a>* <a class="code" href="class_error.html#afa366d119f2768226c1bcbca8aceb01d">m_originatingObject</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="class_error.html#a31a42b6a13dc4af7d287304f1e678c94">   51</a></span>&#160;        <span class="keywordtype">double</span> <a class="code" href="class_error.html#a31a42b6a13dc4af7d287304f1e678c94">m_timestamp</a>;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">bool</span> m_stackTraceEnabled;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">bool</span> m_suspendOnErrorEnabled;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        DISALLOW_COPY_AND_ASSIGN(<a class="code" href="class_error.html">Error</a>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="code" href="class_error.html#aaf0d059e9f49457437caaf9e0cf07bbd">   53</a></span>&#160;        <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_error.html#aaf0d059e9f49457437caaf9e0cf07bbd">m_stackTraceEnabled</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="class_error.html#ae064588dcbd547a34f8b471603180bf2">   54</a></span>&#160;        <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_error.html#ae064588dcbd547a34f8b471603180bf2">m_suspendOnErrorEnabled</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="class_error.html#a8e8c636c62814651e45cf9fbc39d8d99">DISALLOW_COPY_AND_ASSIGN</a>(<a class="code" href="class_error.html">Error</a>);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -149,7 +149,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:09 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:42 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

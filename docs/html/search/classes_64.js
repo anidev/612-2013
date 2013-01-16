@@ -21,6 +21,7 @@ var searchData=
   ['displaymapping_5fstruct',['DisplayMapping_struct',['../struct_display_mapping__struct.html',1,'']]],
   ['distortionmodelparams_5fstruct',['DistortionModelParams_struct',['../struct_distortion_model_params__struct.html',1,'']]],
   ['divisionmodel_5fstruct',['DivisionModel_struct',['../struct_division_model__struct.html',1,'']]],
+  ['double_5ft',['DOUBLE_t',['../class_default_entry_types_1_1_d_o_u_b_l_e__t.html',1,'DefaultEntryTypes']]],
   ['doublesolenoid',['DoubleSolenoid',['../class_double_solenoid.html',1,'']]],
   ['drawtextoptions_5fstruct',['DrawTextOptions_struct',['../struct_draw_text_options__struct.html',1,'']]],
   ['driverstation',['DriverStation',['../class_driver_station.html',1,'']]],

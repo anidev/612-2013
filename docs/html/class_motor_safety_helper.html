@@ -86,7 +86,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a>  </div>
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">MotorSafetyHelper Class Reference</div>  </div>
 </div><!--header-->
@@ -142,6 +144,20 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ab1a827a11e8c3ba905ef88cac9583c4f inherit pub_static_methods_class_error_base"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_base.html#ab1a827a11e8c3ba905ef88cac9583c4f">SetGlobalError</a> (<a class="el" href="class_error.html#ad0ca95bfda335aaedd0d6c5c52b5d95b">Error::Code</a> code, const char *contextMessage, const char *filename, const char *function, UINT32 lineNumber)</td></tr>
 <tr class="memitem:a3cc8960dee0edd4b57b494aa139e5887 inherit pub_static_methods_class_error_base"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_base.html#a3cc8960dee0edd4b57b494aa139e5887">SetGlobalWPIError</a> (const char *errorMessage, const char *contextMessage, const char *filename, const char *function, UINT32 lineNumber)</td></tr>
 <tr class="memitem:ab85de5de437f0293356753b2ebab874c inherit pub_static_methods_class_error_base"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_error.html">Error</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_base.html#ab85de5de437f0293356753b2ebab874c">GetGlobalError</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aaae6e958762e2cdf375022473d3695ee"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_safety_helper.html#aaae6e958762e2cdf375022473d3695ee">m_expiration</a></td></tr>
+<tr class="memitem:ac6055a8d9fde2302e22b870140d3d66b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_safety_helper.html#ac6055a8d9fde2302e22b870140d3d66b">m_enabled</a></td></tr>
+<tr class="memitem:ab0f956a704172a82f32b1ce64e279d2b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_safety_helper.html#ab0f956a704172a82f32b1ce64e279d2b">m_stopTime</a></td></tr>
+<tr class="memitem:acc304442c513cd744407b8d9383433df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_reentrant_semaphore.html">ReentrantSemaphore</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_safety_helper.html#acc304442c513cd744407b8d9383433df">m_syncMutex</a></td></tr>
+<tr class="memitem:ae1f9a8b49557efea20ed99d593385ed9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_motor_safety.html">MotorSafety</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_safety_helper.html#ae1f9a8b49557efea20ed99d593385ed9">m_safeObject</a></td></tr>
+<tr class="memitem:a3201742bd9453845cd6b718272a19160"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_motor_safety_helper.html">MotorSafetyHelper</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_safety_helper.html#a3201742bd9453845cd6b718272a19160">m_nextHelper</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a834d9da93ef1824432a4d4d3dfb6d122"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_motor_safety_helper.html">MotorSafetyHelper</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_safety_helper.html#a834d9da93ef1824432a4d4d3dfb6d122">m_headHelper</a> = <a class="el" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="memitem:a70f3370c94342f91eea89b4259dd1879"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_reentrant_semaphore.html">ReentrantSemaphore</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_safety_helper.html#a70f3370c94342f91eea89b4259dd1879">m_listMutex</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -362,6 +378,183 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="ac6055a8d9fde2302e22b870140d3d66b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MotorSafetyHelper::m_enabled</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_motor_safety_helper_8h_source.html#l00031">31</a> of file <a class="el" href="_motor_safety_helper_8h_source.html">MotorSafetyHelper.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aaae6e958762e2cdf375022473d3695ee"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double MotorSafetyHelper::m_expiration</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_motor_safety_helper_8h_source.html#l00030">30</a> of file <a class="el" href="_motor_safety_helper_8h_source.html">MotorSafetyHelper.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a834d9da93ef1824432a4d4d3dfb6d122"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_motor_safety_helper.html">MotorSafetyHelper</a> * MotorSafetyHelper::m_headHelper = <a class="el" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_motor_safety_helper_8h_source.html#l00036">36</a> of file <a class="el" href="_motor_safety_helper_8h_source.html">MotorSafetyHelper.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a70f3370c94342f91eea89b4259dd1879"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_reentrant_semaphore.html">ReentrantSemaphore</a> MotorSafetyHelper::m_listMutex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_motor_safety_helper_8h_source.html#l00037">37</a> of file <a class="el" href="_motor_safety_helper_8h_source.html">MotorSafetyHelper.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3201742bd9453845cd6b718272a19160"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_motor_safety_helper.html">MotorSafetyHelper</a>* MotorSafetyHelper::m_nextHelper</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_motor_safety_helper_8h_source.html#l00035">35</a> of file <a class="el" href="_motor_safety_helper_8h_source.html">MotorSafetyHelper.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae1f9a8b49557efea20ed99d593385ed9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_motor_safety.html">MotorSafety</a>* MotorSafetyHelper::m_safeObject</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_motor_safety_helper_8h_source.html#l00034">34</a> of file <a class="el" href="_motor_safety_helper_8h_source.html">MotorSafetyHelper.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab0f956a704172a82f32b1ce64e279d2b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double MotorSafetyHelper::m_stopTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_motor_safety_helper_8h_source.html#l00032">32</a> of file <a class="el" href="_motor_safety_helper_8h_source.html">MotorSafetyHelper.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acc304442c513cd744407b8d9383433df"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_reentrant_semaphore.html">ReentrantSemaphore</a> MotorSafetyHelper::m_syncMutex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_motor_safety_helper_8h_source.html#l00033">33</a> of file <a class="el" href="_motor_safety_helper_8h_source.html">MotorSafetyHelper.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>WPILib/<a class="el" href="_motor_safety_helper_8h_source.html">MotorSafetyHelper.h</a></li>
 <li>WPILib/<a class="el" href="_motor_safety_helper_8cpp_source.html">MotorSafetyHelper.cpp</a></li>
@@ -369,7 +562,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:15 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:47 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

@@ -113,8 +113,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">float</span> <a class="code" href="class_servo.html#a5ecdde666455fa3c20d4ae1b6184a047">Get</a>();</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_servo.html#a0046f9431e42de3fe63f8ce1b3995eb5">SetAngle</a>(<span class="keywordtype">float</span> angle);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">float</span> <a class="code" href="class_servo.html#a0ccee0191f0026d94db4646e6662700c">GetAngle</a>();</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="class_servo.html#ae36a37bed39b8f1eef52504835691c3a">   30</a></span>&#160;        <span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code" href="class_servo.html#ae36a37bed39b8f1eef52504835691c3a">GetMaxAngle</a>() { <span class="keywordflow">return</span> kMaxServoAngle; };</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="class_servo.html#a5f278b3f0f6d99e4c3fd74ded31f8b93">   31</a></span>&#160;        <span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code" href="class_servo.html#a5f278b3f0f6d99e4c3fd74ded31f8b93">GetMinAngle</a>() { <span class="keywordflow">return</span> kMinServoAngle; };</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="class_servo.html#ae36a37bed39b8f1eef52504835691c3a">   30</a></span>&#160;        <span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code" href="class_servo.html#ae36a37bed39b8f1eef52504835691c3a">GetMaxAngle</a>() { <span class="keywordflow">return</span> <a class="code" href="class_servo.html#a6f44d7c55ede18d5f74c1b862563290a">kMaxServoAngle</a>; };</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="class_servo.html#a5f278b3f0f6d99e4c3fd74ded31f8b93">   31</a></span>&#160;        <span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code" href="class_servo.html#a5f278b3f0f6d99e4c3fd74ded31f8b93">GetMinAngle</a>() { <span class="keywordflow">return</span> <a class="code" href="class_servo.html#ae16f8a97debeebcc727e602ef17d3f46">kMinServoAngle</a>; };</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_servo.html#a6bcd8398fb958f5046f36ca749e07745">ValueChanged</a>(<a class="code" href="class_i_table.html">ITable</a>* source, <span class="keyword">const</span> std::string&amp; key, <a class="code" href="union_entry_value.html">EntryValue</a> value, <span class="keywordtype">bool</span> isNew);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_servo.html#a76cca4c9e061ad6b36bcf8282e6bb9d2">UpdateTable</a>();</div>
@@ -127,11 +127,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="class_servo.html#a6f6c470f1cf96bcd2eb2be38b6b17f72">   41</a></span>&#160;        <a class="code" href="class_i_table.html">ITable</a> *<a class="code" href="class_servo.html#a6f6c470f1cf96bcd2eb2be38b6b17f72">m_table</a>;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">void</span> InitServo();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">float</span> GetServoAngleRange() {<span class="keywordflow">return</span> kMaxServoAngle - kMinServoAngle;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_servo.html#aedb7fca43ec9b75e7a4a679efee4edbb">InitServo</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="class_servo.html#aca629f2fc8533bab376774302f83d314">   45</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="class_servo.html#aca629f2fc8533bab376774302f83d314">GetServoAngleRange</a>() {<span class="keywordflow">return</span> <a class="code" href="class_servo.html#a6f44d7c55ede18d5f74c1b862563290a">kMaxServoAngle</a> - <a class="code" href="class_servo.html#ae16f8a97debeebcc727e602ef17d3f46">kMinServoAngle</a>;}</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> kMaxServoAngle = 170.0;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> kMinServoAngle = 0.0;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="class_servo.html#a6f44d7c55ede18d5f74c1b862563290a">   47</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="class_servo.html#a6f44d7c55ede18d5f74c1b862563290a">kMaxServoAngle</a> = 170.0;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="class_servo.html#ae16f8a97debeebcc727e602ef17d3f46">   48</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="class_servo.html#ae16f8a97debeebcc727e602ef17d3f46">kMinServoAngle</a> = 0.0;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -139,7 +139,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:10 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:43 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

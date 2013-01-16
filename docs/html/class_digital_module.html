@@ -88,6 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#friends">Friends</a>  </div>
   <div class="headertitle">
 <div class="title">DigitalModule Class Reference</div>  </div>
@@ -200,6 +201,13 @@ Protected Member Functions</h2></td></tr>
 <tr class="inherit_header pro_methods_class_error_base"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_error_base')"><img src="closed.png" alt="-"/>&nbsp;Protected Member Functions inherited from <a class="el" href="class_error_base.html">ErrorBase</a></td></tr>
 <tr class="memitem:af49991441156c7832d7017951427cef2 inherit pro_methods_class_error_base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_base.html#af49991441156c7832d7017951427cef2">ErrorBase</a> ()</td></tr>
 <tr class="memdesc:af49991441156c7832d7017951427cef2 inherit pro_methods_class_error_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the instance status to 0 for now.  <a href="#af49991441156c7832d7017951427cef2"></a><br/></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:af6325625d8f06d580bdf8a3f502d8800"><td class="memItemLeft" align="right" valign="top">SEM_ID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_digital_module.html#af6325625d8f06d580bdf8a3f502d8800">m_digitalSemaphore</a></td></tr>
+<tr class="memitem:abed7ed432793bc4463538fb15f5207ce"><td class="memItemLeft" align="right" valign="top">SEM_ID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_digital_module.html#abed7ed432793bc4463538fb15f5207ce">m_relaySemaphore</a></td></tr>
+<tr class="memitem:ac5ef955d09597775819e481669dff98d"><td class="memItemLeft" align="right" valign="top">SEM_ID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_digital_module.html#ac5ef955d09597775819e481669dff98d">m_doPwmSemaphore</a></td></tr>
+<tr class="memitem:a36b8e280a9e08826c7606d1ebc6933df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_d_i_o.html">tDIO</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_digital_module.html#a36b8e280a9e08826c7606d1ebc6933df">m_fpgaDIO</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
@@ -1066,6 +1074,95 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="af6325625d8f06d580bdf8a3f502d8800"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SEM_ID DigitalModule::m_digitalSemaphore</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_digital_module_8h_source.html#l00056">56</a> of file <a class="el" href="_digital_module_8h_source.html">DigitalModule.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac5ef955d09597775819e481669dff98d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SEM_ID DigitalModule::m_doPwmSemaphore</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_digital_module_8h_source.html#l00061">61</a> of file <a class="el" href="_digital_module_8h_source.html">DigitalModule.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a36b8e280a9e08826c7606d1ebc6933df"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_d_i_o.html">tDIO</a>* DigitalModule::m_fpgaDIO</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_digital_module_8h_source.html#l00062">62</a> of file <a class="el" href="_digital_module_8h_source.html">DigitalModule.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abed7ed432793bc4463538fb15f5207ce"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SEM_ID DigitalModule::m_relaySemaphore</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_digital_module_8h_source.html#l00060">60</a> of file <a class="el" href="_digital_module_8h_source.html">DigitalModule.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>WPILib/<a class="el" href="_digital_module_8h_source.html">DigitalModule.h</a></li>
 <li>WPILib/<a class="el" href="_digital_module_8cpp_source.html">DigitalModule.cpp</a></li>
@@ -1073,7 +1170,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:14 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:46 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

@@ -87,7 +87,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-types">Public Types</a> &#124;
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">HiTechnicColorSensor Class Reference</div>  </div>
 </div><!--header-->
@@ -159,6 +161,28 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab67204acd1eb87ffe6fc45c2d22e517e inherit pub_methods_class_error_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the current error information associated with this sensor.  <a href="#ab67204acd1eb87ffe6fc45c2d22e517e"></a><br/></td></tr>
 <tr class="memitem:a05790f219c9e436a09752f73f7344024 inherit pub_methods_class_error_base"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_base.html#a05790f219c9e436a09752f73f7344024">StatusIsFatal</a> () const </td></tr>
 <tr class="memdesc:a05790f219c9e436a09752f73f7344024 inherit pub_methods_class_error_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the current error code represents a fatal error.  <a href="#a05790f219c9e436a09752f73f7344024"></a><br/></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a7566b8a1527ec84aaea776da1238704a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hi_technic_color_sensor.html#a7566b8a1527ec84aaea776da1238704a">m_mode</a></td></tr>
+<tr class="memitem:acb7950f0ab3d6158aadb4faf78ac9b3f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i2_c.html">I2C</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hi_technic_color_sensor.html#acb7950f0ab3d6158aadb4faf78ac9b3f">m_i2c</a></td></tr>
+<tr class="memitem:aced9ca2d7a99c913ea5ba7614ee2b3f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_table.html">ITable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hi_technic_color_sensor.html#aced9ca2d7a99c913ea5ba7614ee2b3f4">m_table</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a5c11c7f4e73bfc24c6d3b66329d53429"><td class="memItemLeft" align="right" valign="top">static const UINT8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hi_technic_color_sensor.html#a5c11c7f4e73bfc24c6d3b66329d53429">kAddress</a> = 0x02</td></tr>
+<tr class="memitem:aa3f5b2bef88e404270484f2805311ae4"><td class="memItemLeft" align="right" valign="top">static const UINT8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hi_technic_color_sensor.html#aa3f5b2bef88e404270484f2805311ae4">kManufacturerBaseRegister</a> = 0x08</td></tr>
+<tr class="memitem:a38437a67fe17818e306f55a046ce1449"><td class="memItemLeft" align="right" valign="top">static const UINT8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hi_technic_color_sensor.html#a38437a67fe17818e306f55a046ce1449">kManufacturerSize</a> = 0x08</td></tr>
+<tr class="memitem:a4df7935c4748d7fb6c6ef4bfde0211dd"><td class="memItemLeft" align="right" valign="top">static const UINT8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hi_technic_color_sensor.html#a4df7935c4748d7fb6c6ef4bfde0211dd">kSensorTypeBaseRegister</a> = 0x10</td></tr>
+<tr class="memitem:a0e412952d60dceaf47c2ca81f3ecdf96"><td class="memItemLeft" align="right" valign="top">static const UINT8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hi_technic_color_sensor.html#a0e412952d60dceaf47c2ca81f3ecdf96">kSensorTypeSize</a> = 0x08</td></tr>
+<tr class="memitem:ac4b10d5499f4e758eb960a5328445613"><td class="memItemLeft" align="right" valign="top">static const UINT8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hi_technic_color_sensor.html#ac4b10d5499f4e758eb960a5328445613">kModeRegister</a> = 0x41</td></tr>
+<tr class="memitem:acc37ee64cf33c5db19330807b9f00718"><td class="memItemLeft" align="right" valign="top">static const UINT8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hi_technic_color_sensor.html#acc37ee64cf33c5db19330807b9f00718">kColorRegister</a> = 0x42</td></tr>
+<tr class="memitem:a3b59190fc33bc72d19e4f08405530260"><td class="memItemLeft" align="right" valign="top">static const UINT8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hi_technic_color_sensor.html#a3b59190fc33bc72d19e4f08405530260">kRedRegister</a> = 0x43</td></tr>
+<tr class="memitem:a5d3b823b8ffa08f1b7889286fb06f792"><td class="memItemLeft" align="right" valign="top">static const UINT8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hi_technic_color_sensor.html#a5d3b823b8ffa08f1b7889286fb06f792">kGreenRegister</a> = 0x44</td></tr>
+<tr class="memitem:a8c585bfd0a5c3fdf47c3697e65ee889c"><td class="memItemLeft" align="right" valign="top">static const UINT8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hi_technic_color_sensor.html#a8c585bfd0a5c3fdf47c3697e65ee889c">kBlueRegister</a> = 0x45</td></tr>
+<tr class="memitem:a4008dedde7de7346bb3de6cdbd92ee6c"><td class="memItemLeft" align="right" valign="top">static const UINT8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hi_technic_color_sensor.html#a4008dedde7de7346bb3de6cdbd92ee6c">kRawRedRegister</a> = 0x43</td></tr>
+<tr class="memitem:ae7574afcb0b086e3a8d8284603171100"><td class="memItemLeft" align="right" valign="top">static const UINT8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hi_technic_color_sensor.html#ae7574afcb0b086e3a8d8284603171100">kRawGreenRegister</a> = 0x45</td></tr>
+<tr class="memitem:a7f05dd158e44999a9abe95cc48e69eab"><td class="memItemLeft" align="right" valign="top">static const UINT8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hi_technic_color_sensor.html#a7f05dd158e44999a9abe95cc48e69eab">kRawBlueRegister</a> = 0x47</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -653,6 +677,359 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a5c11c7f4e73bfc24c6d3b66329d53429"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const UINT8 HiTechnicColorSensor::kAddress = 0x02</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_hi_technic_color_sensor_8h_source.html#l00058">58</a> of file <a class="el" href="_hi_technic_color_sensor_8h_source.html">HiTechnicColorSensor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8c585bfd0a5c3fdf47c3697e65ee889c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const UINT8 HiTechnicColorSensor::kBlueRegister = 0x45</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_hi_technic_color_sensor_8h_source.html#l00067">67</a> of file <a class="el" href="_hi_technic_color_sensor_8h_source.html">HiTechnicColorSensor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acc37ee64cf33c5db19330807b9f00718"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const UINT8 HiTechnicColorSensor::kColorRegister = 0x42</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_hi_technic_color_sensor_8h_source.html#l00064">64</a> of file <a class="el" href="_hi_technic_color_sensor_8h_source.html">HiTechnicColorSensor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5d3b823b8ffa08f1b7889286fb06f792"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const UINT8 HiTechnicColorSensor::kGreenRegister = 0x44</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_hi_technic_color_sensor_8h_source.html#l00066">66</a> of file <a class="el" href="_hi_technic_color_sensor_8h_source.html">HiTechnicColorSensor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa3f5b2bef88e404270484f2805311ae4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const UINT8 HiTechnicColorSensor::kManufacturerBaseRegister = 0x08</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_hi_technic_color_sensor_8h_source.html#l00059">59</a> of file <a class="el" href="_hi_technic_color_sensor_8h_source.html">HiTechnicColorSensor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a38437a67fe17818e306f55a046ce1449"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const UINT8 HiTechnicColorSensor::kManufacturerSize = 0x08</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_hi_technic_color_sensor_8h_source.html#l00060">60</a> of file <a class="el" href="_hi_technic_color_sensor_8h_source.html">HiTechnicColorSensor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac4b10d5499f4e758eb960a5328445613"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const UINT8 HiTechnicColorSensor::kModeRegister = 0x41</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_hi_technic_color_sensor_8h_source.html#l00063">63</a> of file <a class="el" href="_hi_technic_color_sensor_8h_source.html">HiTechnicColorSensor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7f05dd158e44999a9abe95cc48e69eab"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const UINT8 HiTechnicColorSensor::kRawBlueRegister = 0x47</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_hi_technic_color_sensor_8h_source.html#l00070">70</a> of file <a class="el" href="_hi_technic_color_sensor_8h_source.html">HiTechnicColorSensor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae7574afcb0b086e3a8d8284603171100"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const UINT8 HiTechnicColorSensor::kRawGreenRegister = 0x45</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_hi_technic_color_sensor_8h_source.html#l00069">69</a> of file <a class="el" href="_hi_technic_color_sensor_8h_source.html">HiTechnicColorSensor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4008dedde7de7346bb3de6cdbd92ee6c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const UINT8 HiTechnicColorSensor::kRawRedRegister = 0x43</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_hi_technic_color_sensor_8h_source.html#l00068">68</a> of file <a class="el" href="_hi_technic_color_sensor_8h_source.html">HiTechnicColorSensor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3b59190fc33bc72d19e4f08405530260"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const UINT8 HiTechnicColorSensor::kRedRegister = 0x43</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_hi_technic_color_sensor_8h_source.html#l00065">65</a> of file <a class="el" href="_hi_technic_color_sensor_8h_source.html">HiTechnicColorSensor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4df7935c4748d7fb6c6ef4bfde0211dd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const UINT8 HiTechnicColorSensor::kSensorTypeBaseRegister = 0x10</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_hi_technic_color_sensor_8h_source.html#l00061">61</a> of file <a class="el" href="_hi_technic_color_sensor_8h_source.html">HiTechnicColorSensor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0e412952d60dceaf47c2ca81f3ecdf96"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const UINT8 HiTechnicColorSensor::kSensorTypeSize = 0x08</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_hi_technic_color_sensor_8h_source.html#l00062">62</a> of file <a class="el" href="_hi_technic_color_sensor_8h_source.html">HiTechnicColorSensor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acb7950f0ab3d6158aadb4faf78ac9b3f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i2_c.html">I2C</a>* HiTechnicColorSensor::m_i2c</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_hi_technic_color_sensor_8h_source.html#l00073">73</a> of file <a class="el" href="_hi_technic_color_sensor_8h_source.html">HiTechnicColorSensor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7566b8a1527ec84aaea776da1238704a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> HiTechnicColorSensor::m_mode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_hi_technic_color_sensor_8h_source.html#l00072">72</a> of file <a class="el" href="_hi_technic_color_sensor_8h_source.html">HiTechnicColorSensor.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aced9ca2d7a99c913ea5ba7614ee2b3f4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i_table.html">ITable</a>* HiTechnicColorSensor::m_table</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_hi_technic_color_sensor_8h_source.html#l00074">74</a> of file <a class="el" href="_hi_technic_color_sensor_8h_source.html">HiTechnicColorSensor.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>WPILib/<a class="el" href="_hi_technic_color_sensor_8h_source.html">HiTechnicColorSensor.h</a></li>
 <li>WPILib/<a class="el" href="_hi_technic_color_sensor_8cpp_source.html">HiTechnicColorSensor.cpp</a></li>
@@ -660,7 +1037,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:15 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:47 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

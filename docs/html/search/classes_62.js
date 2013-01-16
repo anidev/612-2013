@@ -10,6 +10,7 @@ var searchData=
   ['bestellipse_5fstruct',['BestEllipse_struct',['../struct_best_ellipse__struct.html',1,'']]],
   ['bestline_5fstruct',['BestLine_struct',['../struct_best_line__struct.html',1,'']]],
   ['binaryimage',['BinaryImage',['../class_binary_image.html',1,'']]],
+  ['boolean_5ft',['BOOLEAN_t',['../class_default_entry_types_1_1_b_o_o_l_e_a_n__t.html',1,'DefaultEntryTypes']]],
   ['booleanarray',['BooleanArray',['../class_boolean_array.html',1,'']]],
   ['browseroptions_5fstruct',['BrowserOptions_struct',['../struct_browser_options__struct.html',1,'']]],
   ['button',['Button',['../class_button.html',1,'']]],

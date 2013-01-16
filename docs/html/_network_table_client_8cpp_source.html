@@ -105,27 +105,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        adapter((<a class="code" href="class_client_network_table_entry_store.html">ClientNetworkTableEntryStore</a>&amp;)entryStore, threadManager, streamFactory, *this, typeManager),</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        writeManager(adapter, threadManager, GetEntryStore(), 1000){</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="class_network_table_node.html#af9363aedca65a24a2333977a63c1f49b">GetEntryStore</a>().<a class="code" href="class_abstract_network_table_entry_store.html#acbe8db9cb421c4177ed6c143b93a06f4">SetOutgoingReceiver</a>(<span class="keyword">new</span> <a class="code" href="class_transaction_dirtier.html">TransactionDirtier</a>(writeManager));</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="class_network_table_node.html#af9363aedca65a24a2333977a63c1f49b">GetEntryStore</a>().<a class="code" href="class_abstract_network_table_entry_store.html#acbe8db9cb421c4177ed6c143b93a06f4">SetOutgoingReceiver</a>(<span class="keyword">new</span> <a class="code" href="class_transaction_dirtier.html">TransactionDirtier</a>(<a class="code" href="class_network_table_client.html#a2164660d91b6c21c42d5cd2cb542e018">writeManager</a>));</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="class_network_table_node.html#af9363aedca65a24a2333977a63c1f49b">GetEntryStore</a>().<a class="code" href="class_abstract_network_table_entry_store.html#a272a03bb1580b6e350f70d93b2c2bb2a">SetIncomingReceiver</a>(&amp;<a class="code" href="_outgoing_entry_receiver_8h.html#abd38db56121eee03da6adc5de9738258">OutgoingEntryReceiver_NULL</a>);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        writeManager.<a class="code" href="class_write_manager.html#aa2ee822bd21e3b5a3d81ad0287ea9f89">start</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="class_network_table_client.html#a2164660d91b6c21c42d5cd2cb542e018">writeManager</a>.<a class="code" href="class_write_manager.html#aa2ee822bd21e3b5a3d81ad0287ea9f89">start</a>();</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
 <div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="class_network_table_client.html#a9cce34855c5b1d6a524b3e7aa12c35c0">   26</a></span>&#160;<a class="code" href="class_network_table_client.html#a9cce34855c5b1d6a524b3e7aa12c35c0">NetworkTableClient::~NetworkTableClient</a>(){}</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="class_network_table_client.html#aba9b82dc6671a1711ed987c34d801b02">   31</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_network_table_client.html#aba9b82dc6671a1711ed987c34d801b02">NetworkTableClient::reconnect</a>() {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        adapter.<a class="code" href="class_client_connection_adapter.html#a8f7c1feebe7e6b2178758c0fe6b73d89">reconnect</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="class_network_table_client.html#ac8c5a860f3f953af9b0d0e50b9f34648">adapter</a>.<a class="code" href="class_client_connection_adapter.html#a8f7c1feebe7e6b2178758c0fe6b73d89">reconnect</a>();</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
 <div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="class_network_table_client.html#ae1094ae5cb5ff49d71399da58bfea373">   35</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_network_table_client.html#ae1094ae5cb5ff49d71399da58bfea373">NetworkTableClient::Close</a>() {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        adapter.<a class="code" href="class_client_connection_adapter.html#aa6b3c3a1b17d45f16bc75170d92cf627">close</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="class_network_table_client.html#ac8c5a860f3f953af9b0d0e50b9f34648">adapter</a>.<a class="code" href="class_client_connection_adapter.html#aa6b3c3a1b17d45f16bc75170d92cf627">close</a>();</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
 <div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="class_network_table_client.html#a26aac1b20f5e8a68c34a42090a6a962c">   39</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_network_table_client.html#a26aac1b20f5e8a68c34a42090a6a962c">NetworkTableClient::stop</a>() {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        writeManager.<a class="code" href="class_write_manager.html#ae8fbe88a330dfe5873ddeb45f26b9679">stop</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="class_network_table_client.html#a2164660d91b6c21c42d5cd2cb542e018">writeManager</a>.<a class="code" href="class_write_manager.html#ae8fbe88a330dfe5873ddeb45f26b9679">stop</a>();</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="class_network_table_client.html#ae1094ae5cb5ff49d71399da58bfea373">Close</a>();</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
 <div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="class_network_table_client.html#acc477b099269571611c87a658c91c26a">   44</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_network_table_client.html#acc477b099269571611c87a658c91c26a">NetworkTableClient::IsConnected</a>() {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">return</span> adapter.<a class="code" href="class_client_connection_adapter.html#a54680ec16c38a8f9fbebb7c0d1952240">isConnected</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_network_table_client.html#ac8c5a860f3f953af9b0d0e50b9f34648">adapter</a>.<a class="code" href="class_client_connection_adapter.html#a54680ec16c38a8f9fbebb7c0d1952240">isConnected</a>();</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
 <div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="class_network_table_client.html#a6dd4cb17bed6716ec0afbfd0659e4fd4">   48</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_network_table_client.html#a6dd4cb17bed6716ec0afbfd0659e4fd4">NetworkTableClient::IsServer</a>() {</div>
@@ -134,7 +134,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:10 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:43 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

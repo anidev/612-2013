@@ -87,7 +87,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a>  </div>
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">Error Class Reference</div>  </div>
 </div><!--header-->
@@ -120,6 +123,26 @@ Public Member Functions</h2></td></tr>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a38b410fa32e0365bcd6dd682e207f86a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error.html#a38b410fa32e0365bcd6dd682e207f86a">EnableStackTrace</a> (bool enable)</td></tr>
 <tr class="memitem:a2ab6731cd4059176d321bd30b9f8968d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error.html#a2ab6731cd4059176d321bd30b9f8968d">EnableSuspendOnError</a> (bool enable)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a1e5c39b02e21abec4239473199425631"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error.html#a1e5c39b02e21abec4239473199425631">Report</a> ()</td></tr>
+<tr class="memitem:a8e8c636c62814651e45cf9fbc39d8d99"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error.html#a8e8c636c62814651e45cf9fbc39d8d99">DISALLOW_COPY_AND_ASSIGN</a> (<a class="el" href="class_error.html">Error</a>)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a9f3241f7a61571f6a0d7814ace5d596a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_error.html#ad0ca95bfda335aaedd0d6c5c52b5d95b">Code</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error.html#a9f3241f7a61571f6a0d7814ace5d596a">m_code</a></td></tr>
+<tr class="memitem:a6fa4cae6e1a453e56c2deb2b2f0a4f36"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error.html#a6fa4cae6e1a453e56c2deb2b2f0a4f36">m_message</a></td></tr>
+<tr class="memitem:a8878272d6d51f900052cb57dd5b99d7a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error.html#a8878272d6d51f900052cb57dd5b99d7a">m_filename</a></td></tr>
+<tr class="memitem:a5186da63731269f3a15d9ff01fbbcd5f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error.html#a5186da63731269f3a15d9ff01fbbcd5f">m_function</a></td></tr>
+<tr class="memitem:a543d8b81d391ff782b5db1c532482a37"><td class="memItemLeft" align="right" valign="top">UINT32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error.html#a543d8b81d391ff782b5db1c532482a37">m_lineNumber</a></td></tr>
+<tr class="memitem:afa366d119f2768226c1bcbca8aceb01d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_error_base.html">ErrorBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error.html#afa366d119f2768226c1bcbca8aceb01d">m_originatingObject</a></td></tr>
+<tr class="memitem:a31a42b6a13dc4af7d287304f1e678c94"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error.html#a31a42b6a13dc4af7d287304f1e678c94">m_timestamp</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:aaf0d059e9f49457437caaf9e0cf07bbd"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error.html#aaf0d059e9f49457437caaf9e0cf07bbd">m_stackTraceEnabled</a> = false</td></tr>
+<tr class="memitem:ae064588dcbd547a34f8b471603180bf2"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error.html#ae064588dcbd547a34f8b471603180bf2">m_suspendOnErrorEnabled</a> = false</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_error.html">Error</a> object represents a library error. </p>
@@ -208,6 +231,30 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="_error_8cpp_source.html#l00028">28</a> of file <a class="el" href="_error_8cpp_source.html">Error.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8e8c636c62814651e45cf9fbc39d8d99"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Error::DISALLOW_COPY_AND_ASSIGN </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_error.html">Error</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -382,6 +429,31 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a1e5c39b02e21abec4239473199425631"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> Error::Report </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_error_8cpp_source.html#l00075">75</a> of file <a class="el" href="_error_8cpp_source.html">Error.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ac3def8d75185839aecc68a1d5af75f6f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -434,6 +506,205 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a9f3241f7a61571f6a0d7814ace5d596a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_error.html#ad0ca95bfda335aaedd0d6c5c52b5d95b">Code</a> Error::m_code</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_error_8h_source.html#l00045">45</a> of file <a class="el" href="_error_8h_source.html">Error.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8878272d6d51f900052cb57dd5b99d7a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Error::m_filename</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_error_8h_source.html#l00047">47</a> of file <a class="el" href="_error_8h_source.html">Error.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5186da63731269f3a15d9ff01fbbcd5f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Error::m_function</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_error_8h_source.html#l00048">48</a> of file <a class="el" href="_error_8h_source.html">Error.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a543d8b81d391ff782b5db1c532482a37"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">UINT32 Error::m_lineNumber</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_error_8h_source.html#l00049">49</a> of file <a class="el" href="_error_8h_source.html">Error.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6fa4cae6e1a453e56c2deb2b2f0a4f36"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Error::m_message</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_error_8h_source.html#l00046">46</a> of file <a class="el" href="_error_8h_source.html">Error.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afa366d119f2768226c1bcbca8aceb01d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_error_base.html">ErrorBase</a>* Error::m_originatingObject</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_error_8h_source.html#l00050">50</a> of file <a class="el" href="_error_8h_source.html">Error.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aaf0d059e9f49457437caaf9e0cf07bbd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Error::m_stackTraceEnabled = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_error_8h_source.html#l00053">53</a> of file <a class="el" href="_error_8h_source.html">Error.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae064588dcbd547a34f8b471603180bf2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Error::m_suspendOnErrorEnabled = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_error_8h_source.html#l00054">54</a> of file <a class="el" href="_error_8h_source.html">Error.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a31a42b6a13dc4af7d287304f1e678c94"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Error::m_timestamp</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_error_8h_source.html#l00051">51</a> of file <a class="el" href="_error_8h_source.html">Error.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>WPILib/<a class="el" href="_error_8h_source.html">Error.h</a></li>
 <li>WPILib/<a class="el" href="_error_8cpp_source.html">Error.cpp</a></li>
@@ -441,7 +712,7 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:14 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:46 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

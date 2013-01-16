@@ -89,6 +89,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="#friends">Friends</a>  </div>
   <div class="headertitle">
 <div class="title">RobotBase Class Reference</div>  </div>
@@ -138,6 +140,14 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a213426ebf60e0d6987c801f44323e179"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_task.html">Task</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot_base.html#a213426ebf60e0d6987c801f44323e179">m_task</a></td></tr>
 <tr class="memitem:aaec2f8b8d1f42b6ab500ae2ea6dd6dbe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_watchdog.html">Watchdog</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot_base.html#aaec2f8b8d1f42b6ab500ae2ea6dd6dbe">m_watchdog</a></td></tr>
 <tr class="memitem:ae9b4f4ce5604f2ca54e549ae1bf8f3ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_driver_station.html">DriverStation</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot_base.html#ae9b4f4ce5604f2ca54e549ae1bf8f3ff">m_ds</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a1494daf24bf5bfc8961d628c18a1da95"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot_base.html#a1494daf24bf5bfc8961d628c18a1da95">DISALLOW_COPY_AND_ASSIGN</a> (<a class="el" href="class_robot_base.html">RobotBase</a>)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a540f5e112c528ce479e9ffe12b6fd120"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_robot_base.html">RobotBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot_base.html#a540f5e112c528ce479e9ffe12b6fd120">m_instance</a> = <a class="el" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
@@ -202,6 +212,30 @@ Friends</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a1494daf24bf5bfc8961d628c18a1da95"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">RobotBase::DISALLOW_COPY_AND_ASSIGN </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_robot_base.html">RobotBase</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a033b604c5513471b426655c125ec9c17"></a>
 <div class="memitem">
 <div class="memproto">
@@ -539,6 +573,28 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a540f5e112c528ce479e9ffe12b6fd120"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_robot_base.html">RobotBase</a> * RobotBase::m_instance = <a class="el" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_robot_base_8h_source.html#l00064">64</a> of file <a class="el" href="_robot_base_8h_source.html">RobotBase.h</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a213426ebf60e0d6987c801f44323e179"></a>
 <div class="memitem">
 <div class="memproto">
@@ -590,7 +646,7 @@ Friends</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:16 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:48 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

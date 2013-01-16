@@ -88,7 +88,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a>  </div>
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">SensorBase Class Reference</div>  </div>
 </div><!--header-->
@@ -194,6 +197,18 @@ Protected Member Functions</h2></td></tr>
 <tr class="inherit_header pro_methods_class_error_base"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_error_base')"><img src="closed.png" alt="-"/>&nbsp;Protected Member Functions inherited from <a class="el" href="class_error_base.html">ErrorBase</a></td></tr>
 <tr class="memitem:af49991441156c7832d7017951427cef2 inherit pro_methods_class_error_base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_base.html#af49991441156c7832d7017951427cef2">ErrorBase</a> ()</td></tr>
 <tr class="memdesc:af49991441156c7832d7017951427cef2 inherit pro_methods_class_error_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the instance status to 0 for now.  <a href="#af49991441156c7832d7017951427cef2"></a><br/></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a5ec423e7cf0daec80a9955e740aa88b1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sensor_base.html#a5ec423e7cf0daec80a9955e740aa88b1">DISALLOW_COPY_AND_ASSIGN</a> (<a class="el" href="class_sensor_base.html">SensorBase</a>)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:af9349105973e3b47ec70213098ec11e5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_sensor_base.html">SensorBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sensor_base.html#af9349105973e3b47ec70213098ec11e5">m_nextSingleton</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a5adac06fe25cf141c47fc5849471dfb0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_sensor_base.html">SensorBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sensor_base.html#a5adac06fe25cf141c47fc5849471dfb0">m_singletonList</a> = <a class="el" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -585,6 +600,30 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a5ec423e7cf0daec80a9955e740aa88b1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SensorBase::DISALLOW_COPY_AND_ASSIGN </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_sensor_base.html">SensorBase</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="ac4b2b62295f1b7e43124c63340c2957b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -881,6 +920,50 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="af9349105973e3b47ec70213098ec11e5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_sensor_base.html">SensorBase</a>* SensorBase::m_nextSingleton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_sensor_base_8h_source.html#l00055">55</a> of file <a class="el" href="_sensor_base_8h_source.html">SensorBase.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5adac06fe25cf141c47fc5849471dfb0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_sensor_base.html">SensorBase</a> * SensorBase::m_singletonList = <a class="el" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_sensor_base_8h_source.html#l00054">54</a> of file <a class="el" href="_sensor_base_8h_source.html">SensorBase.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>WPILib/<a class="el" href="_sensor_base_8h_source.html">SensorBase.h</a></li>
 <li>WPILib/<a class="el" href="_sensor_base_8cpp_source.html">SensorBase.cpp</a></li>
@@ -888,7 +971,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:17 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:48 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

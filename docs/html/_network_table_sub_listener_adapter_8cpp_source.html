@@ -107,8 +107,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="class_network_table_sub_listener_adapter.html#a4a14b6896f659d6a5e27ab28f13ab6e5">   21</a></span>&#160;<a class="code" href="class_network_table_sub_listener_adapter.html#a4a14b6896f659d6a5e27ab28f13ab6e5">NetworkTableSubListenerAdapter::~NetworkTableSubListenerAdapter</a>(){}</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="class_network_table_sub_listener_adapter.html#a8a79504411317bd0fb54d3eab236d108">   23</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_network_table_sub_listener_adapter.html#a8a79504411317bd0fb54d3eab236d108">NetworkTableSubListenerAdapter::ValueChanged</a>(<a class="code" href="class_i_table.html">ITable</a>* source, <span class="keyword">const</span> std::string&amp; key, <a class="code" href="union_entry_value.html">EntryValue</a> value, <span class="keywordtype">bool</span> isNew) {<span class="comment">//TODO use string cache</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keywordflow">if</span>(key.compare(0,prefix.size(),prefix)==0){</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                std::string relativeKey = key.substr(prefix.length()+1);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keywordflow">if</span>(key.compare(0,<a class="code" href="class_network_table_sub_listener_adapter.html#adf59b44533e9a3298ffd6e2ed0ca053f">prefix</a>.size(),<a class="code" href="class_network_table_sub_listener_adapter.html#adf59b44533e9a3298ffd6e2ed0ca053f">prefix</a>)==0){</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                std::string relativeKey = key.substr(<a class="code" href="class_network_table_sub_listener_adapter.html#adf59b44533e9a3298ffd6e2ed0ca053f">prefix</a>.length()+1);</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <span class="keywordtype">int</span> endSubTable = -1;<span class="comment">//TODO implement sub table listening better</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i&lt;relativeKey.length(); ++i){</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                    <span class="keywordflow">if</span>(relativeKey.at(i)==<a class="code" href="class_network_table.html#acf1f39cbd3cc6c8a453fab5b8b0b2e35">NetworkTable::PATH_SEPARATOR_CHAR</a>){<span class="comment">//is sub table</span></div>
@@ -118,11 +118,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                }</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <span class="keywordflow">if</span>(endSubTable!=-1){</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                    std::string subTableKey = relativeKey.substr(0, endSubTable);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                    <span class="keywordflow">if</span>(notifiedTables.find(subTableKey)==notifiedTables.end()){</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                        notifiedTables.insert(subTableKey);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                    <span class="keywordflow">if</span>(<a class="code" href="class_network_table_sub_listener_adapter.html#a30883d4f7efd4c772c38d6b27ec278c7">notifiedTables</a>.find(subTableKey)==<a class="code" href="class_network_table_sub_listener_adapter.html#a30883d4f7efd4c772c38d6b27ec278c7">notifiedTables</a>.end()){</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                        <a class="code" href="class_network_table_sub_listener_adapter.html#a30883d4f7efd4c772c38d6b27ec278c7">notifiedTables</a>.insert(subTableKey);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                        <a class="code" href="union_entry_value.html">EntryValue</a> eValue;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                        eValue.<a class="code" href="union_entry_value.html#a528f48ce8415d939068421aa54ac04c6">ptr</a> = targetSource-&gt;<a class="code" href="class_network_table.html#a34f6e74902733975bdab0b42667803d2">GetSubTable</a>(subTableKey);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                        targetListener-&gt;<a class="code" href="class_i_table_listener.html#a5ba676cd8d3f1e6ebbfd4c5c4ed60973">ValueChanged</a>(targetSource, subTableKey, eValue, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                        eValue.<a class="code" href="union_entry_value.html#a528f48ce8415d939068421aa54ac04c6">ptr</a> = <a class="code" href="class_network_table_sub_listener_adapter.html#a7477a1a7fc080a59c5315b38e51f0e7d">targetSource</a>-&gt;<a class="code" href="class_network_table.html#a34f6e74902733975bdab0b42667803d2">GetSubTable</a>(subTableKey);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                        <a class="code" href="class_network_table_sub_listener_adapter.html#a1658daed312a57f8cda57bf7f3b4fd58">targetListener</a>-&gt;<a class="code" href="class_i_table_listener.html#a5ba676cd8d3f1e6ebbfd4c5c4ed60973">ValueChanged</a>(<a class="code" href="class_network_table_sub_listener_adapter.html#a7477a1a7fc080a59c5315b38e51f0e7d">targetSource</a>, subTableKey, eValue, <span class="keyword">true</span>);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                    }</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                }</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            }</div>
@@ -130,7 +130,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:10 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:43 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

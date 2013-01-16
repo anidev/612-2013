@@ -1,6 +1,7 @@
 var searchData=
 [
   ['h',['H',['../struct_h_s_l_value__struct.html#afc7c6b622d49118245832e93e150c00b',1,'HSLValue_struct::H()'],['../struct_h_s_v_value__struct.html#a0de416983c14baaab8f2bdd1e297fd3a',1,'HSVValue_struct::H()'],['../struct_h_s_i_value__struct.html#a1aee48849414a70770953200526c4789',1,'HSIValue_struct::H()']]],
+  ['half_5fof_5fsequence_5fnumbers',['HALF_OF_SEQUENCE_NUMBERS',['../class_network_table_entry.html#abec908c731a9a9041676f7d5596bddcb',1,'NetworkTableEntry']]],
   ['hasdata',['hasData',['../struct_a_v_i_info__struct.html#a3ad06da8bb76683b47edeff6ac8b65f3',1,'AVIInfo_struct']]],
   ['hasequation',['hasEquation',['../struct_contour_info_report__struct.html#ae375779cb6a0ba6462516d19978733b5',1,'ContourInfoReport_struct']]],
   ['height',['height',['../struct_character_statistics__struct.html#a21d88abb2b9f4940602916d352e7b124',1,'CharacterStatistics_struct::height()'],['../struct_rectangle_feature__struct.html#aac1ca7f5d51454be3d14f7af1fb7a4a8',1,'RectangleFeature_struct::height()'],['../struct_leg_feature__struct.html#a59ff7a95e2b828d1395a0a900f5c4085',1,'LegFeature_struct::height()'],['../struct_rectangle_match__struct.html#ae298715668834a5e4ab263f388b2b092',1,'RectangleMatch_struct::height()'],['../struct_a_v_i_info__struct.html#a3a123b86f762fed55cc1793b09a302a5',1,'AVIInfo_struct::height()'],['../struct_rect__struct.html#a4033be30e4966e318c9bd115538c6163',1,'Rect_struct::height()'],['../struct_browser_options__struct.html#ae85f16490b44c41045f7cb71912f4c9e',1,'BrowserOptions_struct::height()'],['../struct_rotated_rect__struct.html#a716ef359f909ac74d421d79f766136b2',1,'RotatedRect_struct::height()']]],
@@ -11,6 +12,7 @@ var searchData=
   ['histogramcount',['histogramCount',['../struct_histogram_report__struct.html#ace3f10c53c0849be0325f1d0f49c5cc6',1,'HistogramReport_struct']]],
   ['hlband',['HLBand',['../struct_wavelet_bands_report__struct.html#a1a25fdeb587f6412a8db253facd8293d',1,'WaveletBandsReport_struct']]],
   ['horizontaltextalignment',['horizontalTextAlignment',['../struct_overlay_text_options__struct.html#ab08fbf662761fd8786db48a6e8504444',1,'OverlayTextOptions_struct']]],
+  ['host',['host',['../class_socket_stream_factory.html#a8ec0c047296a5241fcf2f2b87ac9b446',1,'SocketStreamFactory']]],
   ['houghiterations',['houghIterations',['../struct_straight_edge_options__struct.html#a29293bcd761ffd6cf22a63d1cb6fde05',1,'StraightEdgeOptions_struct']]],
   ['hsi',['hsi',['../union_color2__union.html#a8491abb537c1c5edf05b50f0533207f0',1,'Color2_union::hsi()'],['../union_color__union.html#a5f95361ea1dee5fc560beb69301da4bc',1,'Color_union::hsi()']]],
   ['hsl',['hsl',['../union_color2__union.html#a68ca8d690d2c0e9e8441b41ef8e46390',1,'Color2_union::hsl()'],['../union_color__union.html#a7a6ddfcb30fa0cfed8be5581f1cb4d1d',1,'Color_union::hsl()'],['../union_pixel_value__union.html#a250bee75a3db8009e312a4be2e17b1b8',1,'PixelValue_union::hsl()']]],

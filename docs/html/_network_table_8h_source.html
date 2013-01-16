@@ -119,7 +119,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="class_network_table_key_cache.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_network_table_key_cache.html">NetworkTableKeyCache</a>: <span class="keyword">public</span> <a class="code" href="class_string_cache.html">StringCache</a>{</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keyword">const</span> std::string path;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="class_network_table_key_cache.html#af127adff1ed5b7a98a8f6cb511ac1086">   30</a></span>&#160;        <span class="keyword">const</span> std::string <a class="code" href="class_network_table_key_cache.html#af127adff1ed5b7a98a8f6cb511ac1086">path</a>;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">public</span>: </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="class_network_table_key_cache.html">NetworkTableKeyCache</a>(std::string path);</div>
@@ -131,8 +131,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
 <div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="class_entry_cache.html">   40</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_entry_cache.html">EntryCache</a> {</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        map&lt;std::string, NetworkTableEntry*&gt; cache;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        std::string&amp; path;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="class_entry_cache.html#a86378b3e101a94f73cc477a56ea200b9">   42</a></span>&#160;        map&lt;std::string, NetworkTableEntry*&gt; <a class="code" href="class_entry_cache.html#a86378b3e101a94f73cc477a56ea200b9">cache</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="class_entry_cache.html#a8500e66acf9e76f07364bdeb89ad2a1c">   43</a></span>&#160;        std::string&amp; <a class="code" href="class_entry_cache.html#a8500e66acf9e76f07364bdeb89ad2a1c">path</a>;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="class_entry_cache.html">EntryCache</a>(std::string&amp; path);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        ~<a class="code" href="class_entry_cache.html">EntryCache</a>();</div>
@@ -145,25 +145,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00053"></a><span class="lineno"><a class="code" href="class_network_table.html">   53</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_network_table.html">NetworkTable</a> : <span class="keyword">public</span> <a class="code" href="class_i_table.html">ITable</a>, <a class="code" href="class_i_remote.html">IRemote</a> {</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">static</span> <a class="code" href="class_default_thread_manager.html">DefaultThreadManager</a> threadManager;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">static</span> <a class="code" href="class_network_table_provider.html">NetworkTableProvider</a>* staticProvider;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">static</span> <a class="code" href="class_network_table_mode.html">NetworkTableMode</a>* mode;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">int</span> port;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">static</span> std::string ipAddress;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">static</span> <a class="code" href="class_reentrant_semaphore.html">ReentrantSemaphore</a> STATIC_LOCK;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="class_network_table.html#a50e3bd25ec6c540e731065e48d75d2f1">   56</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="class_default_thread_manager.html">DefaultThreadManager</a> <a class="code" href="class_network_table.html#a50e3bd25ec6c540e731065e48d75d2f1">threadManager</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="class_network_table.html#a35ad3ee5c22bd48038b1892e991293b2">   57</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="class_network_table_provider.html">NetworkTableProvider</a>* <a class="code" href="class_network_table.html#a35ad3ee5c22bd48038b1892e991293b2">staticProvider</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="code" href="class_network_table.html#a1f8cdb8ad1c798661358150ddc2c9241">   58</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="class_network_table_mode.html">NetworkTableMode</a>* <a class="code" href="class_network_table.html#a1f8cdb8ad1c798661358150ddc2c9241">mode</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="class_network_table.html#aeb6e5bc96e8ce7d62699ed062abdea2e">   59</a></span>&#160;        <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_network_table.html#aeb6e5bc96e8ce7d62699ed062abdea2e">port</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="code" href="class_network_table.html#ad8821d855ec0aa16dc42bf1b70071b33">   60</a></span>&#160;        <span class="keyword">static</span> std::string <a class="code" href="class_network_table.html#ad8821d855ec0aa16dc42bf1b70071b33">ipAddress</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="code" href="class_network_table.html#a35a3e92f9df0c6ab95ee7c4f8544fc28">   61</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="class_reentrant_semaphore.html">ReentrantSemaphore</a> <a class="code" href="class_network_table.html#a35a3e92f9df0c6ab95ee7c4f8544fc28">STATIC_LOCK</a>;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        </div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        std::string path;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="class_entry_cache.html">EntryCache</a> entryCache;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="class_network_table_key_cache.html">NetworkTableKeyCache</a> absoluteKeyCache;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="class_network_table_provider.html">NetworkTableProvider</a>&amp; provider;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="class_network_table_node.html">NetworkTableNode</a>&amp; node;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="class_reentrant_semaphore.html">ReentrantSemaphore</a> LOCK;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="code" href="class_network_table.html#a1ed51417bf5d4b23417df59b9c47ead0">   65</a></span>&#160;        std::string <a class="code" href="class_network_table.html#a1ed51417bf5d4b23417df59b9c47ead0">path</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="class_network_table.html#a88f703049b977cde300b3d1f84a36fbe">   66</a></span>&#160;        <a class="code" href="class_entry_cache.html">EntryCache</a> <a class="code" href="class_network_table.html#a88f703049b977cde300b3d1f84a36fbe">entryCache</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="class_network_table.html#a55f253cef6e65b3ae2a035fea4db5c9d">   67</a></span>&#160;        <a class="code" href="class_network_table_key_cache.html">NetworkTableKeyCache</a> <a class="code" href="class_network_table.html#a55f253cef6e65b3ae2a035fea4db5c9d">absoluteKeyCache</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="class_network_table.html#a2960ce94e7cfc2c347f7eaa03e678590">   68</a></span>&#160;        <a class="code" href="class_network_table_provider.html">NetworkTableProvider</a>&amp; <a class="code" href="class_network_table.html#a2960ce94e7cfc2c347f7eaa03e678590">provider</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="code" href="class_network_table.html#aa300b62f9e28b969f7bb8e65235318c3">   69</a></span>&#160;        <a class="code" href="class_network_table_node.html">NetworkTableNode</a>&amp; <a class="code" href="class_network_table.html#aa300b62f9e28b969f7bb8e65235318c3">node</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="code" href="class_network_table.html#a0362a0684aa5572b3aa617e2225949c3">   70</a></span>&#160;        <a class="code" href="class_reentrant_semaphore.html">ReentrantSemaphore</a> <a class="code" href="class_network_table.html#a0362a0684aa5572b3aa617e2225949c3">LOCK</a>;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        map&lt;IRemoteConnectionListener*, NetworkTableConnectionListenerAdapter*&gt; connectionListenerMap;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        multimap&lt;ITableListener*, ITableListener*&gt; listenerMap;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="class_network_table.html#af5f2bc89a79ff26ee5b78199a98ae2cb">   73</a></span>&#160;        map&lt;IRemoteConnectionListener*, NetworkTableConnectionListenerAdapter*&gt; <a class="code" href="class_network_table.html#af5f2bc89a79ff26ee5b78199a98ae2cb">connectionListenerMap</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="code" href="class_network_table.html#a6a117bf95dcfdb87ec207e9bbf8504da">   74</a></span>&#160;        multimap&lt;ITableListener*, ITableListener*&gt; <a class="code" href="class_network_table.html#a6a117bf95dcfdb87ec207e9bbf8504da">listenerMap</a>;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        </div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> CheckInit();</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        </div>
@@ -255,7 +255,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:10 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:43 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

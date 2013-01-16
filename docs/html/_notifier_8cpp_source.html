@@ -101,178 +101,178 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_utility_8h.html">Utility.h</a>&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_w_p_i_errors_8h.html">WPIErrors.h</a>&quot;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">const</span> UINT32 Notifier::kTimerInterruptNumber;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<a class="code" href="class_notifier.html">Notifier</a> *Notifier::timerQueueHead = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<a class="code" href="class_reentrant_semaphore.html">ReentrantSemaphore</a> Notifier::queueSemaphore;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<a class="code" href="classn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_alarm.html">tAlarm</a> *Notifier::talarm = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<a class="code" href="classn_f_p_g_a_1_1t_interrupt_manager.html">tInterruptManager</a> *Notifier::manager = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keywordtype">int</span> Notifier::refcount = 0;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">const</span> UINT32 <a class="code" href="class_notifier.html#a81d5d8f64efc815274ada47da4099123">Notifier::kTimerInterruptNumber</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<a class="code" href="class_notifier.html">Notifier</a> *<a class="code" href="class_notifier.html#a1aefaa126318fe20157d0f898b54fdf2">Notifier::timerQueueHead</a> = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<a class="code" href="class_reentrant_semaphore.html">ReentrantSemaphore</a> <a class="code" href="class_notifier.html#af6c84d244c4b73625065be5d0f8dd19b">Notifier::queueSemaphore</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<a class="code" href="classn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_alarm.html">tAlarm</a> *<a class="code" href="class_notifier.html#ab698bd10182e56b4edcd2b47d4a677ab">Notifier::talarm</a> = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<a class="code" href="classn_f_p_g_a_1_1t_interrupt_manager.html">tInterruptManager</a> *<a class="code" href="class_notifier.html#a914adf3dbfe85d8f4782bc95104a09fa">Notifier::manager</a> = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_notifier.html#a09bae19dc764f521bc0867cbad459c1e">Notifier::refcount</a> = 0;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="class_notifier.html#add626cbc00f8e50f98dc09758d19f85a">   24</a></span>&#160;<a class="code" href="class_notifier.html#add626cbc00f8e50f98dc09758d19f85a">Notifier::Notifier</a>(<a class="code" href="_notifier_8h.html#a410b2ee55490044c5b15681e6850367d">TimerEventHandler</a> handler, <span class="keywordtype">void</span> *param)</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">if</span> (handler == <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <a class="code" href="_error_base_8h.html#a495fcc362032eea3b1dadc34be9bd058">wpi_setWPIErrorWithContext</a>(NullParameter, <span class="stringliteral">&quot;handler must not be NULL&quot;</span>);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        m_handler = handler;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        m_param = param;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        m_periodic = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        m_expirationTime = 0;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        m_period = 0;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        m_nextEvent = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        m_queued = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        m_handlerSemaphore = semBCreate(SEM_Q_PRIORITY, SEM_FULL);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> localStatus = NiFpga_Status_Success;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="class_notifier.html#a5c3233d0530c81b1cd3f2dd6e93717cc">m_handler</a> = handler;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="class_notifier.html#a684521efb90bcd2527e202c4c63b5532">m_param</a> = param;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="class_notifier.html#a875f0b388bae10671a346494ec96a22f">m_periodic</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="class_notifier.html#afa136a97e06cddeb1a6ce23ac1f30c11">m_expirationTime</a> = 0;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="class_notifier.html#a5973b4354a27a9247c4baf81ae3e5f00">m_period</a> = 0;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="class_notifier.html#a4829c21aa4309a7da96282dfc1392269">m_nextEvent</a> = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="class_notifier.html#a71ebe229a7bec5b81957f15041f651f4">m_queued</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="class_notifier.html#a1a98fc9a4ee11a04fb5fa998d3bffea8">m_handlerSemaphore</a> = semBCreate(SEM_Q_PRIORITY, SEM_FULL);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> localStatus = <a class="code" href="_ni_fpga_8h.html#aea860abd4cffdc6f0f5d6a7c024f6248">NiFpga_Status_Success</a>;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <a class="code" href="class_synchronized.html">Synchronized</a> sync(queueSemaphore);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_notifier.html#af6c84d244c4b73625065be5d0f8dd19b">queueSemaphore</a>);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="comment">// do the first time intialization of static variables</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keywordflow">if</span> (refcount == 0)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="class_notifier.html#a09bae19dc764f521bc0867cbad459c1e">refcount</a> == 0)</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                        manager = <span class="keyword">new</span> <a class="code" href="classn_f_p_g_a_1_1t_interrupt_manager.html">tInterruptManager</a>(1 &lt;&lt; kTimerInterruptNumber, <span class="keyword">false</span>, &amp;localStatus);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                        manager-&gt;<a class="code" href="classn_f_p_g_a_1_1t_interrupt_manager.html#a692db7281d9179bf3cfe10cd81f6b77b">registerHandler</a>(ProcessQueue, <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, &amp;localStatus);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                        manager-&gt;<a class="code" href="classn_f_p_g_a_1_1t_interrupt_manager.html#a2893867e617cfe917653f9e1034d696d">enable</a>(&amp;localStatus);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                        talarm = tAlarm::create(&amp;localStatus);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                        <a class="code" href="class_notifier.html#a914adf3dbfe85d8f4782bc95104a09fa">manager</a> = <span class="keyword">new</span> <a class="code" href="classn_f_p_g_a_1_1t_interrupt_manager.html">tInterruptManager</a>(1 &lt;&lt; <a class="code" href="class_notifier.html#a81d5d8f64efc815274ada47da4099123">kTimerInterruptNumber</a>, <span class="keyword">false</span>, &amp;localStatus);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                        <a class="code" href="class_notifier.html#a914adf3dbfe85d8f4782bc95104a09fa">manager</a>-&gt;<a class="code" href="classn_f_p_g_a_1_1t_interrupt_manager.html#a692db7281d9179bf3cfe10cd81f6b77b">registerHandler</a>(<a class="code" href="class_notifier.html#a48a05d078053041b2b4335e19efcc983">ProcessQueue</a>, <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, &amp;localStatus);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                        <a class="code" href="class_notifier.html#a914adf3dbfe85d8f4782bc95104a09fa">manager</a>-&gt;<a class="code" href="classn_f_p_g_a_1_1t_interrupt_manager.html#a2893867e617cfe917653f9e1034d696d">enable</a>(&amp;localStatus);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                        <a class="code" href="class_notifier.html#ab698bd10182e56b4edcd2b47d4a677ab">talarm</a> = tAlarm::create(&amp;localStatus);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                refcount++;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <a class="code" href="class_notifier.html#a09bae19dc764f521bc0867cbad459c1e">refcount</a>++;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="_error_base_8h.html#a84096a903e635d89e18a4abd22537fa4">wpi_setError</a>(localStatus);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
 <div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="class_notifier.html#acb1a245d3fbef36f2f96400150cef915">   57</a></span>&#160;<a class="code" href="class_notifier.html#acb1a245d3fbef36f2f96400150cef915">Notifier::~Notifier</a>()</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> localStatus = NiFpga_Status_Success;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> localStatus = <a class="code" href="_ni_fpga_8h.html#aea860abd4cffdc6f0f5d6a7c024f6248">NiFpga_Status_Success</a>;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <a class="code" href="class_synchronized.html">Synchronized</a> sync(queueSemaphore);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                DeleteFromQueue();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_notifier.html#af6c84d244c4b73625065be5d0f8dd19b">queueSemaphore</a>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <a class="code" href="class_notifier.html#ab73d94254ed5591df89757e86e63ac41">DeleteFromQueue</a>();</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="comment">// Delete the static variables when the last one is going away</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordflow">if</span> (!(--refcount))</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordflow">if</span> (!(--<a class="code" href="class_notifier.html#a09bae19dc764f521bc0867cbad459c1e">refcount</a>))</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                        talarm-&gt;<a class="code" href="classn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_alarm.html#aa05885f5455bdbe4396555994073aced">writeEnable</a>(<span class="keyword">false</span>, &amp;localStatus);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                        <span class="keyword">delete</span> talarm;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                        talarm = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                        manager-&gt;<a class="code" href="classn_f_p_g_a_1_1t_interrupt_manager.html#a5c3ea6c1f698c074baa02d09060aed8c">disable</a>(&amp;localStatus);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        <span class="keyword">delete</span> manager;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                        manager = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                        <a class="code" href="class_notifier.html#ab698bd10182e56b4edcd2b47d4a677ab">talarm</a>-&gt;<a class="code" href="classn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_alarm.html#aa05885f5455bdbe4396555994073aced">writeEnable</a>(<span class="keyword">false</span>, &amp;localStatus);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                        <span class="keyword">delete</span> <a class="code" href="class_notifier.html#ab698bd10182e56b4edcd2b47d4a677ab">talarm</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                        <a class="code" href="class_notifier.html#ab698bd10182e56b4edcd2b47d4a677ab">talarm</a> = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                        <a class="code" href="class_notifier.html#a914adf3dbfe85d8f4782bc95104a09fa">manager</a>-&gt;<a class="code" href="classn_f_p_g_a_1_1t_interrupt_manager.html#a5c3ea6c1f698c074baa02d09060aed8c">disable</a>(&amp;localStatus);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        <span class="keyword">delete</span> <a class="code" href="class_notifier.html#a914adf3dbfe85d8f4782bc95104a09fa">manager</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                        <a class="code" href="class_notifier.html#a914adf3dbfe85d8f4782bc95104a09fa">manager</a> = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                }</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="_error_base_8h.html#a84096a903e635d89e18a4abd22537fa4">wpi_setError</a>(localStatus);</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="comment">// Acquire the semaphore; this makes certain that the handler is </span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="comment">// not being executed by the interrupt manager.</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        semTake(m_handlerSemaphore, WAIT_FOREVER);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        semTake(<a class="code" href="class_notifier.html#a1a98fc9a4ee11a04fb5fa998d3bffea8">m_handlerSemaphore</a>, WAIT_FOREVER);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="comment">// Delete while holding the semaphore so there can be no race.</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        semDelete(m_handlerSemaphore);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        semDelete(<a class="code" href="class_notifier.html#a1a98fc9a4ee11a04fb5fa998d3bffea8">m_handlerSemaphore</a>);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keywordtype">void</span> Notifier::UpdateAlarm()</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="code" href="class_notifier.html#ad837c96b01df3956807c5f41b3e76254">   91</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_notifier.html#ad837c96b01df3956807c5f41b3e76254">Notifier::UpdateAlarm</a>()</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">if</span> (timerQueueHead != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_notifier.html#a1aefaa126318fe20157d0f898b54fdf2">timerQueueHead</a> != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <a class="code" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> localStatus = NiFpga_Status_Success;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <a class="code" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> localStatus = <a class="code" href="_ni_fpga_8h.html#aea860abd4cffdc6f0f5d6a7c024f6248">NiFpga_Status_Success</a>;</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <span class="comment">// write the first item in the queue into the trigger time</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                talarm-&gt;<a class="code" href="classn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_alarm.html#a872a6a47d7782b732c4f499599863859">writeTriggerTime</a>((UINT32)(timerQueueHead-&gt;m_expirationTime * 1e6), &amp;localStatus);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                <a class="code" href="class_notifier.html#ab698bd10182e56b4edcd2b47d4a677ab">talarm</a>-&gt;<a class="code" href="classn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_alarm.html#a872a6a47d7782b732c4f499599863859">writeTriggerTime</a>((UINT32)(<a class="code" href="class_notifier.html#a1aefaa126318fe20157d0f898b54fdf2">timerQueueHead</a>-&gt;<a class="code" href="class_notifier.html#afa136a97e06cddeb1a6ce23ac1f30c11">m_expirationTime</a> * 1e6), &amp;localStatus);</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <span class="comment">// Enable the alarm.  The hardware disables itself after each alarm.</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                talarm-&gt;<a class="code" href="classn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_alarm.html#aa05885f5455bdbe4396555994073aced">writeEnable</a>(<span class="keyword">true</span>, &amp;localStatus);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <a class="code" href="_error_base_8h.html#aad50333104085eaa59551975d84b75ff">wpi_setStaticError</a>(timerQueueHead, localStatus);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <a class="code" href="class_notifier.html#ab698bd10182e56b4edcd2b47d4a677ab">talarm</a>-&gt;<a class="code" href="classn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_alarm.html#aa05885f5455bdbe4396555994073aced">writeEnable</a>(<span class="keyword">true</span>, &amp;localStatus);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <a class="code" href="_error_base_8h.html#aad50333104085eaa59551975d84b75ff">wpi_setStaticError</a>(<a class="code" href="class_notifier.html#a1aefaa126318fe20157d0f898b54fdf2">timerQueueHead</a>, localStatus);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keywordtype">void</span> Notifier::ProcessQueue(uint32_t mask, <span class="keywordtype">void</span> *params)</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="code" href="class_notifier.html#a48a05d078053041b2b4335e19efcc983">  110</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_notifier.html#a48a05d078053041b2b4335e19efcc983">Notifier::ProcessQueue</a>(uint32_t mask, <span class="keywordtype">void</span> *params)</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;{</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <a class="code" href="class_notifier.html">Notifier</a> *current;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">while</span> (<span class="keyword">true</span>)                            <span class="comment">// keep processing past events until no more</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        {</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                {</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                        <a class="code" href="class_synchronized.html">Synchronized</a> sync(queueSemaphore);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                        <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_notifier.html#af6c84d244c4b73625065be5d0f8dd19b">queueSemaphore</a>);</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                        <span class="keywordtype">double</span> currentTime = <a class="code" href="_timer_8cpp.html#a2239fe1eb0e2029619231e777cc237a0">GetClock</a>();</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                        current = timerQueueHead;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                        <span class="keywordflow">if</span> (current == <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> || current-&gt;m_expirationTime &gt; currentTime)</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                        current = <a class="code" href="class_notifier.html#a1aefaa126318fe20157d0f898b54fdf2">timerQueueHead</a>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                        <span class="keywordflow">if</span> (current == <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> || current-&gt;<a class="code" href="class_notifier.html#afa136a97e06cddeb1a6ce23ac1f30c11">m_expirationTime</a> &gt; currentTime)</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                        {</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                                <span class="keywordflow">break</span>;          <span class="comment">// no more timer events to process</span></div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                        }</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                        <span class="comment">// need to process this entry</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                        timerQueueHead = current-&gt;m_nextEvent;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                        <span class="keywordflow">if</span> (current-&gt;m_periodic)</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                        <a class="code" href="class_notifier.html#a1aefaa126318fe20157d0f898b54fdf2">timerQueueHead</a> = current-&gt;<a class="code" href="class_notifier.html#a4829c21aa4309a7da96282dfc1392269">m_nextEvent</a>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                        <span class="keywordflow">if</span> (current-&gt;<a class="code" href="class_notifier.html#a875f0b388bae10671a346494ec96a22f">m_periodic</a>)</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                        {</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                                <span class="comment">// if periodic, requeue the event</span></div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                                <span class="comment">// compute when to put into queue</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                                current-&gt;InsertInQueue(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                                current-&gt;<a class="code" href="class_notifier.html#a08344dddfe0be7dc332ff16b0abea085">InsertInQueue</a>(<span class="keyword">true</span>);</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                        }</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                        {</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                                <span class="comment">// not periodic; removed from queue</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                                current-&gt;m_queued = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                                current-&gt;<a class="code" href="class_notifier.html#a71ebe229a7bec5b81957f15041f651f4">m_queued</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                        }</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                        <span class="comment">// Take handler semaphore while holding queue semaphore to make sure</span></div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                        <span class="comment">//  the handler will execute to completion in case we are being deleted.</span></div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                        semTake(current-&gt;m_handlerSemaphore, WAIT_FOREVER);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                        semTake(current-&gt;<a class="code" href="class_notifier.html#a1a98fc9a4ee11a04fb5fa998d3bffea8">m_handlerSemaphore</a>, WAIT_FOREVER);</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                }</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                current-&gt;m_handler(current-&gt;m_param);   <span class="comment">// call the event handler</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                semGive(current-&gt;m_handlerSemaphore);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                current-&gt;<a class="code" href="class_notifier.html#a5c3233d0530c81b1cd3f2dd6e93717cc">m_handler</a>(current-&gt;<a class="code" href="class_notifier.html#a684521efb90bcd2527e202c4c63b5532">m_param</a>);   <span class="comment">// call the event handler</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                semGive(current-&gt;<a class="code" href="class_notifier.html#a1a98fc9a4ee11a04fb5fa998d3bffea8">m_handlerSemaphore</a>);</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        }</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="comment">// reschedule the first item in the queue</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(queueSemaphore);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        UpdateAlarm();</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_notifier.html#af6c84d244c4b73625065be5d0f8dd19b">queueSemaphore</a>);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <a class="code" href="class_notifier.html#ad837c96b01df3956807c5f41b3e76254">UpdateAlarm</a>();</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="keywordtype">void</span> Notifier::InsertInQueue(<span class="keywordtype">bool</span> reschedule)</div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="code" href="class_notifier.html#a08344dddfe0be7dc332ff16b0abea085">  158</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_notifier.html#a08344dddfe0be7dc332ff16b0abea085">Notifier::InsertInQueue</a>(<span class="keywordtype">bool</span> reschedule)</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;{</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keywordflow">if</span> (reschedule)</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        {</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                m_expirationTime += m_period;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                <a class="code" href="class_notifier.html#afa136a97e06cddeb1a6ce23ac1f30c11">m_expirationTime</a> += <a class="code" href="class_notifier.html#a5973b4354a27a9247c4baf81ae3e5f00">m_period</a>;</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        }</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        {</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                m_expirationTime = <a class="code" href="_timer_8cpp.html#a2239fe1eb0e2029619231e777cc237a0">GetClock</a>() + m_period;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                <a class="code" href="class_notifier.html#afa136a97e06cddeb1a6ce23ac1f30c11">m_expirationTime</a> = <a class="code" href="_timer_8cpp.html#a2239fe1eb0e2029619231e777cc237a0">GetClock</a>() + <a class="code" href="class_notifier.html#a5973b4354a27a9247c4baf81ae3e5f00">m_period</a>;</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        }</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">if</span> (timerQueueHead == <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> || timerQueueHead-&gt;m_expirationTime &gt;= this-&gt;m_expirationTime)</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_notifier.html#a1aefaa126318fe20157d0f898b54fdf2">timerQueueHead</a> == <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> || <a class="code" href="class_notifier.html#a1aefaa126318fe20157d0f898b54fdf2">timerQueueHead</a>-&gt;<a class="code" href="class_notifier.html#afa136a97e06cddeb1a6ce23ac1f30c11">m_expirationTime</a> &gt;= this-&gt;m_expirationTime)</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        {</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                <span class="comment">// the queue is empty or greater than the new entry</span></div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                <span class="comment">// the new entry becomes the first element</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                this-&gt;m_nextEvent = timerQueueHead;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                timerQueueHead = <span class="keyword">this</span>;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                this-&gt;<a class="code" href="class_notifier.html#a4829c21aa4309a7da96282dfc1392269">m_nextEvent</a> = <a class="code" href="class_notifier.html#a1aefaa126318fe20157d0f898b54fdf2">timerQueueHead</a>;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                <a class="code" href="class_notifier.html#a1aefaa126318fe20157d0f898b54fdf2">timerQueueHead</a> = <span class="keyword">this</span>;</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                <span class="keywordflow">if</span> (!reschedule)</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                {</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                        <span class="comment">// since the first element changed, update alarm, unless we already plan to</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                        UpdateAlarm();</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                        <a class="code" href="class_notifier.html#ad837c96b01df3956807c5f41b3e76254">UpdateAlarm</a>();</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                }</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        }</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        {</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                <span class="keywordflow">for</span> (<a class="code" href="class_notifier.html">Notifier</a> **npp = &amp;(timerQueueHead-&gt;m_nextEvent); ; npp = &amp;(*npp)-&gt;m_nextEvent)</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                <span class="keywordflow">for</span> (<a class="code" href="class_notifier.html">Notifier</a> **npp = &amp;(<a class="code" href="class_notifier.html#a1aefaa126318fe20157d0f898b54fdf2">timerQueueHead</a>-&gt;<a class="code" href="class_notifier.html#a4829c21aa4309a7da96282dfc1392269">m_nextEvent</a>); ; npp = &amp;(*npp)-&gt;<a class="code" href="class_notifier.html#a4829c21aa4309a7da96282dfc1392269">m_nextEvent</a>)</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                {</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                        <a class="code" href="class_notifier.html">Notifier</a> *n = *npp;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                        <span class="keywordflow">if</span> (n == <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> || n-&gt;m_expirationTime &gt; this-&gt;m_expirationTime)</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                        <span class="keywordflow">if</span> (n == <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> || n-&gt;<a class="code" href="class_notifier.html#afa136a97e06cddeb1a6ce23ac1f30c11">m_expirationTime</a> &gt; this-&gt;m_expirationTime)</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                        {</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                                *npp = <span class="keyword">this</span>;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                                this-&gt;m_nextEvent = n;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                                this-&gt;<a class="code" href="class_notifier.html#a4829c21aa4309a7da96282dfc1392269">m_nextEvent</a> = n;</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                        }</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                }</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        }</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        m_queued = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <a class="code" href="class_notifier.html#a71ebe229a7bec5b81957f15041f651f4">m_queued</a> = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;}</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="keywordtype">void</span> Notifier::DeleteFromQueue()</div>
+<div class="line"><a name="l00203"></a><span class="lineno"><a class="code" href="class_notifier.html#ab73d94254ed5591df89757e86e63ac41">  203</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_notifier.html#ab73d94254ed5591df89757e86e63ac41">Notifier::DeleteFromQueue</a>()</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;{</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keywordflow">if</span> (m_queued)</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_notifier.html#a71ebe229a7bec5b81957f15041f651f4">m_queued</a>)</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        {</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                m_queued = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                <a class="code" href="_utility_8h.html#a34b13bd29631329c597428636401bbba">wpi_assert</a>(timerQueueHead != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                <span class="keywordflow">if</span> (timerQueueHead == <span class="keyword">this</span>)</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                <a class="code" href="class_notifier.html#a71ebe229a7bec5b81957f15041f651f4">m_queued</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                <a class="code" href="_utility_8h.html#a34b13bd29631329c597428636401bbba">wpi_assert</a>(<a class="code" href="class_notifier.html#a1aefaa126318fe20157d0f898b54fdf2">timerQueueHead</a> != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="class_notifier.html#a1aefaa126318fe20157d0f898b54fdf2">timerQueueHead</a> == <span class="keyword">this</span>)</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                {</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                        <span class="comment">// remove the first item in the list - update the alarm</span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                        timerQueueHead = this-&gt;m_nextEvent;</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                        UpdateAlarm();</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                        <a class="code" href="class_notifier.html#a1aefaa126318fe20157d0f898b54fdf2">timerQueueHead</a> = this-&gt;<a class="code" href="class_notifier.html#a4829c21aa4309a7da96282dfc1392269">m_nextEvent</a>;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                        <a class="code" href="class_notifier.html#ad837c96b01df3956807c5f41b3e76254">UpdateAlarm</a>();</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                }</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                {</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                        <span class="keywordflow">for</span> (<a class="code" href="class_notifier.html">Notifier</a> *n = timerQueueHead; n != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>; n = n-&gt;m_nextEvent)</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                        <span class="keywordflow">for</span> (<a class="code" href="class_notifier.html">Notifier</a> *n = <a class="code" href="class_notifier.html#a1aefaa126318fe20157d0f898b54fdf2">timerQueueHead</a>; n != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>; n = n-&gt;m_nextEvent)</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                        {</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                                <span class="keywordflow">if</span> (n-&gt;m_nextEvent == <span class="keyword">this</span>)</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                                {</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                                        <span class="comment">// this element is the next element from *n from the queue</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                                        n-&gt;m_nextEvent = this-&gt;m_nextEvent;     <span class="comment">// point around this one</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                                        n-&gt;m_nextEvent = this-&gt;<a class="code" href="class_notifier.html#a4829c21aa4309a7da96282dfc1392269">m_nextEvent</a>;     <span class="comment">// point around this one</span></div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                                }</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                        }</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                }</div>
@@ -281,35 +281,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;</div>
 <div class="line"><a name="l00234"></a><span class="lineno"><a class="code" href="class_notifier.html#af62f654c1918a9c4256b201c5a9f78f7">  234</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_notifier.html#af62f654c1918a9c4256b201c5a9f78f7">Notifier::StartSingle</a>(<span class="keywordtype">double</span> delay)</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;{</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(queueSemaphore);</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        m_periodic = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        m_period = delay;</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        DeleteFromQueue();</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        InsertInQueue(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_notifier.html#af6c84d244c4b73625065be5d0f8dd19b">queueSemaphore</a>);</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        <a class="code" href="class_notifier.html#a875f0b388bae10671a346494ec96a22f">m_periodic</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <a class="code" href="class_notifier.html#a5973b4354a27a9247c4baf81ae3e5f00">m_period</a> = delay;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <a class="code" href="class_notifier.html#ab73d94254ed5591df89757e86e63ac41">DeleteFromQueue</a>();</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <a class="code" href="class_notifier.html#a08344dddfe0be7dc332ff16b0abea085">InsertInQueue</a>(<span class="keyword">false</span>);</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;}</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;</div>
 <div class="line"><a name="l00249"></a><span class="lineno"><a class="code" href="class_notifier.html#ad86c4d07ac2947b0fa51b2ec4ed95dbf">  249</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_notifier.html#ad86c4d07ac2947b0fa51b2ec4ed95dbf">Notifier::StartPeriodic</a>(<span class="keywordtype">double</span> period)</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;{</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(queueSemaphore);</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        m_periodic = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        m_period = period;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        DeleteFromQueue();</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        InsertInQueue(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_notifier.html#af6c84d244c4b73625065be5d0f8dd19b">queueSemaphore</a>);</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <a class="code" href="class_notifier.html#a875f0b388bae10671a346494ec96a22f">m_periodic</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <a class="code" href="class_notifier.html#a5973b4354a27a9247c4baf81ae3e5f00">m_period</a> = period;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <a class="code" href="class_notifier.html#ab73d94254ed5591df89757e86e63ac41">DeleteFromQueue</a>();</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <a class="code" href="class_notifier.html#a08344dddfe0be7dc332ff16b0abea085">InsertInQueue</a>(<span class="keyword">false</span>);</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;}</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;</div>
 <div class="line"><a name="l00265"></a><span class="lineno"><a class="code" href="class_notifier.html#acbd1d398b7338e18d273a3acb6c1bf63">  265</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_notifier.html#acbd1d398b7338e18d273a3acb6c1bf63">Notifier::Stop</a>()</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;{</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        {</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                <a class="code" href="class_synchronized.html">Synchronized</a> sync(queueSemaphore);</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                DeleteFromQueue();</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_notifier.html#af6c84d244c4b73625065be5d0f8dd19b">queueSemaphore</a>);</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                <a class="code" href="class_notifier.html#ab73d94254ed5591df89757e86e63ac41">DeleteFromQueue</a>();</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        }</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <span class="comment">// Wait for a currently executing handler to complete before returning from Stop()</span></div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(m_handlerSemaphore);</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_notifier.html#a1a98fc9a4ee11a04fb5fa998d3bffea8">m_handlerSemaphore</a>);</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:10 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:43 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

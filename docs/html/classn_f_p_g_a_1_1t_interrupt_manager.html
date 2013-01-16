@@ -89,7 +89,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">nFPGA::tInterruptManager Class Reference</div>  </div>
 </div><!--header-->
@@ -112,7 +116,7 @@ Inheritance diagram for nFPGA::tInterruptManager:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:adf2f47bfd54901bc553d2a3d9f9ae1a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classn_f_p_g_a_1_1t_interrupt_manager.html#adf2f47bfd54901bc553d2a3d9f9ae1a7">tInterruptManager</a> (uint32_t interruptMask, bool watcher, <a class="el" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> *status)</td></tr>
 <tr class="memitem:ae3858f146b25a672630994e2e1c40ecc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classn_f_p_g_a_1_1t_interrupt_manager.html#ae3858f146b25a672630994e2e1c40ecc">~tInterruptManager</a> ()</td></tr>
-<tr class="memitem:a692db7281d9179bf3cfe10cd81f6b77b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classn_f_p_g_a_1_1t_interrupt_manager.html#a692db7281d9179bf3cfe10cd81f6b77b">registerHandler</a> (<a class="el" href="namespacen_f_p_g_a.html#a979a26a93d353b621e457ee56f1b59f9">tInterruptHandler</a> handler, <a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> *param, <a class="el" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> *status)</td></tr>
+<tr class="memitem:a692db7281d9179bf3cfe10cd81f6b77b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classn_f_p_g_a_1_1t_interrupt_manager.html#a692db7281d9179bf3cfe10cd81f6b77b">registerHandler</a> (<a class="el" href="namespacen_f_p_g_a.html#a979a26a93d353b621e457ee56f1b59f9">tInterruptHandler</a> <a class="el" href="classn_f_p_g_a_1_1t_interrupt_manager.html#a35bbe927538f52177bb41bf8b7cce58b">handler</a>, <a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> *param, <a class="el" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> *status)</td></tr>
 <tr class="memitem:a7801ebc3f0fabfacf25d0c176c612528"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classn_f_p_g_a_1_1t_interrupt_manager.html#a7801ebc3f0fabfacf25d0c176c612528">watch</a> (int32_t timeoutInMs, <a class="el" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> *status)</td></tr>
 <tr class="memitem:a2893867e617cfe917653f9e1034d696d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classn_f_p_g_a_1_1t_interrupt_manager.html#a2893867e617cfe917653f9e1034d696d">enable</a> (<a class="el" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> *status)</td></tr>
 <tr class="memitem:a5c3ea6c1f698c074baa02d09060aed8c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classn_f_p_g_a_1_1t_interrupt_manager.html#a5c3ea6c1f698c074baa02d09060aed8c">disable</a> (<a class="el" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> *status)</td></tr>
@@ -121,6 +125,32 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad2b6e1a75fcaa44dc055f9ed22067bf4 inherit pub_methods_classn_f_p_g_a_1_1t_system"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classn_f_p_g_a_1_1t_system.html#ad2b6e1a75fcaa44dc055f9ed22067bf4">tSystem</a> (<a class="el" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> *status)</td></tr>
 <tr class="memitem:a74a515dafdefb2b0c4f4fbef5066681b inherit pub_methods_classn_f_p_g_a_1_1t_system"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classn_f_p_g_a_1_1t_system.html#a74a515dafdefb2b0c4f4fbef5066681b">~tSystem</a> ()</td></tr>
 <tr class="memitem:ade8e9ad87abfc451ef50c17d7bf877fd inherit pub_methods_classn_f_p_g_a_1_1t_system"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classn_f_p_g_a_1_1t_system.html#ade8e9ad87abfc451ef50c17d7bf877fd">getFpgaGuid</a> (uint32_t *guid_ptr, <a class="el" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> *status)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a35bbe927538f52177bb41bf8b7cce58b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classn_f_p_g_a_1_1t_interrupt_manager.html#a35bbe927538f52177bb41bf8b7cce58b">handler</a> ()</td></tr>
+<tr class="memitem:a9716989ae7c835ad080ef769a0bc082c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classn_f_p_g_a_1_1t_interrupt_manager.html#a9716989ae7c835ad080ef769a0bc082c">acknowledge</a> (<a class="el" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> *status)</td></tr>
+<tr class="memitem:a2291a7285fac525d2d11510681698c91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classn_f_p_g_a_1_1t_interrupt_manager.html#a2291a7285fac525d2d11510681698c91">reserve</a> (<a class="el" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> *status)</td></tr>
+<tr class="memitem:a23cca17626d97f0d268728824143c2a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classn_f_p_g_a_1_1t_interrupt_manager.html#a23cca17626d97f0d268728824143c2a3">unreserve</a> (<a class="el" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> *status)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a4fda4a2063995ac27bfa0a09a8b93bfb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classn_f_p_g_a_1_1t_interrupt_manager.html#a4fda4a2063995ac27bfa0a09a8b93bfb">handlerWrapper</a> (<a class="el" href="classn_f_p_g_a_1_1t_interrupt_manager.html">tInterruptManager</a> *pInterrupt)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a0aef6835eb8d484c23832231668a4fcc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacen_f_p_g_a.html#a979a26a93d353b621e457ee56f1b59f9">tInterruptHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classn_f_p_g_a_1_1t_interrupt_manager.html#a0aef6835eb8d484c23832231668a4fcc">_handler</a></td></tr>
+<tr class="memitem:a5d0813051d1e4dd764e0e203394b4938"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classn_f_p_g_a_1_1t_interrupt_manager.html#a5d0813051d1e4dd764e0e203394b4938">_interruptMask</a></td></tr>
+<tr class="memitem:a17be9c778d515974f9b2f75abd479d51"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classn_f_p_g_a_1_1t_interrupt_manager.html#a17be9c778d515974f9b2f75abd479d51">_taskId</a></td></tr>
+<tr class="memitem:af04a8f48160358c23ca53af446c1a0f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ni_fpga_8h.html#a1cd3e28872c9f82ba92766d9c930c631">NiFpga_IrqContext</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classn_f_p_g_a_1_1t_interrupt_manager.html#af04a8f48160358c23ca53af446c1a0f3">_rioContext</a></td></tr>
+<tr class="memitem:ad7375a101489356e61e11bae127eda8d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classn_f_p_g_a_1_1t_interrupt_manager.html#ad7375a101489356e61e11bae127eda8d">_watcher</a></td></tr>
+<tr class="memitem:af3ca5d30aba3030f88db1e27938bc472"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classn_f_p_g_a_1_1t_interrupt_manager.html#af3ca5d30aba3030f88db1e27938bc472">_enabled</a></td></tr>
+<tr class="memitem:a8feed4dc9aadbde891db3d566b10857f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classn_f_p_g_a_1_1t_interrupt_manager.html#a8feed4dc9aadbde891db3d566b10857f">_userParam</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:afb336baf77d43c52a1db1a34a5c47d07"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classn_f_p_g_a_1_1t_interrupt_manager.html#afb336baf77d43c52a1db1a34a5c47d07">_globalInterruptMask</a></td></tr>
+<tr class="memitem:a37a5f5aca58466ef11bdc118890bfa0a"><td class="memItemLeft" align="right" valign="top">static SEM_ID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classn_f_p_g_a_1_1t_interrupt_manager.html#a37a5f5aca58466ef11bdc118890bfa0a">_globalInterruptMaskSemaphore</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -183,6 +213,30 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a9716989ae7c835ad080ef769a0bc082c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> nFPGA::tInterruptManager::acknowledge </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> *&#160;</td>
+          <td class="paramname"><em>status</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a5c3ea6c1f698c074baa02d09060aed8c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -211,6 +265,53 @@ Additional Inherited Members</h2></td></tr>
           <td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a35bbe927538f52177bb41bf8b7cce58b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> nFPGA::tInterruptManager::handler </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4fda4a2063995ac27bfa0a09a8b93bfb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> nFPGA::tInterruptManager::handlerWrapper </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classn_f_p_g_a_1_1t_interrupt_manager.html">tInterruptManager</a> *&#160;</td>
+          <td class="paramname"><em>pInterrupt</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -263,6 +364,54 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a2291a7285fac525d2d11510681698c91"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> nFPGA::tInterruptManager::reserve </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> *&#160;</td>
+          <td class="paramname"><em>status</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a23cca17626d97f0d268728824143c2a3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> nFPGA::tInterruptManager::unreserve </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> *&#160;</td>
+          <td class="paramname"><em>status</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a7801ebc3f0fabfacf25d0c176c612528"></a>
 <div class="memitem">
 <div class="memproto">
@@ -289,13 +438,212 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="af3ca5d30aba3030f88db1e27938bc472"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool nFPGA::tInterruptManager::_enabled</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="t_interrupt_manager_8h_source.html#l00038">38</a> of file <a class="el" href="t_interrupt_manager_8h_source.html">tInterruptManager.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afb336baf77d43c52a1db1a34a5c47d07"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t nFPGA::tInterruptManager::_globalInterruptMask</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="t_interrupt_manager_8h_source.html#l00042">42</a> of file <a class="el" href="t_interrupt_manager_8h_source.html">tInterruptManager.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a37a5f5aca58466ef11bdc118890bfa0a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SEM_ID nFPGA::tInterruptManager::_globalInterruptMaskSemaphore</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="t_interrupt_manager_8h_source.html#l00043">43</a> of file <a class="el" href="t_interrupt_manager_8h_source.html">tInterruptManager.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0aef6835eb8d484c23832231668a4fcc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacen_f_p_g_a.html#a979a26a93d353b621e457ee56f1b59f9">tInterruptHandler</a> nFPGA::tInterruptManager::_handler</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="t_interrupt_manager_8h_source.html#l00033">33</a> of file <a class="el" href="t_interrupt_manager_8h_source.html">tInterruptManager.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5d0813051d1e4dd764e0e203394b4938"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t nFPGA::tInterruptManager::_interruptMask</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="t_interrupt_manager_8h_source.html#l00034">34</a> of file <a class="el" href="t_interrupt_manager_8h_source.html">tInterruptManager.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af04a8f48160358c23ca53af446c1a0f3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_ni_fpga_8h.html#a1cd3e28872c9f82ba92766d9c930c631">NiFpga_IrqContext</a> nFPGA::tInterruptManager::_rioContext</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="t_interrupt_manager_8h_source.html#l00036">36</a> of file <a class="el" href="t_interrupt_manager_8h_source.html">tInterruptManager.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a17be9c778d515974f9b2f75abd479d51"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t nFPGA::tInterruptManager::_taskId</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="t_interrupt_manager_8h_source.html#l00035">35</a> of file <a class="el" href="t_interrupt_manager_8h_source.html">tInterruptManager.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8feed4dc9aadbde891db3d566b10857f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>* nFPGA::tInterruptManager::_userParam</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="t_interrupt_manager_8h_source.html#l00039">39</a> of file <a class="el" href="t_interrupt_manager_8h_source.html">tInterruptManager.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad7375a101489356e61e11bae127eda8d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool nFPGA::tInterruptManager::_watcher</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="t_interrupt_manager_8h_source.html#l00037">37</a> of file <a class="el" href="t_interrupt_manager_8h_source.html">tInterruptManager.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>WPILib/ChipObject/<a class="el" href="t_interrupt_manager_8h_source.html">tInterruptManager.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:17 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:49 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

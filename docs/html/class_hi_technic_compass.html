@@ -85,7 +85,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">HiTechnicCompass Class Reference</div>  </div>
 </div><!--header-->
@@ -139,6 +141,20 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab67204acd1eb87ffe6fc45c2d22e517e inherit pub_methods_class_error_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the current error information associated with this sensor.  <a href="#ab67204acd1eb87ffe6fc45c2d22e517e"></a><br/></td></tr>
 <tr class="memitem:a05790f219c9e436a09752f73f7344024 inherit pub_methods_class_error_base"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_base.html#a05790f219c9e436a09752f73f7344024">StatusIsFatal</a> () const </td></tr>
 <tr class="memdesc:a05790f219c9e436a09752f73f7344024 inherit pub_methods_class_error_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the current error code represents a fatal error.  <a href="#a05790f219c9e436a09752f73f7344024"></a><br/></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ae9f5274d5e59be83db7b1e9b77cc782c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i2_c.html">I2C</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hi_technic_compass.html#ae9f5274d5e59be83db7b1e9b77cc782c">m_i2c</a></td></tr>
+<tr class="memitem:ae33394c6231246f3400dcab407576d0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_table.html">ITable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hi_technic_compass.html#ae33394c6231246f3400dcab407576d0f">m_table</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:ae837688a4cd9ed8db081ecad2b7585b8"><td class="memItemLeft" align="right" valign="top">static const UINT8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hi_technic_compass.html#ae837688a4cd9ed8db081ecad2b7585b8">kAddress</a> = 0x02</td></tr>
+<tr class="memitem:a1fd59fbb98fc4a82394a539a49c28cbc"><td class="memItemLeft" align="right" valign="top">static const UINT8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hi_technic_compass.html#a1fd59fbb98fc4a82394a539a49c28cbc">kManufacturerBaseRegister</a> = 0x08</td></tr>
+<tr class="memitem:a9a89f6585f58e91389dc12f2f3b98a41"><td class="memItemLeft" align="right" valign="top">static const UINT8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hi_technic_compass.html#a9a89f6585f58e91389dc12f2f3b98a41">kManufacturerSize</a> = 0x08</td></tr>
+<tr class="memitem:a267751f0a372051ddc07a395557cb19f"><td class="memItemLeft" align="right" valign="top">static const UINT8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hi_technic_compass.html#a267751f0a372051ddc07a395557cb19f">kSensorTypeBaseRegister</a> = 0x10</td></tr>
+<tr class="memitem:a07548d6f3c08837e54d38bc8e79f1079"><td class="memItemLeft" align="right" valign="top">static const UINT8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hi_technic_compass.html#a07548d6f3c08837e54d38bc8e79f1079">kSensorTypeSize</a> = 0x08</td></tr>
+<tr class="memitem:a493b681b677142dc5c3391a880f002f7"><td class="memItemLeft" align="right" valign="top">static const UINT8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hi_technic_compass.html#a493b681b677142dc5c3391a880f002f7">kHeadingRegister</a> = 0x44</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -442,6 +458,183 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="ae837688a4cd9ed8db081ecad2b7585b8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const UINT8 HiTechnicCompass::kAddress = 0x02</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_hi_technic_compass_8h_source.html#l00042">42</a> of file <a class="el" href="_hi_technic_compass_8h_source.html">HiTechnicCompass.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a493b681b677142dc5c3391a880f002f7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const UINT8 HiTechnicCompass::kHeadingRegister = 0x44</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_hi_technic_compass_8h_source.html#l00047">47</a> of file <a class="el" href="_hi_technic_compass_8h_source.html">HiTechnicCompass.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1fd59fbb98fc4a82394a539a49c28cbc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const UINT8 HiTechnicCompass::kManufacturerBaseRegister = 0x08</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_hi_technic_compass_8h_source.html#l00043">43</a> of file <a class="el" href="_hi_technic_compass_8h_source.html">HiTechnicCompass.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9a89f6585f58e91389dc12f2f3b98a41"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const UINT8 HiTechnicCompass::kManufacturerSize = 0x08</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_hi_technic_compass_8h_source.html#l00044">44</a> of file <a class="el" href="_hi_technic_compass_8h_source.html">HiTechnicCompass.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a267751f0a372051ddc07a395557cb19f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const UINT8 HiTechnicCompass::kSensorTypeBaseRegister = 0x10</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_hi_technic_compass_8h_source.html#l00045">45</a> of file <a class="el" href="_hi_technic_compass_8h_source.html">HiTechnicCompass.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a07548d6f3c08837e54d38bc8e79f1079"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const UINT8 HiTechnicCompass::kSensorTypeSize = 0x08</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_hi_technic_compass_8h_source.html#l00046">46</a> of file <a class="el" href="_hi_technic_compass_8h_source.html">HiTechnicCompass.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae9f5274d5e59be83db7b1e9b77cc782c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i2_c.html">I2C</a>* HiTechnicCompass::m_i2c</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_hi_technic_compass_8h_source.html#l00049">49</a> of file <a class="el" href="_hi_technic_compass_8h_source.html">HiTechnicCompass.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae33394c6231246f3400dcab407576d0f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i_table.html">ITable</a>* HiTechnicCompass::m_table</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_hi_technic_compass_8h_source.html#l00051">51</a> of file <a class="el" href="_hi_technic_compass_8h_source.html">HiTechnicCompass.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>WPILib/<a class="el" href="_hi_technic_compass_8h_source.html">HiTechnicCompass.h</a></li>
 <li>WPILib/<a class="el" href="_hi_technic_compass_8cpp_source.html">HiTechnicCompass.cpp</a></li>
@@ -449,7 +642,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:15 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:47 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

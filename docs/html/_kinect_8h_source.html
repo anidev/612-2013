@@ -130,28 +130,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">static</span> <a class="code" href="class_kinect.html">Kinect</a> *<a class="code" href="class_kinect.html#a84cf4659d277e426684b4232266da03a">GetInstance</a>();</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="class_kinect.html">Kinect</a>();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        ~<a class="code" href="class_kinect.html">Kinect</a>();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">void</span> UpdateData();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="class_kinect.html#ab05389f710b912abff1d001edd77d847">Kinect</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="class_kinect.html#a3f417dc4deed8106a97f217c26326e12">~Kinect</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_kinect.html#a8d9d72ef4bc3c3915f32117d8a2bfe29">UpdateData</a>();</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        DISALLOW_COPY_AND_ASSIGN(<a class="code" href="class_kinect.html">Kinect</a>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="class_kinect.html#a790e69442b55051c53fdc4daa6d46612">DISALLOW_COPY_AND_ASSIGN</a>(<a class="code" href="class_kinect.html">Kinect</a>);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        UINT32 m_recentPacketNumber;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        SEM_ID m_dataLock;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">int</span> m_numberOfPlayers;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="struct_kinect_1_1_point4.html">Point4</a> m_floorClipPlane;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="struct_kinect_1_1_point4.html">Point4</a> m_gravityNormal;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="struct_kinect_1_1_point4.html">Point4</a> m_position[<a class="code" href="_kinect_8h.html#ac0de4fd9c03181802e7359280d393c8d">kNumSkeletons</a>];</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        UINT32 m_quality[<a class="code" href="_kinect_8h.html#ac0de4fd9c03181802e7359280d393c8d">kNumSkeletons</a>];</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="class_kinect.html#a4ceb60dfce374f9c5354d94d4c0ef701">SkeletonTrackingState</a> m_trackingState[<a class="code" href="_kinect_8h.html#ac0de4fd9c03181802e7359280d393c8d">kNumSkeletons</a>];</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="class_skeleton.html">Skeleton</a> m_skeletons[<a class="code" href="_kinect_8h.html#ac0de4fd9c03181802e7359280d393c8d">kNumSkeletons</a>];</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="class_kinect.html#a07f4023d6b7ca5759371571a563ad105">   54</a></span>&#160;        UINT32 <a class="code" href="class_kinect.html#a07f4023d6b7ca5759371571a563ad105">m_recentPacketNumber</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="class_kinect.html#a087b7809ae22fec042505251be256100">   55</a></span>&#160;        SEM_ID <a class="code" href="class_kinect.html#a087b7809ae22fec042505251be256100">m_dataLock</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="class_kinect.html#a3e11fb30ccdbd9088353f4da8071201b">   56</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_kinect.html#a3e11fb30ccdbd9088353f4da8071201b">m_numberOfPlayers</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="class_kinect.html#ad9bb4de8cb338a4bf0c256e29e0026ff">   57</a></span>&#160;        <a class="code" href="struct_kinect_1_1_point4.html">Point4</a> <a class="code" href="class_kinect.html#ad9bb4de8cb338a4bf0c256e29e0026ff">m_floorClipPlane</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="code" href="class_kinect.html#a536d9d189f9f110b30ac97609b975b15">   58</a></span>&#160;        <a class="code" href="struct_kinect_1_1_point4.html">Point4</a> <a class="code" href="class_kinect.html#a536d9d189f9f110b30ac97609b975b15">m_gravityNormal</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="class_kinect.html#a346ba00a0e31986b94f529921f76639a">   59</a></span>&#160;        <a class="code" href="struct_kinect_1_1_point4.html">Point4</a> <a class="code" href="class_kinect.html#a346ba00a0e31986b94f529921f76639a">m_position</a>[<a class="code" href="_kinect_8h.html#ac0de4fd9c03181802e7359280d393c8d">kNumSkeletons</a>];</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="code" href="class_kinect.html#a0ecabdbad48ef1a8924b70be8495f748">   60</a></span>&#160;        UINT32 <a class="code" href="class_kinect.html#a0ecabdbad48ef1a8924b70be8495f748">m_quality</a>[<a class="code" href="_kinect_8h.html#ac0de4fd9c03181802e7359280d393c8d">kNumSkeletons</a>];</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="code" href="class_kinect.html#a2e0016fc2ca5cc12a1f5c2100075cebe">   61</a></span>&#160;        <a class="code" href="class_kinect.html#a4ceb60dfce374f9c5354d94d4c0ef701">SkeletonTrackingState</a> <a class="code" href="class_kinect.html#a2e0016fc2ca5cc12a1f5c2100075cebe">m_trackingState</a>[<a class="code" href="_kinect_8h.html#ac0de4fd9c03181802e7359280d393c8d">kNumSkeletons</a>];</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="code" href="class_kinect.html#ad1981ea08e53310335ddc76590dc7b25">   62</a></span>&#160;        <a class="code" href="class_skeleton.html">Skeleton</a> <a class="code" href="class_kinect.html#ad1981ea08e53310335ddc76590dc7b25">m_skeletons</a>[<a class="code" href="_kinect_8h.html#ac0de4fd9c03181802e7359280d393c8d">kNumSkeletons</a>];</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="comment">// TODO: Include structs for this data format (would be clearer than 100 magic numbers)</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">char</span> m_rawHeader[46];</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">char</span> m_rawSkeletonExtra[42];</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">char</span> m_rawSkeleton[242];</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="code" href="class_kinect.html#ad145c2eadf8bafc960f06012a42fb9b6">   65</a></span>&#160;        <span class="keywordtype">char</span> <a class="code" href="class_kinect.html#ad145c2eadf8bafc960f06012a42fb9b6">m_rawHeader</a>[46];</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="class_kinect.html#a187dab5aac9d95ccce4dece78b6c77bd">   66</a></span>&#160;        <span class="keywordtype">char</span> <a class="code" href="class_kinect.html#a187dab5aac9d95ccce4dece78b6c77bd">m_rawSkeletonExtra</a>[42];</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="class_kinect.html#a869981bab90acfc29799f9f5f738f4f8">   67</a></span>&#160;        <span class="keywordtype">char</span> <a class="code" href="class_kinect.html#a869981bab90acfc29799f9f5f738f4f8">m_rawSkeleton</a>[242];</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">static</span> <a class="code" href="class_kinect.html">Kinect</a> *_instance;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="code" href="class_kinect.html#a3f93872ff94b9d9e169f3eb76c2c24ed">   69</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="class_kinect.html">Kinect</a> *<a class="code" href="class_kinect.html#a3f93872ff94b9d9e169f3eb76c2c24ed">_instance</a>;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -159,7 +159,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:09 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:42 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

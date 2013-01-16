@@ -87,7 +87,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a>  </div>
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">Servo Class Reference</div>  </div>
 </div><!--header-->
@@ -183,6 +185,16 @@ Static Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a6f6c470f1cf96bcd2eb2be38b6b17f72"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_table.html">ITable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_servo.html#a6f6c470f1cf96bcd2eb2be38b6b17f72">m_table</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aedb7fca43ec9b75e7a4a679efee4edbb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_servo.html#aedb7fca43ec9b75e7a4a679efee4edbb">InitServo</a> ()</td></tr>
+<tr class="memitem:aca629f2fc8533bab376774302f83d314"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_servo.html#aca629f2fc8533bab376774302f83d314">GetServoAngleRange</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a6f44d7c55ede18d5f74c1b862563290a"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_servo.html#a6f44d7c55ede18d5f74c1b862563290a">kMaxServoAngle</a> = 170.0</td></tr>
+<tr class="memitem:ae16f8a97debeebcc727e602ef17d3f46"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_servo.html#ae16f8a97debeebcc727e602ef17d3f46">kMinServoAngle</a> = 0.0</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Standard hobby style servo.</p>
@@ -376,6 +388,31 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aca629f2fc8533bab376774302f83d314"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Servo::GetServoAngleRange </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_servo_8h_source.html#l00045">45</a> of file <a class="el" href="_servo_8h_source.html">Servo.h</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a8f4633edda7ed0d21bc98bb2133fbd1c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -429,6 +466,33 @@ Public Attributes</h2></td></tr>
 <p>Reimplemented from <a class="el" href="class_p_w_m.html#a2cc4476adb4e5edd20eed5fb66f730f9">PWM</a>.</p>
 
 <p>Definition at line <a class="el" href="_servo_8cpp_source.html#l00150">150</a> of file <a class="el" href="_servo_8cpp_source.html">Servo.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aedb7fca43ec9b75e7a4a679efee4edbb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> Servo::InitServo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Common initialization code called by all constructors.</p>
+<p><a class="el" href="class_servo.html#aedb7fca43ec9b75e7a4a679efee4edbb">InitServo()</a> assigns defaults for the period multiplier for the servo <a class="el" href="class_p_w_m.html">PWM</a> control signal, as well as the minimum and maximum <a class="el" href="class_p_w_m.html">PWM</a> values supported by the servo. </p>
+
+<p>Definition at line <a class="el" href="_servo_8cpp_source.html#l00020">20</a> of file <a class="el" href="_servo_8cpp_source.html">Servo.cpp</a>.</p>
 
 </div>
 </div>
@@ -684,6 +748,50 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a6f44d7c55ede18d5f74c1b862563290a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float Servo::kMaxServoAngle = 170.0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_servo_8h_source.html#l00047">47</a> of file <a class="el" href="_servo_8h_source.html">Servo.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae16f8a97debeebcc727e602ef17d3f46"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float Servo::kMinServoAngle = 0.0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_servo_8h_source.html#l00048">48</a> of file <a class="el" href="_servo_8h_source.html">Servo.h</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a6f6c470f1cf96bcd2eb2be38b6b17f72"></a>
 <div class="memitem">
 <div class="memproto">
@@ -707,7 +815,7 @@ Public Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:17 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:49 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

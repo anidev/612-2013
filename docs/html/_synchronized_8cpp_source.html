@@ -100,24 +100,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="class_synchronized.html#a05041c29b6ec042b9537f62e40f022fa">   17</a></span>&#160;<a class="code" href="class_synchronized.html#a05041c29b6ec042b9537f62e40f022fa">Synchronized::Synchronized</a>(SEM_ID semaphore)</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        m_semaphore = semaphore;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        semTake(m_semaphore, WAIT_FOREVER);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="class_synchronized.html#a289c83a90f4a7f88431c0af39e43d028">m_semaphore</a> = semaphore;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        semTake(<a class="code" href="class_synchronized.html#a289c83a90f4a7f88431c0af39e43d028">m_semaphore</a>, WAIT_FOREVER);</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="class_synchronized.html#ad3521cd2641f8cf48ee9118681ca5ac4">   23</a></span>&#160;<a class="code" href="class_synchronized.html#a05041c29b6ec042b9537f62e40f022fa">Synchronized::Synchronized</a>(<a class="code" href="class_reentrant_semaphore.html">ReentrantSemaphore</a>&amp; semaphore)</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        m_semaphore = semaphore.m_semaphore;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        semTake(m_semaphore, WAIT_FOREVER);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="class_synchronized.html#a289c83a90f4a7f88431c0af39e43d028">m_semaphore</a> = semaphore.<a class="code" href="class_reentrant_semaphore.html#a30217df574a598f6ceb6903611106cbd">m_semaphore</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        semTake(<a class="code" href="class_synchronized.html#a289c83a90f4a7f88431c0af39e43d028">m_semaphore</a>, WAIT_FOREVER);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
 <div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="class_synchronized.html#adeaa46ad24013f926eaaca662281efd3">   32</a></span>&#160;<a class="code" href="class_synchronized.html#adeaa46ad24013f926eaaca662281efd3">Synchronized::~Synchronized</a>()</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        semGive(m_semaphore);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        semGive(<a class="code" href="class_synchronized.html#a289c83a90f4a7f88431c0af39e43d028">m_semaphore</a>);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:11 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:43 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

@@ -103,12 +103,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00011"></a><span class="lineno"><a class="code" href="class_print_command.html#a42dbf8de60f87c0925e73bd083ee2849">   11</a></span>&#160;<a class="code" href="class_print_command.html#a42dbf8de60f87c0925e73bd083ee2849">PrintCommand::PrintCommand</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *message) :</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <a class="code" href="class_command.html">Command</a>(((std::stringstream&amp;)(std::stringstream(<span class="stringliteral">&quot;Print \&quot;&quot;</span>) &lt;&lt; message &lt;&lt; <span class="stringliteral">&quot;\&quot;&quot;</span>)).str().c_str())</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        m_message = message;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="class_print_command.html#a45dcd56d6b1a14efe63d5a2ff5c257a8">m_message</a> = message;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="class_print_command.html#a0fbf0d5d89e85a800ac776c0fc7ec8f5">   17</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_print_command.html#a0fbf0d5d89e85a800ac776c0fc7ec8f5">PrintCommand::Initialize</a>()</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        printf(m_message.c_str());</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        printf(<a class="code" href="class_print_command.html#a45dcd56d6b1a14efe63d5a2ff5c257a8">m_message</a>.c_str());</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
 <div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="class_print_command.html#a7d2c8116303839094accf68329050358">   22</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_print_command.html#a7d2c8116303839094accf68329050358">PrintCommand::Execute</a>()</div>
@@ -130,7 +130,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:09 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:42 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

@@ -107,9 +107,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">const</span> UINT32 <a class="code" href="class_p_w_m.html#ad76e35266df11ca46f9792492671379a">PWM::kDefaultPwmPeriod</a>;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">const</span> UINT32 <a class="code" href="class_p_w_m.html#a6d481a094dc4d1df83cfd77b2d6bbf06">PWM::kDefaultMinPwmHigh</a>;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">const</span> INT32 <a class="code" href="class_p_w_m.html#a1128d7b7ad8cb6a4d3bb49ef4c08fbfa">PWM::kPwmDisabled</a>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">static</span> <a class="code" href="class_resource.html">Resource</a> *allocated = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="_p_w_m_8cpp.html#a3f8a5d9b33f4673c401bd406c3a093e5">   18</a></span>&#160;<span class="keyword">static</span> <a class="code" href="class_resource.html">Resource</a> *<a class="code" href="_p_w_m_8cpp.html#a3f8a5d9b33f4673c401bd406c3a093e5">allocated</a> = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">void</span> PWM::InitPWM(UINT8 moduleNumber, UINT32 channel)</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="class_p_w_m.html#a7d2f8db7bf0324aa96d6410382f9e2aa">   27</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_w_m.html#a7d2f8db7bf0324aa96d6410382f9e2aa">PWM::InitPWM</a>(UINT8 moduleNumber, UINT32 channel)</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">char</span> buf[64];</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="class_resource.html#ade155b92abe4ff2b0c43576434033922">Resource::CreateResourceObject</a>(&amp;allocated, tDIO::kNumSystems * <a class="code" href="class_sensor_base.html#a245dda830a4dbc0de6e3482aa17c5681">kPwmChannels</a>);</div>
@@ -127,14 +127,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        snprintf(buf, 64, <span class="stringliteral">&quot;PWM %d (Module: %d)&quot;</span>, channel, moduleNumber);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">if</span> (allocated-&gt;<a class="code" href="class_resource.html#a1146abcb449682d03e1a1f95580ab53b">Allocate</a>((moduleNumber - 1) * <a class="code" href="class_sensor_base.html#a245dda830a4dbc0de6e3482aa17c5681">kPwmChannels</a> + channel - 1, buf) == ~0ul)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">if</span> (allocated-&gt;<a class="code" href="class_resource.html#a1146abcb449682d03e1a1f95580ab53b">Allocate</a>((moduleNumber - 1) * kPwmChannels + channel - 1, buf) == ~0ul)</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <a class="code" href="class_error_base.html#adfc72ed28fadc33ffcb73468ea324d14">CloneError</a>(allocated);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        m_channel = channel;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        m_module = <a class="code" href="class_digital_module.html#ad6384445078c80a3b77ef4d2e840f930">DigitalModule::GetInstance</a>(moduleNumber);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        m_module-&gt;<a class="code" href="class_digital_module.html#abc8303e66903fec0e24714f307cbb68c">SetPWM</a>(m_channel, <a class="code" href="class_p_w_m.html#a1128d7b7ad8cb6a4d3bb49ef4c08fbfa">kPwmDisabled</a>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="class_p_w_m.html#a01b60963a497dca8e6a744f3f7bf87ec">m_channel</a> = channel;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="class_p_w_m.html#aca47ea2b12b3deb473fbbb4803fc8469">m_module</a> = <a class="code" href="class_digital_module.html#ad6384445078c80a3b77ef4d2e840f930">DigitalModule::GetInstance</a>(moduleNumber);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="class_p_w_m.html#aca47ea2b12b3deb473fbbb4803fc8469">m_module</a>-&gt;<a class="code" href="class_digital_module.html#abc8303e66903fec0e24714f307cbb68c">SetPWM</a>(<a class="code" href="class_p_w_m.html#a01b60963a497dca8e6a744f3f7bf87ec">m_channel</a>, <a class="code" href="class_p_w_m.html#a1128d7b7ad8cb6a4d3bb49ef4c08fbfa">kPwmDisabled</a>);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="class_p_w_m.html#a80b83bf5f9751ceaf6439fccab8fe5d0">m_eliminateDeadband</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="namespacen_usage_reporting.html#a99be0607a35214dd8b718c6645ae53b3">nUsageReporting::report</a>(<a class="code" href="namespacen_usage_reporting.html#ac80f9386b7fe4c6222088527f119c0c2af41ba54da2421b456dd8f490d8c90730">nUsageReporting::kResourceType_PWM</a>, channel, moduleNumber - 1);</div>
@@ -143,21 +143,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00065"></a><span class="lineno"><a class="code" href="class_p_w_m.html#ac881a7f77ff1989debafd76005868d77">   65</a></span>&#160;<a class="code" href="class_p_w_m.html#aa96fde4003a2ee8c57f90019b2504009">PWM::PWM</a>(UINT8 moduleNumber, UINT32 channel)</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        : m_module(<a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        InitPWM(moduleNumber, channel);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="class_p_w_m.html#a7d2f8db7bf0324aa96d6410382f9e2aa">InitPWM</a>(moduleNumber, channel);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
 <div class="line"><a name="l00079"></a><span class="lineno"><a class="code" href="class_p_w_m.html#aa96fde4003a2ee8c57f90019b2504009">   79</a></span>&#160;<a class="code" href="class_p_w_m.html#aa96fde4003a2ee8c57f90019b2504009">PWM::PWM</a>(UINT32 channel)</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        : m_module(<a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        InitPWM(<a class="code" href="class_sensor_base.html#a58b76ce72e9d70bf88b613b9f979a555">GetDefaultDigitalModule</a>(), channel);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="class_p_w_m.html#a7d2f8db7bf0324aa96d6410382f9e2aa">InitPWM</a>(<a class="code" href="class_sensor_base.html#a58b76ce72e9d70bf88b613b9f979a555">GetDefaultDigitalModule</a>(), channel);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
 <div class="line"><a name="l00090"></a><span class="lineno"><a class="code" href="class_p_w_m.html#a903377c1da3618530f999d77297406af">   90</a></span>&#160;<a class="code" href="class_p_w_m.html#a903377c1da3618530f999d77297406af">PWM::~PWM</a>()</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;{</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">if</span> (m_module)</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_p_w_m.html#aca47ea2b12b3deb473fbbb4803fc8469">m_module</a>)</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                m_module-&gt;<a class="code" href="class_digital_module.html#abc8303e66903fec0e24714f307cbb68c">SetPWM</a>(m_channel, <a class="code" href="class_p_w_m.html#a1128d7b7ad8cb6a4d3bb49ef4c08fbfa">kPwmDisabled</a>);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                allocated-&gt;<a class="code" href="class_resource.html#a1f8793fe4ecfcd6c4ae1417c3d0745ca">Free</a>((m_module-&gt;<a class="code" href="class_module.html#ac414ba5cf992fdf69135d29cd3663fa6">GetNumber</a>() - 1) * <a class="code" href="class_sensor_base.html#a245dda830a4dbc0de6e3482aa17c5681">kPwmChannels</a> + m_channel - 1);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <a class="code" href="class_p_w_m.html#aca47ea2b12b3deb473fbbb4803fc8469">m_module</a>-&gt;<a class="code" href="class_digital_module.html#abc8303e66903fec0e24714f307cbb68c">SetPWM</a>(<a class="code" href="class_p_w_m.html#a01b60963a497dca8e6a744f3f7bf87ec">m_channel</a>, <a class="code" href="class_p_w_m.html#a1128d7b7ad8cb6a4d3bb49ef4c08fbfa">kPwmDisabled</a>);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                allocated-&gt;<a class="code" href="class_resource.html#a1f8793fe4ecfcd6c4ae1417c3d0745ca">Free</a>((<a class="code" href="class_p_w_m.html#aca47ea2b12b3deb473fbbb4803fc8469">m_module</a>-&gt;<a class="code" href="class_module.html#ac414ba5cf992fdf69135d29cd3663fa6">GetNumber</a>() - 1) * <a class="code" href="class_sensor_base.html#a245dda830a4dbc0de6e3482aa17c5681">kPwmChannels</a> + <a class="code" href="class_p_w_m.html#a01b60963a497dca8e6a744f3f7bf87ec">m_channel</a> - 1);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        }</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
@@ -179,7 +179,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
 <div class="line"><a name="l00131"></a><span class="lineno"><a class="code" href="class_p_w_m.html#a9dee53892735abde221e465882cf74c0">  131</a></span>&#160;UINT32 <a class="code" href="class_p_w_m.html#a9dee53892735abde221e465882cf74c0">PWM::GetModuleNumber</a>()</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;{</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">return</span> m_module-&gt;<a class="code" href="class_module.html#ac414ba5cf992fdf69135d29cd3663fa6">GetNumber</a>();</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_p_w_m.html#aca47ea2b12b3deb473fbbb4803fc8469">m_module</a>-&gt;<a class="code" href="class_module.html#ac414ba5cf992fdf69135d29cd3663fa6">GetNumber</a>();</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
 <div class="line"><a name="l00146"></a><span class="lineno"><a class="code" href="class_p_w_m.html#a93e43862c48e9a06d95bd916b77c183a">  146</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_w_m.html#a93e43862c48e9a06d95bd916b77c183a">PWM::SetPosition</a>(<span class="keywordtype">float</span> pos)</div>
@@ -196,9 +196,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        INT32 rawValue;</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="comment">// note, need to perform the multiplication below as floating point before converting to int</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        rawValue = (INT32)( (pos * (<span class="keywordtype">float</span>) GetFullRangeScaleFactor()) + GetMinNegativePwm());</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        rawValue = (INT32)( (pos * (<span class="keywordtype">float</span>) <a class="code" href="class_p_w_m.html#a4b04d176629015f8f539079d9bfc2e70" title="The scale for positions.">GetFullRangeScaleFactor</a>()) + <a class="code" href="class_p_w_m.html#a99a4c830b4a517cd69e91d13c9463de0">GetMinNegativePwm</a>());</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <a class="code" href="_utility_8h.html#a34b13bd29631329c597428636401bbba">wpi_assert</a>((rawValue &gt;= GetMinNegativePwm()) &amp;&amp; (rawValue &lt;= GetMaxPositivePwm()));</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <a class="code" href="_utility_8h.html#a34b13bd29631329c597428636401bbba">wpi_assert</a>((rawValue &gt;= <a class="code" href="class_p_w_m.html#a99a4c830b4a517cd69e91d13c9463de0">GetMinNegativePwm</a>()) &amp;&amp; (rawValue &lt;= <a class="code" href="class_p_w_m.html#a649e0cca06f52ccebd68492f24c2014c">GetMaxPositivePwm</a>()));</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <a class="code" href="_utility_8h.html#a34b13bd29631329c597428636401bbba">wpi_assert</a>(rawValue != <a class="code" href="class_p_w_m.html#a1128d7b7ad8cb6a4d3bb49ef4c08fbfa">kPwmDisabled</a>);</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="comment">// send the computed pwm value to the FPGA</span></div>
@@ -209,17 +209,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;{</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_error_base.html#a05790f219c9e436a09752f73f7344024" title="Check if the current error code represents a fatal error.">StatusIsFatal</a>()) <span class="keywordflow">return</span> 0.0;</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        INT32 value = <a class="code" href="class_p_w_m.html#a4fe28ee13017aa4c6b9b8fa662ebf99e">GetRaw</a>();</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keywordflow">if</span> (value &lt; GetMinNegativePwm())</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keywordflow">if</span> (value &lt; <a class="code" href="class_p_w_m.html#a99a4c830b4a517cd69e91d13c9463de0">GetMinNegativePwm</a>())</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        {</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                <span class="keywordflow">return</span> 0.0;</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        }</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (value &gt; GetMaxPositivePwm())</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (value &gt; <a class="code" href="class_p_w_m.html#a649e0cca06f52ccebd68492f24c2014c">GetMaxPositivePwm</a>())</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        {</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                <span class="keywordflow">return</span> 1.0;</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        }</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        {</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                <span class="keywordflow">return</span> (<span class="keywordtype">float</span>)(value - GetMinNegativePwm()) / (<span class="keywordtype">float</span>)GetFullRangeScaleFactor();</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                <span class="keywordflow">return</span> (<span class="keywordtype">float</span>)(value - <a class="code" href="class_p_w_m.html#a99a4c830b4a517cd69e91d13c9463de0">GetMinNegativePwm</a>()) / (<span class="keywordtype">float</span>)<a class="code" href="class_p_w_m.html#a4b04d176629015f8f539079d9bfc2e70" title="The scale for positions.">GetFullRangeScaleFactor</a>();</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        }</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
@@ -240,21 +240,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        INT32 rawValue;</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="keywordflow">if</span> (speed == 0.0)</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        {</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                rawValue = GetCenterPwm();</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                rawValue = <a class="code" href="class_p_w_m.html#a0aeb236cd77457957a0bdfcb39515415">GetCenterPwm</a>();</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        }</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (speed &gt; 0.0)</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        {</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                rawValue = (INT32)(speed * ((<span class="keywordtype">float</span>)GetPositiveScaleFactor()) +</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                                                                        ((float) GetMinPositivePwm()) + 0.5);</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                rawValue = (INT32)(speed * ((<span class="keywordtype">float</span>)<a class="code" href="class_p_w_m.html#ac627ca04d7464f92f95add477d7e74b2" title="The scale for positive speeds.">GetPositiveScaleFactor</a>()) +</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                                                                        ((float) <a class="code" href="class_p_w_m.html#a7aa4af4876f9703602cac0f02a1deca0">GetMinPositivePwm</a>()) + 0.5);</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        }</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        {</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                rawValue = (INT32)(speed * ((<span class="keywordtype">float</span>)GetNegativeScaleFactor()) +</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                                                                        ((<span class="keywordtype">float</span>) GetMaxNegativePwm()) + 0.5);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                rawValue = (INT32)(speed * ((<span class="keywordtype">float</span>)<a class="code" href="class_p_w_m.html#aa06e764c5f72651c8c11d70b10e8e84b" title="The scale for negative speeds.">GetNegativeScaleFactor</a>()) +</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                                                                        ((<span class="keywordtype">float</span>) <a class="code" href="class_p_w_m.html#a78e36b3b8f98c3d199ac6fa39c50c7ce">GetMaxNegativePwm</a>()) + 0.5);</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        }</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="comment">// the above should result in a pwm_value in the valid range</span></div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <a class="code" href="_utility_8h.html#a34b13bd29631329c597428636401bbba">wpi_assert</a>((rawValue &gt;= GetMinNegativePwm()) &amp;&amp; (rawValue &lt;= GetMaxPositivePwm()));</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <a class="code" href="_utility_8h.html#a34b13bd29631329c597428636401bbba">wpi_assert</a>((rawValue &gt;= <a class="code" href="class_p_w_m.html#a99a4c830b4a517cd69e91d13c9463de0">GetMinNegativePwm</a>()) &amp;&amp; (rawValue &lt;= <a class="code" href="class_p_w_m.html#a649e0cca06f52ccebd68492f24c2014c">GetMaxPositivePwm</a>()));</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <a class="code" href="_utility_8h.html#a34b13bd29631329c597428636401bbba">wpi_assert</a>(rawValue != <a class="code" href="class_p_w_m.html#a1128d7b7ad8cb6a4d3bb49ef4c08fbfa">kPwmDisabled</a>);</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="comment">// send the computed pwm value to the FPGA</span></div>
@@ -265,21 +265,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;{</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_error_base.html#a05790f219c9e436a09752f73f7344024" title="Check if the current error code represents a fatal error.">StatusIsFatal</a>()) <span class="keywordflow">return</span> 0.0;</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        INT32 value = <a class="code" href="class_p_w_m.html#a4fe28ee13017aa4c6b9b8fa662ebf99e">GetRaw</a>();</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <span class="keywordflow">if</span> (value &gt; GetMaxPositivePwm())</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <span class="keywordflow">if</span> (value &gt; <a class="code" href="class_p_w_m.html#a649e0cca06f52ccebd68492f24c2014c">GetMaxPositivePwm</a>())</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        {</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                <span class="keywordflow">return</span> 1.0;</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        }</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (value &lt; GetMinNegativePwm())</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (value &lt; <a class="code" href="class_p_w_m.html#a99a4c830b4a517cd69e91d13c9463de0">GetMinNegativePwm</a>())</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        {</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                <span class="keywordflow">return</span> -1.0;</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        }</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (value &gt; GetMinPositivePwm())</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (value &gt; <a class="code" href="class_p_w_m.html#a7aa4af4876f9703602cac0f02a1deca0">GetMinPositivePwm</a>())</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        {</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                <span class="keywordflow">return</span> (<span class="keywordtype">float</span>)(value - GetMinPositivePwm()) / (<span class="keywordtype">float</span>)GetPositiveScaleFactor();</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                <span class="keywordflow">return</span> (<span class="keywordtype">float</span>)(value - <a class="code" href="class_p_w_m.html#a7aa4af4876f9703602cac0f02a1deca0">GetMinPositivePwm</a>()) / (<span class="keywordtype">float</span>)<a class="code" href="class_p_w_m.html#ac627ca04d7464f92f95add477d7e74b2" title="The scale for positive speeds.">GetPositiveScaleFactor</a>();</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        }</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (value &lt; GetMaxNegativePwm())</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (value &lt; <a class="code" href="class_p_w_m.html#a78e36b3b8f98c3d199ac6fa39c50c7ce">GetMaxNegativePwm</a>())</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        {</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                <span class="keywordflow">return</span> (<span class="keywordtype">float</span>)(value - GetMaxNegativePwm()) / (<span class="keywordtype">float</span>)GetNegativeScaleFactor();</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                <span class="keywordflow">return</span> (<span class="keywordtype">float</span>)(value - <a class="code" href="class_p_w_m.html#a78e36b3b8f98c3d199ac6fa39c50c7ce">GetMaxNegativePwm</a>()) / (<span class="keywordtype">float</span>)<a class="code" href="class_p_w_m.html#aa06e764c5f72651c8c11d70b10e8e84b" title="The scale for negative speeds.">GetNegativeScaleFactor</a>();</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        }</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        {</div>
@@ -290,13 +290,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00293"></a><span class="lineno"><a class="code" href="class_p_w_m.html#ae0916ef0dec0ad1e7793a16d3d6c42c3">  293</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_w_m.html#ae0916ef0dec0ad1e7793a16d3d6c42c3">PWM::SetRaw</a>(UINT8 value)</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;{</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_error_base.html#a05790f219c9e436a09752f73f7344024" title="Check if the current error code represents a fatal error.">StatusIsFatal</a>()) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        m_module-&gt;<a class="code" href="class_digital_module.html#abc8303e66903fec0e24714f307cbb68c">SetPWM</a>(m_channel, value);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <a class="code" href="class_p_w_m.html#aca47ea2b12b3deb473fbbb4803fc8469">m_module</a>-&gt;<a class="code" href="class_digital_module.html#abc8303e66903fec0e24714f307cbb68c">SetPWM</a>(<a class="code" href="class_p_w_m.html#a01b60963a497dca8e6a744f3f7bf87ec">m_channel</a>, value);</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;}</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;</div>
 <div class="line"><a name="l00306"></a><span class="lineno"><a class="code" href="class_p_w_m.html#a4fe28ee13017aa4c6b9b8fa662ebf99e">  306</a></span>&#160;UINT8 <a class="code" href="class_p_w_m.html#a4fe28ee13017aa4c6b9b8fa662ebf99e">PWM::GetRaw</a>()</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;{</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_error_base.html#a05790f219c9e436a09752f73f7344024" title="Check if the current error code represents a fatal error.">StatusIsFatal</a>()) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <span class="keywordflow">return</span> m_module-&gt;<a class="code" href="class_digital_module.html#a5478b09023e19893ac3829c653221089">GetPWM</a>(m_channel);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_p_w_m.html#aca47ea2b12b3deb473fbbb4803fc8469">m_module</a>-&gt;<a class="code" href="class_digital_module.html#a5478b09023e19893ac3829c653221089">GetPWM</a>(<a class="code" href="class_p_w_m.html#a01b60963a497dca8e6a744f3f7bf87ec">m_channel</a>);</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;}</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;</div>
 <div class="line"><a name="l00317"></a><span class="lineno"><a class="code" href="class_p_w_m.html#a274fbac1ce527d1b08fab2ef4d66c35b">  317</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_p_w_m.html#a274fbac1ce527d1b08fab2ef4d66c35b">PWM::SetPeriodMultiplier</a>(<a class="code" href="class_p_w_m.html#aca2359104d9b65186aaf3c38921ad860">PeriodMultiplier</a> mult)</div>
@@ -305,13 +305,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <span class="keywordflow">switch</span>(mult)</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        {</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="class_p_w_m.html#aca2359104d9b65186aaf3c38921ad860a9923e096304653215e0c0effbb4a7f7c">kPeriodMultiplier_4X</a>:</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                m_module-&gt;<a class="code" href="class_digital_module.html#aaf1ce0fcdc44fa5b542a34c3c0f308c0">SetPWMPeriodScale</a>(m_channel, 3); <span class="comment">// Squelch 3 out of 4 outputs</span></div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                <a class="code" href="class_p_w_m.html#aca47ea2b12b3deb473fbbb4803fc8469">m_module</a>-&gt;<a class="code" href="class_digital_module.html#aaf1ce0fcdc44fa5b542a34c3c0f308c0">SetPWMPeriodScale</a>(<a class="code" href="class_p_w_m.html#a01b60963a497dca8e6a744f3f7bf87ec">m_channel</a>, 3); <span class="comment">// Squelch 3 out of 4 outputs</span></div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="class_p_w_m.html#aca2359104d9b65186aaf3c38921ad860a0fbfad7933d16f34d658df2a16036fc5">kPeriodMultiplier_2X</a>:</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                m_module-&gt;<a class="code" href="class_digital_module.html#aaf1ce0fcdc44fa5b542a34c3c0f308c0">SetPWMPeriodScale</a>(m_channel, 1); <span class="comment">// Squelch 1 out of 2 outputs</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                <a class="code" href="class_p_w_m.html#aca47ea2b12b3deb473fbbb4803fc8469">m_module</a>-&gt;<a class="code" href="class_digital_module.html#aaf1ce0fcdc44fa5b542a34c3c0f308c0">SetPWMPeriodScale</a>(<a class="code" href="class_p_w_m.html#a01b60963a497dca8e6a744f3f7bf87ec">m_channel</a>, 1); <span class="comment">// Squelch 1 out of 2 outputs</span></div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="class_p_w_m.html#aca2359104d9b65186aaf3c38921ad860a813bc0d36bbfd4e85f14e3a52904aa0a">kPeriodMultiplier_1X</a>:</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                m_module-&gt;<a class="code" href="class_digital_module.html#aaf1ce0fcdc44fa5b542a34c3c0f308c0">SetPWMPeriodScale</a>(m_channel, 0); <span class="comment">// Don&#39;t squelch any outputs</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                <a class="code" href="class_p_w_m.html#aca47ea2b12b3deb473fbbb4803fc8469">m_module</a>-&gt;<a class="code" href="class_digital_module.html#aaf1ce0fcdc44fa5b542a34c3c0f308c0">SetPWMPeriodScale</a>(<a class="code" href="class_p_w_m.html#a01b60963a497dca8e6a744f3f7bf87ec">m_channel</a>, 0); <span class="comment">// Don&#39;t squelch any outputs</span></div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        <span class="keywordflow">default</span>:</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                <a class="code" href="_utility_8h.html#a34b13bd29631329c597428636401bbba">wpi_assert</a>(<span class="keyword">false</span>);</div>
@@ -354,7 +354,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:10 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:43 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

@@ -2,6 +2,7 @@ var searchData=
 [
   ['g',['g',['../struct_l_c_d_segments__struct.html#a21f91e9e7b539e470c7d4117efdd6579',1,'LCDSegments_struct::g()'],['../struct_r_g_b_value__struct.html#afe8cb752bc2c0b38bc2bff01e6ae1bbb',1,'RGBValue_struct::G()'],['../struct_r_g_b_u64_value__struct.html#a81030d0b0c318f8f306da68f2ac2d653',1,'RGBU64Value_struct::G()']]],
   ['g_5faxiscameratask',['g_axisCameraTask',['../009_2_axis_camera_8cpp.html#ac36f94bf4d4adf75b2e3be6f1c039821',1,'AxisCamera.cpp']]],
+  ['g_5frobotdeleter',['g_robotDeleter',['../_robot_base_8cpp.html#a3b632aa977f1ff335035629428273a86',1,'RobotBase.cpp']]],
   ['gamma',['gamma',['../struct_b_c_g_options__struct.html#a3a24b83f7b84ca3ecd90a1e4e6361d7b',1,'BCGOptions_struct']]],
   ['global',['global',['../struct_quantify_report__struct.html#ab9a92e5884d9b26def7c84a786bdfd84',1,'QuantifyReport_struct']]],
   ['globalcamera',['globalCamera',['../009_2_axis_camera_8cpp.html#a1dfc31ffd3b3098b4be66749bc228569',1,'AxisCamera.cpp']]],

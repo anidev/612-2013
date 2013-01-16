@@ -156,7 +156,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}<a class="code" href="009_2_axis_camera_8cpp.html#a1dfc31ffd3b3098b4be66749bc228569" title="Camera data to be accessed globally.">globalCamera</a>;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">/* run flag */</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">static</span> <span class="keywordtype">short</span> cont = 0;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="code" href="009_2_axis_camera_8cpp.html#acb3b12b79d8d349d7941c54494674785">   70</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">short</span> <a class="code" href="009_2_axis_camera_8cpp.html#acb3b12b79d8d349d7941c54494674785">cont</a> = 0;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
 <div class="line"><a name="l00082"></a><span class="lineno"><a class="code" href="009_2_axis_camera_8h.html#a4f94015e549ddf225d24e8b33e3f4534">   82</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="009_2_axis_camera_8cpp.html#aaa463a9d637c7ff0d10564a7eee442c1" title="Get the most recent camera image. Supports IMAQ_IMAGE_RGB and IMAQ_IMAGE_HSL.">GetImageBlocking</a>(<a class="code" href="nivision_8h.html#accfdff04c4b08e7d26d3db2453dc0026">Image</a>* image, <span class="keywordtype">double</span> *<a class="code" href="009_2_axis_camera_8cpp.html#a2c17dfa2b3239f2312e94b9de57a7999">timestamp</a>, <span class="keywordtype">double</span> lastImageTimestamp)</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;{</div>
@@ -333,7 +333,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;}</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> CameraReadLine(<span class="keywordtype">int</span> camSock, <span class="keywordtype">char</span>* buffer, <span class="keywordtype">int</span> bufSize, <span class="keywordtype">bool</span> stripLineEnding) {</div>
+<div class="line"><a name="l00307"></a><span class="lineno"><a class="code" href="009_2_axis_camera_8cpp.html#a45dfea70b78f50c4ab4da6b1c72bdab9">  307</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="009_2_axis_camera_8cpp.html#a45dfea70b78f50c4ab4da6b1c72bdab9" title="Reads one line from the TCP stream.">CameraReadLine</a>(<span class="keywordtype">int</span> camSock, <span class="keywordtype">char</span>* buffer, <span class="keywordtype">int</span> bufSize, <span class="keywordtype">bool</span> stripLineEnding) {</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <span class="keywordtype">char</span> funcName[]=<span class="stringliteral">&quot;CameraReadLine&quot;</span>;</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="comment">// Need at least 3 bytes in the buffer to pull this off.</span></div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <span class="keywordflow">if</span> (bufSize &lt; 3) {</div>
@@ -385,11 +385,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="keywordflow">return</span> 1;</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;}</div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> CameraSkipUntilEmptyLine(<span class="keywordtype">int</span> camSock) {</div>
+<div class="line"><a name="l00365"></a><span class="lineno"><a class="code" href="009_2_axis_camera_8cpp.html#a74bcd0dfd881ebd374ac6c96f19430e1">  365</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="009_2_axis_camera_8cpp.html#a74bcd0dfd881ebd374ac6c96f19430e1" title="Skips read data until the first empty line.">CameraSkipUntilEmptyLine</a>(<span class="keywordtype">int</span> camSock) {</div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="keywordtype">char</span> buffer[1024];</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="keywordtype">int</span> success = 0;</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keywordflow">while</span>(1) {</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        success = CameraReadLine(camSock, buffer, <span class="keyword">sizeof</span>(buffer), <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        success = <a class="code" href="009_2_axis_camera_8cpp.html#a45dfea70b78f50c4ab4da6b1c72bdab9" title="Reads one line from the TCP stream.">CameraReadLine</a>(camSock, buffer, <span class="keyword">sizeof</span>(buffer), <span class="keyword">true</span>);</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        <span class="keywordflow">if</span> (*buffer == <span class="charliteral">&#39;\0&#39;</span>) {</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;            <span class="keywordflow">return</span> success;</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        }</div>
@@ -397,7 +397,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="keywordflow">return</span> success;</div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;}</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> CameraOpenSocketAndIssueAuthorizedRequest(<span class="keyword">const</span> <span class="keywordtype">char</span>* serverName, <span class="keyword">const</span> <span class="keywordtype">char</span>* request) </div>
+<div class="line"><a name="l00392"></a><span class="lineno"><a class="code" href="009_2_axis_camera_8cpp.html#ab2c4300f00ec3ebfda033cb6ba4a5d74">  392</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="009_2_axis_camera_8cpp.html#ab2c4300f00ec3ebfda033cb6ba4a5d74" title="Opens a socket.">CameraOpenSocketAndIssueAuthorizedRequest</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* serverName, <span class="keyword">const</span> <span class="keywordtype">char</span>* request) </div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;{</div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    <span class="keywordtype">char</span> funcName[]=<span class="stringliteral">&quot;cameraOpenSocketAndIssueAuthorizedRequest&quot;</span>;</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        </div>
@@ -462,7 +462,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;        }</div>
 <div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;</div>
 <div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;        <span class="comment">//  Read one line with the line ending removed.</span></div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;        <span class="keywordflow">if</span> (!CameraReadLine(camSock, buffer, 1024, <span class="keyword">true</span>)) {</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="009_2_axis_camera_8cpp.html#a45dfea70b78f50c4ab4da6b1c72bdab9" title="Reads one line from the TCP stream.">CameraReadLine</a>(camSock, buffer, 1024, <span class="keyword">true</span>)) {</div>
 <div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="009_2_axis_camera_8cpp.html#acb216a3eb6ef88fa96f94d22b8ae1627" title="Close socket &amp; report error.">CameraCloseSocket</a>(<span class="stringliteral">&quot;Bad response to GET request&quot;</span>, camSock);</div>
 <div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;        }</div>
 <div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;</div>
@@ -499,14 +499,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;        <span class="keywordtype">char</span> cameraRequest[strlen(getStr1) + strlen(configString)];</div>
 <div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;    sprintf (cameraRequest, <span class="stringliteral">&quot;%s%s&quot;</span>,     getStr1, configString);</div>
 <div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;        <a class="code" href="009_2_axis_camera_8cpp.html#ab2759269c92e6d05675a698378dac492">DPRINTF</a>(<a class="code" href="_bae_utilities_8h.html#a6ff63e8955665c4a58b1598f2b07c51a">LOG_DEBUG</a>, <span class="stringliteral">&quot;camera configuration string: \n%s&quot;</span>, cameraRequest);</div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;        camSock = CameraOpenSocketAndIssueAuthorizedRequest(serverName, cameraRequest);</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;        camSock = <a class="code" href="009_2_axis_camera_8cpp.html#ab2c4300f00ec3ebfda033cb6ba4a5d74" title="Opens a socket.">CameraOpenSocketAndIssueAuthorizedRequest</a>(serverName, cameraRequest);</div>
 <div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;        <a class="code" href="009_2_axis_camera_8cpp.html#ab2759269c92e6d05675a698378dac492">DPRINTF</a>(<a class="code" href="_bae_utilities_8h.html#a6ff63e8955665c4a58b1598f2b07c51a">LOG_DEBUG</a>, <span class="stringliteral">&quot;camera socket# = %i&quot;</span>, camSock);</div>
 <div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;        </div>
 <div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    <span class="comment">//read response</span></div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;    success = CameraSkipUntilEmptyLine(camSock);</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;    success = <a class="code" href="009_2_axis_camera_8cpp.html#a74bcd0dfd881ebd374ac6c96f19430e1" title="Skips read data until the first empty line.">CameraSkipUntilEmptyLine</a>(camSock);</div>
 <div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;        <span class="comment">//DPRINTF(LOG_DEBUG, &quot;succcess from CameraSkipUntilEmptyLine: %i&quot;, success);</span></div>
 <div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    <span class="keywordtype">char</span> buffer[3];     <span class="comment">// set property - 3</span></div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    success = CameraReadLine(camSock, buffer, 3, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    success = <a class="code" href="009_2_axis_camera_8cpp.html#a45dfea70b78f50c4ab4da6b1c72bdab9" title="Reads one line from the TCP stream.">CameraReadLine</a>(camSock, buffer, 3, <span class="keyword">true</span>);</div>
 <div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;        <span class="comment">//DPRINTF(LOG_DEBUG, &quot;succcess from CameraReadLine: %i&quot;, success);</span></div>
 <div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;        <a class="code" href="009_2_axis_camera_8cpp.html#ab2759269c92e6d05675a698378dac492">DPRINTF</a>(<a class="code" href="_bae_utilities_8h.html#a6ff63e8955665c4a58b1598f2b07c51a">LOG_DEBUG</a>, <span class="stringliteral">&quot;line read from camera \n%s&quot;</span>, buffer);</div>
 <div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;    <span class="keywordflow">if</span> (strcmp(buffer, <span class="stringliteral">&quot;OK&quot;</span>) != 0) {</div>
@@ -532,12 +532,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;        <span class="keywordtype">char</span> cameraRequest[strlen(getStr1) + strlen(configString)];</div>
 <div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    sprintf (cameraRequest, <span class="stringliteral">&quot;%s%s&quot;</span>,     getStr1, configString);</div>
 <div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;        <a class="code" href="009_2_axis_camera_8cpp.html#ab2759269c92e6d05675a698378dac492">DPRINTF</a>(<a class="code" href="_bae_utilities_8h.html#a6ff63e8955665c4a58b1598f2b07c51a">LOG_DEBUG</a>, <span class="stringliteral">&quot;camera configuration string: \n%s&quot;</span>, cameraRequest);</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;        camSock = CameraOpenSocketAndIssueAuthorizedRequest(serverName, cameraRequest);</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;        camSock = <a class="code" href="009_2_axis_camera_8cpp.html#ab2c4300f00ec3ebfda033cb6ba4a5d74" title="Opens a socket.">CameraOpenSocketAndIssueAuthorizedRequest</a>(serverName, cameraRequest);</div>
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;        <a class="code" href="009_2_axis_camera_8cpp.html#ab2759269c92e6d05675a698378dac492">DPRINTF</a>(<a class="code" href="_bae_utilities_8h.html#a6ff63e8955665c4a58b1598f2b07c51a">LOG_DEBUG</a>, <span class="stringliteral">&quot;return from CameraOpenSocketAndIssueAuthorizedRequest %i&quot;</span>, camSock);</div>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;        </div>
 <div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    <span class="comment">//read response</span></div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;    success = CameraSkipUntilEmptyLine(camSock);</div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    success = CameraReadLine(camSock, cameraResponse, 1024, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;    success = <a class="code" href="009_2_axis_camera_8cpp.html#a74bcd0dfd881ebd374ac6c96f19430e1" title="Skips read data until the first empty line.">CameraSkipUntilEmptyLine</a>(camSock);</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    success = <a class="code" href="009_2_axis_camera_8cpp.html#a45dfea70b78f50c4ab4da6b1c72bdab9" title="Reads one line from the TCP stream.">CameraReadLine</a>(camSock, cameraResponse, 1024, <span class="keyword">true</span>);</div>
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;        <a class="code" href="009_2_axis_camera_8cpp.html#ab2759269c92e6d05675a698378dac492">DPRINTF</a>(<a class="code" href="_bae_utilities_8h.html#a6ff63e8955665c4a58b1598f2b07c51a">LOG_DEBUG</a>, <span class="stringliteral">&quot;succcess from CameraReadLine: %i&quot;</span>, success);</div>
 <div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;        <a class="code" href="009_2_axis_camera_8cpp.html#ab2759269c92e6d05675a698378dac492">DPRINTF</a>(<a class="code" href="_bae_utilities_8h.html#a6ff63e8955665c4a58b1598f2b07c51a">LOG_DEBUG</a>, <span class="stringliteral">&quot;line read from camera \n%s&quot;</span>, cameraResponse);</div>
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;        <a class="code" href="009_2_axis_camera_8cpp.html#ab2759269c92e6d05675a698378dac492">DPRINTF</a> (<a class="code" href="_bae_utilities_8h.html#aeb4f36db01bd128c7afeac5889dac311">LOG_INFO</a>, <span class="stringliteral">&quot;\nGetCameraSetting ENDING  success = %i\n&quot;</span>, success );      </div>
@@ -557,12 +557,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;        <span class="keywordtype">char</span> cameraRequest[strlen(getStr1) + strlen(configString)];</div>
 <div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;    sprintf (cameraRequest, <span class="stringliteral">&quot;%s%s&quot;</span>,     getStr1, configString);</div>
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;        <a class="code" href="009_2_axis_camera_8cpp.html#ab2759269c92e6d05675a698378dac492">DPRINTF</a>(<a class="code" href="_bae_utilities_8h.html#a6ff63e8955665c4a58b1598f2b07c51a">LOG_DEBUG</a>, <span class="stringliteral">&quot;camera configuration string: \n%s&quot;</span>, cameraRequest);</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;        camSock = CameraOpenSocketAndIssueAuthorizedRequest(serverName, cameraRequest);</div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;        camSock = <a class="code" href="009_2_axis_camera_8cpp.html#ab2c4300f00ec3ebfda033cb6ba4a5d74" title="Opens a socket.">CameraOpenSocketAndIssueAuthorizedRequest</a>(serverName, cameraRequest);</div>
 <div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;        <a class="code" href="009_2_axis_camera_8cpp.html#ab2759269c92e6d05675a698378dac492">DPRINTF</a>(<a class="code" href="_bae_utilities_8h.html#a6ff63e8955665c4a58b1598f2b07c51a">LOG_DEBUG</a>, <span class="stringliteral">&quot;return from CameraOpenSocketAndIssueAuthorizedRequest %i&quot;</span>, camSock);</div>
 <div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;        </div>
 <div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;    <span class="comment">//read response</span></div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;    success = CameraSkipUntilEmptyLine(camSock);</div>
-<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;    success = CameraReadLine(camSock, cameraResponse, 1024, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;    success = <a class="code" href="009_2_axis_camera_8cpp.html#a74bcd0dfd881ebd374ac6c96f19430e1" title="Skips read data until the first empty line.">CameraSkipUntilEmptyLine</a>(camSock);</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;    success = <a class="code" href="009_2_axis_camera_8cpp.html#a45dfea70b78f50c4ab4da6b1c72bdab9" title="Reads one line from the TCP stream.">CameraReadLine</a>(camSock, cameraResponse, 1024, <span class="keyword">true</span>);</div>
 <div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;        <a class="code" href="009_2_axis_camera_8cpp.html#ab2759269c92e6d05675a698378dac492">DPRINTF</a>(<a class="code" href="_bae_utilities_8h.html#a6ff63e8955665c4a58b1598f2b07c51a">LOG_DEBUG</a>, <span class="stringliteral">&quot;succcess from CameraReadLine: %i&quot;</span>, success);</div>
 <div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;        <a class="code" href="009_2_axis_camera_8cpp.html#ab2759269c92e6d05675a698378dac492">DPRINTF</a>(<a class="code" href="_bae_utilities_8h.html#a6ff63e8955665c4a58b1598f2b07c51a">LOG_DEBUG</a>, <span class="stringliteral">&quot;line read from camera \n%s&quot;</span>, cameraResponse);</div>
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;        <a class="code" href="009_2_axis_camera_8cpp.html#ab2759269c92e6d05675a698378dac492">DPRINTF</a> (<a class="code" href="_bae_utilities_8h.html#aeb4f36db01bd128c7afeac5889dac311">LOG_INFO</a>, <span class="stringliteral">&quot;\nGetCameraSetting ENDING  success = %i\n&quot;</span>, success );      </div>
@@ -579,7 +579,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;{</div>
 <div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;        <span class="keywordtype">char</span> funcName[]=<span class="stringliteral">&quot;cameraJPEGServer&quot;</span>;</div>
 <div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;        <span class="keywordtype">char</span> *serverName = <span class="stringliteral">&quot;192.168.0.90&quot;</span>;              <span class="comment">/* camera @ */</span> </div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;        cont = 1;</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;        <a class="code" href="009_2_axis_camera_8cpp.html#acb3b12b79d8d349d7941c54494674785">cont</a> = 1;</div>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;        <span class="keywordtype">int</span> errorCode = 0;</div>
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;        <span class="keywordtype">int</span> printCounter = 0;</div>
 <div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;        <span class="keywordtype">int</span>     writeIndex;</div>
@@ -653,7 +653,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;          <span class="keywordflow">if</span> ((camSock = socket (AF_INET, SOCK_STREAM, 0)) == <a class="code" href="_socket_server_stream_provider_8cpp.html#a8fe83ac76edc595f6b98cd4a4127aed5">ERROR</a>) {  </div>
 <div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;                <a class="code" href="nivision_8h.html#a2fbd5d0b0bf2a209c651ac8ba2f34856">imaqSetError</a>(<a class="code" href="_frc_error_8h.html#ac8e09cc3e818fe4d4e9c56a1b1391b2e">ERR_CAMERA_SOCKET_CREATE_FAILED</a>, funcName);</div>
 <div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;                perror(<span class="stringliteral">&quot;Failed to create socket&quot;</span>);</div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;                cont = 0;</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;                <a class="code" href="009_2_axis_camera_8cpp.html#acb3b12b79d8d349d7941c54494674785">cont</a> = 0;</div>
 <div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;                <span class="keywordflow">return</span> (<a class="code" href="_socket_server_stream_provider_8cpp.html#a8fe83ac76edc595f6b98cd4a4127aed5">ERROR</a>);</div>
 <div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;          }</div>
 <div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;</div>
@@ -711,7 +711,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;        <span class="keywordtype">int</span> maxCount = 30;</div>
 <div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;<span class="preprocessor"></span>        </div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;        <span class="keywordflow">while</span> (cont) {</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;        <span class="keywordflow">while</span> (<a class="code" href="009_2_axis_camera_8cpp.html#acb3b12b79d8d349d7941c54494674785">cont</a>) {</div>
 <div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;<span class="preprocessor">#if MEASURE_TIME</span></div>
 <div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;<span class="preprocessor"></span>                previousStartTime = loopStartTime;  <span class="comment">// first time is bogus</span></div>
 <div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;                loopStartTime = <a class="code" href="_timer_8cpp.html#a0e47c74b5a3e6246b9936d96ff4c66b1" title="Gives real-time clock system time with nanosecond resolution.">GetTime</a>(); </div>
@@ -857,7 +857,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;</div>
 <div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;        <span class="comment">/* clean up */</span></div>
 <div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;        close (camSock);</div>
-<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;        cont = 0;</div>
+<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;        <a class="code" href="009_2_axis_camera_8cpp.html#acb3b12b79d8d349d7941c54494674785">cont</a> = 0;</div>
 <div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;        <a class="code" href="009_2_axis_camera_8cpp.html#ab2759269c92e6d05675a698378dac492">DPRINTF</a> (<a class="code" href="_bae_utilities_8h.html#aeb4f36db01bd128c7afeac5889dac311">LOG_INFO</a>, <span class="stringliteral">&quot;\nJPEG SERVER ENDING  errorCode = %i\n&quot;</span>, errorCode );</div>
 <div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;        </div>
 <div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;        <span class="keywordflow">return</span> (OK);</div>
@@ -878,7 +878,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;{       <a class="code" href="009_2_axis_camera_8cpp.html#a1dfc31ffd3b3098b4be66749bc228569" title="Camera data to be accessed globally.">globalCamera</a>.cameraMetrics[<a class="code" href="009_2_axis_camera_8h.html#ae62664f3ee9f4b3edd12ee2f13cdd4aaac1943180a327bd30cf9642cbd040b57e">CAM_STOPS</a>]++;  <a class="code" href="009_2_axis_camera_8cpp.html#a1dfc31ffd3b3098b4be66749bc228569" title="Camera data to be accessed globally.">globalCamera</a>.acquire = 0; }</div>
 <div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;</div>
 <div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;</div>
-<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> initCamera(<span class="keywordtype">int</span> frames, <span class="keywordtype">int</span> compression, <a class="code" href="009_2_axis_camera_8h.html#a3725303b8fe64afe7b0bac15cd6c4417" title="Possible image sizes that you can set on the camera.">ImageResolution</a> resolution, <a class="code" href="009_2_axis_camera_8h.html#ae5e131c5ae05437da267ebabc97aa0f1" title="Possible rotation values that you can set on the camera.">ImageRotation</a> rotation) </div>
+<div class="line"><a name="l00918"></a><span class="lineno"><a class="code" href="009_2_axis_camera_8cpp.html#a1ebe6e42ee82eeb31f0821d117df0b0e">  918</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="009_2_axis_camera_8cpp.html#a1ebe6e42ee82eeb31f0821d117df0b0e" title="This is the routine that is run when the task is spawned It initializes the camera with the image set...">initCamera</a>(<span class="keywordtype">int</span> frames, <span class="keywordtype">int</span> compression, <a class="code" href="009_2_axis_camera_8h.html#a3725303b8fe64afe7b0bac15cd6c4417" title="Possible image sizes that you can set on the camera.">ImageResolution</a> resolution, <a class="code" href="009_2_axis_camera_8h.html#ae5e131c5ae05437da267ebabc97aa0f1" title="Possible rotation values that you can set on the camera.">ImageRotation</a> rotation) </div>
 <div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;{</div>
 <div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;        <span class="comment">//SetDebugFlag ( DEBUG_SCREEN_AND_FILE  ) ;</span></div>
 <div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;        </div>
@@ -905,7 +905,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;        <span class="keywordflow">return</span> (OK);</div>
 <div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;}</div>
 <div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;</div>
-<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;<a class="code" href="class_task.html">Task</a> <a class="code" href="009_2_axis_camera_8cpp.html#ac36f94bf4d4adf75b2e3be6f1c039821">g_axisCameraTask</a>(<span class="stringliteral">&quot;Camera&quot;</span>, (FUNCPTR)initCamera);</div>
+<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;<a class="code" href="class_task.html">Task</a> <a class="code" href="009_2_axis_camera_8cpp.html#ac36f94bf4d4adf75b2e3be6f1c039821">g_axisCameraTask</a>(<span class="stringliteral">&quot;Camera&quot;</span>, (FUNCPTR)<a class="code" href="009_2_axis_camera_8cpp.html#a1ebe6e42ee82eeb31f0821d117df0b0e" title="This is the routine that is run when the task is spawned It initializes the camera with the image set...">initCamera</a>);</div>
 <div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;</div>
 <div class="line"><a name="l00955"></a><span class="lineno"><a class="code" href="009_2_axis_camera_8h.html#af85c2e8cae5b9e5ee82c06f52791f094">  955</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="009_2_axis_camera_8cpp.html#af85c2e8cae5b9e5ee82c06f52791f094" title="Start the camera task.">StartCameraTask</a>()</div>
 <div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;{</div>
@@ -971,7 +971,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:11 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:44 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

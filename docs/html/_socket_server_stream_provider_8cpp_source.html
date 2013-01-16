@@ -155,25 +155,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        serverAddr.sin_port = htons(port);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        serverAddr.sin_addr.s_addr = htonl(INADDR_ANY);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">if</span> ((serverSocket = socket(AF_INET, SOCK_STREAM, 0)) == <a class="code" href="_socket_server_stream_provider_8cpp.html#a8fe83ac76edc595f6b98cd4a4127aed5">ERROR</a>)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">if</span> ((<a class="code" href="class_socket_server_stream_provider.html#a70539761f7b8137b977d3a70125d886c">serverSocket</a> = socket(AF_INET, SOCK_STREAM, 0)) == <a class="code" href="_socket_server_stream_provider_8cpp.html#a8fe83ac76edc595f6b98cd4a4127aed5">ERROR</a>)</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        {</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="class_i_o_exception.html">IOException</a>(<span class="stringliteral">&quot;Error creating server socket&quot;</span>, errno);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="comment">// Set the TCP socket so that it can be reused if it is in the wait state.</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">int</span> reuseAddr = 1;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        setsockopt(serverSocket, SOL_SOCKET, SO_REUSEADDR, (<span class="keywordtype">char</span> *)&amp;reuseAddr, <span class="keyword">sizeof</span>(reuseAddr));</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        setsockopt(<a class="code" href="class_socket_server_stream_provider.html#a70539761f7b8137b977d3a70125d886c">serverSocket</a>, SOL_SOCKET, SO_REUSEADDR, (<span class="keywordtype">char</span> *)&amp;reuseAddr, <span class="keyword">sizeof</span>(reuseAddr));</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="comment">// Bind socket to local address.</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">if</span> (bind(serverSocket, (<span class="keyword">struct</span> sockaddr *)&amp;serverAddr, sockAddrSize) == <a class="code" href="_socket_server_stream_provider_8cpp.html#a8fe83ac76edc595f6b98cd4a4127aed5">ERROR</a>)</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">if</span> (bind(<a class="code" href="class_socket_server_stream_provider.html#a70539761f7b8137b977d3a70125d886c">serverSocket</a>, (<span class="keyword">struct</span> sockaddr *)&amp;serverAddr, sockAddrSize) == <a class="code" href="_socket_server_stream_provider_8cpp.html#a8fe83ac76edc595f6b98cd4a4127aed5">ERROR</a>)</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <a class="code" href="class_socket_server_stream_provider.html#a2debca70fbebd5d6d56b45bad9d4758e">::close</a>(serverSocket);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <a class="code" href="class_socket_server_stream_provider.html#a2debca70fbebd5d6d56b45bad9d4758e">::close</a>(<a class="code" href="class_socket_server_stream_provider.html#a70539761f7b8137b977d3a70125d886c">serverSocket</a>);</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="class_i_o_exception.html">IOException</a>(<span class="stringliteral">&quot;Could not bind server socket&quot;</span>, errno);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">if</span> (listen(serverSocket, 1) == <a class="code" href="_socket_server_stream_provider_8cpp.html#a8fe83ac76edc595f6b98cd4a4127aed5">ERROR</a>)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">if</span> (listen(<a class="code" href="class_socket_server_stream_provider.html#a70539761f7b8137b977d3a70125d886c">serverSocket</a>, 1) == <a class="code" href="_socket_server_stream_provider_8cpp.html#a8fe83ac76edc595f6b98cd4a4127aed5">ERROR</a>)</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <a class="code" href="class_socket_server_stream_provider.html#a2debca70fbebd5d6d56b45bad9d4758e">::close</a>(serverSocket);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <a class="code" href="class_socket_server_stream_provider.html#a2debca70fbebd5d6d56b45bad9d4758e">::close</a>(<a class="code" href="class_socket_server_stream_provider.html#a70539761f7b8137b977d3a70125d886c">serverSocket</a>);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="class_i_o_exception.html">IOException</a>(<span class="stringliteral">&quot;Could not listen on server socket&quot;</span>, errno);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
@@ -192,14 +192,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                fd_set fdSet;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                FD_ZERO(&amp;fdSet);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                FD_SET(serverSocket, &amp;fdSet);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                FD_SET(<a class="code" href="class_socket_server_stream_provider.html#a70539761f7b8137b977d3a70125d886c">serverSocket</a>, &amp;fdSet);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                <span class="keywordflow">if</span> (select(FD_SETSIZE, &amp;fdSet, <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, &amp;timeout) &gt; 0)</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                        <span class="keywordflow">if</span> (FD_ISSET(serverSocket, &amp;fdSet))</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                        <span class="keywordflow">if</span> (FD_ISSET(<a class="code" href="class_socket_server_stream_provider.html#a70539761f7b8137b977d3a70125d886c">serverSocket</a>, &amp;fdSet))</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                        {</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                                <span class="keyword">struct </span>sockaddr clientAddr = {0};</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                                <a class="code" href="_socket_server_stream_provider_8cpp.html#a4f86bcdccdb662489d5a201121631f64">addrlen_t</a> clientAddrSize = 0;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                                <span class="keywordtype">int</span> connectedSocket = <a class="code" href="class_socket_server_stream_provider.html#a8c0492aabc38d59da5f0b984fd902caf">::accept</a>(serverSocket, &amp;clientAddr, &amp;clientAddrSize);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                                <span class="keywordtype">int</span> connectedSocket = <a class="code" href="class_socket_server_stream_provider.html#a8c0492aabc38d59da5f0b984fd902caf">::accept</a>(<a class="code" href="class_socket_server_stream_provider.html#a70539761f7b8137b977d3a70125d886c">serverSocket</a>, &amp;clientAddr, &amp;clientAddrSize);</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                                <span class="keywordflow">if</span> (connectedSocket == <a class="code" href="_socket_server_stream_provider_8cpp.html#a8fe83ac76edc595f6b98cd4a4127aed5">ERROR</a>)</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                                        <span class="keywordflow">return</span> <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                                </div>
@@ -214,12 +214,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
 <div class="line"><a name="l00124"></a><span class="lineno"><a class="code" href="class_socket_server_stream_provider.html#a2debca70fbebd5d6d56b45bad9d4758e">  124</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_socket_server_stream_provider.html#a2debca70fbebd5d6d56b45bad9d4758e">SocketServerStreamProvider::close</a>(){</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <a class="code" href="class_socket_server_stream_provider.html#a2debca70fbebd5d6d56b45bad9d4758e">::close</a>(serverSocket);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <a class="code" href="class_socket_server_stream_provider.html#a2debca70fbebd5d6d56b45bad9d4758e">::close</a>(<a class="code" href="class_socket_server_stream_provider.html#a70539761f7b8137b977d3a70125d886c">serverSocket</a>);</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:10 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:43 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

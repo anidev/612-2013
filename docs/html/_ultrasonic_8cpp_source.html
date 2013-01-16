@@ -106,47 +106,47 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_utility_8h.html">Utility.h</a>&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_w_p_i_errors_8h.html">WPIErrors.h</a>&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> Ultrasonic::kPingTime;     </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">const</span> UINT32 Ultrasonic::kPriority;     </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> Ultrasonic::kMaxUltrasonicTime;    </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> Ultrasonic::kSpeedOfSoundInchesPerSec;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<a class="code" href="class_task.html">Task</a> Ultrasonic::m_task(<span class="stringliteral">&quot;UltrasonicChecker&quot;</span>, (FUNCPTR)UltrasonicChecker); <span class="comment">// task doing the round-robin automatic sensing</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<a class="code" href="class_ultrasonic.html">Ultrasonic</a> *Ultrasonic::m_firstSensor = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>; <span class="comment">// head of the ultrasonic sensor list</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordtype">bool</span> Ultrasonic::m_automaticEnabled = <span class="keyword">false</span>; <span class="comment">// automatic round robin mode</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;SEM_ID Ultrasonic::m_semaphore = 0;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="class_ultrasonic.html#a76cc112331b37ba9df08ef4ef32270c4" title="Time (sec) for the ping trigger pulse.">Ultrasonic::kPingTime</a>;     </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">const</span> UINT32 <a class="code" href="class_ultrasonic.html#a2d60e9ea055c97e3be3a2e98c95dd072" title="Priority that the ultrasonic round robin task runs.">Ultrasonic::kPriority</a>;     </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="class_ultrasonic.html#a41ac4435cc5a0ba281ca4ec2df70f10d" title="Max time (ms) between readings.">Ultrasonic::kMaxUltrasonicTime</a>;    </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="class_ultrasonic.html#a5d2b33da10ab5ec9f83aa6cc84e7f1e8">Ultrasonic::kSpeedOfSoundInchesPerSec</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<a class="code" href="class_task.html">Task</a> <a class="code" href="class_ultrasonic.html#a59230e159ddc43f00ed86c1fdf3b8532">Ultrasonic::m_task</a>(<span class="stringliteral">&quot;UltrasonicChecker&quot;</span>, (FUNCPTR)UltrasonicChecker); <span class="comment">// task doing the round-robin automatic sensing</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<a class="code" href="class_ultrasonic.html">Ultrasonic</a> *<a class="code" href="class_ultrasonic.html#af4720b3dc94e53de760b4a02bda77f70">Ultrasonic::m_firstSensor</a> = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>; <span class="comment">// head of the ultrasonic sensor list</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_ultrasonic.html#aa7b8c72615344d1ebfa835dfb9814dd4">Ultrasonic::m_automaticEnabled</a> = <span class="keyword">false</span>; <span class="comment">// automatic round robin mode</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;SEM_ID <a class="code" href="class_ultrasonic.html#a5d12c7ec04a4fcfb049f64afd32f7b6a">Ultrasonic::m_semaphore</a> = 0;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordtype">void</span> Ultrasonic::UltrasonicChecker()</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="class_ultrasonic.html#af9b71113f951d2f60dd598754900a4f6">   35</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_ultrasonic.html#af9b71113f951d2f60dd598754900a4f6">Ultrasonic::UltrasonicChecker</a>()</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="class_ultrasonic.html">Ultrasonic</a> *u = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">while</span> (m_automaticEnabled)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">while</span> (<a class="code" href="class_ultrasonic.html#aa7b8c72615344d1ebfa835dfb9814dd4">m_automaticEnabled</a>)</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keywordflow">if</span> (u == <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) u = m_firstSensor;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keywordflow">if</span> (u == <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) u = <a class="code" href="class_ultrasonic.html#af4720b3dc94e53de760b4a02bda77f70">m_firstSensor</a>;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordflow">if</span> (u == <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keywordflow">if</span> (u-&gt;<a class="code" href="class_ultrasonic.html#a5ff4ef91ebe488a3a30658b23fd846fa">IsEnabled</a>())</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                        u-&gt;m_pingChannel-&gt;<a class="code" href="class_digital_output.html#a02c70b0de12b60f4d931cdc59e5e3bed">Pulse</a>(kPingTime);     <span class="comment">// do the ping</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                u = u-&gt;m_nextSensor;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                        u-&gt;<a class="code" href="class_ultrasonic.html#a7bfdf1c85663ee516af60010f68bbf20">m_pingChannel</a>-&gt;<a class="code" href="class_digital_output.html#a02c70b0de12b60f4d931cdc59e5e3bed">Pulse</a>(<a class="code" href="class_ultrasonic.html#a76cc112331b37ba9df08ef4ef32270c4" title="Time (sec) for the ping trigger pulse.">kPingTime</a>);     <span class="comment">// do the ping</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                u = u-&gt;<a class="code" href="class_ultrasonic.html#afe014910152b4712467e9f1c5068b9ef">m_nextSensor</a>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <a class="code" href="_timer_8cpp.html#aefd8f5babb51a91661ec55e4c7f16416">Wait</a>(0.1);                                                      <span class="comment">// wait for ping to return</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">void</span> Ultrasonic::Initialize()</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="class_ultrasonic.html#ac82c315e5df6423a9e1c0cba20d962b3">   56</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_ultrasonic.html#ac82c315e5df6423a9e1c0cba20d962b3">Ultrasonic::Initialize</a>()</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordtype">bool</span> originalMode = m_automaticEnabled;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">if</span> (m_semaphore == 0) m_semaphore = semBCreate(SEM_Q_PRIORITY, SEM_FULL);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordtype">bool</span> originalMode = <a class="code" href="class_ultrasonic.html#aa7b8c72615344d1ebfa835dfb9814dd4">m_automaticEnabled</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_ultrasonic.html#a5d12c7ec04a4fcfb049f64afd32f7b6a">m_semaphore</a> == 0) <a class="code" href="class_ultrasonic.html#a5d12c7ec04a4fcfb049f64afd32f7b6a">m_semaphore</a> = semBCreate(SEM_Q_PRIORITY, SEM_FULL);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="class_ultrasonic.html#a16105fb0a316d780b8ea1554e3109825">SetAutomaticMode</a>(<span class="keyword">false</span>); <span class="comment">// kill task when adding a new sensor</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        semTake(m_semaphore, WAIT_FOREVER); <span class="comment">// link this instance on the list</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        semTake(<a class="code" href="class_ultrasonic.html#a5d12c7ec04a4fcfb049f64afd32f7b6a">m_semaphore</a>, WAIT_FOREVER); <span class="comment">// link this instance on the list</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                m_nextSensor = m_firstSensor;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                m_firstSensor = <span class="keyword">this</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <a class="code" href="class_ultrasonic.html#afe014910152b4712467e9f1c5068b9ef">m_nextSensor</a> = <a class="code" href="class_ultrasonic.html#af4720b3dc94e53de760b4a02bda77f70">m_firstSensor</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <a class="code" href="class_ultrasonic.html#af4720b3dc94e53de760b4a02bda77f70">m_firstSensor</a> = <span class="keyword">this</span>;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        semGive(m_semaphore);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        semGive(<a class="code" href="class_ultrasonic.html#a5d12c7ec04a4fcfb049f64afd32f7b6a">m_semaphore</a>);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        m_counter = <span class="keyword">new</span> <a class="code" href="class_counter.html">Counter</a>(m_echoChannel); <span class="comment">// set up counter for this sensor</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        m_counter-&gt;<a class="code" href="class_counter.html#a8496d29a6b9424f76075396e9c729bca">SetMaxPeriod</a>(1.0);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        m_counter-&gt;<a class="code" href="class_counter.html#a1047b8a9c109942ecbbeaa66a1ba1842">SetSemiPeriodMode</a>(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        m_counter-&gt;<a class="code" href="class_counter.html#a006032d39fada9ad683ccc849d2f60d3">Reset</a>();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        m_counter-&gt;<a class="code" href="class_counter.html#a0766c0a11e84866758b20b29e2e17cc0">Start</a>();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        m_enabled = <span class="keyword">true</span>; <span class="comment">// make it available for round robin scheduling</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="class_ultrasonic.html#ad1734f778375fee53f7512d9b37b16f5">m_counter</a> = <span class="keyword">new</span> <a class="code" href="class_counter.html">Counter</a>(<a class="code" href="class_ultrasonic.html#a80a131db7f835f23c98b63596edbb4a9">m_echoChannel</a>); <span class="comment">// set up counter for this sensor</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="class_ultrasonic.html#ad1734f778375fee53f7512d9b37b16f5">m_counter</a>-&gt;<a class="code" href="class_counter.html#a8496d29a6b9424f76075396e9c729bca">SetMaxPeriod</a>(1.0);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="class_ultrasonic.html#ad1734f778375fee53f7512d9b37b16f5">m_counter</a>-&gt;<a class="code" href="class_counter.html#a1047b8a9c109942ecbbeaa66a1ba1842">SetSemiPeriodMode</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="class_ultrasonic.html#ad1734f778375fee53f7512d9b37b16f5">m_counter</a>-&gt;<a class="code" href="class_counter.html#a006032d39fada9ad683ccc849d2f60d3">Reset</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="class_ultrasonic.html#ad1734f778375fee53f7512d9b37b16f5">m_counter</a>-&gt;<a class="code" href="class_counter.html#a0766c0a11e84866758b20b29e2e17cc0">Start</a>();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="class_ultrasonic.html#a59f8e931b874ab9a54dfb03b3e53fc45">m_enabled</a> = <span class="keyword">true</span>; <span class="comment">// make it available for round robin scheduling</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="class_ultrasonic.html#a16105fb0a316d780b8ea1554e3109825">SetAutomaticMode</a>(originalMode);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">int</span> instances = 0;</div>
@@ -156,11 +156,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
 <div class="line"><a name="l00091"></a><span class="lineno"><a class="code" href="class_ultrasonic.html#a2c89013dc7050dc8a99f6eaf9b664482">   91</a></span>&#160;<a class="code" href="class_ultrasonic.html#aefd7583faa56df3a6c1a4fc38d3752e2">Ultrasonic::Ultrasonic</a>(UINT32 pingChannel, UINT32 echoChannel, <a class="code" href="class_ultrasonic.html#ab8d5fd69150bb99cea252ce600ca1280">DistanceUnit</a> units)</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        m_pingChannel = <span class="keyword">new</span> <a class="code" href="class_digital_output.html">DigitalOutput</a>(pingChannel);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        m_echoChannel = <span class="keyword">new</span> <a class="code" href="class_digital_input.html">DigitalInput</a>(echoChannel);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        m_allocatedChannels = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        m_units = units;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        Initialize();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="class_ultrasonic.html#a7bfdf1c85663ee516af60010f68bbf20">m_pingChannel</a> = <span class="keyword">new</span> <a class="code" href="class_digital_output.html">DigitalOutput</a>(pingChannel);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <a class="code" href="class_ultrasonic.html#a80a131db7f835f23c98b63596edbb4a9">m_echoChannel</a> = <span class="keyword">new</span> <a class="code" href="class_digital_input.html">DigitalInput</a>(echoChannel);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <a class="code" href="class_ultrasonic.html#a0a4c1d3082374ce4fb9f85f0d5d6f6b3">m_allocatedChannels</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="class_ultrasonic.html#ac17d2023bdc2e3eaaabffcbbd7ac4298">m_units</a> = units;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="class_ultrasonic.html#ac82c315e5df6423a9e1c0cba20d962b3">Initialize</a>();</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
 <div class="line"><a name="l00107"></a><span class="lineno"><a class="code" href="class_ultrasonic.html#aefd7583faa56df3a6c1a4fc38d3752e2">  107</a></span>&#160;<a class="code" href="class_ultrasonic.html#aefd7583faa56df3a6c1a4fc38d3752e2">Ultrasonic::Ultrasonic</a>(<a class="code" href="class_digital_output.html">DigitalOutput</a> *pingChannel, <a class="code" href="class_digital_input.html">DigitalInput</a> *echoChannel, <a class="code" href="class_ultrasonic.html#ab8d5fd69150bb99cea252ce600ca1280">DistanceUnit</a> units)</div>
@@ -170,57 +170,57 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                <a class="code" href="_error_base_8h.html#a30c73bc37a870c1b5b3dc4a866d3a947">wpi_setWPIError</a>(NullParameter);</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        }</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        m_allocatedChannels = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        m_pingChannel = pingChannel;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        m_echoChannel = echoChannel;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        m_units = units;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        Initialize();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <a class="code" href="class_ultrasonic.html#a0a4c1d3082374ce4fb9f85f0d5d6f6b3">m_allocatedChannels</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <a class="code" href="class_ultrasonic.html#a7bfdf1c85663ee516af60010f68bbf20">m_pingChannel</a> = pingChannel;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <a class="code" href="class_ultrasonic.html#a80a131db7f835f23c98b63596edbb4a9">m_echoChannel</a> = echoChannel;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <a class="code" href="class_ultrasonic.html#ac17d2023bdc2e3eaaabffcbbd7ac4298">m_units</a> = units;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <a class="code" href="class_ultrasonic.html#ac82c315e5df6423a9e1c0cba20d962b3">Initialize</a>();</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
 <div class="line"><a name="l00128"></a><span class="lineno"><a class="code" href="class_ultrasonic.html#a5089d8a662c2b13f9bb15d6d36f11e36">  128</a></span>&#160;<a class="code" href="class_ultrasonic.html#aefd7583faa56df3a6c1a4fc38d3752e2">Ultrasonic::Ultrasonic</a>(<a class="code" href="class_digital_output.html">DigitalOutput</a> &amp;pingChannel, <a class="code" href="class_digital_input.html">DigitalInput</a> &amp;echoChannel, <a class="code" href="class_ultrasonic.html#ab8d5fd69150bb99cea252ce600ca1280">DistanceUnit</a> units)</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;{</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        m_allocatedChannels = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        m_pingChannel = &amp;pingChannel;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        m_echoChannel = &amp;echoChannel;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        m_units = units;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        Initialize();</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <a class="code" href="class_ultrasonic.html#a0a4c1d3082374ce4fb9f85f0d5d6f6b3">m_allocatedChannels</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <a class="code" href="class_ultrasonic.html#a7bfdf1c85663ee516af60010f68bbf20">m_pingChannel</a> = &amp;pingChannel;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <a class="code" href="class_ultrasonic.html#a80a131db7f835f23c98b63596edbb4a9">m_echoChannel</a> = &amp;echoChannel;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <a class="code" href="class_ultrasonic.html#ac17d2023bdc2e3eaaabffcbbd7ac4298">m_units</a> = units;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <a class="code" href="class_ultrasonic.html#ac82c315e5df6423a9e1c0cba20d962b3">Initialize</a>();</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;}</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
 <div class="line"><a name="l00149"></a><span class="lineno"><a class="code" href="class_ultrasonic.html#a17277044596d5b3a519df2c059b46974">  149</a></span>&#160;<a class="code" href="class_ultrasonic.html#aefd7583faa56df3a6c1a4fc38d3752e2">Ultrasonic::Ultrasonic</a>(UINT8 pingModuleNumber, UINT32 pingChannel,</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                UINT8 echoModuleNumber, UINT32 echoChannel, <a class="code" href="class_ultrasonic.html#ab8d5fd69150bb99cea252ce600ca1280">DistanceUnit</a> units)</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;{</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        m_pingChannel = <span class="keyword">new</span> <a class="code" href="class_digital_output.html">DigitalOutput</a>(pingModuleNumber, pingChannel);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        m_echoChannel = <span class="keyword">new</span> <a class="code" href="class_digital_input.html">DigitalInput</a>(echoModuleNumber, echoChannel);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        m_allocatedChannels = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        m_units = units;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        Initialize();</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <a class="code" href="class_ultrasonic.html#a7bfdf1c85663ee516af60010f68bbf20">m_pingChannel</a> = <span class="keyword">new</span> <a class="code" href="class_digital_output.html">DigitalOutput</a>(pingModuleNumber, pingChannel);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <a class="code" href="class_ultrasonic.html#a80a131db7f835f23c98b63596edbb4a9">m_echoChannel</a> = <span class="keyword">new</span> <a class="code" href="class_digital_input.html">DigitalInput</a>(echoModuleNumber, echoChannel);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <a class="code" href="class_ultrasonic.html#a0a4c1d3082374ce4fb9f85f0d5d6f6b3">m_allocatedChannels</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <a class="code" href="class_ultrasonic.html#ac17d2023bdc2e3eaaabffcbbd7ac4298">m_units</a> = units;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <a class="code" href="class_ultrasonic.html#ac82c315e5df6423a9e1c0cba20d962b3">Initialize</a>();</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;}</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
 <div class="line"><a name="l00165"></a><span class="lineno"><a class="code" href="class_ultrasonic.html#ab5066b2bfeac723140c18b9f8340abad">  165</a></span>&#160;<a class="code" href="class_ultrasonic.html#ab5066b2bfeac723140c18b9f8340abad">Ultrasonic::~Ultrasonic</a>()</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;{</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordtype">bool</span> wasAutomaticMode = m_automaticEnabled;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordtype">bool</span> wasAutomaticMode = <a class="code" href="class_ultrasonic.html#aa7b8c72615344d1ebfa835dfb9814dd4">m_automaticEnabled</a>;</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <a class="code" href="class_ultrasonic.html#a16105fb0a316d780b8ea1554e3109825">SetAutomaticMode</a>(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keywordflow">if</span> (m_allocatedChannels)</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_ultrasonic.html#a0a4c1d3082374ce4fb9f85f0d5d6f6b3">m_allocatedChannels</a>)</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        {</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                <span class="keyword">delete</span> m_pingChannel;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                <span class="keyword">delete</span> m_echoChannel;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                <span class="keyword">delete</span> <a class="code" href="class_ultrasonic.html#a7bfdf1c85663ee516af60010f68bbf20">m_pingChannel</a>;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                <span class="keyword">delete</span> <a class="code" href="class_ultrasonic.html#a80a131db7f835f23c98b63596edbb4a9">m_echoChannel</a>;</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        }</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <a class="code" href="_utility_8h.html#a34b13bd29631329c597428636401bbba">wpi_assert</a>(m_firstSensor != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <a class="code" href="_utility_8h.html#a34b13bd29631329c597428636401bbba">wpi_assert</a>(<a class="code" href="class_ultrasonic.html#af4720b3dc94e53de760b4a02bda77f70">m_firstSensor</a> != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        semTake(m_semaphore, WAIT_FOREVER);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        semTake(<a class="code" href="class_ultrasonic.html#a5d12c7ec04a4fcfb049f64afd32f7b6a">m_semaphore</a>, WAIT_FOREVER);</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        {</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                <span class="keywordflow">if</span> (<span class="keyword">this</span> == m_firstSensor)</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                <span class="keywordflow">if</span> (<span class="keyword">this</span> == <a class="code" href="class_ultrasonic.html#af4720b3dc94e53de760b4a02bda77f70">m_firstSensor</a>)</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                {</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                        m_firstSensor = m_nextSensor;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                        <span class="keywordflow">if</span> (m_firstSensor == <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                        <a class="code" href="class_ultrasonic.html#af4720b3dc94e53de760b4a02bda77f70">m_firstSensor</a> = <a class="code" href="class_ultrasonic.html#afe014910152b4712467e9f1c5068b9ef">m_nextSensor</a>;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                        <span class="keywordflow">if</span> (<a class="code" href="class_ultrasonic.html#af4720b3dc94e53de760b4a02bda77f70">m_firstSensor</a> == <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                        {</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                                <a class="code" href="class_ultrasonic.html#a16105fb0a316d780b8ea1554e3109825">SetAutomaticMode</a>(<span class="keyword">false</span>);</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                        }</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                }</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                {</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                        <a class="code" href="_utility_8h.html#a34b13bd29631329c597428636401bbba">wpi_assert</a>(m_firstSensor-&gt;m_nextSensor != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                        <span class="keywordflow">for</span> (<a class="code" href="class_ultrasonic.html">Ultrasonic</a> *s = m_firstSensor; s != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>; s = s-&gt;m_nextSensor)</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                        <a class="code" href="_utility_8h.html#a34b13bd29631329c597428636401bbba">wpi_assert</a>(<a class="code" href="class_ultrasonic.html#af4720b3dc94e53de760b4a02bda77f70">m_firstSensor</a>-&gt;<a class="code" href="class_ultrasonic.html#afe014910152b4712467e9f1c5068b9ef">m_nextSensor</a> != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                        <span class="keywordflow">for</span> (<a class="code" href="class_ultrasonic.html">Ultrasonic</a> *s = <a class="code" href="class_ultrasonic.html#af4720b3dc94e53de760b4a02bda77f70">m_firstSensor</a>; s != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>; s = s-&gt;m_nextSensor)</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                        {</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                                <span class="keywordflow">if</span> (<span class="keyword">this</span> == s-&gt;m_nextSensor)</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                                {</div>
@@ -230,62 +230,62 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                        }</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                }</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        }</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        semGive(m_semaphore);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keywordflow">if</span> (m_firstSensor != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> &amp;&amp; wasAutomaticMode)</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        semGive(<a class="code" href="class_ultrasonic.html#a5d12c7ec04a4fcfb049f64afd32f7b6a">m_semaphore</a>);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_ultrasonic.html#af4720b3dc94e53de760b4a02bda77f70">m_firstSensor</a> != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> &amp;&amp; wasAutomaticMode)</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                <a class="code" href="class_ultrasonic.html#a16105fb0a316d780b8ea1554e3109825">SetAutomaticMode</a>(<span class="keyword">true</span>);</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
 <div class="line"><a name="l00213"></a><span class="lineno"><a class="code" href="class_ultrasonic.html#a16105fb0a316d780b8ea1554e3109825">  213</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_ultrasonic.html#a16105fb0a316d780b8ea1554e3109825">Ultrasonic::SetAutomaticMode</a>(<span class="keywordtype">bool</span> enabling)</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;{</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="keywordflow">if</span> (enabling == m_automaticEnabled)</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="keywordflow">if</span> (enabling == <a class="code" href="class_ultrasonic.html#aa7b8c72615344d1ebfa835dfb9814dd4">m_automaticEnabled</a>)</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                <span class="keywordflow">return</span>; <span class="comment">// ignore the case of no change</span></div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        m_automaticEnabled = enabling;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <a class="code" href="class_ultrasonic.html#aa7b8c72615344d1ebfa835dfb9814dd4">m_automaticEnabled</a> = enabling;</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <span class="keywordflow">if</span> (enabling)</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        {</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                <span class="comment">// enabling automatic mode.</span></div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                <span class="comment">// Clear all the counters so no data is valid</span></div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                <span class="keywordflow">for</span> (<a class="code" href="class_ultrasonic.html">Ultrasonic</a> *u = m_firstSensor; u != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>; u = u-&gt;m_nextSensor)</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                <span class="keywordflow">for</span> (<a class="code" href="class_ultrasonic.html">Ultrasonic</a> *u = <a class="code" href="class_ultrasonic.html#af4720b3dc94e53de760b4a02bda77f70">m_firstSensor</a>; u != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>; u = u-&gt;m_nextSensor)</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                {</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                        u-&gt;m_counter-&gt;<a class="code" href="class_counter.html#a006032d39fada9ad683ccc849d2f60d3">Reset</a>();</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                        u-&gt;m_counter-&gt;Reset();</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                }</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                <span class="comment">// Start round robin task</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                <a class="code" href="_utility_8h.html#a34b13bd29631329c597428636401bbba">wpi_assert</a>(m_task.<a class="code" href="class_task.html#af3367e19bf2d011c8de81a8064b7c0f4">Verify</a>() == <span class="keyword">false</span>);   <span class="comment">// should be false since was previously disabled</span></div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                m_task.<a class="code" href="class_task.html#aed180b79ad986ff5e55170400db3c226">Start</a>();</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                <a class="code" href="_utility_8h.html#a34b13bd29631329c597428636401bbba">wpi_assert</a>(<a class="code" href="class_ultrasonic.html#a59230e159ddc43f00ed86c1fdf3b8532">m_task</a>.<a class="code" href="class_task.html#af3367e19bf2d011c8de81a8064b7c0f4">Verify</a>() == <span class="keyword">false</span>);   <span class="comment">// should be false since was previously disabled</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                <a class="code" href="class_ultrasonic.html#a59230e159ddc43f00ed86c1fdf3b8532">m_task</a>.<a class="code" href="class_task.html#aed180b79ad986ff5e55170400db3c226">Start</a>();</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        }</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        {</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                <span class="comment">// disabling automatic mode. Wait for background task to stop running.</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                <span class="keywordflow">while</span> (m_task.<a class="code" href="class_task.html#af3367e19bf2d011c8de81a8064b7c0f4">Verify</a>())</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                <span class="keywordflow">while</span> (<a class="code" href="class_ultrasonic.html#a59230e159ddc43f00ed86c1fdf3b8532">m_task</a>.<a class="code" href="class_task.html#af3367e19bf2d011c8de81a8064b7c0f4">Verify</a>())</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                        <a class="code" href="_timer_8cpp.html#aefd8f5babb51a91661ec55e4c7f16416">Wait</a>(0.15);     <span class="comment">// just a little longer than the ping time for round-robin to stop</span></div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                <span class="comment">// clear all the counters (data now invalid) since automatic mode is stopped</span></div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                <span class="keywordflow">for</span> (<a class="code" href="class_ultrasonic.html">Ultrasonic</a> *u = m_firstSensor; u != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>; u = u-&gt;m_nextSensor)</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                <span class="keywordflow">for</span> (<a class="code" href="class_ultrasonic.html">Ultrasonic</a> *u = <a class="code" href="class_ultrasonic.html#af4720b3dc94e53de760b4a02bda77f70">m_firstSensor</a>; u != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>; u = u-&gt;m_nextSensor)</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                {</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                        u-&gt;m_counter-&gt;<a class="code" href="class_counter.html#a006032d39fada9ad683ccc849d2f60d3">Reset</a>();</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                        u-&gt;m_counter-&gt;Reset();</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                }</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                m_task.<a class="code" href="class_task.html#a552b56dc92a117812a9ae3f24320eede">Stop</a>();</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                <a class="code" href="class_ultrasonic.html#a59230e159ddc43f00ed86c1fdf3b8532">m_task</a>.<a class="code" href="class_task.html#a552b56dc92a117812a9ae3f24320eede">Stop</a>();</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        }</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;}</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;</div>
 <div class="line"><a name="l00252"></a><span class="lineno"><a class="code" href="class_ultrasonic.html#aff9a83272ddaf8579ce2434e20f0b965">  252</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_ultrasonic.html#aff9a83272ddaf8579ce2434e20f0b965">Ultrasonic::Ping</a>()</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;{</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <span class="comment">// TODO: Either assert or disable, not both.</span></div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <a class="code" href="_utility_8h.html#a34b13bd29631329c597428636401bbba">wpi_assert</a>(!m_automaticEnabled);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <a class="code" href="_utility_8h.html#a34b13bd29631329c597428636401bbba">wpi_assert</a>(!<a class="code" href="class_ultrasonic.html#aa7b8c72615344d1ebfa835dfb9814dd4">m_automaticEnabled</a>);</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <a class="code" href="class_ultrasonic.html#a16105fb0a316d780b8ea1554e3109825">SetAutomaticMode</a>(<span class="keyword">false</span>); <span class="comment">// turn off automatic round robin if pinging single sensor</span></div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        m_counter-&gt;<a class="code" href="class_counter.html#a006032d39fada9ad683ccc849d2f60d3">Reset</a>(); <span class="comment">// reset the counter to zero (invalid data now)</span></div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        m_pingChannel-&gt;<a class="code" href="class_digital_output.html#a02c70b0de12b60f4d931cdc59e5e3bed">Pulse</a>(kPingTime); <span class="comment">// do the ping to start getting a single range</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <a class="code" href="class_ultrasonic.html#ad1734f778375fee53f7512d9b37b16f5">m_counter</a>-&gt;<a class="code" href="class_counter.html#a006032d39fada9ad683ccc849d2f60d3">Reset</a>(); <span class="comment">// reset the counter to zero (invalid data now)</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <a class="code" href="class_ultrasonic.html#a7bfdf1c85663ee516af60010f68bbf20">m_pingChannel</a>-&gt;<a class="code" href="class_digital_output.html#a02c70b0de12b60f4d931cdc59e5e3bed">Pulse</a>(<a class="code" href="class_ultrasonic.html#a76cc112331b37ba9df08ef4ef32270c4" title="Time (sec) for the ping trigger pulse.">kPingTime</a>); <span class="comment">// do the ping to start getting a single range</span></div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;}</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;</div>
 <div class="line"><a name="l00266"></a><span class="lineno"><a class="code" href="class_ultrasonic.html#a765c830f4ff4c68e83de2f14d43fa54c">  266</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_ultrasonic.html#a765c830f4ff4c68e83de2f14d43fa54c">Ultrasonic::IsRangeValid</a>()</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;{</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="keywordflow">return</span> m_counter-&gt;<a class="code" href="class_counter.html#ad8b0c5e46e0360f93554530d90d553b8">Get</a>() &gt; 1;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_ultrasonic.html#ad1734f778375fee53f7512d9b37b16f5">m_counter</a>-&gt;<a class="code" href="class_counter.html#ad8b0c5e46e0360f93554530d90d553b8">Get</a>() &gt; 1;</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;}</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;</div>
 <div class="line"><a name="l00276"></a><span class="lineno"><a class="code" href="class_ultrasonic.html#a73c80fe92b2085107714c6a110d90d70">  276</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_ultrasonic.html#a73c80fe92b2085107714c6a110d90d70">Ultrasonic::GetRangeInches</a>()</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;{</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_ultrasonic.html#a765c830f4ff4c68e83de2f14d43fa54c">IsRangeValid</a>())</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                <span class="keywordflow">return</span> m_counter-&gt;<a class="code" href="class_counter.html#a51030989a5ee306beaf40ac28ab362c0">GetPeriod</a>() * kSpeedOfSoundInchesPerSec / 2.0;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="class_ultrasonic.html#ad1734f778375fee53f7512d9b37b16f5">m_counter</a>-&gt;<a class="code" href="class_counter.html#a51030989a5ee306beaf40ac28ab362c0">GetPeriod</a>() * <a class="code" href="class_ultrasonic.html#a5d2b33da10ab5ec9f83aa6cc84e7f1e8">kSpeedOfSoundInchesPerSec</a> / 2.0;</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;}</div>
@@ -297,7 +297,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;</div>
 <div class="line"><a name="l00299"></a><span class="lineno"><a class="code" href="class_ultrasonic.html#a8ec6de749ccd7e93b28735e9cc6d0b22">  299</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_ultrasonic.html#a8ec6de749ccd7e93b28735e9cc6d0b22">Ultrasonic::PIDGet</a>()</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;{</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <span class="keywordflow">switch</span>(m_units) </div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <span class="keywordflow">switch</span>(<a class="code" href="class_ultrasonic.html#ac17d2023bdc2e3eaaabffcbbd7ac4298">m_units</a>) </div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        {</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="class_ultrasonic.html#ab8d5fd69150bb99cea252ce600ca1280adf6bdc3c81b4f857eaf4140d960b1ad1">Ultrasonic::kInches</a>:</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="class_ultrasonic.html#a73c80fe92b2085107714c6a110d90d70">GetRangeInches</a>();</div>
@@ -310,17 +310,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;</div>
 <div class="line"><a name="l00317"></a><span class="lineno"><a class="code" href="class_ultrasonic.html#a0fc0d0787d943c45e04194727addaac0">  317</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_ultrasonic.html#a0fc0d0787d943c45e04194727addaac0">Ultrasonic::SetDistanceUnits</a>(<a class="code" href="class_ultrasonic.html#ab8d5fd69150bb99cea252ce600ca1280">DistanceUnit</a> units)</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;{</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        m_units = units;</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <a class="code" href="class_ultrasonic.html#ac17d2023bdc2e3eaaabffcbbd7ac4298">m_units</a> = units;</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;}</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;</div>
 <div class="line"><a name="l00327"></a><span class="lineno"><a class="code" href="class_ultrasonic.html#aac979c8a612ef86912989a782f7dd634">  327</a></span>&#160;<a class="code" href="class_ultrasonic.html#ab8d5fd69150bb99cea252ce600ca1280">Ultrasonic::DistanceUnit</a> <a class="code" href="class_ultrasonic.html#aac979c8a612ef86912989a782f7dd634">Ultrasonic::GetDistanceUnits</a>()</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;{</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="keywordflow">return</span> m_units;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_ultrasonic.html#ac17d2023bdc2e3eaaabffcbbd7ac4298">m_units</a>;</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;}</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;</div>
 <div class="line"><a name="l00332"></a><span class="lineno"><a class="code" href="class_ultrasonic.html#aa91dcad8c1595bd3c4bdd3e798afb736">  332</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_ultrasonic.html#aa91dcad8c1595bd3c4bdd3e798afb736">Ultrasonic::UpdateTable</a>() {</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="keywordflow">if</span> (m_table != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                m_table-&gt;<a class="code" href="class_i_table.html#a6dc108b7478fbeaed97457dbc52e2811">PutNumber</a>(<span class="stringliteral">&quot;Value&quot;</span>, <a class="code" href="class_ultrasonic.html#a73c80fe92b2085107714c6a110d90d70">GetRangeInches</a>());</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_ultrasonic.html#a4b0c4f743ad798f67bee25a0cb03903f">m_table</a> != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                <a class="code" href="class_ultrasonic.html#a4b0c4f743ad798f67bee25a0cb03903f">m_table</a>-&gt;<a class="code" href="class_i_table.html#a6dc108b7478fbeaed97457dbc52e2811">PutNumber</a>(<span class="stringliteral">&quot;Value&quot;</span>, <a class="code" href="class_ultrasonic.html#a73c80fe92b2085107714c6a110d90d70">GetRangeInches</a>());</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        }</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;}</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;</div>
@@ -337,18 +337,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;}</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;</div>
 <div class="line"><a name="l00350"></a><span class="lineno"><a class="code" href="class_ultrasonic.html#a63320495a2d314cbc09cc9e4b6d1569d">  350</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_ultrasonic.html#a63320495a2d314cbc09cc9e4b6d1569d">Ultrasonic::InitTable</a>(<a class="code" href="class_i_table.html">ITable</a> *subTable) {</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        m_table = subTable;</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <a class="code" href="class_ultrasonic.html#a4b0c4f743ad798f67bee25a0cb03903f">m_table</a> = subTable;</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        <a class="code" href="class_ultrasonic.html#aa91dcad8c1595bd3c4bdd3e798afb736">UpdateTable</a>();</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;}</div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;</div>
 <div class="line"><a name="l00355"></a><span class="lineno"><a class="code" href="class_ultrasonic.html#a8f241f7e5b8db624ec55b7b53c564a0d">  355</a></span>&#160;<a class="code" href="class_i_table.html">ITable</a> * <a class="code" href="class_ultrasonic.html#a8f241f7e5b8db624ec55b7b53c564a0d">Ultrasonic::GetTable</a>() {</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        <span class="keywordflow">return</span> m_table;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_ultrasonic.html#a4b0c4f743ad798f67bee25a0cb03903f">m_table</a>;</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;}</div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:11 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:43 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

@@ -85,7 +85,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">IOException Class Reference</div>  </div>
 </div><!--header-->
@@ -106,11 +107,16 @@ Inheritance diagram for IOException:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6240a4ec8e8d23d39f6ad048089748cd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_o_exception.html#a6240a4ec8e8d23d39f6ad048089748cd">IOException</a> (const char *message)</td></tr>
-<tr class="memitem:ac5ed492c339439462d8ad8c099d003d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_o_exception.html#ac5ed492c339439462d8ad8c099d003d1">IOException</a> (const char *message, <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> errorValue)</td></tr>
+<tr class="memitem:a6240a4ec8e8d23d39f6ad048089748cd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_o_exception.html#a6240a4ec8e8d23d39f6ad048089748cd">IOException</a> (const char *<a class="el" href="class_i_o_exception.html#a112d01a29760766cca2622d1d7e1b25c">message</a>)</td></tr>
+<tr class="memitem:ac5ed492c339439462d8ad8c099d003d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_o_exception.html#ac5ed492c339439462d8ad8c099d003d1">IOException</a> (const char *<a class="el" href="class_i_o_exception.html#a112d01a29760766cca2622d1d7e1b25c">message</a>, <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> <a class="el" href="class_i_o_exception.html#a22fd1e2515f0333b8778468da68b7b07">errorValue</a>)</td></tr>
 <tr class="memitem:a17c215e29f09b6862e20c5c9c8917349"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_o_exception.html#a17c215e29f09b6862e20c5c9c8917349">what</a> ()</td></tr>
 <tr class="memitem:a600b1a3aaf0e9dc93b4141a54c1ca117"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_o_exception.html#a600b1a3aaf0e9dc93b4141a54c1ca117">isEOF</a> ()</td></tr>
 <tr class="memitem:a582a6905f42e4d1c773cdc60218390d8"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_o_exception.html#a582a6905f42e4d1c773cdc60218390d8">~IOException</a> ()  throw ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a112d01a29760766cca2622d1d7e1b25c"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_o_exception.html#a112d01a29760766cca2622d1d7e1b25c">message</a></td></tr>
+<tr class="memitem:a22fd1e2515f0333b8778468da68b7b07"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_o_exception.html#a22fd1e2515f0333b8778468da68b7b07">errorValue</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
@@ -232,6 +238,51 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a22fd1e2515f0333b8778468da68b7b07"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> IOException::errorValue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_i_o_exception_8h_source.html#l00029">29</a> of file <a class="el" href="_i_o_exception_8h_source.html">IOException.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a112d01a29760766cca2622d1d7e1b25c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* IOException::message</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_i_o_exception_8h_source.html#l00028">28</a> of file <a class="el" href="_i_o_exception_8h_source.html">IOException.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>WPILib/networktables2/util/<a class="el" href="_i_o_exception_8h_source.html">IOException.h</a></li>
 <li>WPILib/networktables2/util/<a class="el" href="_i_o_exception_8cpp_source.html">IOException.cpp</a></li>
@@ -239,7 +290,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:15 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:47 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

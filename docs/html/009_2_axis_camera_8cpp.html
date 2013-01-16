@@ -138,6 +138,12 @@ Functions</h2></td></tr>
 <tr class="memdesc:a3395411fb60a600b9dbc3ce4d96a7c7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor for camera instrumentation data.  <a href="#a3395411fb60a600b9dbc3ce4d96a7c7f"></a><br/></td></tr>
 <tr class="memitem:acb216a3eb6ef88fa96f94d22b8ae1627"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="009_2_axis_camera_8cpp.html#acb216a3eb6ef88fa96f94d22b8ae1627">CameraCloseSocket</a> (char *errstring, <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> socket)</td></tr>
 <tr class="memdesc:acb216a3eb6ef88fa96f94d22b8ae1627"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close socket &amp; report error.  <a href="#acb216a3eb6ef88fa96f94d22b8ae1627"></a><br/></td></tr>
+<tr class="memitem:a45dfea70b78f50c4ab4da6b1c72bdab9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="009_2_axis_camera_8cpp.html#a45dfea70b78f50c4ab4da6b1c72bdab9">CameraReadLine</a> (<a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> camSock, char *buffer, <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> bufSize, bool stripLineEnding)</td></tr>
+<tr class="memdesc:a45dfea70b78f50c4ab4da6b1c72bdab9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads one line from the TCP stream.  <a href="#a45dfea70b78f50c4ab4da6b1c72bdab9"></a><br/></td></tr>
+<tr class="memitem:a74bcd0dfd881ebd374ac6c96f19430e1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="009_2_axis_camera_8cpp.html#a74bcd0dfd881ebd374ac6c96f19430e1">CameraSkipUntilEmptyLine</a> (<a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> camSock)</td></tr>
+<tr class="memdesc:a74bcd0dfd881ebd374ac6c96f19430e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skips read data until the first empty line.  <a href="#a74bcd0dfd881ebd374ac6c96f19430e1"></a><br/></td></tr>
+<tr class="memitem:ab2c4300f00ec3ebfda033cb6ba4a5d74"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="009_2_axis_camera_8cpp.html#ab2c4300f00ec3ebfda033cb6ba4a5d74">CameraOpenSocketAndIssueAuthorizedRequest</a> (const char *serverName, const char *request)</td></tr>
+<tr class="memdesc:ab2c4300f00ec3ebfda033cb6ba4a5d74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens a socket.  <a href="#ab2c4300f00ec3ebfda033cb6ba4a5d74"></a><br/></td></tr>
 <tr class="memitem:af45e475dd15a3be3b9672f5b6f264c27"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="009_2_axis_camera_8cpp.html#af45e475dd15a3be3b9672f5b6f264c27">ConfigureCamera</a> (char *configString)</td></tr>
 <tr class="memdesc:af45e475dd15a3be3b9672f5b6f264c27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a configuration message to the camera.  <a href="#af45e475dd15a3be3b9672f5b6f264c27"></a><br/></td></tr>
 <tr class="memitem:aa435b05a8eeec9b66018ce3231024789"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="009_2_axis_camera_8cpp.html#aa435b05a8eeec9b66018ce3231024789">GetCameraSetting</a> (char *configString, char *cameraResponse)</td></tr>
@@ -152,6 +158,8 @@ Functions</h2></td></tr>
 <tr class="memdesc:ac87ad9d2703a8b04f6c2cac5575687b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start serving images.  <a href="#ac87ad9d2703a8b04f6c2cac5575687b0"></a><br/></td></tr>
 <tr class="memitem:aaf0d7d97c98dbf6bf4a7f499515136e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="009_2_axis_camera_8cpp.html#aaf0d7d97c98dbf6bf4a7f499515136e1">StopImageAcquisition</a> ()</td></tr>
 <tr class="memdesc:aaf0d7d97c98dbf6bf4a7f499515136e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop serving images.  <a href="#aaf0d7d97c98dbf6bf4a7f499515136e1"></a><br/></td></tr>
+<tr class="memitem:a1ebe6e42ee82eeb31f0821d117df0b0e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="009_2_axis_camera_8cpp.html#a1ebe6e42ee82eeb31f0821d117df0b0e">initCamera</a> (<a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> frames, <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> compression, <a class="el" href="009_2_axis_camera_8h.html#a3725303b8fe64afe7b0bac15cd6c4417">ImageResolution</a> resolution, <a class="el" href="009_2_axis_camera_8h.html#ae5e131c5ae05437da267ebabc97aa0f1">ImageRotation</a> rotation)</td></tr>
+<tr class="memdesc:a1ebe6e42ee82eeb31f0821d117df0b0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the routine that is run when the task is spawned It initializes the camera with the image settings passed in, and starts image acquisition.  <a href="#a1ebe6e42ee82eeb31f0821d117df0b0e"></a><br/></td></tr>
 <tr class="memitem:af85c2e8cae5b9e5ee82c06f52791f094"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="009_2_axis_camera_8cpp.html#af85c2e8cae5b9e5ee82c06f52791f094">StartCameraTask</a> ()</td></tr>
 <tr class="memdesc:af85c2e8cae5b9e5ee82c06f52791f094"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the camera task.  <a href="#af85c2e8cae5b9e5ee82c06f52791f094"></a><br/></td></tr>
 <tr class="memitem:afea85ac0e273c8041af5c07aee49bb5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="009_2_axis_camera_8cpp.html#afea85ac0e273c8041af5c07aee49bb5e">StartCameraTask</a> (<a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> frames, <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> compression, <a class="el" href="009_2_axis_camera_8h.html#a3725303b8fe64afe7b0bac15cd6c4417">ImageResolution</a> resolution, <a class="el" href="009_2_axis_camera_8h.html#ae5e131c5ae05437da267ebabc97aa0f1">ImageRotation</a> rotation)</td></tr>
@@ -177,7 +185,8 @@ Variables</h2></td></tr>
 <tr class="memitem:ad2f12dfa9d1c57bb5328a05c0e3dafe0"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;&#160;&#160;<a class="el" href="009_2_axis_camera_8cpp.html#a2acfae87dfa6b992bc888c684c1f15fd">cameraMetrics</a> [<a class="el" href="009_2_axis_camera_8h.html#ad77b097a9ed65498d6f2ffa59809753a">CAM_NUM_METRICS</a>]</td></tr>
 <tr class="memitem:a1dfc31ffd3b3098b4be66749bc228569"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="009_2_axis_camera_8cpp.html#a1dfc31ffd3b3098b4be66749bc228569">globalCamera</a></td></tr>
 <tr class="memdesc:a1dfc31ffd3b3098b4be66749bc228569"><td class="mdescLeft">&#160;</td><td class="mdescRight">Camera data to be accessed globally.  <a href="#a1dfc31ffd3b3098b4be66749bc228569"></a><br/></td></tr>
-<tr class="memitem:ac36f94bf4d4adf75b2e3be6f1c039821"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_task.html">Task</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="009_2_axis_camera_8cpp.html#ac36f94bf4d4adf75b2e3be6f1c039821">g_axisCameraTask</a> (&quot;Camera&quot;,(FUNCPTR) initCamera)</td></tr>
+<tr class="memitem:acb3b12b79d8d349d7941c54494674785"><td class="memItemLeft" align="right" valign="top">static short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="009_2_axis_camera_8cpp.html#acb3b12b79d8d349d7941c54494674785">cont</a> = 0</td></tr>
+<tr class="memitem:ac36f94bf4d4adf75b2e3be6f1c039821"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_task.html">Task</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="009_2_axis_camera_8cpp.html#ac36f94bf4d4adf75b2e3be6f1c039821">g_axisCameraTask</a> (&quot;Camera&quot;,(FUNCPTR) <a class="el" href="009_2_axis_camera_8cpp.html#a1ebe6e42ee82eeb31f0821d117df0b0e">initCamera</a>)</td></tr>
 </table>
 <hr/><h2>Macro Definition Documentation</h2>
 <a class="anchor" id="a0a9dba06b371002a272da94bc32828e6"></a>
@@ -343,6 +352,148 @@ Variables</h2></td></tr>
 <dl class="section return"><dt>Returns:</dt><dd>error </dd></dl>
 
 <p>Definition at line <a class="el" href="009_2_axis_camera_8cpp_source.html#l00596">596</a> of file <a class="el" href="009_2_axis_camera_8cpp_source.html">AxisCamera.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab2c4300f00ec3ebfda033cb6ba4a5d74"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> CameraOpenSocketAndIssueAuthorizedRequest </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>serverName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>request</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Opens a socket. </p>
+<p>Issues the given http request with the required added information and authentication. It cycles through an array of predetermined encrypted username, password combinations that we expect the users to have at any point in time. If none of the username, password combinations work, it outputs a "Unknown user or password" error. If the request succeeds, it returns the socket number.</p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">serverName</td><td>The information about the host from which this request originates </td></tr>
+    <tr><td class="paramname">request</td><td>The request to send to the camera not including boilerplate or authentication. This is usually in the form of "GET &lt;string&gt;" </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns:</dt><dd>int - failure = ERROR; success = socket number; </dd></dl>
+
+<p>Definition at line <a class="el" href="009_2_axis_camera_8cpp_source.html#l00392">392</a> of file <a class="el" href="009_2_axis_camera_8cpp_source.html">AxisCamera.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a45dfea70b78f50c4ab4da6b1c72bdab9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> CameraReadLine </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td>
+          <td class="paramname"><em>camSock</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td>
+          <td class="paramname"><em>bufSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>stripLineEnding</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reads one line from the TCP stream. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">camSock</td><td>The socket. </td></tr>
+    <tr><td class="paramname">buffer</td><td>A buffer with bufSize allocated for it. On return, bufSize-1 amount of data or data upto first line ending whichever is smaller, null terminated. </td></tr>
+    <tr><td class="paramname">bufSize</td><td>The size of buffer. </td></tr>
+    <tr><td class="paramname">stripLineEnding</td><td>If true, strips the line ending chacters from the buffer before return. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns:</dt><dd>0 if failure; 1 if success </dd></dl>
+
+<p>Definition at line <a class="el" href="009_2_axis_camera_8cpp_source.html#l00307">307</a> of file <a class="el" href="009_2_axis_camera_8cpp_source.html">AxisCamera.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a74bcd0dfd881ebd374ac6c96f19430e1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> CameraSkipUntilEmptyLine </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td>
+          <td class="paramname"><em>camSock</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Skips read data until the first empty line. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">camSock</td><td>An open tcp socket to the camera to read the data from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns:</dt><dd>sucess 0 if failure; 1 if success </dd></dl>
+
+<p>Definition at line <a class="el" href="009_2_axis_camera_8cpp_source.html#l00365">365</a> of file <a class="el" href="009_2_axis_camera_8cpp_source.html">AxisCamera.cpp</a>.</p>
 
 </div>
 </div>
@@ -657,6 +808,65 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a1ebe6e42ee82eeb31f0821d117df0b0e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> initCamera </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td>
+          <td class="paramname"><em>frames</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td>
+          <td class="paramname"><em>compression</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="009_2_axis_camera_8h.html#a3725303b8fe64afe7b0bac15cd6c4417">ImageResolution</a>&#160;</td>
+          <td class="paramname"><em>resolution</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="009_2_axis_camera_8h.html#ae5e131c5ae05437da267ebabc97aa0f1">ImageRotation</a>&#160;</td>
+          <td class="paramname"><em>rotation</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This is the routine that is run when the task is spawned It initializes the camera with the image settings passed in, and starts image acquisition. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frames</td><td>Frames per second </td></tr>
+    <tr><td class="paramname">compression</td><td>Camera image compression </td></tr>
+    <tr><td class="paramname">resolution</td><td>Camera image size </td></tr>
+    <tr><td class="paramname">rotation</td><td>Camera image rotation </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="009_2_axis_camera_8cpp_source.html#l00918">918</a> of file <a class="el" href="009_2_axis_camera_8cpp_source.html">AxisCamera.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="aa3b2efb1b6e050331e44cfaf0c7ba43e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -928,6 +1138,28 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="acb3b12b79d8d349d7941c54494674785"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">short cont = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="009_2_axis_camera_8cpp_source.html#l00070">70</a> of file <a class="el" href="009_2_axis_camera_8cpp_source.html">AxisCamera.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="aa9a432d72d8c9223bd023ae23c658c42"></a>
 <div class="memitem">
 <div class="memproto">
@@ -987,7 +1219,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_task.html">Task</a> g_axisCameraTask(&quot;Camera&quot;,(FUNCPTR) initCamera)</td>
+          <td class="memname"><a class="el" href="class_task.html">Task</a> g_axisCameraTask(&quot;Camera&quot;,(FUNCPTR) <a class="el" href="009_2_axis_camera_8cpp.html#a1ebe6e42ee82eeb31f0821d117df0b0e">initCamera</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1053,7 +1285,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:12 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:45 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

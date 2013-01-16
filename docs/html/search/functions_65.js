@@ -18,8 +18,13 @@ var searchData=
   ['entrycache',['EntryCache',['../class_entry_cache.html#a4be6ec2a4ca62ffd65828817421d39b6',1,'EntryCache']]],
   ['enumcameraparameter',['EnumCameraParameter',['../class_enum_camera_parameter.html#ae53765dea6e8418732b3b0d855c741d4',1,'EnumCameraParameter']]],
   ['eofexception',['EOFException',['../class_e_o_f_exception.html#a3c5edac67815fe76fb7137f3a8eeb2c8',1,'EOFException']]],
+  ['equalize',['Equalize',['../class_color_image.html#ac50004d33367b86a3f3f0a21746d4af6',1,'ColorImage']]],
   ['error',['Error',['../class_error.html#aca339d00ad8481fb4c184f0ece42698b',1,'Error']]],
   ['errorbase',['ErrorBase',['../class_error_base.html#af49991441156c7832d7017951427cef2',1,'ErrorBase']]],
   ['execute',['Execute',['../class_button_scheduler.html#a42c07eb2ec07a232975e7b7f3378e9b4',1,'ButtonScheduler::Execute()'],['../class_held_button_scheduler.html#a996e1cab372a69ef979a4db0dee55a67',1,'HeldButtonScheduler::Execute()'],['../class_pressed_button_scheduler.html#a4ed5ac3f51837796df3dcefea4b5d417',1,'PressedButtonScheduler::Execute()'],['../class_released_button_scheduler.html#ab51aa4655487ff9835e3c25a31aa93a0',1,'ReleasedButtonScheduler::Execute()'],['../class_command.html#a484c34647660fcfc8ee46b04ad5b32b6',1,'Command::Execute()'],['../class_command_group.html#ab59b32de7a4daeb4d27e5ce1f8dd6895',1,'CommandGroup::Execute()'],['../class_print_command.html#a7d2c8116303839094accf68329050358',1,'PrintCommand::Execute()'],['../class_start_command.html#aa6e8b7450ffe7af7a894cb35011ac093',1,'StartCommand::Execute()'],['../class_wait_command.html#ae86cf56da58179704fefe8f3a72e76b2',1,'WaitCommand::Execute()'],['../class_wait_for_children.html#a0fa66dfbfc9d1add4cce927390bd3516',1,'WaitForChildren::Execute()'],['../class_wait_until_command.html#aeecc3b6e8fe480786bbb40a486e9812e',1,'WaitUntilCommand::Execute()']]],
-  ['exportvalue',['exportValue',['../class_array_entry_type.html#ab0ca175f96ac72d88dbae1e9a600b116',1,'ArrayEntryType::exportValue()'],['../class_complex_entry_type.html#a2922bed973633e48f51eb5ed3c25f53d',1,'ComplexEntryType::exportValue()']]]
+  ['exportvalue',['exportValue',['../class_array_entry_type.html#ab0ca175f96ac72d88dbae1e9a600b116',1,'ArrayEntryType::exportValue()'],['../class_complex_entry_type.html#a2922bed973633e48f51eb5ed3c25f53d',1,'ComplexEntryType::exportValue()']]],
+  ['extractcolorplane',['ExtractColorPlane',['../class_color_image.html#a57bd13dc791080382ec0e8b7e521fbe5',1,'ColorImage']]],
+  ['extractfirstcolorplane',['ExtractFirstColorPlane',['../class_color_image.html#ad276397a6cd175acd8eda546b239ff73',1,'ColorImage']]],
+  ['extractsecondcolorplane',['ExtractSecondColorPlane',['../class_color_image.html#ae9fb027a0370f36e38ef765786be5c28',1,'ColorImage']]],
+  ['extractthirdcolorplane',['ExtractThirdColorPlane',['../class_color_image.html#ab5df486338c2d40d67257d7f03837bbb',1,'ColorImage']]]
 ];

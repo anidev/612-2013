@@ -85,7 +85,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">Notifier Class Reference</div>  </div>
 </div><!--header-->
@@ -129,6 +133,37 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab67204acd1eb87ffe6fc45c2d22e517e inherit pub_methods_class_error_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the current error information associated with this sensor.  <a href="#ab67204acd1eb87ffe6fc45c2d22e517e"></a><br/></td></tr>
 <tr class="memitem:a05790f219c9e436a09752f73f7344024 inherit pub_methods_class_error_base"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_base.html#a05790f219c9e436a09752f73f7344024">StatusIsFatal</a> () const </td></tr>
 <tr class="memdesc:a05790f219c9e436a09752f73f7344024 inherit pub_methods_class_error_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the current error code represents a fatal error.  <a href="#a05790f219c9e436a09752f73f7344024"></a><br/></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a08344dddfe0be7dc332ff16b0abea085"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notifier.html#a08344dddfe0be7dc332ff16b0abea085">InsertInQueue</a> (bool reschedule)</td></tr>
+<tr class="memitem:ab73d94254ed5591df89757e86e63ac41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notifier.html#ab73d94254ed5591df89757e86e63ac41">DeleteFromQueue</a> ()</td></tr>
+<tr class="memitem:adbb47420ffaebcdfa5183842d2e0932a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notifier.html#adbb47420ffaebcdfa5183842d2e0932a">DISALLOW_COPY_AND_ASSIGN</a> (<a class="el" href="class_notifier.html">Notifier</a>)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a48a05d078053041b2b4335e19efcc983"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notifier.html#a48a05d078053041b2b4335e19efcc983">ProcessQueue</a> (uint32_t mask, <a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> *params)</td></tr>
+<tr class="memitem:ad837c96b01df3956807c5f41b3e76254"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notifier.html#ad837c96b01df3956807c5f41b3e76254">UpdateAlarm</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a5c3233d0530c81b1cd3f2dd6e93717cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_notifier_8h.html#a410b2ee55490044c5b15681e6850367d">TimerEventHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notifier.html#a5c3233d0530c81b1cd3f2dd6e93717cc">m_handler</a></td></tr>
+<tr class="memitem:a684521efb90bcd2527e202c4c63b5532"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notifier.html#a684521efb90bcd2527e202c4c63b5532">m_param</a></td></tr>
+<tr class="memitem:a5973b4354a27a9247c4baf81ae3e5f00"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notifier.html#a5973b4354a27a9247c4baf81ae3e5f00">m_period</a></td></tr>
+<tr class="memitem:afa136a97e06cddeb1a6ce23ac1f30c11"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notifier.html#afa136a97e06cddeb1a6ce23ac1f30c11">m_expirationTime</a></td></tr>
+<tr class="memitem:a4829c21aa4309a7da96282dfc1392269"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_notifier.html">Notifier</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notifier.html#a4829c21aa4309a7da96282dfc1392269">m_nextEvent</a></td></tr>
+<tr class="memitem:a875f0b388bae10671a346494ec96a22f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notifier.html#a875f0b388bae10671a346494ec96a22f">m_periodic</a></td></tr>
+<tr class="memitem:a71ebe229a7bec5b81957f15041f651f4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notifier.html#a71ebe229a7bec5b81957f15041f651f4">m_queued</a></td></tr>
+<tr class="memitem:a1a98fc9a4ee11a04fb5fa998d3bffea8"><td class="memItemLeft" align="right" valign="top">SEM_ID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notifier.html#a1a98fc9a4ee11a04fb5fa998d3bffea8">m_handlerSemaphore</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a1aefaa126318fe20157d0f898b54fdf2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_notifier.html">Notifier</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notifier.html#a1aefaa126318fe20157d0f898b54fdf2">timerQueueHead</a> = <a class="el" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="memitem:af6c84d244c4b73625065be5d0f8dd19b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_reentrant_semaphore.html">ReentrantSemaphore</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notifier.html#af6c84d244c4b73625065be5d0f8dd19b">queueSemaphore</a></td></tr>
+<tr class="memitem:ab698bd10182e56b4edcd2b47d4a677ab"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_alarm.html">tAlarm</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notifier.html#ab698bd10182e56b4edcd2b47d4a677ab">talarm</a> = <a class="el" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="memitem:a914adf3dbfe85d8f4782bc95104a09fa"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classn_f_p_g_a_1_1t_interrupt_manager.html">tInterruptManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notifier.html#a914adf3dbfe85d8f4782bc95104a09fa">manager</a> = <a class="el" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="memitem:a09bae19dc764f521bc0867cbad459c1e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notifier.html#a09bae19dc764f521bc0867cbad459c1e">refcount</a> = 0</td></tr>
+<tr class="memitem:a81d5d8f64efc815274ada47da4099123"><td class="memItemLeft" align="right" valign="top">static const UINT32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notifier.html#a81d5d8f64efc815274ada47da4099123">kTimerInterruptNumber</a> = 28</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -211,6 +246,126 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ab73d94254ed5591df89757e86e63ac41"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> Notifier::DeleteFromQueue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Delete this <a class="el" href="class_notifier.html">Notifier</a> from the timer queue. WARNING: this method does not do synchronization! It must be called from somewhere that is taking care of synchronizing access to the queue. Remove this <a class="el" href="class_notifier.html">Notifier</a> from the timer queue and adjust the next interrupt time to reflect the current top of the queue. </p>
+
+<p>Definition at line <a class="el" href="_notifier_8cpp_source.html#l00203">203</a> of file <a class="el" href="_notifier_8cpp_source.html">Notifier.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adbb47420ffaebcdfa5183842d2e0932a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Notifier::DISALLOW_COPY_AND_ASSIGN </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_notifier.html">Notifier</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a08344dddfe0be7dc332ff16b0abea085"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> Notifier::InsertInQueue </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>reschedule</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Insert this <a class="el" href="class_notifier.html">Notifier</a> into the timer queue in right place. WARNING: this method does not do synchronization! It must be called from somewhere that is taking care of synchronizing access to the queue. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reschedule</td><td>If false, the scheduled alarm is based on the curent time and UpdateAlarm method is called which will enable the alarm if necessary. If true, update the time by adding the period (no drift) when rescheduled periodic from ProcessQueue. This ensures that the public methods only update the queue after finishing inserting. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_notifier_8cpp_source.html#l00158">158</a> of file <a class="el" href="_notifier_8cpp_source.html">Notifier.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a48a05d078053041b2b4335e19efcc983"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> Notifier::ProcessQueue </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> *&#160;</td>
+          <td class="paramname"><em>params</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>ProcessQueue is called whenever there is a timer interrupt. We need to wake up and process the current top item in the timer queue as long as its scheduled time is after the current time. Then the item is removed or rescheduled (repetitive events) in the queue. </p>
+
+<p>Definition at line <a class="el" href="_notifier_8cpp_source.html#l00110">110</a> of file <a class="el" href="_notifier_8cpp_source.html">Notifier.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ad86c4d07ac2947b0fa51b2ec4ed95dbf"></a>
 <div class="memitem">
 <div class="memproto">
@@ -279,6 +434,341 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ad837c96b01df3956807c5f41b3e76254"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> Notifier::UpdateAlarm </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Update the alarm hardware to reflect the current first element in the queue. Compute the time the next alarm should occur based on the current time and the period for the first element in the timer queue. WARNING: this method does not do synchronization! It must be called from somewhere that is taking care of synchronizing access to the queue. </p>
+
+<p>Definition at line <a class="el" href="_notifier_8cpp_source.html#l00091">91</a> of file <a class="el" href="_notifier_8cpp_source.html">Notifier.cpp</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a81d5d8f64efc815274ada47da4099123"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const UINT32 Notifier::kTimerInterruptNumber = 28</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_notifier_8h_source.html#l00031">31</a> of file <a class="el" href="_notifier_8h_source.html">Notifier.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afa136a97e06cddeb1a6ce23ac1f30c11"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Notifier::m_expirationTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_notifier_8h_source.html#l00039">39</a> of file <a class="el" href="_notifier_8h_source.html">Notifier.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5c3233d0530c81b1cd3f2dd6e93717cc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_notifier_8h.html#a410b2ee55490044c5b15681e6850367d">TimerEventHandler</a> Notifier::m_handler</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_notifier_8h_source.html#l00036">36</a> of file <a class="el" href="_notifier_8h_source.html">Notifier.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1a98fc9a4ee11a04fb5fa998d3bffea8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SEM_ID Notifier::m_handlerSemaphore</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_notifier_8h_source.html#l00043">43</a> of file <a class="el" href="_notifier_8h_source.html">Notifier.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4829c21aa4309a7da96282dfc1392269"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_notifier.html">Notifier</a>* Notifier::m_nextEvent</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_notifier_8h_source.html#l00040">40</a> of file <a class="el" href="_notifier_8h_source.html">Notifier.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a684521efb90bcd2527e202c4c63b5532"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>* Notifier::m_param</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_notifier_8h_source.html#l00037">37</a> of file <a class="el" href="_notifier_8h_source.html">Notifier.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5973b4354a27a9247c4baf81ae3e5f00"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Notifier::m_period</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_notifier_8h_source.html#l00038">38</a> of file <a class="el" href="_notifier_8h_source.html">Notifier.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a875f0b388bae10671a346494ec96a22f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Notifier::m_periodic</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_notifier_8h_source.html#l00041">41</a> of file <a class="el" href="_notifier_8h_source.html">Notifier.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a71ebe229a7bec5b81957f15041f651f4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Notifier::m_queued</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_notifier_8h_source.html#l00042">42</a> of file <a class="el" href="_notifier_8h_source.html">Notifier.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a914adf3dbfe85d8f4782bc95104a09fa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classn_f_p_g_a_1_1t_interrupt_manager.html">tInterruptManager</a> * Notifier::manager = <a class="el" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_notifier_8h_source.html#l00028">28</a> of file <a class="el" href="_notifier_8h_source.html">Notifier.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af6c84d244c4b73625065be5d0f8dd19b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_reentrant_semaphore.html">ReentrantSemaphore</a> Notifier::queueSemaphore</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_notifier_8h_source.html#l00026">26</a> of file <a class="el" href="_notifier_8h_source.html">Notifier.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a09bae19dc764f521bc0867cbad459c1e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> Notifier::refcount = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_notifier_8h_source.html#l00029">29</a> of file <a class="el" href="_notifier_8h_source.html">Notifier.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab698bd10182e56b4edcd2b47d4a677ab"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_alarm.html">tAlarm</a> * Notifier::talarm = <a class="el" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_notifier_8h_source.html#l00027">27</a> of file <a class="el" href="_notifier_8h_source.html">Notifier.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1aefaa126318fe20157d0f898b54fdf2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_notifier.html">Notifier</a> * Notifier::timerQueueHead = <a class="el" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_notifier_8h_source.html#l00025">25</a> of file <a class="el" href="_notifier_8h_source.html">Notifier.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>WPILib/<a class="el" href="_notifier_8h_source.html">Notifier.h</a></li>
 <li>WPILib/<a class="el" href="_notifier_8cpp_source.html">Notifier.cpp</a></li>
@@ -286,7 +776,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:16 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:48 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

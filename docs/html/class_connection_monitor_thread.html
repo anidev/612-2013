@@ -85,7 +85,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">ConnectionMonitorThread Class Reference</div>  </div>
 </div><!--header-->
@@ -106,10 +107,15 @@ Inheritance diagram for ConnectionMonitorThread:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad324468b9158e90a2c7b8c6d9b0b9111"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connection_monitor_thread.html#ad324468b9158e90a2c7b8c6d9b0b9111">ConnectionMonitorThread</a> (<a class="el" href="class_connection_adapter.html">ConnectionAdapter</a> &amp;adapter, <a class="el" href="class_network_table_connection.html">NetworkTableConnection</a> &amp;connection)</td></tr>
+<tr class="memitem:ad324468b9158e90a2c7b8c6d9b0b9111"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connection_monitor_thread.html#ad324468b9158e90a2c7b8c6d9b0b9111">ConnectionMonitorThread</a> (<a class="el" href="class_connection_adapter.html">ConnectionAdapter</a> &amp;<a class="el" href="class_connection_monitor_thread.html#a3173cb0c5ebdecf64fe36018f8f2abf2">adapter</a>, <a class="el" href="class_network_table_connection.html">NetworkTableConnection</a> &amp;<a class="el" href="class_connection_monitor_thread.html#a11b66c82eaaa83f6ffdc28c026c1ddd5">connection</a>)</td></tr>
 <tr class="memitem:a8b247b231a0dcf831c0b5534fa7ae088"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connection_monitor_thread.html#a8b247b231a0dcf831c0b5534fa7ae088">run</a> ()</td></tr>
 <tr class="inherit_header pub_methods_class_periodic_runnable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_periodic_runnable')"><img src="closed.png" alt="-"/>&nbsp;Public Member Functions inherited from <a class="el" href="class_periodic_runnable.html">PeriodicRunnable</a></td></tr>
 <tr class="memitem:aad844c67d45f7e92c8ffdc2452b85393 inherit pub_methods_class_periodic_runnable"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_periodic_runnable.html#aad844c67d45f7e92c8ffdc2452b85393">~PeriodicRunnable</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a3173cb0c5ebdecf64fe36018f8f2abf2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_connection_adapter.html">ConnectionAdapter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connection_monitor_thread.html#a3173cb0c5ebdecf64fe36018f8f2abf2">adapter</a></td></tr>
+<tr class="memitem:a11b66c82eaaa83f6ffdc28c026c1ddd5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_network_table_connection.html">NetworkTableConnection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connection_monitor_thread.html#a11b66c82eaaa83f6ffdc28c026c1ddd5">connection</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>A periodic thread that repeatedly reads from a connection </p>
@@ -188,6 +194,51 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a3173cb0c5ebdecf64fe36018f8f2abf2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_connection_adapter.html">ConnectionAdapter</a>&amp; ConnectionMonitorThread::adapter</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_connection_monitor_thread_8h_source.html#l00028">28</a> of file <a class="el" href="_connection_monitor_thread_8h_source.html">ConnectionMonitorThread.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a11b66c82eaaa83f6ffdc28c026c1ddd5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_network_table_connection.html">NetworkTableConnection</a>&amp; ConnectionMonitorThread::connection</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_connection_monitor_thread_8h_source.html#l00029">29</a> of file <a class="el" href="_connection_monitor_thread_8h_source.html">ConnectionMonitorThread.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>WPILib/networktables2/connection/<a class="el" href="_connection_monitor_thread_8h_source.html">ConnectionMonitorThread.h</a></li>
 <li>WPILib/networktables2/connection/<a class="el" href="_connection_monitor_thread_8cpp_source.html">ConnectionMonitorThread.cpp</a></li>
@@ -195,7 +246,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:14 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:46 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

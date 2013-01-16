@@ -85,7 +85,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">PCVideoServer Class Reference</div>  </div>
 </div><!--header-->
@@ -133,6 +136,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab67204acd1eb87ffe6fc45c2d22e517e inherit pub_methods_class_error_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the current error information associated with this sensor.  <a href="#ab67204acd1eb87ffe6fc45c2d22e517e"></a><br/></td></tr>
 <tr class="memitem:a05790f219c9e436a09752f73f7344024 inherit pub_methods_class_error_base"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_base.html#a05790f219c9e436a09752f73f7344024">StatusIsFatal</a> () const </td></tr>
 <tr class="memdesc:a05790f219c9e436a09752f73f7344024 inherit pub_methods_class_error_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the current error code represents a fatal error.  <a href="#a05790f219c9e436a09752f73f7344024"></a><br/></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a9a216115a26f95c77bffe8d1107b8d92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_video_server.html#a9a216115a26f95c77bffe8d1107b8d92">ServerTask</a> ()</td></tr>
+<tr class="memdesc:a9a216115a26f95c77bffe8d1107b8d92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the socket and serve images to the PC. This is the task that serves images to the PC in a loop. This runs as a separate task.  <a href="#a9a216115a26f95c77bffe8d1107b8d92"></a><br/></td></tr>
+<tr class="memitem:a11fd973e81dc9d5c1f53856288621747"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_video_server.html#a11fd973e81dc9d5c1f53856288621747">StartServerTask</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a00029c3b4e00179b98daf0b92b4abb90"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_video_server.html#a00029c3b4e00179b98daf0b92b4abb90">s_ServerTask</a> (<a class="el" href="class_p_c_video_server.html">PCVideoServer</a> *thisPtr)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a8afff67098bea3741b28756dfd61285f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_task.html">Task</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_video_server.html#a8afff67098bea3741b28756dfd61285f">m_serverTask</a></td></tr>
+<tr class="memitem:a383b73691bb9b99daf9fa2d5620345e1"><td class="memItemLeft" align="right" valign="top">SEM_ID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_video_server.html#a383b73691bb9b99daf9fa2d5620345e1">m_newImageSem</a></td></tr>
+<tr class="memitem:a4457b738e31ba52f1badc40fa265f790"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_video_server.html#a4457b738e31ba52f1badc40fa265f790">m_stopServer</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -208,6 +227,60 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a00029c3b4e00179b98daf0b92b4abb90"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> PCVideoServer::s_ServerTask </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_p_c_video_server.html">PCVideoServer</a> *&#160;</td>
+          <td class="paramname"><em>thisPtr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Static stub for kicking off the server task </p>
+
+<p>Definition at line <a class="el" href="_p_c_video_server_8cpp_source.html#l00168">168</a> of file <a class="el" href="_p_c_video_server_8cpp_source.html">PCVideoServer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9a216115a26f95c77bffe8d1107b8d92"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> PCVideoServer::ServerTask </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize the socket and serve images to the PC. This is the task that serves images to the PC in a loop. This runs as a separate task. </p>
+
+<p>Definition at line <a class="el" href="_p_c_video_server_8cpp_source.html#l00178">178</a> of file <a class="el" href="_p_c_video_server_8cpp_source.html">PCVideoServer.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a144c5b3cf67fdc9b5f7984fc46c691d3"></a>
 <div class="memitem">
 <div class="memproto">
@@ -224,6 +297,32 @@ Additional Inherited Members</h2></td></tr>
 <p>Start sending images to the PC. </p>
 
 <p>Definition at line <a class="el" href="_p_c_video_server_8cpp_source.html#l00152">152</a> of file <a class="el" href="_p_c_video_server_8cpp_source.html">PCVideoServer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a11fd973e81dc9d5c1f53856288621747"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> PCVideoServer::StartServerTask </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Start the task that is responsible for sending images to the PC. </p>
+
+<p>Definition at line <a class="el" href="_p_c_video_server_8cpp_source.html#l00117">117</a> of file <a class="el" href="_p_c_video_server_8cpp_source.html">PCVideoServer.cpp</a>.</p>
 
 </div>
 </div>
@@ -246,6 +345,73 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a383b73691bb9b99daf9fa2d5620345e1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SEM_ID PCVideoServer::m_newImageSem</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_p_c_video_server_8h_source.html#l00034">34</a> of file <a class="el" href="_p_c_video_server_8h_source.html">PCVideoServer.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8afff67098bea3741b28756dfd61285f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_task.html">Task</a> PCVideoServer::m_serverTask</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_p_c_video_server_8h_source.html#l00033">33</a> of file <a class="el" href="_p_c_video_server_8h_source.html">PCVideoServer.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4457b738e31ba52f1badc40fa265f790"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PCVideoServer::m_stopServer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_p_c_video_server_8h_source.html#l00035">35</a> of file <a class="el" href="_p_c_video_server_8h_source.html">PCVideoServer.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>WPILib/Vision/<a class="el" href="_p_c_video_server_8h_source.html">PCVideoServer.h</a></li>
 <li>WPILib/Vision/<a class="el" href="_p_c_video_server_8cpp_source.html">PCVideoServer.cpp</a></li>
@@ -253,7 +419,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:16 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:48 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

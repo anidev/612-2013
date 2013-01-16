@@ -137,26 +137,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_dashboard.html#aeebae45281f0cfdb41f2085d9b55bcea">GetStatusBuffer</a>(<span class="keywordtype">char</span>** userStatusData, INT32* userStatusDataSize);</div>
 <div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="class_dashboard.html#a29364210709cd218cb22d8455923a853">   50</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_dashboard.html#a29364210709cd218cb22d8455923a853">Flush</a>() {}</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> INT32 kMaxDashboardDataSize = <a class="code" href="_f_r_c_comm_8h.html#a9cb612db91a893f80aa5a0bbda719b5b">USER_STATUS_DATA_SIZE</a> - <span class="keyword">sizeof</span>(UINT32) * 3 - <span class="keyword">sizeof</span>(UINT8); <span class="comment">// 13 bytes needed for 3 size parameters and the sequence number</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="class_dashboard.html#a7d26cb2b2459ca44282afada926c5b5f">   52</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> INT32 <a class="code" href="class_dashboard.html#a7d26cb2b2459ca44282afada926c5b5f">kMaxDashboardDataSize</a> = <a class="code" href="_f_r_c_comm_8h.html#a9cb612db91a893f80aa5a0bbda719b5b">USER_STATUS_DATA_SIZE</a> - <span class="keyword">sizeof</span>(UINT32) * 3 - <span class="keyword">sizeof</span>(UINT8); <span class="comment">// 13 bytes needed for 3 size parameters and the sequence number</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="comment">// Usage Guidelines...</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        DISALLOW_COPY_AND_ASSIGN(<a class="code" href="class_dashboard.html">Dashboard</a>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="class_dashboard.html#a3abdc5b7654bff3a8fb6f3f25673f10b">DISALLOW_COPY_AND_ASSIGN</a>(<a class="code" href="class_dashboard.html">Dashboard</a>);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordtype">bool</span> ValidateAdd(INT32 size);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordtype">void</span> AddedElement(<a class="code" href="class_dashboard.html#a515096dee940d0b3e21b2b228106671f">Type</a> type);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">bool</span> IsArrayRoot();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_dashboard.html#af85acfd870e1599bdf27c2469de96490">ValidateAdd</a>(INT32 size);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_dashboard.html#a8e26b72cd83e9a8f5a435fcd70bb1eca">AddedElement</a>(<a class="code" href="class_dashboard.html#a515096dee940d0b3e21b2b228106671f">Type</a> type);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_dashboard.html#af63feb3ebf2ffeb304f946fd6b94c995">IsArrayRoot</a>();</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordtype">char</span> *m_userStatusData;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        INT32 m_userStatusDataSize;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">char</span> *m_localBuffer;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">char</span> *m_localPrintBuffer;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">char</span> *m_packPtr;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        std::vector&lt;Type&gt; m_expectedArrayElementType;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        std::vector&lt;INT32&gt; m_arrayElementCount;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        std::vector&lt;INT32*&gt; m_arraySizePtr;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        std::stack&lt;ComplexType&gt; m_complexTypeStack;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        SEM_ID m_printSemaphore;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        SEM_ID m_statusDataSemaphore;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="code" href="class_dashboard.html#aa84dba63f5e4d0e18d013698f5abadc0">   61</a></span>&#160;        <span class="keywordtype">char</span> *<a class="code" href="class_dashboard.html#aa84dba63f5e4d0e18d013698f5abadc0">m_userStatusData</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="code" href="class_dashboard.html#aff38bb91a43945528436db84ae1341ce">   62</a></span>&#160;        INT32 <a class="code" href="class_dashboard.html#aff38bb91a43945528436db84ae1341ce">m_userStatusDataSize</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="code" href="class_dashboard.html#ae1f61a0012e6fa61baa3129ba6907c1c">   63</a></span>&#160;        <span class="keywordtype">char</span> *<a class="code" href="class_dashboard.html#ae1f61a0012e6fa61baa3129ba6907c1c">m_localBuffer</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="class_dashboard.html#ab9bb70787def50b54639048457519c7d">   64</a></span>&#160;        <span class="keywordtype">char</span> *<a class="code" href="class_dashboard.html#ab9bb70787def50b54639048457519c7d">m_localPrintBuffer</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="code" href="class_dashboard.html#a507bd63dab61cdcf8f3b753578bd00db">   65</a></span>&#160;        <span class="keywordtype">char</span> *<a class="code" href="class_dashboard.html#a507bd63dab61cdcf8f3b753578bd00db">m_packPtr</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="class_dashboard.html#aa57465fb479d6d5e8ac941b5bb55bae2">   66</a></span>&#160;        std::vector&lt;Type&gt; <a class="code" href="class_dashboard.html#aa57465fb479d6d5e8ac941b5bb55bae2">m_expectedArrayElementType</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="class_dashboard.html#af9af7a288394bab816ca7706768f5c00">   67</a></span>&#160;        std::vector&lt;INT32&gt; <a class="code" href="class_dashboard.html#af9af7a288394bab816ca7706768f5c00">m_arrayElementCount</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="class_dashboard.html#a59d67ba05b840a78263c3a56fa5f21d1">   68</a></span>&#160;        std::vector&lt;INT32*&gt; <a class="code" href="class_dashboard.html#a59d67ba05b840a78263c3a56fa5f21d1">m_arraySizePtr</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="code" href="class_dashboard.html#ae21b58e58b4583e7687b92f178c29b5a">   69</a></span>&#160;        std::stack&lt;ComplexType&gt; <a class="code" href="class_dashboard.html#ae21b58e58b4583e7687b92f178c29b5a">m_complexTypeStack</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="code" href="class_dashboard.html#a66c9c97b892dae5677a4cd4bb1ea0cf5">   70</a></span>&#160;        SEM_ID <a class="code" href="class_dashboard.html#a66c9c97b892dae5677a4cd4bb1ea0cf5">m_printSemaphore</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="code" href="class_dashboard.html#a9ca42cbb31f85bb6256ad45560fe021a">   71</a></span>&#160;        SEM_ID <a class="code" href="class_dashboard.html#a9ca42cbb31f85bb6256ad45560fe021a">m_statusDataSemaphore</a>;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;};</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -164,7 +164,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:09 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:42 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

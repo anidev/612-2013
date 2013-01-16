@@ -86,7 +86,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">KinectStick Class Reference</div>  </div>
 </div><!--header-->
@@ -108,7 +111,7 @@ Inheritance diagram for KinectStick:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><b>KinectStickData</b></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="union_kinect_stick_1_1_kinect_stick_data.html">KinectStickData</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -143,6 +146,20 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab67204acd1eb87ffe6fc45c2d22e517e inherit pub_methods_class_error_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the current error information associated with this sensor.  <a href="#ab67204acd1eb87ffe6fc45c2d22e517e"></a><br/></td></tr>
 <tr class="memitem:a05790f219c9e436a09752f73f7344024 inherit pub_methods_class_error_base"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_base.html#a05790f219c9e436a09752f73f7344024">StatusIsFatal</a> () const </td></tr>
 <tr class="memdesc:a05790f219c9e436a09752f73f7344024 inherit pub_methods_class_error_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the current error code represents a fatal error.  <a href="#a05790f219c9e436a09752f73f7344024"></a><br/></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:affb9cd7c1bd2f1bbed28f96ef700fd59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_kinect_stick.html#affb9cd7c1bd2f1bbed28f96ef700fd59">GetData</a> ()</td></tr>
+<tr class="memitem:a5b0de1d0058eca8fac76604ec11b12b5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_kinect_stick.html#a5b0de1d0058eca8fac76604ec11b12b5">ConvertRawToFloat</a> (INT8 charValue)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ad8ff173508be35b7db92d1b77fd3751e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_kinect_stick.html#ad8ff173508be35b7db92d1b77fd3751e">m_id</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a59c83c42dfb84f3dda69300cdb969971"><td class="memItemLeft" align="right" valign="top">static UINT32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_kinect_stick.html#a59c83c42dfb84f3dda69300cdb969971">_recentPacketNumber</a> = 0</td></tr>
+<tr class="memitem:aebed7eff1e44f9a0ee6514b63e3c469e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="union_kinect_stick_1_1_kinect_stick_data.html">KinectStickData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_kinect_stick.html#aebed7eff1e44f9a0ee6514b63e3c469e">_sticks</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -202,6 +219,39 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a5b0de1d0058eca8fac76604ec11b12b5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float KinectStick::ConvertRawToFloat </td>
+          <td>(</td>
+          <td class="paramtype">INT8&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Convert an 8 bit joystick value to a floating point (-1,1) value </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The 8 bit raw joystick value returned from the driver station </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_kinect_stick_8cpp_source.html#l00184">184</a> of file <a class="el" href="_kinect_stick_8cpp_source.html">KinectStick.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a82313329ccd83e34771f3ea2f8de4fbe"></a>
 <div class="memitem">
 <div class="memproto">
@@ -235,6 +285,32 @@ Additional Inherited Members</h2></td></tr>
 <p>Implements <a class="el" href="class_generic_h_i_d.html#ae44948c457407b0f156bac3b27bb12ea">GenericHID</a>.</p>
 
 <p>Definition at line <a class="el" href="_kinect_stick_8cpp_source.html#l00140">140</a> of file <a class="el" href="_kinect_stick_8cpp_source.html">KinectStick.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="affb9cd7c1bd2f1bbed28f96ef700fd59"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> KinectStick::GetData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Get dynamic data from the driver station buffer </p>
+
+<p>Definition at line <a class="el" href="_kinect_stick_8cpp_source.html#l00166">166</a> of file <a class="el" href="_kinect_stick_8cpp_source.html">KinectStick.cpp</a>.</p>
 
 </div>
 </div>
@@ -548,6 +624,73 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a59c83c42dfb84f3dda69300cdb969971"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">UINT32 KinectStick::_recentPacketNumber = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_kinect_stick_8h_source.html#l00056">56</a> of file <a class="el" href="_kinect_stick_8h_source.html">KinectStick.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aebed7eff1e44f9a0ee6514b63e3c469e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="union_kinect_stick_1_1_kinect_stick_data.html">KinectStick::KinectStickData</a> KinectStick::_sticks</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_kinect_stick_8h_source.html#l00057">57</a> of file <a class="el" href="_kinect_stick_8h_source.html">KinectStick.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad8ff173508be35b7db92d1b77fd3751e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> KinectStick::m_id</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_kinect_stick_8h_source.html#l00055">55</a> of file <a class="el" href="_kinect_stick_8h_source.html">KinectStick.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>WPILib/<a class="el" href="_kinect_stick_8h_source.html">KinectStick.h</a></li>
 <li>WPILib/<a class="el" href="_kinect_stick_8cpp_source.html">KinectStick.cpp</a></li>
@@ -555,7 +698,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:15 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:47 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

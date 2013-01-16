@@ -85,7 +85,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">DigitalOutput Class Reference</div>  </div>
 </div><!--header-->
@@ -172,6 +174,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab67204acd1eb87ffe6fc45c2d22e517e inherit pub_methods_class_error_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the current error information associated with this sensor.  <a href="#ab67204acd1eb87ffe6fc45c2d22e517e"></a><br/></td></tr>
 <tr class="memitem:a05790f219c9e436a09752f73f7344024 inherit pub_methods_class_error_base"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_base.html#a05790f219c9e436a09752f73f7344024">StatusIsFatal</a> () const </td></tr>
 <tr class="memdesc:a05790f219c9e436a09752f73f7344024 inherit pub_methods_class_error_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the current error code represents a fatal error.  <a href="#a05790f219c9e436a09752f73f7344024"></a><br/></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:acbc085cb2b168349e1730cf83afbfdd6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_digital_output.html#acbc085cb2b168349e1730cf83afbfdd6">InitDigitalOutput</a> (UINT8 moduleNumber, UINT32 channel)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a12c52ecc9b1989cb93fc28095b609c3e"><td class="memItemLeft" align="right" valign="top">UINT32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_digital_output.html#a12c52ecc9b1989cb93fc28095b609c3e">m_channel</a></td></tr>
+<tr class="memitem:afb5f6d54b6827fb316555ddf7016f2c0"><td class="memItemLeft" align="right" valign="top">UINT32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_digital_output.html#afb5f6d54b6827fb316555ddf7016f2c0">m_pwmGenerator</a></td></tr>
+<tr class="memitem:a633be291f8168a80fe6fc453d52cee25"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_digital_module.html">DigitalModule</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_digital_output.html#a633be291f8168a80fe6fc453d52cee25">m_module</a></td></tr>
+<tr class="memitem:adbbdb493c19b30ef83d696a6a9029c41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_table.html">ITable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_digital_output.html#adbbdb493c19b30ef83d696a6a9029c41">m_table</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Class to write to digital outputs. Write values to the digital output channels. Other devices implemented elsewhere will allocate channels automatically so for those devices it shouldn't be done here. </p>
@@ -476,6 +489,43 @@ Public Member Functions</h2></td></tr>
 <p>Implements <a class="el" href="class_sendable.html#af17a1c5cb9b0d8ef2d45583072213629">Sendable</a>.</p>
 
 <p>Definition at line <a class="el" href="_digital_output_8cpp_source.html#l00307">307</a> of file <a class="el" href="_digital_output_8cpp_source.html">DigitalOutput.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acbc085cb2b168349e1730cf83afbfdd6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> DigitalOutput::InitDigitalOutput </td>
+          <td>(</td>
+          <td class="paramtype">UINT8&#160;</td>
+          <td class="paramname"><em>moduleNumber</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UINT32&#160;</td>
+          <td class="paramname"><em>channel</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Create an instance of a <a class="el" href="class_digital_output.html">DigitalOutput</a>. Creates a digital output given a slot and channel. Common creation routine for all constructors. </p>
+
+<p>Definition at line <a class="el" href="_digital_output_8cpp_source.html#l00020">20</a> of file <a class="el" href="_digital_output_8cpp_source.html">DigitalOutput.cpp</a>.</p>
 
 </div>
 </div>
@@ -874,6 +924,95 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a12c52ecc9b1989cb93fc28095b609c3e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">UINT32 DigitalOutput::m_channel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_digital_output_8h_source.html#l00056">56</a> of file <a class="el" href="_digital_output_8h_source.html">DigitalOutput.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a633be291f8168a80fe6fc453d52cee25"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_digital_module.html">DigitalModule</a>* DigitalOutput::m_module</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_digital_output_8h_source.html#l00058">58</a> of file <a class="el" href="_digital_output_8h_source.html">DigitalOutput.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afb5f6d54b6827fb316555ddf7016f2c0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">UINT32 DigitalOutput::m_pwmGenerator</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_digital_output_8h_source.html#l00057">57</a> of file <a class="el" href="_digital_output_8h_source.html">DigitalOutput.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adbbdb493c19b30ef83d696a6a9029c41"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i_table.html">ITable</a>* DigitalOutput::m_table</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_digital_output_8h_source.html#l00060">60</a> of file <a class="el" href="_digital_output_8h_source.html">DigitalOutput.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>WPILib/<a class="el" href="_digital_output_8h_source.html">DigitalOutput.h</a></li>
 <li>WPILib/<a class="el" href="_digital_output_8cpp_source.html">DigitalOutput.cpp</a></li>
@@ -881,7 +1020,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:14 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:46 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

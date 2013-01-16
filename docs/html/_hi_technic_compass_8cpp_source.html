@@ -102,12 +102,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_usage_reporting_8h.html">NetworkCommunication/UsageReporting.h</a>&quot;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_w_p_i_errors_8h.html">WPIErrors.h</a>&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">const</span> UINT8 HiTechnicCompass::kAddress;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">const</span> UINT8 HiTechnicCompass::kManufacturerBaseRegister;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">const</span> UINT8 HiTechnicCompass::kManufacturerSize;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">const</span> UINT8 HiTechnicCompass::kSensorTypeBaseRegister;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">const</span> UINT8 HiTechnicCompass::kSensorTypeSize;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">const</span> UINT8 HiTechnicCompass::kHeadingRegister;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">const</span> UINT8 <a class="code" href="class_hi_technic_compass.html#ae837688a4cd9ed8db081ecad2b7585b8">HiTechnicCompass::kAddress</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">const</span> UINT8 <a class="code" href="class_hi_technic_compass.html#a1fd59fbb98fc4a82394a539a49c28cbc">HiTechnicCompass::kManufacturerBaseRegister</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">const</span> UINT8 <a class="code" href="class_hi_technic_compass.html#a9a89f6585f58e91389dc12f2f3b98a41">HiTechnicCompass::kManufacturerSize</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">const</span> UINT8 <a class="code" href="class_hi_technic_compass.html#a267751f0a372051ddc07a395557cb19f">HiTechnicCompass::kSensorTypeBaseRegister</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">const</span> UINT8 <a class="code" href="class_hi_technic_compass.html#a07548d6f3c08837e54d38bc8e79f1079">HiTechnicCompass::kSensorTypeSize</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">const</span> UINT8 <a class="code" href="class_hi_technic_compass.html#a493b681b677142dc5c3391a880f002f7">HiTechnicCompass::kHeadingRegister</a>;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
 <div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="class_hi_technic_compass.html#a5bc64b0b66c96f50c1d8a54328e02050">   25</a></span>&#160;<a class="code" href="class_hi_technic_compass.html#a5bc64b0b66c96f50c1d8a54328e02050">HiTechnicCompass::HiTechnicCompass</a>(UINT8 moduleNumber)</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        : m_i2c (<a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
@@ -115,17 +115,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="class_digital_module.html">DigitalModule</a> *module = <a class="code" href="class_digital_module.html#ad6384445078c80a3b77ef4d2e840f930">DigitalModule::GetInstance</a>(moduleNumber);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">if</span> (module)</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                m_i2c = module-&gt;<a class="code" href="class_digital_module.html#ae776c8449cf18b7f90fec0126b3e8373">GetI2C</a>(kAddress);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <a class="code" href="class_hi_technic_compass.html#ae9f5274d5e59be83db7b1e9b77cc782c">m_i2c</a> = module-&gt;<a class="code" href="class_digital_module.html#ae776c8449cf18b7f90fec0126b3e8373">GetI2C</a>(<a class="code" href="class_hi_technic_compass.html#ae837688a4cd9ed8db081ecad2b7585b8">kAddress</a>);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <span class="comment">// Verify Sensor</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <span class="keyword">const</span> UINT8 kExpectedManufacturer[] = <span class="stringliteral">&quot;HiTechnc&quot;</span>;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <span class="keyword">const</span> UINT8 kExpectedSensorType[] = <span class="stringliteral">&quot;Compass &quot;</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <span class="keywordflow">if</span> ( ! m_i2c-&gt;<a class="code" href="class_i2_c.html#a0d2101f590b7df2034c4239896f071c3">VerifySensor</a>(kManufacturerBaseRegister, kManufacturerSize, kExpectedManufacturer) )</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <span class="keywordflow">if</span> ( ! <a class="code" href="class_hi_technic_compass.html#ae9f5274d5e59be83db7b1e9b77cc782c">m_i2c</a>-&gt;<a class="code" href="class_i2_c.html#a0d2101f590b7df2034c4239896f071c3">VerifySensor</a>(<a class="code" href="class_hi_technic_compass.html#a1fd59fbb98fc4a82394a539a49c28cbc">kManufacturerBaseRegister</a>, <a class="code" href="class_hi_technic_compass.html#a9a89f6585f58e91389dc12f2f3b98a41">kManufacturerSize</a>, kExpectedManufacturer) )</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                {</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                        <a class="code" href="_error_base_8h.html#a30c73bc37a870c1b5b3dc4a866d3a947">wpi_setWPIError</a>(CompassManufacturerError);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordflow">if</span> ( ! m_i2c-&gt;<a class="code" href="class_i2_c.html#a0d2101f590b7df2034c4239896f071c3">VerifySensor</a>(kSensorTypeBaseRegister, kSensorTypeSize, kExpectedSensorType) )</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordflow">if</span> ( ! <a class="code" href="class_hi_technic_compass.html#ae9f5274d5e59be83db7b1e9b77cc782c">m_i2c</a>-&gt;<a class="code" href="class_i2_c.html#a0d2101f590b7df2034c4239896f071c3">VerifySensor</a>(<a class="code" href="class_hi_technic_compass.html#a267751f0a372051ddc07a395557cb19f">kSensorTypeBaseRegister</a>, <a class="code" href="class_hi_technic_compass.html#a07548d6f3c08837e54d38bc8e79f1079">kSensorTypeSize</a>, kExpectedSensorType) )</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                {</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                        <a class="code" href="_error_base_8h.html#a30c73bc37a870c1b5b3dc4a866d3a947">wpi_setWPIError</a>(CompassTypeError);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                }</div>
@@ -136,16 +136,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
 <div class="line"><a name="l00053"></a><span class="lineno"><a class="code" href="class_hi_technic_compass.html#a4492a67a04de360c3247f5ec648d4e97">   53</a></span>&#160;<a class="code" href="class_hi_technic_compass.html#a4492a67a04de360c3247f5ec648d4e97">HiTechnicCompass::~HiTechnicCompass</a>()</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">delete</span> m_i2c;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        m_i2c = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">delete</span> <a class="code" href="class_hi_technic_compass.html#ae9f5274d5e59be83db7b1e9b77cc782c">m_i2c</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="class_hi_technic_compass.html#ae9f5274d5e59be83db7b1e9b77cc782c">m_i2c</a> = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
 <div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="class_hi_technic_compass.html#af09859e82140181c2ae4cb2e62f8f991">   66</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="class_hi_technic_compass.html#af09859e82140181c2ae4cb2e62f8f991">HiTechnicCompass::GetAngle</a>()</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        UINT16 heading = 0;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">if</span> (m_i2c)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_hi_technic_compass.html#ae9f5274d5e59be83db7b1e9b77cc782c">m_i2c</a>)</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                m_i2c-&gt;<a class="code" href="class_i2_c.html#ae50e3e7fb5c896762c6a785f8d85cdc2">Read</a>(kHeadingRegister, <span class="keyword">sizeof</span>(heading), (UINT8 *)&amp;heading);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <a class="code" href="class_hi_technic_compass.html#ae9f5274d5e59be83db7b1e9b77cc782c">m_i2c</a>-&gt;<a class="code" href="class_i2_c.html#ae50e3e7fb5c896762c6a785f8d85cdc2">Read</a>(<a class="code" href="class_hi_technic_compass.html#a493b681b677142dc5c3391a880f002f7">kHeadingRegister</a>, <span class="keyword">sizeof</span>(heading), (UINT8 *)&amp;heading);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="comment">// Sensor is little endian... swap bytes</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                heading = (heading &gt;&gt; 8) | (heading &lt;&lt; 8);</div>
@@ -154,8 +154,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
 <div class="line"><a name="l00079"></a><span class="lineno"><a class="code" href="class_hi_technic_compass.html#ac89c2771cff8a68b24f28ce2c8c106df">   79</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_hi_technic_compass.html#ac89c2771cff8a68b24f28ce2c8c106df">HiTechnicCompass::UpdateTable</a>() {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">if</span> (m_table != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                m_table-&gt;<a class="code" href="class_i_table.html#a6dc108b7478fbeaed97457dbc52e2811">PutNumber</a>(<span class="stringliteral">&quot;Value&quot;</span>, <a class="code" href="class_hi_technic_compass.html#af09859e82140181c2ae4cb2e62f8f991">GetAngle</a>());</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_hi_technic_compass.html#ae33394c6231246f3400dcab407576d0f">m_table</a> != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <a class="code" href="class_hi_technic_compass.html#ae33394c6231246f3400dcab407576d0f">m_table</a>-&gt;<a class="code" href="class_i_table.html#a6dc108b7478fbeaed97457dbc52e2811">PutNumber</a>(<span class="stringliteral">&quot;Value&quot;</span>, <a class="code" href="class_hi_technic_compass.html#af09859e82140181c2ae4cb2e62f8f991">GetAngle</a>());</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        }</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
@@ -172,18 +172,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
 <div class="line"><a name="l00097"></a><span class="lineno"><a class="code" href="class_hi_technic_compass.html#a8f8c0d8e0371fe491339fb7ca9fa5588">   97</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_hi_technic_compass.html#a8f8c0d8e0371fe491339fb7ca9fa5588">HiTechnicCompass::InitTable</a>(<a class="code" href="class_i_table.html">ITable</a> *subTable) {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        m_table = subTable;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="class_hi_technic_compass.html#ae33394c6231246f3400dcab407576d0f">m_table</a> = subTable;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="class_hi_technic_compass.html#ac89c2771cff8a68b24f28ce2c8c106df">UpdateTable</a>();</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
 <div class="line"><a name="l00102"></a><span class="lineno"><a class="code" href="class_hi_technic_compass.html#a74dda0a9d145f99be5b549297c8ba976">  102</a></span>&#160;<a class="code" href="class_i_table.html">ITable</a> * <a class="code" href="class_hi_technic_compass.html#a74dda0a9d145f99be5b549297c8ba976">HiTechnicCompass::GetTable</a>() {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">return</span> m_table;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_hi_technic_compass.html#ae33394c6231246f3400dcab407576d0f">m_table</a>;</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:09 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:42 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

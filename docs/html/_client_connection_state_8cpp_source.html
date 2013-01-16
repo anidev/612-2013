@@ -115,7 +115,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <a class="code" href="class_client_connection_state.html">ClientConnectionState</a>(<span class="stringliteral">&quot;PROTOCOL_UNSUPPORTED_BY_SERVER&quot;</span>),</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        serverVersion(_serverVersion){}</div>
 <div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="class_client_connection_state___protocol_unsuppoted_by_server.html#a9bf4171e883e66586a0956e97be425fc">   44</a></span>&#160;<a class="code" href="_network_table_connection_8h.html#a7449e9af3775fd273a33c3c2cc8f5ca8">ProtocolVersion</a> <a class="code" href="class_client_connection_state___protocol_unsuppoted_by_server.html#a9bf4171e883e66586a0956e97be425fc">ClientConnectionState_ProtocolUnsuppotedByServer::getServerVersion</a>(){</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">return</span> serverVersion;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_client_connection_state___protocol_unsuppoted_by_server.html#a35cebefad304aa485c5217fb1f9c8e0f">serverVersion</a>;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
 <div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="class_client_connection_state___protocol_unsuppoted_by_server.html#ae17ee9c21b462d68f96967e38cde3e1a">   47</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="class_client_connection_state___protocol_unsuppoted_by_server.html#ae17ee9c21b462d68f96967e38cde3e1a">ClientConnectionState_ProtocolUnsuppotedByServer::toString</a>(){</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;PROTOCOL_UNSUPPORTED_BY_SERVER&quot;</span>;</div>
@@ -123,28 +123,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
 <div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="class_client_connection_state___error.html#a0604699438886cad1ef094f41f198553">   56</a></span>&#160;<a class="code" href="class_client_connection_state___error.html#a0604699438886cad1ef094f41f198553">ClientConnectionState_Error::ClientConnectionState_Error</a>(std::exception&amp; _e):<a class="code" href="class_client_connection_state.html">ClientConnectionState</a>(<span class="stringliteral">&quot;CLIENT_ERROR&quot;</span>),e(_e){</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  strcpy(msg, <span class="stringliteral">&quot;CLIENT_ERROR: &quot;</span>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  strcat(msg, e.what());</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  strcpy(<a class="code" href="class_client_connection_state___error.html#aa5b2cd313fe1053ed3c34ba32ea4a237">msg</a>, <span class="stringliteral">&quot;CLIENT_ERROR: &quot;</span>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  strcat(<a class="code" href="class_client_connection_state___error.html#aa5b2cd313fe1053ed3c34ba32ea4a237">msg</a>, <a class="code" href="class_client_connection_state___error.html#ae75d1c7d85786a2885f6625d0fb40bba">e</a>.what());</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
 <div class="line"><a name="l00063"></a><span class="lineno"><a class="code" href="class_client_connection_state___error.html#a97c2c904510dbea27631f086ba397217">   63</a></span>&#160;std::exception&amp; <a class="code" href="class_client_connection_state___error.html#a97c2c904510dbea27631f086ba397217">ClientConnectionState_Error::getException</a>(){</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">return</span> e;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_client_connection_state___error.html#ae75d1c7d85786a2885f6625d0fb40bba">e</a>;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
 <div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="class_client_connection_state___error.html#ad3216131d965b451052c28260f57ad78">   66</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="class_client_connection_state___error.html#ad3216131d965b451052c28260f57ad78">ClientConnectionState_Error::toString</a>(){</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordflow">return</span> msg;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_client_connection_state___error.html#aa5b2cd313fe1053ed3c34ba32ea4a237">msg</a>;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="comment">//return &quot;CLIENT_ERROR&quot;;</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="comment">//return &quot;CLIENT_ERROR: &quot;+e.getClass()+&quot;: &quot;+e.getMessage();</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
 <div class="line"><a name="l00072"></a><span class="lineno"><a class="code" href="class_client_connection_state.html#acc0d13b2877f782b462790856f646d6c">   72</a></span>&#160;<a class="code" href="class_client_connection_state.html#acc0d13b2877f782b462790856f646d6c">ClientConnectionState::ClientConnectionState</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* _name){</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        name = _name;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="class_client_connection_state.html#a20c5d968ddfb44fd50132fe9d0b898ec">name</a> = _name;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
 <div class="line"><a name="l00075"></a><span class="lineno"><a class="code" href="class_client_connection_state.html#a4a248102921409095afde63f57e97a2c">   75</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="class_client_connection_state.html#a4a248102921409095afde63f57e97a2c">ClientConnectionState::toString</a>(){</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">return</span> name;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_client_connection_state.html#a20c5d968ddfb44fd50132fe9d0b898ec">name</a>;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:10 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:43 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

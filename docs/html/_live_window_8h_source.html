@@ -106,7 +106,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_live_window.html#aab6f846f8448faeca31d29e0e0618ec5">AddActuator</a>(<span class="keywordtype">char</span> *subsystem, <span class="keywordtype">char</span> *name, <a class="code" href="class_live_window_sendable.html">LiveWindowSendable</a> *component);</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_live_window.html#a8c97c285fff334e54c3108d6650c78bc">AddComponent</a>(<span class="keywordtype">char</span> *subsystem, <span class="keywordtype">char</span> *name, <a class="code" href="class_live_window_sendable.html">LiveWindowSendable</a> *component);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="class_live_window.html#ac453ddd25720fb7ad8d41627e8e6bc58">   23</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_live_window.html#ac453ddd25720fb7ad8d41627e8e6bc58">IsEnabled</a>() { <span class="keywordflow">return</span> m_enabled; }</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="class_live_window.html#ac453ddd25720fb7ad8d41627e8e6bc58">   23</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_live_window.html#ac453ddd25720fb7ad8d41627e8e6bc58">IsEnabled</a>() { <span class="keywordflow">return</span> <a class="code" href="class_live_window.html#a8ebada7f7ddab31150d49b3e770ce7de">m_enabled</a>; }</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_live_window.html#a32b93a8ff3f60440654af8b5c351bc5f">SetEnabled</a>(<span class="keywordtype">bool</span> enabled);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">protected</span>:</div>
@@ -114,20 +114,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_live_window.html#abe32daf19797edd460e34e47b045a3d5">~LiveWindow</a>();</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">void</span> UpdateValues();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordtype">void</span> Initialize();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_live_window.html#aa81af484d8bef6275632b9cd8f599c0d">UpdateValues</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_live_window.html#acb8e6a43423e0b657d6cb201d8285f2e">Initialize</a>();</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        std::vector&lt;LiveWindowSendable *&gt; m_sensors;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        std::vector&lt;LiveWindowSendable *&gt; m_actuators;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        std::vector&lt;LiveWindowSendable *&gt; m_components;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="class_live_window.html#a2080c1bf4ee092c9da747889a55ff077">   34</a></span>&#160;        std::vector&lt;LiveWindowSendable *&gt; <a class="code" href="class_live_window.html#a2080c1bf4ee092c9da747889a55ff077">m_sensors</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="class_live_window.html#a0551ee57ca346debcdbd5f9f6533fd70">   35</a></span>&#160;        std::vector&lt;LiveWindowSendable *&gt; <a class="code" href="class_live_window.html#a0551ee57ca346debcdbd5f9f6533fd70">m_actuators</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="class_live_window.html#a8960208a07a283f256405d1a267d5bbd">   36</a></span>&#160;        std::vector&lt;LiveWindowSendable *&gt; <a class="code" href="class_live_window.html#a8960208a07a283f256405d1a267d5bbd">m_components</a>;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">static</span> <a class="code" href="class_live_window.html">LiveWindow</a> *m_instance;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="class_i_table.html">ITable</a> *m_liveWindowTable;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="class_i_table.html">ITable</a> *m_statusTable;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="class_live_window.html#adea8ba09231d75aa8251fc11af14188d">   38</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="class_live_window.html">LiveWindow</a> *<a class="code" href="class_live_window.html#adea8ba09231d75aa8251fc11af14188d">m_instance</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="class_live_window.html#a19c29b5e89aa08f6d6a010897179f023">   39</a></span>&#160;        <a class="code" href="class_i_table.html">ITable</a> *<a class="code" href="class_live_window.html#a19c29b5e89aa08f6d6a010897179f023">m_liveWindowTable</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="class_live_window.html#aece633a9b54dffb121fa1a66a9c1ba6e">   40</a></span>&#160;        <a class="code" href="class_i_table.html">ITable</a> *<a class="code" href="class_live_window.html#aece633a9b54dffb121fa1a66a9c1ba6e">m_statusTable</a>;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="class_scheduler.html">Scheduler</a> *m_scheduler;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="class_live_window.html#abb5eff077d79f4679440bd7fd7555e9f">   42</a></span>&#160;        <a class="code" href="class_scheduler.html">Scheduler</a> *<a class="code" href="class_live_window.html#abb5eff077d79f4679440bd7fd7555e9f">m_scheduler</a>;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">bool</span> m_enabled;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="class_live_window.html#a8ebada7f7ddab31150d49b3e770ce7de">   44</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_live_window.html#a8ebada7f7ddab31150d49b3e770ce7de">m_enabled</a>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -135,7 +135,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:09 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:42 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

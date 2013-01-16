@@ -88,6 +88,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#friends">Friends</a>  </div>
   <div class="headertitle">
 <div class="title">DriverStationEnhancedIO Class Reference</div>  </div>
@@ -109,10 +112,10 @@ Inheritance diagram for DriverStationEnhancedIO:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><b>control_block_t</b></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><b>input_t</b></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><b>output_t</b></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><b>status_block_t</b></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_driver_station_enhanced_i_o_1_1control__block__t.html">control_block_t</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_driver_station_enhanced_i_o_1_1input__t.html">input_t</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_driver_station_enhanced_i_o_1_1output__t.html">output_t</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_driver_station_enhanced_i_o_1_1status__block__t.html">status_block_t</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -151,8 +154,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1b17805cb755900f4bc9f34f1444d822"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_driver_station_enhanced_i_o.html#a1b17805cb755900f4bc9f34f1444d822">SetDigitalOutput</a> (UINT32 channel, bool value)</td></tr>
 <tr class="memitem:a8f5de58215d255e84e48723fda4e4c5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_driver_station_enhanced_i_o.html#a91b58d6e1568a7b5650d7833a3ad01a9">tDigitalConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_driver_station_enhanced_i_o.html#a8f5de58215d255e84e48723fda4e4c5e">GetDigitalConfig</a> (UINT32 channel)</td></tr>
 <tr class="memitem:afad555dfa62bf621e92edda0b36613d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_driver_station_enhanced_i_o.html#afad555dfa62bf621e92edda0b36613d0">SetDigitalConfig</a> (UINT32 channel, <a class="el" href="class_driver_station_enhanced_i_o.html#a91b58d6e1568a7b5650d7833a3ad01a9">tDigitalConfig</a> config)</td></tr>
-<tr class="memitem:a4cd8909d9a276724787ea5ec0f954c66"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_driver_station_enhanced_i_o.html#a4cd8909d9a276724787ea5ec0f954c66">GetPWMPeriod</a> (<a class="el" href="class_driver_station_enhanced_i_o.html#afb0d5c951aba273b382cf1085afdcfbd">tPWMPeriodChannels</a> channels)</td></tr>
-<tr class="memitem:a6f1c7196f6cbcce00a928d7380b9d46f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_driver_station_enhanced_i_o.html#a6f1c7196f6cbcce00a928d7380b9d46f">SetPWMPeriod</a> (<a class="el" href="class_driver_station_enhanced_i_o.html#afb0d5c951aba273b382cf1085afdcfbd">tPWMPeriodChannels</a> channels, double period)</td></tr>
+<tr class="memitem:a4cd8909d9a276724787ea5ec0f954c66"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_driver_station_enhanced_i_o.html#a4cd8909d9a276724787ea5ec0f954c66">GetPWMPeriod</a> (<a class="el" href="class_driver_station_enhanced_i_o.html#afb0d5c951aba273b382cf1085afdcfbd">tPWMPeriodChannels</a> <a class="el" href="_analog_channel_8cpp.html#a14d904b79be0754f7b01b2b26bc368b7">channels</a>)</td></tr>
+<tr class="memitem:a6f1c7196f6cbcce00a928d7380b9d46f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_driver_station_enhanced_i_o.html#a6f1c7196f6cbcce00a928d7380b9d46f">SetPWMPeriod</a> (<a class="el" href="class_driver_station_enhanced_i_o.html#afb0d5c951aba273b382cf1085afdcfbd">tPWMPeriodChannels</a> <a class="el" href="_analog_channel_8cpp.html#a14d904b79be0754f7b01b2b26bc368b7">channels</a>, double period)</td></tr>
 <tr class="memitem:aee619374b9c5f1135682bda584ec146c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_driver_station_enhanced_i_o.html#aee619374b9c5f1135682bda584ec146c">GetFixedDigitalOutput</a> (UINT32 channel)</td></tr>
 <tr class="memitem:a97ef0ba03c428cb102d7a8687e482f17"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_driver_station_enhanced_i_o.html#a97ef0ba03c428cb102d7a8687e482f17">SetFixedDigitalOutput</a> (UINT32 channel, bool value)</td></tr>
 <tr class="memitem:a32f6f8d6b4f5969ea4f85373d5e0f1b7"><td class="memItemLeft" align="right" valign="top">INT16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_driver_station_enhanced_i_o.html#a32f6f8d6b4f5969ea4f85373d5e0f1b7">GetEncoder</a> (UINT32 encoderNumber)</td></tr>
@@ -181,6 +184,37 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab67204acd1eb87ffe6fc45c2d22e517e inherit pub_methods_class_error_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the current error information associated with this sensor.  <a href="#ab67204acd1eb87ffe6fc45c2d22e517e"></a><br/></td></tr>
 <tr class="memitem:a05790f219c9e436a09752f73f7344024 inherit pub_methods_class_error_base"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_base.html#a05790f219c9e436a09752f73f7344024">StatusIsFatal</a> () const </td></tr>
 <tr class="memdesc:a05790f219c9e436a09752f73f7344024 inherit pub_methods_class_error_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the current error code represents a fatal error.  <a href="#a05790f219c9e436a09752f73f7344024"></a><br/></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:a5b129ec3697d59a14078d725b615dbf5"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_driver_station_enhanced_i_o.html#a5b129ec3697d59a14078d725b615dbf5">tBlockID</a> { <a class="el" href="class_driver_station_enhanced_i_o.html#a5b129ec3697d59a14078d725b615dbf5a682f833f3ef7cf0c56d02ee044e1c4ae">kInputBlockID</a> =  kFRC_NetworkCommunication_DynamicType_DSEnhancedIO_Input, 
+<a class="el" href="class_driver_station_enhanced_i_o.html#a5b129ec3697d59a14078d725b615dbf5a07bb856fcf2ce9c9598057d11e5ca0ab">kOutputBlockID</a> =  kFRC_NetworkCommunication_DynamicType_DSEnhancedIO_Output
+ }</td></tr>
+<tr class="memitem:a10d17f8358eec3a15ecce197abfe63b8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_driver_station_enhanced_i_o.html#a10d17f8358eec3a15ecce197abfe63b8">tStatusFlags</a> { <a class="el" href="class_driver_station_enhanced_i_o.html#a10d17f8358eec3a15ecce197abfe63b8a3e566709d935f585e21908b432eaa7ca">kStatusValid</a> =  0x01, 
+<a class="el" href="class_driver_station_enhanced_i_o.html#a10d17f8358eec3a15ecce197abfe63b8ab39befbfe86fbd445ff42ffdd508be72">kStatusConfigChanged</a> =  0x02, 
+<a class="el" href="class_driver_station_enhanced_i_o.html#a10d17f8358eec3a15ecce197abfe63b8ae9fd782d2d1c08917c1088521b0fa241">kForceEnhancedMode</a> =  0x04
+ }</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a7ef3bb422173137cc49a04cf4dfbfb68"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_driver_station_enhanced_i_o.html#a7ef3bb422173137cc49a04cf4dfbfb68">DriverStationEnhancedIO</a> ()</td></tr>
+<tr class="memitem:aa558fa234bfc3854af2812ff30d3fa5e"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_driver_station_enhanced_i_o.html#aa558fa234bfc3854af2812ff30d3fa5e">~DriverStationEnhancedIO</a> ()</td></tr>
+<tr class="memitem:ab750f78a8004fff395213ad9103fcf6f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_driver_station_enhanced_i_o.html#ab750f78a8004fff395213ad9103fcf6f">UpdateData</a> ()</td></tr>
+<tr class="memitem:a3c04f228a4b21f54b13d860ae11ca6e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_driver_station_enhanced_i_o.html#a3c04f228a4b21f54b13d860ae11ca6e0">MergeConfigIntoOutput</a> (const <a class="el" href="struct_driver_station_enhanced_i_o_1_1status__block__t.html">status_block_t</a> &amp;dsOutputBlock, <a class="el" href="struct_driver_station_enhanced_i_o_1_1status__block__t.html">status_block_t</a> &amp;localCache)</td></tr>
+<tr class="memitem:addab9dca2c01ac5a4f6988bcc33bc0ec"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_driver_station_enhanced_i_o.html#addab9dca2c01ac5a4f6988bcc33bc0ec">IsConfigEqual</a> (const <a class="el" href="struct_driver_station_enhanced_i_o_1_1status__block__t.html">status_block_t</a> &amp;dsOutputBlock, const <a class="el" href="struct_driver_station_enhanced_i_o_1_1status__block__t.html">status_block_t</a> &amp;localCache)</td></tr>
+<tr class="memitem:afccee6f5b9abd3eba0d738ebeb3f1adb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_driver_station_enhanced_i_o.html#afccee6f5b9abd3eba0d738ebeb3f1adb">DISALLOW_COPY_AND_ASSIGN</a> (<a class="el" href="class_driver_station_enhanced_i_o.html">DriverStationEnhancedIO</a>)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a80d5e4aef338cad2b61b30dec7d13f3c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_driver_station_enhanced_i_o_1_1control__block__t.html">control_block_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_driver_station_enhanced_i_o.html#a80d5e4aef338cad2b61b30dec7d13f3c">m_inputData</a></td></tr>
+<tr class="memitem:a751900551ce0556c9d4ac4c2ca2b02be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_driver_station_enhanced_i_o_1_1status__block__t.html">status_block_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_driver_station_enhanced_i_o.html#a751900551ce0556c9d4ac4c2ca2b02be">m_outputData</a></td></tr>
+<tr class="memitem:a712c6036a57b705de76c9f56b91c8250"><td class="memItemLeft" align="right" valign="top">SEM_ID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_driver_station_enhanced_i_o.html#a712c6036a57b705de76c9f56b91c8250">m_inputDataSemaphore</a></td></tr>
+<tr class="memitem:a1d8207677225111407580c7f136784fa"><td class="memItemLeft" align="right" valign="top">SEM_ID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_driver_station_enhanced_i_o.html#a1d8207677225111407580c7f136784fa">m_outputDataSemaphore</a></td></tr>
+<tr class="memitem:a8a569913026ca64d61da7caf6c2c4777"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_driver_station_enhanced_i_o.html#a8a569913026ca64d61da7caf6c2c4777">m_inputValid</a></td></tr>
+<tr class="memitem:ad0bb0f558d282c3f3b68f181dbb4265d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_driver_station_enhanced_i_o.html#ad0bb0f558d282c3f3b68f181dbb4265d">m_outputValid</a></td></tr>
+<tr class="memitem:aefd96ae34865efadacdf46ee4223659a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_driver_station_enhanced_i_o.html#aefd96ae34865efadacdf46ee4223659a">m_configChanged</a></td></tr>
+<tr class="memitem:a2d37b5578aeac9292de14c7e964027b3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_driver_station_enhanced_i_o.html#a2d37b5578aeac9292de14c7e964027b3">m_requestEnhancedEnable</a></td></tr>
+<tr class="memitem:a5c3be8a8e3bbd239fff2948cb8f225ef"><td class="memItemLeft" align="right" valign="top">INT16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_driver_station_enhanced_i_o.html#a5c3be8a8e3bbd239fff2948cb8f225ef">m_encoderOffsets</a> [2]</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
@@ -227,6 +261,36 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 
 <p>Definition at line <a class="el" href="_driver_station_enhanced_i_o_8h_source.html#l00099">99</a> of file <a class="el" href="_driver_station_enhanced_i_o_8h_source.html">DriverStationEnhancedIO.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5b129ec3697d59a14078d725b615dbf5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_driver_station_enhanced_i_o.html#a5b129ec3697d59a14078d725b615dbf5">DriverStationEnhancedIO::tBlockID</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a5b129ec3697d59a14078d725b615dbf5a682f833f3ef7cf0c56d02ee044e1c4ae"></a>kInputBlockID</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a5b129ec3697d59a14078d725b615dbf5a07bb856fcf2ce9c9598057d11e5ca0ab"></a>kOutputBlockID</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_driver_station_enhanced_i_o_8h_source.html#l00090">90</a> of file <a class="el" href="_driver_station_enhanced_i_o_8h_source.html">DriverStationEnhancedIO.h</a>.</p>
 
 </div>
 </div>
@@ -284,7 +348,118 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a10d17f8358eec3a15ecce197abfe63b8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_driver_station_enhanced_i_o.html#a10d17f8358eec3a15ecce197abfe63b8">DriverStationEnhancedIO::tStatusFlags</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a10d17f8358eec3a15ecce197abfe63b8a3e566709d935f585e21908b432eaa7ca"></a>kStatusValid</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a10d17f8358eec3a15ecce197abfe63b8ab39befbfe86fbd445ff42ffdd508be72"></a>kStatusConfigChanged</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a10d17f8358eec3a15ecce197abfe63b8ae9fd782d2d1c08917c1088521b0fa241"></a>kForceEnhancedMode</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_driver_station_enhanced_i_o_8h_source.html#l00095">95</a> of file <a class="el" href="_driver_station_enhanced_i_o_8h_source.html">DriverStationEnhancedIO.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a7ef3bb422173137cc49a04cf4dfbfb68"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DriverStationEnhancedIO::DriverStationEnhancedIO </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="class_driver_station_enhanced_i_o.html">DriverStationEnhancedIO</a> contructor.</p>
+<p>This is only called once when the <a class="el" href="class_driver_station.html">DriverStation</a> constructor is called. </p>
+
+<p>Definition at line <a class="el" href="_driver_station_enhanced_i_o_8cpp_source.html#l00018">18</a> of file <a class="el" href="_driver_station_enhanced_i_o_8cpp_source.html">DriverStationEnhancedIO.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa558fa234bfc3854af2812ff30d3fa5e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DriverStationEnhancedIO::~DriverStationEnhancedIO </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="class_driver_station_enhanced_i_o.html">DriverStationEnhancedIO</a> destructor.</p>
+<p>Called only when the <a class="el" href="class_driver_station.html">DriverStation</a> class is destroyed. </p>
+
+<p>Definition at line <a class="el" href="_driver_station_enhanced_i_o_8cpp_source.html#l00041">41</a> of file <a class="el" href="_driver_station_enhanced_i_o_8cpp_source.html">DriverStationEnhancedIO.cpp</a>.</p>
+
+</div>
+</div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="afccee6f5b9abd3eba0d738ebeb3f1adb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DriverStationEnhancedIO::DISALLOW_COPY_AND_ASSIGN </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_driver_station_enhanced_i_o.html">DriverStationEnhancedIO</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a594f2ddea855e046abcf50406542a4ca"></a>
 <div class="memitem">
 <div class="memproto">
@@ -683,6 +858,80 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="addab9dca2c01ac5a4f6988bcc33bc0ec"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DriverStationEnhancedIO::IsConfigEqual </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_driver_station_enhanced_i_o_1_1status__block__t.html">status_block_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>dsOutputBlock</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_driver_station_enhanced_i_o_1_1status__block__t.html">status_block_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>localCache</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Compare the config portion of the output blocks. </p>
+
+<p>Definition at line <a class="el" href="_driver_station_enhanced_i_o_8cpp_source.html#l00148">148</a> of file <a class="el" href="_driver_station_enhanced_i_o_8cpp_source.html">DriverStationEnhancedIO.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3c04f228a4b21f54b13d860ae11ca6e0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> DriverStationEnhancedIO::MergeConfigIntoOutput </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_driver_station_enhanced_i_o_1_1status__block__t.html">status_block_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>dsOutputBlock</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_driver_station_enhanced_i_o_1_1status__block__t.html">status_block_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>localCache</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Merge the config portion of the DS output block into the local cache. </p>
+
+<p>Definition at line <a class="el" href="_driver_station_enhanced_i_o_8cpp_source.html#l00134">134</a> of file <a class="el" href="_driver_station_enhanced_i_o_8cpp_source.html">DriverStationEnhancedIO.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a22ca90b78c4412be888953c77f6280e6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1037,6 +1286,32 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ab750f78a8004fff395213ad9103fcf6f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> DriverStationEnhancedIO::UpdateData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Called by the <a class="el" href="class_driver_station.html">DriverStation</a> class when data is available. This function will set any modified configuration / output, then read the input and configuration from the IO. </p>
+
+<p>Definition at line <a class="el" href="_driver_station_enhanced_i_o_8cpp_source.html#l00052">52</a> of file <a class="el" href="_driver_station_enhanced_i_o_8cpp_source.html">DriverStationEnhancedIO.cpp</a>.</p>
+
+</div>
+</div>
 <hr/><h2>Friends And Related Function Documentation</h2>
 <a class="anchor" id="a8a49b196fd9fe998c84a7bee5ebe1883"></a>
 <div class="memitem">
@@ -1060,6 +1335,205 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="aefd96ae34865efadacdf46ee4223659a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DriverStationEnhancedIO::m_configChanged</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_driver_station_enhanced_i_o_8h_source.html#l00145">145</a> of file <a class="el" href="_driver_station_enhanced_i_o_8h_source.html">DriverStationEnhancedIO.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5c3be8a8e3bbd239fff2948cb8f225ef"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">INT16 DriverStationEnhancedIO::m_encoderOffsets[2]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_driver_station_enhanced_i_o_8h_source.html#l00147">147</a> of file <a class="el" href="_driver_station_enhanced_i_o_8h_source.html">DriverStationEnhancedIO.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a80d5e4aef338cad2b61b30dec7d13f3c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_driver_station_enhanced_i_o_1_1control__block__t.html">control_block_t</a> DriverStationEnhancedIO::m_inputData</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_driver_station_enhanced_i_o_8h_source.html#l00139">139</a> of file <a class="el" href="_driver_station_enhanced_i_o_8h_source.html">DriverStationEnhancedIO.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a712c6036a57b705de76c9f56b91c8250"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SEM_ID DriverStationEnhancedIO::m_inputDataSemaphore</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_driver_station_enhanced_i_o_8h_source.html#l00141">141</a> of file <a class="el" href="_driver_station_enhanced_i_o_8h_source.html">DriverStationEnhancedIO.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8a569913026ca64d61da7caf6c2c4777"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DriverStationEnhancedIO::m_inputValid</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_driver_station_enhanced_i_o_8h_source.html#l00143">143</a> of file <a class="el" href="_driver_station_enhanced_i_o_8h_source.html">DriverStationEnhancedIO.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a751900551ce0556c9d4ac4c2ca2b02be"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_driver_station_enhanced_i_o_1_1status__block__t.html">status_block_t</a> DriverStationEnhancedIO::m_outputData</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_driver_station_enhanced_i_o_8h_source.html#l00140">140</a> of file <a class="el" href="_driver_station_enhanced_i_o_8h_source.html">DriverStationEnhancedIO.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1d8207677225111407580c7f136784fa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SEM_ID DriverStationEnhancedIO::m_outputDataSemaphore</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_driver_station_enhanced_i_o_8h_source.html#l00142">142</a> of file <a class="el" href="_driver_station_enhanced_i_o_8h_source.html">DriverStationEnhancedIO.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad0bb0f558d282c3f3b68f181dbb4265d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DriverStationEnhancedIO::m_outputValid</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_driver_station_enhanced_i_o_8h_source.html#l00144">144</a> of file <a class="el" href="_driver_station_enhanced_i_o_8h_source.html">DriverStationEnhancedIO.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2d37b5578aeac9292de14c7e964027b3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DriverStationEnhancedIO::m_requestEnhancedEnable</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_driver_station_enhanced_i_o_8h_source.html#l00146">146</a> of file <a class="el" href="_driver_station_enhanced_i_o_8h_source.html">DriverStationEnhancedIO.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>WPILib/<a class="el" href="_driver_station_enhanced_i_o_8h_source.html">DriverStationEnhancedIO.h</a></li>
 <li>WPILib/<a class="el" href="_driver_station_enhanced_i_o_8cpp_source.html">DriverStationEnhancedIO.cpp</a></li>
@@ -1067,7 +1541,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:14 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:46 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

@@ -90,7 +90,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">NiFpga.h File Reference</div>  </div>
 </div><!--header-->
@@ -164,6 +165,9 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a12ba4cd8ca63e05725acfcfc4ad10cca"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="_ni_fpga_8h.html#aac453eb253765eed2bf8d0e578335a48">NiFpga_Inline</a> <a class="el" href="_ni_fpga_8h.html#a80d3b7f74606201a823507a26b2242f0">NiFpga_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#a12ba4cd8ca63e05725acfcfc4ad10cca">NiFpga_IsError</a> (const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> status)</td></tr>
+<tr class="memitem:aeb23254b60ea620ff7515c99f12fac7b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="_ni_fpga_8h.html#aac453eb253765eed2bf8d0e578335a48">NiFpga_Inline</a> <a class="el" href="_ni_fpga_8h.html#a80d3b7f74606201a823507a26b2242f0">NiFpga_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#aeb23254b60ea620ff7515c99f12fac7b">NiFpga_IsNotError</a> (const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> status)</td></tr>
+<tr class="memitem:a26c998810f5354bff33c3ec07457948e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="_ni_fpga_8h.html#aac453eb253765eed2bf8d0e578335a48">NiFpga_Inline</a> <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#a26c998810f5354bff33c3ec07457948e">NiFpga_MergeStatus</a> (<a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> *const status, const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> newStatus)</td></tr>
 <tr class="memitem:a908377012b531a4ec7602f98e08a2438"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#a908377012b531a4ec7602f98e08a2438">NiFpga_Initialize</a> (<a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>)</td></tr>
 <tr class="memitem:a7f0ae541975af7ebc2627987ff4ed88c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#a7f0ae541975af7ebc2627987ff4ed88c">NiFpga_Finalize</a> (<a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>)</td></tr>
 <tr class="memitem:a1c8d281ea52d470036228b85a5f7e048"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#a1c8d281ea52d470036228b85a5f7e048">NiFpga_Open</a> (const char *bitfile, const char *signature, const char *resource, uint32_t attribute, <a class="el" href="_ni_fpga_8h.html#a2bcfaa592fb0ccba8e715fbac7f56404">NiFpga_Session</a> *session)</td></tr>
@@ -254,6 +258,45 @@ Functions</h2></td></tr>
 <tr class="memitem:ab84a57ef9ee7174213c2162e794206e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#ab84a57ef9ee7174213c2162e794206e7">NiFpga_AcquireFifoWriteElementsU64</a> (<a class="el" href="_ni_fpga_8h.html#a2bcfaa592fb0ccba8e715fbac7f56404">NiFpga_Session</a> session, uint32_t fifo, uint64_t **elements, size_t elementsRequested, uint32_t timeout, size_t *elementsAcquired, size_t *elementsRemaining)</td></tr>
 <tr class="memitem:a9fe0aaf196b340e7894bbbd9d4ffc0cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#a9fe0aaf196b340e7894bbbd9d4ffc0cf">NiFpga_ReleaseFifoElements</a> (<a class="el" href="_ni_fpga_8h.html#a2bcfaa592fb0ccba8e715fbac7f56404">NiFpga_Session</a> session, uint32_t fifo, size_t elements)</td></tr>
 <tr class="memitem:ae04025426fc843a7a9d223b461b98517"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#ae04025426fc843a7a9d223b461b98517">NiFpga_GetPeerToPeerFifoEndpoint</a> (<a class="el" href="_ni_fpga_8h.html#a2bcfaa592fb0ccba8e715fbac7f56404">NiFpga_Session</a> session, uint32_t fifo, uint32_t *endpoint)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ac162f10dbce76b08ee6d0b84f09522ca"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#a80d3b7f74606201a823507a26b2242f0">NiFpga_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#ac162f10dbce76b08ee6d0b84f09522ca">NiFpga_False</a> = 0</td></tr>
+<tr class="memitem:a2a980b5b933eaffc371e491762613764"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#a80d3b7f74606201a823507a26b2242f0">NiFpga_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#a2a980b5b933eaffc371e491762613764">NiFpga_True</a> = 1</td></tr>
+<tr class="memitem:aea860abd4cffdc6f0f5d6a7c024f6248"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#aea860abd4cffdc6f0f5d6a7c024f6248">NiFpga_Status_Success</a> = 0</td></tr>
+<tr class="memitem:aed5df1146214c7451481bed8bb274c50"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#aed5df1146214c7451481bed8bb274c50">NiFpga_Status_FifoTimeout</a> = -50400</td></tr>
+<tr class="memitem:aaf236f40adc228a9574dfecc1c8c57e6"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#aaf236f40adc228a9574dfecc1c8c57e6">NiFpga_Status_MemoryFull</a> = -52000</td></tr>
+<tr class="memitem:a91246b36b9abfa3ef37bf44b92aebd3d"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#a91246b36b9abfa3ef37bf44b92aebd3d">NiFpga_Status_SoftwareFault</a> = -52003</td></tr>
+<tr class="memitem:a65bd8d776fdb9f1dce2ae9dfe0e834e7"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#a65bd8d776fdb9f1dce2ae9dfe0e834e7">NiFpga_Status_InvalidParameter</a> = -52005</td></tr>
+<tr class="memitem:a71ded99994899f29e98301175c27bc09"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#a71ded99994899f29e98301175c27bc09">NiFpga_Status_ResourceNotFound</a> = -52006</td></tr>
+<tr class="memitem:afac6fe70e072eebcfdda74c199da6828"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#afac6fe70e072eebcfdda74c199da6828">NiFpga_Status_ResourceNotInitialized</a> = -52010</td></tr>
+<tr class="memitem:acbb2f98acd48f496b584fae48af1f003"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#acbb2f98acd48f496b584fae48af1f003">NiFpga_Status_FpgaAlreadyRunning</a> = -61003</td></tr>
+<tr class="memitem:a89da13a2c61fb345d820cf37ff26c775"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#a89da13a2c61fb345d820cf37ff26c775">NiFpga_Status_DeviceTypeMismatch</a> = -61024</td></tr>
+<tr class="memitem:a33256b2a3fad2366b05e35af9fdb2fd9"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#a33256b2a3fad2366b05e35af9fdb2fd9">NiFpga_Status_CommunicationTimeout</a> = -61046</td></tr>
+<tr class="memitem:ac3a7b000ffd8a748e5cd61f67d840b6f"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#ac3a7b000ffd8a748e5cd61f67d840b6f">NiFpga_Status_IrqTimeout</a> = -61060</td></tr>
+<tr class="memitem:aa16fe6b36c3f1926f3ee3b8d5f9f6358"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#aa16fe6b36c3f1926f3ee3b8d5f9f6358">NiFpga_Status_CorruptBitfile</a> = -61070</td></tr>
+<tr class="memitem:a1af694e6e07100a47a9f95c78125f722"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#a1af694e6e07100a47a9f95c78125f722">NiFpga_Status_BadDepth</a> = -61072</td></tr>
+<tr class="memitem:a19cd1e2aea0dd7c54ba2e469e6e0e35e"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#a19cd1e2aea0dd7c54ba2e469e6e0e35e">NiFpga_Status_BadReadWriteCount</a> = -61073</td></tr>
+<tr class="memitem:af68b4f662783f0bf8157e13f4c658bee"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#af68b4f662783f0bf8157e13f4c658bee">NiFpga_Status_ClockLostLock</a> = -61083</td></tr>
+<tr class="memitem:a5460edc8ab76bc44bbdf4aa139dd07bb"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#a5460edc8ab76bc44bbdf4aa139dd07bb">NiFpga_Status_FpgaBusy</a> = -61141</td></tr>
+<tr class="memitem:a8e858accad2765c6f8b4553523a27a73"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#a8e858accad2765c6f8b4553523a27a73">NiFpga_Status_FpgaBusyFpgaInterfaceCApi</a> = -61200</td></tr>
+<tr class="memitem:abab363d8c8364afa9d0c1c4ee91fdec1"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#abab363d8c8364afa9d0c1c4ee91fdec1">NiFpga_Status_FpgaBusyScanInterface</a> = -61201</td></tr>
+<tr class="memitem:a33e860f76c13ebac1b09cde86fc6d88f"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#a33e860f76c13ebac1b09cde86fc6d88f">NiFpga_Status_FpgaBusyFpgaInterface</a> = -61202</td></tr>
+<tr class="memitem:a0ad2a48b8ad4caa0ecca5a8c19a0b4a4"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#a0ad2a48b8ad4caa0ecca5a8c19a0b4a4">NiFpga_Status_FpgaBusyInteractive</a> = -61203</td></tr>
+<tr class="memitem:a3f4bfc06e6e81442dffeebbbda731e9a"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#a3f4bfc06e6e81442dffeebbbda731e9a">NiFpga_Status_FpgaBusyEmulation</a> = -61204</td></tr>
+<tr class="memitem:a346698ae34865780eae56ecf27fca4df"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#a346698ae34865780eae56ecf27fca4df">NiFpga_Status_InternalError</a> = -61499</td></tr>
+<tr class="memitem:a5fd52cbdcfd80150e5e982ec69835aac"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#a5fd52cbdcfd80150e5e982ec69835aac">NiFpga_Status_AccessDenied</a> = -63033</td></tr>
+<tr class="memitem:a6c6039b2785236f19d90dc2c95174c02"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#a6c6039b2785236f19d90dc2c95174c02">NiFpga_Status_RpcConnectionError</a> = -63040</td></tr>
+<tr class="memitem:ae2d4b3e9f9db154730c631227bba6bd6"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#ae2d4b3e9f9db154730c631227bba6bd6">NiFpga_Status_RpcSessionError</a> = -63043</td></tr>
+<tr class="memitem:ab2932a6266d3f1541eb085d5a9789dac"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#ab2932a6266d3f1541eb085d5a9789dac">NiFpga_Status_FifoElementsCurrentlyAcquired</a> = -63083</td></tr>
+<tr class="memitem:a109134e172137fe13293057c0e2bcce1"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#a109134e172137fe13293057c0e2bcce1">NiFpga_Status_BitfileReadError</a> = -63101</td></tr>
+<tr class="memitem:a7d84bf843ebec6de601aa9414260e167"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#a7d84bf843ebec6de601aa9414260e167">NiFpga_Status_SignatureMismatch</a> = -63106</td></tr>
+<tr class="memitem:ac12b045c8e1755fc3906aa38e1a8cf16"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#ac12b045c8e1755fc3906aa38e1a8cf16">NiFpga_Status_InvalidResourceName</a> = -63192</td></tr>
+<tr class="memitem:a8881ffc53c130331b2c466e457fec1e3"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#a8881ffc53c130331b2c466e457fec1e3">NiFpga_Status_FeatureNotSupported</a> = -63193</td></tr>
+<tr class="memitem:afc1596889e14c7e34af6e01e6386b493"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#afc1596889e14c7e34af6e01e6386b493">NiFpga_Status_VersionMismatch</a> = -63194</td></tr>
+<tr class="memitem:a341438585139a86373dd7042e7090368"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#a341438585139a86373dd7042e7090368">NiFpga_Status_InvalidSession</a> = -63195</td></tr>
+<tr class="memitem:aff495cb1c1e7575f006735dd8bb1dd38"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#aff495cb1c1e7575f006735dd8bb1dd38">NiFpga_Status_OutOfHandles</a> = -63198</td></tr>
+<tr class="memitem:aee4989db5aadde8dce26502f83ea9ffb"><td class="memItemLeft" align="right" valign="top">static const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ni_fpga_8h.html#aee4989db5aadde8dce26502f83ea9ffb">NiFpga_InfiniteTimeout</a> = 0xFFFFFFFF</td></tr>
 </table>
 <hr/><h2>Macro Definition Documentation</h2>
 <a class="anchor" id="a6367899214d45f5b1df3934080c176ea"></a>
@@ -279,7 +322,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">if</span> (NiFpga_IsNotError(status)) \</div>
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">if</span> (<a class="code" href="_ni_fpga_8h.html#aeb23254b60ea620ff7515c99f12fac7b">NiFpga_IsNotError</a>(status)) \</div>
 <div class="line">   { \</div>
 <div class="line">      NiFpga_MergeStatus(&amp;status, (expression)); \</div>
 <div class="line">   }</div>
@@ -2086,6 +2129,119 @@ Functions</h2></td></tr>
 <p>You must call this function before all other function calls. This function loads the NiFpga library so that all the other functions will work. If this function succeeds, you must call NiFpga_Finalize after all other function calls.</p>
 <dl class="section warning"><dt>Warning:</dt><dd>This function is not thread safe.</dd></dl>
 <dl class="section return"><dt>Returns:</dt><dd>result of the call </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a12ba4cd8ca63e05725acfcfc4ad10cca"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="_ni_fpga_8h.html#aac453eb253765eed2bf8d0e578335a48">NiFpga_Inline</a> <a class="el" href="_ni_fpga_8h.html#a80d3b7f74606201a823507a26b2242f0">NiFpga_Bool</a> NiFpga_IsError </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td>
+          <td class="paramname"><em>status</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Tests whether a status is an error.</p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">status</td><td>status to check for an error </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns:</dt><dd>whether the status was an error </dd></dl>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00416">416</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aeb23254b60ea620ff7515c99f12fac7b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="_ni_fpga_8h.html#aac453eb253765eed2bf8d0e578335a48">NiFpga_Inline</a> <a class="el" href="_ni_fpga_8h.html#a80d3b7f74606201a823507a26b2242f0">NiFpga_Bool</a> NiFpga_IsNotError </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td>
+          <td class="paramname"><em>status</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Tests whether a status is not an error. Success and warnings are not errors.</p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">status</td><td>status to check for an error </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns:</dt><dd>whether the status was a success or warning </dd></dl>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00427">427</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a26c998810f5354bff33c3ec07457948e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="_ni_fpga_8h.html#aac453eb253765eed2bf8d0e578335a48">NiFpga_Inline</a> <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_MergeStatus </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> *const&#160;</td>
+          <td class="paramname"><em>status</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a>&#160;</td>
+          <td class="paramname"><em>newStatus</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Conditionally sets the status to a new value. The previous status is preserved unless the new status is more of an error, which means that warnings and errors overwrite successes, and errors overwrite warnings. New errors do not overwrite older errors, and new warnings do not overwrite older warnings.</p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">status</td><td>status to conditionally set </td></tr>
+    <tr><td class="paramname">newStatus</td><td>new status value that may be set </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns:</dt><dd>the resulting status </dd></dl>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00443">443</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
 
 </div>
 </div>
@@ -5244,10 +5400,839 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<hr/><h2>Variable Documentation</h2>
+<a class="anchor" id="ac162f10dbce76b08ee6d0b84f09522ca"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#a80d3b7f74606201a823507a26b2242f0">NiFpga_Bool</a> NiFpga_False = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Represents a false condition. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00191">191</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aee4989db5aadde8dce26502f83ea9ffb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint32_t NiFpga_InfiniteTimeout = 0xFFFFFFFF</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Represents an infinite timeout. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l01197">1197</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5fd52cbdcfd80150e5e982ec69835aac"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_AccessDenied = -63033</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Access to the remote system was denied. Use MAX to check the Remote Device Access settings under Software&gt;&gt;NI-RIO&gt;&gt;NI-RIO Settings on the remote system. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00347">347</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1af694e6e07100a47a9f95c78125f722"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_BadDepth = -61072</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The FIFO depth is invalid. It was either 0, greater than the amount of available memory in the host computer, or greater than the maximum size allowed by the hardware. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00275">275</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a19cd1e2aea0dd7c54ba2e469e6e0e35e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_BadReadWriteCount = -61073</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The number of FIFO elements is invalid. Either the number is greater than the depth of the host memory DMA FIFO, or more elements were requested for release than had been acquired. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00282">282</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a109134e172137fe13293057c0e2bcce1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_BitfileReadError = -63101</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The bitfile could not be read. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00372">372</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af68b4f662783f0bf8157e13f4c658bee"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_ClockLostLock = -61083</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A hardware clocking error occurred. A derived clock lost lock with its base clock during the execution of the LabVIEW FPGA VI. If any base clocks with derived clocks are referencing an external source, make sure that the external source is connected and within the supported frequency, jitter, accuracy, duty cycle, and voltage specifications. Also verify that the characteristics of the base clock match the configuration specified in the FPGA Base Clock Properties. If all base clocks with derived clocks are generated from free-running, on-board sources, please contact National Instruments technical support at ni.com/support. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00295">295</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a33256b2a3fad2366b05e35af9fdb2fd9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_CommunicationTimeout = -61046</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>An error was detected in the communication between the host computer and the FPGA target. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00258">258</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa16fe6b36c3f1926f3ee3b8d5f9f6358"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_CorruptBitfile = -61070</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The specified bitfile is invalid or corrupt. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00268">268</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a89da13a2c61fb345d820cf37ff26c775"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_DeviceTypeMismatch = -61024</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The bitfile was not compiled for the specified resource's device type. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00252">252</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8881ffc53c130331b2c466e457fec1e3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_FeatureNotSupported = -63193</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The requested feature is not supported. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00391">391</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab2932a6266d3f1541eb085d5a9789dac"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_FifoElementsCurrentlyAcquired = -63083</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A Read FIFO or Write FIFO function was called while the host had acquired elements of the FIFO. Release all acquired elements before reading or writing. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00367">367</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aed5df1146214c7451481bed8bb274c50"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_FifoTimeout = -50400</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The timeout expired before the FIFO operation could complete. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00212">212</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acbb2f98acd48f496b584fae48af1f003"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_FpgaAlreadyRunning = -61003</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The FPGA is already running. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00247">247</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5460edc8ab76bc44bbdf4aa139dd07bb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_FpgaBusy = -61141</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Operation could not be performed because the FPGA is busy. Stop all the activities on the FPGA before requesting this operation. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00301">301</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3f4bfc06e6e81442dffeebbbda731e9a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_FpgaBusyEmulation = -61204</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Operation could not be performed because the FPGA is busy operating in Emulation mode. Stop all the activities on the FPGA before requesting this operation. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00336">336</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a33e860f76c13ebac1b09cde86fc6d88f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_FpgaBusyFpgaInterface = -61202</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Operation could not be performed because the FPGA is busy operating in FPGA Interface mode. Stop all the activities on the FPGA before requesting this operation. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00322">322</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8e858accad2765c6f8b4553523a27a73"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_FpgaBusyFpgaInterfaceCApi = -61200</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Operation could not be performed because the FPGA is busy operating in FPGA Interface C API mode. Stop all the activities on the FPGA before requesting this operation. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00308">308</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0ad2a48b8ad4caa0ecca5a8c19a0b4a4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_FpgaBusyInteractive = -61203</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Operation could not be performed because the FPGA is busy operating in Interactive mode. Stop all the activities on the FPGA before requesting this operation. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00329">329</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abab363d8c8364afa9d0c1c4ee91fdec1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_FpgaBusyScanInterface = -61201</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The chassis is in Scan Interface programming mode. In order to run FPGA VIs, you must go to the chassis properties page, select FPGA programming mode, and deploy settings. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00315">315</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a346698ae34865780eae56ecf27fca4df"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_InternalError = -61499</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>An unexpected internal error occurred. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00341">341</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a65bd8d776fdb9f1dce2ae9dfe0e834e7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_InvalidParameter = -52005</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A parameter to a function was not valid. This could be a NULL pointer, a bad value, etc. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00228">228</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac12b045c8e1755fc3906aa38e1a8cf16"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_InvalidResourceName = -63192</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Either the supplied resource name is invalid as a RIO resource name, or the device was not found. Use MAX to find the proper resource name for the intended device. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00386">386</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a341438585139a86373dd7042e7090368"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_InvalidSession = -63195</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The session is invalid or has been closed. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00402">402</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac3a7b000ffd8a748e5cd61f67d840b6f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_IrqTimeout = -61060</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The timeout expired before any of the IRQs were asserted. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00263">263</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aaf236f40adc228a9574dfecc1c8c57e6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_MemoryFull = -52000</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A memory allocation failed. Try again after rebooting. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00217">217</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aff495cb1c1e7575f006735dd8bb1dd38"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_OutOfHandles = -63198</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The maximum number of open FPGA sessions has been reached. Close some open sessions. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00408">408</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a71ded99994899f29e98301175c27bc09"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_ResourceNotFound = -52006</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A required resource was not found. The NiFpga.* library, the RIO resource, or some other resource may be missing, or the NiFpga.* library may not be the required minimum version. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00235">235</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afac6fe70e072eebcfdda74c199da6828"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_ResourceNotInitialized = -52010</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A required resource was not properly initialized. This could occur if NiFpga_Initialize was not called or a required NiFpga_IrqContext was not reserved. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00242">242</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6c6039b2785236f19d90dc2c95174c02"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_RpcConnectionError = -63040</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A connection could not be established to the specified remote device. Ensure that the device is on and accessible over the network, that NI-RIO software is installed, and that the RIO server is running and properly configured. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00354">354</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae2d4b3e9f9db154730c631227bba6bd6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_RpcSessionError = -63043</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The RPC session is invalid. The target may have reset or been rebooted. Check the network connection and retry the operation. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00360">360</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7d84bf843ebec6de601aa9414260e167"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_SignatureMismatch = -63106</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The specified signature does not match the signature of the bitfile. If the bitfile has been recompiled, regenerate the C API and rebuild the application. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00379">379</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a91246b36b9abfa3ef37bf44b92aebd3d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_SoftwareFault = -52003</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>An unexpected software error occurred. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00222">222</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aea860abd4cffdc6f0f5d6a7c024f6248"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_Success = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>No errors or warnings. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00207">207</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afc1596889e14c7e34af6e01e6386b493"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#aa2d120f823c7c43b8402ea7d77001dfe">NiFpga_Status</a> NiFpga_Status_VersionMismatch = -63194</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The NI-RIO software on the remote system is not compatible with the local NI-RIO software. Upgrade the NI-RIO software on the remote system. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00397">397</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2a980b5b933eaffc371e491762613764"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="_ni_fpga_8h.html#a80d3b7f74606201a823507a26b2242f0">NiFpga_Bool</a> NiFpga_True = 1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Represents a true condition. </p>
+
+<p>Definition at line <a class="el" href="_ni_fpga_8h_source.html#l00196">196</a> of file <a class="el" href="_ni_fpga_8h_source.html">NiFpga.h</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:11 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:44 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

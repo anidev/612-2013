@@ -105,7 +105,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// TODO: This is not a good place for this...</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="code" href="_digital_output_8cpp.html#a1b5198ab268f14a0467c4843ffbaa428">   14</a></span>&#160;<a class="code" href="class_resource.html">Resource</a> *<a class="code" href="_digital_input_8cpp.html#a1b5198ab268f14a0467c4843ffbaa428">interruptsResource</a> = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keywordtype">void</span> DigitalInput::InitDigitalInput(UINT8 moduleNumber, UINT32 channel)</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="class_digital_input.html#ab8e8535379f38885c220f23f08d392ca">   21</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_digital_input.html#ab8e8535379f38885c220f23f08d392ca">DigitalInput::InitDigitalInput</a>(UINT8 moduleNumber, UINT32 channel)</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordtype">char</span> buf[64];</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="class_resource.html#ade155b92abe4ff2b0c43576434033922">Resource::CreateResourceObject</a>(&amp;interruptsResource, tInterrupt::kNumSystems);</div>
@@ -121,21 +121,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <a class="code" href="_error_base_8h.html#a495fcc362032eea3b1dadc34be9bd058">wpi_setWPIErrorWithContext</a>(ChannelIndexOutOfRange, buf);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        m_channel = channel;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        m_module = <a class="code" href="class_digital_module.html#ad6384445078c80a3b77ef4d2e840f930">DigitalModule::GetInstance</a>(moduleNumber);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        m_module-&gt;<a class="code" href="class_digital_module.html#a55769aca83a090e7869764829248561a">AllocateDIO</a>(channel, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="class_digital_input.html#a839c3364cef0552048a54d5204e541e5">m_channel</a> = channel;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="class_digital_input.html#ab99f3fbc58fd6ffe5d9aee29a4276d57">m_module</a> = <a class="code" href="class_digital_module.html#ad6384445078c80a3b77ef4d2e840f930">DigitalModule::GetInstance</a>(moduleNumber);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="class_digital_input.html#ab99f3fbc58fd6ffe5d9aee29a4276d57">m_module</a>-&gt;<a class="code" href="class_digital_module.html#a55769aca83a090e7869764829248561a">AllocateDIO</a>(channel, <span class="keyword">true</span>);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="namespacen_usage_reporting.html#a99be0607a35214dd8b718c6645ae53b3">nUsageReporting::report</a>(<a class="code" href="namespacen_usage_reporting.html#ac80f9386b7fe4c6222088527f119c0c2a6019bb1b246224722345c7df1d015c6d">nUsageReporting::kResourceType_DigitalInput</a>, channel, moduleNumber - 1);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
 <div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="class_digital_input.html#a7f4562a0d04285cd07a85b2700a3522f">   50</a></span>&#160;<a class="code" href="class_digital_input.html#a7f4562a0d04285cd07a85b2700a3522f">DigitalInput::DigitalInput</a>(UINT32 channel)</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        InitDigitalInput(<a class="code" href="class_sensor_base.html#a58b76ce72e9d70bf88b613b9f979a555">GetDefaultDigitalModule</a>(), channel);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="class_digital_input.html#ab8e8535379f38885c220f23f08d392ca">InitDigitalInput</a>(<a class="code" href="class_sensor_base.html#a58b76ce72e9d70bf88b613b9f979a555">GetDefaultDigitalModule</a>(), channel);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
 <div class="line"><a name="l00062"></a><span class="lineno"><a class="code" href="class_digital_input.html#a01af021e9b93ab74da0186895546e000">   62</a></span>&#160;<a class="code" href="class_digital_input.html#a7f4562a0d04285cd07a85b2700a3522f">DigitalInput::DigitalInput</a>(UINT8 moduleNumber, UINT32 channel)</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        InitDigitalInput(moduleNumber, channel);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="class_digital_input.html#ab8e8535379f38885c220f23f08d392ca">InitDigitalInput</a>(moduleNumber, channel);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
 <div class="line"><a name="l00070"></a><span class="lineno"><a class="code" href="class_digital_input.html#a7fb442a9bba43bdf7303504441d1569e">   70</a></span>&#160;<a class="code" href="class_digital_input.html#a7fb442a9bba43bdf7303504441d1569e">DigitalInput::~DigitalInput</a>()</div>
@@ -147,7 +147,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keyword">delete</span> <a class="code" href="class_interruptable_sensor_base.html#ab443458f081959a175f832682cea1ee8">m_interrupt</a>;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                interruptsResource-&gt;<a class="code" href="class_resource.html#a1f8793fe4ecfcd6c4ae1417c3d0745ca">Free</a>(<a class="code" href="class_interruptable_sensor_base.html#af7ee9d3bfd6810ea75cd0c250086f768">m_interruptIndex</a>);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        m_module-&gt;<a class="code" href="class_digital_module.html#a86f94ef21bf5a5b6dbdf66a18f8b8328">FreeDIO</a>(m_channel);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="class_digital_input.html#ab99f3fbc58fd6ffe5d9aee29a4276d57">m_module</a>-&gt;<a class="code" href="class_digital_module.html#a86f94ef21bf5a5b6dbdf66a18f8b8328">FreeDIO</a>(<a class="code" href="class_digital_input.html#a839c3364cef0552048a54d5204e541e5">m_channel</a>);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">/*</span></div>
@@ -157,12 +157,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00086"></a><span class="lineno"><a class="code" href="class_digital_input.html#a6852f9fdbe7aa8221d6e16675b884d44">   86</a></span>&#160;UINT32 <a class="code" href="class_digital_input.html#a6852f9fdbe7aa8221d6e16675b884d44">DigitalInput::Get</a>()</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;{</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_error_base.html#a05790f219c9e436a09752f73f7344024" title="Check if the current error code represents a fatal error.">StatusIsFatal</a>()) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">return</span> m_module-&gt;<a class="code" href="class_digital_module.html#aff95a87a6af8d7d1e76bb51c2de9fc35">GetDIO</a>(m_channel);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_digital_input.html#ab99f3fbc58fd6ffe5d9aee29a4276d57">m_module</a>-&gt;<a class="code" href="class_digital_module.html#aff95a87a6af8d7d1e76bb51c2de9fc35">GetDIO</a>(<a class="code" href="class_digital_input.html#a839c3364cef0552048a54d5204e541e5">m_channel</a>);</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
 <div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="class_digital_input.html#a75b989a787a5b822903f24765330fcea">   95</a></span>&#160;UINT32 <a class="code" href="class_digital_input.html#a75b989a787a5b822903f24765330fcea">DigitalInput::GetChannel</a>()</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;{</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">return</span> m_channel;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_digital_input.html#a839c3364cef0552048a54d5204e541e5">m_channel</a>;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
 <div class="line"><a name="l00103"></a><span class="lineno"><a class="code" href="class_digital_input.html#a040ad3adde43d5ca89cfde006513fdcd">  103</a></span>&#160;UINT32 <a class="code" href="class_digital_input.html#a040ad3adde43d5ca89cfde006513fdcd">DigitalInput::GetChannelForRouting</a>()</div>
@@ -173,7 +173,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00111"></a><span class="lineno"><a class="code" href="class_digital_input.html#a4401dc554ebab68503196e596c58255e">  111</a></span>&#160;UINT32 <a class="code" href="class_digital_input.html#a4401dc554ebab68503196e596c58255e">DigitalInput::GetModuleForRouting</a>()</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;{</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_error_base.html#a05790f219c9e436a09752f73f7344024" title="Check if the current error code represents a fatal error.">StatusIsFatal</a>()) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">return</span> m_module-&gt;<a class="code" href="class_module.html#ac414ba5cf992fdf69135d29cd3663fa6">GetNumber</a>() - 1;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_digital_input.html#ab99f3fbc58fd6ffe5d9aee29a4276d57">m_module</a>-&gt;<a class="code" href="class_module.html#ac414ba5cf992fdf69135d29cd3663fa6">GetNumber</a>() - 1;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
 <div class="line"><a name="l00120"></a><span class="lineno"><a class="code" href="class_digital_input.html#a670ae66c6f29cfe52e58e81068e0734d">  120</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_digital_input.html#a670ae66c6f29cfe52e58e81068e0734d">DigitalInput::GetAnalogTriggerForRouting</a>()</div>
@@ -195,7 +195,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;         <span class="comment">// Creates a manager too</span></div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <a class="code" href="class_interruptable_sensor_base.html#adff75b700f436833a3c06992d61ec6d0">AllocateInterrupts</a>(<span class="keyword">false</span>);</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <a class="code" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> localStatus = NiFpga_Status_Success;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <a class="code" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> localStatus = <a class="code" href="_ni_fpga_8h.html#aea860abd4cffdc6f0f5d6a7c024f6248">NiFpga_Status_Success</a>;</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <a class="code" href="class_interruptable_sensor_base.html#ab443458f081959a175f832682cea1ee8">m_interrupt</a>-&gt;<a class="code" href="classn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_interrupt.html#aeb90a300359697fbd41a15a098867219">writeConfig_WaitForAck</a>(<span class="keyword">false</span>, &amp;localStatus);</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <a class="code" href="class_interruptable_sensor_base.html#ab443458f081959a175f832682cea1ee8">m_interrupt</a>-&gt;<a class="code" href="classn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_interrupt.html#a9501ff0733815e075fbc03a2807a1cbe">writeConfig_Source_AnalogTrigger</a>(<a class="code" href="class_digital_input.html#a670ae66c6f29cfe52e58e81068e0734d">GetAnalogTriggerForRouting</a>(), &amp;localStatus);</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <a class="code" href="class_interruptable_sensor_base.html#ab443458f081959a175f832682cea1ee8">m_interrupt</a>-&gt;<a class="code" href="classn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_interrupt.html#ac5c44eabac08cd6f5c2c16ffd8ffee2f">writeConfig_Source_Channel</a>(<a class="code" href="class_digital_input.html#a040ad3adde43d5ca89cfde006513fdcd">GetChannelForRouting</a>(), &amp;localStatus);</div>
@@ -219,7 +219,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <a class="code" href="class_interruptable_sensor_base.html#adff75b700f436833a3c06992d61ec6d0">AllocateInterrupts</a>(<span class="keyword">true</span>);</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <a class="code" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> localStatus = NiFpga_Status_Success;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <a class="code" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> localStatus = <a class="code" href="_ni_fpga_8h.html#aea860abd4cffdc6f0f5d6a7c024f6248">NiFpga_Status_Success</a>;</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <a class="code" href="class_interruptable_sensor_base.html#ab443458f081959a175f832682cea1ee8">m_interrupt</a>-&gt;<a class="code" href="classn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_interrupt.html#a9501ff0733815e075fbc03a2807a1cbe">writeConfig_Source_AnalogTrigger</a>(<a class="code" href="class_digital_input.html#a670ae66c6f29cfe52e58e81068e0734d">GetAnalogTriggerForRouting</a>(), &amp;localStatus);</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <a class="code" href="class_interruptable_sensor_base.html#ab443458f081959a175f832682cea1ee8">m_interrupt</a>-&gt;<a class="code" href="classn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_interrupt.html#ac5c44eabac08cd6f5c2c16ffd8ffee2f">writeConfig_Source_Channel</a>(<a class="code" href="class_digital_input.html#a040ad3adde43d5ca89cfde006513fdcd">GetChannelForRouting</a>(), &amp;localStatus);</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <a class="code" href="class_interruptable_sensor_base.html#ab443458f081959a175f832682cea1ee8">m_interrupt</a>-&gt;<a class="code" href="classn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_interrupt.html#a375ac198acf274e223a221a008aa67b8">writeConfig_Source_Module</a>(<a class="code" href="class_digital_input.html#a4401dc554ebab68503196e596c58255e">GetModuleForRouting</a>(), &amp;localStatus);</div>
@@ -235,7 +235,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                <a class="code" href="_error_base_8h.html#a495fcc362032eea3b1dadc34be9bd058">wpi_setWPIErrorWithContext</a>(NullParameter, <span class="stringliteral">&quot;You must call RequestInterrupts before SetUpSourceEdge&quot;</span>);</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        }</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <a class="code" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> localStatus = NiFpga_Status_Success;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <a class="code" href="_ni_rio_8h.html#a75e26d9df3bf3ec983a82e80aacd3625">tRioStatusCode</a> localStatus = <a class="code" href="_ni_fpga_8h.html#aea860abd4cffdc6f0f5d6a7c024f6248">NiFpga_Status_Success</a>;</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_interruptable_sensor_base.html#ab443458f081959a175f832682cea1ee8">m_interrupt</a> != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        {</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                <a class="code" href="class_interruptable_sensor_base.html#ab443458f081959a175f832682cea1ee8">m_interrupt</a>-&gt;<a class="code" href="classn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_interrupt.html#aef3a2b19251f7c46f32e2e4eb31c9787">writeConfig_RisingEdge</a>(risingEdge, &amp;localStatus);</div>
@@ -245,8 +245,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;}</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;</div>
 <div class="line"><a name="l00202"></a><span class="lineno"><a class="code" href="class_digital_input.html#aa04e2df2d4e9e8bdc514695c340473cb">  202</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_digital_input.html#aa04e2df2d4e9e8bdc514695c340473cb">DigitalInput::UpdateTable</a>() {</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="keywordflow">if</span> (m_table != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                m_table-&gt;<a class="code" href="class_i_table.html#afa526b61a468a9d14d27c9837d344b37">PutBoolean</a>(<span class="stringliteral">&quot;Value&quot;</span>, <a class="code" href="class_digital_input.html#a6852f9fdbe7aa8221d6e16675b884d44">Get</a>());</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_digital_input.html#aef9df2c912ac0e22a5d25f1b16c09854">m_table</a> != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                <a class="code" href="class_digital_input.html#aef9df2c912ac0e22a5d25f1b16c09854">m_table</a>-&gt;<a class="code" href="class_i_table.html#afa526b61a468a9d14d27c9837d344b37">PutBoolean</a>(<span class="stringliteral">&quot;Value&quot;</span>, <a class="code" href="class_digital_input.html#a6852f9fdbe7aa8221d6e16675b884d44">Get</a>());</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        }</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;}</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;</div>
@@ -263,17 +263,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;}</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;</div>
 <div class="line"><a name="l00220"></a><span class="lineno"><a class="code" href="class_digital_input.html#a34a913a3496dab654b7db3bc9b2819d8">  220</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_digital_input.html#a34a913a3496dab654b7db3bc9b2819d8">DigitalInput::InitTable</a>(<a class="code" href="class_i_table.html">ITable</a> *subTable) {</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        m_table = subTable;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <a class="code" href="class_digital_input.html#aef9df2c912ac0e22a5d25f1b16c09854">m_table</a> = subTable;</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <a class="code" href="class_digital_input.html#aa04e2df2d4e9e8bdc514695c340473cb">UpdateTable</a>();</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;}</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;</div>
 <div class="line"><a name="l00225"></a><span class="lineno"><a class="code" href="class_digital_input.html#a159cfc4c37f92f9d10fc3f9ea49b3783">  225</a></span>&#160;<a class="code" href="class_i_table.html">ITable</a> * <a class="code" href="class_digital_input.html#a159cfc4c37f92f9d10fc3f9ea49b3783">DigitalInput::GetTable</a>() {</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="keywordflow">return</span> m_table;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_digital_input.html#aef9df2c912ac0e22a5d25f1b16c09854">m_table</a>;</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:09 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:42 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

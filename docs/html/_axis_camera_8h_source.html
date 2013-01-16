@@ -118,7 +118,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="class_axis_camera.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_axis_camera.html">AxisCamera</a> : <span class="keyword">public</span> <a class="code" href="class_axis_camera_params.html">AxisCameraParams</a></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="class_axis_camera.html">AxisCamera</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *cameraIP);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="class_axis_camera.html#a00b536991f59aa889386109689da8bd1">AxisCamera</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *cameraIP);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_axis_camera.html#af3cfcbe46afbf5e736856ab3416c4093">~AxisCamera</a>();</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">static</span> <a class="code" href="class_axis_camera.html">AxisCamera</a>&amp; <a class="code" href="class_axis_camera.html#ac0ded6e2137ed5b704ad3b6fba041078">GetInstance</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *cameraIP = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
@@ -136,28 +136,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_axis_camera.html#a0e608c3e60d76029b9f0fda094ba2735">CopyJPEG</a>(<span class="keywordtype">char</span> **destImage, <span class="keywordtype">int</span> &amp;destImageSize, <span class="keywordtype">int</span> &amp;destImageBufferSize);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">int</span> s_ImageStreamTaskFunction(<a class="code" href="class_axis_camera.html">AxisCamera</a> *thisPtr);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">int</span> ImageStreamTaskFunction();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_axis_camera.html#ae56c59ec4ba8af0f1831d2fc9e68f2c2">s_ImageStreamTaskFunction</a>(<a class="code" href="class_axis_camera.html">AxisCamera</a> *thisPtr);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_axis_camera.html#a757d4333e347ad3655d84bda91c435d4">ImageStreamTaskFunction</a>();</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordtype">int</span> ReadImagesFromCamera();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">void</span> UpdatePublicImageFromCamera(<span class="keywordtype">char</span> *imgBuffer, <span class="keywordtype">int</span> imgSize);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_axis_camera.html#aadc1b6cd2e7dbc2159b62b964381480a">ReadImagesFromCamera</a>();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_axis_camera.html#a3ebef2c1aaa93808f434e742033ae014">UpdatePublicImageFromCamera</a>(<span class="keywordtype">char</span> *imgBuffer, <span class="keywordtype">int</span> imgSize);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> RestartCameraTask();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_axis_camera.html#a6ba7c0eced0de064340b551a9d7ddbfe">RestartCameraTask</a>();</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keyword">static</span> <a class="code" href="class_axis_camera.html">AxisCamera</a> *_instance;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">int</span> m_cameraSocket;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keyword">typedef</span> std::set&lt;SEM_ID&gt; SemSet_t;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        SemSet_t m_newImageSemSet;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="code" href="class_axis_camera.html#ada8e6c776b78608c5464d097462cc039">   63</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="class_axis_camera.html">AxisCamera</a> *<a class="code" href="class_axis_camera.html#ada8e6c776b78608c5464d097462cc039">_instance</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="class_axis_camera.html#af1030db987806a460009ab0838649415">   64</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_axis_camera.html#af1030db987806a460009ab0838649415">m_cameraSocket</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="code" href="class_axis_camera.html#a6082606b9889b70ec4be54886ed46962">   65</a></span>&#160;        <span class="keyword">typedef</span> std::set&lt;SEM_ID&gt; <a class="code" href="class_axis_camera.html#a6082606b9889b70ec4be54886ed46962">SemSet_t</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="class_axis_camera.html#afa55c37e29ac66371264c9cb39ad1df5">   66</a></span>&#160;        <a class="code" href="class_axis_camera.html#a6082606b9889b70ec4be54886ed46962">SemSet_t</a> <a class="code" href="class_axis_camera.html#afa55c37e29ac66371264c9cb39ad1df5">m_newImageSemSet</a>;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordtype">char</span>* m_protectedImageBuffer;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordtype">int</span> m_protectedImageBufferLength;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordtype">int</span> m_protectedImageSize;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        SEM_ID m_protectedImageSem;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">bool</span> m_freshImage;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="class_axis_camera.html#a000a71b0bf1357fae6e8389408cecc26">   68</a></span>&#160;        <span class="keywordtype">char</span>* <a class="code" href="class_axis_camera.html#a000a71b0bf1357fae6e8389408cecc26">m_protectedImageBuffer</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="code" href="class_axis_camera.html#aa71a05b8bfe2fb148af57b5c3624f50a">   69</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_axis_camera.html#aa71a05b8bfe2fb148af57b5c3624f50a">m_protectedImageBufferLength</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="code" href="class_axis_camera.html#a9c44d2ee4f2cae0984474fe946e52b66">   70</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_axis_camera.html#a9c44d2ee4f2cae0984474fe946e52b66">m_protectedImageSize</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="code" href="class_axis_camera.html#aa5b2e17cf6323b51b0654ee7c34edcc5">   71</a></span>&#160;        SEM_ID <a class="code" href="class_axis_camera.html#aa5b2e17cf6323b51b0654ee7c34edcc5">m_protectedImageSem</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="code" href="class_axis_camera.html#a19f2b4733dc65ac20220f74e9085b827">   72</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_axis_camera.html#a19f2b4733dc65ac20220f74e9085b827">m_freshImage</a>;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="class_task.html">Task</a> m_imageStreamTask;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="code" href="class_axis_camera.html#afabc9f4e29c724ca2c4ee8156fe53b34">   74</a></span>&#160;        <a class="code" href="class_task.html">Task</a> <a class="code" href="class_axis_camera.html#afabc9f4e29c724ca2c4ee8156fe53b34">m_imageStreamTask</a>;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="class_p_c_video_server.html">PCVideoServer</a> *m_videoServer;</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="class_axis_camera.html#a2a97668e7893d810f1d27062f8d8a1ed">   76</a></span>&#160;        <a class="code" href="class_p_c_video_server.html">PCVideoServer</a> *<a class="code" href="class_axis_camera.html#a2a97668e7893d810f1d27062f8d8a1ed">m_videoServer</a>;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#if JAVA_CAMERA_LIB == 1</span></div>
@@ -199,7 +199,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:11 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:44 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

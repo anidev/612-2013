@@ -110,11 +110,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                incomingStreamMonitor(streamProvider, (<a class="code" href="class_server_network_table_entry_store.html">ServerNetworkTableEntryStore</a>&amp;)entryStore, *this, connectionList, typeManager, threadManager),</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                continuingReceiver(writeManager){</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="class_network_table_node.html#af9363aedca65a24a2333977a63c1f49b">GetEntryStore</a>().<a class="code" href="class_abstract_network_table_entry_store.html#a272a03bb1580b6e350f70d93b2c2bb2a">SetIncomingReceiver</a>(&amp;continuingReceiver);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="class_network_table_node.html#af9363aedca65a24a2333977a63c1f49b">GetEntryStore</a>().<a class="code" href="class_abstract_network_table_entry_store.html#acbe8db9cb421c4177ed6c143b93a06f4">SetOutgoingReceiver</a>(&amp;continuingReceiver);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="class_network_table_node.html#af9363aedca65a24a2333977a63c1f49b">GetEntryStore</a>().<a class="code" href="class_abstract_network_table_entry_store.html#a272a03bb1580b6e350f70d93b2c2bb2a">SetIncomingReceiver</a>(&amp;<a class="code" href="class_network_table_server.html#a5848790e818871b16a7d5cd410a72a3a">continuingReceiver</a>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="class_network_table_node.html#af9363aedca65a24a2333977a63c1f49b">GetEntryStore</a>().<a class="code" href="class_abstract_network_table_entry_store.html#acbe8db9cb421c4177ed6c143b93a06f4">SetOutgoingReceiver</a>(&amp;<a class="code" href="class_network_table_server.html#a5848790e818871b16a7d5cd410a72a3a">continuingReceiver</a>);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        incomingStreamMonitor.<a class="code" href="class_server_incoming_stream_monitor.html#a2c99da3e878be002f4926f347f395e2b">start</a>();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        writeManager.<a class="code" href="class_write_manager.html#aa2ee822bd21e3b5a3d81ad0287ea9f89">start</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="class_network_table_server.html#aee6c3ed2f9f1f501f8879eab6e53516c">incomingStreamMonitor</a>.<a class="code" href="class_server_incoming_stream_monitor.html#a2c99da3e878be002f4926f347f395e2b">start</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="class_network_table_server.html#a715ed4461e03efc22012312581b50ffe">writeManager</a>.<a class="code" href="class_write_manager.html#aa2ee822bd21e3b5a3d81ad0287ea9f89">start</a>();</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">/*NetworkTableServer::NetworkTableServer(IOStreamProvider&amp; streamProvider){</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">        this(streamProvider, new NetworkTableEntryTypeManager(), new DefaultThreadManager());</span></div>
@@ -126,17 +126,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
 <div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="class_network_table_server.html#a0148f100417914bc922c6ee523f71216">   35</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_network_table_server.html#a0148f100417914bc922c6ee523f71216">NetworkTableServer::Close</a>(){</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">try</span>{</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                incomingStreamMonitor.<a class="code" href="class_server_incoming_stream_monitor.html#a4c0edd67304968afd728f388c48c0748">stop</a>();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                writeManager.<a class="code" href="class_write_manager.html#ae8fbe88a330dfe5873ddeb45f26b9679">stop</a>();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                connectionList.<a class="code" href="class_server_connection_list.html#a7de569b32e1d52ea34c9c87d0263c81a">closeAll</a>();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                streamProvider.<a class="code" href="class_i_o_stream_provider.html#a783f0289670ef0275e1a61970c71955a">close</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <a class="code" href="class_network_table_server.html#aee6c3ed2f9f1f501f8879eab6e53516c">incomingStreamMonitor</a>.<a class="code" href="class_server_incoming_stream_monitor.html#a4c0edd67304968afd728f388c48c0748">stop</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <a class="code" href="class_network_table_server.html#a715ed4461e03efc22012312581b50ffe">writeManager</a>.<a class="code" href="class_write_manager.html#ae8fbe88a330dfe5873ddeb45f26b9679">stop</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <a class="code" href="class_network_table_server.html#a45598a34da740aed4713a0f45e2efe57">connectionList</a>.<a class="code" href="class_server_connection_list.html#a7de569b32e1d52ea34c9c87d0263c81a">closeAll</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <a class="code" href="class_network_table_server.html#aea271d6e41c45fac625b4578a756b2e4">streamProvider</a>.<a class="code" href="class_i_o_stream_provider.html#a783f0289670ef0275e1a61970c71955a">close</a>();</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; ex) {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="comment">//TODO print stack trace?</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
 <div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="class_network_table_server.html#acd2e374f330ab8cf6e3251a70500aef6">   46</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_network_table_server.html#acd2e374f330ab8cf6e3251a70500aef6">NetworkTableServer::OnNewConnection</a>(<a class="code" href="class_server_connection_adapter.html">ServerConnectionAdapter</a>&amp; connectionAdapter) {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        connectionList.<a class="code" href="class_server_connection_list.html#a4929dc54d51962e4fbd23b71b7dce32a">add</a>(connectionAdapter);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="class_network_table_server.html#a45598a34da740aed4713a0f45e2efe57">connectionList</a>.<a class="code" href="class_server_connection_list.html#a4929dc54d51962e4fbd23b71b7dce32a">add</a>(connectionAdapter);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
@@ -151,7 +151,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:10 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:43 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

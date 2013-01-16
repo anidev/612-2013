@@ -10,6 +10,7 @@ var searchData=
   ['segmentationdistancelevel',['SegmentationDistanceLevel',['../nivision_8h.html#a5ac2509b305472d3cf3305d4ed4ab945',1,'nivision.h']]],
   ['segmentinfo',['SegmentInfo',['../nivision_8h.html#a95ab6305f64641a356e09dce32cab3ad',1,'nivision.h']]],
   ['selectparticlecriteria',['SelectParticleCriteria',['../nivision_8h.html#a0897fd016a4d7f37fbfc32c3a4961559',1,'nivision.h']]],
+  ['semset_5ft',['SemSet_t',['../class_axis_camera.html#a6082606b9889b70ec4be54886ed46962',1,'AxisCamera']]],
   ['sequencenumber',['SequenceNumber',['../_network_table_entry_8h.html#adf2c75b04f6733969def402f8249793b',1,'NetworkTableEntry.h']]],
   ['session_5fid',['SESSION_ID',['../nivision_8h.html#a2c042922a88a52e5590c14965efe7c8f',1,'nivision.h']]],
   ['settingtype',['SettingType',['../nivision_8h.html#a4ec60d08b60b3a89f5f58fbaa7b98ad9',1,'nivision.h']]],
@@ -29,6 +30,7 @@ var searchData=
   ['straightedgereport2',['StraightEdgeReport2',['../nivision_8h.html#acd992cb0130d7959150d097d0434e8d8',1,'nivision.h']]],
   ['straightedgesearchmode',['StraightEdgeSearchMode',['../nivision_8h.html#aabe71464510a4280b3af06b8c3de03de',1,'nivision.h']]],
   ['string255',['String255',['../nivision_8h.html#a2a71a1dd0f2508e5252a2ef6d18e42fb',1,'nivision.h']]],
+  ['stringmap',['StringMap',['../class_preferences.html#af26a32c9f0f75cd8ad6f40b27c817720',1,'Preferences']]],
   ['structuringelement',['StructuringElement',['../nivision_8h.html#a1fde110555d6f5f69386706304efb44e',1,'nivision.h']]],
   ['subsystemset',['SubsystemSet',['../class_command.html#a189a03bfe86bc5cf292994ba141a8b25',1,'Command']]],
   ['supervisedcolorsegmentationreport',['SupervisedColorSegmentationReport',['../nivision_8h.html#ae5aa998d5296e5e34bb11b528156a431',1,'nivision.h']]]

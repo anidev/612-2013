@@ -54,6 +54,9 @@ var searchData=
   ['bold',['bold',['../struct_draw_text_options__struct.html#a0fc9b68d5781e17e3fc5451f6c351998',1,'DrawTextOptions_struct::bold()'],['../struct_overlay_text_options__struct.html#a79ec1f43d79b5c5940dc1cf4da40ec39',1,'OverlayTextOptions_struct::bold()']]],
   ['boolean',['BOOLEAN',['../class_default_entry_types.html#a583daba8d0f5fa462c1496c894c23339',1,'DefaultEntryTypes']]],
   ['boolean_5farray_5fraw_5fid',['BOOLEAN_ARRAY_RAW_ID',['../class_boolean_array.html#a55e524c332b143f5b999d0d5b34e9df9',1,'BooleanArray']]],
+  ['boolean_5fraw_5fid',['BOOLEAN_RAW_ID',['../_default_entry_types_8h.html#a21dd654cd8162f643e1e64e3a6295460',1,'DefaultEntryTypes.h']]],
+  ['boolean_5ft',['BOOLEAN_t',['../class_default_entry_types_1_1_b_o_o_l_e_a_n__t.html#a8e6518ab93ab46f7c198b91fd4b401aa',1,'DefaultEntryTypes::BOOLEAN_t']]],
+  ['boolean_5ft',['BOOLEAN_t',['../class_default_entry_types_1_1_b_o_o_l_e_a_n__t.html',1,'DefaultEntryTypes']]],
   ['booleanarray',['BooleanArray',['../class_boolean_array.html',1,'BooleanArray'],['../class_boolean_array.html#a1837b86e396da488b0931aeb4fb195c6',1,'BooleanArray::BooleanArray()']]],
   ['booleanarray_2ecpp',['BooleanArray.cpp',['../_boolean_array_8cpp.html',1,'']]],
   ['booleanarray_2eh',['BooleanArray.h',['../_boolean_array_8h.html',1,'']]],
@@ -83,10 +86,12 @@ var searchData=
   ['button_2eh',['Button.h',['../_button_8h.html',1,'']]],
   ['buttonlabel',['ButtonLabel',['../nivision_8h.html#a4ae7004055b4da78b7b6e33445ccd904',1,'nivision.h']]],
   ['buttonlabel_5fenum',['ButtonLabel_enum',['../nivision_8h.html#a3a9d7d2074e1e6812fe3ec45af52b3eb',1,'nivision.h']]],
+  ['buttons',['buttons',['../struct_driver_station_enhanced_i_o_1_1input__t.html#a8abb782552fd9677221a101409e22afa',1,'DriverStationEnhancedIO::input_t::buttons()'],['../union_kinect_stick_1_1_kinect_stick_data.html#a8488c7bf4efde8a7e94fa42569f63523',1,'KinectStick::KinectStickData::buttons()']]],
   ['buttonscheduler',['ButtonScheduler',['../class_button_scheduler.html',1,'ButtonScheduler'],['../class_button_scheduler.html#a11b8f768eb38345ecd2b6e39be7d3ce0',1,'ButtonScheduler::ButtonScheduler()']]],
   ['buttonscheduler_2ecpp',['ButtonScheduler.cpp',['../_button_scheduler_8cpp.html',1,'']]],
   ['buttonscheduler_2eh',['ButtonScheduler.h',['../_button_scheduler_8h.html',1,'']]],
   ['buttontype',['ButtonType',['../class_joystick.html#a5b7de86963e2efbcd84a1b67a2242413',1,'Joystick']]],
+  ['buttonvector',['ButtonVector',['../class_scheduler.html#a644bf4c099c317d36eb45e2f0f889c29',1,'Scheduler']]],
   ['bytestoread',['BytesToRead',['../unionn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_d_i_o_1_1t_i2_c_config.html#abdd2075e08d4198f2ebf3571cc20fff0',1,'nFPGA::nFRC_2012_1_6_4::tDIO::tI2CConfig']]],
   ['bytestowrite',['BytesToWrite',['../unionn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_d_i_o_1_1t_i2_c_config.html#ae01c42230c8400bb7255a97c6720924b',1,'nFPGA::nFRC_2012_1_6_4::tDIO::tI2CConfig']]]
 ];

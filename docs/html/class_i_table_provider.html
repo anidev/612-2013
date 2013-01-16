@@ -84,6 +84,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#pri-methods">Private Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ITableProvider Class Reference</div>  </div>
 </div><!--header-->
@@ -101,18 +103,58 @@ Inheritance diagram for ITableProvider:</div>
  </div></div>
 
 <p><a href="class_i_table_provider-members.html">List of all members.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aca42ecffbc3723ab97e14cbc5e611f89"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_i_table.html">ITable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_table_provider.html#aca42ecffbc3723ab97e14cbc5e611f89">GetTable</a> (std::string name)=0</td></tr>
+</table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>A simple interface to provide tables</p>
 <dl class="section author"><dt>Author:</dt><dd>Mitchell </dd></dl>
 
 <p>Definition at line <a class="el" href="_i_table_provider_8h_source.html#l00023">23</a> of file <a class="el" href="_i_table_provider_8h_source.html">ITableProvider.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+</div><hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="aca42ecffbc3723ab97e14cbc5e611f89"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="class_i_table.html">ITable</a>* ITableProvider::GetTable </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Get a table by name </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>the name of the table </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns:</dt><dd>a Table with the given name </dd></dl>
+
+<p>Implemented in <a class="el" href="class_network_table_provider.html#a3f6c013a694156c1f4aa7b633addf427">NetworkTableProvider</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>WPILib/tables/<a class="el" href="_i_table_provider_8h_source.html">ITableProvider.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:15 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:47 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

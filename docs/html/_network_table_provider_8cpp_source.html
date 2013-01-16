@@ -108,10 +108,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="class_network_table_provider.html#a595a6ad7847ab9e19dce6a7c6f009dec">   17</a></span>&#160;<a class="code" href="class_network_table_provider.html#a595a6ad7847ab9e19dce6a7c6f009dec">NetworkTableProvider::NetworkTableProvider</a>(<a class="code" href="class_network_table_node.html">NetworkTableNode</a>&amp; _node) : node(_node){}</div>
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="class_network_table_provider.html#ab842f147b142fd470549607bb558e3b3">   18</a></span>&#160;<a class="code" href="class_network_table_provider.html#ab842f147b142fd470549607bb558e3b3">NetworkTableProvider::~NetworkTableProvider</a>(){</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordflow">while</span>(tables.size()&gt;0){</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    map&lt;std::string, NetworkTable*&gt;::iterator it = tables.begin();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordflow">while</span>(<a class="code" href="class_network_table_provider.html#a9a1d4adb3a78d0f409c4add567397300">tables</a>.size()&gt;0){</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    map&lt;std::string, NetworkTable*&gt;::iterator it = <a class="code" href="class_network_table_provider.html#a9a1d4adb3a78d0f409c4add567397300">tables</a>.begin();</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">delete</span> it-&gt;second;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    tables.erase(it);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="class_network_table_provider.html#a9a1d4adb3a78d0f409c4add567397300">tables</a>.erase(it);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  }</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
@@ -120,14 +120,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
 <div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="class_network_table_provider.html#a3f6c013a694156c1f4aa7b633addf427">   30</a></span>&#160;<a class="code" href="class_i_table.html">ITable</a>* <a class="code" href="class_network_table_provider.html#a3f6c013a694156c1f4aa7b633addf427">NetworkTableProvider::GetTable</a>(std::string key){</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">if</span>(tables.find(key) != tables.end())</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="class_network_table_provider.html#a9a1d4adb3a78d0f409c4add567397300">tables</a>.find(key) != <a class="code" href="class_network_table_provider.html#a9a1d4adb3a78d0f409c4add567397300">tables</a>.end())</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <span class="keywordflow">return</span> tables[key];</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="class_network_table_provider.html#a9a1d4adb3a78d0f409c4add567397300">tables</a>[key];</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <a class="code" href="class_network_table.html">NetworkTable</a>* table = <span class="keyword">new</span> <a class="code" href="class_network_table.html">NetworkTable</a>(key, *<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                tables[key] = table;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <a class="code" href="class_network_table_provider.html#a9a1d4adb3a78d0f409c4add567397300">tables</a>[key] = table;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="keywordflow">return</span> table;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        }</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
@@ -135,7 +135,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:10 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:43 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

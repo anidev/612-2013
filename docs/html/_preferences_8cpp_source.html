@@ -106,12 +106,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> <span class="keywordtype">int</span> <a class="code" href="_preferences_8cpp.html#a4e1ab032f81298e0e0a8b0e684e0a32e">Priv_SetWriteFileAllowed</a>(UINT32 enable); </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *kTableName = <span class="stringliteral">&quot;Preferences&quot;</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *kSaveField = <span class="stringliteral">&quot;~S A V E~&quot;</span>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *kFileName = <span class="stringliteral">&quot;/c/wpilib-preferences.ini&quot;</span>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *kValuePrefix = <span class="stringliteral">&quot;=\&quot;&quot;</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *kValueSuffix = <span class="stringliteral">&quot;\&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<a class="code" href="class_preferences.html">Preferences</a> *Preferences::_instance = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="_preferences_8cpp.html#a408b4f7bca854e2952d2d304e8eb8bff">   19</a></span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="_preferences_8cpp.html#a408b4f7bca854e2952d2d304e8eb8bff">kTableName</a> = <span class="stringliteral">&quot;Preferences&quot;</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="_preferences_8cpp.html#a9b0734858fdc38e1cb3adf7d4a2debed">   21</a></span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="_preferences_8cpp.html#a9b0734858fdc38e1cb3adf7d4a2debed">kSaveField</a> = <span class="stringliteral">&quot;~S A V E~&quot;</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="_preferences_8cpp.html#a59f3292e22e91a9c30a1cae98e5d23ca">   23</a></span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="_preferences_8cpp.html#a59f3292e22e91a9c30a1cae98e5d23ca">kFileName</a> = <span class="stringliteral">&quot;/c/wpilib-preferences.ini&quot;</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="_preferences_8cpp.html#af589865a3c244246eac41d4d71879555">   25</a></span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="_preferences_8cpp.html#af589865a3c244246eac41d4d71879555">kValuePrefix</a> = <span class="stringliteral">&quot;=\&quot;&quot;</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="_preferences_8cpp.html#a02eb8088556f34fc1d6843585ce14f5e">   27</a></span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="_preferences_8cpp.html#a02eb8088556f34fc1d6843585ce14f5e">kValueSuffix</a> = <span class="stringliteral">&quot;\&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<a class="code" href="class_preferences.html">Preferences</a> *<a class="code" href="class_preferences.html#a194dc62cc42c2fae06048ad324ccc50b">Preferences::_instance</a> = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
 <div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="class_preferences.html#a9ca3b7029509bc36da1a57ed296c2fa8">   31</a></span>&#160;<a class="code" href="class_preferences.html#a9ca3b7029509bc36da1a57ed296c2fa8">Preferences::Preferences</a>() :</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        m_fileLock(<a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>),</div>
@@ -120,44 +120,44 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        m_readTask(<span class="stringliteral">&quot;PreferencesReadTask&quot;</span>, (FUNCPTR)<a class="code" href="class_preferences.html">Preferences</a>::InitReadTask),</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        m_writeTask(<span class="stringliteral">&quot;PreferencesWriteTask&quot;</span>, (FUNCPTR)<a class="code" href="class_preferences.html">Preferences</a>::InitWriteTask)</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        m_fileLock = semMCreate(SEM_Q_PRIORITY | SEM_INVERSION_SAFE | SEM_DELETE_SAFE);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        m_fileOpStarted = semBCreate (SEM_Q_PRIORITY, SEM_EMPTY);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        m_tableLock = semMCreate(SEM_Q_PRIORITY | SEM_INVERSION_SAFE | SEM_DELETE_SAFE);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="class_preferences.html#a1a142dcfac236b5dbe64901659a5deae">m_fileLock</a> = semMCreate(SEM_Q_PRIORITY | SEM_INVERSION_SAFE | SEM_DELETE_SAFE);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="class_preferences.html#a828d8507e0c043f723237ea22c33444d">m_fileOpStarted</a> = semBCreate (SEM_Q_PRIORITY, SEM_EMPTY);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="class_preferences.html#a93db422aeb7bbd05a9c0de6c2a647e41">m_tableLock</a> = semMCreate(SEM_Q_PRIORITY | SEM_INVERSION_SAFE | SEM_DELETE_SAFE);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(m_fileLock);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        m_readTask.<a class="code" href="class_task.html#aed180b79ad986ff5e55170400db3c226">Start</a>((UINT32)<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        semTake(m_fileOpStarted, WAIT_FOREVER);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_preferences.html#a1a142dcfac236b5dbe64901659a5deae">m_fileLock</a>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="class_preferences.html#ac53abe1082b46294027769196ff315c5">m_readTask</a>.<a class="code" href="class_task.html#aed180b79ad986ff5e55170400db3c226">Start</a>((UINT32)<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        semTake(<a class="code" href="class_preferences.html#a828d8507e0c043f723237ea22c33444d">m_fileOpStarted</a>, WAIT_FOREVER);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="class_network_table.html#a3a166ccdfb6b0a16a03f4bb24b0acf08">NetworkTable::GetTable</a>(kTableName)-&gt;<a class="code" href="class_network_table.html#aec8536a7ccda3a1f078805efe2d84f95">PutBoolean</a>(kSaveField, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="class_network_table.html#a3a166ccdfb6b0a16a03f4bb24b0acf08">NetworkTable::GetTable</a>(kTableName)-&gt;<a class="code" href="class_network_table.html#aecbb26f722ca5928562533ba3ec62637">AddTableListener</a>(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="class_network_table.html#a3a166ccdfb6b0a16a03f4bb24b0acf08">NetworkTable::GetTable</a>(<a class="code" href="_preferences_8cpp.html#a408b4f7bca854e2952d2d304e8eb8bff">kTableName</a>)-&gt;<a class="code" href="class_network_table.html#aec8536a7ccda3a1f078805efe2d84f95">PutBoolean</a>(<a class="code" href="_preferences_8cpp.html#a9b0734858fdc38e1cb3adf7d4a2debed">kSaveField</a>, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="class_network_table.html#a3a166ccdfb6b0a16a03f4bb24b0acf08">NetworkTable::GetTable</a>(<a class="code" href="_preferences_8cpp.html#a408b4f7bca854e2952d2d304e8eb8bff">kTableName</a>)-&gt;<a class="code" href="class_network_table.html#aecbb26f722ca5928562533ba3ec62637">AddTableListener</a>(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="namespacen_usage_reporting.html#a99be0607a35214dd8b718c6645ae53b3">nUsageReporting::report</a>(<a class="code" href="namespacen_usage_reporting.html#ac80f9386b7fe4c6222088527f119c0c2ad7aab7b3416ce38718bd367ae1e5cd9c">nUsageReporting::kResourceType_Preferences</a>, 0);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
 <div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="class_preferences.html#a20020f4fceeefb048a5eeddec6c28376">   52</a></span>&#160;<a class="code" href="class_preferences.html#a20020f4fceeefb048a5eeddec6c28376">Preferences::~Preferences</a>()</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        semTake(m_tableLock, WAIT_FOREVER);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        semDelete(m_tableLock);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        semTake(m_fileLock, WAIT_FOREVER);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        semDelete(m_fileOpStarted);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        semDelete(m_fileLock);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        semTake(<a class="code" href="class_preferences.html#a93db422aeb7bbd05a9c0de6c2a647e41">m_tableLock</a>, WAIT_FOREVER);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        semDelete(<a class="code" href="class_preferences.html#a93db422aeb7bbd05a9c0de6c2a647e41">m_tableLock</a>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        semTake(<a class="code" href="class_preferences.html#a1a142dcfac236b5dbe64901659a5deae">m_fileLock</a>, WAIT_FOREVER);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        semDelete(<a class="code" href="class_preferences.html#a828d8507e0c043f723237ea22c33444d">m_fileOpStarted</a>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        semDelete(<a class="code" href="class_preferences.html#a1a142dcfac236b5dbe64901659a5deae">m_fileLock</a>);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
 <div class="line"><a name="l00065"></a><span class="lineno"><a class="code" href="class_preferences.html#aacc16e546a94d54772f3b500ec9a81a0">   65</a></span>&#160;<a class="code" href="class_preferences.html">Preferences</a> *<a class="code" href="class_preferences.html#aacc16e546a94d54772f3b500ec9a81a0">Preferences::GetInstance</a>()</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">if</span> (_instance == <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                _instance = <span class="keyword">new</span> <a class="code" href="class_preferences.html#a9ca3b7029509bc36da1a57ed296c2fa8">Preferences</a>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span> _instance;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_preferences.html#a194dc62cc42c2fae06048ad324ccc50b">_instance</a> == <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <a class="code" href="class_preferences.html#a194dc62cc42c2fae06048ad324ccc50b">_instance</a> = <span class="keyword">new</span> <a class="code" href="class_preferences.html#a9ca3b7029509bc36da1a57ed296c2fa8">Preferences</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_preferences.html#a194dc62cc42c2fae06048ad324ccc50b">_instance</a>;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
 <div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="class_preferences.html#adfaa1b0d4e2317bbab416ad0e681d707">   76</a></span>&#160;std::vector&lt;std::string&gt; <a class="code" href="class_preferences.html#adfaa1b0d4e2317bbab416ad0e681d707">Preferences::GetKeys</a>()</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">return</span> m_keys;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_preferences.html#ad0d0902edb63701eb9bc003135701e87">m_keys</a>;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
 <div class="line"><a name="l00088"></a><span class="lineno"><a class="code" href="class_preferences.html#ad31cc879d70be5d64338fefa12e1a243">   88</a></span>&#160;std::string <a class="code" href="class_preferences.html#ad31cc879d70be5d64338fefa12e1a243">Preferences::GetString</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keyword">const</span> <span class="keywordtype">char</span> *defaultValue)</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        std::string value = Get(key);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        std::string value = <a class="code" href="class_preferences.html#a58dafa16003015a156b832a8b86cb16e">Get</a>(key);</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">return</span> value.empty() ? defaultValue : value;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
@@ -170,7 +170,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
 <div class="line"><a name="l00117"></a><span class="lineno"><a class="code" href="class_preferences.html#a5ca31ef76922a0fa26b8ded1e9291709">  117</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_preferences.html#a5ca31ef76922a0fa26b8ded1e9291709">Preferences::GetInt</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> defaultValue)</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;{</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        std::string value = Get(key);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        std::string value = <a class="code" href="class_preferences.html#a58dafa16003015a156b832a8b86cb16e">Get</a>(key);</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">if</span> (value.empty())</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                <span class="keywordflow">return</span> defaultValue;</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
@@ -179,7 +179,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
 <div class="line"><a name="l00133"></a><span class="lineno"><a class="code" href="class_preferences.html#a06246f2b29a5015a7fb04dfa387d9727">  133</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_preferences.html#a06246f2b29a5015a7fb04dfa387d9727">Preferences::GetDouble</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">double</span> defaultValue)</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;{</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        std::string value = Get(key);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        std::string value = <a class="code" href="class_preferences.html#a58dafa16003015a156b832a8b86cb16e">Get</a>(key);</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordflow">if</span> (value.empty())</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                <span class="keywordflow">return</span> defaultValue;</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
@@ -188,7 +188,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
 <div class="line"><a name="l00149"></a><span class="lineno"><a class="code" href="class_preferences.html#a20514b7b015c4b98ca999dc38d86608d">  149</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="class_preferences.html#a20514b7b015c4b98ca999dc38d86608d">Preferences::GetFloat</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">float</span> defaultValue)</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;{</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        std::string value = Get(key);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        std::string value = <a class="code" href="class_preferences.html#a58dafa16003015a156b832a8b86cb16e">Get</a>(key);</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keywordflow">if</span> (value.empty())</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                <span class="keywordflow">return</span> defaultValue;</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
@@ -197,7 +197,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
 <div class="line"><a name="l00165"></a><span class="lineno"><a class="code" href="class_preferences.html#a4ee5292adb5b798e6acc3c184b1f2c2d">  165</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_preferences.html#a4ee5292adb5b798e6acc3c184b1f2c2d">Preferences::GetBoolean</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">bool</span> defaultValue)</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;{</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        std::string value = Get(key);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        std::string value = <a class="code" href="class_preferences.html#a58dafa16003015a156b832a8b86cb16e">Get</a>(key);</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">if</span> (value.empty())</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                <span class="keywordflow">return</span> defaultValue;</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
@@ -212,7 +212,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
 <div class="line"><a name="l00187"></a><span class="lineno"><a class="code" href="class_preferences.html#ab175a6bf8da0215476cc74cf4a8c5503">  187</a></span>&#160;INT64 <a class="code" href="class_preferences.html#ab175a6bf8da0215476cc74cf4a8c5503">Preferences::GetLong</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, INT64 defaultValue)</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;{</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        std::string value = Get(key);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        std::string value = <a class="code" href="class_preferences.html#a58dafa16003015a156b832a8b86cb16e">Get</a>(key);</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keywordflow">if</span> (value.empty())</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                <span class="keywordflow">return</span> defaultValue;</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
@@ -235,82 +235,82 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                <a class="code" href="_error_base_8h.html#a495fcc362032eea3b1dadc34be9bd058">wpi_setWPIErrorWithContext</a>(ParameterOutOfRange, <span class="stringliteral">&quot;value contains illegal characters&quot;</span>);</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        }</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        Put(key, value);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <a class="code" href="class_preferences.html#ae601c39a3e2820bd6e1d628c450bf6a0">Put</a>(key, value);</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;}</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;</div>
 <div class="line"><a name="l00238"></a><span class="lineno"><a class="code" href="class_preferences.html#a0715c745aecfe942f37e0e8b19a8b404">  238</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_preferences.html#a0715c745aecfe942f37e0e8b19a8b404">Preferences::PutInt</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> value)</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;{</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="keywordtype">char</span> buf[32];</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        snprintf(buf, 32, <span class="stringliteral">&quot;%d&quot;</span>, value);</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        Put(key, buf);</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <a class="code" href="class_preferences.html#ae601c39a3e2820bd6e1d628c450bf6a0">Put</a>(key, buf);</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;}</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;</div>
 <div class="line"><a name="l00256"></a><span class="lineno"><a class="code" href="class_preferences.html#aa268e1bfbde2c1957d3cca6b379d5da2">  256</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_preferences.html#aa268e1bfbde2c1957d3cca6b379d5da2">Preferences::PutDouble</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">double</span> value)</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;{</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <span class="keywordtype">char</span> buf[32];</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        snprintf(buf, 32, <span class="stringliteral">&quot;%f&quot;</span>, value);</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        Put(key, buf);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <a class="code" href="class_preferences.html#ae601c39a3e2820bd6e1d628c450bf6a0">Put</a>(key, buf);</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;}</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div>
 <div class="line"><a name="l00274"></a><span class="lineno"><a class="code" href="class_preferences.html#a357246eabcaa351f7c2ad5c86a03fe0f">  274</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_preferences.html#a357246eabcaa351f7c2ad5c86a03fe0f">Preferences::PutFloat</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">float</span> value)</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;{</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="keywordtype">char</span> buf[32];</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        snprintf(buf, 32, <span class="stringliteral">&quot;%f&quot;</span>, value);</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        Put(key, buf);</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <a class="code" href="class_preferences.html#ae601c39a3e2820bd6e1d628c450bf6a0">Put</a>(key, buf);</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;}</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;</div>
 <div class="line"><a name="l00292"></a><span class="lineno"><a class="code" href="class_preferences.html#a74bec1555c91e100ff9091484fcaac91">  292</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_preferences.html#a74bec1555c91e100ff9091484fcaac91">Preferences::PutBoolean</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">bool</span> value)</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;{</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        Put(key, value ? <span class="stringliteral">&quot;true&quot;</span> : <span class="stringliteral">&quot;false&quot;</span>);</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <a class="code" href="class_preferences.html#ae601c39a3e2820bd6e1d628c450bf6a0">Put</a>(key, value ? <span class="stringliteral">&quot;true&quot;</span> : <span class="stringliteral">&quot;false&quot;</span>);</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;}</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;</div>
 <div class="line"><a name="l00308"></a><span class="lineno"><a class="code" href="class_preferences.html#a7cc71d0e62c873dccf59975b6720a3bc">  308</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_preferences.html#a7cc71d0e62c873dccf59975b6720a3bc">Preferences::PutLong</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, INT64 value)</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;{</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <span class="keywordtype">char</span> buf[32];</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        snprintf(buf, 32, <span class="stringliteral">&quot;%lld&quot;</span>, value);</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        Put(key, buf);</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        <a class="code" href="class_preferences.html#ae601c39a3e2820bd6e1d628c450bf6a0">Put</a>(key, buf);</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;}</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;</div>
 <div class="line"><a name="l00326"></a><span class="lineno"><a class="code" href="class_preferences.html#ae8ce1d8967e205e584e9cca1dbf86919">  326</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_preferences.html#ae8ce1d8967e205e584e9cca1dbf86919">Preferences::Save</a>()</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;{</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(m_fileLock);</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        m_writeTask.<a class="code" href="class_task.html#aed180b79ad986ff5e55170400db3c226">Start</a>((UINT32)<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        semTake(m_fileOpStarted, WAIT_FOREVER);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_preferences.html#a1a142dcfac236b5dbe64901659a5deae">m_fileLock</a>);</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <a class="code" href="class_preferences.html#a1baf3a891020c33cc357da2d048a5779">m_writeTask</a>.<a class="code" href="class_task.html#aed180b79ad986ff5e55170400db3c226">Start</a>((UINT32)<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        semTake(<a class="code" href="class_preferences.html#a828d8507e0c043f723237ea22c33444d">m_fileOpStarted</a>, WAIT_FOREVER);</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;}</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;</div>
 <div class="line"><a name="l00338"></a><span class="lineno"><a class="code" href="class_preferences.html#a7d9c2ec45d1966f06f92fc8383053b5d">  338</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_preferences.html#a7d9c2ec45d1966f06f92fc8383053b5d">Preferences::ContainsKey</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key)</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;{</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="keywordflow">return</span> !Get(key).empty();</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="keywordflow">return</span> !<a class="code" href="class_preferences.html#a58dafa16003015a156b832a8b86cb16e">Get</a>(key).empty();</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;}</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;</div>
 <div class="line"><a name="l00347"></a><span class="lineno"><a class="code" href="class_preferences.html#ae2b5f7567f130301c50869916571c81b">  347</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_preferences.html#ae2b5f7567f130301c50869916571c81b">Preferences::Remove</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key)</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;{</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        m_values.erase(std::string(key));</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        std::vector&lt;std::string&gt;::iterator it = m_keys.begin();</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <span class="keywordflow">for</span> (; it != m_keys.end(); it++)</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        <a class="code" href="class_preferences.html#aa1242875588637407d673a5bfad716f0">m_values</a>.erase(std::string(key));</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        std::vector&lt;std::string&gt;::iterator it = <a class="code" href="class_preferences.html#ad0d0902edb63701eb9bc003135701e87">m_keys</a>.begin();</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <span class="keywordflow">for</span> (; it != <a class="code" href="class_preferences.html#ad0d0902edb63701eb9bc003135701e87">m_keys</a>.end(); it++)</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        {</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                <span class="keywordflow">if</span> (it-&gt;compare(key) == 0)</div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                {</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                        m_keys.erase(it);</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                        <a class="code" href="class_preferences.html#ad0d0902edb63701eb9bc003135701e87">m_keys</a>.erase(it);</div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                }</div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        }</div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;}</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;std::string Preferences::Get(<span class="keyword">const</span> <span class="keywordtype">char</span> *key)</div>
+<div class="line"><a name="l00366"></a><span class="lineno"><a class="code" href="class_preferences.html#a58dafa16003015a156b832a8b86cb16e">  366</a></span>&#160;std::string <a class="code" href="class_preferences.html#a58dafa16003015a156b832a8b86cb16e">Preferences::Get</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key)</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;{</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(m_tableLock);</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_preferences.html#a93db422aeb7bbd05a9c0de6c2a647e41">m_tableLock</a>);</div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <span class="keywordflow">if</span> (key == <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        {</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                <a class="code" href="_error_base_8h.html#a495fcc362032eea3b1dadc34be9bd058">wpi_setWPIErrorWithContext</a>(NullParameter, <span class="stringliteral">&quot;key&quot;</span>);</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                <span class="keywordflow">return</span> std::string(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        }</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        <span class="keywordflow">return</span> m_values[std::string(key)];</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_preferences.html#aa1242875588637407d673a5bfad716f0">m_values</a>[std::string(key)];</div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;}</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="keywordtype">void</span> Preferences::Put(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, std::string value)</div>
+<div class="line"><a name="l00382"></a><span class="lineno"><a class="code" href="class_preferences.html#ae601c39a3e2820bd6e1d628c450bf6a0">  382</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_preferences.html#ae601c39a3e2820bd6e1d628c450bf6a0">Preferences::Put</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, std::string value)</div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;{</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(m_tableLock);</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_preferences.html#a93db422aeb7bbd05a9c0de6c2a647e41">m_tableLock</a>);</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        <span class="keywordflow">if</span> (key == <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        {</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                <a class="code" href="_error_base_8h.html#a495fcc362032eea3b1dadc34be9bd058">wpi_setWPIErrorWithContext</a>(NullParameter, <span class="stringliteral">&quot;key&quot;</span>);</div>
@@ -324,24 +324,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        }</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        std::pair&lt;StringMap::iterator, bool&gt; ret =</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                m_values.insert(StringMap::value_type(key, value));</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                <a class="code" href="class_preferences.html#aa1242875588637407d673a5bfad716f0">m_values</a>.insert(StringMap::value_type(key, value));</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        <span class="keywordflow">if</span> (ret.second)</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                m_keys.push_back(key);</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                <a class="code" href="class_preferences.html#ad0d0902edb63701eb9bc003135701e87">m_keys</a>.push_back(key);</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                ret.first-&gt;second = value;</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        <a class="code" href="class_network_table.html#a3a166ccdfb6b0a16a03f4bb24b0acf08">NetworkTable::GetTable</a>(kTableName)-&gt;<a class="code" href="class_network_table.html#af84211adc6d76cb3e51b6c7c2ff30942">PutString</a>(key, value);</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        <a class="code" href="class_network_table.html#a3a166ccdfb6b0a16a03f4bb24b0acf08">NetworkTable::GetTable</a>(<a class="code" href="_preferences_8cpp.html#a408b4f7bca854e2952d2d304e8eb8bff">kTableName</a>)-&gt;<a class="code" href="class_network_table.html#af84211adc6d76cb3e51b6c7c2ff30942">PutString</a>(key, value);</div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;}</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;<span class="keywordtype">void</span> Preferences::ReadTaskRun()</div>
+<div class="line"><a name="l00412"></a><span class="lineno"><a class="code" href="class_preferences.html#aa0b8513b1a98d0c60fce91712d16c8d7">  412</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_preferences.html#aa0b8513b1a98d0c60fce91712d16c8d7">Preferences::ReadTaskRun</a>()</div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;{</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(m_tableLock);</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        semGive(m_fileOpStarted);</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_preferences.html#a93db422aeb7bbd05a9c0de6c2a647e41">m_tableLock</a>);</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        semGive(<a class="code" href="class_preferences.html#a828d8507e0c043f723237ea22c33444d">m_fileOpStarted</a>);</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;</div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        std::string comment;</div>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;</div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;        FILE *file = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        file = fopen(kFileName, <span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        file = fopen(<a class="code" href="_preferences_8cpp.html#a59f3292e22e91a9c30a1cae98e5d23ca">kFileName</a>, <span class="stringliteral">&quot;r&quot;</span>);</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        <span class="keywordflow">if</span> (file != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        {</div>
@@ -422,13 +422,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;</div>
 <div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;                                <span class="keywordflow">if</span> (!name.empty() &amp;&amp; !value.empty())</div>
 <div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;                                {</div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;                                        m_keys.push_back(name);</div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;                                        m_values.insert(std::pair&lt;std::string, std::string&gt;(name, value));</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;                                        <a class="code" href="class_preferences.html#ad0d0902edb63701eb9bc003135701e87">m_keys</a>.push_back(name);</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;                                        <a class="code" href="class_preferences.html#aa1242875588637407d673a5bfad716f0">m_values</a>.insert(std::pair&lt;std::string, std::string&gt;(name, value));</div>
 <div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;                                        <span class="comment">//NetworkTable::GetTable(kTableName)-&gt;PutString(name, value);</span></div>
 <div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;</div>
 <div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;                                        <span class="keywordflow">if</span> (!comment.empty())</div>
 <div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;                                        {</div>
-<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;                                                m_comments.insert(std::pair&lt;std::string, std::string&gt;(name, comment));</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;                                                <a class="code" href="class_preferences.html#ad5a4b8f805c9b58d52f82e5f062e5a09">m_comments</a>.insert(std::pair&lt;std::string, std::string&gt;(name, comment));</div>
 <div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;                                                comment.clear();</div>
 <div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;                                        }</div>
 <div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;                                }</div>
@@ -447,45 +447,45 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;                fclose(file);</div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;</div>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;        <span class="keywordflow">if</span> (!comment.empty())</div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;                m_endComment = comment;</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;                <a class="code" href="class_preferences.html#ac6c8df267923960bc6419345fac89f2b">m_endComment</a> = comment;</div>
 <div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;}</div>
 <div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;<span class="keywordtype">void</span> Preferences::WriteTaskRun()</div>
+<div class="line"><a name="l00533"></a><span class="lineno"><a class="code" href="class_preferences.html#a676dacef1c28985ba79693bdb0a0c0af">  533</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_preferences.html#a676dacef1c28985ba79693bdb0a0c0af">Preferences::WriteTaskRun</a>()</div>
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;{</div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(m_tableLock);</div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;        semGive(m_fileOpStarted);</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_preferences.html#a93db422aeb7bbd05a9c0de6c2a647e41">m_tableLock</a>);</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;        semGive(<a class="code" href="class_preferences.html#a828d8507e0c043f723237ea22c33444d">m_fileOpStarted</a>);</div>
 <div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;</div>
 <div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;        FILE *file = <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;        <a class="code" href="_preferences_8cpp.html#a4e1ab032f81298e0e0a8b0e684e0a32e">Priv_SetWriteFileAllowed</a>(1);</div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;        file = fopen(kFileName, <span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;        file = fopen(<a class="code" href="_preferences_8cpp.html#a59f3292e22e91a9c30a1cae98e5d23ca">kFileName</a>, <span class="stringliteral">&quot;w&quot;</span>);</div>
 <div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;</div>
 <div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;        fputs(<span class="stringliteral">&quot;[Preferences]\n&quot;</span>, file);</div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;        std::vector&lt;std::string&gt;::iterator it = m_keys.begin();</div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;        <span class="keywordflow">for</span> (; it != m_keys.end(); it++)</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;        std::vector&lt;std::string&gt;::iterator it = <a class="code" href="class_preferences.html#ad0d0902edb63701eb9bc003135701e87">m_keys</a>.begin();</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;        <span class="keywordflow">for</span> (; it != <a class="code" href="class_preferences.html#ad0d0902edb63701eb9bc003135701e87">m_keys</a>.end(); it++)</div>
 <div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;        {</div>
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;                std::string key = *it;</div>
-<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;                std::string value = m_values[key];</div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;                std::string comment = m_comments[key];</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;                std::string value = <a class="code" href="class_preferences.html#aa1242875588637407d673a5bfad716f0">m_values</a>[key];</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;                std::string comment = <a class="code" href="class_preferences.html#ad5a4b8f805c9b58d52f82e5f062e5a09">m_comments</a>[key];</div>
 <div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;</div>
 <div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;                <span class="keywordflow">if</span> (!comment.empty())</div>
 <div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;                        fputs(comment.c_str(), file);</div>
 <div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;</div>
 <div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;                fputs(key.c_str(), file);</div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;                fputs(kValuePrefix, file);</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;                fputs(<a class="code" href="_preferences_8cpp.html#af589865a3c244246eac41d4d71879555">kValuePrefix</a>, file);</div>
 <div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;                fputs(value.c_str(), file);</div>
-<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;                fputs(kValueSuffix, file);</div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;                fputs(<a class="code" href="_preferences_8cpp.html#a02eb8088556f34fc1d6843585ce14f5e">kValueSuffix</a>, file);</div>
 <div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;        }</div>
 <div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;</div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;        <span class="keywordflow">if</span> (!m_endComment.empty())</div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;                fputs(m_endComment.c_str(), file);</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="class_preferences.html#ac6c8df267923960bc6419345fac89f2b">m_endComment</a>.empty())</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;                fputs(<a class="code" href="class_preferences.html#ac6c8df267923960bc6419345fac89f2b">m_endComment</a>.c_str(), file);</div>
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;</div>
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;        <span class="keywordflow">if</span> (file != <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;                fclose(file);</div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;</div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;        <a class="code" href="class_network_table.html#a3a166ccdfb6b0a16a03f4bb24b0acf08">NetworkTable::GetTable</a>(kTableName)-&gt;<a class="code" href="class_network_table.html#aec8536a7ccda3a1f078805efe2d84f95">PutBoolean</a>(kSaveField, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;        <a class="code" href="class_network_table.html#a3a166ccdfb6b0a16a03f4bb24b0acf08">NetworkTable::GetTable</a>(<a class="code" href="_preferences_8cpp.html#a408b4f7bca854e2952d2d304e8eb8bff">kTableName</a>)-&gt;<a class="code" href="class_network_table.html#aec8536a7ccda3a1f078805efe2d84f95">PutBoolean</a>(<a class="code" href="_preferences_8cpp.html#a9b0734858fdc38e1cb3adf7d4a2debed">kSaveField</a>, <span class="keyword">false</span>);</div>
 <div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;}</div>
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;</div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;<span class="keyword">static</span> <span class="keywordtype">bool</span> isKeyAcceptable(<span class="keyword">const</span> std::string&amp; value) {</div>
+<div class="line"><a name="l00568"></a><span class="lineno"><a class="code" href="_preferences_8cpp.html#a9f40cf0c650091aafe4b998abac88c69">  568</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="_preferences_8cpp.html#a9f40cf0c650091aafe4b998abac88c69">isKeyAcceptable</a>(<span class="keyword">const</span> std::string&amp; value) {</div>
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; value.length(); i++) {</div>
 <div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;        <span class="keywordtype">char</span> letter = value.at(i);</div>
 <div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;        <span class="keywordflow">switch</span> (letter) {</div>
@@ -501,25 +501,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;}</div>
 <div class="line"><a name="l00582"></a><span class="lineno"><a class="code" href="class_preferences.html#a59e9eb00e4f012fa4226198479ce09ce">  582</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_preferences.html#a59e9eb00e4f012fa4226198479ce09ce">Preferences::ValueChanged</a>(<a class="code" href="class_i_table.html">ITable</a>* table, <span class="keyword">const</span> std::string&amp; key, <a class="code" href="union_entry_value.html">EntryValue</a> value, <span class="keywordtype">bool</span> isNew)</div>
 <div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;{</div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;        <span class="keywordflow">if</span> (key==kSaveField)</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;        <span class="keywordflow">if</span> (key==<a class="code" href="_preferences_8cpp.html#a9b0734858fdc38e1cb3adf7d4a2debed">kSaveField</a>)</div>
 <div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;        {</div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;                <span class="keywordflow">if</span> (table-&gt;<a class="code" href="class_i_table.html#ac860e52babec489bb384d2ce3d0a6798">GetBoolean</a>(kSaveField, <span class="keyword">false</span>))</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;                <span class="keywordflow">if</span> (table-&gt;<a class="code" href="class_i_table.html#ac860e52babec489bb384d2ce3d0a6798">GetBoolean</a>(<a class="code" href="_preferences_8cpp.html#a9b0734858fdc38e1cb3adf7d4a2debed">kSaveField</a>, <span class="keyword">false</span>))</div>
 <div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;                        <a class="code" href="class_preferences.html#ae8ce1d8967e205e584e9cca1dbf86919">Save</a>();</div>
 <div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;        }</div>
 <div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;        {</div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;                <a class="code" href="class_synchronized.html">Synchronized</a> sync(m_tableLock);</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;                <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_preferences.html#a93db422aeb7bbd05a9c0de6c2a647e41">m_tableLock</a>);</div>
 <div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;</div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;                <span class="keywordflow">if</span> (!isKeyAcceptable(key) || table-&gt;<a class="code" href="class_i_table.html#a0d75b646afae46d38d828fa38f03de05">GetString</a>(key, <span class="stringliteral">&quot;&quot;</span>).find(<span class="charliteral">&#39;&quot;&#39;</span>)!=std::string::npos)</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="_preferences_8cpp.html#a9f40cf0c650091aafe4b998abac88c69">isKeyAcceptable</a>(key) || table-&gt;<a class="code" href="class_i_table.html#a0d75b646afae46d38d828fa38f03de05">GetString</a>(key, <span class="stringliteral">&quot;&quot;</span>).find(<span class="charliteral">&#39;&quot;&#39;</span>)!=std::string::npos)</div>
 <div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;                {</div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;                        table-&gt;<a class="code" href="class_i_table.html#a28c01ff0d7bff0662dbe708e80c1fffe">PutString</a>(key, <span class="stringliteral">&quot;\&quot;&quot;</span>);</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;                        m_values.erase(key);</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;                        std::vector&lt;std::string&gt;::iterator it = m_keys.begin();</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;                        <span class="keywordflow">for</span> (; it != m_keys.end(); it++)</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;                        <a class="code" href="class_preferences.html#aa1242875588637407d673a5bfad716f0">m_values</a>.erase(key);</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;                        std::vector&lt;std::string&gt;::iterator it = <a class="code" href="class_preferences.html#ad0d0902edb63701eb9bc003135701e87">m_keys</a>.begin();</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;                        <span class="keywordflow">for</span> (; it != <a class="code" href="class_preferences.html#ad0d0902edb63701eb9bc003135701e87">m_keys</a>.end(); it++)</div>
 <div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;                        {</div>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;                                <span class="keywordflow">if</span> (key==*it)</div>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;                                {</div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;                                        m_keys.erase(it);</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;                                        <a class="code" href="class_preferences.html#ad0d0902edb63701eb9bc003135701e87">m_keys</a>.erase(it);</div>
 <div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;                                        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;                                }</div>
 <div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;                        }</div>
@@ -527,9 +527,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;                <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;                {</div>
 <div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;                        std::pair&lt;StringMap::iterator, bool&gt; ret =</div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;                                m_values.insert(StringMap::value_type(key, table-&gt;<a class="code" href="class_i_table.html#a0d75b646afae46d38d828fa38f03de05">GetString</a>(key, <span class="stringliteral">&quot;&quot;</span>)));</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;                                <a class="code" href="class_preferences.html#aa1242875588637407d673a5bfad716f0">m_values</a>.insert(StringMap::value_type(key, table-&gt;<a class="code" href="class_i_table.html#a0d75b646afae46d38d828fa38f03de05">GetString</a>(key, <span class="stringliteral">&quot;&quot;</span>)));</div>
 <div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;                        <span class="keywordflow">if</span> (ret.second)</div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;                                m_keys.push_back(key);</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;                                <a class="code" href="class_preferences.html#ad0d0902edb63701eb9bc003135701e87">m_keys</a>.push_back(key);</div>
 <div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;                        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;                                ret.first-&gt;second = table-&gt;<a class="code" href="class_i_table.html#a0d75b646afae46d38d828fa38f03de05">GetString</a>(key, <span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;                }</div>
@@ -538,7 +538,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:10 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:43 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

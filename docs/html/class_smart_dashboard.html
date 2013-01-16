@@ -85,7 +85,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-static-methods">Static Public Member Functions</a>  </div>
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">SmartDashboard Class Reference</div>  </div>
 </div><!--header-->
@@ -139,6 +141,18 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a3cc8960dee0edd4b57b494aa139e5887 inherit pub_static_methods_class_error_base"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_base.html#a3cc8960dee0edd4b57b494aa139e5887">SetGlobalWPIError</a> (const char *errorMessage, const char *contextMessage, const char *filename, const char *function, UINT32 lineNumber)</td></tr>
 <tr class="memitem:ab85de5de437f0293356753b2ebab874c inherit pub_static_methods_class_error_base"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_error.html">Error</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_base.html#ab85de5de437f0293356753b2ebab874c">GetGlobalError</a> ()</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a003ecab9c4b5d0e8c1471080d15cf8ea"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_dashboard.html#a003ecab9c4b5d0e8c1471080d15cf8ea">SmartDashboard</a> ()</td></tr>
+<tr class="memitem:adbe47177b55a48f28093e7d3bad9ab8b"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_dashboard.html#adbe47177b55a48f28093e7d3bad9ab8b">~SmartDashboard</a> ()</td></tr>
+<tr class="memitem:a8e63d916e067d744634500ae0f71ffcf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_dashboard.html#a8e63d916e067d744634500ae0f71ffcf">DISALLOW_COPY_AND_ASSIGN</a> (<a class="el" href="class_smart_dashboard.html">SmartDashboard</a>)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a529ff2591441999676396437c959c803"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_i_table.html">ITable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_dashboard.html#a529ff2591441999676396437c959c803">m_table</a> = <a class="el" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="memitem:a34501eab182886369e335515add5df69"><td class="memItemLeft" align="right" valign="top">static std::map&lt; <a class="el" href="class_i_table.html">ITable</a> <br class="typebreak"/>
+*, <a class="el" href="class_sendable.html">Sendable</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_dashboard.html#a34501eab182886369e335515add5df69">m_tablesToData</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_methods_class_sensor_base"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_sensor_base')"><img src="closed.png" alt="-"/>&nbsp;Public Member Functions inherited from <a class="el" href="class_sensor_base.html">SensorBase</a></td></tr>
@@ -182,7 +196,78 @@ Additional Inherited Members</h2></td></tr>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
 <p>Definition at line <a class="el" href="_smart_dashboard_8h_source.html#l00018">18</a> of file <a class="el" href="_smart_dashboard_8h_source.html">SmartDashboard.h</a>.</p>
-</div><hr/><h2>Member Function Documentation</h2>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a003ecab9c4b5d0e8c1471080d15cf8ea"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmartDashboard::SmartDashboard </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adbe47177b55a48f28093e7d3bad9ab8b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual SmartDashboard::~SmartDashboard </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a8e63d916e067d744634500ae0f71ffcf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmartDashboard::DISALLOW_COPY_AND_ASSIGN </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_smart_dashboard.html">SmartDashboard</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a55f426cf2b75a183659b750fdbd8bca7"></a>
 <div class="memitem">
 <div class="memproto">
@@ -666,6 +751,53 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a529ff2591441999676396437c959c803"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i_table.html">ITable</a> * SmartDashboard::m_table = <a class="el" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The <a class="el" href="class_network_table.html">NetworkTable</a> used by <a class="el" href="class_smart_dashboard.html">SmartDashboard</a> </p>
+
+<p>Definition at line <a class="el" href="_smart_dashboard_8h_source.html#l00045">45</a> of file <a class="el" href="_smart_dashboard_8h_source.html">SmartDashboard.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a34501eab182886369e335515add5df69"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt; <a class="el" href="class_i_table.html">ITable</a> *, <a class="el" href="class_sendable.html">Sendable</a> * &gt; SmartDashboard::m_tablesToData</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A map linking tables in the <a class="el" href="class_smart_dashboard.html">SmartDashboard</a> to the <a class="el" href="">SmartDashboardData</a> objects they came from. </p>
+
+<p>Definition at line <a class="el" href="_smart_dashboard_8h_source.html#l00051">51</a> of file <a class="el" href="_smart_dashboard_8h_source.html">SmartDashboard.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>WPILib/SmartDashboard/<a class="el" href="_smart_dashboard_8h_source.html">SmartDashboard.h</a></li>
 <li>WPILib/SmartDashboard/<a class="el" href="_smart_dashboard_8cpp_source.html">SmartDashboard.cpp</a></li>
@@ -673,7 +805,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:17 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:49 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

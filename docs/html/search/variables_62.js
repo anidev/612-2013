@@ -15,6 +15,7 @@ var searchData=
   ['bold',['bold',['../struct_draw_text_options__struct.html#a0fc9b68d5781e17e3fc5451f6c351998',1,'DrawTextOptions_struct::bold()'],['../struct_overlay_text_options__struct.html#a79ec1f43d79b5c5940dc1cf4da40ec39',1,'OverlayTextOptions_struct::bold()']]],
   ['boolean',['BOOLEAN',['../class_default_entry_types.html#a583daba8d0f5fa462c1496c894c23339',1,'DefaultEntryTypes']]],
   ['boolean_5farray_5fraw_5fid',['BOOLEAN_ARRAY_RAW_ID',['../class_boolean_array.html#a55e524c332b143f5b999d0d5b34e9df9',1,'BooleanArray']]],
+  ['boolean_5fraw_5fid',['BOOLEAN_RAW_ID',['../_default_entry_types_8h.html#a21dd654cd8162f643e1e64e3a6295460',1,'DefaultEntryTypes.h']]],
   ['border',['border',['../struct_image_info__struct.html#a3c0e2c6bb998e950228dcde105c6f8e9',1,'ImageInfo_struct::border()'],['../struct_view3_d_options__struct.html#a4dbbf9ce33b166db5a0b741a7cf67325',1,'View3DOptions_struct::border()']]],
   ['borderintegrity',['borderIntegrity',['../struct_data_matrix_report__struct.html#a369902b5e6013b0b8d0fee58f545ec18',1,'DataMatrixReport_struct']]],
   ['boundingbox',['boundingBox',['../struct_q_r_code_report__struct.html#a4744c1356ae8754a755b42fccbcf7c8e',1,'QRCodeReport_struct::boundingBox()'],['../struct_data_matrix_report__struct.html#acb65de27579e014fd4fe2328cefddaf5',1,'DataMatrixReport_struct::boundingBox()'],['../struct_barcode2_d_info__struct.html#a29ee1c1dd6570af71deae145a4ce7855',1,'Barcode2DInfo_struct::boundingBox()'],['../struct_line_profile__struct.html#a3cff006ee59a4b0d374e246f563c4b11',1,'LineProfile_struct::boundingBox()'],['../struct_arc_info__struct.html#ad531b25d6055799f5050a0be997ed71f',1,'ArcInfo_struct::boundingBox()'],['../struct_particle_report__struct.html#a0810946e7b3f564eed28a9609d7e541e',1,'ParticleReport_struct::boundingBox()']]],
@@ -25,6 +26,7 @@ var searchData=
   ['bsource_5fchannel',['BSource_Channel',['../unionn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_encoder_1_1t_config.html#a2b71a5e2723e7f5800fd3699bf65abe7',1,'nFPGA::nFRC_2012_1_6_4::tEncoder::tConfig']]],
   ['bsource_5fmodule',['BSource_Module',['../unionn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_encoder_1_1t_config.html#aa889685da64000911df8212aaf4ed682',1,'nFPGA::nFRC_2012_1_6_4::tEncoder::tConfig']]],
   ['busbitwidth',['BusBitWidth',['../unionn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_s_p_i_1_1t_config.html#a50f0d676344a867eb303aa05c8c6878e',1,'nFPGA::nFRC_2012_1_6_4::tSPI::tConfig']]],
+  ['buttons',['buttons',['../struct_driver_station_enhanced_i_o_1_1input__t.html#a8abb782552fd9677221a101409e22afa',1,'DriverStationEnhancedIO::input_t::buttons()'],['../union_kinect_stick_1_1_kinect_stick_data.html#a8488c7bf4efde8a7e94fa42569f63523',1,'KinectStick::KinectStickData::buttons()']]],
   ['bytestoread',['BytesToRead',['../unionn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_d_i_o_1_1t_i2_c_config.html#abdd2075e08d4198f2ebf3571cc20fff0',1,'nFPGA::nFRC_2012_1_6_4::tDIO::tI2CConfig']]],
   ['bytestowrite',['BytesToWrite',['../unionn_f_p_g_a_1_1n_f_r_c__2012__1__6__4_1_1t_d_i_o_1_1t_i2_c_config.html#ae01c42230c8400bb7255a97c6720924b',1,'nFPGA::nFRC_2012_1_6_4::tDIO::tI2CConfig']]]
 ];

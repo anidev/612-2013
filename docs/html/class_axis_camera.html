@@ -86,7 +86,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a>  </div>
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">AxisCamera Class Reference</div>  </div>
 </div><!--header-->
@@ -158,6 +163,38 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ac0ded6e2137ed5b704ad3b6fba041078"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_axis_camera.html">AxisCamera</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_axis_camera.html#ac0ded6e2137ed5b704ad3b6fba041078">GetInstance</a> (const char *cameraIP=<a class="el" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</td></tr>
 <tr class="memitem:aa78c5611fb79057a41460bda0ff4d4ae"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_axis_camera.html#aa78c5611fb79057a41460bda0ff4d4ae">DeleteInstance</a> ()</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:a6082606b9889b70ec4be54886ed46962"><td class="memItemLeft" align="right" valign="top">typedef std::set&lt; SEM_ID &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_axis_camera.html#a6082606b9889b70ec4be54886ed46962">SemSet_t</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a00b536991f59aa889386109689da8bd1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_axis_camera.html#a00b536991f59aa889386109689da8bd1">AxisCamera</a> (const char *cameraIP)</td></tr>
+<tr class="memitem:a757d4333e347ad3655d84bda91c435d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_axis_camera.html#a757d4333e347ad3655d84bda91c435d4">ImageStreamTaskFunction</a> ()</td></tr>
+<tr class="memitem:aadc1b6cd2e7dbc2159b62b964381480a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_axis_camera.html#aadc1b6cd2e7dbc2159b62b964381480a">ReadImagesFromCamera</a> ()</td></tr>
+<tr class="memitem:a3ebef2c1aaa93808f434e742033ae014"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_axis_camera.html#a3ebef2c1aaa93808f434e742033ae014">UpdatePublicImageFromCamera</a> (char *imgBuffer, <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> imgSize)</td></tr>
+<tr class="memitem:a6ba7c0eced0de064340b551a9d7ddbfe"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_axis_camera.html#a6ba7c0eced0de064340b551a9d7ddbfe">RestartCameraTask</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:ae56c59ec4ba8af0f1831d2fc9e68f2c2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_axis_camera.html#ae56c59ec4ba8af0f1831d2fc9e68f2c2">s_ImageStreamTaskFunction</a> (<a class="el" href="class_axis_camera.html">AxisCamera</a> *thisPtr)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:af1030db987806a460009ab0838649415"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_axis_camera.html#af1030db987806a460009ab0838649415">m_cameraSocket</a></td></tr>
+<tr class="memitem:afa55c37e29ac66371264c9cb39ad1df5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_axis_camera.html#a6082606b9889b70ec4be54886ed46962">SemSet_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_axis_camera.html#afa55c37e29ac66371264c9cb39ad1df5">m_newImageSemSet</a></td></tr>
+<tr class="memitem:a000a71b0bf1357fae6e8389408cecc26"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_axis_camera.html#a000a71b0bf1357fae6e8389408cecc26">m_protectedImageBuffer</a></td></tr>
+<tr class="memitem:aa71a05b8bfe2fb148af57b5c3624f50a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_axis_camera.html#aa71a05b8bfe2fb148af57b5c3624f50a">m_protectedImageBufferLength</a></td></tr>
+<tr class="memitem:a9c44d2ee4f2cae0984474fe946e52b66"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_axis_camera.html#a9c44d2ee4f2cae0984474fe946e52b66">m_protectedImageSize</a></td></tr>
+<tr class="memitem:aa5b2e17cf6323b51b0654ee7c34edcc5"><td class="memItemLeft" align="right" valign="top">SEM_ID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_axis_camera.html#aa5b2e17cf6323b51b0654ee7c34edcc5">m_protectedImageSem</a></td></tr>
+<tr class="memitem:a19f2b4733dc65ac20220f74e9085b827"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_axis_camera.html#a19f2b4733dc65ac20220f74e9085b827">m_freshImage</a></td></tr>
+<tr class="memitem:afabc9f4e29c724ca2c4ee8156fe53b34"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_task.html">Task</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_axis_camera.html#afabc9f4e29c724ca2c4ee8156fe53b34">m_imageStreamTask</a></td></tr>
+<tr class="memitem:a2a97668e7893d810f1d27062f8d8a1ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_p_c_video_server.html">PCVideoServer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_axis_camera.html#a2a97668e7893d810f1d27062f8d8a1ed">m_videoServer</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:ada8e6c776b78608c5464d097462cc039"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_axis_camera.html">AxisCamera</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_axis_camera.html#ada8e6c776b78608c5464d097462cc039">_instance</a> = <a class="el" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_types_class_axis_camera_params"><td colspan="2" onclick="javascript:toggleInherit('pub_types_class_axis_camera_params')"><img src="closed.png" alt="-"/>&nbsp;Public Types inherited from <a class="el" href="class_axis_camera_params.html">AxisCameraParams</a></td></tr>
@@ -226,7 +263,57 @@ Additional Inherited Members</h2></td></tr>
 </ul>
 
 <p>Definition at line <a class="el" href="_axis_camera_8h_source.html#l00034">34</a> of file <a class="el" href="_axis_camera_8h_source.html">AxisCamera.h</a>.</p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+</div><hr/><h2>Member Typedef Documentation</h2>
+<a class="anchor" id="a6082606b9889b70ec4be54886ed46962"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::set&lt;SEM_ID&gt; <a class="el" href="class_axis_camera.html#a6082606b9889b70ec4be54886ed46962">AxisCamera::SemSet_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_axis_camera_8h_source.html#l00065">65</a> of file <a class="el" href="_axis_camera_8h_source.html">AxisCamera.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a00b536991f59aa889386109689da8bd1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AxisCamera::AxisCamera </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>ipAddress</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="class_axis_camera.html">AxisCamera</a> constructor </p>
+
+<p>Definition at line <a class="el" href="_axis_camera_8cpp_source.html#l00027">27</a> of file <a class="el" href="_axis_camera_8cpp_source.html">AxisCamera.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="af3cfcbe46afbf5e736856ab3416c4093"></a>
 <div class="memitem">
 <div class="memproto">
@@ -444,6 +531,32 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a757d4333e347ad3655d84bda91c435d4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> AxisCamera::ImageStreamTaskFunction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="class_task.html">Task</a> spawned by <a class="el" href="class_axis_camera.html">AxisCamera</a> constructor to receive images from cam If setNewImageSem has been called, this function does a semGive on each new image Images can be accessed by calling getImage() </p>
+
+<p>Definition at line <a class="el" href="_axis_camera_8cpp_source.html#l00213">213</a> of file <a class="el" href="_axis_camera_8cpp_source.html">AxisCamera.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a2841ee4826be6e2780132cb886cb0fce"></a>
 <div class="memitem">
 <div class="memproto">
@@ -463,6 +576,352 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aadc1b6cd2e7dbc2159b62b964381480a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> AxisCamera::ReadImagesFromCamera </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This function actually reads the images from the camera. </p>
+
+<p>Definition at line <a class="el" href="_axis_camera_8cpp_source.html#l00242">242</a> of file <a class="el" href="_axis_camera_8cpp_source.html">AxisCamera.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6ba7c0eced0de064340b551a9d7ddbfe"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> AxisCamera::RestartCameraTask </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Implement the pure virtual interface so that when parameter changes require a restart, the image task can be bounced. </p>
+
+<p>Implements <a class="el" href="class_axis_camera_params.html#a9eca0d513a80dad5b773b50ed28fc00f">AxisCameraParams</a>.</p>
+
+<p>Definition at line <a class="el" href="_axis_camera_8cpp_source.html#l00367">367</a> of file <a class="el" href="_axis_camera_8cpp_source.html">AxisCamera.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae56c59ec4ba8af0f1831d2fc9e68f2c2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> AxisCamera::s_ImageStreamTaskFunction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_axis_camera.html">AxisCamera</a> *&#160;</td>
+          <td class="paramname"><em>thisPtr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Static interface that will cause an instantiation if necessary. This static stub is directly spawned as a task to read images from the camera. </p>
+
+<p>Definition at line <a class="el" href="_axis_camera_8cpp_source.html#l00203">203</a> of file <a class="el" href="_axis_camera_8cpp_source.html">AxisCamera.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3ebef2c1aaa93808f434e742033ae014"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> AxisCamera::UpdatePublicImageFromCamera </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>imgBuffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a>&#160;</td>
+          <td class="paramname"><em>imgSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Copy the image from private buffer to shared buffer. </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">imgBuffer</td><td>The buffer containing the image </td></tr>
+    <tr><td class="paramname">bufLength</td><td>The length of the image </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_axis_camera_8cpp_source.html#l00332">332</a> of file <a class="el" href="_axis_camera_8cpp_source.html">AxisCamera.cpp</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="ada8e6c776b78608c5464d097462cc039"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_axis_camera.html">AxisCamera</a> * AxisCamera::_instance = <a class="el" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_axis_camera_8h_source.html#l00063">63</a> of file <a class="el" href="_axis_camera_8h_source.html">AxisCamera.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af1030db987806a460009ab0838649415"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> AxisCamera::m_cameraSocket</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_axis_camera_8h_source.html#l00064">64</a> of file <a class="el" href="_axis_camera_8h_source.html">AxisCamera.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a19f2b4733dc65ac20220f74e9085b827"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AxisCamera::m_freshImage</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_axis_camera_8h_source.html#l00072">72</a> of file <a class="el" href="_axis_camera_8h_source.html">AxisCamera.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afabc9f4e29c724ca2c4ee8156fe53b34"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_task.html">Task</a> AxisCamera::m_imageStreamTask</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_axis_camera_8h_source.html#l00074">74</a> of file <a class="el" href="_axis_camera_8h_source.html">AxisCamera.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afa55c37e29ac66371264c9cb39ad1df5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_axis_camera.html#a6082606b9889b70ec4be54886ed46962">SemSet_t</a> AxisCamera::m_newImageSemSet</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_axis_camera_8h_source.html#l00066">66</a> of file <a class="el" href="_axis_camera_8h_source.html">AxisCamera.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a000a71b0bf1357fae6e8389408cecc26"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* AxisCamera::m_protectedImageBuffer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_axis_camera_8h_source.html#l00068">68</a> of file <a class="el" href="_axis_camera_8h_source.html">AxisCamera.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa71a05b8bfe2fb148af57b5c3624f50a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> AxisCamera::m_protectedImageBufferLength</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_axis_camera_8h_source.html#l00069">69</a> of file <a class="el" href="_axis_camera_8h_source.html">AxisCamera.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa5b2e17cf6323b51b0654ee7c34edcc5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SEM_ID AxisCamera::m_protectedImageSem</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_axis_camera_8h_source.html#l00071">71</a> of file <a class="el" href="_axis_camera_8h_source.html">AxisCamera.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9c44d2ee4f2cae0984474fe946e52b66"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#a0b3961ed46c71ba306a3b0012b038e34">int</a> AxisCamera::m_protectedImageSize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_axis_camera_8h_source.html#l00070">70</a> of file <a class="el" href="_axis_camera_8h_source.html">AxisCamera.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2a97668e7893d810f1d27062f8d8a1ed"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_p_c_video_server.html">PCVideoServer</a>* AxisCamera::m_videoServer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_axis_camera_8h_source.html#l00076">76</a> of file <a class="el" href="_axis_camera_8h_source.html">AxisCamera.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>WPILib/Vision/<a class="el" href="_axis_camera_8h_source.html">AxisCamera.h</a></li>
 <li>WPILib/Vision/<a class="el" href="_axis_camera_8cpp_source.html">AxisCamera.cpp</a></li>
@@ -470,7 +929,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:13 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:45 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

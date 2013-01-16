@@ -119,27 +119,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_kinect_stick.html#a0fa75c3200f06145eb045b9897a7d570">GetRawButton</a>(UINT32 button);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">void</span> GetData();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">float</span> ConvertRawToFloat(INT8 charValue);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_kinect_stick.html#affb9cd7c1bd2f1bbed28f96ef700fd59">GetData</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">float</span> <a class="code" href="class_kinect_stick.html#a5b0de1d0058eca8fac76604ec11b12b5">ConvertRawToFloat</a>(INT8 charValue);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">typedef</span> <span class="keyword">union</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="union_kinect_stick_1_1_kinect_stick_data.html">   40</a></span>&#160;        <span class="keyword">typedef</span> <span class="keyword">union</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keyword">struct</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                        UINT8 size;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                        UINT8 id;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="union_kinect_stick_1_1_kinect_stick_data.html#aa4e7c3be54484ea397ecfb778b3539c6">   44</a></span>&#160;                        UINT8 <a class="code" href="union_kinect_stick_1_1_kinect_stick_data.html#aa4e7c3be54484ea397ecfb778b3539c6">size</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="union_kinect_stick_1_1_kinect_stick_data.html#a0cd45f6314335c5d9872fa345699ec3b">   45</a></span>&#160;                        UINT8 <a class="code" href="union_kinect_stick_1_1_kinect_stick_data.html#a0cd45f6314335c5d9872fa345699ec3b">id</a>;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                        <span class="keyword">struct</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                        {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> axis[6];</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> buttons;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="union_kinect_stick_1_1_kinect_stick_data.html#a29210a637748544fdb88e1a0d17d94a5">   48</a></span>&#160;                                <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> axis[6];</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="union_kinect_stick_1_1_kinect_stick_data.html#a8488c7bf4efde8a7e94fa42569f63523">   49</a></span>&#160;                                <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="union_kinect_stick_1_1_kinect_stick_data.html#a8488c7bf4efde8a7e94fa42569f63523">buttons</a>;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                        } rawSticks[2];</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                } formatted;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keywordtype">char</span> <a class="code" href="009_2_axis_camera_8cpp.html#aa9a432d72d8c9223bd023ae23c658c42">data</a>[18];</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        } KinectStickData;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="union_kinect_stick_1_1_kinect_stick_data.html#a00e65f28c3bca6bae90481679117303b">   52</a></span>&#160;                <span class="keywordtype">char</span> <a class="code" href="009_2_axis_camera_8cpp.html#aa9a432d72d8c9223bd023ae23c658c42">data</a>[18];</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        } <a class="code" href="union_kinect_stick_1_1_kinect_stick_data.html">KinectStickData</a>;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">int</span> m_id;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">static</span> UINT32 _recentPacketNumber;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">static</span> KinectStickData _sticks;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="class_kinect_stick.html#ad8ff173508be35b7db92d1b77fd3751e">   55</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_kinect_stick.html#ad8ff173508be35b7db92d1b77fd3751e">m_id</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="class_kinect_stick.html#a59c83c42dfb84f3dda69300cdb969971">   56</a></span>&#160;        <span class="keyword">static</span> UINT32 <a class="code" href="class_kinect_stick.html#a59c83c42dfb84f3dda69300cdb969971">_recentPacketNumber</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="class_kinect_stick.html#aebed7eff1e44f9a0ee6514b63e3c469e">   57</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="union_kinect_stick_1_1_kinect_stick_data.html">KinectStickData</a> <a class="code" href="class_kinect_stick.html#aebed7eff1e44f9a0ee6514b63e3c469e">_sticks</a>;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -147,7 +147,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:09 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:42 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

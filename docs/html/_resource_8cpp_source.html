@@ -100,41 +100,41 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_w_p_i_errors_8h.html">WPIErrors.h</a>&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_error_base_8h.html">ErrorBase.h</a>&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<a class="code" href="class_reentrant_semaphore.html">ReentrantSemaphore</a> Resource::m_createLock;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<a class="code" href="class_reentrant_semaphore.html">ReentrantSemaphore</a> <a class="code" href="class_resource.html#ab51fbd3637709c5709c6256697a30a22">Resource::m_createLock</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;Resource::Resource(UINT32 elements)</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="class_resource.html#a0b78cc75804fa191429da3cc501ad5ab">   18</a></span>&#160;<a class="code" href="class_resource.html#a0b78cc75804fa191429da3cc501ad5ab">Resource::Resource</a>(UINT32 elements)</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(m_createLock);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        m_size = elements;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        m_isAllocated = <span class="keyword">new</span> <span class="keywordtype">bool</span>[m_size];</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">for</span> (UINT32 i=0; i &lt; m_size; i++)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_resource.html#ab51fbd3637709c5709c6256697a30a22">m_createLock</a>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="class_resource.html#aec6553951ae17d82e876b8c46cdafece">m_size</a> = elements;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="class_resource.html#a3539787143f597c0e76badf028e19fe4">m_isAllocated</a> = <span class="keyword">new</span> <span class="keywordtype">bool</span>[<a class="code" href="class_resource.html#aec6553951ae17d82e876b8c46cdafece">m_size</a>];</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">for</span> (UINT32 i=0; i &lt; <a class="code" href="class_resource.html#aec6553951ae17d82e876b8c46cdafece">m_size</a>; i++)</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                m_isAllocated[i] = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <a class="code" href="class_resource.html#a3539787143f597c0e76badf028e19fe4">m_isAllocated</a>[i] = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
 <div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="class_resource.html#ade155b92abe4ff2b0c43576434033922">   39</a></span>&#160;<span class="comment">/*static*/</span> <span class="keywordtype">void</span> <a class="code" href="class_resource.html#ade155b92abe4ff2b0c43576434033922">Resource::CreateResourceObject</a>(<a class="code" href="class_resource.html">Resource</a> **r, UINT32 elements)</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(m_createLock);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_resource.html#ab51fbd3637709c5709c6256697a30a22">m_createLock</a>);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">if</span> (*r == <a class="code" href="nivision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                *r = <span class="keyword">new</span> <a class="code" href="class_resource.html">Resource</a>(elements);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                *r = <span class="keyword">new</span> <a class="code" href="class_resource.html#a0b78cc75804fa191429da3cc501ad5ab">Resource</a>(elements);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
 <div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="class_resource.html#a0e5ec475e2601bdb33644468e86f6f10">   52</a></span>&#160;<a class="code" href="class_resource.html#a0e5ec475e2601bdb33644468e86f6f10">Resource::~Resource</a>()</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keyword">delete</span>[] m_isAllocated;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keyword">delete</span>[] <a class="code" href="class_resource.html#a3539787143f597c0e76badf028e19fe4">m_isAllocated</a>;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
 <div class="line"><a name="l00062"></a><span class="lineno"><a class="code" href="class_resource.html#a1146abcb449682d03e1a1f95580ab53b">   62</a></span>&#160;UINT32 <a class="code" href="class_resource.html#a1146abcb449682d03e1a1f95580ab53b">Resource::Allocate</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *resourceDesc)</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(m_allocateLock);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">for</span> (UINT32 i=0; i &lt; m_size; i++)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_resource.html#abba6dd08f1cb5dc992819778e68fe54e">m_allocateLock</a>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">for</span> (UINT32 i=0; i &lt; <a class="code" href="class_resource.html#aec6553951ae17d82e876b8c46cdafece">m_size</a>; i++)</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="keywordflow">if</span> (!m_isAllocated[i])</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="class_resource.html#a3539787143f597c0e76badf028e19fe4">m_isAllocated</a>[i])</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                        m_isAllocated[i] = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                        <a class="code" href="class_resource.html#a3539787143f597c0e76badf028e19fe4">m_isAllocated</a>[i] = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                        <span class="keywordflow">return</span> i;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                }</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
@@ -144,42 +144,42 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
 <div class="line"><a name="l00082"></a><span class="lineno"><a class="code" href="class_resource.html#ad0bb83eed91d50832b953eb80b720d68">   82</a></span>&#160;UINT32 <a class="code" href="class_resource.html#a1146abcb449682d03e1a1f95580ab53b">Resource::Allocate</a>(UINT32 <a class="code" href="009_2_axis_camera_8cpp.html#a750b5d744c39a06bfb13e6eb010e35d0">index</a>, <span class="keyword">const</span> <span class="keywordtype">char</span> *resourceDesc)</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;{</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(m_allocateLock);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">if</span> (index &gt;= m_size)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_resource.html#abba6dd08f1cb5dc992819778e68fe54e">m_allocateLock</a>);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">if</span> (index &gt;= <a class="code" href="class_resource.html#aec6553951ae17d82e876b8c46cdafece">m_size</a>)</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        {</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <a class="code" href="_error_base_8h.html#a495fcc362032eea3b1dadc34be9bd058">wpi_setWPIErrorWithContext</a>(ChannelIndexOutOfRange, resourceDesc);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="keywordflow">return</span> ~0ul;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">if</span> ( m_isAllocated[index] )</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">if</span> ( <a class="code" href="class_resource.html#a3539787143f597c0e76badf028e19fe4">m_isAllocated</a>[index] )</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        {</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <a class="code" href="_error_base_8h.html#a495fcc362032eea3b1dadc34be9bd058">wpi_setWPIErrorWithContext</a>(ResourceAlreadyAllocated, resourceDesc);</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <span class="keywordflow">return</span> ~0ul;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        m_isAllocated[<a class="code" href="009_2_axis_camera_8cpp.html#a750b5d744c39a06bfb13e6eb010e35d0">index</a>] = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <a class="code" href="class_resource.html#a3539787143f597c0e76badf028e19fe4">m_isAllocated</a>[<a class="code" href="009_2_axis_camera_8cpp.html#a750b5d744c39a06bfb13e6eb010e35d0">index</a>] = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="009_2_axis_camera_8cpp.html#a750b5d744c39a06bfb13e6eb010e35d0">index</a>;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
 <div class="line"><a name="l00105"></a><span class="lineno"><a class="code" href="class_resource.html#a1f8793fe4ecfcd6c4ae1417c3d0745ca">  105</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_resource.html#a1f8793fe4ecfcd6c4ae1417c3d0745ca">Resource::Free</a>(UINT32 <a class="code" href="009_2_axis_camera_8cpp.html#a750b5d744c39a06bfb13e6eb010e35d0">index</a>)</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(m_allocateLock);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <a class="code" href="class_synchronized.html">Synchronized</a> sync(<a class="code" href="class_resource.html#abba6dd08f1cb5dc992819778e68fe54e">m_allocateLock</a>);</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">if</span> (index == ~0ul) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">if</span> (index &gt;= m_size)</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">if</span> (index &gt;= <a class="code" href="class_resource.html#aec6553951ae17d82e876b8c46cdafece">m_size</a>)</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        {</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                <a class="code" href="_error_base_8h.html#a30c73bc37a870c1b5b3dc4a866d3a947">wpi_setWPIError</a>(NotAllocated);</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        }</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">if</span> (!m_isAllocated[index])</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="class_resource.html#a3539787143f597c0e76badf028e19fe4">m_isAllocated</a>[index])</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        {</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                <a class="code" href="_error_base_8h.html#a30c73bc37a870c1b5b3dc4a866d3a947">wpi_setWPIError</a>(NotAllocated);</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        }</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        m_isAllocated[<a class="code" href="009_2_axis_camera_8cpp.html#a750b5d744c39a06bfb13e6eb010e35d0">index</a>] = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <a class="code" href="class_resource.html#a3539787143f597c0e76badf028e19fe4">m_isAllocated</a>[<a class="code" href="009_2_axis_camera_8cpp.html#a750b5d744c39a06bfb13e6eb010e35d0">index</a>] = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:10 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:43 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

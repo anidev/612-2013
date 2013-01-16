@@ -85,7 +85,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Victor Class Reference</div>  </div>
 </div><!--header-->
@@ -168,6 +169,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a05790f219c9e436a09752f73f7344024 inherit pub_methods_class_error_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the current error code represents a fatal error.  <a href="#a05790f219c9e436a09752f73f7344024"></a><br/></td></tr>
 <tr class="inherit_header pub_methods_class_speed_controller"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_speed_controller')"><img src="closed.png" alt="-"/>&nbsp;Public Member Functions inherited from <a class="el" href="class_speed_controller.html">SpeedController</a></td></tr>
 <tr class="memitem:a9c39bceaad2199f8e1e5ebd3c6858cb9 inherit pub_methods_class_speed_controller"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_speed_controller.html#a9c39bceaad2199f8e1e5ebd3c6858cb9">~SpeedController</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a9d97a04d9e1f5ca071d2c4978fa72398"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_victor.html#a9d97a04d9e1f5ca071d2c4978fa72398">InitVictor</a> ()</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>IFI <a class="el" href="class_victor.html">Victor</a> Speed <a class="el" href="class_controller.html">Controller</a> </p>
@@ -326,6 +331,40 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a9d97a04d9e1f5ca071d2c4978fa72398"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pcre_8h.html#aad9e5e36674a54157e08aa8a71c4902e">void</a> Victor::InitVictor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Common initialization code called by all constructors.</p>
+<p>Note that the <a class="el" href="class_victor.html">Victor</a> uses the following bounds for <a class="el" href="class_p_w_m.html">PWM</a> values. These values were determined empirically and optimized for the <a class="el" href="class_victor.html">Victor</a> 888. These values should work reasonably well for <a class="el" href="class_victor.html">Victor</a> 884 controllers as well but if users experience issues such as asymmetric behavior around the deadband or inability to saturate the controller in either direction, calibration is recommended. The calibration procedure can be found in the <a class="el" href="class_victor.html">Victor</a> 884 User Manual available from IFI.</p>
+<ul>
+<li>206 = full "forward"</li>
+<li>131 = the "high end" of the deadband range</li>
+<li>128 = center of the deadband range (off)</li>
+<li>125 = the "low end" of the deadband range</li>
+<li>56 = full "reverse" </li>
+</ul>
+
+<p>Definition at line <a class="el" href="_victor_8cpp_source.html#l00027">27</a> of file <a class="el" href="_victor_8cpp_source.html">Victor.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a9b0d32b9299b6525d6450ff88c3365a7"></a>
 <div class="memitem">
 <div class="memproto">
@@ -415,7 +454,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 5 2013 19:04:17 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 16 2013 16:33:49 for WPILib 2013 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>
