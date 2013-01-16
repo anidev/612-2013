@@ -3,7 +3,7 @@
 
 class Feeder {
 private:
-    int direction = 0; //change to uint32 later if needed
+    int direction;
     void set_direction(int);
 public:
     Feeder();

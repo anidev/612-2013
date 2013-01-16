@@ -1,10 +1,10 @@
 #include "feeder.h"
 
-Feeder::Feeder() {
+Feeder::Feeder():direction(0) {
     
 } 
 
-~Feeder::Feeder() { //check this line later
+Feeder::~Feeder() {
 
 }
 

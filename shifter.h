@@ -4,7 +4,7 @@
 #include "ports.h"
 
 enum gear_t {
-    LOW_GEAR,HIGH_GEAR;
+    LOW_GEAR,HIGH_GEAR
 };
 
 class Shifter {
