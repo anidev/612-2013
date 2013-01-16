@@ -1,17 +1,17 @@
 #ifndef STATE_H_INCLUDED
 #define STATE_H_INCLUDED
 
-enum robot_state {DRIVE, CLIMB, LIFT};
+typedef int robot_state;
 
-class RobotState {
+class State {
 
 public:
-    RobotState();   // constructor
+    State(robot_state initial);   // constructor
 
-    void RobotState::change_state (robot_state new_state);
-    robot_state RobotState::get_state ();
+    void State::change_state (robot_state new_state);
+    robot_state State::get_state ();
 
-    ~RobotState();  // destructor
+    ~State();  // destructor
 private:
     // methods that will be called only by class methods
     robot_state state;
