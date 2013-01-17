@@ -1,5 +1,9 @@
-#include <PWM.h>
 #include <cmath>
+#include "state.h"
+#include "state_driving.h"
+#include "state_shooting.h"
+#include "state_climbing.h"
+#include "612.h"
 #include "main.h"
 
 robot_class::robot_class() {
@@ -29,6 +33,13 @@ void robot_class::AutonomousPeriodic() {
 }
 
 void robot_class::TeleopPeriodic() {
+    if(global_state.get_state()==DRIVE) {
+        driving_state();
+    } else if(global_state.get_state()==SHOOT) {
+        shooting_state();
+    } else if(global_state.get_state()==CLIMB) {
+        climbing_state();
+    }
 }
 
 //the following macro tells the library that we want to generate code
