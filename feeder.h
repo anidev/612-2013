@@ -3,9 +3,14 @@
 
 class Feeder {
 private:
-
+    int direction;
+    void set_direction(int);
 public:
-    void load_frisbee(double button_index);	
+    Feeder();
+    ~Feeder();
+    void feeder_up();
+    void feeder_down();
+    void feeder_stop();
 };
 
 #endif // FEEDER_H

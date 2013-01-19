@@ -3,7 +3,7 @@
 
 class Lift {
 private:
-    static const float AT_ANGLE_TOLERANCE=0.5;
+    static const float AT_ANGLE_TOLERANCE=0.1f;
     bool manual;
     float target_angle;
     void set_direction(int);
