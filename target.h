@@ -1,16 +1,15 @@
-#include "
 #ifndef TARGET_H
 #define TARGET_H
 
 class Target{
-    private:
-    int priortity;
+private:
+    int priority;
     int distance;
     int angle;
-    void determinePrority(int angleFromShooterT,int heightOfGoalT, int widthOfGoalT );
+    void determinePriority(int,int);
 
-    public:
-    Target();
+public:
+    Target(int,int,int);
 
     enum type
     {
@@ -22,6 +21,7 @@ class Target{
         PYRAMIDGOAL,
     };
     int getPriority();
-
+    int getDistance();
+    int getAngle();
 };
 #endif

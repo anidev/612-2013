@@ -1,8 +1,8 @@
 #include <cmath>
 #include "state.h"
-#include "state_driving.h"
-#include "state_shooting.h"
-#include "state_climbing.h"
+#include "states/state_driving.h"
+#include "states/state_shooting.h"
+#include "states/state_climbing.h"
 #include "612.h"
 #include "main.h"
 
@@ -33,6 +33,7 @@ void robot_class::AutonomousPeriodic() {
 }
 
 void robot_class::TeleopPeriodic() {
+    std::printf("TeleopPeriodic");
     if(global_state.get_state()==DRIVE) {
         driving_state();
     } else if(global_state.get_state()==SHOOT) {

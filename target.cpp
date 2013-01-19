@@ -1,17 +1,25 @@
 #include "Target.h"
 
-Target::getPriority()
+int Target::getPriority()
 {
     return priority;
-
 }
-Target::Target()
+int Target::getDistance()
 {
-    prority=0;
-    distance=0;
-    angle=0;
+    return distance;
 }
-Target::determinePrority(int angleFromShooterT,int distanceT)
+int Target::getAngle()
+{
+    return angle;
+}
+Target::Target(int _priority,int _distance,int _angle)
+{
+    priority=_priority;
+    distance=_distance;
+    angle=_angle;
+    determinePriority(angle,distance);
+}
+void Target::determinePriority(int angleFromShooterT,int distanceT)
 {
     angle=angleFromShooterT;
     distance=distanceT;
@@ -30,8 +38,5 @@ Target::determinePrority(int angleFromShooterT,int distanceT)
         priority=3;
         //add shooter methond
     }
-
-
-
 }
 

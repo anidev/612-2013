@@ -8,17 +8,26 @@ Launcher::~Launcher() {
 	
 }
 
-void Launcher::start() {
-    //insert code here
-}
-
 void Launcher::stop() {
+    setSpeed(0.0f);
     //insert more code here
 }
 
+void Launcher::setSpeed(float newSpeed) {
+    targetSpeed=newSpeed;
+}
+
+float Launcher::getCurrentSpeed() {
+    // TODO
+    return 0.0f;
+}
+
+float Launcher::getTargetSpeed() {
+    return targetSpeed;
+}
 
 bool Launcher::atSpeed(){
-    if(fabs(getSpeed()-ON_SPEED) < AT_SPEED_TOLERANCE){
+    if(fabs(getCurrentSpeed()-ON_SPEED) < AT_SPEED_TOLERANCE){
         return true;
     }
     return false;
@@ -26,10 +35,6 @@ bool Launcher::atSpeed(){
 
 void Launcher::resetFrisbeeCount(){
     count = 0;
-}
-
-void Launcher::update(){
-    //insert code here
 }
 
 unsigned int Launcher::getFrisbeeCount(){

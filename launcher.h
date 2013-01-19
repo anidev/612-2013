@@ -9,15 +9,16 @@ private:
     static const int ON_SPEED = 100;//rpm
     static const float AT_SPEED_TOLERANCE = 2; //rpm
     unsigned int count;
-    float getSpeed();
+    float targetSpeed;
 
 public:
     Launcher();
     ~Launcher();
-    void start();
     void stop();
-    void update();
     bool atSpeed();
+    void setSpeed(float);
+    float getCurrentSpeed();
+    float getTargetSpeed();
     unsigned int getFrisbeeCount();
     void resetFrisbeeCount();
 };
