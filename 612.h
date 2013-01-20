@@ -6,7 +6,7 @@
 extern State global_state;
 
 enum teleop_state {
-    DRIVE,SHOOT,CLIMB
+    DRIVE, CLIMB, SHOOT_AUTO, SHOOT_MANUAL
 };
 
 #endif // _612_H
