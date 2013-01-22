@@ -1,5 +1,6 @@
 #define _USE_MATH_DEFINES
 #include <cmath>
+#include "612.h"
 #include "auto_encoders.h"
 
 auto_encoders::auto_encoders(hw_info left1, hw_info right1, hw_info left2, hw_info right2) {
@@ -13,15 +14,15 @@ auto_encoders::~auto_encoders() {
 double auto_encoders::get_avg_ticks() {
     return (left_encoder->Get() + right_encoder->Get()) / 2;
 }
-double auto_encoders::convert_distance(int ticks) {
+double auto_encoders::convert_distance(double ticks) {
     //this finds distance in inches
-    return (ticks*1.0/TICKS_PER_REV)*(WHEEL_RADIUS*(M_PI));
+    return (ticks/TICKS_PER_REV)*(WHEEL_RADIUS*(M_PI));
 }
 double auto_encoders::get_target_distance() {
     return distance;
 }
 double auto_encoders::get_distance() {
-    int ticks=get_avg_ticks();
+    double ticks=get_avg_ticks();
     return convert_distance(ticks);
 }
 void auto_encoders::reset_distance(){

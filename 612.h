@@ -11,4 +11,6 @@ enum teleop_state {
     DRIVE, CLIMB, SHOOT_AUTO
 };
 
+static const double M_PI=3.14159256359;
+
 #endif // _612_H
