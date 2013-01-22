@@ -6,11 +6,12 @@
 
 class auto_encoders {
 private:
+    bool is_driving;
     double distance;
     Encoder* left_encoder;
     Encoder* right_encoder;
-    double get_avg_ticks();
-    double convert_distance(double);
+    int get_avg_ticks();
+    double convert_distance(int);
     static const double WHEEL_RADIUS = 8.0/2;
     static const double TICKS_PER_REV = 250;
     static const double DRIVE_REDUCTION = 38.0/60;
