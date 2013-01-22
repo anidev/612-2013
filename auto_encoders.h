@@ -12,8 +12,9 @@ private:
     Encoder* right_encoder;
     double get_avg_ticks();
     double convert_distance(double);
-    static const double WHEEL_RADIUS = 8.0/2;
-    static const double TICKS_PER_REV = 250;
+    static const double WHEEL_RADIUS = 4.0;
+    //static const double WHEEL_CIRCUMFERENCE = WHEEL_RADIUS * 2 * pi;
+    static const double TICKS_PER_REV = 250; // PULSES PER REV = 125, DISTANCE PER PULSE = circumference / 125
     static const double DRIVE_REDUCTION = 38.0/60;
 public:
     ~auto_encoders();
