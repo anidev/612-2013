@@ -2,7 +2,7 @@
 #include <cmath>
 
 Launcher::Launcher() {
-	count = 0;
+    count = 0;
 }
 Launcher::~Launcher() {
 	
