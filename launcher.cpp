@@ -1,11 +1,15 @@
-#include "Launcher.h"
 #include <cmath>
+#include <Jaguar.h>
+#include "ports.h"
+#include "launcher.h"
 
-Launcher::Launcher() {
-	count = 0;
+
+Launcher::Launcher(hw_info info) {
+    count = 0;
+    shooterWheel=new Jaguar(info.moduleNumber,info.channel);
 }
 Launcher::~Launcher() {
-	
+    delete shooterWheel;
 }
 
 void Launcher::stop() {
