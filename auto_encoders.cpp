@@ -1,3 +1,5 @@
+#define _USE_MATH_DEFINES
+#include <cmath>
 #include "auto_encoders.h"
 
 auto_encoders::auto_encoders(hw_info left1, hw_info right1, hw_info left2, hw_info right2) {
@@ -9,7 +11,7 @@ int auto_encoders::get_avg_ticks() {
 }
 double auto_encoders::convert_distance(int ticks) {
     //this finds distance in inches
-    return (ticks*1.0/TICKS_PER_REV)*(WHEEL_RADIUS*(pi));
+    return (ticks*1.0/TICKS_PER_REV)*(WHEEL_RADIUS*(M_PI));
 }
 double auto_encoders::get_target_distance() {
     return distance;
