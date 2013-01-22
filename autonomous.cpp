@@ -27,19 +27,18 @@ void turn(double angle) {
 	note: get width of robot
 	note: this method should be able to calculate the change in angle 
 	*/
-	double distance = angle / 2.88629075498; 
-	while (drive_encoder.convert_distance(drive_encoder.calc_distance() != distance) {
-		if (angle > 0) {
-			while (drive_encoder.convert_distance(drive_encoder.calc_distance()) < distance) {
-				drive_train.TankDrive(-1,1); //change the (1,1) to something safer later
-			}
-		} else if (angle < 0) {
-			while (drive_encoder.convert_distance(drive_encoder.calc_distance()) < distance) {
-				drive_train.TankDrive(1,-1); //change the (1,1) to something safer later
-			}
+	double distance = angle / 2.88629075498;
+	drive_encoder.reset_distance();
+	drive_encoder.stop_driving();
+	if (angle > 0) {
+		while (drive_encoder.get_distance() < distance) {
+			drive_train.TankDrive(-1,1); //change the (1,1) to something safer later
+		}
+	} else if (angle < 0) {
+		while (drive_encoder.get_distance() < distance) {
+			drive_train.TankDrive(1,-1); //change the (1,1) to something safer later
 		}
 	}
-
 }
 
 /*
