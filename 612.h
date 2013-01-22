@@ -8,7 +8,7 @@ extern NetworkTable* main_table;
 extern State global_state;
 
 enum teleop_state {
-    DRIVE, CLIMB, SHOOT_AUTO, SHOOT_MANUAL
+    DRIVE, CLIMB, SHOOT_AUTO
 };
 
 #endif // _612_H

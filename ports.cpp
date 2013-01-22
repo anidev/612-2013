@@ -2,7 +2,8 @@
 #include <Jaguar.h>
 #include <RobotDrive.h>
 #include "ports.h"
-#include "Launcher.h"
+#include "launcher.h"
+#include "auto_encoders.h"
 
 Joystick left_joystick  (1);
 Joystick right_joystick (2);
