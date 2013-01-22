@@ -1,8 +1,12 @@
-#include "Launcher.h"
 #include <cmath>
+#include <Jaguar.h>
+#include "ports.h"
+#include "Launcher.h"
 
-Launcher::Launcher() {
+
+Launcher::Launcher(hw_info info) {
 	count = 0;
+	shooterWheel(info.moduleNumber,info.channel);
 }
 Launcher::~Launcher() {
 	
@@ -34,4 +38,7 @@ void Launcher::update(){
 
 unsigned int Launcher::getFrisbeeCount(){
     return count;
+}
+float Launcher::getSpeed() {
+	return 0.0f; //Todo
 }
