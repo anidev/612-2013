@@ -16,6 +16,7 @@ private:
     static const double DRIVE_REDUCTION = 38.0/60;
     static const double pi = 3.14159265358979;
 public:
+    ~auto_encoders();
     auto_encoders(hw_info, hw_info, hw_info, hw_info);
     double get_target_distance();
     double get_distance();

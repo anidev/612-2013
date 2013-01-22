@@ -4,6 +4,10 @@ auto_encoders::auto_encoders(hw_info left1, hw_info right1, hw_info left2, hw_in
     left_encoder = new Encoder(left1.moduleNumber, left1.channel, left2.moduleNumber, left2.channel);
     right_encoder = new Encoder(right1.moduleNumber, right1.channel, right2.moduleNumber, right2.channel);
 }
+auto_encoders::~auto_encoders() {
+    delete left_encoder;
+    delete right_encoder;
+}
 double auto_encoders::get_avg_ticks() {
     return (left_encoder->Get() + right_encoder->Get()) / 2;
 }
