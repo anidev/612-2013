@@ -1,7 +1,9 @@
 #ifndef LAUNCHER_H
 #define LAUNCHER_H
 
+#include <Jaguar.h>
 #include <cstdio>
+#include "ports.h"
 
 class Launcher {
 private:
@@ -10,9 +12,9 @@ private:
     static const float AT_SPEED_TOLERANCE = 2; //rpm
     unsigned int count;
     float targetSpeed;
-
+    Jaguar* shooterWheel;
 public:
-    Launcher();
+    Launcher(hw_info);
     ~Launcher();
     void stop();
     bool atSpeed();

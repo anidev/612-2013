@@ -3,7 +3,8 @@
 
 #include <Joystick.h>
 #include <RobotDrive.h>
-#include "Launcher.h"
+
+class auto_encoders;
 
 typedef int canport_t;
 
