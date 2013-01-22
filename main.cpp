@@ -1,4 +1,10 @@
+#include <string>
 #include <cmath>
+#include <networktables/NetworkTable.h>
+#include <networktables/NetworkTableMode.h>
+#include <networktables2/NetworkTableNode.h>
+#include <networktables/NetworkTableProvider.h>
+#include <networktables2/thread/DefaultThreadManager.h>
 #include "state.h"
 #include "states/state_driving.h"
 #include "states/state_shooting.h"
@@ -12,6 +18,10 @@ robot_class::robot_class() {
 
 void robot_class::RobotInit() {
     std::printf("RobotInit");
+//    DefaultThreadManager threadManager;
+//    NetworkTableNode* node=NetworkTableMode::Client.CreateNode("10.6.12.1",NetworkTable::DEFAULT_PORT,threadManager);
+//    NetworkTableProvider provider(&node);
+//    main_table=NetworkTable::GetTable("datatable");
 }
 
 void robot_class::DisabledInit() {
@@ -27,14 +37,16 @@ void robot_class::TeleopInit() {
 }
 
 void robot_class::DisabledPeriodic() {
+//    std::string key("fromrobottest");
+//    main_table->PutNumber(key,612.0);
 }
 
 void robot_class::AutonomousPeriodic() {
 }
 
 void robot_class::TeleopPeriodic() {
-    std::printf("TeleopPeriodic");
-    if(global_state.get_state()== DRIVE) {
+//    std::printf("from driverstation: %f\n",main_table->GetNumber("test",-1.0));
+    if(global_state.get_state()==DRIVE) {
         driving_state();
     }
     else if(global_state.get_state() == CLIMB) {
