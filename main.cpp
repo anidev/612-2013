@@ -48,10 +48,15 @@ void robot_class::TeleopPeriodic() {
 //    std::printf("from driverstation: %f\n",main_table->GetNumber("test",-1.0));
     if(global_state.get_state()==DRIVE) {
         driving_state();
-    } else if(global_state.get_state()==SHOOT) {
-        shooting_state();
-    } else if(global_state.get_state()==CLIMB) {
+    }
+    else if(global_state.get_state() == CLIMB) {
         climbing_state();
+    }
+    else if(global_state.get_state() == SHOOT_AUTO) {
+        shooting_auto.shooting_state();
+    }
+    else if (global_state.get_state() == SHOOT_MANUAL) {
+        shooting_manual.shooting_state();
     }
 }
 

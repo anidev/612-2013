@@ -8,8 +8,8 @@ int auto_encoders::get_avg_ticks() {
     return (left_encoder->Get() + right_encoder->Get()) / 2;
 }
 double auto_encoders::convert_distance(int ticks) {
-    //this finds distance in feet
-    return (ticks*1.0/TICKS_PER_REV)*(WHEEL_RADIUS*(pi))/12.0;
+    //this finds distance in inches
+    return (ticks*1.0/TICKS_PER_REV)*(WHEEL_RADIUS*(pi));
 }
 double auto_encoders::get_target_distance() {
     return distance;
@@ -21,7 +21,7 @@ double auto_encoders::get_distance() {
 void auto_encoders::reset_distance(){
     left_encoder->Reset();
     right_encoder->Reset();
-}    
+}
 void auto_encoders::start_driving(double dist){
     is_driving = true;
     distance = dist;
