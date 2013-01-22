@@ -3,7 +3,6 @@
 
 #include <Joystick.h>
 #include <RobotDrive.h>
-#include "Launcher.h"
 
 typedef int canport_t;
 
