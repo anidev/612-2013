@@ -14,7 +14,7 @@ private:
     float targetSpeed;
     Jaguar shooterWheel;
 public:
-    Launcher(hw_info);
+    Launcher(hw_info,hw_info,hw_info);
     ~Launcher();
     void stop();
     bool atSpeed();

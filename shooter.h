@@ -20,7 +20,7 @@ private:
     void doVisionAnalysis();
     void doUserControlled();
 public:
-    Shooter(hw_info,);
+    Shooter(hw_info,hw_info,hw_info);
     ~Shooter();
     void autoShoot();
     void setToUserControlled();
