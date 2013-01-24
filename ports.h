@@ -4,6 +4,8 @@
 #include <Joystick.h>
 #include <RobotDrive.h>
 
+class auto_encoders;
+
 typedef int canport_t;
 
 struct hw_info {

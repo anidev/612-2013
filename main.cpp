@@ -10,6 +10,8 @@
 #include "states/state_shooting.h"
 #include "states/state_climbing.h"
 #include "612.h"
+#include "ports.h"
+#include "auto_encoders.h"
 #include "main.h"
 
 robot_class::robot_class() {
@@ -46,18 +48,22 @@ void robot_class::AutonomousPeriodic() {
 
 void robot_class::TeleopPeriodic() {
 //    std::printf("from driverstation: %f\n",main_table->GetNumber("test",-1.0));
+    static int counter=0;
+    if(counter%10==0) {
+        std::printf("encoders: %f\n",encoders.get_distance());
+    }
+    counter++;
     if(global_state.get_state()==DRIVE) {
         driving_state();
+	shooting_manual(); // at same time as driving
     }
     else if(global_state.get_state() == CLIMB) {
         climbing_state();
     }
     else if(global_state.get_state() == SHOOT_AUTO) {
-        shooting_auto.shooting_state();
+        shooting_auto();
     }
-    else if (global_state.get_state() == SHOOT_MANUAL) {
-        shooting_manual.shooting_state();
-    }
+    Wait(0.015); // let the CPU rest a bit
 }
 
 //the following macro tells the library that we want to generate code
