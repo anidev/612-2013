@@ -1,4 +1,5 @@
 #include "autonomous.h"
+#include "ports.h"
 
 /*
 READ NOTE AT BOTTOM
@@ -9,11 +10,11 @@ void choose_routine() {
 }
 
 void drive(double dist /*keep in mind that dist is in inches*/) {
-	drive_encoder.reset_distance();
-	while (drive_encoder.convert_distance(drive_encoder.calc_distance()) < dist) {
+	encoders.reset_distance();
+	while (encoders.get_distance() < dist) {
 		drive_train.TankDrive(1,1); //change the (1,1) to something safer later
 	}
-	drive_encoder.stop_driving();
+	encoders.stop_driving();
 }
 
 void turn(double angle) {
@@ -28,14 +29,14 @@ void turn(double angle) {
 	note: this method should be able to calculate the change in angle 
 	*/
 	double distance = angle / 2.88629075498;
-	drive_encoder.reset_distance();
-	drive_encoder.stop_driving();
+	encoders.reset_distance();
+	encoders.stop_driving();
 	if (angle > 0) {
-		while (drive_encoder.get_distance() < distance) {
+		while (encoders.get_distance() < distance) {
 			drive_train.TankDrive(-1,1); //change the (1,1) to something safer later
 		}
 	} else if (angle < 0) {
-		while (drive_encoder.get_distance() < distance) {
+		while (encoders.get_distance() < distance) {
 			drive_train.TankDrive(1,-1); //change the (1,1) to something safer later
 		}
 	}
