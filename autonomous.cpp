@@ -28,7 +28,7 @@ void turn(double angle) {
 	note: get width of robot
 	note: this method should be able to calculate the change in angle 
 	*/
-	double distance = angle / 2.88629075498;
+	double distance = angle / 3.07912798856;
 	encoders.reset_distance();
 	encoders.stop_driving();
 	if (angle > 0) {
