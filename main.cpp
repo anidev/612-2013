@@ -48,7 +48,11 @@ void robot_class::AutonomousPeriodic() {
 
 void robot_class::TeleopPeriodic() {
 //    std::printf("from driverstation: %f\n",main_table->GetNumber("test",-1.0));
-    std::printf("encoders: %f\n",encoders.get_distance());
+    static int counter=0;
+    if(counter%10==0) {
+        std::printf("encoders: %f\n",encoders.get_distance());
+    }
+    counter++;
     if(global_state.get_state()==DRIVE) {
         driving_state();
 	shooting_manual(); // at same time as driving
@@ -59,6 +63,7 @@ void robot_class::TeleopPeriodic() {
     else if(global_state.get_state() == SHOOT_AUTO) {
         shooting_auto();
     }
+    Wait(0.015); // let the CPU rest a bit
 }
 
 //the following macro tells the library that we want to generate code
