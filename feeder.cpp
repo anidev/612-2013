@@ -1,25 +1,29 @@
 #include "feeder.h"
 
-Feeder::Feeder():direction(0) {
-    
+Feeder::Feeder(hw_info info) : feederMotor(info.moduleNumber,info.channel)
+{
+    direction = STOP;
 } 
 
 Feeder::~Feeder() {
 
 }
 
-void Feeder::feeder_up() {
-    set_direction(1);
+void Feeder::forward() {
+    directon = FORWARD;
 }
 
-void Feeder::feeder_down() {
-    set_direction(-1);
+void Feeder::backward() {
+    direction = BACKWARD;
 }
 
-void Feeder::feeder_stop() {
-    set_direction(0);
+void Feeder::stop() {
+    direction = STOP;
 }
 
-void Feeder::set_direction(int dir) {
-    //todo
+void Feeder::set_motor() {
+    feederMotor.Set(dir);
+}
+void Feeder::update() {
+    set_Motor();
 }
