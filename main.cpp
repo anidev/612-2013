@@ -51,6 +51,7 @@ void robot_class::TeleopPeriodic() {
     static int counter=0;
     if(counter%10==0) {
         std::printf("encoders: %f\n",encoders.get_distance());
+//        double dummy=encoders.get_distance();
     }
     counter++;
     if(global_state.get_state()==DRIVE) {
