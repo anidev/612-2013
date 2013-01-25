@@ -10,7 +10,7 @@ Feeder::~Feeder() {
 }
 
 void Feeder::forward() {
-    directon = FORWARD;
+    direction = FORWARD;
 }
 
 void Feeder::backward() {
@@ -21,9 +21,10 @@ void Feeder::stop() {
     direction = STOP;
 }
 
-void Feeder::set_motor() {
-    feederMotor.Set(dir);
+Feeder::direction_t Feeder::getDirection() {
+    return direction;
 }
+
 void Feeder::update() {
-    set_Motor();
+    feederMotor.Set(direction*SPEED);
 }

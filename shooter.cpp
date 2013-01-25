@@ -1,3 +1,4 @@
+#if 0
 #include "shooter.h"
 
 Shooter::Shooter(hw_info launchInfo,hw_info liftInfo,hw_info feedInfo) : launcherWheel(launchInfo), angleAdjuster(liftInfo), feed(feedInfo)
@@ -13,19 +14,25 @@ void Shooter::update() {
     {
         case visionAnalysis:
             doVisionAnalysis();
+	    break;
         case aiming:
             doAiming();
+	    break;
         case shooting:
             doShooting();
+	    break;
     }
 }
 void Shooter::doAiming() {
 }
 void Shooter::doShooting() {
-    if(launcherWheel.atSetSpeed())
+    if(launcherWheel.atSpeed()) {
         feed.forward();
+    }
     else
+    {
         feed.stop();
+    }
 }
 void Shooter::doVisionAnalysis() {
 }
@@ -44,3 +51,4 @@ void Shooter::resetShotCount() {
 unsigned int Shooter::getShotCount() {
     return launcherWheel.getFrisbeeCount();
 }
+#endif

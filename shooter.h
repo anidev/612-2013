@@ -1,3 +1,4 @@
+#if 0
 #ifndef SHOOTER_H
 #define SHOOTER_H
 
@@ -28,4 +29,5 @@ public:
     unsigned int getShotCount();
 };
 
+#endif
 #endif

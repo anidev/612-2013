@@ -4,12 +4,11 @@
 #include "launcher.h"
 
 
-Launcher::Launcher(hw_info info) : shooterWheel(info.moduleNumber,info.channel) {
+Launcher::Launcher(hw_info info) : launcherWheel(info.moduleNumber,info.channel) {
     count = 0;
 }
 
 Launcher::~Launcher() {
-    delete shooterWheel;
 }
 
 void Launcher::stop() {

@@ -1,26 +1,29 @@
 #ifndef FEEDER_H
 #define FEEDER_H
 
-#include "Talon.h"
+#include <Talon.h>
 #include "ports.h"
 
 class Feeder {
-private:
-    enum feederDirection { // Will change to proper motor speed later
+public:
+    enum direction_t { // Will change to proper motor speed later
         FORWARD = 1,
         BACKWARD = -1,
         STOP = 0
-    } direction;
-    void set_motor();
-    Talon feederMotor;
-    void update();
-public:
+    };
     Feeder(hw_info);
     ~Feeder();
     void forward();
     void backward();
     void stop();
-    feederDirection getDirection { return direction; }
+    direction_t getDirection();
+private:
+    direction_t direction;
+    void set_motor();
+    Talon feederMotor;
+    void update();
+    static const double SPEED=0.5;
 };
+
 
 #endif // FEEDER_H

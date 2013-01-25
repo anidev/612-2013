@@ -1,10 +1,6 @@
 #include "autonomous.h"
 #include "ports.h"
 
-/*
-READ NOTE AT BOTTOM
-*/
-
 void choose_routine() {
 	
 }
@@ -42,7 +38,3 @@ void turn(double angle) {
 	}
 }
 
-/*
-NOTE: THIS CODE DOES NOT COMPILE. THIS CODE IS NOWHERE NEAR COMPILING. 
-MANY MISSING VALUES HERE MUST BE CALCULATED AND THEN PUT INTO THIS CODE.
-*/

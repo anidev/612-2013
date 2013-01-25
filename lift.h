@@ -2,6 +2,7 @@
 #define LIFT_H_INCLUDED
 
 #include "Jaguar.h"
+#include "ports.h"
 
 class Lift {
 private:
@@ -12,7 +13,7 @@ private:
     void update();
 	Jaguar liftMotor;
 public:
-    Lift();
+    Lift(hw_info);
     ~Lift();
     void lift_up();
     void lift_down();

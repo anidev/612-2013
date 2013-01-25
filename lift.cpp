@@ -25,7 +25,6 @@ void Lift::lift_stop() {
 void Lift::set_angle(float new_angle) {
     manual = false;
     target_angle = new_angle;
-    automatic_update();
 }
 
 float Lift::get_current_angle() {
