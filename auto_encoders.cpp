@@ -4,8 +4,8 @@
 auto_encoders::auto_encoders(hw_info left1, hw_info right1, hw_info left2, hw_info right2) {
     left_encoder = new Encoder(left1.moduleNumber, left1.channel, left2.moduleNumber, left2.channel, true);
     right_encoder = new Encoder(right1.moduleNumber, right1.channel, right2.moduleNumber, right2.channel);
-    left_encoder->SetDistancePerPulse(0.0573026500014);
-    right_encoder->SetDistancePerPulse(0.0573026500014);
+    left_encoder->SetDistancePerPulse(SLOPE);
+    right_encoder->SetDistancePerPulse(SLOPE);
     left_encoder->Start();
     right_encoder->Start();
 }
@@ -29,6 +29,8 @@ double auto_encoders::get_distance() {
 /*    double ticks=get_avg_ticks();
     return convert_distance(ticks);*/
     return (left_encoder->GetDistance()+right_encoder->GetDistance())/2.0;
+//    std::printf("ticks avg: %f\n",get_avg_ticks());
+//    return 0.0;
 }
 void auto_encoders::reset_distance(){
     left_encoder->Reset();
