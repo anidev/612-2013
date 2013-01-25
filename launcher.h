@@ -12,7 +12,7 @@ private:
     static const float AT_SPEED_TOLERANCE = 2; //rpm
     unsigned int count;
     float targetSpeed;
-    Jaguar* shooterWheel;
+    Jaguar launcherWheel;
 public:
     Launcher(hw_info);
     ~Launcher();
