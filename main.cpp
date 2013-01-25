@@ -56,7 +56,7 @@ void robot_class::TeleopPeriodic() {
     counter++;
     if(global_state.get_state()==DRIVE) {
         driving_state();
-	shooting_manual(); // at same time as driving
+    shooting_manual(); // at same time as driving
     }
     else if(global_state.get_state() == CLIMB) {
         climbing_state();

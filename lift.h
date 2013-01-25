@@ -11,7 +11,7 @@ private:
     float target_angle;
     void set_direction(int);
     void update();
-	Jaguar liftMotor;
+    Jaguar liftMotor;
 public:
     Lift(hw_info);
     ~Lift();

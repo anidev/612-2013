@@ -14,13 +14,13 @@ void Shooter::update() {
     {
         case visionAnalysis:
             doVisionAnalysis();
-	    break;
+        break;
         case aiming:
             doAiming();
-	    break;
+        break;
         case shooting:
             doShooting();
-	    break;
+        break;
     }
 }
 void Shooter::doAiming() {
