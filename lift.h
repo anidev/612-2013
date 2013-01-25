@@ -1,18 +1,19 @@
 #ifndef LIFT_H_INCLUDED
 #define LIFT_H_INCLUDED
 
+#include "Jaguar.h"
+
 class Lift {
 private:
-    static const float AT_ANGLE_TOLERANCE=0.1f;
+    static const float AT_ANGLE_TOLERANCE = 0.1f;
     bool manual;
     float target_angle;
     void set_direction(int);
-    void automatic_update();
-
+    void update();
+	Jaguar liftMotor;
 public:
     Lift();
     ~Lift();
-
     void lift_up();
     void lift_down();
     void lift_stop();

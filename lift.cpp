@@ -1,28 +1,30 @@
 #include <cmath>
 #include "lift.h"
+#include "ports.h"
 
-Lift::Lift() {
-    manual=true;
+Lift::Lift(hw_info info) : liftMotor(info.moduleNumber,info.channel)
+{
+    manual = true;
 }
 
 void Lift::lift_up() {
-    manual=true;
+    manual = true;
     set_direction(1);
 }
 
 void Lift::lift_down() {
-    manual=true;
+    manual = true;
     set_direction(-1);
 }
 
 void Lift::lift_stop() {
-    manual=true;
+    manual = true;
     set_direction(0);
 }
 
 void Lift::set_angle(float new_angle) {
-    manual=false;
-    target_angle=new_angle;
+    manual = false;
+    target_angle = new_angle;
     automatic_update();
 }
 
@@ -42,23 +44,25 @@ bool Lift::at_angle() {
     return false;
 }
 
-void Lift::set_direction(int direction) {
-    // TODO
+void Lift::set_direction(int d) {
+    liftMotor.Set(d);
 }
 
-void Lift::automatic_update() {
+void Lift::update() {
     if(manual) {
         return;
     }
-    float cur_angle=get_current_angle();
+    float cur_angle = get_current_angle();
     if(at_angle()) {
         set_direction(0);
-        manual=true;
+        manual = true;
         return;
     }
     if(cur_angle<target_angle) {
         set_direction(1);
-    } else {
+    } 
+    else
+    {
         set_direction(-1);
     }
 }

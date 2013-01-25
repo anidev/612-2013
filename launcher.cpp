@@ -4,10 +4,10 @@
 #include "launcher.h"
 
 
-Launcher::Launcher(hw_info info) {
+Launcher::Launcher(hw_info info) : shooterWheel(info.moduleNumber,info.channel) {
     count = 0;
-    shooterWheel=new Jaguar(info.moduleNumber,info.channel);
 }
+
 Launcher::~Launcher() {
     delete shooterWheel;
 }
