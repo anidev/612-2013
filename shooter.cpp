@@ -24,7 +24,8 @@ void Shooter::update() {
     }
 }
 void Shooter::doVisionAnalysis() {
-    //End
+
+    //End Lines
     HorizontalAlignment = false;
     angleSet = false;
 }
