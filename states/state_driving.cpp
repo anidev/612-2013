@@ -1,7 +1,9 @@
 #include <RobotDrive.h>
+#include <Timer.h>
 #include "../ports.h"
 #include "../auto_encoders.h"
 #include "state_driving.h"
+#include "../shifter.h"
 
 void driving_state() {
     float left_axis = left_joystick.GetY ();
@@ -14,4 +16,20 @@ void driving_state() {
     } else {
         drive_train.TankDrive(left_axis, right_axis);
     }
+    if(gunner_joystick.GetRawButton(7))
+    {
+        
+        if(shift.cur_gear == shifter::LOW && previousState == false)
+        {
+            shift.set(shifter::HIGH);
+        }
+        else if(previousState == false)
+        {
+            shift.set(shifter::LOW);
+        }
+        previousState = true;
+    }
+    else
+        previousState = false;
+    shift.update();
 }

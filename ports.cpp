@@ -4,6 +4,7 @@
 #include "ports.h"
 #include "launcher.h"
 #include "auto_encoders.h"
+#include "shifter.h"
 
 Joystick left_joystick  (1);
 Joystick right_joystick (2);
@@ -16,3 +17,5 @@ Jaguar right_front_jag(right_front_motor.moduleNumber,right_front_motor.channel)
 Jaguar right_rear_jag(right_rear_motor.moduleNumber,right_rear_motor.channel);
 
 RobotDrive drive_train(left_front_jag,left_rear_jag,right_front_jag,right_rear_jag);
+
+shifter shift(side1,side2);
