@@ -1,3 +1,4 @@
+#include <cmath>
 #include "612.h"
 #include "auto_encoders.h"
 
@@ -23,14 +24,10 @@ double auto_encoders::convert_distance(double ticks) {
     return (ticks/TICKS_PER_REV)*(WHEEL_RADIUS*(M_PI));
 }
 double auto_encoders::get_target_distance() {
-    return distance;
+    return (left_distance+right_distance)/2.0;
 }
 double auto_encoders::get_distance() {
-/*    double ticks=get_avg_ticks();
-    return convert_distance(ticks);*/
-    return (left_encoder->GetDistance()+right_encoder->GetDistance())/2.0;
-//    std::printf("ticks avg: %f\n",get_avg_ticks());
-//    return 0.0;
+    return (get_left_dist()+get_right_dist())/2.0;
 }
 double auto_encoders::get_left_dist() {
     return left_encoder->GetDistance();
@@ -45,32 +42,35 @@ double auto_encoders::get_right_target_dist() {
     return right_distance;
 }
 void auto_encoders::start_left_driving(double dist) {
-   left_distance = dist; 
+    is_driving = true;
+    left_distance = dist; 
 }
 void auto_encoders::start_right_driving(double dist) {
+    is_driving = true;
     right_distance = dist;
 }
-void reset_left_distance() {
+void auto_encoders::reset_left_distance() {
     left_encoder->Reset();
 }
-void reset_right_distance() {
+void auto_encoders::reset_right_distance() {
     right_encoder->Reset();
 }
-bool left_at_target() {
-    return ((std::fabs(left_distance) - get_left_dist)) < 1.5);
+bool auto_encoders::left_at_target() {
+    return ((std::fabs(left_distance - get_left_dist())) < 1.5);
 }
-bool right_at_target() {
-    return ((std::fabs(right_distance) - get_right_dist)) < 1.5);
+bool auto_encoders::right_at_target() {
+    return ((std::fabs(right_distance - get_right_dist())) < 1.5);
 }
 void auto_encoders::reset_distance(){
     left_encoder->Reset();
     right_encoder->Reset();
 }
 void auto_encoders::start_driving(double dist){
-    is_driving = true;
-    distance = dist;
+    start_left_driving(dist);
+    start_right_driving(dist);
 }
 void auto_encoders::stop_driving() {
-    distance = 0;
+    left_distance = 0;
+    right_distance = 0;
     is_driving = false;
 }
