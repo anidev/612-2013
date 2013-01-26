@@ -1,8 +1,24 @@
 #include "autonomous.h"
 #include "ports.h"
 
-void choose_routine() {
-    
+void choose_routine(int routine, int goal ) {
+    switch (routine) {
+        case 1:
+            front_left(goal);
+            break;
+        case 2:
+            front_right(goal);
+            break;
+        case 3:
+            back_left(goal);
+            break;
+        case 4:
+            back_right(goal);
+            break;
+        default:
+            /*parse the errors some way*/
+            break;
+    }
 }
 
 void drive(double dist /*keep in mind that dist is in inches*/) {
@@ -35,6 +51,71 @@ void turn(double angle) {
         while (encoders.get_distance() < distance) {
             drive_train.TankDrive(1,-1); //change the (1,1) to something safer later
         }
+    }
+}
+
+void front_left(int goal) {
+    switch (goal) {
+        case 2:
+            turn(9);
+            //shooting function
+            break;
+        case 3:
+            turn(-29);
+            break;
+        default:
+            printf("incorrect goal parameter");
+            break;
+    }
+}
+void front_right(int goal) {
+    switch (goal) {
+        case 2:
+            turn(-9);
+            //shooting function
+            break;
+        case 3:
+            turn(29);
+            //shooting function
+            break;
+        default:
+            printf("incorrect goal parameter");
+            break;
+    }
+}
+void back_left(int goal) {
+    switch (goal) {
+        case 2:
+            drive(119);
+            turn(9);
+            //shooting function
+            break;
+        case 3:
+            drive(119);
+            turn(-29);
+            //shooting function
+            break;
+        default:
+            printf("incorrect goal parameter");
+            break;
+    }
+}
+
+void back_right(int goal) {
+    switch (goal) {
+        case 2:
+            drive(119);
+            turn(-9);
+            //shooting function
+            break;
+        case 3:
+            drive(119);
+            turn(29);
+            //shooting function
+            break;
+        default:
+            printf("incorrect goal parameter");
+            break;
     }
 }
 
