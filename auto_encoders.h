@@ -8,6 +8,8 @@ class auto_encoders {
 private:
     bool is_driving;
     double distance;
+    double left_distance;
+    double right_distance;
     Encoder* left_encoder;
     Encoder* right_encoder;
     double get_avg_ticks();
@@ -22,6 +24,16 @@ public:
     auto_encoders(hw_info, hw_info, hw_info, hw_info);
     double get_target_distance();
     double get_distance();
+    double get_left_dist();
+    double get_right_dist();
+    double get_left_target_dist();
+    double get_right_target_dist();
+    void start_left_driving(double);
+    void start_right_driving(double);
+    void reset_left_distance();
+    void reset_right_distance();
+    bool left_at_target();
+    bool right_at_target();
     void reset_distance();
     void start_driving(double);
     void stop_driving();
