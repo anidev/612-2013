@@ -44,7 +44,6 @@ void robot_class::DisabledPeriodic() {
 }
 
 void robot_class::AutonomousPeriodic() {
-    autonomous
 }
 
 void robot_class::TeleopPeriodic() {
