@@ -6,20 +6,25 @@
 #include "lift.h"
 #include "ports.h"
 #include "launcher.h"
+#include "gunnerUI.h"
 
 class Shooter {
+friend class GunnerUI;
 private:
     enum subState {
-        userControlled, visionAnalysis, aiming, shooting
+        USER_CONTROLLED,
+        VISION_ANALYSIS,
+        AIMING,
+        SHOOTING
     } currentState;
-    Launcher launcherWheel;
-    Lift angleAdjuster;
-    Feeder feed;
     void update();
     void doAiming();
     void doShooting();
     void doVisionAnalysis();
-    void doUserControlled();
+    void lineUpHorizontal();
+    void setAngleOfAttack();
+    bool HorizontalAlignment;
+    bool angleSet;
 public:
     Shooter(hw_info,hw_info,hw_info);
     ~Shooter();
@@ -27,6 +32,11 @@ public:
     void setToUserControlled();
     void resetShotCount();
     unsigned int getShotCount();
+    void shoot();
+protected:
+    Launcher launcherWheel;
+    Lift angleAdjuster;
+    Feeder feed;
 };
 
 #endif
