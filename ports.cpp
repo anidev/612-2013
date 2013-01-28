@@ -5,8 +5,10 @@
 #include "launcher.h"
 #include "auto_encoders.h"
 #include "shifter.h"
+#include "612.h"
 
-Joystick left_joystick  (1);
+UpdateRegistry updateRegistry;
+EnhancedJoystick left_joystick   (1);
 EnhancedJoystick right_joystick  (2);
 EnhancedJoystick gunner_joystick (3);
 auto_encoders encoders (left_encoder1, right_encoder1, left_encoder2, right_encoder2);

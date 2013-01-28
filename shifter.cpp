@@ -5,7 +5,12 @@ const float khighgear = 0.2;
 
 shifter::shifter(hw_info a,hw_info b) : servo1(a.moduleNumber,a.channel), servo2(b.moduleNumber,b.channel){
     cur_gear = LOW;
-    gunner_joystick.addToggleBtn(7,&toggleHelper,((void*)this)); //todo test then set to actual btn
+    //set High
+    left_joystick.addBtn(6,&setHighBtnHelper,((void*)this));
+    right_joystick.addBtn(11,&setHighBtnHelper,((void*)this));
+    //set LOW
+    left_joystick.addBtn(7,&setLowBtnHelper,((void*)this));
+    right_joystick.addBtn(10,&setLowBtnHelper,((void*)this));
 }
 
 shifter::~shifter() {
@@ -23,7 +28,6 @@ void shifter::shift() {
             set(LOW);
             break;
     }
-    update();
 }
 
 void shifter::update() {
@@ -39,6 +43,11 @@ void shifter::update() {
     servo1.Set(servoval);
     servo2.Set(servoval);
 }
-void shifter::toggleHelper(void* obj) {
-    ((shifter*)obj) -> shift();
+void shifter::setHighBtnHelper(void* obj) {
+    ((shifter*)obj) -> set(HIGH);
 }
+void shifter::setLowBtnHelper(void* obj) {
+    ((shifter*)obj) -> set(LOW);
+}
+// left 6 right 11 
+// downL 7 right 10

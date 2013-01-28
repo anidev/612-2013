@@ -6,7 +6,6 @@
 #include "lift.h"
 #include "ports.h"
 #include "launcher.h"
-#include "gunnerUI.h"
 
 class Shooter {
 friend class GunnerUI;

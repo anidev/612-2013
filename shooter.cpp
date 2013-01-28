@@ -66,10 +66,10 @@ unsigned int Shooter::getShotCount() {
     return launcherWheel.getFrisbeeCount();
 }
 void Shooter::lineUpHorizontal() {
-    //todo
+    //todo line up to main target
 }
 void Shooter::setAngleOfAttack() {
-    //todo
+    //todo set angle
 }
 void Shooter::shoot() {
     if(launcherWheel.atSpeed()) {

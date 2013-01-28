@@ -17,7 +17,8 @@ public:
     void update();
     void shift();
 private:
-    static void toggleHelper(void* obj);
+    static void setHighBtnHelper(void*);
+    static void setLowBtnHelper(void*);
     Servo servo1;
     Servo servo2;
 };

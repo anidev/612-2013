@@ -15,7 +15,7 @@ struct hw_info {
     UINT8 channel;
 };
 
-extern Joystick left_joystick;
+extern EnhancedJoystick left_joystick;
 extern EnhancedJoystick right_joystick;
 extern EnhancedJoystick gunner_joystick;
 extern RobotDrive drive_train;

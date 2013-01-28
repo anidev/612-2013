@@ -16,6 +16,5 @@ void driving_state() {
     } else {
         drive_train.TankDrive(left_axis, right_axis);
     }
-    gunner_joystick.update();
-    right_joystick.update();
+    shift.update();
 }
