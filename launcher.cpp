@@ -3,8 +3,12 @@
 #include "ports.h"
 #include "launcher.h"
 
+double Counter (hw_info) {
 
-Launcher::Launcher(hw_info info) : launcherWheel(info.moduleNumber,info.channel) {
+}
+
+Launcher::Launcher(hw_info wheel,hw_info sensor) : launcherWheel(sensor.moduleNumber, sensor.channel)
+                                   launcherSensor(sensor.moduleNumber, sensor.channel ) {
     count = 0;
 }
 
@@ -21,8 +25,7 @@ void Launcher::setSpeed(float newSpeed) {
 }
 
 float Launcher::getCurrentSpeed() {
-    // TODO
-    return 0.0f;
+    return 1/(launcherSensor.GetPeriod());
 }
 
 float Launcher::getTargetSpeed() {
@@ -43,3 +46,4 @@ void Launcher::resetFrisbeeCount(){
 unsigned int Launcher::getFrisbeeCount(){
     return count;
 }
+
