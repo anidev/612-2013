@@ -13,8 +13,9 @@ private:
     unsigned int count;
     float targetSpeed;
     Jaguar launcherWheel;
+    Counter launcherSensor; // return RPM
 public:
-    Launcher(hw_info);
+    Launcher(hw_info,hw_info);
     ~Launcher();
     void stop();
     bool atSpeed();
