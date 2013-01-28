@@ -7,7 +7,7 @@
 #include "shifter.h"
 #include "612.h"
 
-UpdateRegistry updateRegistry;
+UpdateRegistry updateRegistry; // Must be first constructed
 EnhancedJoystick left_joystick   (1);
 EnhancedJoystick right_joystick  (2);
 EnhancedJoystick gunner_joystick (3);

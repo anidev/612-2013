@@ -7,7 +7,6 @@ void EnhancedJoystick::addBtn(UINT32 btn,funcName help,obj o) {
     objects.push_back(o);
 }
 void EnhancedJoystick::updateEJ() {
-    std::printf("Updated!\n");
     for(unsigned int x = 0; x < btnNumbers.size(); x++)
     {
         if(GetButton(btnNumbers.at(x)) && previousState.at(x) == false)
@@ -20,7 +19,6 @@ void EnhancedJoystick::updateEJ() {
     }
 }
 EnhancedJoystick::EnhancedJoystick(UINT32 a) : joysmooth(a) {
-    std::printf("Joystick Created\n");
     updateRegistry.addUpdateFunction(&updateEJHelper,(void*)this);
 }
 EnhancedJoystick::~EnhancedJoystick() {
@@ -29,6 +27,5 @@ void EnhancedJoystick::callFunct(int x) {
     helpers.at(x)(objects.at(x));
 }
 void EnhancedJoystick::updateEJHelper(obj object) {
-    std::printf("Update helper Called\n");
     ((EnhancedJoystick*)(object)) -> updateEJ();
 }

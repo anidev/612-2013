@@ -18,6 +18,7 @@ shifter::~shifter() {
 
 void shifter::set(GEAR g) {
     cur_gear = g;
+    update();
 }
 void shifter::shift() {
     switch (cur_gear) {

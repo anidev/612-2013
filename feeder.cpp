@@ -11,14 +11,17 @@ Feeder::~Feeder() {
 
 void Feeder::forward() {
     direction = FORWARD;
+    update();
 }
 
 void Feeder::backward() {
     direction = BACKWARD;
+    update();
 }
 
 void Feeder::stop() {
     direction = STOP;
+    update();
 }
 
 Feeder::direction_t Feeder::getDirection() {
