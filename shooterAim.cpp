@@ -67,4 +67,7 @@ void shooterAim::setAngle() {
     if(heightDifference > 0)
         angle = standardTrajectory(groundDistance,heightDifference);
 }
+void shooterAim::void updateHelper(void* o) {
+    ((shooterAim*)o) -> update();
+}
 #endif

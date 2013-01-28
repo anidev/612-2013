@@ -15,7 +15,8 @@ class ShooterAim {
     void doShooting();
     void setAngle();
     void doAiming();
-
+    void update();
+    static void updateHelper(void*);
     public:
     ShooterAim();
     ~ShooterAim();
@@ -24,7 +25,7 @@ class ShooterAim {
     float getNeededAngle();
     float getNeededAngle(target &);
     void autoShoot();
-    void update();
+    
     
 };
 #endif

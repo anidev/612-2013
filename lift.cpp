@@ -4,6 +4,7 @@
 
 Lift::Lift(hw_info info) : liftMotor(info.moduleNumber,info.channel)
 {
+    updateRegistry.addUpdateFunction(&updateHelper,(void*)this);
     manual = true;
 }
 
@@ -64,4 +65,7 @@ void Lift::update() {
     {
         set_direction(-1);
     }
+}
+void Lift::updateHelper(UpdateRegistry::inst a) {
+    ((Lift*)a) -> update();
 }
