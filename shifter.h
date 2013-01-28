@@ -1,22 +1,26 @@
-#ifndef SHIFTER_H
-#define SHIFTER_H
+#ifndef SHIFTER_H_INC
+#define SHIFTER_H_INC
 
+#include <Servo.h>
 #include "ports.h"
 
-enum gear_t {
-    LOW_GEAR,HIGH_GEAR
-};
-
-class Shifter {
-private:
-    gear_t cur_gear;
-
+class shifter {
 public:
-    Shifter(hw_info,hw_info);
-    ~Shifter();
-
-    gear_t get_gear();
-    void set_gear(gear_t);
+    enum GEAR {
+        LOW,
+        HIGH
+    };
+    shifter(hw_info,hw_info);
+    ~shifter();
+    void set(GEAR);
+    GEAR cur_gear;
+    void update();
+    void shift();
+private:
+    static void setHighBtnHelper(void*);
+    static void setLowBtnHelper(void*);
+    Servo servo1;
+    Servo servo2;
 };
 
-#endif //SHIFTER_H
+#endif
