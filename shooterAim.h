@@ -5,18 +5,8 @@
 #include <vector>
 #include <vision.h>
 
-enum shooterAimState {
-    userControl,
-    targetSelection,
-    aiming,
-    doneAiming,
-    settingSpeed,
-    shooting,
-};
-
 class ShooterAim {
     private:
-    shooterAimState state = userControl;
     vector<target> currentTargets;
     target* mainTarget = NULL;
     bool canUseAutoAim = false; // can we see the targets

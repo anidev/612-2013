@@ -1,9 +1,9 @@
 #if 0
 #include "shooter.h"
-
+#include "shooterAim.h"
 Shooter::Shooter(hw_info launchInfo,hw_info liftInfo,hw_info feedInfo) : launcherWheel(launchInfo), angleAdjuster(liftInfo), feed(feedInfo)
 {
-
+    
 }
 
 Shooter::~Shooter() {
@@ -12,20 +12,66 @@ Shooter::~Shooter() {
 void Shooter::update() {
     switch(currentState)
     {
-        case visionAnalysis:
+        case VISION_ANALYSIS:
             doVisionAnalysis();
-        break;
-        case aiming:
+            break;
+        case AIMING:
             doAiming();
-        break;
-        case shooting:
+            break;
+        case SHOOTING:
             doShooting();
-        break;
+            break;
     }
 }
+void Shooter::doVisionAnalysis() {
+
+    //End Lines
+    HorizontalAlignment = false;
+    angleSet = false;
+}
 void Shooter::doAiming() {
+    if(!HorizontalAlignment)
+    {
+        lineUpHorizontal();
+    }
+    else if(!angleSet)
+    {
+        setAngleOfAttack();
+    }
+    else if(angleAdjuster.atAngle())
+    {
+        currentState = SHOOTING;
+        resetShotCount(); //Final line
+    }
 }
 void Shooter::doShooting() {
+    if(getShotCount() >= 4)
+    {
+        currentState = USER_CONTROLLED;
+        return;
+    }
+    shoot();
+}
+void Shooter::autoShoot() {
+    if(currentState == USER_CONTROLLED)
+        currentState = VISION_ANALYSIS;
+}
+void Shooter::setToUserControlled() {
+    currentState = USER_CONTROLLED;
+}
+void Shooter::resetShotCount() {
+    launcherWheel.resetFrisbeeCount();
+}
+unsigned int Shooter::getShotCount() {
+    return launcherWheel.getFrisbeeCount();
+}
+void Shooter::lineUpHorizontal() {
+    //todo line up to main target
+}
+void Shooter::setAngleOfAttack() {
+    //todo set angle
+}
+void Shooter::shoot() {
     if(launcherWheel.atSpeed()) {
         feed.forward();
     }
@@ -33,22 +79,5 @@ void Shooter::doShooting() {
     {
         feed.stop();
     }
-}
-void Shooter::doVisionAnalysis() {
-}
-void Shooter::doUserControlled() {
-}
-void Shooter::autoShoot() {
-    if(currentState == userControlled)
-        currentState = visionAnalysis;
-}
-void Shooter::setToUserControlled() {
-    currentState = userControlled;
-}
-void Shooter::resetShotCount() {
-    launcherWheel.resetFrisbeeCount();
-}
-unsigned int Shooter::getShotCount() {
-    return launcherWheel.getFrisbeeCount();
 }
 #endif
