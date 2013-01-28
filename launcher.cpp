@@ -3,26 +3,30 @@
 #include "ports.h"
 #include "launcher.h"
 
-
-Launcher::Launcher(hw_info info) : launcherWheel(info.moduleNumber,info.channel) {
+Launcher::Launcher(hw_info wheel,hw_info sensor) : launcherWheel(sensor.moduleNumber, sensor.channel),
+                                                   launcherSensor(sensor.moduleNumber, sensor.channel ) {
     count = 0;
+    targetSpeed = 0;
+    targetSet = false;
 }
 
 Launcher::~Launcher() {
 }
 
 void Launcher::stop() {
+    targetSet = false;
     setSpeed(0.0f);
+    launcherWheel.Set(0.0f);
     //insert more code here
 }
 
 void Launcher::setSpeed(float newSpeed) {
     targetSpeed=newSpeed;
+    targetSet=true;
 }
 
 float Launcher::getCurrentSpeed() {
-    // TODO
-    return 0.0f;
+    return 1/(launcherSensor.GetPeriod());
 }
 
 float Launcher::getTargetSpeed() {
@@ -30,7 +34,7 @@ float Launcher::getTargetSpeed() {
 }
 
 bool Launcher::atSpeed(){
-    if(fabs(getCurrentSpeed()-ON_SPEED) < AT_SPEED_TOLERANCE){
+    if(fabs(getCurrentSpeed()-targetSpeed) < AT_SPEED_TOLERANCE){
         return true;
     }
     return false;
@@ -43,3 +47,4 @@ void Launcher::resetFrisbeeCount(){
 unsigned int Launcher::getFrisbeeCount(){
     return count;
 }
+
