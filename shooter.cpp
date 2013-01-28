@@ -1,9 +1,10 @@
 #if 0
 #include "shooter.h"
 #include "shooterAim.h"
+#include "612.h"
 Shooter::Shooter(hw_info launchInfo,hw_info liftInfo,hw_info feedInfo) : launcherWheel(launchInfo), angleAdjuster(liftInfo), feed(feedInfo)
 {
-    
+    updateRegistry.addUpdateFunction(&update_helper, (void*)this);
 }
 
 Shooter::~Shooter() {
@@ -79,5 +80,8 @@ void Shooter::shoot() {
     {
         feed.stop();
     }
+}
+static void Shooter::update_helper(void* a) {
+    ((Shooter*)a) -> update();
 }
 #endif

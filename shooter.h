@@ -6,6 +6,7 @@
 #include "lift.h"
 #include "ports.h"
 #include "launcher.h"
+#include "updateregistry.h"
 
 class Shooter {
 friend class GunnerUI;
@@ -24,6 +25,7 @@ private:
     void setAngleOfAttack();
     bool HorizontalAlignment;
     bool angleSet;
+    static void update_helper(void*);
 public:
     Shooter(hw_info,hw_info,hw_info);
     ~Shooter();
