@@ -1,7 +1,9 @@
 #include <RobotDrive.h>
+#include <Timer.h>
 #include "../ports.h"
 #include "../auto_encoders.h"
 #include "state_driving.h"
+#include "../shifter.h"
 
 void driving_state() {
     float left_axis = left_joystick.GetY ();
@@ -14,4 +16,5 @@ void driving_state() {
     } else {
         drive_train.TankDrive(left_axis, right_axis);
     }
+    shift.update();
 }

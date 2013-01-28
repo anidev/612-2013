@@ -44,14 +44,15 @@ void robot_class::DisabledPeriodic() {
 }
 
 void robot_class::AutonomousPeriodic() {
-    autonomous
+    updateRegistry.updateAll();
 }
 
 void robot_class::TeleopPeriodic() {
+    updateRegistry.updateAll();
 //    std::printf("from driverstation: %f\n",main_table->GetNumber("test",-1.0));
     static int counter=0;
     if(counter%10==0) {
-        std::printf("encoders: %f\n",encoders.get_distance());
+        //std::printf("encoders: %f\n",encoders.get_distance());
 //        double dummy=encoders.get_distance();
     }
     counter++;

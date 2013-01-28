@@ -3,10 +3,11 @@
 
 #include <networktables/NetworkTable.h>
 #include "state.h"
+#include "updateRegistry.h"
 
 extern NetworkTable* main_table;
 extern State global_state;
-
+extern UpdateRegistry updateRegistry;
 enum teleop_state {
     DRIVE, CLIMB, SHOOT_AUTO
 };

@@ -1,19 +1,18 @@
 #include <Joystick.h>
 #include "joysmooth.h"
 
-joysmooth::joysmooth(int port):real_joy(port) {
+joysmooth::joysmooth(UINT32 port):real_joy(port) {
 }
 
 joysmooth::~joysmooth () {
-
 }
 
 float joysmooth::GetX(JoystickHand hand){
-    return real_joy.GetX();
+    return real_joy.GetX(hand);
 }
 
 float joysmooth::GetY(JoystickHand hand){
-    return real_joy.GetY();
+    return real_joy.GetY(hand);
 }
 
 float joysmooth::GetZ(){
@@ -40,4 +39,8 @@ bool joysmooth::GetBumper (JoystickHand hand) {
 }
 bool joysmooth::GetRawButton (UINT32 button) {
     return real_joy.GetRawButton(button);
+}
+bool joysmooth::GetButton(UINT32 btn) {
+    //Todo filter Btn Inputs
+    return GetRawButton(btn);
 }
