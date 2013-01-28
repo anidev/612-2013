@@ -7,8 +7,8 @@
 #include "shifter.h"
 
 Joystick left_joystick  (1);
-Joystick right_joystick (2);
-Joystick gunner_joystick(3);
+EnhancedJoystick right_joystick  (2);
+EnhancedJoystick gunner_joystick (3);
 auto_encoders encoders (left_encoder1, right_encoder1, left_encoder2, right_encoder2);
 
 Jaguar left_front_jag(left_front_motor.moduleNumber,left_front_motor.channel);

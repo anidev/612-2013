@@ -16,20 +16,6 @@ void driving_state() {
     } else {
         drive_train.TankDrive(left_axis, right_axis);
     }
-    if(gunner_joystick.GetRawButton(7))
-    {
-        
-        if(shift.cur_gear == shifter::LOW && previousState == false)
-        {
-            shift.set(shifter::HIGH);
-        }
-        else if(previousState == false)
-        {
-            shift.set(shifter::LOW);
-        }
-        previousState = true;
-    }
-    else
-        previousState = false;
-    shift.update();
+    gunner_joystick.update();
+    right_joystick.update();
 }

@@ -3,6 +3,7 @@
 
 #include <Servo.h>
 #include "ports.h"
+
 class shifter {
 public:
     enum GEAR {
@@ -14,7 +15,9 @@ public:
     void set(GEAR);
     GEAR cur_gear;
     void update();
+    void shift();
 private:
+    static void toggleHelper(void* obj);
     Servo servo1;
     Servo servo2;
 };

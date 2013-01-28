@@ -3,9 +3,11 @@
 
 #include <Joystick.h>
 #include <RobotDrive.h>
+#include "EnhancedJoystick.h"
 
 class auto_encoders;
 class shifter;
+
 typedef int canport_t;
 
 struct hw_info {
@@ -14,8 +16,8 @@ struct hw_info {
 };
 
 extern Joystick left_joystick;
-extern Joystick right_joystick;
-extern Joystick gunner_joystick;
+extern EnhancedJoystick right_joystick;
+extern EnhancedJoystick gunner_joystick;
 extern RobotDrive drive_train;
 extern auto_encoders encoders;
 static const hw_info side1 = {1,6};
