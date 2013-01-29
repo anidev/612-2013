@@ -14,19 +14,19 @@ bool ShooterAim::isAimed() {
 }
 shooterAimState ShooterAim::getState() { return state; }
 float ShooterAim::getNeededAngle() {
-    
+
 }
 float ShooterAim::getNeededAngle(target &inputTarget) {
-    
+
 }
 void ShooterAim::autoShoot() {
     if(state == userControl)
         state = targetSelection;
 }
 void ShooterAim::update() {
-    if((abs(leftJoystick.getX()) > 0.1)||(abs(leftJoystick.getX()) > 0.1)||(abs(leftJoystick.getX()) > 0.1))
+    if((abs(leftJoystick.getX()) > 0.1)||(abs(leftJoystick.getY()) > 0.1)||(abs(leftJoystick.getZ()) > 0.1))
         state = userControl;
-    switch state {
+    switch (state) {
         case targetSelection:
             setMainTarget();
         case aiming:
