@@ -4,15 +4,17 @@
 #include <Encoder.h>
 #include "ports.h"
 
+struct encoders_info {
+    hw_info left1;
+    hw_info left2;
+    hw_info right1;
+    hw_info right2;
+};
+
 class auto_encoders {
 private:
-    bool is_driving;
-    double left_distance;
-    double right_distance;
     Encoder* left_encoder;
     Encoder* right_encoder;
-    double get_avg_ticks();
-    double convert_distance(double);
     static const double WHEEL_RADIUS = 4.0;
     //static const double WHEEL_CIRCUMFERENCE = WHEEL_RADIUS * 2 * pi;
     static const double TICKS_PER_REV = 250; // PULSES PER REV = 125, DISTANCE PER PULSE = circumference / 125
@@ -21,22 +23,13 @@ private:
     static const double TOLERANCE = 1.5;
 public:
     ~auto_encoders();
-    auto_encoders(hw_info, hw_info, hw_info, hw_info);
-    double get_target_distance();
+    auto_encoders(encoders_info);
     double get_distance();
     double get_left_dist();
     double get_right_dist();
-    double get_left_target_dist();
-    double get_right_target_dist();
-    void start_left_driving(double);
-    void start_right_driving(double);
     void reset_left_distance();
     void reset_right_distance();
-    bool left_at_target();
-    bool right_at_target();
     void reset_distance();
-    void start_driving(double);
-    void stop_driving();
 };
 
 #endif
