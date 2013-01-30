@@ -1,5 +1,5 @@
 #include <vector>
-#include "UpdateRegistry.h"
+#include "updateRegistry.h"
 
 UpdateRegistry::UpdateRegistry() {
 }
