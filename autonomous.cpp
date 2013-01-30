@@ -20,7 +20,9 @@ State state(AUTO_DRIVE);
 
 void drive(double dist /*keep in mind that dist is in inches*/) {
 	drive_train.drive(dist);
-	drive_train.isFinished();
+	if (drive_train.isFinished()) {
+		state.set_state(AUTO_TURN);
+	}
 }
 
 void turn(double angle) {
@@ -40,8 +42,6 @@ void choose_routine(Position pos, Target target){
 void do_autonomous(){
 	if(state.get_state()==AUTO_DRIVE) {
 		drive(DRIVE_DIST);
-		state.set_state(AUTO_TURN);
-		do_autonomous();
 	} else if (state.get_state()==AUTO_TURN){
 		if (isLeft == true){
 			turn(TURN_ANGLE);
