@@ -6,11 +6,11 @@ void choose_routine() {
 }
 
 void drive(double dist /*keep in mind that dist is in inches*/) {
-    encoders.reset_distance();
+/*    encoders.reset_distance();
     while (encoders.get_distance() < dist) {
         drive_train.TankDrive(1,1); //change the (1,1) to something safer later
     }
-    encoders.stop_driving();
+    encoders.stop_driving();*/
 }
 
 void turn(double angle) {
@@ -24,7 +24,7 @@ void turn(double angle) {
     note: get width of robot
     note: this method should be able to calculate the change in angle 
     */
-    double distance = angle / 3.07912798856;
+/*    double distance = angle / 3.07912798856;
     encoders.reset_distance();
     encoders.stop_driving();
     if (angle > 0) {
@@ -35,6 +35,6 @@ void turn(double angle) {
         while (encoders.get_distance() < distance) {
             drive_train.TankDrive(1,-1); //change the (1,1) to something safer later
         }
-    }
+    }*/
 }
 

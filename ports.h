@@ -8,6 +8,7 @@
 class DriveTrain;
 class auto_encoders;
 class shifter;
+class Lift;
 
 typedef int canport_t;
 
@@ -21,6 +22,7 @@ extern EnhancedJoystick right_joystick;
 extern EnhancedJoystick gunner_joystick;
 extern DriveTrain drive_train;
 extern shifter shift;
+extern Lift angleAdjuster;
 //LED relay
 static const hw_info led = {2,1}; // practice board
 //Shifter servos
