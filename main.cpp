@@ -13,6 +13,7 @@
 #include "ports.h"
 #include "auto_encoders.h"
 #include "main.h"
+#include "autonomous.h"
 
 robot_class::robot_class() {
     GetWatchdog().SetEnabled(false);
@@ -32,6 +33,7 @@ void robot_class::DisabledInit() {
 
 void robot_class::AutonomousInit() {
     std::printf("AutonomousInit");
+    choose_routine(Back_Left, High_Goal);
 }
 
 void robot_class::TeleopInit() {
@@ -45,6 +47,7 @@ void robot_class::DisabledPeriodic() {
 
 void robot_class::AutonomousPeriodic() {
     updateRegistry.updateAll();
+    do_autonomous();
 }
 
 void robot_class::TeleopPeriodic() {
