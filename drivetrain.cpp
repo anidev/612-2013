@@ -80,7 +80,8 @@ void DriveTrain::ArcadeDrive(GenericHID& joystick) {
 void DriveTrain::turn(double angle) {
     operation=TURNING;
     this->angle=angle;
-    double dist=0.0; // TODO angle distance calculation
+    double radAngle=torad(angle);
+    double dist=radAngle*16;
     left_dist=dist;
     right_dist=-dist;
     encoders.reset_distance();
