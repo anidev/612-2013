@@ -13,6 +13,7 @@ Launcher::Launcher(hw_info wheel,hw_info sensor) : launcherWheel(sensor.moduleNu
 Launcher::~Launcher() {
 }
 
+
 void Launcher::stop() {
     targetSet = false;
     setSpeed(0.0f);
