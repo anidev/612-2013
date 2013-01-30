@@ -28,13 +28,31 @@ void turn(double angle) {
 }
 
 void choose_routine(Position pos, Target target){
+	if ((pos == Back_Left) || (pos == Front_Left)) {
+		isLeft = true;
+	}
     if ((pos == Back_Left) || (pos == Back_Right)) {
-    	state.set_state(AUTO_DRIVE);
+		state.set_state(AUTO_DRIVE);
+		drive((double)DRIVE_DIST);
+		/*TURNING CODE*/
+		state.set_state(AUTO_TURN);
+    	if isLeft {
+			turn(TURN_ANGLE);
+			/*aim code here*/
+		} else {
+			turn(abs(TURN_ANGLE));
+			/*aim code here*/
+		}	
     } else if ((pos == Front_Left) || (pos == Front_Right)) {
     	state.set_state(AUTO_TURN);
-    }
+    	if isLeft {
+			turn(TURN_ANGLE);
+			/*aim code here*/
+		} else {
+			turn(abs(TURN_ANGLE));
+			/*aim code here*/
+		}
+    } 
 }
-
-/*This code is for shooting at the high goal, implement this when finished with mid goal     */
 
 /* THIS CODE BELONGS TO ZACK, PRESUME IT DOESN'T WORK*/ /*oh ya and adrian and swaraj*/
