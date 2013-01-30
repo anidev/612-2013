@@ -20,12 +20,20 @@ State state(AUTO_DRIVE);
 
 void drive(double dist /*keep in mind that dist is in inches*/) {
 	drive_train.drive(dist);
+	drive_train.isFinished();
 }
 
 void turn(double angle) {
     drive_train.turn(angle);
 }
 
+void choose_routine(Position pos, Target target){
+    if ((pos == Back_Left) || (pos == Back_Right)) {
+    	state.set_state(AUTO_DRIVE);
+    } else if ((pos == Front_Left) || (pos == Front_Right)) {
+    	state.set_state(AUTO_TURN);
+    }
+}
 
 /*This code is for shooting at the high goal, implement this when finished with mid goal     */
 
