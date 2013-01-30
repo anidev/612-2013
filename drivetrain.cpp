@@ -13,7 +13,14 @@ double todeg(double rad) {
 }
 
 void DriveTrain::update_helper(void* param) {
+/**/
     DriveTrain* drivetrain=(DriveTrain*)param;
+    static int counter=0;
+    if(counter%20==0) {
+        std::printf("Encoder: %f\n",drivetrain->encoders.get_distance());
+    }
+    counter++;
+/**/
     if(drivetrain->operation==MANUAL) {
         return;
     }
@@ -41,10 +48,10 @@ void DriveTrain::update_helper(void* param) {
 }
 
 DriveTrain::DriveTrain(drivetrain_info dinfo,encoders_info einfo):encoders(einfo) {
-    Jaguar left_front_jag(dinfo.left_front.moduleNumber,dinfo.left_front.channel);
-    Jaguar left_rear_jag(dinfo.left_rear.moduleNumber,dinfo.left_rear.channel);
-    Jaguar right_front_jag(dinfo.right_front.moduleNumber,dinfo.right_front.channel);
-    Jaguar right_rear_jag(dinfo.right_rear.moduleNumber,dinfo.right_rear.channel);
+    left_front_jag=new Jaguar(dinfo.left_front.moduleNumber,dinfo.left_front.channel);
+    left_rear_jag=new Jaguar(dinfo.left_rear.moduleNumber,dinfo.left_rear.channel);
+    right_front_jag=new Jaguar(dinfo.right_front.moduleNumber,dinfo.right_front.channel);
+    right_rear_jag=new Jaguar(dinfo.right_rear.moduleNumber,dinfo.right_rear.channel);
     robotDrive=new RobotDrive(left_front_jag,left_rear_jag,right_front_jag,right_rear_jag);
     encoders.reset_distance();
     finished=false;

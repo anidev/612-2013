@@ -3,6 +3,7 @@
 
 #include <RobotDrive.h>
 #include <GenericHID.h>
+#include <Jaguar.h>
 #include "auto_encoders.h"
 #include "ports.h"
 
@@ -45,6 +46,10 @@ private:
     };
     typedef void (*drive_func)();
     RobotDrive* robotDrive;
+    Jaguar* left_front_jag;
+    Jaguar* left_rear_jag;
+    Jaguar* right_front_jag;
+    Jaguar* right_rear_jag;
     auto_encoders encoders;
     drive_func currentOperation;
     operation_t operation;
