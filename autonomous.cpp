@@ -33,26 +33,35 @@ void choose_routine(Position pos, Target target){
 	}
     if ((pos == Back_Left) || (pos == Back_Right)) {
 		state.set_state(AUTO_DRIVE);
-		drive((double)DRIVE_DIST);
-		/*TURNING CODE*/
-		state.set_state(AUTO_TURN);
-    	if isLeft {
-			turn(TURN_ANGLE);
-			/*aim code here*/
-		} else {
-			turn(abs(TURN_ANGLE));
-			/*aim code here*/
-		}	
     } else if ((pos == Front_Left) || (pos == Front_Right)) {
     	state.set_state(AUTO_TURN);
-    	if isLeft {
-			turn(TURN_ANGLE);
-			/*aim code here*/
-		} else {
-			turn(abs(TURN_ANGLE));
-			/*aim code here*/
-		}
     } 
 }
-
+void do_autonomous(){
+	if(state.get_state()==AUTO_DRIVE) {
+		drive(DRIVE_DIST);
+		state.set_state(AUTO_TURN);
+		do_autonomous();
+	} else if (state.get_state()==AUTO_TURN){
+		if (isLeft == true){
+			turn(TURN_ANGLE);
+		} else {
+			turn(abs(TURN_ANGLE));
+		}	
+	} else if (state.get_state()==AUTO_AIM){
+		/*
+		aim();
+		*/
+	} else if (state.get_state()==AUTO_SHOOT) {
+		/*
+		while (Frisbees > 0) {
+			shoot();
+			Frisbees-=1;
+		}
+		*/
+	}
+}
+	
+	
+	
 /* THIS CODE BELONGS TO ZACK, PRESUME IT DOESN'T WORK*/ /*oh ya and adrian and swaraj*/
