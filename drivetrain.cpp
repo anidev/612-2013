@@ -24,10 +24,17 @@ void DriveTrain::update_helper(void* param) {
     float right_dir=((cur_right_dist-drivetrain->right_dist)>0?1.0f:-1.0f);
     float left_speed=0.0f;
     float right_speed=0.0f;
-    if(std::fabs(cur_left_dist-drivetrain->left_dist)>DriveTrain::DIST_TOLERANCE) {
+    bool left_reached=std::fabs(cur_left_dist-drivetrain->left_dist)>DriveTrain::DIST_TOLERANCE;
+    bool right_reached=std::fabs(cur_right_dist-drivetrain->right_dist)>DriveTrain::DIST_TOLERANCE;
+    if(left_reached&&right_reached) {
+        drivetrain->operation=MANUAL;
+	drivetrain->finished=true;
+	return;
+    }
+    if(!left_reached) {
         left_speed=left_dir*speed;
     }
-    if(std::fabs(cur_right_dist-drivetrain->right_dist)>DriveTrain::DIST_TOLERANCE) {
+    if(!right_reached) {
         right_speed=right_dir*speed;
     }
     drivetrain->robotDrive->TankDrive(left_speed,right_speed);
