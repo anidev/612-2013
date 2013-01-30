@@ -8,6 +8,9 @@ Lift::Lift(hw_info info) : liftMotor(info.moduleNumber,info.channel)
     manual = true;
 }
 
+Lift::~Lift() {
+}
+
 void Lift::lift_up() {
     manual = true;
     set_direction(1);

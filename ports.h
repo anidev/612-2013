@@ -34,7 +34,7 @@ static const hw_info left_rear_motor   = {2,3}; // suzie
 static const hw_info right_front_motor = {1,3}; // suzie
 static const hw_info right_rear_motor  = {1,4}; // suzie
 //Other motors
-static const hw_info lift_motor = {1,6}; // dummy
+static const hw_info lift_motor = {1,8}; // dummy
 //Encoders
 static const hw_info right_encoder1 = {1, 1}; // suzie
 static const hw_info right_encoder2 = {1, 2}; // suzie
