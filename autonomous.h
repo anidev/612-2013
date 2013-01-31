@@ -14,5 +14,7 @@ void do_autonomous();
 
 void drive();
 void turn();
+void aim();
+void shoot();
 
 #endif
