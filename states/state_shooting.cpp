@@ -1,7 +1,8 @@
 #include "state_climbing.h"
 #include "state_shooting.h"
-#include <Joystick.h>       // for GetRawButton () and GetRawAxis ()
 #include "lift.h"           // for lift_up () and lift_down ()
+#include "launcher.h"       // for setSpeed () and getCurrentSpeed()
+#include <Joystick.h>       // for GetRawButton () and GetRawAxis ()
 
 void shooting_auto() {
     if (GetRawButton (1)) {     // button X on joystick
