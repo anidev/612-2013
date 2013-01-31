@@ -6,7 +6,7 @@
 #include <cmath>
 
 bool isLeft;
-bool stateChanged;
+bool stateChanged = true;
 int Frisbees = 3;
 const int DRIVE_DIST=119;
 const int TURN_ANGLE= -29; // negative is clockwise, positive is counter-clockwise
@@ -26,11 +26,15 @@ void drive(double dist /*keep in mind that dist is in inches*/) {
 	}
 	if (drive_train.isFinished()) {
 		state.set_state(AUTO_TURN);
+		stateChanged = true;
 	}
 }
 
 void turn(double angle) {
-    drive_train.turn(angle);
+	if (stateChanged){
+		drive_train.turn(angle);
+		stateChanged = false;
+	}
 }
 
 void choose_routine(Position pos, Target target){
