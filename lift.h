@@ -1,7 +1,7 @@
 #ifndef LIFT_H_INCLUDED
 #define LIFT_H_INCLUDED
 
-#include "Jaguar.h"
+#include <Jaguar.h>
 #include "ports.h"
 #include "updateRegistry.h"
 class Lift {

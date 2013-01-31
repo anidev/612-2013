@@ -1,4 +1,4 @@
-#include "Target.h"
+#include "target.h"
 
 int Target::getPriority()
 {

@@ -2,7 +2,7 @@
 #define ENHANCEDJOYSTICK_H
 
 #include <vector>
-#include "Joysmooth.h"
+#include "joysmooth.h"
 #include "612.h"
 
 class EnhancedJoystick : public joysmooth {
