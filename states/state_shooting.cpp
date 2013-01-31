@@ -1,22 +1,38 @@
 #include "state_climbing.h"
 #include "state_shooting.h"
-#include <Joystick.h>           // for GetRawButton ()
+#include <Joystick.h>       // for GetRawButton () and GetRawAxis ()
+#include "lift.h"           // for lift_up () and lift_down ()
 
 void shooting_auto() {
-    // TODO
+    if (GetRawButton (1)) {     // button X on joystick
+        // manual revision
+        shooting_manual();
+    }
 }
 
 void shooting_manual() {
-    if (GetRawButton (1)) {     // X
-        // unreadable in pdf file
+    if (GetRawButton (4)) {             // button Y on joystick
+        shooting_auto ();
     }
-    if (GetRawButton (4)) {     // Y
-        auto_shoot ();
+
+    if (GetRawAxis (5) == -1) {         // angle down
+        lift_down();
     }
-    if (GetRawButton ()) {      // angle up
+    else if(GetRawAxis (5) == 1) {      // angle up
         lift_up();
     }
-    if (GetRawButton ()) {      // angle down
-        lift_down();
+
+    if (GetRawButton (5)) {             // slow down shooter wheel
+        setSpeed (getCurrentSpeed()--);
+    }
+    if (GetRawButton (6)) {             // speed up shooter wheel
+        setSpeed (getCurrentSpeed()++);
+    }
+
+    if (GetRawButton (7)) {             // turn robot left
+        // TO DO
+    }
+    if (GetRawButton (8)) {             // turn robot right
+        // TO DO
     }
 }
