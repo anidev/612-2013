@@ -1,40 +1,97 @@
 #include "autonomous.h"
 #include "ports.h"
+#include "shooterAim.h"
+#include "state.h"
+#include "drivetrain.h"
+#include <cmath>
 
-void choose_routine() {
-    
-}
+bool isLeft;
+int state_pos=0;
+int Frisbees = 3;
+const int DRIVE_DIST=119;
+const int TURN_ANGLE= -29; // negative is clockwise, positive is counter-clockwise
+enum auto_states {
+	AUTO_DRIVE,
+	AUTO_TURN,
+	AUTO_AIM,
+	AUTO_SHOOT,
+	DONE
+};
+
+//0 = init drive 
+//1 = drive
+//2 = init turn
+//3 = turn
+//4 = init aim
+//5 = aim
+//6 = init shoot
+//7 = shoot
+
+//note : above not entirely accurate
+
+State state(AUTO_DRIVE);
 
 void drive(double dist /*keep in mind that dist is in inches*/) {
-/*    encoders.reset_distance();
-    while (encoders.get_distance() < dist) {
-        drive_train.TankDrive(1,1); //change the (1,1) to something safer later
-    }
-    encoders.stop_driving();*/
+	if (state_pos==0) {
+		drive_train.drive(dist);
+		state_pos=1;
+	}
+	if (drive_train.isFinished()) {
+		//disable the drive train
+		state.set_state(AUTO_TURN);
+		state_pos = 2;
+	}
 }
 
 void turn(double angle) {
-    /*
-    keep in mind that the angles in use will be calculated with the robot
-    facing the 0deg mark. This means that turning to the right will require a negative angle
-    and turning to the left will require a positive angle. 
-    if the angle is negative, then the motors on the right side of the robot
-    will need to be positively powered and the left motors will need to be negatively powered and 
-    vice versa if the angle is positive.
-    note: get width of robot
-    note: this method should be able to calculate the change in angle 
-    */
-/*    double distance = angle / 3.07912798856;
-    encoders.reset_distance();
-    encoders.stop_driving();
-    if (angle > 0) {
-        while (encoders.get_distance() < distance) {
-            drive_train.TankDrive(-1,1); //change the (1,1) to something safer later
-        }
-    } else if (angle < 0) {
-        while (encoders.get_distance() < distance) {
-            drive_train.TankDrive(1,-1); //change the (1,1) to something safer later
-        }
-    }*/
+	if (state_pos==2) {
+		drive_train.turn(angle);
+		state_pos=3;
+	}
+	if (drive_train.isFinished()) {
+		//disable the drive train
+		state.set_state(DONE);
+		state_pos = 4;
+	}
 }
 
+void aim() {
+	std::printf("aiming");
+	state.set_state(AUTO_SHOOT);
+}
+
+void shoot() {
+	std::printf("shooting");
+	state.set_state(DONE);
+}
+
+void choose_routine(Position pos, Target target){
+	state_pos=0;
+	if ((pos == Back_Left) || (pos == Front_Left)) {
+		isLeft = true;
+	}
+    if ((pos == Back_Left) || (pos == Back_Right)) {
+		state.set_state(AUTO_DRIVE);
+		Frisbees = 3;
+    } else if ((pos == Front_Left) || (pos == Front_Right)) {		
+    	state.set_state(AUTO_TURN);
+    } 
+}
+void do_autonomous(){
+		if(state.get_state()==AUTO_DRIVE) {
+			drive(DRIVE_DIST);
+		} else if (state.get_state()==AUTO_TURN){
+			if (isLeft == true){
+				turn(TURN_ANGLE);
+			} else {
+				turn(abs(TURN_ANGLE));	
+			}
+		} else if (state.get_state()==DONE) {
+			//Wait(0.015);
+		}/* else if (state.get_state()==AUTO_AIM){
+			aim(); 
+		} else if (state.get_state()==AUTO_SHOOT) {
+			shoot();
+		}*/	
+}
+/* THIS CODE BELONGS TO ZACK, PRESUME IT DOESN'T WORK*/ /*oh ya and adrian and swaraj*/
