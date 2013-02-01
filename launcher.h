@@ -20,6 +20,7 @@ public:
     void stop();
     bool atSpeed();
     void setSpeed(float);
+
     float getCurrentSpeed();
     float getTargetSpeed();
     unsigned int getFrisbeeCount();
