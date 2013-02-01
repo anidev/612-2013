@@ -18,7 +18,7 @@ void DriveTrain::update_helper(void* param) {
 }
 
 DriveTrain::DriveTrain(drivetrain_info dinfo,encoders_info einfo):encoders(einfo) {
-	operation=MANUAL;
+    operation=MANUAL;
     left_front_jag=new Jaguar(dinfo.left_front.moduleNumber,dinfo.left_front.channel);
     left_rear_jag=new Jaguar(dinfo.left_rear.moduleNumber,dinfo.left_rear.channel);
     right_front_jag=new Jaguar(dinfo.right_front.moduleNumber,dinfo.right_front.channel);

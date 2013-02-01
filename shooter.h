@@ -14,7 +14,6 @@ private:
     unsigned int startCount;
     unsigned int curCount;
     bool shooting;
-    void update();
     static void shotBtnHelper(void*);
     static void update_helper(void*);
 public:
@@ -33,6 +32,7 @@ public:
     void setFeederStop();
     Feeder::direction_t getFeederDirection();
     // Global shooter stuff
+    void update();
     void shoot();
     void abort();
 };
