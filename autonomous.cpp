@@ -6,10 +6,10 @@
 #include <cmath>
 
 bool isLeft;
-int state_pos=0;
+bool state_changed = false;
 int Frisbees = 3;
-const int DRIVE_DIST=119;
-const int TURN_ANGLE= -29; // negative is clockwise, positive is counter-clockwise
+const int DRIVE_DIST=40;
+const int TURN_ANGLE= -34; // negative is clockwise, positive is counter-clockwise
 enum auto_states {
 	AUTO_DRIVE,
 	AUTO_TURN,
@@ -32,50 +32,50 @@ enum auto_states {
 State state(AUTO_DRIVE);
 
 void drive(double dist /*keep in mind that dist is in inches*/) {
-	if (state_pos==0) {
-		drive_train.drive(dist);
-		state_pos=1;
-	}
-	if (drive_train.isFinished()) {
-		//disable the drive train
-		state.set_state(AUTO_TURN);
-		state_pos = 2;
-	}
+    if (state_changed) {
+        drive_train.drive(dist);
+        state_changed = false;
+    }
+    else if (drive_train.isFinished()) {
+        //disable the drive train
+        state.set_state(AUTO_TURN);
+        state_changed = true;
+    }
 }
 
 void turn(double angle) {
-	if (state_pos==2) {
-		drive_train.turn(angle);
-		state_pos=3;
-	}
-	if (drive_train.isFinished()) {
-		//disable the drive train
-		state.set_state(DONE);
-		state_pos = 4;
-	}
+    if (state_changed) {
+        drive_train.turn(angle);
+        state_changed = false;
+    }
+    else if (drive_train.isFinished()) {
+        //disable the drive train
+        state.set_state(DONE);
+        state_changed = true;
+    }
 }
 
 void aim() {
-	std::printf("aiming");
-	state.set_state(AUTO_SHOOT);
+    std::printf("aiming");
+    state.set_state(AUTO_SHOOT);
 }
 
 void shoot() {
-	std::printf("shooting");
-	state.set_state(DONE);
+    std::printf("shooting");
+    state.set_state(DONE);
 }
 
 void choose_routine(Position pos, Target target){
-	state_pos=0;
-	if ((pos == Back_Left) || (pos == Front_Left)) {
-		isLeft = true;
-	}
+    if ((pos == Back_Left) || (pos == Front_Left)) {
+        isLeft = true;
+    }
     if ((pos == Back_Left) || (pos == Back_Right)) {
-		state.set_state(AUTO_DRIVE);
-		Frisbees = 3;
+        state.set_state(AUTO_DRIVE);
+        Frisbees = 3;
     } else if ((pos == Front_Left) || (pos == Front_Right)) {		
     	state.set_state(AUTO_TURN);
-    } 
+    }
+    state_changed = true;
 }
 void do_autonomous(){
 		if(state.get_state()==AUTO_DRIVE) {
