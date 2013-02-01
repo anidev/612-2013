@@ -8,7 +8,7 @@ class State {
 public:
     State(robot_state initial);   // constructor
 
-    void State::change_state (robot_state new_state);
+    void State::set_state (robot_state new_state);
     robot_state State::get_state ();
 
     ~State();  // destructor

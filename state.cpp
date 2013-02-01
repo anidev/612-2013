@@ -7,7 +7,7 @@ State::~State() {
     // do cleanup
 }
 
-void State::change_state (robot_state new_state)
+void State::set_state (robot_state new_state)
 {
     state = new_state;
 }
