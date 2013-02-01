@@ -9,27 +9,32 @@
 
 class Shooter {
 private:
-    Feeder feed;
     Launcher launch;
+    Feeder feed;
     unsigned int startCount;
     unsigned int curCount;
     bool shooting;
     static void shotBtnHelper(void*);
     static void update_helper(void*);
 public:
-    Shooter(hw_info, hw_info);
+    Shooter(hw_info, hw_info, hw_info);
+    ~Shooter();
+    // Launcher
+    void setSpeed(float);
+    float getTargetSpeed();
     float getCurrentSpeed();
     bool atSpeed();
     unsigned int getFrisbeeCount();
     void resetFrisbeeCount();
-    void setSpeed(float);
-    float getTargetSpeed();
-    void getFeederDirection();
-    void shoot();
+    // Feeder
     void setFeederForward();
     void setFeederBackward();
     void setFeederStop();
-    ~Shooter();
+    Feeder::direction_t getFeederDirection();
+    // Global shooter stuff
+    void update();
+    void shoot();
+    void abort();
 };
 
 #endif

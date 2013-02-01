@@ -1,8 +1,10 @@
 #include "shooter.h"
+#include "launcher.h"
+#include "feeder.h"
 #include "612.h"
 #include "ports.h"
 
-Shooter::Shooter(hw_info launchInfo,hw_info feedInfo) : launch(launchInfo), feed(feedInfo)
+Shooter::Shooter(hw_info launchWheel,hw_info launchSensor,hw_info feedInfo) : launch(launchWheel,launchSensor), feed(feedInfo)
 {
     gunner_joystick.addBtn(4,&shotBtnHelper,(void*)this);
     shooting = false;
@@ -12,8 +14,36 @@ Shooter::Shooter(hw_info launchInfo,hw_info feedInfo) : launch(launchInfo), feed
 Shooter::~Shooter() {
 }
 
-void Shooter::getFeederDirection(){
-    return direction_t1;
+// Launcher
+
+void Shooter::setSpeed(float target) {
+    launch.setSpeed(target);
+}
+
+float Shooter::getTargetSpeed() {
+    return launch.getTargetSpeed();
+}
+
+float Shooter::getCurrentSpeed() {
+    return launch.getCurrentSpeed();
+}
+
+bool Shooter::atSpeed() {
+    return launch.atSpeed();
+}
+
+unsigned int Shooter::getFrisbeeCount() {
+    return launch.getFrisbeeCount();
+}
+
+void Shooter::resetFrisbeeCount() {
+    launch.resetFrisbeeCount();
+}
+
+// Feeder
+
+Feeder::direction_t Shooter::getFeederDirection(){
+    return feed.getDirection();
 }
 void Shooter::setFeederForward() {
     feed.forward();
@@ -25,10 +55,12 @@ void Shooter::setFeederStop(){
     feed.stop();
 }
 
+// Global shooter stuff
+
 void Shooter::update() {
     if(shooting)
     {
-        curCount = launch.getFrisbeeCount;
+        curCount = launch.getFrisbeeCount();
         if(startCount < curCount)
         {
             if(launch.atSpeed()) {
@@ -47,9 +79,18 @@ void Shooter::update() {
 }
 // toggle shooting
 void Shooter::shoot() {
-    shooting = !shooting;
-    global_state.set_state(DRIVE);
+    if(shooting) {
+        abort();
+        return;
+    }
+    shooting=true;
     startCount = launch.getFrisbeeCount();
+}
+
+void Shooter::abort() {
+    launch.stop();
+    feed.stop();
+    shooting=false;
 }
 void Shooter::update_helper(void* a) {
     ((Shooter*)a) -> update();
