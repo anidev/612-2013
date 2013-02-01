@@ -1,87 +1,59 @@
-#if 0
 #include "shooter.h"
-#include "shooterAim.h"
 #include "612.h"
-Shooter::Shooter(hw_info launchInfo,hw_info liftInfo,hw_info feedInfo) : launcherWheel(launchInfo), angleAdjuster(liftInfo), feed(feedInfo)
+#include "ports.h"
+
+Shooter::Shooter(hw_info launchInfo,hw_info feedInfo) : launch(launchInfo), feed(feedInfo)
 {
+    gunner_joystick.addBtn(4,&shotBtnHelper,(void*)this);
+    shooting = false;
     updateRegistry.addUpdateFunction(&update_helper, (void*)this);
 }
 
 Shooter::~Shooter() {
 }
 
-void Shooter::update() {
-    switch(currentState)
-    {
-        case VISION_ANALYSIS:
-            doVisionAnalysis();
-            break;
-        case AIMING:
-            doAiming();
-            break;
-        case SHOOTING:
-            doShooting();
-            break;
-    }
+void Shooter::getFeederDirection(){
+    return direction_t1;
 }
-void Shooter::doVisionAnalysis() {
+void Shooter::setFeederForward() {
+    feed.forward();
+}
+void Shooter::setFeederBackward(){
+    feed.backward();
+}
+void Shooter::setFeederStop(){
+    feed.stop();
+}
 
-    //End Lines
-    HorizontalAlignment = false;
-    angleSet = false;
-}
-void Shooter::doAiming() {
-    if(!HorizontalAlignment)
+void Shooter::update() {
+    if(shooting)
     {
-        lineUpHorizontal();
+        curCount = launch.getFrisbeeCount;
+        if(startCount < curCount)
+        {
+            if(launch.atSpeed()) {
+                feed.forward();
+            }
+            else
+            {
+                feed.stop();
+            }
+        }
+        else
+        {
+            shooting = false;
+        }
     }
-    else if(!angleSet)
-    {
-        setAngleOfAttack();
-    }
-    else if(angleAdjuster.atAngle())
-    {
-        currentState = SHOOTING;
-        resetShotCount(); //Final line
-    }
 }
-void Shooter::doShooting() {
-    if(getShotCount() >= 4)
-    {
-        currentState = USER_CONTROLLED;
-        return;
-    }
-    shoot();
-}
-void Shooter::autoShoot() {
-    if(currentState == USER_CONTROLLED)
-        currentState = VISION_ANALYSIS;
-}
-void Shooter::setToUserControlled() {
-    currentState = USER_CONTROLLED;
-}
-void Shooter::resetShotCount() {
-    launcherWheel.resetFrisbeeCount();
-}
-unsigned int Shooter::getShotCount() {
-    return launcherWheel.getFrisbeeCount();
-}
-void Shooter::lineUpHorizontal() {
-    //todo line up to main target
-}
-void Shooter::setAngleOfAttack() {
-    //todo set angle
-}
+// toggle shooting
 void Shooter::shoot() {
-    if(launcherWheel.atSpeed()) {
-        feed.forward();
-    }
-    else
-    {
-        feed.stop();
-    }
+    shooting = !shooting;
+    global_state.set_state(DRIVE);
+    startCount = launch.getFrisbeeCount();
 }
-static void Shooter::update_helper(void* a) {
+void Shooter::update_helper(void* a) {
     ((Shooter*)a) -> update();
 }
-#endif
+void Shooter::shotBtnHelper(void* obj) {
+    ((Shooter*)obj) -> shoot();
+}
