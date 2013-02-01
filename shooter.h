@@ -17,6 +17,7 @@ private:
     static void shotBtnHelper(void*);
     static void update_helper(void*);
 public:
+    void update();
     Shooter(hw_info, hw_info);
     float getCurrentSpeed();
     bool atSpeed();

@@ -28,7 +28,7 @@ void Shooter::setFeederStop(){
 void Shooter::update() {
     if(shooting)
     {
-        curCount = launch.getFrisbeeCount;
+        curCount = launch.getFrisbeeCount();
         if(startCount < curCount)
         {
             if(launch.atSpeed()) {
