@@ -4,12 +4,15 @@
 #include "state.h"
 #include "drivetrain.h"
 #include <cmath>
+#include "lift.h"
 
 bool isLeft;
 bool state_changed = false;
 int Frisbees = 3;
 const int DRIVE_DIST=40;
 const int TURN_ANGLE= -34; // negative is clockwise, positive is counter-clockwise
+const int HIGH_LIFT_ANGLE = 30;
+const int LOW_LIFT_ANGLE = 20;
 enum auto_states {
 	AUTO_DRIVE,
 	AUTO_TURN,
@@ -18,18 +21,22 @@ enum auto_states {
 	DONE
 };
 
-//0 = init drive 
-//1 = drive
-//2 = init turn
-//3 = turn
-//4 = init aim
-//5 = aim
-//6 = init shoot
-//7 = shoot
-
-//note : above not entirely accurate
-
 State state(AUTO_DRIVE);
+Target shoot_tar;
+
+void lift(Target target) {
+    if (state_changed) {
+        if (target == High_Goal) {
+            angleAdjuster.set_angle(HIGH_LIFT_ANGLE); /*other angle*/
+        } else if (target == Middle_Goal) {
+            angleAdjuster.set_angle(LOW_LIFT_ANGLE); /*other angle*/
+        }
+        state_changed = false;
+    } else if (angleAdjuster.at_angle()) {
+        state.set_state(AUTO_DRIVE);
+        state_changed = true;
+    }
+}
 
 void drive(double dist /*keep in mind that dist is in inches*/) {
     if (state_changed) {
@@ -66,19 +73,21 @@ void shoot() {
 }
 
 void choose_routine(Position pos, Target target){
+    shoot_tar = target;
     if ((pos == Back_Left) || (pos == Front_Left)) {
         isLeft = true;
     }
     if ((pos == Back_Left) || (pos == Back_Right)) {
         state.set_state(AUTO_DRIVE);
         Frisbees = 3;
-    } else if ((pos == Front_Left) || (pos == Front_Right)) {		
+    } else if ((pos == Front_Left) || (pos == Front_Right)) {	
     	state.set_state(AUTO_TURN);
     }
     state_changed = true;
 }
-void do_autonomous(){
-		if(state.get_state()==AUTO_DRIVE) {
+void do_autonomous() {
+        lift(shoot_tar);
+        if (state.get_state()==AUTO_DRIVE) {
 			drive(DRIVE_DIST);
 		} else if (state.get_state()==AUTO_TURN){
 			if (isLeft == true){
