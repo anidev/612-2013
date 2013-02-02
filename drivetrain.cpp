@@ -50,19 +50,19 @@ void DriveTrain::ArcadeDrive(GenericHID& joystick) {
 // therefore negative angle=turn right, positive angle=turn left
 // angle in DEGREES
 void DriveTrain::turn(double angle) {
-	std::printf("turning\n");
+    std::printf("turning\n");
     operation=TURNING;
     this->angle=angle;
     double radAngle=torad(angle);
     double dist=radAngle*16;
-    left_dist=dist;
-    right_dist=-dist;
+    left_dist=-dist;
+    right_dist=dist;
     encoders.reset_distance();
     finished=false;
 }
 
 void DriveTrain::drive(double dist) {
-	std::printf("driving\n");
+    std::printf("driving\n");
     operation=DRIVING;
     left_dist=dist;
     right_dist=dist;
@@ -71,7 +71,7 @@ void DriveTrain::drive(double dist) {
 }
 
 void DriveTrain::abort() {
-	std::printf("aborting\n");
+    std::printf("aborting\n");
     operation=MANUAL;
     left_dist=right_dist=0;
     encoders.reset_distance();
@@ -110,7 +110,8 @@ bool DriveTrain::isFinished() {
 
 void DriveTrain::update() {
     static int counter=0;
-	if(operation==MANUAL) {
+    std::printf("operation: %d\n",operation);
+    if(operation==MANUAL) {
         return;
     }
     double cur_left_dist=encoders.get_left_dist();
@@ -127,6 +128,9 @@ void DriveTrain::update() {
     std::printf("left_dir: %f\n",left_dir);
     std::printf("right_dir: %f\n",right_dir);
     if(left_reached&&right_reached) {
+        std::printf("tankdrive stopping\n");
+        encoders.reset_distance();
+        robotDrive->TankDrive(0.0f,0.0f);
         operation=MANUAL;
         finished=true;
         return;
@@ -137,5 +141,7 @@ void DriveTrain::update() {
     if(!right_reached) {
         right_speed=right_dir*speed;
     }
+    std::printf("left_speed: %f\n",left_speed);
+    std::printf("right_speed: %f\n",right_speed);
     robotDrive->TankDrive(left_speed,right_speed);
 }
