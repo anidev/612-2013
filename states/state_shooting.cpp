@@ -6,6 +6,7 @@
 #include "../612.h"
 #include "../drivetrain.h"
 #include "../ports.h"
+#include "../shooter.h"
 
 double new_shooter_wheel_speed; // decrease by 0.1 or 0.2
 bool is_turning;
@@ -34,9 +35,8 @@ void shooting_manual() {
     if (gunner_joystick.GetRawButton(1)) {
         shooter.setSpeed (new_shooter_wheel_speed);
     }
-    else
-    {
-        shooter.wheelStop();
+    else {
+        shooter.abort();
     }
 
     if (gunner_joystick.GetRawButton (5)) {             // slow down shooter wheel

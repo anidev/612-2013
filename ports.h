@@ -9,6 +9,7 @@ class DriveTrain;
 class auto_encoders;
 class shifter;
 class Lift;
+class Shooter;
 
 typedef int canport_t;
 
@@ -23,6 +24,7 @@ extern EnhancedJoystick gunner_joystick;
 extern DriveTrain drive_train;
 extern shifter shift;
 extern Lift angleAdjuster;
+extern Shooter shooter;
 //extern Shooter shooter;
 //LED relay
 static const hw_info led = {2,1}; // practice board
@@ -41,4 +43,8 @@ static const hw_info right_encoder1 = {1, 1}; // suzie
 static const hw_info right_encoder2 = {1, 2}; // suzie
 static const hw_info left_encoder1  = {2, 4}; // suzie
 static const hw_info left_encoder2  = {2, 5}; // suzie
+//Shooter motor
+static const hw_info shooter_wheel  = {1, 9}; //dummy2
+static const hw_info feeder_belt    = {1,10}; //dummy3
+static const hw_info shooter_sensor = {1,11}; //dummy4 SO MANY DUMMIES!!!
 #endif
