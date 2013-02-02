@@ -28,10 +28,8 @@ void lift(Target target) {
     if (state_changed) {
         if (target == High_Goal) {
             angleAdjuster.set_angle(HIGH_LIFT_ANGLE); /*other angle*/
-            angleAdjuster.lift_up();
         } else if (target == Middle_Goal) {
             angleAdjuster.set_angle(LOW_LIFT_ANGLE); /*other angle*/
-            angleAdjuster.lift_up();
         }
         state_changed = false;
     } else if (angleAdjuster.at_angle()) {
