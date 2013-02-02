@@ -1,10 +1,11 @@
 #include "state_climbing.h"
 #include "state_shooting.h"
-#include "lift.h"           // for lift_up () and lift_down ()
-#include "launcher.h"       // for setSpeed () and getCurrentSpeed()
+#include "../lift.h"           // for lift_up () and lift_down ()
+#include "../launcher.h"       // for setSpeed () and getCurrentSpeed()
 #include <Joystick.h>       // for GetRawButton () and GetRawAxis ()
-#include "612.h"
-#include "drivetrain.h"
+#include "../612.h"
+#include "../drivetrain.h"
+#include "../ports.h"
 
 double new_shooter_wheel_speed; // decrease by 0.1 or 0.2
 bool is_turning;
@@ -48,18 +49,18 @@ void shooting_manual() {
     }
 
     if (gunner_joystick.GetRawButton (7)) {             // turn robot left
-        drivetrain.TankDrive(-.2, .2);
+        drive_train.TankDrive(-.2, .2);
         is_turning = true;
     }
     else if (gunner_joystick.GetRawButton (8)) {             // turn robot right
-        drivetrain.TankDrive(.2, -.2);
+        drive_train.TankDrive(.2, -.2);
         is_turning = true;
     }
     else
     {
         if (is_turning) {
             // stop turning
-            drivetrain.TankDrive(0, 0);
+            drive_train.TankDrive(0, 0);
         }
     }
 }
