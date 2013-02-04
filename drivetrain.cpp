@@ -109,8 +109,6 @@ bool DriveTrain::isFinished() {
 }
 
 void DriveTrain::update() {
-    static int counter=0;
-    std::printf("operation: %d\n",operation);
     if(operation==MANUAL) {
         return;
     }
@@ -123,12 +121,7 @@ void DriveTrain::update() {
     float right_speed=0.0f;
     bool left_reached=(std::fabs(cur_left_dist-left_dist)<DriveTrain::DIST_TOLERANCE);
     bool right_reached=(std::fabs(cur_right_dist-right_dist)<DriveTrain::DIST_TOLERANCE);
-    std::printf("cur_left_dist: %f\n",cur_left_dist);
-    std::printf("cur_right_dist: %f\n",cur_right_dist);
-    std::printf("left_dir: %f\n",left_dir);
-    std::printf("right_dir: %f\n",right_dir);
     if(left_reached&&right_reached) {
-        std::printf("tankdrive stopping\n");
         encoders.reset_distance();
         robotDrive->TankDrive(0.0f,0.0f);
         operation=MANUAL;
@@ -141,7 +134,5 @@ void DriveTrain::update() {
     if(!right_reached) {
         right_speed=right_dir*speed;
     }
-    std::printf("left_speed: %f\n",left_speed);
-    std::printf("right_speed: %f\n",right_speed);
     robotDrive->TankDrive(left_speed,right_speed);
 }
