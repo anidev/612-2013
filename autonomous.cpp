@@ -12,7 +12,7 @@ int Frisbees = 3;
 const int DRIVE_DIST=40;
 const int TURN_ANGLE= -34; // negative is clockwise, positive is counter-clockwise
 const int HIGH_LIFT_ANGLE = 30;
-const int LOW_LIFT_ANGLE = 20;
+const int LOW_LIFT_ANGLE = 26;
 enum auto_states {
 	AUTO_DRIVE,
 	AUTO_TURN,
