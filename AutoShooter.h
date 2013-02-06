@@ -2,7 +2,7 @@
 #define AUTOSHOOTER_H
 
 #include <vector>
-#include <vision.h>
+#include "vision/vision.h"
 #include "shooter.h"
 
 class AutoShooter {
@@ -12,7 +12,7 @@ private:
         VISION,
         HORIZONTAL,
         ANGLE_SETTING,
-        SHOOTING
+        SHOOTING,
         DONE
     } cur_state;
     void doAngleSetting();
