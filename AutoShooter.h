@@ -1,3 +1,4 @@
+#if 0
 #ifndef AUTOSHOOTER_H
 #define AUTOSHOOTER_H
 
@@ -27,6 +28,7 @@ public:
     void StopAutoShoot();
     bool doneShooting();
 };
+#endif
 #endif
 /*        Assumes
  * 1. vision.h has target class

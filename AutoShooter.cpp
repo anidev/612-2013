@@ -1,3 +1,4 @@
+#if 0
 #include "AutoShooter.h"
 #include "shooter.h"
 #include "612.h"
@@ -51,3 +52,4 @@ bool AutoShooter::doneShooting() {
         return true;
     return false;
 }
+#endif
