@@ -5,6 +5,7 @@
 
 AutoShooter::AutoShooter(Shooter* s) {
     updateRegistry.addUpdateFunction(&update_helper, (void*)this);
+    //Add Abort Btn Here
     cur_state = OFF;
     shooter = s;
 }
@@ -32,9 +33,28 @@ void AutoShooter::update() {
             doAngleSetting();
         break;
         case SHOOTING:
+            doShooting();
         break;
         case DONE:
         break
+    }
+}
+
+void AutoShooter::doVision(){
+    
+}
+void AutoShooter::doHorizontalAlign() {
+    
+}
+void AutoShooter::doAngleSetting() {
+    
+}
+void AutoShooter::doShooting() {
+    if((shooter -> getFrisbeeCount())>=4)
+        cur_state = DONE;
+    else
+    {
+        shooter -> shoot();
     }
 }
 void AutoShooter::update_helper(void* obj) {
@@ -51,5 +71,12 @@ bool AutoShooter::doneShooting() {
     if(cur_state == DONE)
         return true;
     return false;
+}
+void AutoShooter::abort_helper(void* o) {
+    ((AutoShooter*)(o)) -> abort();
+}
+void AutoShooter::abort() {
+    shooter -> abort();
+    cur_state = OFF;
 }
 #endif

@@ -16,17 +16,22 @@ private:
         SHOOTING
         DONE
     } cur_state;
+    void doVision();
+    void doHorizontalAlign();
     void doAngleSetting();
+    void doShooting();
     Shooter* shooter;
     bool isAimed();
     void update();
     static void update_helper(void*);
+    static void abort_helper(void*);
 public:
     AutoShooter(Shooter*);
     ~AutoShooter();
     void AutoShoot();
     void StopAutoShoot();
     bool doneShooting();
+    void abort();
 };
 #endif
 #endif
