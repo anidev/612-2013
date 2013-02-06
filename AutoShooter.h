@@ -1,4 +1,4 @@
-
+//amusement
 #ifndef AUTOSHOOTER_H
 #define AUTOSHOOTER_H
 
@@ -36,3 +36,4 @@ public:
  * 4. vision class has ShooterAim as friend
  * 5. target has getPriority();
  */
+
