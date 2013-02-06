@@ -1,11 +1,9 @@
-#if 0
 #include "AutoShooter.h"
 #include "shooter.h"
 #include "612.h"
 
 AutoShooter::AutoShooter(Shooter* s) {
     updateRegistry.addUpdateFunction(&update_helper, (void*)this);
-    
     cur_state = OFF;
     shooter = s;
 }
@@ -53,4 +51,3 @@ bool AutoShooter::doneShooting() {
         return true;
     return false;
 }
-#endif
