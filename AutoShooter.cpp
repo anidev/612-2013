@@ -8,6 +8,7 @@ AutoShooter::AutoShooter(Shooter* s) {
     cur_state = OFF;
     shooter = s;
     targetShotCount = 0;
+    shooter -> resetFrisbeeCount();
 }
 AutoShooter::~AutoShooter() {
     delete shooter;
@@ -65,6 +66,7 @@ void AutoShooter::update_helper(void* obj) {
 void AutoShooter::AutoShoot(int target = MAX_FRISBEE_COUNT) {
     if(cur_state == OFF)
     {
+        shooter -> resetFrisbeeCount();
         cur_state = VISION;
         targetShotCount = target;
     }
