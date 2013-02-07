@@ -1,11 +1,11 @@
 #include "Networkcom.h"
 
 NetworkCom::NetworkCom() {
-	NetworkTable* table=NetworkTable::GetTable("612");
-	if(table!=NULL) {
-		Tracking = table->GetSubTable("Tracking");
-		Gunner = table->GetSubTable("Gunner");
-		Autonomous = table->GetSubTable("Autonomous");
+	Main=NetworkTable::GetTable("612");
+	if(Main!=NULL) {
+		Tracking = Main->GetSubTable("Tracking");
+		Gunner = Main->GetSubTable("Gunner");
+		Autonomous = Main->GetSubTable("Autonomous");
 	}
 }
 

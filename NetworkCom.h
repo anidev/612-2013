@@ -1,14 +1,17 @@
 #ifndef NETWORKCOM_H_INCLUDED
 #define NETWORKCOM_H_INCLUDED
 
-#include <NetworkTable.h>
+#include <networktables/NetworkTable.h>
 
 class NetworkCom {
-protected:
-	NetworkCom();
-	~NetworkCom();
-}
+public:
+    NetworkCom();
+    ~NetworkCom();
 private:
-    float Tracking, Gunner, Autonomous;
+    NetworkTable* Main;
+    NetworkTable* Tracking;
+    NetworkTable* Gunner;
+    NetworkTable* Autonomous;
+};
 
 #endif // NETWORKCOM_H_INCLUDED
