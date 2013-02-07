@@ -23,24 +23,26 @@ void AutoShooter::update() {
     switch(cur_state)
     {
         case OFF:
-        break;
+            break;
         case VISION:
-        break;
+            break;
         case HORIZONTAL:
-        break;
+            break;
         case ANGLE_SETTING:
-        if(isAimed())
-        {
-            cur_state = SHOOTING;
-        }
-        else
-            doAngleSetting();
-        break;
+            if(isAimed())
+            {
+                cur_state = SHOOTING;
+            }
+            else
+            {
+                doAngleSetting();
+            }
+            break;
         case SHOOTING:
             doShooting();
-        break;
+            break;
         case DONE:
-        break;
+            break;
     }
 }
 
