@@ -19,3 +19,4 @@ Programming Team
 - jbramnick (Jim) <jbramnick412@gmail.com>
 - AlexMaxseiner(Alex) <flyamonkey2mars@gmail.com>
 - AlonBendelac (Alon) <alon.bendelac@gmail.com>
+- TajGeddis  (Taj)  <bionicleman@mac.com>
