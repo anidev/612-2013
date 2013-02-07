@@ -12,7 +12,7 @@ int Frisbees = 3;
 const int DRIVE_DIST=40;
 const int TURN_ANGLE= -34; // negative is clockwise, positive is counter-clockwise
 const int HIGH_LIFT_ANGLE = 30;
-const int LOW_LIFT_ANGLE = 20;
+const int LOW_LIFT_ANGLE = 26;
 enum auto_states {
 	AUTO_DRIVE,
 	AUTO_TURN,
@@ -77,6 +77,11 @@ void choose_routine(Position pos, Target target){
     if ((pos == Back_Left) || (pos == Front_Left)) {
         isLeft = true;
     }
+    else
+    {
+        isLeft = false;
+    }
+    std::printf("is left: %d\n",isLeft);
     if ((pos == Back_Left) || (pos == Back_Right)) {
         state.set_state(AUTO_DRIVE);
         Frisbees = 3;
@@ -86,21 +91,21 @@ void choose_routine(Position pos, Target target){
     state_changed = true;
 }
 void do_autonomous() {
-        lift(shoot_tar);
-        if (state.get_state()==AUTO_DRIVE) {
-			drive(DRIVE_DIST);
-		} else if (state.get_state()==AUTO_TURN){
-			if (isLeft == true){
-				turn(TURN_ANGLE);
-			} else {
-				turn(abs(TURN_ANGLE));	
-			}
-		} else if (state.get_state()==DONE) {
-			//Wait(0.015);
-		}/* else if (state.get_state()==AUTO_AIM){
-			aim(); 
-		} else if (state.get_state()==AUTO_SHOOT) {
-			shoot();
-		}*/	
+//    lift(shoot_tar);
+    if (state.get_state()==AUTO_DRIVE) {
+        drive(DRIVE_DIST);
+    } else if (state.get_state()==AUTO_TURN){
+        if (isLeft == true){
+            turn(TURN_ANGLE);
+        } else {
+            turn(-TURN_ANGLE);
+        }
+    } else if (state.get_state()==DONE) {
+        //Wait(0.015);
+    }/* else if (state.get_state()==AUTO_AIM){
+        aim();
+    } else if (state.get_state()==AUTO_SHOOT) {
+        shoot();
+    }*/
 }
 /* THIS CODE BELONGS TO ZACK, PRESUME IT DOESN'T WORK*/ /*oh ya and adrian and swaraj*/

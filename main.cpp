@@ -1,10 +1,6 @@
 #include <string>
 #include <cmath>
 #include <networktables/NetworkTable.h>
-#include <networktables/NetworkTableMode.h>
-#include <networktables2/NetworkTableNode.h>
-#include <networktables/NetworkTableProvider.h>
-#include <networktables2/thread/DefaultThreadManager.h>
 #include "state.h"
 #include "states/state_driving.h"
 #include "states/state_shooting.h"
@@ -21,10 +17,7 @@ robot_class::robot_class() {
 
 void robot_class::RobotInit() {
     std::printf("RobotInit");
-//    DefaultThreadManager threadManager;
-//    NetworkTableNode* node=NetworkTableMode::Client.CreateNode("10.6.12.1",NetworkTable::DEFAULT_PORT,threadManager);
-//    NetworkTableProvider provider(&node);
-//    main_table=NetworkTable::GetTable("datatable");
+    main_table=NetworkTable::GetTable("612");
 }
 
 void robot_class::DisabledInit() {
@@ -33,7 +26,36 @@ void robot_class::DisabledInit() {
 
 void robot_class::AutonomousInit() {
     std::printf("AutonomousInit");
-    choose_routine(Back_Left, High_Goal);
+    // 0 = Front Right
+    // 1 = Back Left
+    // 2 = Front Left
+    // 3 = Back Right
+    Position auto_pos=Back_Left;
+    if(main_table!=NULL) {
+        NetworkTable* auto_table=main_table->GetSubTable("Autonomous");
+        if(auto_table!=NULL) {
+            int positionVal=(int)auto_table->GetNumber("Position");
+            switch(positionVal) {
+            case 0:
+                auto_pos=Front_Right;
+                std::printf("Selected autonomous: FRONT RIGHT\n");
+                break;
+            case 1:
+                auto_pos=Back_Left;
+                std::printf("Selected autonomous: BACK LEFT\n");
+                break;
+            case 2:
+                auto_pos=Front_Left;
+                std::printf("Selected autonomous: FRONT LEFT\n");
+                break;
+            case 3:
+                auto_pos=Back_Right;
+                std::printf("Selected autonomous: BACK RIGHT\n");
+                break;
+            }
+        }
+    }
+    choose_routine(auto_pos, High_Goal);
 }
 
 void robot_class::TeleopInit() {

@@ -4,7 +4,7 @@
 #include "feeder.h"
 #include "ports.h"
 #include "launcher.h"
-#include "updateregistry.h"
+#include "updateRegistry.h"
 #include "612.h"
 
 class Shooter {
