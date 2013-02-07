@@ -5,8 +5,10 @@
 
 class NetworkCom {
 protected:
-	NetworkTCom();
+	NetworkCom();
 	~NetworkCom();
 }
+private:
+    float Tracking, Gunner, Autonomous;
 
 #endif // NETWORKCOM_H_INCLUDED

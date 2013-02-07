@@ -3,9 +3,9 @@
 NetworkCom::NetworkCom() {
 	NetworkTable* table=NetworkTable::GetTable("612");
 	if(table!=NULL) {
-		table->GetSubTable("Tracking");
-		table->GetSubTable("Gunner");
-		table->GetSubTable("Autonomous");
+		Tracking = table->GetSubTable("Tracking");
+		Gunner = table->GetSubTable("Gunner");
+		Autonomous = table->GetSubTable("Autonomous");
 	}
 }
 
