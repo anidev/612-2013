@@ -1,6 +1,6 @@
 #include "autonomous.h"
 #include "ports.h"
-#include "shooterAim.h"
+#include "AutoShooter.h"
 #include "state.h"
 #include "drivetrain.h"
 #include <cmath>
@@ -22,9 +22,9 @@ enum auto_states {
 };
 
 State state(AUTO_DRIVE);
-Target shoot_tar;
+AutoTarget shoot_tar;
 
-void lift(Target target) {
+void lift(AutoTarget target) {
     if (state_changed) {
         if (target == High_Goal) {
             angleAdjuster.set_angle(HIGH_LIFT_ANGLE); /*other angle*/
@@ -72,7 +72,7 @@ void shoot() {
     state.set_state(DONE);
 }
 
-void choose_routine(Position pos, Target target){
+void choose_routine(Position pos, AutoTarget target){
     shoot_tar = target;
     if ((pos == Back_Left) || (pos == Front_Left)) {
         isLeft = true;
