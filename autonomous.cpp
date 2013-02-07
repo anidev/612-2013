@@ -1,6 +1,5 @@
 #include "autonomous.h"
 #include "ports.h"
-#include "shooterAim.h"
 #include "state.h"
 #include "drivetrain.h"
 #include <cmath>
