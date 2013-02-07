@@ -2,7 +2,7 @@
 #define AUTOSHOOTER_H
 
 #include <vector>
-#include <vision.h>
+#include "vision/vision.h"
 #include "shooter.h"
 
 class AutoShooter {
@@ -12,20 +12,27 @@ private:
         VISION,
         HORIZONTAL,
         ANGLE_SETTING,
-        SHOOTING
+        SHOOTING,
         DONE
     } cur_state;
+    unsigned int targetShotCount;
+    void doVision();
+    void doHorizontalAlign();
     void doAngleSetting();
+    void doShooting();
     Shooter* shooter;
     bool isAimed();
     void update();
     static void update_helper(void*);
+    static void toggle_helper(void*);
 public:
+    static const unsigned int MAX_FRISBEE_COUNT = 4;
     AutoShooter(Shooter*);
     ~AutoShooter();
-    void AutoShoot();
+    void AutoShoot(int);
     void StopAutoShoot();
     bool doneShooting();
+    void abort();
 };
 #endif
 /*        Assumes
