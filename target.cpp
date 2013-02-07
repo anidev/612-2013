@@ -1,5 +1,15 @@
 #include "target.h"
 
+
+enum type {
+    UNKNOWN,
+    TOPGOAL,
+    MIDDLELEFTGOAL,
+    MIDDLERIGHTGOAL,
+    BOTTOMGOAL,
+    PYRAMIDGOAL
+};
+
 int Target::getPriority()
 {
     return priority;

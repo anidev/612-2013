@@ -1,10 +1,10 @@
 #include "autonomous.h"
 #include "ports.h"
-#include "shooterAim.h"
+#include "AutoShooter.h"
 #include "state.h"
 #include "drivetrain.h"
-#include <cmath>
 #include "lift.h"
+#include "shooter.h"
 
 bool isLeft;
 bool state_changed = false;
@@ -22,9 +22,9 @@ enum auto_states {
 };
 
 State state(AUTO_DRIVE);
-Target shoot_tar;
+AutoTarget shoot_tar;
 
-void lift(Target target) {
+void lift(AutoTarget target) {
     if (state_changed) {
         if (target == High_Goal) {
             angleAdjuster.set_angle(HIGH_LIFT_ANGLE); /*other angle*/
@@ -69,10 +69,18 @@ void aim() {
 
 void shoot() {
     std::printf("shooting");
+    shooter.shoot();
     state.set_state(DONE);
 }
-
-void choose_routine(Position pos, Target target){
+/*
+void shoot(int a = Frisbees) {
+    if (doneShooting==false) {
+        AutoShooter.AutoShoot(a);
+    }    
+    else {state.set_state(DONE)}; //UNCOMMENT AND IMPLEMENT ONCE AUTOSHOOT IS FINISHED
+}
+*/
+void choose_routine(Position pos, AutoTarget target){
     shoot_tar = target;
     if ((pos == Back_Left) || (pos == Front_Left)) {
         isLeft = true;
@@ -88,24 +96,30 @@ void choose_routine(Position pos, Target target){
     } else if ((pos == Front_Left) || (pos == Front_Right)) {	
     	state.set_state(AUTO_TURN);
     }
+    if (target==Middle_Goal) {    
+        state.set_state(AUTO_SHOOT);
+        if ((pos == Back_Left) || (pos == Back_Right)){
+            Frisbees = 4;
+        }
+    }  
     state_changed = true;
 }
 void do_autonomous() {
-//    lift(shoot_tar);
+    lift(shoot_tar);
     if (state.get_state()==AUTO_DRIVE) {
         drive(DRIVE_DIST);
     } else if (state.get_state()==AUTO_TURN){
         if (isLeft == true){
             turn(TURN_ANGLE);
         } else {
-            turn(-TURN_ANGLE);
+            turn(TURN_ANGLE * -1);
         }
+    } else if (state.get_state()==AUTO_SHOOT) {			
+        shoot();			
     } else if (state.get_state()==DONE) {
-        //Wait(0.015);
-    }/* else if (state.get_state()==AUTO_AIM){
-        aim();
-    } else if (state.get_state()==AUTO_SHOOT) {
-        shoot();
-    }*/
+    std:: printf("Autonomous is finished");
+    }
 }
 /* THIS CODE BELONGS TO ZACK, PRESUME IT DOESN'T WORK*/ /*oh ya and adrian and swaraj*/
+
+/*HIDE YO KIDS, HIDE YO WIFE AND HIDE YO HUSBAND CUZ THEY RAPIN ERRYBUDDY UP DER*/

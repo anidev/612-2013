@@ -1,8 +1,9 @@
+//amusement
 #ifndef AUTOSHOOTER_H
 #define AUTOSHOOTER_H
 
 #include <vector>
-#include <vision.h>
+#include "vision/vision.h"
 #include "shooter.h"
 
 class AutoShooter {
@@ -12,7 +13,7 @@ private:
         VISION,
         HORIZONTAL,
         ANGLE_SETTING,
-        SHOOTING
+        SHOOTING,
         DONE
     } cur_state;
     void doAngleSetting();
@@ -35,3 +36,4 @@ public:
  * 4. vision class has ShooterAim as friend
  * 5. target has getPriority();
  */
+

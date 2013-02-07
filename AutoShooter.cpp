@@ -1,3 +1,4 @@
+//amusement
 #include "AutoShooter.h"
 #include "shooter.h"
 #include "612.h"
@@ -12,6 +13,7 @@ AutoShooter::~AutoShooter() {
 }
 bool AutoShooter::isAimed() {
     // check with vision if we are done
+    return true;
 }
 void AutoShooter::update() {
     switch(cur_state)
@@ -33,7 +35,7 @@ void AutoShooter::update() {
         case SHOOTING:
         break;
         case DONE:
-        break
+        break;
     }
 }
 void AutoShooter::update_helper(void* obj) {
