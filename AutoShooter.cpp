@@ -1,4 +1,3 @@
-#if 0
 #include "AutoShooter.h"
 #include "shooter.h"
 #include "612.h"
@@ -8,12 +7,15 @@ AutoShooter::AutoShooter(Shooter* s) {
     //Add Abort Btn Here
     cur_state = OFF;
     shooter = s;
+    targetShotCount = 0;
 }
 AutoShooter::~AutoShooter() {
     delete shooter;
 }
 bool AutoShooter::isAimed() {
     // check with vision if we are done
+    //Todo Finish This
+    return true;
 }
 void AutoShooter::update() {
     switch(cur_state)
@@ -36,7 +38,7 @@ void AutoShooter::update() {
             doShooting();
         break;
         case DONE:
-        break
+        break;
     }
 }
 
@@ -50,7 +52,7 @@ void AutoShooter::doAngleSetting() {
     
 }
 void AutoShooter::doShooting() {
-    if((shooter -> getFrisbeeCount())>=4)
+    if((shooter -> getFrisbeeCount())>=targetShotCount)
         cur_state = DONE;
     else
     {
@@ -60,9 +62,12 @@ void AutoShooter::doShooting() {
 void AutoShooter::update_helper(void* obj) {
     ((AutoShooter*)(obj)) -> update();
 }
-void AutoShooter::AutoShoot() {
+void AutoShooter::AutoShoot(int target = MAX_FRISBEE_COUNT) {
     if(cur_state == OFF)
+    {
         cur_state = VISION;
+        targetShotCount = target;
+    }
 }
 void AutoShooter::StopAutoShoot() {
     cur_state = OFF;
@@ -72,11 +77,17 @@ bool AutoShooter::doneShooting() {
         return true;
     return false;
 }
-void AutoShooter::abort_helper(void* o) {
-    ((AutoShooter*)(o)) -> abort();
+void AutoShooter::toggle_helper(void* o) {
+    if(((AutoShooter*)o) -> cur_state == OFF)
+    {
+        ((AutoShooter*)(o)) -> AutoShoot();
+    }
+    else
+    {
+        ((AutoShooter*)(o)) -> abort();
+    }
 }
 void AutoShooter::abort() {
     shooter -> abort();
     cur_state = OFF;
 }
-#endif
