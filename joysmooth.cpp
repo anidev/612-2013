@@ -42,5 +42,15 @@ bool joysmooth::GetRawButton (UINT32 button) {
 }
 bool joysmooth::GetButton(UINT32 btn) {
     //Todo filter Btn Inputs
-    return GetRawButton(btn);
+    int true_filter = 0;
+    for (int i = 0; i < 3; i++ ){
+        if (real_joy.GetRawButton(btn)){
+            true_filter++;
+        }
+    }
+    if (true_filter == 3){
+        return true;
+    }
+    return false;
+    // return GetRawButton(btn);
 }
