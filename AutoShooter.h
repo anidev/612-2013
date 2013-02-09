@@ -7,20 +7,22 @@
 #include "shooter.h"
 #include "realityEngine.h"
 
+const float ANGLE_TOLERANCE = 3; //Deg
+const float LIFT_TOLERANCE = 0.1; //Deg
 class AutoShooter {
 private:
     enum states {
         OFF,
         VISION,
-        HORIZONTAL,
-        ANGLE_SETTING,
+        SETTING,
+        WAITING,
         SHOOTING,
         DONE
     } cur_state;
     unsigned int targetShotCount;
-    void doVision();
-    void doHorizontalAlign();
-    void doAngleSetting();
+    RealityData currentTarget;
+    void setCurrentTarget();
+    void doSetting();
     void doShooting();
     Shooter* shooter;
     bool isAimed();
