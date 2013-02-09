@@ -20,6 +20,10 @@ private:
     NetworkTable* Tracking;
     NetworkTable* Gunner;
     NetworkTable* Autonomous;
+
+    bool last_target_available;
+    double last_target_x, last_target_y, last_target_width, last_target_height, last_launcher_target_speed, last_launcher_current_speed;
+    float last_lift_angle;
 };
 
 #endif // NETWORKCOM_H_INCLUDED
