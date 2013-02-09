@@ -66,7 +66,7 @@ void shoot() {
     if (state_changed) {
         shooter.shoot();
         state_changed = false;
-    } else if (!shooter.isShooting) {
+    } else if (!shooter.isShooting()) {
         state.set_state(DONE);
         state_changed = true;
     }
