@@ -22,6 +22,7 @@ enum auto_states {
 
 State state(AUTO_DRIVE);
 AutoTarget shoot_tar;
+AutoShooter auto_shooter(&shooter);
 
 void lift(AutoTarget target) {
     if (state_changed) {
@@ -64,9 +65,9 @@ void turn(double angle) {
 void shoot() {
     std::printf("shooting");
     if (state_changed) {
-        shooter.shoot();
+        auto_shooter.AutoShoot();
         state_changed = false;
-    } else if (!shooter.isShooting()) {
+    } else if (auto_shooter.doneShooting()) {
         state.set_state(DONE);
         state_changed = true;
     }
@@ -115,7 +116,7 @@ void do_autonomous() {
             turn(-TURN_ANGLE);
         }
     } else if (state.get_state()==AUTO_SHOOT) {			
-        shoot();			
+        shoot();		
     } else if (state.get_state()==DONE) {
         std:: printf("Autonomous is finished");
     }
