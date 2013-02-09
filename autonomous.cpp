@@ -16,7 +16,6 @@ const int LOW_LIFT_ANGLE = 26;
 enum auto_states {
 	AUTO_DRIVE,
 	AUTO_TURN,
-	AUTO_AIM,
 	AUTO_SHOOT,
 	DONE
 };
@@ -57,20 +56,21 @@ void turn(double angle) {
     }
     else if (drive_train.isFinished()) {
         //disable the drive train
-        state.set_state(DONE);
+        state.set_state(AUTO_SHOOT);
         state_changed = true;
     }
 }
 
-void aim() {
-    std::printf("aiming");
-    state.set_state(AUTO_SHOOT);
-}
-
 void shoot() {
     std::printf("shooting");
-    shooter.shoot();
-    state.set_state(DONE);
+    if (state_changed) {
+        shooter.shoot();
+        state_changed = false;
+    } else if (!shooter.isShooting) {
+        state.set_state(DONE);
+        state_changed = true;
+    }
+    
 }
 /*
 void shoot(int a = Frisbees) {

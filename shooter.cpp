@@ -11,7 +11,7 @@ Shooter::Shooter(hw_info launchWheel,hw_info launchSensor,hw_info feedInfo) : la
     updateRegistry.addUpdateFunction(&update_helper, (void*)this);
 }
 
-Shooter::~Shooter() {
+Shooter::~Shooter() {s
 }
 
 // Launcher
@@ -97,4 +97,8 @@ void Shooter::update_helper(void* a) {
 }
 void Shooter::shotBtnHelper(void* obj) {
     ((Shooter*)obj) -> shoot();
+}
+
+bool Shooter:isShooting(){
+    return shooting;
 }

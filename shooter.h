@@ -35,6 +35,7 @@ public:
     void update();
     void shoot();
     void abort();
+    bool isShooting();
 };
 
 #endif
