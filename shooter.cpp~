@@ -60,21 +60,17 @@ void Shooter::update() {
     if(shooting)
     {
         if(launch.atSpeed()) {
-            feed.forward();
-            feedTimer.Start();
-            if(feedTimer.Get()>FEEDER_TIMEOUT) {
-                // feeder moving but launcher hasn't slowed down for a while
-                // meaning no more frisbees
-                feedTimer.Stop();
+                feed.forward();
+            }
+            else
+            {
                 feed.stop();
-                shooting=false;
             }
         }
         else
         {
-            feed.stop();
+            shooting = false;
         }
-        
     }
 }
 void Shooter::shoot(double launchSpeed=0.9) {
@@ -96,12 +92,5 @@ bool Shooter::isShooting() {
 }
 void Shooter::update_helper(void* a) {
     ((Shooter*)a) -> update();
-}
-void Shooter::shotBtnHelper(void* obj) {
-    ((Shooter*)obj) -> shoot();
-}
-
-bool Shooter::isShooting(){
-    return shooting;
 }
 

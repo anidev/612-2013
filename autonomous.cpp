@@ -112,12 +112,12 @@ void do_autonomous() {
         if (isLeft == true){
             turn(TURN_ANGLE);
         } else {
-            turn(TURN_ANGLE * -1);
+            turn(-TURN_ANGLE);
         }
     } else if (state.get_state()==AUTO_SHOOT) {			
         shoot();			
     } else if (state.get_state()==DONE) {
-    std:: printf("Autonomous is finished");
+        std:: printf("Autonomous is finished");
     }
 }
 /* THIS CODE BELONGS TO ZACK, PRESUME IT DOESN'T WORK*/ /*oh ya and adrian and swaraj*/
