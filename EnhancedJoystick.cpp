@@ -9,12 +9,12 @@ void EnhancedJoystick::addBtn(UINT32 btn,funcName help,obj o) {
 void EnhancedJoystick::updateEJ() {
     for(unsigned int x = 0; x < btnNumbers.size(); x++)
     {
-        if(GetButton(btnNumbers.at(x)) && previousState.at(x) == false)
+        if(GetRawButton(btnNumbers.at(x)) && previousState.at(x) == false)
         {
             callFunct(x);
             previousState.at(x) = true;
         }
-        else if(GetButton(btnNumbers.at(x)) == false)
+        else if(GetRawButton(btnNumbers.at(x)) == false)
             previousState.at(x) = false;
     }
 }
