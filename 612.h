@@ -13,5 +13,5 @@ enum teleop_state {
 };
 
 static const double M_PI=3.14159256359;
-
+float fabs(float);
 #endif // _612_H
