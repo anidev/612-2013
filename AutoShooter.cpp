@@ -5,7 +5,7 @@
 
 AutoShooter::AutoShooter(Shooter* s) {
     updateRegistry.addUpdateFunction(&update_helper, (void*)this);
-    //Add Abort Btn Here
+    gunner_joystick.addBtn(4,&shotBtnHelper,(void*)this);
     cur_state = OFF;
     shooter = s;
     targetShotCount = 0;
@@ -95,4 +95,14 @@ void AutoShooter::toggle_helper(void* o) {
 void AutoShooter::abort() {
     shooter -> abort();
     cur_state = OFF;
+}
+void AutoShooter::shotBtnHelper(void* obj) {
+    AutoShooter* autoShoot=(AutoShooter*)obj;
+    if(obj->doneShooting()) {
+        autoShoot->AutoShoot();
+    }
+    else
+    {
+        autoShoot->StopAutoShoot();
+    }
 }
