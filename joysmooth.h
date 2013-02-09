@@ -6,7 +6,7 @@
 
 class joysmooth : public Joystick {
 private:
-    const static int NUMBUTTONS = 11;
+    const static int NUMBUTTONS = 12;
     const static int WAIT_TIME = 3; //total amount of checks
     std::bitset<WAIT_TIME> buttons[NUMBUTTONS];
     static void updateHelper(void*);
