@@ -2,6 +2,9 @@
 #include "AutoShooter.h"
 #include "shooter.h"
 #include "612.h"
+#include "ports.h"
+#include "lift.h"
+#include "driveTrain.h"
 
 AutoShooter::AutoShooter(Shooter* s) {
     updateRegistry.addUpdateFunction(&update_helper, (void*)this);
@@ -15,8 +18,15 @@ AutoShooter::~AutoShooter() {
     delete shooter;
 }
 bool AutoShooter::isAimed() {
-    // check with vision if we are done
-    //Todo Finish This
+    setCurrentTarget();
+    if(currentTarget.angleOffset > ANGLE_TOLERANCE) 
+    {
+        return false;
+    }
+    if((fabs(currentTarget.liftAngle - angleAdjuster.get_target_angle()) > LIFT_TOLERANCE) || !angleAdjuster.at_angle())
+    {
+        return false;
+    }
     return true;
 }
 void AutoShooter::update() {
@@ -25,18 +35,21 @@ void AutoShooter::update() {
         case OFF:
             break;
         case VISION:
+            setCurrentTarget();
+            cur_state = SETTING;
             break;
-        case HORIZONTAL:
+        case SETTING:
+            doSetting();
+            cur_state = WAITING;
             break;
-        case ANGLE_SETTING:
-            if(isAimed())
+        case WAITING:
+            if(angleAdjuster.at_angle() && drive_train.isFinished())
             {
-                cur_state = SHOOTING;
-            }
-            else
-            {
-                doAngleSetting();
-            }
+                if(isAimed())
+                {
+                    cur_state = SHOOTING;
+                }
+            }   
             break;
         case SHOOTING:
             doShooting();
@@ -45,18 +58,25 @@ void AutoShooter::update() {
             break;
     }
 }
-
-void AutoShooter::doVision(){
-    
+void AutoShooter::setCurrentTarget(){
+    currentTarget = getReality(angleAdjuster.get_current_angle());
 }
-void AutoShooter::doHorizontalAlign() {
-    
-}
-void AutoShooter::doAngleSetting() {
-    
+void AutoShooter::doSetting(){
+    angleAdjuster.set_angle(currentTarget.liftAngle);
+    switch (currentTarget.direction) {
+        case LEFT:
+            drive_train.turn(currentTarget.angleOffset);
+            break;
+        case RIGHT:
+            drive_train.turn((-1.0 * currentTarget.angleOffset));
+            break;
+        case DONT_TURN:
+            drive_train.turn(0);
+            break;
+    };
 }
 void AutoShooter::doShooting() {
-    if((shooter -> getFrisbeeCount())>=targetShotCount)
+    if((shooter -> getFrisbeeCount()) >= targetShotCount)
         cur_state = DONE;
     else
     {
