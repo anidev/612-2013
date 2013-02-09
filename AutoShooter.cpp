@@ -5,7 +5,7 @@
 
 AutoShooter::AutoShooter(Shooter* s) {
     updateRegistry.addUpdateFunction(&update_helper, (void*)this);
-    gunner_joystick.addBtn(4,&shotBtnHelper,(void*)this);1
+    gunner_joystick.addBtn(4,&shotBtnHelper,(void*)this);
     cur_state = OFF;
     shooter = s;
     targetShotCount = 0;
