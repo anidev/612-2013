@@ -11,7 +11,7 @@ joysmooth::~joysmooth () {
 }
 
 void joysmooth::update(){
-    for (int f = 1; f <= NUMBUTTONS; f++){
+    for (int f = 0; f < NUMBUTTONS; f++){
         for (int s = 1; s < WAIT_TIME; s++){
             buttons[f][s - 1] = buttons [f][s];
         }
@@ -20,7 +20,7 @@ void joysmooth::update(){
 }
 bool joysmooth::GetRawButton(UINT32 btn) {
    for (int i = 0; i < WAIT_TIME; i++){
-       if (!buttons[btn][i]){
+       if (!buttons[btn - 1][i]){
            return false;
        }
    }
