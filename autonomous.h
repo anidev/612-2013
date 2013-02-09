@@ -4,7 +4,6 @@
 #include "auto_encoders.h"
 #include "drivetrain.h"
 #include <Encoder.h>
-#include "ports.h"
 
 enum Position {Back_Left, Back_Right, Front_Left, Front_Right}; 
 enum AutoTarget {Middle_Goal, High_Goal};
