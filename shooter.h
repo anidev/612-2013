@@ -17,6 +17,7 @@ private:
     static void shotBtnHelper(void*);
     static void update_helper(void*);
     static const double FEEDER_TIMEOUT=2.0;
+    static const double DEFAULT_LAUNCH_SPEED=0.9;
 public:
     Shooter(hw_info, hw_info, hw_info);
     ~Shooter();
@@ -34,7 +35,7 @@ public:
     Feeder::direction_t getFeederDirection();
     // Global shooter stuff
     void update();
-    void shoot(double);
+    void shoot(double launchSpeed = DEFAULT_LAUNCH_SPEED);
     void abort();
     bool isShooting();
 };

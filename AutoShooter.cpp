@@ -5,7 +5,7 @@
 
 AutoShooter::AutoShooter(Shooter* s) {
     updateRegistry.addUpdateFunction(&update_helper, (void*)this);
-    gunner_joystick.addBtn(4,&shotBtnHelper,(void*)this);
+    gunner_joystick.addBtn(4,&toggle_helper,(void*)this);
     cur_state = OFF;
     shooter = s;
     targetShotCount = 0;
@@ -66,7 +66,7 @@ void AutoShooter::doShooting() {
 void AutoShooter::update_helper(void* obj) {
     ((AutoShooter*)(obj)) -> update();
 }
-void AutoShooter::AutoShoot(int target = MAX_FRISBEE_COUNT) {
+void AutoShooter::AutoShoot(int target) {
     if(cur_state == OFF)
     {
         shooter -> resetFrisbeeCount();
@@ -74,35 +74,22 @@ void AutoShooter::AutoShoot(int target = MAX_FRISBEE_COUNT) {
         targetShotCount = target;
     }
 }
-void AutoShooter::StopAutoShoot() {
-    cur_state = OFF;
-}
 bool AutoShooter::doneShooting() {
     if(cur_state == DONE)
         return true;
     return false;
 }
-void AutoShooter::toggle_helper(void* o) {
-    if(((AutoShooter*)o) -> cur_state == OFF)
-    {
-        ((AutoShooter*)(o)) -> AutoShoot();
-    }
-    else
-    {
-        ((AutoShooter*)(o)) -> abort();
-    }
-}
 void AutoShooter::abort() {
     shooter -> abort();
     cur_state = OFF;
 }
-void AutoShooter::shotBtnHelper(void* obj) {
+void AutoShooter::toggle_helper(void* obj) {
     AutoShooter* autoShoot=(AutoShooter*)obj;
-    if(obj->doneShooting()) {
+    if(autoShoot->doneShooting()) {
         autoShoot->AutoShoot();
     }
     else
     {
-        autoShoot->StopAutoShoot();
+        autoShoot->abort();
     }
 }

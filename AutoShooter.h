@@ -30,7 +30,7 @@ public:
     static const unsigned int MAX_FRISBEE_COUNT = 4;
     AutoShooter(Shooter*);
     ~AutoShooter();
-    void AutoShoot(int);
+    void AutoShoot(int target = MAX_FRISBEE_COUNT);
     void StopAutoShoot();
     bool doneShooting();
     void abort();
