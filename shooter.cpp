@@ -77,7 +77,7 @@ void Shooter::update() {
         
     }
 }
-void Shooter::shoot(double launchSpeed=0.9) {
+void Shooter::shoot(double launchSpeed) {
     if(shooting) {
         return;
     }
