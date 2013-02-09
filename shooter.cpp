@@ -97,4 +97,11 @@ bool Shooter::isShooting() {
 void Shooter::update_helper(void* a) {
     ((Shooter*)a) -> update();
 }
+void Shooter::shotBtnHelper(void* obj) {
+    ((Shooter*)obj) -> shoot();
+}
+
+bool Shooter::isShooting(){
+    return shooting;
+}
 

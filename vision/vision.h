@@ -11,6 +11,7 @@ public:
     virtual void startVision()=0;
     virtual void stopVision()=0;
     virtual std::vector<Target>* getTargets()=0;
+    int vision_entry();
 protected:
     vision();
     virtual ~vision();
