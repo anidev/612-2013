@@ -9,12 +9,12 @@ private:
     const static int NUMBUTTONS = 11;
     const static int WAIT_TIME = 3; //total amount of checks
     std::bitset<WAIT_TIME> buttons[NUMBUTTONS];
+    static void updateHelper(void*);
 public:
     joysmooth (UINT32 port);
     ~joysmooth ();
-    bool GetButton (UINT32);
     void update();
-    static void updateHelper(void*);
+    bool GetRawButton(UINT32);
 };
 
 #endif
