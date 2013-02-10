@@ -1,8 +1,7 @@
 #include "presets.h"
 #include "lift.h"
-#include "AutoShooter.h"
-#include "launcher.h"
 #include "shooter.h"
+#include "ports.h"
 
 presets::presets(float angle, int speed) {
      lift_angle = angle;
@@ -11,70 +10,11 @@ presets::presets(float angle, int speed) {
 presets::~presets() {
     
 }
-float presets::get_pre_lift(){
-    return lift_angle;
+void presets::setShooter(Shooter* shooter) {
+    shooter->setSpeed((float)wheel_speed);
 }
-int presets::get_pre_speed(){
-    return wheel_speed;
-}
-
-/*
-bool presets::shootAgain(){
-    if (isFinished){
-         return true;
-    }
-    else{
-        return false;
-    }
-}
-*/
-void presets::set_lift_angle(float angle) {
-    lift_angle = angle;
-}
-void presets::set_wheel_speed(int speed){
-    wheel_speed = speed;
-}
-void presets::check_presets() {
-    isAtAngle = false;
-    isAtSpeed = false;
-    while (!(isAtAngle) && !(isAtSpeed)){
-        if ((angleAdjuster.get_current_angle() != lift_angle)){
-            angleAdjuster.set_angle(lift_angle);
-            angleAdjuster.lift_stop();
-            isFinished = false;
-        } else {
-            isAtAngle = true;
-        }
-        if (!(shooter.getCurrentSpeed() == wheel_speed)){
-            shooter.setSpeed(wheel_speed);
-            isFinished = false;
-        } else {
-            isAtSpeed = true;
-        }
-    }
-}
-void presets::pre_update(){
-    while (!(isFinished == true)){
-        if (!(isAtSpeed == true) && !(isAtAngle == true)){
-            check_presets();
-        }
-        else {
-            isFinished = true;
-        }
-    }
-}
-void presets::prep_shoot(){
-    if (isFinished == false){
-        pre_update();
-    }
-    else {
-        shooter.shoot();
-    }
-}
-void presets::pre_abort(){
-    shooter.abort();  // uses shooter.h's own abort method, everything else is stopped and isFinished set to false
-    angleAdjuster.lift_stop();
-    isFinished = false;
+void presets::setLifter(Lift* lifter){
+    lifter->set_angle(lift_angle);
 }
 /*
 To-Do-List for Presets: Suggestions from Adrian
