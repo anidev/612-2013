@@ -47,4 +47,6 @@ static const hw_info left_encoder2  = {2, 5}; // suzie
 static const hw_info shooter_wheel  = {1, 9}; //dummy2
 static const hw_info feeder_belt    = {1,10}; //dummy3
 static const hw_info shooter_sensor = {1,11}; //dummy4 SO MANY DUMMIES!!!
+
+static const hw_info launcher_wheel = {1, 10};
 #endif
