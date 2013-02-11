@@ -5,21 +5,24 @@
 #include <vector>
 #include "vision/vision.h"
 #include "shooter.h"
+#include "realityEngine.h"
 
+const float ANGLE_TOLERANCE = 3; //Deg
+const float LIFT_TOLERANCE = 0.1; //Deg
 class AutoShooter {
 private:
     enum states {
         OFF,
         VISION,
-        HORIZONTAL,
-        ANGLE_SETTING,
+        SETTING,
+        WAITING,
         SHOOTING
     } cur_state;
-    unsigned int targetShotCount;
     bool done;
-    void doVision();
-    void doHorizontalAlign();
-    void doAngleSetting();
+    unsigned int targetShotCount;
+    RealityData currentTarget;
+    void setCurrentTarget();
+    void doSetting();
     void doShooting();
     Shooter* shooter;
     bool isAimed();
@@ -37,11 +40,3 @@ public:
     void abort();
 };
 #endif
-/*        Assumes
- * 1. vision.h has target class
- * 2. shooter has aim_left() aim_right() aim_up() aim_down()
- * 3. vector<target> currentTargets is included in vision class as a protected variable
- * 4. vision class has ShooterAim as friend
- * 5. target has getPriority();
- */
-
