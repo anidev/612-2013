@@ -2,6 +2,8 @@
 #define FEEDER_H
 
 #include <Talon.h>
+#include <Relay.h>
+#include "two_controller.h"
 #include "ports.h"
 
 class Feeder {
@@ -11,7 +13,7 @@ public:
         BACKWARD = -1,
         STOP = 0
     };
-    Feeder(hw_info);
+    Feeder(hw_info,hw_info);
     ~Feeder();
     void forward();
     void backward();
@@ -20,7 +22,7 @@ public:
 private:
     direction_t direction;
     void set_motor();
-    Talon feederMotor;
+    two_controller<Relay> feederMotor;
     void update();
     static const double SPEED = 0.5;
 };

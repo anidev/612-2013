@@ -4,7 +4,7 @@
 #include "612.h"
 #include "ports.h"
 
-Shooter::Shooter(hw_info launchWheel,hw_info launchSensor,hw_info feedInfo) : launch(launchWheel,launchSensor), feed(feedInfo)
+Shooter::Shooter(hw_info launchWheel1,hw_info launchWheel2,hw_info launchSensor,hw_info feedInfo1,hw_info feedInfo2) : launch(launchWheel1,launchWheel2,launchSensor), feed(feedInfo1,feedInfo2)
 {
     shooting = false;
     updateRegistry.addUpdateFunction(&update_helper, (void*)this);

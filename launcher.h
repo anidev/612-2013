@@ -4,6 +4,7 @@
 #include <Jaguar.h>
 #include <Counter.h>
 #include <cstdio>
+#include "two_controller.h"
 #include "ports.h"
 
 class Launcher {
@@ -12,10 +13,10 @@ private:
     unsigned int count;
     float targetSpeed;
     bool targetSet;
-    Jaguar launcherWheel;
+    two_controller<Jaguar> launcherWheel;
     Counter launcherSensor; // return RPM
 public:
-    Launcher(hw_info,hw_info);
+    Launcher(hw_info,hw_info,hw_info);
     ~Launcher();
     void stop();
     bool atSpeed();

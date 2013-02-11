@@ -1,6 +1,6 @@
 #include "feeder.h"
 
-Feeder::Feeder(hw_info info) : feederMotor(info.moduleNumber,info.channel)
+Feeder::Feeder(hw_info info1,hw_info info2) : feederMotor(info1,info2)
 {
     direction = STOP;
 } 
