@@ -76,7 +76,10 @@ void AutoShooter::doSetting(){
 }
 void AutoShooter::doShooting() {
     if((shooter -> getFrisbeeCount()) >= targetShotCount)
-        cur_state = DONE;
+    {
+        cur_state = OFF;
+        done = true;
+    }
     else
     {
         shooter -> shoot();
