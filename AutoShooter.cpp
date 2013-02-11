@@ -6,6 +6,7 @@
 AutoShooter::AutoShooter(Shooter* s) {
     updateRegistry.addUpdateFunction(&update_helper, (void*)this);
     gunner_joystick.addBtn(4,&toggle_helper,(void*)this);
+    done = false;
     cur_state = OFF;
     shooter = s;
     targetShotCount = 0;
@@ -41,8 +42,6 @@ void AutoShooter::update() {
         case SHOOTING:
             doShooting();
             break;
-        case DONE:
-            break;
     }
 }
 
@@ -75,9 +74,10 @@ void AutoShooter::AutoShoot(int target) {
     }
 }
 bool AutoShooter::doneShooting() {
-    if(cur_state == DONE)
-        return true;
-    return false;
+    return done;
+}
+bool AutoShooter::isShooting() {
+    return cur_state != OFF;
 }
 void AutoShooter::abort() {
     shooter -> abort();
@@ -85,11 +85,11 @@ void AutoShooter::abort() {
 }
 void AutoShooter::toggle_helper(void* obj) {
     AutoShooter* autoShoot=(AutoShooter*)obj;
-    if(autoShoot->doneShooting()) {
-        autoShoot->AutoShoot();
+    if(autoShoot->isShooting()) {
+        autoShoot->abort();
     }
     else
     {
-        autoShoot->abort();
+        autoShoot->AutoShoot();
     }
 }

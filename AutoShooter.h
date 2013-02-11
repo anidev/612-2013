@@ -13,10 +13,10 @@ private:
         VISION,
         HORIZONTAL,
         ANGLE_SETTING,
-        SHOOTING,
-        DONE
+        SHOOTING
     } cur_state;
     unsigned int targetShotCount;
+    bool done;
     void doVision();
     void doHorizontalAlign();
     void doAngleSetting();
@@ -33,6 +33,7 @@ public:
     void AutoShoot(int target = MAX_FRISBEE_COUNT);
     void StopAutoShoot();
     bool doneShooting();
+    bool isShooting();
     void abort();
 };
 #endif
