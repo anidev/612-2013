@@ -1,8 +1,11 @@
 #include <cmath>
+#include <AnalogChannel.h>
 #include "lift.h"
 #include "ports.h"
 
-Lift::Lift(hw_info info) : liftMotor(info.moduleNumber,info.channel)
+Lift::Lift(hw_info jagInfo,hw_info potInfo) : 
+liftMotor(jagInfo.moduleNumber,jagInfo.channel),
+pot(potInfo.moduleNumber,potInfo.channel)
 {
     updateRegistry.addUpdateFunction(&updateHelper,(void*)this);
     manual = true;
@@ -32,8 +35,7 @@ void Lift::set_angle(float new_angle) {
 }
 
 float Lift::get_current_angle() {
-    // TODO
-    return 0.0f;
+    return potToAngle(pot.GetAverageVoltage());
 }
 
 float Lift::get_target_angle() {
@@ -41,7 +43,7 @@ float Lift::get_target_angle() {
 }
 
 bool Lift::at_angle() {
-    if(std::fabs(get_current_angle()-target_angle)<AT_ANGLE_TOLERANCE) {
+    if(fabs(get_current_angle()-target_angle)<AT_ANGLE_TOLERANCE) {
         return true;
     }
     return false;
@@ -51,6 +53,12 @@ void Lift::set_direction(int d) {
     liftMotor.Set(d);
 }
 
+float potToAngle(float p) {
+    return p; // Todo add formula here
+}
+float angleToPot(float a) {
+    return a; // Todo Add Formula Here
+}
 void Lift::update() {
     if(manual) {
         return;
@@ -61,7 +69,7 @@ void Lift::update() {
         manual = true;
         return;
     }
-    if(cur_angle<target_angle) {
+    if(cur_angle < target_angle) {
         set_direction(1);
     } 
     else
