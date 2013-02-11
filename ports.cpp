@@ -11,8 +11,8 @@
 #include "612.h"
 
 UpdateRegistry updateRegistry; // Must be first constructed
-EnhancedJoystick left_joystick   (1);
-EnhancedJoystick right_joystick  (2);
+EnhancedJoystick left_joystick (1);
+EnhancedJoystick right_joystick (2);
 EnhancedJoystick gunner_joystick (3);
 
 drivetrain_info dinfo={left_front_motor,left_rear_motor,right_front_motor,right_rear_motor};
@@ -23,5 +23,5 @@ Shooter shooter(shooter_wheel, feeder_belt, shooter_sensor);
 
 shifter shift(side1,side2);
 
-Lift angleAdjuster(lift_motor);
+Lift angleAdjuster(lift_motor,launch_angle_pot);
 
