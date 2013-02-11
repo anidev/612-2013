@@ -41,12 +41,13 @@ static const hw_info lift_motor = {1,8}; // dummy1
 //Encoders
 static const hw_info right_encoder1 = {1, 1}; // suzie
 static const hw_info right_encoder2 = {1, 2}; // suzie
-static const hw_info left_encoder1  = {2, 4}; // suzie
+static const hw_info left_encoder1  = {2 , 4}; // suzie
 static const hw_info left_encoder2  = {2, 5}; // suzie
 //Shooter motor
-static const hw_info shooter_wheel  = {1, 9}; //dummy2
-static const hw_info feeder_belt    = {1,10}; //dummy3
-static const hw_info shooter_sensor = {1,11}; //dummy4 SO MANY DUMMIES!!!
+static const hw_info launcher_wheel  = {1, 10}; //dummy2
+//static const hw_info feeder_belt    = {1,10}; //dummy3
+static const hw_info feeder_1 = {2, 1};		// replacement of feeder_belt
+static const hw_info feeder_2 = {2, 2};		// replacement of feeder_belt
+static const hw_info launcher_sensor = {1,11}; //dummy4 SO MANY DUMMIES!!!
 
-static const hw_info launcher_wheel = {1, 10};
 #endif
