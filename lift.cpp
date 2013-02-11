@@ -42,6 +42,14 @@ float Lift::get_target_angle() {
     return target_angle;
 }
 
+float Lift::angle_to_voltage(float angle) {
+    return ((-1.0207443959 * angle) + 4.1827946896);
+}
+
+float Lift::voltage_to_angle(float voltage) {
+    return ((-0.9129997242 * voltage) + 3.9002999384);
+}
+
 bool Lift::at_angle() {
     if(fabs(get_current_angle()-target_angle)<AT_ANGLE_TOLERANCE) {
         return true;
