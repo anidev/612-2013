@@ -2,6 +2,7 @@
 #define LIFT_H_INCLUDED
 
 #include <Jaguar.h>
+#include <AnalogChannel.h>
 #include "ports.h"
 #include "updateRegistry.h"
 class Lift {
@@ -13,8 +14,11 @@ private:
     void update();
     static void updateHelper(UpdateRegistry::inst);
     Jaguar liftMotor;
+    AnalogChannel pot;
+    static float potToAngle(float);
+    static float angleToPot(float);
 public:
-    Lift(hw_info);
+    Lift(hw_info,hw_info);
     ~Lift();
     void lift_up();
     void lift_down();
