@@ -1,4 +1,3 @@
-//amusement
 #ifndef AUTOSHOOTER_H
 #define AUTOSHOOTER_H
 

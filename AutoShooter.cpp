@@ -1,4 +1,3 @@
-//amusement
 #include "AutoShooter.h"
 #include "shooter.h"
 #include "612.h"
@@ -105,7 +104,7 @@ void AutoShooter::abort() {
 }
 void AutoShooter::toggle_helper(void* obj) {
     AutoShooter* autoShoot=(AutoShooter*)obj;
-    if(autoShoot->doneShooting()) {
+    if(autoShoot->cur_state == OFF) {
         autoShoot->AutoShoot();
     }
     else
