@@ -1,4 +1,3 @@
-//amusement
 #ifndef AUTOSHOOTER_H
 #define AUTOSHOOTER_H
 
@@ -16,9 +15,9 @@ private:
         VISION,
         SETTING,
         WAITING,
-        SHOOTING,
-        DONE
+        SHOOTING
     } cur_state;
+    bool done;
     unsigned int targetShotCount;
     RealityData currentTarget;
     void setCurrentTarget();
@@ -36,6 +35,7 @@ public:
     void AutoShoot(int target = MAX_FRISBEE_COUNT);
     void StopAutoShoot();
     bool doneShooting();
+    bool isShooting();
     void abort();
 };
 #endif
