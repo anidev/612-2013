@@ -42,11 +42,11 @@ float Lift::get_target_angle() {
     return target_angle;
 }
 
-float Lift::angle_to_voltage(float angle) {
+float Lift::angleToPot(float angle) {
     return ((-1.0207443959 * angle) + 4.1827946896);
 }
 
-float Lift::voltage_to_angle(float voltage) {
+float Lift::potToAngle(float voltage) {
     return ((-0.9129997242 * voltage) + 3.9002999384);
 }
 
@@ -61,12 +61,6 @@ void Lift::set_direction(int d) {
     liftMotor.Set(d);
 }
 
-float potToAngle(float p) {
-    return p; // Todo add formula here
-}
-float angleToPot(float a) {
-    return a; // Todo Add Formula Here
-}
 void Lift::update() {
     if(manual) {
         return;

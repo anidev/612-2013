@@ -26,8 +26,6 @@ public:
     void set_angle(float);
     float get_current_angle();
     float get_target_angle();
-    float angle_to_voltage(float);
-    float voltage_to_angle(float);
     bool at_angle();
 };
 
