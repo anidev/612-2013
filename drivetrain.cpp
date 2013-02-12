@@ -32,6 +32,10 @@ DriveTrain::DriveTrain(drivetrain_info dinfo,encoders_info einfo):encoders(einfo
 
 DriveTrain::~DriveTrain() {
     delete robotDrive;
+    delete left_front_jag;
+    delete left_rear_jag;
+    delete right_front_jag;
+    delete right_rear_jag;
 }
 
 void DriveTrain::TankDrive(float left,float right) {
