@@ -72,14 +72,7 @@ void shoot() {
     }
     
 }
-/*
-void shoot(int a = Frisbees) {
-    if (doneShooting==false) {
-        AutoShooter.AutoShoot(a);
-    }    
-    else {state.set_state(DONE)}; //UNCOMMENT AND IMPLEMENT ONCE AUTOSHOOT IS FINISHED
-}
-*/
+
 void choose_routine(Position pos, AutoTarget target){
     shoot_tar = target;
     if ((pos == Back_Left) || (pos == Front_Left)) {

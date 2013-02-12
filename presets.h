@@ -18,7 +18,7 @@ private:
 public:
     presets(float, int);
 	~presets();
-    void setShooter(Shooter*); //
+    void setShooter(Shooter*);
     void setLifter(Lift*);
 };
 #endif

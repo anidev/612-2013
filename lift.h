@@ -5,6 +5,7 @@
 #include <AnalogChannel.h>
 #include "ports.h"
 #include "updateRegistry.h"
+
 class Lift {
 private:
     static const float AT_ANGLE_TOLERANCE = 0.1f;
@@ -12,7 +13,7 @@ private:
     float target_angle;
     void set_direction(int);
     void update();
-    static void updateHelper(UpdateRegistry::inst);
+    static void updateHelper(void*);
     Jaguar liftMotor;
     AnalogChannel pot;
     static float potToAngle(float);
