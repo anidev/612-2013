@@ -28,8 +28,8 @@ extern Lift angleAdjuster;
 extern Shooter shooter;
 extern AutoShooter auto_shoot;
 //lifter
-static const hw_info launch_angle_pot =  {1, 2};
-//extern Shooter shooter;
+static const hw_info launch_angle_pot =  {1, 1}; // suzie
+static const hw_info lift_motor =        {1, 1}; // suzie
 //LED relay
 static const hw_info led =               {2, 1}; // practice board
 //Shifter servos
@@ -40,8 +40,6 @@ static const hw_info left_front_motor =  {2, 2}; // suzie
 static const hw_info left_rear_motor =   {2, 3}; // suzie
 static const hw_info right_front_motor = {1, 3}; // suzie
 static const hw_info right_rear_motor =  {1, 4}; // suzie
-//Other motors
-static const hw_info lift_motor =        {1, 8}; // dummy1
 //Encoders
 static const hw_info right_encoder1 =    {1, 1}; // suzie
 static const hw_info right_encoder2 =    {1, 2}; // suzie

@@ -5,9 +5,8 @@
 #include "612.h"
 #include "lift.h"
 
-Lift::Lift(hw_info jagInfo,hw_info potInfo) : 
-liftMotor(jagInfo.moduleNumber,jagInfo.channel),
-pot(potInfo.moduleNumber,potInfo.channel)
+Lift::Lift(hw_info jagInfo,hw_info potInfo) : liftMotor(jagInfo.moduleNumber,jagInfo.channel),
+                                              pot(potInfo.moduleNumber,potInfo.channel)
 {
     updateRegistry.addUpdateFunction(&updateHelper,(void*)this);
     manual = true;
