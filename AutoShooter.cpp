@@ -15,7 +15,6 @@ AutoShooter::AutoShooter(Shooter* s) {
     shooter -> resetFrisbeeCount();
 }
 AutoShooter::~AutoShooter() {
-    delete shooter;
 }
 bool AutoShooter::isAimed() {
     setCurrentTarget();

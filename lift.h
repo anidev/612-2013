@@ -13,7 +13,7 @@ private:
     float target_angle;
     void set_direction(int);
     void update();
-    static void updateHelper(UpdateRegistry::inst);
+    static void updateHelper(void*);
     Jaguar liftMotor;
     AnalogChannel pot;
     static float potToAngle(float);
