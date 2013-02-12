@@ -3,13 +3,14 @@
 
 #include <Joystick.h>
 #include <RobotDrive.h>
-#include "EnhancedJoystick.h"
 
 class DriveTrain;
 class auto_encoders;
 class shifter;
 class Lift;
 class Shooter;
+class EnhancedJoystick;
+class AutoShooter;
 
 typedef int canport_t;
 
@@ -25,6 +26,7 @@ extern DriveTrain drive_train;
 extern shifter shift;
 extern Lift angleAdjuster;
 extern Shooter shooter;
+extern AutoShooter auto_shoot;
 //lifter
 static const hw_info launch_angle_pot =  {1, 2};
 //extern Shooter shooter;

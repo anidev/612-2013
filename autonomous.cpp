@@ -1,10 +1,10 @@
 #include "autonomous.h"
 #include "ports.h"
-#include "AutoShooter.h"
 #include "state.h"
 #include "drivetrain.h"
 #include "lift.h"
 #include "shooter.h"
+#include "AutoShooter.h"
 
 bool isLeft;
 bool state_changed = false;
@@ -22,7 +22,6 @@ enum auto_states {
 
 State state(AUTO_DRIVE);
 AutoTarget shoot_tar;
-AutoShooter auto_shooter(&shooter);
 
 void lift(AutoTarget target) {
     if (state_changed) {
@@ -65,9 +64,9 @@ void turn(double angle) {
 void shoot() {
     std::printf("shooting");
     if (state_changed) {
-        auto_shooter.AutoShoot();
+        auto_shoot.AutoShoot();
         state_changed = false;
-    } else if (auto_shooter.doneShooting()) {
+    } else if (auto_shoot.doneShooting()) {
         state.set_state(DONE);
         state_changed = true;
     }

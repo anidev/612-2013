@@ -1,9 +1,10 @@
 #include <Timer.h>
+#include "state_driving.h"
 #include "../ports.h"
 #include "../auto_encoders.h"
 #include "../shifter.h"
 #include "../drivetrain.h"
-#include "state_driving.h"
+#include "../EnhancedJoystick.h"
 
 void driving_state() {
     if (left_joystick.GetRawButton(1)) {

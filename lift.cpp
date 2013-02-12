@@ -1,7 +1,9 @@
 #include <cmath>
 #include <AnalogChannel.h>
-#include "lift.h"
+#include "updateRegistry.h"
 #include "ports.h"
+#include "612.h"
+#include "lift.h"
 
 Lift::Lift(hw_info jagInfo,hw_info potInfo) : 
 liftMotor(jagInfo.moduleNumber,jagInfo.channel),
