@@ -2,6 +2,7 @@
 #define TWO_CONTROLLER_H
 
 #include <SpeedController.h>
+#include <Relay.h>
 #include "ports.h"
 
 // Control two SpeedControllers together
@@ -10,13 +11,65 @@ private:
     T one;
     T two;
 public:
-    two_controller(hw_info,hw_info);
-    ~two_controller();
-    void Set(float,UINT8 syncGroup=0);
-    float Get();
-    void Disable();
-    void PIDWrite(float);
+    two_controller(hw_info ione,hw_info itwo):one(ione.moduleNumber,ione.channel),two(itwo.moduleNumber,itwo.channel) {
+    }
+    ~two_controller() {
+    }
+    void Set(float speed,UINT8 syncGroup=0) {
+        one.Set(speed,syncGroup);
+        two.Set(speed,syncGroup);
+    }
+    float Get() {
+        return (one.Get()+two.Get())/2.0f;
+    }
+    void Disable() {
+        one.Disable();
+        two.Disable();
+    }
+    void PIDWrite(float output) {
+        one.PIDWrite(output);
+        two.PIDWrite(output);
+    }
+};
+
+template<>
+class two_controller<Relay> {
+private:
+    Relay one;
+    Relay two;
+public:
+    two_controller(hw_info ione,hw_info itwo):one(ione.moduleNumber,ione.channel),two(itwo.moduleNumber,itwo.channel) {
+    }
+    ~two_controller() {
+    }
+    void Set(float speed,UINT8 syncGroup=0) {
+        Relay::Value dir;
+        if(speed>0) {
+            dir=Relay::kForward;
+        }
+        else if(speed<0) {
+            dir=Relay::kReverse;
+        }
+        else
+        {
+            dir=Relay::kOff;
+        }
+        one.Set(dir);
+        two.Set(dir);
+    }
+    float Get() {
+        if(one.Get()==two.Get()) {
+            return (float)one.Get();
+        }
+        return 0.0f;
+    }
+    void Disable() {
+        one.Set(Relay::kOff);
+        two.Set(Relay::kOff);
+    }
+    void PIDWrite(float output) {
+        Set(output);
+    }
 };
 
 #endif // TWO_CONTROLLER_H
-
