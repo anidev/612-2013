@@ -46,7 +46,10 @@ static const hw_info right_encoder2 =    {1, 2}; // suzie
 static const hw_info left_encoder1 =     {2, 4}; // suzie
 static const hw_info left_encoder2 =     {2, 5}; // suzie
 //Shooter motor
-static const hw_info shooter_wheel =     {1, 9}; //dummy2
-static const hw_info feeder_belt =       {1,10}; //dummy3
-static const hw_info shooter_sensor =    {1,11}; //dummy4 SO MANY DUMMIES!!!
+static const hw_info launcher_wheel_1 =  {1, 1}; // suzie
+static const hw_info launcher_wheel_2 =  {1, 2}; // suzie
+//static const hw_info feeder_belt =     {1,10}; // dummy3
+static const hw_info feeder_1 =          {2, 1}; // suzie (replacement of feeder_belt)
+static const hw_info feeder_2 =          {2, 2}; // suzie (replacement of feeder_belt)
+static const hw_info launcher_sensor =   {1,10}; // suzie
 #endif

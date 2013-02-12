@@ -3,8 +3,8 @@
 #include "ports.h"
 #include "launcher.h"
 
-Launcher::Launcher(hw_info wheel,hw_info sensor) : launcherWheel(sensor.moduleNumber, sensor.channel),
-                                                   launcherSensor(sensor.moduleNumber, sensor.channel ) {
+Launcher::Launcher(hw_info wheel1,hw_info wheel2,hw_info sensor) : launcherWheel(wheel1,wheel2),
+                                                                   launcherSensor(sensor.moduleNumber, sensor.channel ) {
     count = 0;
     targetSpeed = 0;
     targetSet = false;
