@@ -1,3 +1,4 @@
+#include "EnhancedJoystick.h"
 #include "shifter.h"
 
 const float klowgear = 0.8;

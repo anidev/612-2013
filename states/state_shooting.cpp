@@ -1,12 +1,13 @@
+#include <Joystick.h>       // for GetRawButton () and GetRawAxis ()
 #include "state_climbing.h"
 #include "state_shooting.h"
 #include "../lift.h"           // for lift_up () and lift_down ()
 #include "../launcher.h"       // for setSpeed () and getCurrentSpeed()
-#include <Joystick.h>       // for GetRawButton () and GetRawAxis ()
 #include "../612.h"
 #include "../drivetrain.h"
 #include "../ports.h"
 #include "../shooter.h"
+#include "../EnhancedJoystick.h"
 
 double new_shooter_wheel_speed; // decrease by 0.1 or 0.2
 bool is_turning;

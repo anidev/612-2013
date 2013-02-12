@@ -1,3 +1,4 @@
+#include "EnhancedJoystick.h"
 #include "AutoShooter.h"
 #include "shooter.h"
 #include "612.h"
@@ -5,12 +6,12 @@
 #include "lift.h"
 #include "driveTrain.h"
 
-AutoShooter::AutoShooter(Shooter* s) {
+AutoShooter::AutoShooter(Shooter& s) {
     updateRegistry.addUpdateFunction(&update_helper, (void*)this);
     gunner_joystick.addBtn(4,&toggle_helper,(void*)this);
     done = false;
     cur_state = OFF;
-    shooter = s;
+    shooter = &s;
     targetShotCount = 0;
     shooter -> resetFrisbeeCount();
 }
