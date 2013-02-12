@@ -5,6 +5,7 @@
 #include <AnalogChannel.h>
 #include "ports.h"
 #include "updateRegistry.h"
+
 class Lift {
 private:
     static const float AT_ANGLE_TOLERANCE = 0.1f;

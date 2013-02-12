@@ -1,4 +1,3 @@
-#include <cmath>
 #include <AnalogChannel.h>
 #include "lift.h"
 #include "ports.h"
@@ -85,6 +84,6 @@ void Lift::update() {
         set_direction(-1);
     }
 }
-void Lift::updateHelper(UpdateRegistry::inst a) {
+void Lift::updateHelper(void* a) {
     ((Lift*)a) -> update();
 }
