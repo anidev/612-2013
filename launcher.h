@@ -15,13 +15,14 @@ private:
     bool targetSet;
     two_controller<Jaguar> launcherWheel;
     Counter launcherSensor; // return RPM
+    void update();
+    static void update_helper(void*);
 public:
     Launcher(hw_info,hw_info,hw_info);
     ~Launcher();
     void stop();
     bool atSpeed();
     void setSpeed(float);
-
     float getCurrentSpeed();
     float getTargetSpeed();
     unsigned int getFrisbeeCount();
