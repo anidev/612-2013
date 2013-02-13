@@ -58,7 +58,7 @@ bool Lift::at_angle() {
 }
 
 void Lift::set_direction(int d) {
-    liftMotor.Set(d);
+    liftMotor.Set(d*1.0f);
 }
 
 void Lift::update() {

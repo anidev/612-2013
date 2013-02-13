@@ -8,8 +8,8 @@
 #include "612.h"
 #include "ports.h"
 #include "auto_encoders.h"
-#include "main.h"
 #include "autonomous.h"
+#include "main.h"
 
 robot_class::robot_class() {
     GetWatchdog().SetEnabled(false);
