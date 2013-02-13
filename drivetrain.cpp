@@ -3,6 +3,7 @@
 #include "612.h"
 #include "auto_encoders.h"
 #include "drivetrain.h"
+#include "ports.h"
 
 double torad(double deg) {
     return deg*(M_PI/180.0);
@@ -17,7 +18,7 @@ void DriveTrain::update_helper(void* param) {
     drivetrain->update();
 }
 
-DriveTrain::DriveTrain(drivetrain_info dinfo,encoders_info einfo):encoders(einfo) {
+DriveTrain::DriveTrain(drivetrain_info dinfo,encoders_info einfo,hw_info s1,hw_info s2):encoders(einfo),shift(s1,s2) {
     operation=MANUAL;
     left_front_jag=new Jaguar(dinfo.left_front.moduleNumber,dinfo.left_front.channel);
     left_rear_jag=new Jaguar(dinfo.left_rear.moduleNumber,dinfo.left_rear.channel);
