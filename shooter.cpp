@@ -74,7 +74,6 @@ void Shooter::update() {
         {
             feed.stop();
         }
-        
     }
 }
 void Shooter::shoot(double launchSpeed) {
