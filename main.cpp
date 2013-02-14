@@ -107,7 +107,7 @@ void robot_class::TeleopPeriodic() {
     static int counter=0;
     updateRegistry.updateAll();
     if(counter%20==0) {
-        std::printf("Driver operating: %s\n",(driverOperation?"TRUE":"FALSE"));
+//        std::printf("Driver operating: %s\n",(driverOperation?"TRUE":"FALSE"));
     }
     counter++;
     if(global_state.get_state()==DRIVE) {
