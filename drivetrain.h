@@ -36,6 +36,10 @@ public:
     bool isTurning();
     bool isDriving();
     bool isFinished();
+    // shifting
+    void shiftHigh();
+    void shiftLow();
+    shifter::GEAR getGear();
 private:
     static const float DRIVE_SPEED=0.7f;
     static const float TURN_SPEED=0.7f;

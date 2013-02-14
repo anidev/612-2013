@@ -114,6 +114,18 @@ bool DriveTrain::isFinished() {
     return finished;
 }
 
+void DriveTrain::shiftHigh() {
+    shift.set(shifter::HIGH);
+}
+
+void DriveTrain::shiftLow() {
+    shift.set(shifter::LOW);
+}
+
+shifter::GEAR DriveTrain::getGear() {
+    return shift.get();
+}
+
 void DriveTrain::update() {
     if(operation==MANUAL) {
         return;
