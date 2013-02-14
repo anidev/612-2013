@@ -23,7 +23,6 @@ extern EnhancedJoystick left_joystick;
 extern EnhancedJoystick right_joystick;
 extern EnhancedJoystick gunner_joystick;
 extern DriveTrain drive_train;
-extern shifter shift;
 extern Lift angleAdjuster;
 extern Shooter shooter;
 extern AutoShooter auto_shoot;
