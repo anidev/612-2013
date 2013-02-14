@@ -28,8 +28,8 @@ extern Lift angleAdjuster;
 extern Shooter shooter;
 extern AutoShooter auto_shoot;
 //lifter
-static const hw_info launch_angle_pot =  {1, 1}; // suzie
-static const hw_info lift_motor =        {2, 1}; // suzie
+static const hw_info launch_angle_pot =  {1, 1}; // suzie;()
+static const hw_info lift_motor =        {2, 1}; // suzie;(2,3) - New Robot
 //LED relay
 static const hw_info led =               {2, 1}; // practice board
 //Shifter servos

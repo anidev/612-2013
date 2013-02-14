@@ -35,7 +35,7 @@ void Lift::set_angle(float new_angle) {
 }
 
 float Lift::get_current_angle() {
-    return potToAngle(pot.GetAverageVoltage());
+    return pot.GetAverageVoltage();// todo potToAngle(pot.GetAverageVoltage());
 }
 
 float Lift::get_target_angle() {
@@ -43,11 +43,11 @@ float Lift::get_target_angle() {
 }
 
 float Lift::angleToPot(float angle) {
-    return ((-1.0207443959 * angle) + 4.1827946896);
+    return ((-1.0207443959 * angle) + 4.1827946896); //Todo Check if this equation works
 }
 
 float Lift::potToAngle(float voltage) {
-    return ((-0.9129997242 * voltage) + 3.9002999384);
+    return ((-0.9129997242 * voltage) + 3.9002999384); //Todo Check if this equation works
 }
 
 bool Lift::at_angle() {
@@ -65,12 +65,12 @@ void Lift::update() {
     if(manual) {
         return;
     }
-    float cur_angle = get_current_angle();
     if(at_angle()) {
         set_direction(0);
         manual = true;
         return;
     }
+    float cur_angle = get_current_angle();
     if(cur_angle < target_angle) {
         set_direction(1);
     }
