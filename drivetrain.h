@@ -57,7 +57,7 @@ private:
     double right_dist;
     double angle;
     bool finished;
-    
+
     void update();
 
 //    void drive_update();
