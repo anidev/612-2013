@@ -1,3 +1,4 @@
+#include <cmath>
 #include "EnhancedJoystick.h"
 #include "AutoShooter.h"
 #include "shooter.h"
@@ -23,7 +24,7 @@ bool AutoShooter::isAimed() {
     {
         return false;
     }
-    if((fabs(currentTarget.liftAngle - angleAdjuster.get_target_angle()) > LIFT_TOLERANCE) || !angleAdjuster.at_angle())
+    if((std::fabs(currentTarget.liftAngle - angleAdjuster.get_target_angle()) > LIFT_TOLERANCE) || !angleAdjuster.at_angle())
     {
         return false;
     }

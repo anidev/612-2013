@@ -1,3 +1,4 @@
+#include <cmath>
 #include <AnalogChannel.h>
 #include "updateRegistry.h"
 #include "ports.h"
@@ -35,7 +36,7 @@ void Lift::set_angle(float new_angle) {
 }
 
 float Lift::get_current_angle() {
-    return pot.GetAverageVoltage();// todo potToAngle(pot.GetAverageVoltage());
+    return potToAngle(pot.GetVoltage());
 }
 
 float Lift::get_target_angle() {
@@ -51,7 +52,7 @@ float Lift::potToAngle(float voltage) {
 }
 
 bool Lift::at_angle() {
-    if(fabs(get_current_angle()-target_angle)<AT_ANGLE_TOLERANCE) {
+    if(std::fabs(get_current_angle()-target_angle)<AT_ANGLE_TOLERANCE) {
         return true;
     }
     return false;
