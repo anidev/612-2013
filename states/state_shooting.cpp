@@ -11,6 +11,7 @@
 
 double new_shooter_wheel_speed; // decrease by 0.1 or 0.2
 bool is_turning;
+bool speed_set=false;
 
 void shooting_auto() {
     if (gunner_joystick.GetRawButton (4)) {     // button Y on joystick
@@ -26,34 +27,53 @@ void shooting_manual() {
         return;
     }
 
-    if (gunner_joystick.GetRawAxis (5) == -1) {         // angle down
+    if (gunner_joystick.GetRawAxis (6) > 0.98f) {       // angle down
+        std::printf("angle down to %f\n",angleAdjuster.get_current_angle());
         angleAdjuster.lift_down();
     }
-    else if(gunner_joystick.GetRawAxis (5) == 1) {      // angle up
+    else if(gunner_joystick.GetRawAxis (6) < -0.98f) {  // angle up
+        std::printf("angle up %f\n",angleAdjuster.get_current_angle());
         angleAdjuster.lift_up();
+    }
+    else
+    {
+        angleAdjuster.lift_stop();
     }
 
     if (gunner_joystick.GetRawButton(1)) {
-        shooter.setSpeed (new_shooter_wheel_speed);
+        if(!speed_set) {
+            std::printf("launcher set\n");
+            shooter.setSpeed (new_shooter_wheel_speed);
+            speed_set=true;
+        }
+        std::printf("launcher speed: %f\n",shooter.getCurrentSpeed());
     }
     else {
-        shooter.abort();
+        if(speed_set) {
+            std::printf("launcher stopped\n");
+            shooter.abort();
+            speed_set=false;
+        }
     }
 
     if (gunner_joystick.GetRawButton (5)) {             // slow down shooter wheel
         // save new speed, change speed when buton is not pressed
+        std::printf("launcher slowed to %f\n",new_shooter_wheel_speed);
         new_shooter_wheel_speed -= 0.2;
     }
 
     if (gunner_joystick.GetRawButton (6)) {             // speed up shooter wheel
+        std::printf("launcher sped up to %f\n",new_shooter_wheel_speed);
         new_shooter_wheel_speed += 0.2;
     }
 
     if (gunner_joystick.GetRawButton (7)) {             // turn robot left
+        std::printf("swivel left\n");
         drive_train.TankDrive(-.2, .2);
         is_turning = true;
     }
     else if (gunner_joystick.GetRawButton (8)) {             // turn robot right
+        std::printf("swivel right\n");
         drive_train.TankDrive(.2, -.2);
         is_turning = true;
     }

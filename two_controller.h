@@ -43,6 +43,7 @@ public:
     ~two_controller() {
     }
     void Set(float speed,UINT8 syncGroup=0) {
+        std::printf("tworelay set %f\n",speed);
         Relay::Value dir;
         if(speed>0) {
             dir=Relay::kForward;
@@ -54,7 +55,9 @@ public:
         {
             dir=Relay::kOff;
         }
+        std::printf("setting relay 1 to %d\n",dir);
         one.Set(dir);
+        std::printf("setting relay 2 to %d\n",dir);
         two.Set(dir);
     }
     float Get() {
