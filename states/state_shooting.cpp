@@ -70,7 +70,7 @@ void shooting_manual() {
     else {
         if(speed_set) {
             std::printf("launcher stopped\n");
-            shooter.abort();
+            shooter.stopLauncher();
             speed_set=false;
         }
     }
