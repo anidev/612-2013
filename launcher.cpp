@@ -3,6 +3,7 @@
 #include <PIDController.h>
 #include "ports.h"
 #include "launcher.h"
+#include "612.h"
 
 Launcher::Launcher(hw_info wheel1,hw_info wheel2,hw_info sensor) : launcherWheel(wheel1,wheel2),
                                                                    launcherSensor(sensor.moduleNumber, sensor.channel),
@@ -10,6 +11,7 @@ Launcher::Launcher(hw_info wheel1,hw_info wheel2,hw_info sensor) : launcherWheel
     count = 0;
     targetSpeed = 0;
     targetSet = false;
+    updateRegistry.addUpdateFunction(&update_helper,(void*)this);
     launcherSensor.Start();
     pid.Disable();
     pid.SetTolerance(AT_SPEED_TOLERANCE);
@@ -19,7 +21,6 @@ Launcher::Launcher(hw_info wheel1,hw_info wheel2,hw_info sensor) : launcherWheel
 
 Launcher::~Launcher() {
 }
-
 
 void Launcher::stop() {
     targetSet = false;
@@ -40,7 +41,6 @@ void Launcher::setSpeed(float newSpeed) {
 float Launcher::getCurrentSpeed() {
     std::printf("getting current speed when period=%f\n",launcherSensor.GetPeriod());
     return 1.0f/(launcherSensor.GetPeriod());
-//    return launcherSensor.PIDGet();
 }
 
 float Launcher::getTargetSpeed() {
@@ -51,8 +51,7 @@ bool Launcher::atSpeed(){
     if(std::fabs(getCurrentSpeed()-targetSpeed)/targetSpeed < AT_SPEED_TOLERANCE){
         return true;
     }
-    return false;
-//    return pid.OnTarget(); // WARNING PIDController::OnTarget MAY DEAD LOCK
+    return false; //Replaces OnTarget because it crashes
 }
 
 void Launcher::resetFrisbeeCount(){
@@ -64,12 +63,10 @@ unsigned int Launcher::getFrisbeeCount(){
 }
 
 void Launcher::update() {
-    // PID does everything now.
-    // Hopefully.
+    //Todo add frisbee count here
 }
 
 void Launcher::update_helper(void* obj) {
     Launcher* launcher=(Launcher*)obj;
     launcher->update();
 }
-

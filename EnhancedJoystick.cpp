@@ -1,5 +1,7 @@
 #include "EnhancedJoystick.h"
 #include "612.h"
+#include "Joystick.h"
+
 void EnhancedJoystick::addBtn(UINT32 btn,funcName help,obj o) {
     btnNumbers.push_back(btn);
     helpers.push_back(help);
