@@ -5,6 +5,7 @@
 #include <GenericHID.h>
 #include <Jaguar.h>
 #include "auto_encoders.h"
+#include "shifter.h"
 #include "ports.h"
 
 struct drivetrain_info {
@@ -20,7 +21,7 @@ struct drivetrain_info {
 class DriveTrain {
 public:
     static void update_helper(void*);
-    DriveTrain(drivetrain_info,encoders_info);
+    DriveTrain(drivetrain_info,encoders_info,hw_info,hw_info);
     ~DriveTrain();
     // manual
     void TankDrive(float,float);
@@ -35,6 +36,10 @@ public:
     bool isTurning();
     bool isDriving();
     bool isFinished();
+    // shifting
+    void shiftHigh();
+    void shiftLow();
+    shifter::GEAR getGear();
 private:
     static const float DRIVE_SPEED=0.7f;
     static const float TURN_SPEED=0.7f;
@@ -51,13 +56,14 @@ private:
     Jaguar* right_front_jag;
     Jaguar* right_rear_jag;
     auto_encoders encoders;
+    shifter shift;
     drive_func currentOperation;
     operation_t operation;
     double left_dist;
     double right_dist;
     double angle;
     bool finished;
-    
+
     void update();
 
 //    void drive_update();

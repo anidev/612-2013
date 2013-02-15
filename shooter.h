@@ -26,6 +26,7 @@ public:
     float getTargetSpeed();
     float getCurrentSpeed();
     bool atSpeed();
+    void stopLauncher();
     unsigned int getFrisbeeCount();
     void resetFrisbeeCount();
     // Feeder
