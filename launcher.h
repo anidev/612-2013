@@ -2,11 +2,13 @@
 #define LAUNCHER_H
 
 #include <Jaguar.h>
+#include <CANJaguar.h>
 #include <PIDController.h>
 #include <cstdio>
 #include "two_controller.h"
 #include "PIDCounter.h"
 #include "ports.h"
+#include "612.h"
 
 class Launcher {
 private:
@@ -17,13 +19,21 @@ private:
     unsigned int count;
     float targetSpeed;
     bool targetSet;
+#ifdef Suzie
     two_controller<Jaguar> launcherWheel;
     PIDCounter launcherSensor; // return RPS
     PIDController pid;
+#else
+    CANJaguar launcherWheel;
+#endif //Suzie
     void update();
     static void update_helper(void*);
 public:
+#ifdef Suzie
     Launcher(hw_info,hw_info,hw_info);
+#else
+    Launcher(canport_t);
+#endif //Suzie
     ~Launcher();
     void stop();
     bool atSpeed();

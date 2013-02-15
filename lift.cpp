@@ -1,3 +1,6 @@
+#include <SpeedController.h>
+#include <Jaguar.h>
+#include <CANJaguar.h>
 #include <cmath>
 #include <AnalogChannel.h>
 #include "updateRegistry.h"
@@ -5,14 +8,28 @@
 #include "612.h"
 #include "lift.h"
 
-Lift::Lift(hw_info jagInfo,hw_info potInfo) : liftMotor(jagInfo.moduleNumber,jagInfo.channel),
-                                              pot(potInfo.moduleNumber,potInfo.channel)
+#ifdef Suzie
+Lift::Lift(hw_info jagInfo,hw_info potInfo) : pot(potInfo.moduleNumber,potInfo.channel)
 {
+    liftMotor = new Jaguar(jagInfo.moduleNumber,jagInfo.channel);
     updateRegistry.addUpdateFunction(&updateHelper,(void*)this);
     manual = true;
 }
-
+#else
+Lift::Lift(canport_t canJag)
+{
+    liftMotor = new CANJaguar(canJag);
+    ((CANJaguar*)liftMotor) -> SetSafetyEnabled(false);
+    ((CANJaguar*)liftMotor) -> SetPositionReference(CANJaguar::kPosRef_Potentiometer);
+    ((CANJaguar*)liftMotor) -> ConfigPotentiometerTurns(POT_TURNS);
+    //((CANJaguar*)liftMotor) -> ConfigSoftPositionLimits(LOWER_LIMIT,HIGHER_LIMIT); //Todo Set values then add
+    updateRegistry.addUpdateFunction(&updateHelper,(void*)this);
+    manual = true;
+}    
+#endif //Suzie
+//Todo add command to set angle and have jag go to it
 Lift::~Lift() {
+    delete liftMotor;
 }
 
 void Lift::lift_up() {
@@ -36,7 +53,11 @@ void Lift::set_angle(float new_angle) {
 }
 
 float Lift::get_current_angle() {
+#ifdef Suzie
     return potToAngle(pot.GetVoltage());
+#else
+    return ((CANJaguar*)liftMotor) -> GetPosition();
+#endif //Suzie
 }
 
 float Lift::get_target_angle() {
@@ -59,7 +80,7 @@ bool Lift::at_angle() {
 }
 
 void Lift::set_direction(int d) {
-    liftMotor.Set(d*1.0f);
+    liftMotor -> Set(d*1.0f);
 }
 
 void Lift::update() {
@@ -83,3 +104,4 @@ void Lift::update() {
 void Lift::updateHelper(void* a) {
     ((Lift*)a) -> update();
 }
+//Todo Implement these with Canbus

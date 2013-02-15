@@ -19,7 +19,11 @@ private:
     static const double FEEDER_TIMEOUT=2.0;
     static const double DEFAULT_LAUNCH_SPEED=0.9;
 public:
+#ifdef Suzie
     Shooter(hw_info, hw_info, hw_info, hw_info, hw_info);
+#else
+    Shooter(canport_t, hw_info);
+#endif //Suzie
     ~Shooter();
     // Launcher
     void setSpeed(float);

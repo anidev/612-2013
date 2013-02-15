@@ -1,6 +1,8 @@
 #ifndef LIFT_H_INCLUDED
 #define LIFT_H_INCLUDED
 
+#include <SpeedController.h>
+#include <CANJaguar.h>
 #include <Jaguar.h>
 #include <AnalogChannel.h>
 #include "ports.h"
@@ -14,12 +16,22 @@ private:
     void set_direction(int);
     void update();
     static void updateHelper(void*);
-    Jaguar liftMotor;
-    AnalogChannel pot;
+    SpeedController * liftMotor;
     static float potToAngle(float);
     static float angleToPot(float);
+    #ifdef Suzie
+        AnalogChannel pot;
+    #else
+        static const float LOWER_LIMIT = 0.0; //Todo Set Value
+        static const float HIGHER_LIMIT = 1.0; //Todo Set Value
+        static const UINT16 POT_TURNS = 1; //Todo SetValue
+    #endif //Suzie only
 public:
+#ifdef Suzie
     Lift(hw_info,hw_info);
+#else
+    Lift(canport_t);
+#endif//Suzie
     ~Lift();
     void lift_up();
     void lift_down();
