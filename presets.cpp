@@ -8,7 +8,6 @@ presets::presets(float angle, int speed) {
      wheel_speed = speed;
 }
 presets::~presets() {
-    
 }
 void presets::setShooter(Shooter* shooter) {
     shooter->setSpeed((float)wheel_speed);

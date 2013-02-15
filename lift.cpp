@@ -1,8 +1,12 @@
 #include <cmath>
-#include "lift.h"
+#include <AnalogChannel.h>
+#include "updateRegistry.h"
 #include "ports.h"
+#include "612.h"
+#include "lift.h"
 
-Lift::Lift(hw_info info) : liftMotor(info.moduleNumber,info.channel)
+Lift::Lift(hw_info jagInfo,hw_info potInfo) : liftMotor(jagInfo.moduleNumber,jagInfo.channel),
+                                              pot(potInfo.moduleNumber,potInfo.channel)
 {
     updateRegistry.addUpdateFunction(&updateHelper,(void*)this);
     manual = true;
@@ -32,12 +36,19 @@ void Lift::set_angle(float new_angle) {
 }
 
 float Lift::get_current_angle() {
-    // TODO
-    return 0.0f;
+    return potToAngle(pot.GetVoltage());
 }
 
 float Lift::get_target_angle() {
     return target_angle;
+}
+
+float Lift::angleToPot(float angle) {
+    return ((-1.0207443959 * angle) + 4.1827946896); //Todo Check if this equation works
+}
+
+float Lift::potToAngle(float voltage) {
+    return ((-0.9129997242 * voltage) + 3.9002999384); //Todo Check if this equation works
 }
 
 bool Lift::at_angle() {
@@ -48,20 +59,20 @@ bool Lift::at_angle() {
 }
 
 void Lift::set_direction(int d) {
-    liftMotor.Set(d);
+    liftMotor.Set(d*1.0f);
 }
 
 void Lift::update() {
     if(manual) {
         return;
     }
-    float cur_angle = get_current_angle();
     if(at_angle()) {
         set_direction(0);
         manual = true;
         return;
     }
-    if(cur_angle<target_angle) {
+    float cur_angle = get_current_angle();
+    if(cur_angle < target_angle) {
         set_direction(1);
     }
     else
@@ -69,6 +80,6 @@ void Lift::update() {
         set_direction(-1);
     }
 }
-void Lift::updateHelper(UpdateRegistry::inst a) {
+void Lift::updateHelper(void* a) {
     ((Lift*)a) -> update();
 }

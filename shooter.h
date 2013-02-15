@@ -19,13 +19,14 @@ private:
     static const double FEEDER_TIMEOUT=2.0;
     static const double DEFAULT_LAUNCH_SPEED=0.9;
 public:
-    Shooter(hw_info, hw_info, hw_info);
+    Shooter(hw_info, hw_info, hw_info, hw_info, hw_info);
     ~Shooter();
     // Launcher
     void setSpeed(float);
     float getTargetSpeed();
     float getCurrentSpeed();
     bool atSpeed();
+    void stopLauncher();
     unsigned int getFrisbeeCount();
     void resetFrisbeeCount();
     // Feeder

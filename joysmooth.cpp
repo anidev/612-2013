@@ -15,7 +15,7 @@ void joysmooth::update(){
         for (int s = 1; s < WAIT_TIME; s++){
             buttons[f][s - 1] = buttons [f][s];
         }
-        buttons[f][WAIT_TIME - 1] = Joystick::GetRawButton(f);
+        buttons[f][WAIT_TIME - 1] = Joystick::GetRawButton(f+1);
     }
 }
 bool joysmooth::GetRawButton(UINT32 btn) {

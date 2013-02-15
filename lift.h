@@ -2,8 +2,10 @@
 #define LIFT_H_INCLUDED
 
 #include <Jaguar.h>
+#include <AnalogChannel.h>
 #include "ports.h"
 #include "updateRegistry.h"
+
 class Lift {
 private:
     static const float AT_ANGLE_TOLERANCE = 0.1f;
@@ -11,10 +13,13 @@ private:
     float target_angle;
     void set_direction(int);
     void update();
-    static void updateHelper(UpdateRegistry::inst);
+    static void updateHelper(void*);
     Jaguar liftMotor;
+    AnalogChannel pot;
+    static float potToAngle(float);
+    static float angleToPot(float);
 public:
-    Lift(hw_info);
+    Lift(hw_info,hw_info);
     ~Lift();
     void lift_up();
     void lift_down();
