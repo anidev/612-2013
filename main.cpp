@@ -14,7 +14,7 @@
 
 const float JOY_THRESHOLD=0.05;
 void driver_check_update(void* dummy) {
-    if(std::fabs(right_joystick.GetY())>JOY_THRESHOLD) {
+/*    if(std::fabs(right_joystick.GetY())>JOY_THRESHOLD) {
         driverOperation=true;
         return;
     }
@@ -23,6 +23,11 @@ void driver_check_update(void* dummy) {
         return;
     }
     if(left_joystick.GetRawButton(1)&&std::fabs(left_joystick.GetX())>JOY_THRESHOLD) {
+        driverOperation=true;
+        return;
+    }*/
+
+    if(std::fabs(gunner_joystick.GetRawAxis(2))>JOY_THRESHOLD||std::fabs(gunner_joystick.GetRawAxis(4))>JOY_THRESHOLD) {
         driverOperation=true;
         return;
     }

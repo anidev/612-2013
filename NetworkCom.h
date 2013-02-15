@@ -15,6 +15,8 @@ public:
     void launcher_target_speed (double new_speed);
     void launcher_current_speed (double cur_speed);
     void lift_angle (float new_angle);
+    double Autonomous_Position();
+    double Autonomous_Target();
 private:
     NetworkTable* Main;
     NetworkTable* Tracking;
