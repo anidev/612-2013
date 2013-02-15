@@ -23,3 +23,4 @@ AngleOffsetData getTurnAngle(float width,float height, float liftAngle) {
 float getTargetLiftAngle(float distance, float liftAngle, float initialVelocity) {
     return 0.0;//Todo Finish This
 }
+

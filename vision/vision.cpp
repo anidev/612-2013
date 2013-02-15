@@ -38,3 +38,10 @@ vision::~vision(){
     
 }
 
+double vision::getGroundDist(double angle, double target_height) {
+    double length = 9.06;
+    double base = 18.64;
+    double added_height = (angle > 0)?length+(length*sin(angle)):length-(length*sin(angle));
+    double camera_height = base + added_height; 
+    return (target_height - camera_height) / tan(angle);
+}
