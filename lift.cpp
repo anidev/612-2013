@@ -63,7 +63,7 @@ void Lift::update() {
     }
     if(cur_angle<target_angle) {
         set_direction(1);
-    } 
+    }
     else
     {
         set_direction(-1);
