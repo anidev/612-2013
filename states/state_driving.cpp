@@ -6,6 +6,7 @@
 #include "../shifter.h"
 #include "../drivetrain.h"
 #include "../EnhancedJoystick.h"
+#include "../612.h"
 
 void driving_state() {
     if(driverOperation) {
@@ -14,7 +15,11 @@ void driving_state() {
         } else {
             float left_axis = left_joystick.GetRawAxis(2);
             float right_axis = right_joystick.GetRawAxis(4);
-            drive_train.TankDrive(left_axis, right_axis);
+            if (joyzero(left_axis) && joyzero(right_axis)) {
+                drive_train.TankDrive(left_axis, right_axis);
+            } else {
+                drive_train.TankDrive(0, 0);
+            }    
         }
     }
 }
