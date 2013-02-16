@@ -1,6 +1,7 @@
 #include "NetworkCom.h"
 #include "Launcher.h"
 #include "Lift.h"
+#include "ports.h"
 
 NetworkCom::NetworkCom() {
     Main=NetworkTable::GetTable("612");
@@ -65,21 +66,21 @@ void NetworkCom::target_height (double new_target){
     }
 }
 void NetworkCom::launcher_target_speed (double new_speed){
-    if(Tracking != NULL){
+    if(Gunner != NULL){
         if (new_speed != Gunner->GetNumber("LauncherTarget")) {
             Gunner->PutNumber("LauncherTarget", new_speed);
         }
     }
 }
 void NetworkCom::launcher_current_speed (double cur_speed){
-    if(Tracking !=NULL){
+    if(Gunner !=NULL){
         if (cur_speed != Gunner->GetNumber("LauncherCurrent")) {
             Gunner->PutNumber("LauncherCurrent", cur_speed);
         }
     }
 }
 void NetworkCom::lift_angle (float new_angle){
-    if(Tracking !=NULL){
+    if(Gunner !=NULL){
         if (new_angle != Gunner->GetNumber("LiftAngle")) {
             Gunner->PutNumber("LiftAngle", new_angle);
         }
