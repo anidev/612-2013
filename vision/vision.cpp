@@ -3,6 +3,8 @@
 #include "../target.h"
 #include <Vision/AxisCamera.h>
 #include <Timer.h>
+#include <VisionAPI.h>
+#include <nivision.h>
 
 vision::vision(){
     
