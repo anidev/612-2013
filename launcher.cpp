@@ -7,7 +7,6 @@
 #include "NetworkCom.h"
 
 #ifdef Suzie
-
 Launcher::Launcher(hw_info wheel1,hw_info wheel2,hw_info sensor) : launcherWheel(wheel1,wheel2),
                                                                    launcherSensor(sensor.moduleNumber, sensor.channel),
                                                                    pid(PID_P, PID_I, PID_D, &launcherSensor, &launcherWheel) {
@@ -24,7 +23,7 @@ Launcher::Launcher(hw_info wheel1,hw_info wheel2,hw_info sensor) : launcherWheel
 }
 #else
 Launcher::Launcher(canport_t info) : launcherWheel(info){
-    launcherWheel.ChangeControlMode(CANJaguar::kSpeed);
+    launcherWheel.ChangeControlMode(CANJaguar::kSpeed);// Must be before PID Setting
     launcherWheel.SetSpeedReference(CANJaguar::kSpeedRef_Encoder);
     launcherWheel.SetPID(PID_P,PID_I,PID_D);
     count = 0;
