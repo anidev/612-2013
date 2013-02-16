@@ -24,9 +24,9 @@ Launcher::Launcher(hw_info wheel1,hw_info wheel2,hw_info sensor) : launcherWheel
 }
 #else
 Launcher::Launcher(canport_t info) : launcherWheel(info){
+    launcherWheel.ChangeControlMode(CANJaguar::kSpeed);
     launcherWheel.SetSpeedReference(CANJaguar::kSpeedRef_Encoder);
     launcherWheel.SetPID(PID_P,PID_I,PID_D);
-    launcherWheel.ChangeControlMode(CANJaguar::kSpeed);
     count = 0;
     targetSpeed = 0;
     targetSet = false;
@@ -95,7 +95,7 @@ unsigned int Launcher::getFrisbeeCount(){
 }
 //extern ports.h
 void Launcher::update() {
-    netcom.launcher_current_speed(getCurrentSpeed());
+    netcom->launcher_current_speed(getCurrentSpeed());
     if(targetSet)
     {
         if(atSpeed())
