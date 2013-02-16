@@ -12,7 +12,6 @@
 #include "EnhancedJoystick.h"
 #include "main.h"
 
-const float JOY_THRESHOLD=0.05;
 void driver_check_update(void* dummy) {
 /*    if(std::fabs(right_joystick.GetY())>JOY_THRESHOLD) {
         driverOperation=true;
@@ -27,7 +26,7 @@ void driver_check_update(void* dummy) {
         return;
     }*/
 
-    if(std::fabs(gunner_joystick.GetRawAxis(2))>JOY_THRESHOLD||std::fabs(gunner_joystick.GetRawAxis(4))>JOY_THRESHOLD) {
+    if(joyzero(gunner_joystick.GetRawAxis(2))||joyzero(gunner_joystick.GetRawAxis(4))) {
         driverOperation=true;
         return;
     }
