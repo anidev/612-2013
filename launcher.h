@@ -23,11 +23,11 @@ private:
     bool reachedSpeed;
 #ifdef Suzie
     two_controller<Jaguar> launcherWheel;
-    PIDCounter launcherSensor; // return RPS
-    PIDController pid;
 #else
     CANJaguar launcherWheel;
 #endif //Suzie
+    PIDCounter launcherSensor; // return RPS
+    PIDController pid;
     void update();
     static void update_helper(void*);
 public:
@@ -35,7 +35,7 @@ public:
 #ifdef Suzie
     Launcher(hw_info,hw_info,hw_info);
 #else
-    Launcher(canport_t);
+    Launcher(canport_t,hw_info);
 #endif //Suzie
     ~Launcher();
     void stop();

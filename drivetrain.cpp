@@ -1,5 +1,6 @@
 #include <cmath>
 #include <Jaguar.h>
+#include <Talon.h>
 #include "612.h"
 #include "auto_encoders.h"
 #include "drivetrain.h"
@@ -20,10 +21,17 @@ void DriveTrain::update_helper(void* param) {
 
 DriveTrain::DriveTrain(drivetrain_info dinfo,encoders_info einfo,hw_info s1,hw_info s2):encoders(einfo),shift(s1,s2) {
     operation=MANUAL;
+#ifdef Suzie
     left_front_jag=new Jaguar(dinfo.left_front.moduleNumber,dinfo.left_front.channel);
     left_rear_jag=new Jaguar(dinfo.left_rear.moduleNumber,dinfo.left_rear.channel);
     right_front_jag=new Jaguar(dinfo.right_front.moduleNumber,dinfo.right_front.channel);
     right_rear_jag=new Jaguar(dinfo.right_rear.moduleNumber,dinfo.right_rear.channel);
+#else
+    left_front_jag=new Talon(dinfo.left_front.moduleNumber,dinfo.left_front.channel);
+    left_rear_jag=new Talon(dinfo.left_rear.moduleNumber,dinfo.left_rear.channel);
+    right_front_jag=new Talon(dinfo.right_front.moduleNumber,dinfo.right_front.channel);
+    right_rear_jag=new Talon(dinfo.right_rear.moduleNumber,dinfo.right_rear.channel);
+#endif
     robotDrive=new RobotDrive(left_front_jag,left_rear_jag,right_front_jag,right_rear_jag);
     robotDrive->SetSafetyEnabled(false);
     encoders.reset_distance();
@@ -42,6 +50,7 @@ DriveTrain::~DriveTrain() {
 void DriveTrain::TankDrive(float left,float right) {
     operation=MANUAL;
     finished=false;
+    std::printf("left: %f, right: %f\n",left,right);
     robotDrive->TankDrive(left,right);
 }
 
