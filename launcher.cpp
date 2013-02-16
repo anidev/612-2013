@@ -24,7 +24,7 @@ Launcher::Launcher(hw_info wheel1,hw_info wheel2,hw_info sensor) : launcherWheel
 #else
 Launcher::Launcher(canport_t info) : launcherWheel(info){
     launcherWheel.SetSpeedReference(CANJaguar::kSpeedRef_Encoder);
-    launcherWheel.SetPID(P,I,D);
+    launcherWheel.SetPID(PID_P,PID_I,PID_D);
     launcherWheel.ChangeControlMode(CANJaguar::kSpeed);
     count = 0;
     targetSpeed = 0;

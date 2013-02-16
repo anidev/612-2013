@@ -1,11 +1,12 @@
 #ifndef _612_H
 #define _612_H
 
-//#define Suzie // Comment Out to change to current Bot
-
+#include <cmath>
 #include <networktables/NetworkTable.h>
 #include "state.h"
 #include "updateRegistry.h"
+
+//#define Suzie // Comment Out to change to current Bot
 
 extern NetworkTable* main_table;
 extern State global_state;

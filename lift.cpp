@@ -20,9 +20,9 @@ Lift::Lift(hw_info jagInfo,hw_info potInfo) : pot(potInfo.moduleNumber,potInfo.c
 Lift::Lift(canport_t canJag)
 {
     liftMotor = new CANJaguar(canJag);
-    (CANJaguar*)liftCan = (CANJaguar*)liftMotor;
+    CANJaguar* liftCan = (CANJaguar*)liftMotor;
     liftCan -> SetSafetyEnabled(false);
-    liftCan -> ChangeControlMode(kPosition);
+    liftCan -> ChangeControlMode(CANJaguar::kPosition);
     liftCan -> SetPositionReference(CANJaguar::kPosRef_Potentiometer);
     liftCan -> ConfigPotentiometerTurns(POT_TURNS);
     //liftCan -> ConfigSoftPositionLimits(LOWER_LIMIT,HIGHER_LIMIT); //Todo Set values then add

@@ -6,6 +6,7 @@
 #include "../drivetrain.h"
 #include "../ports.h"
 #include "../shooter.h"
+#include "../launcher.h"
 #include "../EnhancedJoystick.h"
 
 double new_shooter_wheel_speed=55.0; // decrease by 0.1 or 0.2
@@ -16,7 +17,7 @@ const float TURN_SPEED=0.6f;
 const float WHEEL_CHANGE=1.0f;
 
 void shooting_auto() {
-    if (gunner_joystick.GetRawButton (4)) {     // button Y on joystick
+    if (left_joystick.GetRawButton (1)) {     // button Y on joystick
         // manual revision
         global_state.set_state(DRIVE);
         return;
@@ -24,24 +25,29 @@ void shooting_auto() {
 }
 
 void shooting_manual() {
-    if (gunner_joystick.GetRawButton (4)) {             // button Y on joystick
+    if (left_joystick.GetRawButton (1)) {             // button Y on joystick
         global_state.set_state(SHOOT_AUTO);
         return;
     }
 
-    if (gunner_joystick.GetRawAxis (6) > 0.98f) {       // angle down
-        std::printf("angle down to %f\n",angleAdjuster.get_current_angle());
-        angleAdjuster.lift_down();
-    }
-    else if(gunner_joystick.GetRawAxis (6) < -0.98f) {  // angle up
-        std::printf("angle up %f\n",angleAdjuster.get_current_angle());
-        angleAdjuster.lift_up();
+    float angle_axis=right_joystick.GetY();
+    if(joyzero(angle_axis)) {
+        angleAdjuster.lift_stop();
     }
     else
     {
-        angleAdjuster.lift_stop();
+        if(angle_axis>0) {
+            std::printf("angle up %f\n",angleAdjuster.get_current_angle());
+            angleAdjuster.lift_up();
+        }
+        else
+        {
+            std::printf("angle down to %f\n",angleAdjuster.get_current_angle());
+            angleAdjuster.lift_down();
+        }
     }
 
+    float launcher_axis=(left_joystick.GetZ()/2.0+0.5)*Launcher::MAX;
     if (gunner_joystick.GetRawButton (5)) {             // slow down shooter wheel
         // save new speed, change speed when buton is not pressed
         if(new_shooter_wheel_speed-0.2>=0.0) {
@@ -57,7 +63,7 @@ void shooting_manual() {
         speed_changed = true;
     }
 
-    if (gunner_joystick.GetRawButton(1)) {
+    if (gunner_joystick.GetRawButton (1)) {
         if(!speed_set||speed_changed) {
             std::printf("launcher set to %f\n",new_shooter_wheel_speed);
             shooter.setSpeed (new_shooter_wheel_speed);
