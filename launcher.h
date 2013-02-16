@@ -23,6 +23,7 @@ private:
     void update();
     static void update_helper(void*);
 public:
+    static const float MAX = 70.0f;
     Launcher(hw_info,hw_info,hw_info);
     ~Launcher();
     void stop();

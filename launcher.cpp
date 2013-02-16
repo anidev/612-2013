@@ -16,7 +16,7 @@ Launcher::Launcher(hw_info wheel1,hw_info wheel2,hw_info sensor) : launcherWheel
     launcherSensor.Start();
     pid.Disable();
     pid.SetTolerance(AT_SPEED_TOLERANCE);
-    pid.SetInputRange(0.0f, 65.0f);
+    pid.SetInputRange(0.0f, MAX);
     pid.SetOutputRange(-0.4f, 0.4f);
 }
 

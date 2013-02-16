@@ -4,7 +4,7 @@
 #include "state.h"
 #include "states/state_driving.h"
 #include "states/state_shooting.h"
-#include "states/state_climbing.h"
+
 #include "612.h"
 #include "ports.h"
 #include "auto_encoders.h"
@@ -12,7 +12,6 @@
 #include "EnhancedJoystick.h"
 #include "main.h"
 
-const float JOY_THRESHOLD=0.05;
 void driver_check_update(void* dummy) {
 /*    if(std::fabs(right_joystick.GetY())>JOY_THRESHOLD) {
         driverOperation=true;
@@ -27,7 +26,7 @@ void driver_check_update(void* dummy) {
         return;
     }*/
 
-    if(std::fabs(gunner_joystick.GetRawAxis(2))>JOY_THRESHOLD||std::fabs(gunner_joystick.GetRawAxis(4))>JOY_THRESHOLD) {
+    if(joyzero(gunner_joystick.GetRawAxis(2))||joyzero(gunner_joystick.GetRawAxis(4))) {
         driverOperation=true;
         return;
     }
@@ -118,9 +117,6 @@ void robot_class::TeleopPeriodic() {
     if(global_state.get_state()==DRIVE) {
         driving_state();
         shooting_manual(); // at same time as driving
-    }
-    else if(global_state.get_state() == CLIMB) {
-        climbing_state();
     }
     else if(global_state.get_state() == SHOOT_AUTO) {
         shooting_auto();
