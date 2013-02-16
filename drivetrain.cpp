@@ -57,10 +57,10 @@ void DriveTrain::ArcadeDrive(GenericHID& joystick) {
 void DriveTrain::turn(double angle) {
     std::printf("turning\n");
     operation=TURNING;
-    angle*=1.13333333333;
+    //angle*=1.13333333333;
     this->angle=angle;
     double radAngle=torad(angle);
-    double dist=radAngle*16;
+    double dist=(radAngle*(2*M_PI)) * CIRCUMFERENCE;
     left_dist=-dist;
     right_dist=dist;
     encoders.reset_distance();
