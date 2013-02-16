@@ -13,7 +13,7 @@
 class Launcher {
 private:
     static const float AT_SPEED_TOLERANCE = 1.5; //percent
-    static const float SHOT_DROP_TOLERANCE = 20; //RPM
+    static const float SHOT_DROP_TOLERANCE = 20; //RPS
     static const float PID_P = 0.005f;
     static const float PID_I = 0.0f;
     static const float PID_D = 0.002f;
@@ -21,20 +21,17 @@ private:
     float targetSpeed;
     bool targetSet;
     bool reachedSpeed;
-    static float PreviousSpeed;
 #ifdef Suzie
     two_controller<Jaguar> launcherWheel;
     PIDCounter launcherSensor; // return RPS
     PIDController pid;
 #else
     CANJaguar launcherWheel;
-    static const float P = 1.0; //Todo Set Value
-    static const float I = 1.0; //Todo Set Value
-    static const float D = 1.0; //Todo Set Value
 #endif //Suzie
     void update();
     static void update_helper(void*);
 public:
+    static const float MAX = 70.0f;
 #ifdef Suzie
     Launcher(hw_info,hw_info,hw_info);
 #else

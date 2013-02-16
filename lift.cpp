@@ -20,10 +20,12 @@ Lift::Lift(hw_info jagInfo,hw_info potInfo) : pot(potInfo.moduleNumber,potInfo.c
 Lift::Lift(canport_t canJag)
 {
     liftMotor = new CANJaguar(canJag);
-    ((CANJaguar*)liftMotor) -> SetSafetyEnabled(false);
-    ((CANJaguar*)liftMotor) -> SetPositionReference(CANJaguar::kPosRef_Potentiometer);
-    ((CANJaguar*)liftMotor) -> ConfigPotentiometerTurns(POT_TURNS);
-    //((CANJaguar*)liftMotor) -> ConfigSoftPositionLimits(LOWER_LIMIT,HIGHER_LIMIT); //Todo Set values then add
+    CANJaguar* liftCan = (CANJaguar*)liftMotor;
+    liftCan -> SetSafetyEnabled(false);
+    liftCan -> ChangeControlMode(CANJaguar::kPosition);
+    liftCan -> SetPositionReference(CANJaguar::kPosRef_Potentiometer);
+    liftCan -> ConfigPotentiometerTurns(POT_TURNS);
+    //liftCan -> ConfigSoftPositionLimits(LOWER_LIMIT,HIGHER_LIMIT); //Todo Set values then add
     updateRegistry.addUpdateFunction(&updateHelper,(void*)this);
     manual = true;
 }    
@@ -85,7 +87,7 @@ void Lift::set_direction(int d) {
 }
 
 void Lift::update() {
-	netcom.lift_angle(get_current_angle());
+    netcom.lift_angle(get_current_angle());
     if(manual) {
         return;
     }

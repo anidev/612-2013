@@ -4,12 +4,10 @@
 #include "ports.h"
 #include "launcher.h"
 #include "612.h"
-<<<<<<< HEAD
-#ifdef Suzie
-=======
 #include "NetworkCom.h"
 
->>>>>>> 4254d6f6dfa4cda97d62d904d6b2317dac77c2e2
+#ifdef Suzie
+
 Launcher::Launcher(hw_info wheel1,hw_info wheel2,hw_info sensor) : launcherWheel(wheel1,wheel2),
                                                                    launcherSensor(sensor.moduleNumber, sensor.channel),
                                                                    pid(PID_P, PID_I, PID_D, &launcherSensor, &launcherWheel) {
@@ -20,19 +18,18 @@ Launcher::Launcher(hw_info wheel1,hw_info wheel2,hw_info sensor) : launcherWheel
     launcherSensor.Start();
     pid.Disable();
     pid.SetTolerance(AT_SPEED_TOLERANCE);
-    pid.SetInputRange(0.0f, 65.0f);
+    pid.SetInputRange(0.0f, MAX);
     pid.SetOutputRange(-0.4f, 0.4f);
     PreviousSpeed = 0;
 }
 #else
 Launcher::Launcher(canport_t info) : launcherWheel(info){
     launcherWheel.SetSpeedReference(CANJaguar::kSpeedRef_Encoder);
-    launcherWheel.SetPID(P,I,D);
+    launcherWheel.SetPID(PID_P,PID_I,PID_D);
     launcherWheel.ChangeControlMode(CANJaguar::kSpeed);
     count = 0;
     targetSpeed = 0;
     targetSet = false;
-    PreviousSpeed = 0;
     updateRegistry.addUpdateFunction(&update_helper,(void*)this);
 }
 #endif//Suzie
@@ -62,7 +59,8 @@ void Launcher::setSpeed(float newSpeed) {
     pid.Enable();
     pid.SetSetpoint(newSpeed);
 #else
-    launcherWheel.EnableControl(newSpeed);
+    launcherWheel.EnableControl();
+    launcherWheel.Set(newSpeed*60); // convert RPS to RPM
 #endif
     
 }
@@ -72,7 +70,7 @@ float Launcher::getCurrentSpeed() {
     std::printf("getting current speed when period=%f\n",launcherSensor.GetPeriod());
     return 1.0f/(launcherSensor.GetPeriod());
 #else
-    return launcherWheel.GetSpeed(); //Todo add setup to constructor
+    return launcherWheel.GetSpeed()/60.0f; // Convert from RPM to RPS
 #endif
 
 }
@@ -97,7 +95,7 @@ unsigned int Launcher::getFrisbeeCount(){
 }
 //extern ports.h
 void Launcher::update() {
-<<<<<<< HEAD
+    netcom.launcher_current_speed(getCurrentSpeed());
     if(targetSet)
     {
         if(atSpeed())
@@ -106,16 +104,13 @@ void Launcher::update() {
         }
         if(reachedSpeed)
         {
-            if(std::fabs(getCurrentSpeed()-PreviousSpeed) > SHOT_DROP_TOLERANCE)
+            if(std::fabs(getCurrentSpeed()-targetSpeed) > SHOT_DROP_TOLERANCE)
             {
                 count++;
+                reachedSpeed = false;
             }
-            PreviousSpeed = getCurrentSpeed();
         }
     }
-=======
-	netcom.launcher_current_speed(getCurrentSpeed());
->>>>>>> 4254d6f6dfa4cda97d62d904d6b2317dac77c2e2
 }
 //get current speed and angle and send with netcom
 void Launcher::update_helper(void* obj) {
