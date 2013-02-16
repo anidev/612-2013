@@ -4,6 +4,7 @@
 #include "ports.h"
 #include "launcher.h"
 #include "612.h"
+#include "NetworkCom.h"
 
 Launcher::Launcher(hw_info wheel1,hw_info wheel2,hw_info sensor) : launcherWheel(wheel1,wheel2),
                                                                    launcherSensor(sensor.moduleNumber, sensor.channel),
@@ -61,11 +62,11 @@ void Launcher::resetFrisbeeCount(){
 unsigned int Launcher::getFrisbeeCount(){
     return count;
 }
-
+//extern ports.h
 void Launcher::update() {
-    //Todo add frisbee count here
+	netcom.launcher_current_speed(getCurrentSpeed());
 }
-
+//get current speed and angle and send with netcom
 void Launcher::update_helper(void* obj) {
     Launcher* launcher=(Launcher*)obj;
     launcher->update();
