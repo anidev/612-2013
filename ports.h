@@ -4,6 +4,7 @@
 #include <Joystick.h>
 #include <RobotDrive.h>
 #include "612.h"
+#include "NetworkCom.h"
 
 class DriveTrain;
 class auto_encoders;
@@ -28,6 +29,7 @@ extern DriveTrain drive_train;
 extern Lift angleAdjuster;
 extern Shooter shooter;
 extern AutoShooter auto_shoot;
+
 extern NetworkCom netcom;
 
 #ifdef Suzie
