@@ -60,7 +60,6 @@ void DriveTrain::turn(double angle) {
     angle*=1.13333333333;
     this->angle=angle;
     double radAngle=torad(angle);
-    std::printf("radian angle turn: %f\n",radAngle);
     double dist=radAngle*16;
     left_dist=-dist;
     right_dist=dist;
@@ -115,8 +114,19 @@ bool DriveTrain::isFinished() {
     return finished;
 }
 
+void DriveTrain::shiftHigh() {
+    shift.set(shifter::HIGH);
+}
+
+void DriveTrain::shiftLow() {
+    shift.set(shifter::LOW);
+}
+
+shifter::GEAR DriveTrain::getGear() {
+    return shift.get();
+}
+
 void DriveTrain::update() {
-    std::printf("operation %d\n",operation);
     if(operation==MANUAL) {
         return;
     }

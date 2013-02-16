@@ -21,6 +21,12 @@ void shifter::set(GEAR g) {
     cur_gear = g;
     update();
 }
+
+shifter::GEAR shifter::get() {
+    return cur_gear;
+}
+
+// toggle shifting from high to low
 void shifter::shift() {
     switch (cur_gear) {
         case LOW:
