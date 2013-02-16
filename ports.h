@@ -22,9 +22,8 @@ struct hw_info {
     UINT8 channel;
 };
 
-extern EnhancedJoystick left_joystick;
-extern EnhancedJoystick right_joystick;
-extern EnhancedJoystick gunner_joystick;
+extern EnhancedJoystick drive_gamepad;
+extern EnhancedJoystick gunner_gamepad;
 extern DriveTrain drive_train;
 extern Lift angleAdjuster;
 extern Shooter shooter;
@@ -70,8 +69,8 @@ extern NetworkCom* netcom;
     //Drive Motors
     static const hw_info left_front_motor =  {2,10};
     static const hw_info left_rear_motor =   {2, 9};
-    static const hw_info right_front_motor = {1, 7};
-    static const hw_info right_rear_motor =  {1, 8};
+    static const hw_info right_front_motor = {2, 7};
+    static const hw_info right_rear_motor =  {2, 8};
     //Encoders
     static const hw_info right_encoder1 =    {1, 1}; //Fake
     static const hw_info right_encoder2 =    {1, 2}; //Fake
@@ -79,7 +78,8 @@ extern NetworkCom* netcom;
     static const hw_info left_encoder2 =     {2, 5}; //Fake
     //Shooter motor
     static const canport_t launcher_wheel =     (1);
-    static const hw_info feeder_belt =       {1,10}; //Fake
+    static const hw_info feeder_belt =       {1, 1};
+    static const hw_info launcher_sensor =   {1, 2};
 #endif //#ifdef Suzie
     
 #endif //PORTS_H

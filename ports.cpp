@@ -14,9 +14,8 @@
 #include "NetworkCom.h"
 
 UpdateRegistry updateRegistry; // Must be first constructed
-EnhancedJoystick left_joystick   (1);
-EnhancedJoystick right_joystick  (2);
-EnhancedJoystick gunner_joystick (3);
+EnhancedJoystick drive_gamepad   (1);
+EnhancedJoystick gunner_gamepad  (2);
 drivetrain_info dinfo={left_front_motor,left_rear_motor,right_front_motor,right_rear_motor};
 encoders_info einfo={left_encoder1,left_encoder2,right_encoder1,right_encoder2};
 DriveTrain drive_train(dinfo,einfo,side1,side2);
@@ -25,7 +24,7 @@ DriveTrain drive_train(dinfo,einfo,side1,side2);
     
     Lift angleAdjuster(lift_motor,launch_angle_pot);
 #else
-    Shooter shooter(launcher_wheel, feeder_belt);
+    Shooter shooter(launcher_wheel, launcher_sensor, feeder_belt);
     
     Lift angleAdjuster(lift_canJag);
 #endif
