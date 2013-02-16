@@ -7,6 +7,7 @@
 #include "ports.h"
 #include "612.h"
 #include "lift.h"
+#include "NetworkCom.h"
 
 #ifdef Suzie
 Lift::Lift(hw_info jagInfo,hw_info potInfo) : pot(potInfo.moduleNumber,potInfo.channel)
@@ -84,6 +85,7 @@ void Lift::set_direction(int d) {
 }
 
 void Lift::update() {
+	netcom.lift_angle(get_current_angle());
     if(manual) {
         return;
     }

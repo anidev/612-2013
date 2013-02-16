@@ -12,6 +12,7 @@ class Lift;
 class Shooter;
 class EnhancedJoystick;
 class AutoShooter;
+class NetworkCom;
 
 typedef int canport_t;
 
@@ -27,6 +28,7 @@ extern DriveTrain drive_train;
 extern Lift angleAdjuster;
 extern Shooter shooter;
 extern AutoShooter auto_shoot;
+
 #ifdef Suzie
     /*             SUZIE PORTS                    */
     //lifter

@@ -4,7 +4,12 @@
 #include "ports.h"
 #include "launcher.h"
 #include "612.h"
+<<<<<<< HEAD
 #ifdef Suzie
+=======
+#include "NetworkCom.h"
+
+>>>>>>> 4254d6f6dfa4cda97d62d904d6b2317dac77c2e2
 Launcher::Launcher(hw_info wheel1,hw_info wheel2,hw_info sensor) : launcherWheel(wheel1,wheel2),
                                                                    launcherSensor(sensor.moduleNumber, sensor.channel),
                                                                    pid(PID_P, PID_I, PID_D, &launcherSensor, &launcherWheel) {
@@ -90,8 +95,9 @@ void Launcher::resetFrisbeeCount(){
 unsigned int Launcher::getFrisbeeCount(){
     return count;
 }
-
+//extern ports.h
 void Launcher::update() {
+<<<<<<< HEAD
     if(targetSet)
     {
         if(atSpeed())
@@ -107,8 +113,11 @@ void Launcher::update() {
             PreviousSpeed = getCurrentSpeed();
         }
     }
+=======
+	netcom.launcher_current_speed(getCurrentSpeed());
+>>>>>>> 4254d6f6dfa4cda97d62d904d6b2317dac77c2e2
 }
-
+//get current speed and angle and send with netcom
 void Launcher::update_helper(void* obj) {
     ((Launcher*)obj) -> update();
 }

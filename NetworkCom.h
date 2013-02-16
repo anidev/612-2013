@@ -2,6 +2,7 @@
 #define NETWORKCOM_H_INCLUDED
 
 #include <networktables/NetworkTable.h>
+#include "ports.h"
 
 class NetworkCom {
 public:
