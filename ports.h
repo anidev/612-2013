@@ -59,7 +59,7 @@ extern NetworkCom netcom;
 #else
     /*          NEW ROBOT PORTS                   */
     //lifter
-    static const canport_t lift_canJag =        (1);
+    static const canport_t lift_canJag =        (2);
     //LED relay
     static const hw_info led =               {2, 1}; //Fake
     //Shifter servos
@@ -76,7 +76,7 @@ extern NetworkCom netcom;
     static const hw_info left_encoder1 =     {2, 4}; //Fake
     static const hw_info left_encoder2 =     {2, 5}; //Fake
     //Shooter motor
-    static const canport_t launcher_wheel =     (2);
+    static const canport_t launcher_wheel =     (1);
     static const hw_info feeder_belt =       {1,10}; //Fake
 #endif //#ifdef Suzie
     
