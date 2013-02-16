@@ -7,6 +7,7 @@
 #include "NetworkCom.h"
 
 #ifdef Suzie
+
 Launcher::Launcher(hw_info wheel1,hw_info wheel2,hw_info sensor) : launcherWheel(wheel1,wheel2),
                                                                    launcherSensor(sensor.moduleNumber, sensor.channel),
                                                                    pid(PID_P, PID_I, PID_D, &launcherSensor, &launcherWheel) {
