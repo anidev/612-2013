@@ -95,7 +95,7 @@ unsigned int Launcher::getFrisbeeCount(){
 }
 //extern ports.h
 void Launcher::update() {
-    netcom.launcher_current_speed(getCurrentSpeed());
+    netcom->launcher_current_speed(getCurrentSpeed());
     if(targetSet)
     {
         if(atSpeed())
