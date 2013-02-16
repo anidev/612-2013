@@ -1,7 +1,7 @@
 #ifndef _612_H
 #define _612_H
 
-#define Suzie // Comment Out to change to current Bot
+//#define Suzie // Comment Out to change to current Bot
 
 #include <networktables/NetworkTable.h>
 #include "state.h"

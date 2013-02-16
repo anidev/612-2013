@@ -17,14 +17,17 @@ Launcher::Launcher(hw_info wheel1,hw_info wheel2,hw_info sensor) : launcherWheel
     pid.SetTolerance(AT_SPEED_TOLERANCE);
     pid.SetInputRange(0.0f, 65.0f);
     pid.SetOutputRange(-0.4f, 0.4f);
+    PreviousSpeed = 0;
 }
 #else
 Launcher::Launcher(canport_t info) : launcherWheel(info){
-    //TODO add canbus setup here
     launcherWheel.SetSpeedReference(CANJaguar::kSpeedRef_Encoder);
+    launcherWheel.SetPID(P,I,D);
+    launcherWheel.ChangeControlMode(CANJaguar::kSpeed);
     count = 0;
     targetSpeed = 0;
     targetSet = false;
+    PreviousSpeed = 0;
     updateRegistry.addUpdateFunction(&update_helper,(void*)this);
 }
 #endif//Suzie
@@ -34,10 +37,13 @@ Launcher::~Launcher() {
 
 void Launcher::stop() {
     targetSet = false;
+    reachedSpeed = false;
     targetSpeed=0.0f;
     launcherWheel.Set(0.0f);
 #ifdef Suzie
     pid.Disable();
+#else
+    launcherWheel.DisableControl();
 #endif //Suzie
     //insert more code here
 }
@@ -45,10 +51,13 @@ void Launcher::stop() {
 void Launcher::setSpeed(float newSpeed) {
     targetSpeed=newSpeed;
     targetSet=true;
-    launcherWheel.Set(0.3);
+    reachedSpeed = false;
 #ifdef Suzie
+    launcherWheel.Set(0.3);
     pid.Enable();
     pid.SetSetpoint(newSpeed);
+#else
+    launcherWheel.EnableControl(newSpeed);
 #endif
     
 }
@@ -83,7 +92,21 @@ unsigned int Launcher::getFrisbeeCount(){
 }
 
 void Launcher::update() {
-    //Todo add frisbee count here
+    if(targetSet)
+    {
+        if(atSpeed())
+        {
+            reachedSpeed = true;
+        }
+        if(reachedSpeed)
+        {
+            if(std::fabs(getCurrentSpeed()-PreviousSpeed) > SHOT_DROP_TOLERANCE)
+            {
+                count++;
+            }
+            PreviousSpeed = getCurrentSpeed();
+        }
+    }
 }
 
 void Launcher::update_helper(void* obj) {
