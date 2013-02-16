@@ -30,4 +30,4 @@ DriveTrain drive_train(dinfo,einfo,side1,side2);
     Lift angleAdjuster(lift_canJag);
 #endif
 AutoShooter auto_shoot(shooter); // Must be after #defines
-NetworkCom netcom = NetworkCom();
+NetworkCom* netcom;

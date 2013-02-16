@@ -39,7 +39,7 @@ robot_class::robot_class() {
 
 void robot_class::RobotInit() {
     std::printf("RobotInit");
-    main_table=NetworkTable::GetTable("612");
+    netcom=new NetworkCom();
     updateRegistry.addUpdateFunction(&driver_check_update,NULL);
 }
 
@@ -55,40 +55,35 @@ void robot_class::AutonomousInit() {
     // 3 = Back Right
     Position auto_pos=Back_Left;
     AutoTarget auto_target=Middle_Goal;
-    if(main_table!=NULL) {
-        NetworkTable* auto_table=main_table->GetSubTable("Autonomous");
-        if(auto_table!=NULL) {
-            int positionVal=(int)auto_table->GetNumber("Position");
-            int targetVal=(int)auto_table->GetNumber("Target");
-            switch(positionVal) {
-            case 0:
-                auto_pos=Front_Right;
-                std::printf("Selected autonomous: FRONT RIGHT\n");
-                break;
-            case 1:
-                auto_pos=Back_Left;
-                std::printf("Selected autonomous: BACK LEFT\n");
-                break;
-            case 2:
-                auto_pos=Front_Left;
-                std::printf("Selected autonomous: FRONT LEFT\n");
-                break;
-            case 3:
-                auto_pos=Back_Right;
-                std::printf("Selected autonomous: BACK RIGHT\n");
-                break;
-            }
-            switch(targetVal) {
-            case 0:
-                auto_target=High_Goal;
-                std::printf("Selected autonomous: HIGH GOAL\n");
-                break;
-            case 1:
-                auto_target=Middle_Goal;
-                std::printf("Selected autonomous: MID GOAL\n");
-                break;
-            }
-        }
+    int positionVal=(int)netcom->Autonomous_Position();
+    int targetVal=(int)netcom->Autonomous_Target();
+    switch(positionVal) {
+    case 0:
+        auto_pos=Front_Right;
+        std::printf("Selected autonomous: FRONT RIGHT\n");
+        break;
+    case 1:
+        auto_pos=Back_Left;
+        std::printf("Selected autonomous: BACK LEFT\n");
+        break;
+    case 2:
+        auto_pos=Front_Left;
+        std::printf("Selected autonomous: FRONT LEFT\n");
+        break;
+    case 3:
+        auto_pos=Back_Right;
+        std::printf("Selected autonomous: BACK RIGHT\n");
+        break;
+    }
+    switch(targetVal) {
+    case 0:
+        auto_target=High_Goal;
+        std::printf("Selected autonomous: HIGH GOAL\n");
+        break;
+    case 1:
+        auto_target=Middle_Goal;
+        std::printf("Selected autonomous: MID GOAL\n");
+        break;
     }
     choose_routine(auto_pos, auto_target);
 }

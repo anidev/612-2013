@@ -96,7 +96,7 @@ void Lift::set_direction(int d) {
 }
 
 void Lift::update() {
-    netcom.lift_angle(get_current_angle());
+    netcom->lift_angle(get_current_angle());
     if(manual) {
         return;
     }

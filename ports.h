@@ -30,7 +30,7 @@ extern Lift angleAdjuster;
 extern Shooter shooter;
 extern AutoShooter auto_shoot;
 
-extern NetworkCom netcom;
+extern NetworkCom* netcom;
 
 #ifdef Suzie
     /*             SUZIE PORTS                    */
