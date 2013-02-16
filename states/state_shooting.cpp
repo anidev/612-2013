@@ -1,5 +1,4 @@
 #include <Joystick.h>       // for GetRawButton () and GetRawAxis ()
-#include "state_climbing.h"
 #include "state_shooting.h"
 #include "../lift.h"           // for lift_up () and lift_down ()
 #include "../launcher.h"       // for setSpeed () and getCurrentSpeed()
