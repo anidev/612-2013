@@ -47,7 +47,6 @@ void shooting_manual() {
         }
     }
 
-    float launcher_axis=(left_joystick.GetZ()/2.0+0.5)*Launcher::MAX;
     if (gunner_joystick.GetRawButton (5)) {             // slow down shooter wheel
         // save new speed, change speed when buton is not pressed
         if(new_shooter_wheel_speed-0.2>=0.0) {

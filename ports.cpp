@@ -11,6 +11,7 @@
 #include "EnhancedJoystick.h"
 #include "AutoShooter.h"
 #include "612.h"
+#include "NetworkCom.h"
 
 UpdateRegistry updateRegistry; // Must be first constructed
 EnhancedJoystick left_joystick   (1);
@@ -29,3 +30,4 @@ DriveTrain drive_train(dinfo,einfo,side1,side2);
     Lift angleAdjuster(lift_canJag);
 #endif
 AutoShooter auto_shoot(shooter); // Must be after #defines
+NetworkCom netcom = NetworkCom();
