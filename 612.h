@@ -14,5 +14,10 @@ enum teleop_state {
 };
 
 static const double M_PI=3.14159256359;
+static const float JOY_THRESHOLD=0.05;
+
+inline bool joyzero(float input) {
+    return (std::fabs(input)<JOY_THRESHOLD);
+}
 
 #endif // _612_H
