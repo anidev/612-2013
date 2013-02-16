@@ -11,6 +11,7 @@
 extern State global_state;
 extern UpdateRegistry updateRegistry;
 extern bool driverOperation;
+
 enum teleop_state {
     DRIVE, SHOOT_AUTO
 };
