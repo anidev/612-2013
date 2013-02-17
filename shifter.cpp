@@ -7,11 +7,9 @@ const float khighgear = 0.2;
 shifter::shifter(hw_info a,hw_info b) : servo1(a.moduleNumber,a.channel), servo2(b.moduleNumber,b.channel){
     cur_gear = LOW;
     //set High
-    left_joystick.addBtn(6,&setHighBtnHelper,((void*)this));
-    right_joystick.addBtn(11,&setHighBtnHelper,((void*)this));
+    drive_gamepad.addBtn(5,&setHighBtnHelper,((void*)this)); // L1
     //set LOW
-    left_joystick.addBtn(7,&setLowBtnHelper,((void*)this));
-    right_joystick.addBtn(10,&setLowBtnHelper,((void*)this));
+    drive_gamepad.addBtn(6,&setLowBtnHelper,((void*)this)); // R1
 }
 
 shifter::~shifter() {

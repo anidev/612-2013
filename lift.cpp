@@ -53,6 +53,7 @@ void Lift::lift_stop() {
 void Lift::set_angle(float new_angle) {
     manual = false;
     target_angle = new_angle;
+    set_direction(0);
 #ifndef Suzie
     ((CANJaguar*)liftMotor) -> ChangeControlMode(CANJaguar::kPosition);
     ((CANJaguar*)liftMotor) -> Set(new_angle);
@@ -90,8 +91,9 @@ void Lift::set_direction(int d) {
 #ifdef Suzie
     liftMotor -> Set(d*1.0f);
 #else
-    ((CANJaguar*)liftMotor) -> ChangeControlMode(CANJaguar::kVoltage);
-    ((CANJaguar*)liftMotor) -> Set(d*1.0f);
+    ((CANJaguar*)liftMotor) -> DisableControl();
+    ((CANJaguar*)liftMotor) -> ChangeControlMode(CANJaguar::kPercentVbus);
+    ((CANJaguar*)liftMotor) -> Set(d*0.20f);
 #endif //Suzie
 }
 

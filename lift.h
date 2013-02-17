@@ -24,7 +24,7 @@ private:
     #else
         static const float LOWER_LIMIT = 0.0; //Todo Set Value
         static const float HIGHER_LIMIT = 1.0; //Todo Set Value
-        static const UINT16 POT_TURNS = 1; //Todo SetValue
+        static const UINT16 POT_TURNS = 50; //Todo SetValue
     #endif //Suzie only
 public:
 #ifdef Suzie

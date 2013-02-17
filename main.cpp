@@ -26,7 +26,11 @@ void driver_check_update(void* dummy) {
         return;
     }*/
 
-    if(joyzero(gunner_joystick.GetRawAxis(2))||joyzero(gunner_joystick.GetRawAxis(4))) {
+    if(!joyzero(drive_gamepad.GetRawAxis(2))||!joyzero(drive_gamepad.GetRawAxis(4))) { // axis controls
+        driverOperation=true;
+        return;
+    }
+    if(drive_gamepad.GetRawButton(7)||drive_gamepad.GetRawButton(8)) {
         driverOperation=true;
         return;
     }

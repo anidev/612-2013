@@ -7,7 +7,7 @@
 #include "AutoShooter.h"
 
 bool isLeft;
-bool state_changed = false;
+bool auto_state_changed = false;
 
 int Frisbees = 3;
 
@@ -27,56 +27,56 @@ State state(AUTO_DRIVE);
 AutoTarget shoot_tar;
 
 void lift(AutoTarget target) {
-    if (state_changed) {
+    if (auto_state_changed) {
         if (target == High_Goal) {
             angleAdjuster.set_angle(HIGH_LIFT_ANGLE); /*other angle*/
         } else if (target == Middle_Goal) {
             angleAdjuster.set_angle(LOW_LIFT_ANGLE); /*other angle*/
         }
-        state_changed = false;
+        auto_state_changed = false;
     } else if (angleAdjuster.at_angle()) {
         state.set_state(AUTO_DRIVE);
-        state_changed = true;
+        auto_state_changed = true;
     }
 }
 
 void drive(double dist /*keep in mind that dist is in inches*/) {
-    if (state_changed) {
+    if (auto_state_changed) {
         drive_train.drive(dist);
-        state_changed = false;
+        auto_state_changed = false;
     }
     else if (drive_train.isFinished()) {
         //disable the drive train
         state.set_state(AUTO_TURN);
-        state_changed = true;
+        auto_state_changed = true;
     }
 }
 
 void turn(double angle) {
-    if (state_changed) {
+    if (auto_state_changed) {
         drive_train.turn(angle);
-        state_changed = false;
+        auto_state_changed = false;
     }
     else if (drive_train.isFinished()) {
         //disable the drive train
         state.set_state(AUTO_SHOOT);
-        state_changed = true;
+        auto_state_changed = true;
     }
 }
 
 void shoot() {
     std::printf("shooting");
-    if (state_changed) {
+    if (auto_state_changed) {
         auto_shoot.AutoShoot();
-        state_changed = false;
+        auto_state_changed = false;
     } else if (auto_shoot.doneShooting()) {
         state.set_state(DONE);
-        state_changed = true;
+        auto_state_changed = true;
     }
 }
 
 void choose_routine(Position pos, AutoTarget target){
-    state_changed = true;
+    auto_state_changed = true;
     shoot_tar = target;
     if ((pos == Back_Left) || (pos == Front_Left)) {
         isLeft = true;
