@@ -121,4 +121,3 @@ void Lift::update() {
 void Lift::updateHelper(void* a) {
     ((Lift*)a) -> update();
 }
-//Todo Implement these with Canbus

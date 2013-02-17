@@ -10,13 +10,14 @@
 #include "../EnhancedJoystick.h"
 #include "../AutoShooter.h"
 
-double new_shooter_wheel_speed=55.0; // decrease by 0.1 or 0.2
+//double new_shooter_wheel_speed=55.0; // decrease by 0.1 or 0.2
+double new_shooter_wheel_speed=0.85;
 bool is_turning;
 bool speed_set=false;
 bool speed_changed=false;
 bool state_changed=false;
 const float SHOOT_TURN_SPEED=0.6f;
-const float WHEEL_CHANGE=1.0f;
+const float WHEEL_CHANGE=0.05f;
 
 void shooting_auto() {
     if (gunner_gamepad.GetRawButton (4)) {          // button Y on joystick
@@ -42,6 +43,7 @@ void shooting_manual() {
     if(gunner_gamepad.GetRawAxis(6)>0.98f) {
         std::printf("angle up %f\n",angleAdjuster.get_current_angle());
         angleAdjuster.lift_up();
+        
     }
     else if(gunner_gamepad.GetRawAxis(6)<-0.98f)
     {
@@ -52,6 +54,7 @@ void shooting_manual() {
     {
         angleAdjuster.lift_stop();
     }
+    netcom->lift_angle(angleAdjuster.get_current_angle());
 
     if (gunner_gamepad.GetRawButton (5)) {             // slow down shooter wheel
         // save new speed, change speed when buton is not pressed
@@ -59,13 +62,17 @@ void shooting_manual() {
             new_shooter_wheel_speed -= WHEEL_CHANGE;
             std::printf("launcher slowed to %f\n",new_shooter_wheel_speed);
             speed_changed = true;
+            netcom->launcher_target_speed(new_shooter_wheel_speed);
         }
     }
 
     if (gunner_gamepad.GetRawButton (6)) {             // speed up shooter wheel
-        new_shooter_wheel_speed += WHEEL_CHANGE;
-        std::printf("launcher sped up to %f\n",new_shooter_wheel_speed);
-        speed_changed = true;
+        if(new_shooter_wheel_speed+WHEEL_CHANGE<=1.0) {
+            new_shooter_wheel_speed += WHEEL_CHANGE;
+            std::printf("launcher sped up to %f\n",new_shooter_wheel_speed);
+            speed_changed = true;
+            netcom->launcher_target_speed(new_shooter_wheel_speed);
+        }
     }
 
     if (gunner_gamepad.GetRawButton (1)) {
@@ -84,6 +91,7 @@ void shooting_manual() {
             speed_set=false;
         }
     }
+    netcom->launcher_current_speed(shooter.getCurrentSpeed());
 
     if (gunner_gamepad.GetRawAxis(5)<-0.98f) { // right
         shooter.setFeederForward();
