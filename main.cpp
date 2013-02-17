@@ -42,17 +42,19 @@ robot_class::robot_class() {
 }
 
 void robot_class::RobotInit() {
-    std::printf("RobotInit");
+    std::printf("RobotInit\n");
     netcom=new NetworkCom();
     updateRegistry.addUpdateFunction(&driver_check_update,NULL);
 }
 
 void robot_class::DisabledInit() {
-    std::printf("DisabledInit");
+    std::printf("DisabledInit\n");
+    led_spike.Set(Relay::kOff);
 }
 
 void robot_class::AutonomousInit() {
-    std::printf("AutonomousInit");
+    std::printf("AutonomousInit\n");
+    led_spike.Set(Relay::kForward);
     // 0 = Front Right
     // 1 = Back Left
     // 2 = Front Left
@@ -93,7 +95,8 @@ void robot_class::AutonomousInit() {
 }
 
 void robot_class::TeleopInit() {
-    std::printf("TelopInit");
+    std::printf("TelopInit\n");
+    led_spike.Set(Relay::kForward);
 }
 
 void robot_class::DisabledPeriodic() {

@@ -32,7 +32,7 @@ private:
     Talon feederMotor;
 #endif //Suzie
     void update();
-    static const double SPEED = 0.5;
+    static const float SPEED = 0.25f;
 };
 
 

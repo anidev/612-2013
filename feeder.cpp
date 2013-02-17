@@ -10,8 +10,9 @@ Feeder::Feeder(hw_info info1,hw_info info2) : feederMotor(info1,info2)
 Feeder::Feeder(hw_info info) : feederMotor(info.moduleNumber,info.channel)
 {
     direction = STOP;
-} 
+}
 #endif //Suzie
+
 Feeder::~Feeder() {
 
 }
