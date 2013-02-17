@@ -11,6 +11,7 @@
 #include "autonomous.h"
 #include "EnhancedJoystick.h"
 #include "main.h"
+#include "Shooter.h"
 
 void driver_check_update(void* dummy) {
 /*    if(std::fabs(right_joystick.GetY())>JOY_THRESHOLD) {
@@ -121,7 +122,27 @@ void robot_class::TeleopPeriodic() {
         shooting_auto();
     }
 }
-
+void TestInit() {   
+}
+void TestPeriodic() {
+    updateRegistry.updateAll();
+    if(std::fabs(drive_gamepad.GetRawAxis(1)) > 0.05)
+    {
+        shooter.setFeederForward();
+    }
+    else
+    {
+        shooter.setFeederStop();
+    }
+    if(std::fabs(drive_gamepad.GetRawAxis(1)) > 0.05)
+    {
+        shooter.setSpeed(drive_gamepad.GetRawAxis(1));
+    }
+    else
+    {
+        shooter.setSpeed(0.0);
+    }
+}
 //the following macro tells the library that we want to generate code
 //for our class robot_class
 START_ROBOT_CLASS(robot_class);
