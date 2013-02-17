@@ -8,10 +8,10 @@
 
 //#define Suzie // Comment Out to change to current Bot
 
-extern NetworkTable* main_table;
 extern State global_state;
 extern UpdateRegistry updateRegistry;
 extern bool driverOperation;
+
 enum teleop_state {
     DRIVE, SHOOT_AUTO
 };

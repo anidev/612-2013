@@ -12,8 +12,8 @@ Shooter::Shooter(hw_info launchWheel1,hw_info launchWheel2,hw_info launchSensor,
     updateRegistry.addUpdateFunction(&update_helper, (void*)this);
 }
 #else
-Shooter::Shooter(canport_t canJag,hw_info feedInfo):
-         launch(canJag), feed(feedInfo)
+Shooter::Shooter(canport_t canJag,hw_info sensorInfo,hw_info feedInfo):
+         launch(canJag,sensorInfo), feed(feedInfo)
 {
     shooting = false;
     updateRegistry.addUpdateFunction(&update_helper, (void*)this);

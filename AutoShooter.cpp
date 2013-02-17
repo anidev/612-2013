@@ -9,7 +9,7 @@
 
 AutoShooter::AutoShooter(Shooter& s) {
     updateRegistry.addUpdateFunction(&update_helper, (void*)this);
-    gunner_joystick.addBtn(4,&toggle_helper,(void*)this);
+//    gunner_gamepad.addBtn(4,&toggle_helper,(void*)this);
     done = false;
     cur_state = OFF;
     shooter = &s;

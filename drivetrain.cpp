@@ -1,5 +1,6 @@
 #include <cmath>
 #include <Jaguar.h>
+#include <Talon.h>
 #include "612.h"
 #include "auto_encoders.h"
 #include "drivetrain.h"
@@ -20,59 +21,67 @@ void DriveTrain::update_helper(void* param) {
 
 DriveTrain::DriveTrain(drivetrain_info dinfo,encoders_info einfo,hw_info s1,hw_info s2):encoders(einfo),shift(s1,s2) {
     operation=MANUAL;
-    left_front_jag=new Jaguar(dinfo.left_front.moduleNumber,dinfo.left_front.channel);
-    left_rear_jag=new Jaguar(dinfo.left_rear.moduleNumber,dinfo.left_rear.channel);
-    right_front_jag=new Jaguar(dinfo.right_front.moduleNumber,dinfo.right_front.channel);
-    right_rear_jag=new Jaguar(dinfo.right_rear.moduleNumber,dinfo.right_rear.channel);
-    robotDrive=new RobotDrive(left_front_jag,left_rear_jag,right_front_jag,right_rear_jag);
-    robotDrive->SetSafetyEnabled(false);
+#ifdef Suzie
+    left_front = new Jaguar(dinfo.left_front.moduleNumber,dinfo.left_front.channel);
+    left_rear = new Jaguar(dinfo.left_rear.moduleNumber,dinfo.left_rear.channel);
+    right_front = new Jaguar(dinfo.right_front.moduleNumber,dinfo.right_front.channel);
+    right_rear = new Jaguar(dinfo.right_rear.moduleNumber,dinfo.right_rear.channel);
+#else
+    left_front = new Talon(dinfo.left_front.moduleNumber,dinfo.left_front.channel);
+    left_rear = new Talon(dinfo.left_rear.moduleNumber,dinfo.left_rear.channel);
+    right_front = new Talon(dinfo.right_front.moduleNumber,dinfo.right_front.channel);
+    right_rear = new Talon(dinfo.right_rear.moduleNumber,dinfo.right_rear.channel);
+#endif
+    robotDrive = new RobotDrive(left_front,left_rear,right_front,right_rear);
+    robotDrive -> SetSafetyEnabled(false);
     encoders.reset_distance();
-    finished=false;
+    finished = false;
     updateRegistry.addUpdateFunction(&update_helper,(void*)this);
 }
 
 DriveTrain::~DriveTrain() {
     delete robotDrive;
-    delete left_front_jag;
-    delete left_rear_jag;
-    delete right_front_jag;
-    delete right_rear_jag;
+    delete left_front;
+    delete left_rear;
+    delete right_front;
+    delete right_rear;
 }
 
 void DriveTrain::TankDrive(float left,float right) {
-    operation=MANUAL;
-    finished=false;
-    robotDrive->TankDrive(left,right);
+    operation = MANUAL;
+    finished = false;
+    std::printf("left: %f, right: %f\n",left,right);
+    robotDrive -> TankDrive(left,right);
 }
 
 void DriveTrain::ArcadeDrive(GenericHID& joystick) {
-    operation=MANUAL;
-    finished=false;
-    robotDrive->ArcadeDrive(joystick);
+    operation = MANUAL;
+    finished = false;
+    robotDrive -> ArcadeDrive(joystick);
 }
 
 // calculated assuming robot facing 0deg
 // therefore negative angle=turn right, positive angle=turn left
 // angle in DEGREES
-void DriveTrain::turn(double angle) {
+void DriveTrain::turn(double a) {
     std::printf("turning\n");
-    operation=TURNING;
+    operation = TURNING;
     //angle*=1.13333333333;
-    this->angle=angle;
-    double dist=(angle/360)*CIRCUMFERENCE;
-    left_dist=-dist;
-    right_dist=dist;
+    this -> angle = a;
+    double dist = (angle/360)*CIRCUMFERENCE;
+    left_dist = -dist;
+    right_dist = dist;
     encoders.reset_distance();
-    finished=false;
+    finished = false;
 }
 
 void DriveTrain::drive(double dist) {
     std::printf("driving\n");
-    operation=DRIVING;
-    left_dist=dist;
-    right_dist=dist;
+    operation = DRIVING;
+    left_dist = dist;
+    right_dist = dist;
     encoders.reset_distance();
-    finished=false;
+    finished = false;
 }
 
 void DriveTrain::abort() {

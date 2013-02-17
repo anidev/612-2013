@@ -4,6 +4,8 @@
 #include <RobotDrive.h>
 #include <GenericHID.h>
 #include <Jaguar.h>
+#include <Talon.h>
+#include <SpeedController.h>
 #include "auto_encoders.h"
 #include "shifter.h"
 #include "ports.h"
@@ -52,10 +54,10 @@ private:
     };
     typedef void (*drive_func)();
     RobotDrive* robotDrive;
-    Jaguar* left_front_jag;
-    Jaguar* left_rear_jag;
-    Jaguar* right_front_jag;
-    Jaguar* right_rear_jag;
+    SpeedController* left_front;
+    SpeedController* left_rear;
+    SpeedController* right_front;
+    SpeedController* right_rear;
     auto_encoders encoders;
     shifter shift;
     drive_func currentOperation;

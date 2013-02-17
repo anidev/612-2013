@@ -7,32 +7,25 @@
 #include "NetworkCom.h"
 
 #ifdef Suzie
-
 Launcher::Launcher(hw_info wheel1,hw_info wheel2,hw_info sensor) : launcherWheel(wheel1,wheel2),
                                                                    launcherSensor(sensor.moduleNumber, sensor.channel),
                                                                    pid(PID_P, PID_I, PID_D, &launcherSensor, &launcherWheel) {
+#else
+Launcher::Launcher(canport_t wheelInfo,hw_info sensorInfo) : launcherWheel(wheelInfo),
+                                                             launcherSensor(sensorInfo.moduleNumber, sensorInfo.channel),
+                                                             pid(PID_P, PID_I, PID_D, &launcherSensor, &launcherWheel) {
+    launcherWheel.ChangeControlMode(CANJaguar::kPercentVbus);
+#endif
     count = 0;
     targetSpeed = 0;
     targetSet = false;
     updateRegistry.addUpdateFunction(&update_helper,(void*)this);
-    launcherSensor.Start();
     pid.Disable();
     pid.SetTolerance(AT_SPEED_TOLERANCE);
     pid.SetInputRange(0.0f, MAX);
-    pid.SetOutputRange(-0.4f, 0.4f);
-    PreviousSpeed = 0;
+    pid.SetOutputRange(-1.0f, 1.0f);
+    launcherSensor.Start();
 }
-#else
-Launcher::Launcher(canport_t info) : launcherWheel(info){
-    launcherWheel.ChangeControlMode(CANJaguar::kSpeed);
-    launcherWheel.SetSpeedReference(CANJaguar::kSpeedRef_Encoder);
-    launcherWheel.SetPID(PID_P,PID_I,PID_D);
-    count = 0;
-    targetSpeed = 0;
-    targetSet = false;
-    updateRegistry.addUpdateFunction(&update_helper,(void*)this);
-}
-#endif//Suzie
 
 Launcher::~Launcher() {
 }
@@ -42,11 +35,8 @@ void Launcher::stop() {
     reachedSpeed = false;
     targetSpeed=0.0f;
     launcherWheel.Set(0.0f);
-#ifdef Suzie
     pid.Disable();
-#else
-    launcherWheel.DisableControl();
-#endif //Suzie
+    launcherSensor.Start();
     //insert more code here
 }
 
@@ -54,24 +44,16 @@ void Launcher::setSpeed(float newSpeed) {
     targetSpeed=newSpeed;
     targetSet=true;
     reachedSpeed = false;
-#ifdef Suzie
-    launcherWheel.Set(0.3);
-    pid.Enable();
-    pid.SetSetpoint(newSpeed);
-#else
-    launcherWheel.EnableControl();
-    launcherWheel.Set(newSpeed*60); // convert RPS to RPM
-#endif
-    
+    launcherWheel.Set(newSpeed);
+    launcherSensor.Start();
+//    pid.Enable();
+//    pid.SetSetpoint(newSpeed);
 }
 
 float Launcher::getCurrentSpeed() {
-#ifdef Suzie
-    std::printf("getting current speed when period=%f\n",launcherSensor.GetPeriod());
+//    std::printf("getting current speed when period=%f\n",launcherSensor.PIDGet());
+    launcherSensor.Start();
     return 1.0f/(launcherSensor.GetPeriod());
-#else
-    return launcherWheel.GetSpeed()/60.0f; // Convert from RPM to RPS
-#endif
 
 }
 
@@ -95,7 +77,7 @@ unsigned int Launcher::getFrisbeeCount(){
 }
 //extern ports.h
 void Launcher::update() {
-    netcom.launcher_current_speed(getCurrentSpeed());
+    netcom->launcher_current_speed(getCurrentSpeed());
     if(targetSet)
     {
         if(atSpeed())
