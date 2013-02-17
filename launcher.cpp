@@ -14,16 +14,17 @@ Launcher::Launcher(hw_info wheel1,hw_info wheel2,hw_info sensor) : launcherWheel
 Launcher::Launcher(canport_t wheelInfo,hw_info sensorInfo) : launcherWheel(wheelInfo),
                                                              launcherSensor(sensorInfo.moduleNumber, sensorInfo.channel),
                                                              pid(PID_P, PID_I, PID_D, &launcherSensor, &launcherWheel) {
+    launcherWheel.ChangeControlMode(CANJaguar::kPercentVbus);
 #endif
     count = 0;
     targetSpeed = 0;
     targetSet = false;
     updateRegistry.addUpdateFunction(&update_helper,(void*)this);
-    launcherSensor.Start();
     pid.Disable();
     pid.SetTolerance(AT_SPEED_TOLERANCE);
     pid.SetInputRange(0.0f, MAX);
-    pid.SetOutputRange(-0.4f, 0.4f);
+    pid.SetOutputRange(-1.0f, 1.0f);
+    launcherSensor.Start();
 }
 
 Launcher::~Launcher() {
@@ -35,6 +36,7 @@ void Launcher::stop() {
     targetSpeed=0.0f;
     launcherWheel.Set(0.0f);
     pid.Disable();
+    launcherSensor.Start();
     //insert more code here
 }
 
@@ -42,13 +44,15 @@ void Launcher::setSpeed(float newSpeed) {
     targetSpeed=newSpeed;
     targetSet=true;
     reachedSpeed = false;
-    launcherWheel.Set(0.3);
-    pid.Enable();
-    pid.SetSetpoint(newSpeed);
+    launcherWheel.Set(newSpeed);
+    launcherSensor.Start();
+//    pid.Enable();
+//    pid.SetSetpoint(newSpeed);
 }
 
 float Launcher::getCurrentSpeed() {
-    std::printf("getting current speed when period=%f\n",launcherSensor.PIDGet());
+//    std::printf("getting current speed when period=%f\n",launcherSensor.PIDGet());
+    launcherSensor.Start();
     return 1.0f/(launcherSensor.GetPeriod());
 
 }
