@@ -44,6 +44,7 @@ public:
     void setFeederBackward();
     void setFeederStop();
     Feeder::direction_t getFeederDirection();
+    void setRawFeederPower(double);
     // Global shooter stuff
     void update();
     void shoot(int a = 4,double launchSpeed = DEFAULT_LAUNCH_SPEED);

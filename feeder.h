@@ -24,6 +24,7 @@ public:
     void forward();
     void backward();
     void stop();
+    void setRawPower(double);
     direction_t getDirection();
 private:
     Counter counter;

@@ -110,9 +110,13 @@ void robot_class::TeleopPeriodic() {
         shooting_auto();
     }
 }
-void TestInit() {   
+void robot_class::TestInit() {   
 }
-void TestPeriodic() {
+void robot_class::TestPeriodic() {
+    if(gunner_gamepad.GetRawAxis(1) > 0.05)
+        shooter.setFeederForward();
+    else if(gunner_gamepad.GetRawAxis(1) < -0.05)
+        shooter.setFeederBackward();
 }
 //the following macro tells the library that we want to generate code
 //for our class robot_class

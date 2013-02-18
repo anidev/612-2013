@@ -71,7 +71,9 @@ void Shooter::setFeederBackward(){
 void Shooter::setFeederStop(){
     feed.stop();
 }
-
+void Shooter::setRawFeederPower(double b) {
+    feed.setRawPower(b);
+}
 void Shooter::update() {
     if(shooting && launch.getFrisbeeCount() < targetCount)
     {

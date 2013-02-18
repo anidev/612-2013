@@ -18,6 +18,10 @@ Feeder::Feeder(hw_info info) : feederMotor(info.moduleNumber,info.channel)
 
 Feeder::~Feeder() {
 }
+void Feeder::setRawPower(double power)
+{
+    feederMotor.Set(power);
+}
 
 void Feeder::forward() {
     direction = FORWARD;
