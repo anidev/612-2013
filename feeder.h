@@ -6,6 +6,8 @@
 #include "two_controller.h"
 #include "ports.h"
 #include "612.h"
+#include <Counter.h>
+
 class Feeder {
 public:
     enum direction_t { // Will change to proper motor speed later
@@ -22,8 +24,11 @@ public:
     void forward();
     void backward();
     void stop();
+    void setRawPower(double);
     direction_t getDirection();
 private:
+    Counter counter;
+    bool counting;
     direction_t direction;
     void set_motor();
 #ifdef Suzie

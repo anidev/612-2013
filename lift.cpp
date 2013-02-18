@@ -30,7 +30,7 @@ Lift::Lift(canport_t canJag)
     manual = true;
 }    
 #endif //Suzie
-//Todo add command to set angle and have jag go to it
+//Todo add command to set angle and have jag go to it(button)
 Lift::~Lift() {
     delete liftMotor;
 }

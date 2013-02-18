@@ -7,12 +7,15 @@
 #include "../drivetrain.h"
 #include "../EnhancedJoystick.h"
 
-const float DRIVE_TURN_SPEED=0.6f;
+const float DRIVE_TURN_SPEED = 0.6f;
 
 void driving_state() {
-    if(driverOperation) {
+    //Todo add driver check update here
+    if(driverOperation) 
+    {
         // swiveling
-        if (drive_gamepad.GetRawButton(5)) { // L1
+        if (drive_gamepad.GetRawButton(5))// L1 
+        {
             drive_train.TankDrive(-DRIVE_TURN_SPEED,DRIVE_TURN_SPEED);
             return;
         }
@@ -25,6 +28,12 @@ void driving_state() {
         // driving
         float left_axis = drive_gamepad.GetRawAxis(2);
         float right_axis = drive_gamepad.GetRawAxis(4);
-        drive_train.TankDrive(left_axis, right_axis);
+        if (joyzero(left_axis) && joyzero(right_axis)) {
+            drive_train.TankDrive(0, 0);
+        }
+        else
+        {
+            drive_train.TankDrive(left_axis, right_axis);
+        }
     }
 }

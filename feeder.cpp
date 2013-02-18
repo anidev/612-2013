@@ -1,20 +1,26 @@
 #include "feeder.h"
 #include "612.h"
 
+
+//Todo find a way to cleanly set the original value of counter to false
+
 #ifdef Suzie
 Feeder::Feeder(hw_info info1,hw_info info2) : feederMotor(info1,info2)
-{
-    direction = STOP;
-} 
 #else
 Feeder::Feeder(hw_info info) : feederMotor(info.moduleNumber,info.channel)
+#endif //Suzie
 {
     direction = STOP;
+    //Add update helper
+    counting = false; 
 }
-#endif //Suzie
+
 
 Feeder::~Feeder() {
-
+}
+void Feeder::setRawPower(double power)
+{
+    feederMotor.Set(power);
 }
 
 void Feeder::forward() {
@@ -28,8 +34,9 @@ void Feeder::backward() {
 }
 
 void Feeder::stop() {
+    counting = false;
     direction = STOP;
-    update();
+    feederMotor.Set(direction * SPEED);
 }
 
 Feeder::direction_t Feeder::getDirection() {
@@ -37,5 +44,17 @@ Feeder::direction_t Feeder::getDirection() {
 }
 
 void Feeder::update() {
-    feederMotor.Set(direction*SPEED);
+    if(direction == STOP)
+        return;
+    if(!counting) {
+        counter.Start();
+        counting = true;
+    }
+    if (counting && counter.Get() > 0) {
+        counter.Stop();
+        counter.Reset();
+        stop();
+    }
+    feederMotor.Set(direction * SPEED);
+    //TODO Add Sensors here and update helper
 }

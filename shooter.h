@@ -10,14 +10,20 @@
 
 class Shooter {
 private:
+    enum ShooterStates {
+        SPINNING_UP,
+        FEEDING
+    } cur_state;
+    unsigned int targetCount;
+    unsigned int previousCount;
     Launcher launch;
     Feeder feed;
     bool shooting;
     Timer feedTimer;
     static void shotBtnHelper(void*);
     static void update_helper(void*);
-    static const double FEEDER_TIMEOUT=2.0;
-    static const double DEFAULT_LAUNCH_SPEED=0.9;
+    static const double FEEDER_TIMEOUT = 2.0;
+    static const double DEFAULT_LAUNCH_SPEED = 0.9;
 public:
 #ifdef Suzie
     Shooter(hw_info, hw_info, hw_info, hw_info, hw_info);
@@ -38,9 +44,10 @@ public:
     void setFeederBackward();
     void setFeederStop();
     Feeder::direction_t getFeederDirection();
+    void setRawFeederPower(double);
     // Global shooter stuff
     void update();
-    void shoot(double launchSpeed = DEFAULT_LAUNCH_SPEED);
+    void shoot(int a = 4,double launchSpeed = DEFAULT_LAUNCH_SPEED);
     void abort();
     bool isShooting();
 };
