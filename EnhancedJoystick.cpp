@@ -1,6 +1,14 @@
+#include "joysmooth.h"
 #include "EnhancedJoystick.h"
 #include "612.h"
 #include "Joystick.h"
+
+EnhancedJoystick::EnhancedJoystick(UINT32 a) : joysmooth(a) {
+    updateRegistry.addUpdateFunction(&updateEJHelper,(void*)this);
+}
+
+EnhancedJoystick::~EnhancedJoystick() {
+}
 
 void EnhancedJoystick::addBtn(UINT32 btn,funcName help,obj o) {
     btnNumbers.push_back(btn);
@@ -8,6 +16,7 @@ void EnhancedJoystick::addBtn(UINT32 btn,funcName help,obj o) {
     previousState.push_back(false);
     objects.push_back(o);
 }
+
 void EnhancedJoystick::updateEJ() {
     for(unsigned int x = 0; x < btnNumbers.size(); x++)
     {
@@ -20,14 +29,11 @@ void EnhancedJoystick::updateEJ() {
             previousState.at(x) = false;
     }
 }
-EnhancedJoystick::EnhancedJoystick(UINT32 a) : joysmooth(a) {
-    updateRegistry.addUpdateFunction(&updateEJHelper,(void*)this);
-}
-EnhancedJoystick::~EnhancedJoystick() {
-}
+
 void EnhancedJoystick::callFunct(int x) {
-    helpers.at(x)(objects.at(x));
+    (helpers.at(x))(objects.at(x));
 }
+
 void EnhancedJoystick::updateEJHelper(obj object) {
     ((EnhancedJoystick*)(object)) -> updateEJ();
 }
