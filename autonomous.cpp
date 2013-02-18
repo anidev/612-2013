@@ -25,7 +25,6 @@ enum auto_states {
 
 State state(AUTO_DRIVE);
 AutoTarget shoot_tar;
-Shooter shoot;
 
 void lift(AutoTarget target) {
     if (auto_state_changed) {
