@@ -125,10 +125,15 @@ void robot_class::TeleopPeriodic() {
         shooting_auto();
     }
 }
-void TestInit() {   
+void robot_class::TestInit() {
 }
-void TestPeriodic() {
+void robot_class::TestPeriodic() {
     updateRegistry.updateAll();
+    static int counter=0;
+    if(counter%10==0) {
+        std::printf("feeder speed: %f\n",drive_gamepad.GetRawAxis(1));
+    }
+    counter++;
     if(std::fabs(drive_gamepad.GetRawAxis(1)) > 0.05)
     {
         shooter.setFeederForward();
