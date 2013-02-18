@@ -24,6 +24,7 @@ Launcher::Launcher(canport_t wheelInfo,hw_info sensorInfo) : launcherWheel(wheel
     pid.SetTolerance(AT_SPEED_TOLERANCE);
     pid.SetInputRange(0.0f, MAX);
     pid.SetOutputRange(-1.0f, 1.0f);
+    launcherSensor.SetMaxPeriod(10);
     launcherSensor.Start();
 }
 
@@ -45,14 +46,12 @@ void Launcher::setSpeed(float newSpeed) {
     targetSet=true;
     reachedSpeed = false;
     launcherWheel.Set(newSpeed);
-    launcherSensor.Start();
 //    pid.Enable();
 //    pid.SetSetpoint(newSpeed);
 }
 
 float Launcher::getCurrentSpeed() {
 //    std::printf("getting current speed when period=%f\n",launcherSensor.PIDGet());
-    launcherSensor.Start();
     return 1.0f/(launcherSensor.GetPeriod());
 
 }
