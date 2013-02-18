@@ -3,8 +3,6 @@
 
 #include <RobotDrive.h>
 #include <GenericHID.h>
-#include <Jaguar.h>
-#include <Talon.h>
 #include <SpeedController.h>
 #include "auto_encoders.h"
 #include "shifter.h"
@@ -29,11 +27,11 @@ public:
     void TankDrive(float,float);
     void ArcadeDrive(GenericHID&);
     // automatic
-    void turn(double);
+    void turn(double); //Degrees
     void drive(double);
     void abort();
     double getDrivingDistance();
-    double getTurningAngle();
+    double getTurningAngle(); //Target
     bool isManual();
     bool isTurning();
     bool isDriving();
@@ -43,10 +41,10 @@ public:
     void shiftLow();
     shifter::GEAR getGear();
 private:
-    static const float DRIVE_SPEED=0.7f;
-    static const float TURN_SPEED=0.7f;
-    static const double DIST_TOLERANCE=0.5f;
-    static const double CIRCUMFERENCE=249.455117704;
+    static const float DRIVE_SPEED = 0.7f;
+    static const float TURN_SPEED = 0.7f;
+    static const double DIST_TOLERANCE = 3.0f;
+    static const double CIRCUMFERENCE = 249.455117704;
     enum operation_t {
         DRIVING,
         TURNING,
@@ -69,8 +67,6 @@ private:
 
     void update();
 
-//    void drive_update();
-//    void turn_update();
 };
 
 #endif // DRIVETRAIN_H

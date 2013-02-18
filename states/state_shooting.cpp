@@ -11,9 +11,9 @@
 #include "../AutoShooter.h"
 
 //double new_shooter_wheel_speed=55.0; // decrease by 0.1 or 0.2
-double new_shooter_wheel_speed=0.85;
+double new_shooter_wheel_speed = 0.85;
 bool is_turning;
-bool speed_set=false;
+bool speed_set = false;
 bool speed_changed=false;
 bool state_changed=false;
 const float SHOOT_TURN_SPEED=0.6f;
@@ -33,19 +33,19 @@ void shooting_auto() {
 }
 
 void shooting_manual() {
-    state_changed=false;
+    state_changed = false;
     if (gunner_gamepad.GetRawButton (4)) {          // button Y on gamepad
         global_state.set_state(SHOOT_AUTO);
-        state_changed=true;
+        state_changed = true;
         return;
     }
 
-    if(gunner_gamepad.GetRawAxis(6)>0.98f) {
+    if(gunner_gamepad.GetRawAxis(6) > 0.98f) {
         std::printf("angle up %f\n",angleAdjuster.get_current_angle());
         angleAdjuster.lift_up();
         
     }
-    else if(gunner_gamepad.GetRawAxis(6)<-0.98f)
+    else if(gunner_gamepad.GetRawAxis(6) < -0.98f)
     {
         std::printf("angle down to %f\n",angleAdjuster.get_current_angle());
         angleAdjuster.lift_down();
@@ -54,11 +54,13 @@ void shooting_manual() {
     {
         angleAdjuster.lift_stop();
     }
-    netcom->lift_angle(angleAdjuster.get_current_angle());
-
-    if (gunner_gamepad.GetRawButton (5)) {             // slow down shooter wheel
+    netcom -> lift_angle(angleAdjuster.get_current_angle());
+    
+    if (gunner_gamepad.GetRawButton (5)) 
+    {             // slow down shooter wheel
         // save new speed, change speed when buton is not pressed
-        if(new_shooter_wheel_speed-WHEEL_CHANGE>=0.0) {
+        if(new_shooter_wheel_speed-WHEEL_CHANGE >= 0.0) 
+        {
             new_shooter_wheel_speed -= WHEEL_CHANGE;
             std::printf("launcher slowed to %f\n",new_shooter_wheel_speed);
             speed_changed = true;
@@ -66,8 +68,10 @@ void shooting_manual() {
         }
     }
 
-    if (gunner_gamepad.GetRawButton (6)) {             // speed up shooter wheel
-        if(new_shooter_wheel_speed+WHEEL_CHANGE<=1.0) {
+    if (gunner_gamepad.GetRawButton (6)) // speed up shooter wheel 
+    {             
+        if(new_shooter_wheel_speed+WHEEL_CHANGE <= 1.0) 
+        {
             new_shooter_wheel_speed += WHEEL_CHANGE;
             std::printf("launcher sped up to %f\n",new_shooter_wheel_speed);
             speed_changed = true;
@@ -75,25 +79,30 @@ void shooting_manual() {
         }
     }
 
-    if (gunner_gamepad.GetRawButton (1)) {
-        if(!speed_set||speed_changed) {
+    if (gunner_gamepad.GetRawButton(1)) 
+    {
+        if(!speed_set||speed_changed) 
+        {
             std::printf("launcher set to %f\n",new_shooter_wheel_speed);
             shooter.setSpeed (new_shooter_wheel_speed);
-            speed_set=true;
-            speed_changed=false;
+            speed_set = true;
+            speed_changed = false;
         }
         std::printf("launcher speed: %f\n",shooter.getCurrentSpeed());
     }
-    else {
-        if(speed_set) {
+    else 
+    {
+        if(speed_set) 
+        {
             std::printf("launcher stopped\n");
             shooter.stopLauncher();
-            speed_set=false;
+            speed_set = false;
         }
     }
-    netcom->launcher_current_speed(shooter.getCurrentSpeed());
+    netcom -> launcher_current_speed(shooter.getCurrentSpeed());
 
-    if (gunner_gamepad.GetRawAxis(5)<-0.98f) { // right
+    if(gunner_gamepad.GetRawAxis(5)<-0.98f) // right
+    { 
         shooter.setFeederForward();
     }
     else if(gunner_gamepad.GetRawAxis(5)>0.98f) // left
@@ -106,19 +115,22 @@ void shooting_manual() {
     }
 
     if(!driverOperation) {
-        if (gunner_gamepad.GetRawButton (7)) {             // turn robot left
+        if (gunner_gamepad.GetRawButton (7)) // turn robot left
+        {
             std::printf("swivel left\n");
             drive_train.TankDrive(SHOOT_TURN_SPEED, -SHOOT_TURN_SPEED);
             is_turning = true;
         }
-        else if (gunner_gamepad.GetRawButton (8)) {             // turn robot right
+        else if (gunner_gamepad.GetRawButton (8)) // turn robot right
+        { 
             std::printf("swivel right\n");
             drive_train.TankDrive(-SHOOT_TURN_SPEED, SHOOT_TURN_SPEED);
             is_turning = true;
         }
         else
         {
-            if (is_turning) {
+            if (is_turning) 
+            {
                 // stop turning
                 drive_train.TankDrive(0, 0);
                 is_turning = false;
