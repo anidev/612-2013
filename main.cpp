@@ -1,130 +1,109 @@
-#include <string>
-#include <cmath>
+#include <cstdio>
+#include <Relay.h>
 #include <networktables/NetworkTable.h>
-#include "state.h"
-#include "states/state_driving.h"
-#include "states/state_shooting.h"
-
-#include "612.h"
-#include "ports.h"
-#include "auto_encoders.h"
-#include "autonomous.h"
-#include "EnhancedJoystick.h"
+#include "vision.h"
 #include "main.h"
 
-void driver_check_update(void* dummy) {
-/*    if(std::fabs(right_joystick.GetY())>JOY_THRESHOLD) {
-        driverOperation=true;
-        return;
-    }
-    if(std::fabs(left_joystick.GetY())>JOY_THRESHOLD) {
-        driverOperation=true;
-        return;
-    }
-    if(left_joystick.GetRawButton(1)&&std::fabs(left_joystick.GetX())>JOY_THRESHOLD) {
-        driverOperation=true;
-        return;
-    }*/
+NetworkTable* robot_class::mainTable=NULL;
 
-    if(!joyzero(drive_gamepad.GetRawAxis(2))||!joyzero(drive_gamepad.GetRawAxis(4))) { // axis controls
-        driverOperation=true;
-        return;
-    }
-    if(drive_gamepad.GetRawButton(7)||drive_gamepad.GetRawButton(8)) {
-        driverOperation=true;
-        return;
-    }
-    driverOperation=false;
+robot_class::robot_class():/*launcher(2,1),feeder(2,2),joy(1),joy2(2)/*,encoder(2,1,2,2)*//*,ledgreen(2,1),ledred(2,3),visionTask("Vision Task",&vision_entry),*/launcherSensor(1,14)/*,gunnerTable(NULL)*/ {
+/*	robot_class::mainTable=NetworkTable::GetTable("612");
+	if(robot_class::mainTable==NULL) {
+		std::printf("Failed to get 612 network table.\n");
+	}
+//	encoder.Start();*/
+	launcherSensor.Start();
+/*	usinggreen=true;
+	usingred=false;
+	usingboth=true;
+	pressed6=false;
+	pressed7=false;*/
 }
 
-robot_class::robot_class() {
-    GetWatchdog().SetEnabled(false);
+robot_class::~robot_class() {
 }
 
 void robot_class::RobotInit() {
-    std::printf("RobotInit\n");
-    netcom=new NetworkCom();
-    updateRegistry.addUpdateFunction(&driver_check_update,NULL);
 }
 
 void robot_class::DisabledInit() {
-    std::printf("DisabledInit\n");
-    led_spike.Set(Relay::kOff);
-}
-
-void robot_class::AutonomousInit() {
-    std::printf("AutonomousInit\n");
-    led_spike.Set(Relay::kForward);
-    // 0 = Front Right
-    // 1 = Back Left
-    // 2 = Front Left
-    // 3 = Back Right
-    Position auto_pos=Back_Left;
-    AutoTarget auto_target=Middle_Goal;
-    int positionVal=(int)netcom->Autonomous_Position();
-    int targetVal=(int)netcom->Autonomous_Target();
-    switch(positionVal) {
-    case 0:
-        auto_pos=Front_Right;
-        std::printf("Selected autonomous: FRONT RIGHT\n");
-        break;
-    case 1:
-        auto_pos=Back_Left;
-        std::printf("Selected autonomous: BACK LEFT\n");
-        break;
-    case 2:
-        auto_pos=Front_Left;
-        std::printf("Selected autonomous: FRONT LEFT\n");
-        break;
-    case 3:
-        auto_pos=Back_Right;
-        std::printf("Selected autonomous: BACK RIGHT\n");
-        break;
-    }
-    switch(targetVal) {
-    case 0:
-        auto_target=High_Goal;
-        std::printf("Selected autonomous: HIGH GOAL\n");
-        break;
-    case 1:
-        auto_target=Middle_Goal;
-        std::printf("Selected autonomous: MID GOAL\n");
-        break;
-    }
-    choose_routine(auto_pos, auto_target);
+/*	visionTask.Stop();
+	if(robot_class::mainTable!=NULL) {
+		robot_class::mainTable->PutBoolean("Tracking/Available",false);
+	}
+	launcher.Set(0.0f);
+	feeder.Set(0.0f);
+	ledgreen.Set(Relay::kOff);
+	ledred.SetRaw(0);
+	usinggreen=true;
+	usingboth=false;*/
 }
 
 void robot_class::TeleopInit() {
-    std::printf("TelopInit\n");
-    led_spike.Set(Relay::kForward);
-}
-
-void robot_class::DisabledPeriodic() {
-//    std::string key("fromrobottest");
-//    main_table->PutNumber(key,612.0);
-}
-
-void robot_class::AutonomousPeriodic() {
-    updateRegistry.updateAll();
-    do_autonomous();
+//	visionTask.Start();
 }
 
 void robot_class::TeleopPeriodic() {
-    static int counter=0;
-    updateRegistry.updateAll();
-    if(counter%20==0) {
-//        std::printf("Driver operating: %s\n",(driverOperation?"TRUE":"FALSE"));
-    }
-    counter++;
-    if(global_state.get_state()==DRIVE) {
-        driving_state();
-        shooting_manual(); // at same time as driving
-    }
-    else if(global_state.get_state() == SHOOT_AUTO) {
-        shooting_auto();
-    }
+	static int counter=0;
+//	float launcherAxis=(joy.GetZ()*-1+1)/2.0f;
+//	float launcherAxis=joy.GetY();
+//	float feederAxis=joy2.GetY();
+	if(counter%20==0) {
+//		std::printf("Infrared: %f\n",infrared.GetVoltage());
+//		std::printf("feeder: %f\n",feederAxis);
+//		std::printf("PWM: %f\n",launcherAxis);
+		std::printf("Hall Effect: %d\n",launcherSensor.Get());
+//		std::printf("Hall Effect Freq: %f\n",1.0/launcherSensor.GetPeriod());
+	}
+	counter++;
+/*	if(robot_class::mainTable!=NULL) {
+		if(gunnerTable==NULL) {
+			gunnerTable=robot_class::mainTable->GetSubTable("Gunner");
+			if(gunnerTable==NULL) {
+				std::printf("Failed to get 612/Gunner network table\n");
+			}
+		}
+		if(gunnerTable!=NULL) {
+			gunnerTable->PutNumber("LauncherTarget",launcherAxis);
+			gunnerTable->PutNumber("LauncherCurrent",1.0/launcherSensor.GetPeriod());
+		}
+	}
+	if(joy.GetRawButton(1)) {
+		launcher.Set(launcherAxis);
+	} else {
+		launcher.Set(0.0f);
+	}
+	feeder.Set(feederAxis);
+	float ledbright=(joy2.GetZ()*-1+1)/2.0f;
+/*	if(usingred) {
+		ledred.Set(1.0f);
+	} else {
+		ledred.Set(0.0f);
+	}*//*
+	if(usinggreen) {
+		ledgreen.Set(Relay::kForward);
+		ledred.SetRaw(0);
+	} else {
+		ledgreen.Set(Relay::kOff);
+		ledred.Set(1.0f);
+	}
+	if(joy.GetRawButton(6)&&!pressed6) {
+		pressed6=true;
+		usinggreen=!usinggreen;
+//		usingred=!usingred;
+	}
+/*	if(joy.GetRawButton(7)&&!pressed7) {
+		pressed7=true;
+		usinggreen=usingboth;
+		usingred=usingboth;
+		usingboth=!usingboth;
+	}*//*
+	if(!joy.GetRawButton(6)&&pressed6) {
+		pressed6=false;
+	}
+/*	if(!joy.GetRawButton(7)&&pressed7) {
+		pressed7=false;
+	}*/
 }
 
-//the following macro tells the library that we want to generate code
-//for our class robot_class
-START_ROBOT_CLASS(robot_class);
+START_ROBOT_CLASS(robot_class)
