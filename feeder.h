@@ -6,6 +6,7 @@
 #include "two_controller.h"
 #include "ports.h"
 #include "612.h"
+#include <Counter.h>
 
 class Feeder {
 public:
@@ -25,6 +26,8 @@ public:
     void stop();
     direction_t getDirection();
 private:
+    Counter counter;
+    bool counting;
     direction_t direction;
     void set_motor();
 #ifdef Suzie
