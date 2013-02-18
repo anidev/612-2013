@@ -12,7 +12,7 @@
 #include "AutoShooter.h"
 #include "612.h"
 #include "NetworkCom.h"
-
+#include <Counter.h>
 UpdateRegistry updateRegistry; // Must be first constructed
 Relay led_spike(led.moduleNumber,led.channel);
 EnhancedJoystick drive_gamepad   (1);

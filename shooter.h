@@ -10,6 +10,12 @@
 
 class Shooter {
 private:
+    enum ShooterStates {
+        SPINNING_UP,
+        FEEDING
+    } cur_state;
+    unsigned int targetCount;
+    unsigned int previousCount;
     Launcher launch;
     Feeder feed;
     bool shooting;
@@ -40,7 +46,7 @@ public:
     Feeder::direction_t getFeederDirection();
     // Global shooter stuff
     void update();
-    void shoot(double launchSpeed = DEFAULT_LAUNCH_SPEED);
+    void shoot(int a = 4,double launchSpeed = DEFAULT_LAUNCH_SPEED);
     void abort();
     bool isShooting();
 };
