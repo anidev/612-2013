@@ -104,7 +104,7 @@ void Shooter::update() {
              if (IRSensor.GetVoltage() > 2.0) {
                  enter = true;
              }
-             if (enter && IRSensor.GetVoltage() == 2.0) {
+             if (enter && IRSensor.GetVoltage() < 2.0) {
                  exit = true;
              }
               
