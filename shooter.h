@@ -7,6 +7,7 @@
 #include "launcher.h"
 #include "updateRegistry.h"
 #include "612.h"
+#include <AnalogChannel.h>
 
 class Shooter {
 private:
@@ -24,11 +25,19 @@ private:
     static void update_helper(void*);
     static const double FEEDER_TIMEOUT = 2.0;
     static const double DEFAULT_LAUNCH_SPEED = 0.9;
+    //~IR SENSOR STUFF
+    AnalogChannel IRSensor; 
+    bool enter;
+    bool exit;
+    static const float FRISBEE_PRESENCE_TOLERANCE = 0.8;
+    int voltage_cache [2];
+    int update_cnt;
+    //~IR SENSOR STUFF
 public:
 #ifdef Suzie
     Shooter(hw_info, hw_info, hw_info, hw_info, hw_info);
 #else
-    Shooter(canport_t, hw_info, hw_info);
+    Shooter(canport_t, hw_info, hw_info, hw_info);
 #endif //Suzie
     ~Shooter();
     // Launcher
@@ -49,6 +58,9 @@ public:
     void shoot(int a = 4,double launchSpeed = DEFAULT_LAUNCH_SPEED);
     void abort();
     bool isShooting();
+    //~IR SENSOR STUFF
+    bool isShot();
+    //~IR SENSOR STUFF
 };
 
 #endif

@@ -13,14 +13,17 @@ Shooter::Shooter(hw_info launchWheel1,hw_info launchWheel2,hw_info launchSensor,
     cur_state = SPINNING_UP;
 }
 #else
-Shooter::Shooter(canport_t canJag,hw_info sensorInfo,hw_info feedInfo):
-         launch(canJag,sensorInfo), feed(feedInfo)
+Shooter::Shooter(canport_t canJag,hw_info sensorInfo,hw_info feedInfo, hw_info IRInfo):
+         launch(canJag,sensorInfo), feed(feedInfo), IRSensor(IRInfo.moduleNumber,IRInfo.channel)
 {
     shooting = false;
     cur_state = SPINNING_UP;
     previousCount = 0;
     launch.resetFrisbeeCount();
     updateRegistry.addUpdateFunction(&update_helper, (void*)this);
+    enter=false;
+    exit=false;
+    update_cnt = 0;
 }
 #endif //Suzie
 
@@ -91,6 +94,17 @@ void Shooter::update() {
                 feedTimer.Reset();
                 cur_state = SPINNING_UP;
             }
+            /*
+             * ADD SHOT DETECTION CODE HERE
+             */
+             update_cnt++;
+             if (update_cnt > 20) {
+                 printf("IRsensor voltage : %f",IRSensor.GetVoltage());
+                 update_cnt = 0;
+             }
+             /*
+              * END SHOT DETECTION
+              */ 
             feed.forward();
             feedTimer.Start();
             if(launch.getFrisbeeCount() > previousCount)
@@ -135,6 +149,10 @@ void Shooter::abort() {
 
 bool Shooter::isShooting() {
     return shooting;
+}
+
+bool Shooter::isShot() {
+    return ((isShooting()) && (enter && exit) && (launch.dropDetected()));
 }
 
 void Shooter::update_helper(void* a) {
