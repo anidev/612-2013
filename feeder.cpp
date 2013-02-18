@@ -39,6 +39,8 @@ void Feeder::stop() {
     counting = false;
     direction = STOP;
     feederMotor.Set(direction * SPEED);
+    counter.Stop();
+    counter.Reset();
 }
 
 Feeder::direction_t Feeder::getDirection() {
@@ -53,9 +55,8 @@ void Feeder::update() {
         counting = true;
     }
     if (counting && counter.Get() > 0) {
-        counter.Stop();
-        counter.Reset();
         stop();
+        return;
     }
     feederMotor.Set(direction * SPEED);
     //TODO Add Sensors here and update helper
