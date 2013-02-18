@@ -24,6 +24,10 @@ void driver_check_update(void* dummy) {
         driverOperation = true;
         return;
     }
+    if(!joyzero(drive_gamepad.GetRawAxis(6))) { // arcade drive
+        driverOperation = true;
+        return;
+    }
     driverOperation = false;
 }
 

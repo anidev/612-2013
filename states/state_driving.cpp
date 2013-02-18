@@ -8,6 +8,7 @@
 #include "../EnhancedJoystick.h"
 
 const float DRIVE_TURN_SPEED = 0.6f;
+const float ARCADE_SPEED = 0.4f;
 
 void driving_state() {
     //Todo add driver check update here
@@ -22,6 +23,12 @@ void driving_state() {
         else if(drive_gamepad.GetRawButton(6)) // R1
         {
             drive_train.TankDrive(DRIVE_TURN_SPEED,-DRIVE_TURN_SPEED);
+            return;
+        }
+
+        float arcade_y=drive_gamepad.GetRawAxis(6);
+        if(!joyzero(arcade_y)) {
+            drive_train.TankDrive(arcade_y*ARCADE_SPEED,arcade_y*ARCADE_SPEED);
             return;
         }
 
