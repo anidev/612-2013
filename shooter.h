@@ -31,7 +31,6 @@ private:
     bool exit;
     static const float FRISBEE_PRESENCE_TOLERANCE = 0.8;
     int voltage_cache [2];
-    int update_cnt;
     //~IR SENSOR STUFF
 public:
 #ifdef Suzie
