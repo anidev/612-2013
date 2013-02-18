@@ -29,8 +29,6 @@ private:
     AnalogChannel IRSensor; 
     bool enter;
     bool exit;
-    static const float FRISBEE_PRESENCE_TOLERANCE = 0.8;
-    bool voltage_changed; //I'm guessing that we are going to have a base voltage and that we detect a change
     int update_cnt;
     //~IR SENSOR STUFF
 public:

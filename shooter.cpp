@@ -24,7 +24,6 @@ Shooter::Shooter(canport_t canJag,hw_info sensorInfo,hw_info feedInfo, hw_info I
     enter=false;
     exit=false;
     update_cnt = 0;
-    voltage_changed = false;
 }
 #endif //Suzie
 
@@ -98,7 +97,17 @@ void Shooter::update() {
             /*
              * ADD SHOT DETECTION CODE HERE
              */
-             if (++update_cnt > 20) { printf("IRsensor voltage : %f",IRSensor.GetVoltage()); update_cnt = 0;}
+             if (++update_cnt > 20) { 
+                 printf("IRsensor voltage : %f",IRSensor.GetVoltage()); 
+                 update_cnt = 0;
+             }
+             if (IRSensor.GetVoltage() > 2.0) {
+                 enter = true;
+             }
+             if (enter && IRSensor.GetVoltage() == 2.0) {
+                 exit = true;
+             }
+              
              /*
               * END SHOT DETECTION
               */ 
