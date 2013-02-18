@@ -77,11 +77,6 @@ void Shooter::setRawFeederPower(double b) {
     feed.setRawPower(b);
 }
 void Shooter::update() {
-    static int update_cnt=0;
-    if (++update_cnt % 25 == 0) {
-        std::printf("IRsensor voltage : %f",IRSensor.GetVoltage());
-        update_cnt = 0;
-    }
     if(shooting && launch.getFrisbeeCount() < targetCount)
     {
         if(cur_state == SPINNING_UP)
