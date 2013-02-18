@@ -10,9 +10,28 @@
 const float DRIVE_TURN_SPEED = 0.6f;
 const float ARCADE_SPEED = 0.4f;
 
+void driver_check_update() {
+}
+>>>>>>> 6c2f8038f72414407173d7c0d44258137505cc9c
+
 void driving_state() {
-    //Todo add driver check update here
-    if(driverOperation) 
+    if(!joyzero(drive_gamepad.GetRawAxis(2))||!joyzero(drive_gamepad.GetRawAxis(4))) // axis controls
+    {
+        driverOperation = true;
+    }
+    else if(drive_gamepad.GetRawButton(7)||drive_gamepad.GetRawButton(8))
+    {
+        driverOperation = true;
+    }
+    else if(!joyzero(drive_gamepad.GetRawAxis(6))) // arcade drive
+    {
+        driverOperation = true;
+    }
+    else
+    {
+        driverOperation = false;
+    }
+    if(driverOperation)
     {
         // swiveling
         if (drive_gamepad.GetRawButton(5))// L1 
