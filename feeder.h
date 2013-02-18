@@ -18,7 +18,7 @@ public:
 #ifdef Suzie
     Feeder(hw_info,hw_info);
 #else
-    Feeder(hw_info);
+    Feeder(hw_info,hw_info);
 #endif //Suzie
     ~Feeder();
     void forward();
@@ -27,7 +27,6 @@ public:
     void setRawPower(double);
     direction_t getDirection();
 private:
-    Counter counter;
     bool counting;
     direction_t direction;
     void set_motor();
@@ -35,6 +34,7 @@ private:
     two_controller<Relay> feederMotor;
 #else
     Talon feederMotor;
+    Counter counter;
 #endif //Suzie
     void update();
     static const float SPEED = 0.25f;

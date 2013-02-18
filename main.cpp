@@ -13,6 +13,8 @@
 #include "EnhancedJoystick.h"
 #include "main.h"
 #include "Shooter.h"
+#include "feeder.h"
+
 void driver_check_update(void* dummy) {
     if(!joyzero(drive_gamepad.GetRawAxis(2))||!joyzero(drive_gamepad.GetRawAxis(4))) { // axis controls
         driverOperation = true;
@@ -113,6 +115,7 @@ void robot_class::TeleopPeriodic() {
 void robot_class::TestInit() {
 }
 void robot_class::TestPeriodic() {
+//    static F
     updateRegistry.updateAll();
     static int counter=0;
     if(counter%10==0) {

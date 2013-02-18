@@ -5,11 +5,13 @@
 //Todo find a way to cleanly set the original value of counter to false
 
 #ifdef Suzie
-Feeder::Feeder(hw_info info1,hw_info info2) : feederMotor(info1,info2)
+Feeder::Feeder(hw_info info1,hw_info info2) : feederMotor(info1,info2) {
 #else
-Feeder::Feeder(hw_info info) : feederMotor(info.moduleNumber,info.channel)
-#endif //Suzie
+Feeder::Feeder(hw_info motorInfo,hw_info hallInfo) : feederMotor(motorInfo.moduleNumber,motorInfo.channel),
+                                                     counter(hallInfo.moduleNumber,hallInfo.channel)
 {
+    counter.Start();
+#endif //Suzie
     direction = STOP;
     //Add update helper
     counting = false; 

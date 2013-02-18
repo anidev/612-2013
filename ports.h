@@ -81,6 +81,7 @@ extern NetworkCom* netcom;
     //Shooter motor
     static const canport_t launcher_wheel =     (1);
     static const hw_info feeder_belt =       {1, 1};
+    static const hw_info feeder_sensor =     {1, 3};
     static const hw_info launcher_sensor =   {1, 2};
     static const hw_info IR_sensor =         {2, 1};
 #endif //#ifdef Suzie

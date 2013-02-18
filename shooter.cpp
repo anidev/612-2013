@@ -13,8 +13,8 @@ Shooter::Shooter(hw_info launchWheel1,hw_info launchWheel2,hw_info launchSensor,
     cur_state = SPINNING_UP;
 }
 #else
-Shooter::Shooter(canport_t canJag,hw_info sensorInfo,hw_info feedInfo, hw_info IRInfo):
-         launch(canJag,sensorInfo), feed(feedInfo), IRSensor(IRInfo.moduleNumber,IRInfo.channel)
+Shooter::Shooter(canport_t canJag,hw_info sensorInfo,hw_info feedInfo, hw_info feedSensor, hw_info IRInfo):
+         launch(canJag,sensorInfo), feed(feedInfo,feedSensor), IRSensor(IRInfo.moduleNumber,IRInfo.channel)
 {
     shooting = false;
     cur_state = SPINNING_UP;
