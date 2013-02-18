@@ -119,22 +119,16 @@ void shooting_manual() {
         {
             std::printf("swivel left\n");
             drive_train.TankDrive(SHOOT_TURN_SPEED, -SHOOT_TURN_SPEED);
-            is_turning = true;
         }
         else if (gunner_gamepad.GetRawButton (8)) // turn robot right
         { 
             std::printf("swivel right\n");
             drive_train.TankDrive(-SHOOT_TURN_SPEED, SHOOT_TURN_SPEED);
-            is_turning = true;
         }
         else
         {
-            if (is_turning) 
-            {
-                // stop turning
-                drive_train.TankDrive(0, 0);
-                is_turning = false;
-            }
+            // stop turning
+            drive_train.TankDrive(0, 0);
         }
     }
 }
