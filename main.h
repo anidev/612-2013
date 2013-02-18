@@ -11,10 +11,12 @@ public:
     void DisabledInit();
     void AutonomousInit();
     void TeleopInit();
+    void TestInit();
     
     void DisabledPeriodic();
     void AutonomousPeriodic();
     void TeleopPeriodic();
+    void TestPeriodic();
 };
 
 #endif
