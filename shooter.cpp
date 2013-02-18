@@ -13,8 +13,9 @@ Shooter::Shooter(hw_info launchWheel1,hw_info launchWheel2,hw_info launchSensor,
     cur_state = SPINNING_UP;
 }
 #else
-Shooter::Shooter(canport_t canJag,hw_info sensorInfo,hw_info feedInfo, hw_info feedSensor, hw_info IRInfo):
-         launch(canJag,sensorInfo), feed(feedInfo,feedSensor), IRSensor(IRInfo.moduleNumber,IRInfo.channel)
+Shooter::Shooter(canport_t canJag,hw_info sensorInfo,hw_info feedInfo, hw_info feedSensor, hw_info IRInfo, hw_info hallInfo):
+         launch(canJag,sensorInfo), feed(feedInfo,feedSensor), IRSensor(IRInfo.moduleNumber,IRInfo.channel),
+	 frisCounter(hallInfo.moduleNumber,hallInfo.channel)
 {
     shooting = false;
     cur_state = SPINNING_UP;
@@ -89,42 +90,43 @@ void Shooter::update() {
         }
         else 
         {
-            if(!launch.atSpeed())
-            {
-                feed.stop();
-                feedTimer.Stop();
-                feedTimer.Reset();
-                cur_state = SPINNING_UP;
-            }
-            /*
-             * ADD SHOT DETECTION CODE HERE
-             */
-             if (++update_cnt > 20) { 
-                 printf("IRsensor voltage : %f",IRSensor.GetVoltage()); 
-                 update_cnt = 0;
-             }
-             if (IRSensor.GetVoltage() > DEFAULT_IR_RETURN) {
-                 enter = true;
-             }
-             if (enter && IRSensor.GetVoltage() < DEFAULT_IR_RETURN) {
-                 exit = true;
-             }
-             /*
-              * END SHOT DETECTION
-              */ 
-            feed.forward();
-            feedTimer.Start();
-            if(launch.getFrisbeeCount() > previousCount)
-            {
-                feedTimer.Reset();
-                previousCount = launch.getFrisbeeCount();
-            }
-            if(feedTimer.Get() > FEEDER_TIMEOUT) 
-            {
-                // feeder moving but launcher hasn't slowed down for a while
-                // meaning no more frisbees
-                abort();
-            }
+	    if(!launch.atSpeed())
+	    {
+		feed.stop();
+		feedTimer.Stop();
+		feedTimer.Reset();
+		cur_state = SPINNING_UP;
+	    }
+	    /*
+	     * ADD SHOT DETECTION CODE HERE
+	     */
+	     if (++update_cnt > 20) { 
+		 printf("IRsensor voltage : %f",IRSensor.GetVoltage()); 
+		 update_cnt = 0;
+	     }
+	     if (IRSensor.GetVoltage() > DEFAULT_IR_RETURN) {
+		 enter = true;
+	     }
+	     if (enter && IRSensor.GetVoltage() < DEFAULT_IR_RETURN) {
+		 exit = true;
+	     }
+	     /*
+	      * END SHOT DETECTION
+	      */ 
+	    
+	    feed.forward();
+	    feedTimer.Start();
+	    if(launch.getFrisbeeCount() > previousCount)
+	    {
+		feedTimer.Reset();
+		previousCount = launch.getFrisbeeCount();
+	    }
+	    if(feedTimer.Get() > FEEDER_TIMEOUT) 
+	    {
+		// feeder moving but launcher hasn't slowed down for a while
+		// meaning no more frisbees
+		abort();
+	    }
         }
     }
     else
@@ -150,6 +152,7 @@ void Shooter::abort() {
     launch.stop();
     feed.stop();
     feedTimer.Stop();
+    frisCounter.Stop();
     shooting = false;
     cur_state = SPINNING_UP;
 }
@@ -160,6 +163,11 @@ bool Shooter::isShooting() {
 
 bool Shooter::isShot() {
     return ((isShooting()) && (enter && exit) && (launch.dropDetected()));
+}
+
+bool Shooter::noFrisbees() {
+    printf("out of frisbees");
+    return ((frisCounter.Get() > 2) && (launch.dropDetected()));
 }
 
 void Shooter::update_helper(void* a) {

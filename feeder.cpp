@@ -62,6 +62,7 @@ void Feeder::update() {
     }
     if (counting && counter.Get() > 0) {
         stop();
+	count = 0;
         return;
     }
     feederMotor.Set(direction * SPEED);

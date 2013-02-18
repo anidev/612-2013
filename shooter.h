@@ -8,6 +8,7 @@
 #include "updateRegistry.h"
 #include "612.h"
 #include <AnalogChannel.h>
+#include <Counter.h>
 
 class Shooter {
 private:
@@ -36,7 +37,7 @@ public:
 #ifdef Suzie
     Shooter(hw_info, hw_info, hw_info, hw_info, hw_info);
 #else
-    Shooter(canport_t, hw_info, hw_info, hw_info, hw_info);
+    Shooter(canport_t, hw_info, hw_info, hw_info, hw_info, hw_info);
 #endif //Suzie
     ~Shooter();
     // Launcher
@@ -61,6 +62,8 @@ public:
     //~IR SENSOR STUFF
     bool isShot();
     //~IR SENSOR STUFF
+    bool noFrisbees();
+    Counter frisCounter;
 };
 
 #endif
