@@ -24,6 +24,7 @@ Shooter::Shooter(canport_t canJag,hw_info sensorInfo,hw_info feedInfo, hw_info I
     enter=false;
     exit=false;
     update_cnt = 0;
+    voltage_changed = false;
 }
 #endif //Suzie
 
