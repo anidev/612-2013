@@ -27,28 +27,28 @@ shifter::GEAR shifter::get() {
 
 // toggle shifting from high to low
 void shifter::shift() {
-    switch (cur_gear) {
-        case LOW:
-            set(HIGH);
-            break;
-        case HIGH:
-            set(LOW);
-            break;
+    if(cur_gear == LOW)
+    {
+        set(HIGH);
+    }
+    else
+    {
+        set(LOW);
     }
 }
 
 void shifter::update() {
     float leftval;
     float rightval;
-    switch (cur_gear) {
-        case LOW:
-            leftval = kleftgear[0];
-            rightval = krightgear[0];
-            break;
-        case HIGH:
-            leftval = kleftgear[1];
-            rightval = krightgear[1];
-            break;
+    if(cur_gear == LOW) 
+    {
+        leftval = kleftgear[0];
+        rightval = krightgear[0];
+    }
+    else
+    {
+        leftval = kleftgear[1];
+        rightval = krightgear[1];
     }
     servo1.Set(leftval);
     servo2.Set(rightval);
@@ -59,5 +59,3 @@ void shifter::setHighBtnHelper(void* obj) {
 void shifter::setLowBtnHelper(void* obj) {
     ((shifter*)obj) -> set(LOW);
 }
-// left 6 right 11 
-// downL 7 right 10

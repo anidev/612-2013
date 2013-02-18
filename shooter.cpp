@@ -71,17 +71,24 @@ void Shooter::setFeederStop(){
 // Global shooter stuff
 
 void Shooter::update() {
+    //Todo add state tracker
+    /*    States
+     * 1. Spinning Up Speed
+     * 2. feeding
+     * 3. Waiting for shoot
+     */
+    //Todo stop shooting when we get to count
     if(shooting)
     {
-        if(launch.atSpeed()) {
+        if(launch.atSpeed()) 
+        {
             feed.forward();
             feedTimer.Start();
-            if(feedTimer.Get()>FEEDER_TIMEOUT) {
+            if(feedTimer.Get() > FEEDER_TIMEOUT) 
+            {
                 // feeder moving but launcher hasn't slowed down for a while
                 // meaning no more frisbees
-                feedTimer.Stop();
-                feed.stop();
-                shooting=false;
+                abort();
             }
         }
         else
@@ -91,23 +98,27 @@ void Shooter::update() {
     }
 }
 void Shooter::shoot(double launchSpeed) {
+    //TODO Add Shoot count to reach(keepSpeed)
     if(shooting) {
         return;
     }
-    shooting=true;
+    shooting = true;
     launch.resetFrisbeeCount();
     launch.setSpeed(launchSpeed);
+    //Todo set state variable to first state
 }
 
 void Shooter::abort() {
     launch.stop();
     feed.stop();
-    shooting=false;
+    feedTimer.Stop();
+    shooting = false;
 }
+
 bool Shooter::isShooting() {
     return shooting;
 }
+
 void Shooter::update_helper(void* a) {
     ((Shooter*)a) -> update();
 }
-
