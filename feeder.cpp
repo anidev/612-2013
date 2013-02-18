@@ -3,18 +3,16 @@
 
 #ifdef Suzie
 Feeder::Feeder(hw_info info1,hw_info info2) : feederMotor(info1,info2)
-{
-    direction = STOP;
-} 
 #else
 Feeder::Feeder(hw_info info) : feederMotor(info.moduleNumber,info.channel)
+#endif //Suzie
 {
     direction = STOP;
+    //Add update helper
 }
-#endif //Suzie
+
 
 Feeder::~Feeder() {
-
 }
 
 void Feeder::forward() {
@@ -29,7 +27,7 @@ void Feeder::backward() {
 
 void Feeder::stop() {
     direction = STOP;
-    update();
+    feederMotor.Set(direction * SPEED);
 }
 
 Feeder::direction_t Feeder::getDirection() {
@@ -37,5 +35,8 @@ Feeder::direction_t Feeder::getDirection() {
 }
 
 void Feeder::update() {
-    feederMotor.Set(direction*SPEED);
+    if(direction == STOP)
+        return;
+    feederMotor.Set(direction * SPEED);
+    //TODO Add Sensors here and update helper
 }

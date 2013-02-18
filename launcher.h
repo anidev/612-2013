@@ -31,7 +31,7 @@ private:
     void update();
     static void update_helper(void*);
 public:
-    static const float MAX = 70.0f;
+    static const float MAX = 70.0f; //TODO Get new Max
 #ifdef Suzie
     Launcher(hw_info,hw_info,hw_info);
 #else

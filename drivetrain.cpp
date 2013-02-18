@@ -5,22 +5,9 @@
 #include "auto_encoders.h"
 #include "drivetrain.h"
 #include "ports.h"
-
-double torad(double deg) {
-    return deg*(M_PI/180.0);
-}
-
-double todeg(double rad) {
-    return rad/(M_PI/180.0);
-}
-
-void DriveTrain::update_helper(void* param) {
-    DriveTrain* drivetrain=(DriveTrain*)param;
-    drivetrain->update();
-}
+#include "shifter.h"
 
 DriveTrain::DriveTrain(drivetrain_info dinfo,encoders_info einfo,hw_info s1,hw_info s2):encoders(einfo),shift(s1,s2) {
-    operation=MANUAL;
 #ifdef Suzie
     left_front = new Jaguar(dinfo.left_front.moduleNumber,dinfo.left_front.channel);
     left_rear = new Jaguar(dinfo.left_rear.moduleNumber,dinfo.left_rear.channel);
@@ -32,6 +19,7 @@ DriveTrain::DriveTrain(drivetrain_info dinfo,encoders_info einfo,hw_info s1,hw_i
     right_front = new Talon(dinfo.right_front.moduleNumber,dinfo.right_front.channel);
     right_rear = new Talon(dinfo.right_rear.moduleNumber,dinfo.right_rear.channel);
 #endif
+    operation = MANUAL;
     robotDrive = new RobotDrive(left_front,left_rear,right_front,right_rear);
     robotDrive -> SetSafetyEnabled(false);
     encoders.reset_distance();
@@ -63,12 +51,13 @@ void DriveTrain::ArcadeDrive(GenericHID& joystick) {
 // calculated assuming robot facing 0deg
 // therefore negative angle=turn right, positive angle=turn left
 // angle in DEGREES
-void DriveTrain::turn(double a) {
+void DriveTrain::turn(double a) { //a - Degrees
+    shift.set(shifter::LOW);
     std::printf("turning\n");
     operation = TURNING;
     //angle*=1.13333333333;
     this -> angle = a;
-    double dist = (angle/360)*CIRCUMFERENCE;
+    double dist = (angle/360.0) * CIRCUMFERENCE;
     left_dist = -dist;
     right_dist = dist;
     encoders.reset_distance();
@@ -77,6 +66,7 @@ void DriveTrain::turn(double a) {
 
 void DriveTrain::drive(double dist) {
     std::printf("driving\n");
+    shift.set(shifter::LOW);
     operation = DRIVING;
     left_dist = dist;
     right_dist = dist;
@@ -86,36 +76,36 @@ void DriveTrain::drive(double dist) {
 
 void DriveTrain::abort() {
     std::printf("aborting\n");
-    operation=MANUAL;
-    left_dist=right_dist=0;
+    operation = MANUAL;
+    left_dist = right_dist = 0;
     encoders.reset_distance();
-    finished=false;
+    finished = false;
 }
 
 double DriveTrain::getDrivingDistance() {
-    if(operation!=DRIVING) {
+    if(operation != DRIVING) {
         return 0.0;
     }
     return left_dist; // Assuming left_dist==right_dist;
 }
 
 double DriveTrain::getTurningAngle() {
-    if(operation!=TURNING) {
+    if(operation != TURNING) {
         return 0.0;
     }
-    return angle;
+    return angle; //Target Angle
 }
 
 bool DriveTrain::isManual() {
-    return operation==MANUAL;
+    return (operation == MANUAL);
 }
 
 bool DriveTrain::isTurning() {
-    return operation==TURNING;
+    return (operation == TURNING);
 }
 
 bool DriveTrain::isDriving() {
-    return operation==DRIVING;
+    return (operation == DRIVING);
 }
 
 bool DriveTrain::isFinished() {
@@ -135,30 +125,41 @@ shifter::GEAR DriveTrain::getGear() {
 }
 
 void DriveTrain::update() {
-    if(operation==MANUAL) {
+    if(operation == MANUAL) {
         return;
     }
-    double cur_left_dist=encoders.get_left_dist();
-    double cur_right_dist=encoders.get_right_dist();
-    float speed=(operation==DRIVING?DriveTrain::DRIVE_SPEED:DriveTrain::TURN_SPEED);
-    float left_dir=((cur_left_dist-left_dist)>0?1.0f:-1.0f);
-    float right_dir=((cur_right_dist-right_dist)>0?1.0f:-1.0f);
-    float left_speed=0.0f;
-    float right_speed=0.0f;
-    bool left_reached=(std::fabs(cur_left_dist-left_dist)<DriveTrain::DIST_TOLERANCE);
-    bool right_reached=(std::fabs(cur_right_dist-right_dist)<DriveTrain::DIST_TOLERANCE);
-    if(left_reached&&right_reached) {
+    double cur_left_dist = encoders.get_left_dist();
+    double cur_right_dist = encoders.get_right_dist();
+    float speed = (operation == DRIVING?DriveTrain::DRIVE_SPEED:DriveTrain::TURN_SPEED);
+    float left_dir = ((cur_left_dist-left_dist) > 0?1.0f:-1.0f);
+    float right_dir = ((cur_right_dist-right_dist) > 0?1.0f:-1.0f);
+    float left_speed = 0.0f;
+    float right_speed = 0.0f;
+    bool left_reached = (std::fabs(cur_left_dist-left_dist) < DriveTrain::DIST_TOLERANCE);
+    bool right_reached = (std::fabs(cur_right_dist-right_dist) < DriveTrain::DIST_TOLERANCE);
+    if(left_reached && right_reached) {
+        robotDrive -> TankDrive(0.0f,0.0f);
         encoders.reset_distance();
-        robotDrive->TankDrive(0.0f,0.0f);
-        operation=MANUAL;
-        finished=true;
+        operation = MANUAL;
+        finished = true;
         return;
     }
     if(!left_reached) {
-        left_speed=left_dir*speed;
+        left_speed = left_dir * speed;
     }
     if(!right_reached) {
-        right_speed=right_dir*speed;
+        right_speed = right_dir * speed;
     }
-    robotDrive->TankDrive(left_speed,right_speed);
+    robotDrive -> TankDrive(left_speed,right_speed);
+}
+double torad(double deg) {
+    return (deg * (M_PI/180.0));
+}
+
+double todeg(double rad) {
+    return (rad / (M_PI/180.0));
+}
+
+void DriveTrain::update_helper(void* param) {
+    ((DriveTrain*)param) -> update();
 }
