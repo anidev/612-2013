@@ -120,7 +120,6 @@ void robot_class::TestPeriodic() {
     }
     counter++;
     if(drive_gamepad.GetRawAxis(1) > 0.05)
-    {
         shooter.setFeederForward();
     else if(gunner_gamepad.GetRawAxis(1) < -0.05)
         shooter.setFeederBackward();
