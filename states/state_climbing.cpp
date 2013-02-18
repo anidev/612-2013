@@ -6,6 +6,7 @@
 #include "../shifter.h"
 #include "../drivetrain.h"
 #include "../EnhancedJoystick.h"
+#include "../lift.h"
 
 const float DRIVE_SPEED = 0.2f;
 const float ARCADE_SPEED = 0.2f;
@@ -14,7 +15,7 @@ void climb_check_update() {
 }
 
 void climbing_state() {
-    angleAdjuster.set_angle(-40);
+    angleAdjuster.set_angle(-40.0);
     if(!joyzero(drive_gamepad.GetRawAxis(2))||!joyzero(drive_gamepad.GetRawAxis(4))) // axis controls
     {
         driverOperation = true;
