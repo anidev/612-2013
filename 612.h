@@ -16,8 +16,8 @@ enum teleop_state {
     DRIVE, SHOOT_AUTO
 };
 
-static const double M_PI = 3.14159256359;
-static const float JOY_THRESHOLD=0.05;
+static const double M_PI=3.14159256359;
+static const float JOY_THRESHOLD=0.08;
 
 inline bool joyzero(float input) {
     return (std::fabs(input)<JOY_THRESHOLD);
