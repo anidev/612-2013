@@ -8,6 +8,17 @@
 #include "../EnhancedJoystick.h"
 
 const float DRIVE_TURN_SPEED = 0.6f;
+void driver_check_update(void* dummy) {
+    if(!joyzero(drive_gamepad.GetRawAxis(2))||!joyzero(drive_gamepad.GetRawAxis(4))) { // axis controls
+        driverOperation = true;
+        return;
+    }
+    if(drive_gamepad.GetRawButton(7)||drive_gamepad.GetRawButton(8)) {
+        driverOperation = true;
+        return;
+    }
+    driverOperation = false;
+}
 
 void driving_state() {
     //Todo add driver check update here

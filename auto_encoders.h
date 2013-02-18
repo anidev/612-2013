@@ -3,6 +3,7 @@
 
 #include <Encoder.h>
 #include "ports.h"
+#include "612.h"
 
 struct encoders_info {
     hw_info left1;
@@ -15,7 +16,11 @@ class auto_encoders {
 private:
     Encoder* left_encoder;
     Encoder* right_encoder;
+#ifdef Suzie
     static const double SLOPE = 0.0677751556; //inches per pulse
+#else
+    static const double SLOPE =  0.0495;
+#endif //Suzie
     static const double TOLERANCE = 1.5;
 public:
     ~auto_encoders();

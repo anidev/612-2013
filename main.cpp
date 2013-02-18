@@ -14,18 +14,7 @@
 #include "main.h"
 #include "Shooter.h"
 #include "feeder.h"
-
-void driver_check_update(void* dummy) {
-    if(!joyzero(drive_gamepad.GetRawAxis(2))||!joyzero(drive_gamepad.GetRawAxis(4))) { // axis controls
-        driverOperation = true;
-        return;
-    }
-    if(drive_gamepad.GetRawButton(7)||drive_gamepad.GetRawButton(8)) {
-        driverOperation = true;
-        return;
-    }
-    driverOperation = false;
-}
+#include "states/state_driving.h"
 
 robot_class::robot_class() {
     GetWatchdog().SetEnabled(false);
