@@ -24,7 +24,7 @@ DriveTrain drive_train(dinfo,einfo,side1,side2);
     Shooter shooter(launcher_wheel_1, launcher_wheel_2, launcher_sensor, feeder_1, feeder_2);
     Lift angleAdjuster(lift_motor,launch_angle_pot);
 #else
-    Shooter shooter(launcher_wheel, launcher_sensor, feeder_belt, IR_sensor);
+    Shooter shooter(launcher_wheel, launcher_sensor, feeder_belt, feeder_sensor, IR_sensor);
     Lift angleAdjuster(lift_canJag);
 #endif
 AutoShooter auto_shoot(shooter); // Must be after #defines

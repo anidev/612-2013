@@ -13,6 +13,8 @@
 #include "EnhancedJoystick.h"
 #include "main.h"
 #include "Shooter.h"
+#include "feeder.h"
+
 void driver_check_update(void* dummy) {
     if(!joyzero(drive_gamepad.GetRawAxis(2))||!joyzero(drive_gamepad.GetRawAxis(4))) { // axis controls
         driverOperation = true;
@@ -110,9 +112,20 @@ void robot_class::TeleopPeriodic() {
         shooting_auto();
     }
 }
-void TestInit() {   
+void robot_class::TestInit() {
 }
-void TestPeriodic() {
+void robot_class::TestPeriodic() {
+//    static F
+    updateRegistry.updateAll();
+/*    static int counter=0;
+    if(counter%10==0) {
+        std::printf("feeder speed: %f\n",drive_gamepad.GetRawAxis(1));
+    }
+    counter++;*/
+    if(gunner_gamepad.GetRawAxis(2) > 0.5)
+        shooter.setFeederForward();
+    else if(gunner_gamepad.GetRawAxis(2) < -0.5)
+        shooter.setFeederBackward();
 }
 //the following macro tells the library that we want to generate code
 //for our class robot_class

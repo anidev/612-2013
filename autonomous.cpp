@@ -25,6 +25,7 @@ enum auto_states {
 
 State state(AUTO_DRIVE);
 AutoTarget shoot_tar;
+Shooter shoot;
 
 void lift(AutoTarget target) {
     if (auto_state_changed) {
@@ -34,13 +35,14 @@ void lift(AutoTarget target) {
             angleAdjuster.set_angle(LOW_LIFT_ANGLE); /*other angle*/
         }
         auto_state_changed = false;
+	//shoot.set_speed(SOME_NUMBER) EFFICIENCY CODE FOR LATER
     } else if (angleAdjuster.at_angle()) {
         state.set_state(AUTO_DRIVE);
         auto_state_changed = true;
     }
 }
 
-void drive(double dist /*keep in mind that dist is in inches*/) {
+void drive(double dist /*inches*/) {
     if (auto_state_changed) {
         drive_train.drive(dist);
         auto_state_changed = false;

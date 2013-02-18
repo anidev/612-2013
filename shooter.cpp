@@ -13,8 +13,8 @@ Shooter::Shooter(hw_info launchWheel1,hw_info launchWheel2,hw_info launchSensor,
     cur_state = SPINNING_UP;
 }
 #else
-Shooter::Shooter(canport_t canJag,hw_info sensorInfo,hw_info feedInfo, hw_info IRInfo):
-         launch(canJag,sensorInfo), feed(feedInfo), IRSensor(IRInfo.moduleNumber,IRInfo.channel)
+Shooter::Shooter(canport_t canJag,hw_info sensorInfo,hw_info feedInfo, hw_info feedSensor, hw_info IRInfo):
+         launch(canJag,sensorInfo), feed(feedInfo,feedSensor), IRSensor(IRInfo.moduleNumber,IRInfo.channel)
 {
     shooting = false;
     cur_state = SPINNING_UP;
@@ -74,7 +74,9 @@ void Shooter::setFeederBackward(){
 void Shooter::setFeederStop(){
     feed.stop();
 }
-
+void Shooter::setRawFeederPower(double b) {
+    feed.setRawPower(b);
+}
 void Shooter::update() {
     if(shooting && launch.getFrisbeeCount() < targetCount)
     {
@@ -101,13 +103,12 @@ void Shooter::update() {
                  printf("IRsensor voltage : %f",IRSensor.GetVoltage()); 
                  update_cnt = 0;
              }
-             if (IRSensor.GetVoltage() > 2.0) {
+             if (IRSensor.GetVoltage() > DEFAULT_IR_RETURN) {
                  enter = true;
              }
-             if (enter && IRSensor.GetVoltage() < 2.0) {
+             if (enter && IRSensor.GetVoltage() < DEFAULT_IR_RETURN) {
                  exit = true;
              }
-              
              /*
               * END SHOT DETECTION
               */ 

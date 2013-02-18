@@ -30,12 +30,13 @@ private:
     bool enter;
     bool exit;
     int update_cnt;
+    static const DEFAULT_IR_RETURN = 2.0;
     //~IR SENSOR STUFF
 public:
 #ifdef Suzie
     Shooter(hw_info, hw_info, hw_info, hw_info, hw_info);
 #else
-    Shooter(canport_t, hw_info, hw_info, hw_info);
+    Shooter(canport_t, hw_info, hw_info, hw_info, hw_info);
 #endif //Suzie
     ~Shooter();
     // Launcher
@@ -51,6 +52,7 @@ public:
     void setFeederBackward();
     void setFeederStop();
     Feeder::direction_t getFeederDirection();
+    void setRawFeederPower(double);
     // Global shooter stuff
     void update();
     void shoot(int a = 4,double launchSpeed = DEFAULT_LAUNCH_SPEED);

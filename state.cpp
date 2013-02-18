@@ -23,7 +23,7 @@ void State::addState(int state,functs fun,obj o)
     states.push_back(state);
 }
 void State::runState() {
-    for(int i = 0;i < states.size();i++)
+    for(unsigned int i = 0;i < states.size();i++)
     {
         if(states.at(i) == state)
         {
