@@ -29,8 +29,7 @@ private:
     AnalogChannel IRSensor; 
     bool enter;
     bool exit;
-    static const float FRISBEE_PRESENCE_TOLERANCE = 0.8;
-    int voltage_cache [2];
+    static const double DEFAULT_IR_RETURN = 2.0;
     //~IR SENSOR STUFF
 public:
 #ifdef Suzie

@@ -86,7 +86,7 @@ void Shooter::update() {
                 cur_state = FEEDING;
             }
         }
-        else 
+        else
         {
             if(!launch.atSpeed())
             {
@@ -95,12 +95,12 @@ void Shooter::update() {
                 feedTimer.Reset();
                 cur_state = SPINNING_UP;
             }
-            /*
-             * ADD SHOT DETECTION CODE HERE
-             */
-             /*
-              * END SHOT DETECTION
-              */ 
+            if (IRSensor.GetVoltage() > DEFAULT_IR_RETURN) {
+                enter = true;
+            }
+            if (enter && IRSensor.GetVoltage() < DEFAULT_IR_RETURN) {
+                exit = true;
+            }
             feed.forward();
             feedTimer.Start();
             if(launch.getFrisbeeCount() > previousCount)
@@ -108,7 +108,7 @@ void Shooter::update() {
                 feedTimer.Reset();
                 previousCount = launch.getFrisbeeCount();
             }
-            if(feedTimer.Get() > FEEDER_TIMEOUT) 
+            if(feedTimer.Get() > FEEDER_TIMEOUT)
             {
                 // feeder moving but launcher hasn't slowed down for a while
                 // meaning no more frisbees

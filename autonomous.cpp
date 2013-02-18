@@ -34,6 +34,7 @@ void lift(AutoTarget target) {
             angleAdjuster.set_angle(LOW_LIFT_ANGLE); /*other angle*/
         }
         auto_state_changed = false;
+	//shoot.set_speed(SOME_NUMBER) EFFICIENCY CODE FOR LATER
     } else if (angleAdjuster.at_angle()) {
         state.set_state(AUTO_DRIVE);
         auto_state_changed = true;
