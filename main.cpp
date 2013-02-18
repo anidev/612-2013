@@ -2,6 +2,7 @@
 #include <cmath>
 #include <Counter.h>
 #include <networktables/NetworkTable.h>
+
 #include "state.h"
 #include "states/state_driving.h"
 #include "states/state_shooting.h"
