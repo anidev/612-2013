@@ -74,6 +74,11 @@ unsigned int Launcher::getFrisbeeCount(){
     return count;
 }
 //extern ports.h
+
+bool Launcher::dropDetected() {
+    return (std::fabs(getCurrentSpeed() - targetSpeed) > SHOT_DROP_TOLERANCE);
+}
+
 void Launcher::update() {
     netcom -> launcher_current_speed(getCurrentSpeed()); //get current speed and send with netcom
     if(targetSet)
@@ -84,7 +89,7 @@ void Launcher::update() {
         }
         if(reachedSpeed)
         {
-            if(std::fabs(getCurrentSpeed() - targetSpeed) > SHOT_DROP_TOLERANCE)
+            if(dropDetected())
             {
                 count++;
                 reachedSpeed = false;

@@ -45,6 +45,7 @@ public:
     float getTargetSpeed();
     unsigned int getFrisbeeCount();
     void resetFrisbeeCount();
+    bool dropDetected();
 };
 
 #endif // LAUNCHER_H
