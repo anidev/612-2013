@@ -21,8 +21,7 @@ robot_class::robot_class() {
 
 void robot_class::RobotInit() {
     std::printf("RobotInit\n");
-    netcom=new NetworkCom();
-    updateRegistry.addUpdateFunction(&driver_check_update,NULL);
+    netcom = new NetworkCom();
 }
 
 void robot_class::DisabledInit() {
