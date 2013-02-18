@@ -14,7 +14,7 @@ void climb_check_update() {
 }
 
 void climbing_state() {
-    lift.set_angle(-40);
+    angleAdjuster.set_angle(-40);
     if(!joyzero(drive_gamepad.GetRawAxis(2))||!joyzero(drive_gamepad.GetRawAxis(4))) // axis controls
     {
         driverOperation = true;
