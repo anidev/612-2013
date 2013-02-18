@@ -122,9 +122,9 @@ void robot_class::TestPeriodic() {
         std::printf("feeder speed: %f\n",drive_gamepad.GetRawAxis(1));
     }
     counter++;
-    if(drive_gamepad.GetRawAxis(1) > 0.05)
+    if(gunner_gamepad.GetRawAxis(2) > 0.05)
         shooter.setFeederForward();
-    else if(gunner_gamepad.GetRawAxis(1) < -0.05)
+    else if(gunner_gamepad.GetRawAxis(2) < -0.05)
         shooter.setFeederBackward();
 }
 //the following macro tells the library that we want to generate code
