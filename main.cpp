@@ -1,5 +1,6 @@
 #include <string>
 #include <cmath>
+#include <Counter.h>
 #include <networktables/NetworkTable.h>
 #include "state.h"
 #include "states/state_driving.h"
@@ -12,7 +13,6 @@
 #include "EnhancedJoystick.h"
 #include "main.h"
 #include "Shooter.h"
-
 void driver_check_update(void* dummy) {
     if(!joyzero(drive_gamepad.GetRawAxis(2))||!joyzero(drive_gamepad.GetRawAxis(4))) { // axis controls
         driverOperation = true;
@@ -113,23 +113,6 @@ void robot_class::TeleopPeriodic() {
 void TestInit() {   
 }
 void TestPeriodic() {
-    updateRegistry.updateAll();
-    if(std::fabs(drive_gamepad.GetRawAxis(1)) > 0.05)
-    {
-        shooter.setFeederForward();
-    }
-    else
-    {
-        shooter.setFeederStop();
-    }
-    if(std::fabs(drive_gamepad.GetRawAxis(2)) > 0.05)
-    {
-        shooter.setSpeed(drive_gamepad.GetRawAxis(2));
-    }
-    else
-    {
-        shooter.setSpeed(0.0);
-    }
 }
 //the following macro tells the library that we want to generate code
 //for our class robot_class
