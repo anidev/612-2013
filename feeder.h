@@ -37,6 +37,7 @@ private:
     Counter counter;
 #endif //Suzie
     void update();
+    static void update_helper(void*);
     static const float SPEED = 0.25f;
 };
 

@@ -117,14 +117,14 @@ void robot_class::TestInit() {
 void robot_class::TestPeriodic() {
 //    static F
     updateRegistry.updateAll();
-    static int counter=0;
+/*    static int counter=0;
     if(counter%10==0) {
         std::printf("feeder speed: %f\n",drive_gamepad.GetRawAxis(1));
     }
-    counter++;
-    if(gunner_gamepad.GetRawAxis(2) > 0.05)
+    counter++;*/
+    if(gunner_gamepad.GetRawAxis(2) > 0.5)
         shooter.setFeederForward();
-    else if(gunner_gamepad.GetRawAxis(2) < -0.05)
+    else if(gunner_gamepad.GetRawAxis(2) < -0.5)
         shooter.setFeederBackward();
 }
 //the following macro tells the library that we want to generate code
