@@ -26,7 +26,7 @@ enum auto_states {
 State state(AUTO_DRIVE);
 AutoTarget shoot_tar;
 
-static void lift(AutoTarget target) {
+void lift(AutoTarget target) {
     if (auto_state_changed) {
         if (target == High_Goal) {
             angleAdjuster.set_angle(HIGH_LIFT_ANGLE); /*other angle*/
@@ -40,7 +40,7 @@ static void lift(AutoTarget target) {
     }
 }
 
-static void drive(double dist /*inches*/) {
+void drive(double dist /*inches*/) {
     if (auto_state_changed) {
         drive_train.drive(dist);
         auto_state_changed = false;
@@ -52,7 +52,7 @@ static void drive(double dist /*inches*/) {
     }
 }
 
-static void turn(double angle) {
+void turn(double angle) {
     if (auto_state_changed) {
         drive_train.turn(angle);
         auto_state_changed = false;
@@ -64,7 +64,7 @@ static void turn(double angle) {
     }
 }
 
-static void shoot() {
+void shoot() {
     std::printf("shooting");
     if (auto_state_changed) {
         auto_shoot.AutoShoot();
@@ -75,7 +75,7 @@ static void shoot() {
     }
 }
 
-static void choose_routine(Position pos, AutoTarget target){
+void choose_routine(Position pos, AutoTarget target){
     auto_state_changed = true;
     shoot_tar = target;
     if ((pos == Back_Left) || (pos == Front_Left)) {
@@ -102,7 +102,7 @@ static void choose_routine(Position pos, AutoTarget target){
         state.set_state(AUTO_TURN);
     }
 }
-static void do_autonomous() {
+void do_autonomous() {
     lift(shoot_tar);
     if (state.get_state()==AUTO_DRIVE) {
         drive(DRIVE_DIST);
