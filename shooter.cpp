@@ -99,7 +99,10 @@ void Shooter::update() {
             /*
              * ADD SHOT DETECTION CODE HERE
              */
-             if (++update_cnt > 20) { printf("IRsensor voltage : %f",IRSensor.GetVoltage()); update_cnt = 0;}
+            if (++update_cnt > 20) {
+                printf("IRsensor voltage : %f",IRSensor.GetVoltage());
+                update_cnt = 0;
+            }
              /*
               * END SHOT DETECTION
               */ 
