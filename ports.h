@@ -83,7 +83,7 @@ extern NetworkCom* netcom;
     static const hw_info feeder_belt =       {1, 1};
     static const hw_info feeder_sensor =     {1, 3};
     static const hw_info launcher_sensor =   {1, 2};
-    static const hw_info IR_sensor =         {2, 1};
+    static const hw_info IR_sensor =         {1, 1};
 #endif //#ifdef Suzie
     
 #endif //PORTS_H

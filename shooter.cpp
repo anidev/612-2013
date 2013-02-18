@@ -24,7 +24,6 @@ Shooter::Shooter(canport_t canJag,hw_info sensorInfo,hw_info feedInfo, hw_info f
     updateRegistry.addUpdateFunction(&update_helper, (void*)this);
     enter=false;
     exit=false;
-    update_cnt = 0;
 }
 #endif //Suzie
 
@@ -88,45 +87,34 @@ void Shooter::update() {
                 cur_state = FEEDING;
             }
         }
-        else 
+        else
         {
-	    if(!launch.atSpeed())
-	    {
-		feed.stop();
-		feedTimer.Stop();
-		feedTimer.Reset();
-		cur_state = SPINNING_UP;
-	    }
-	    /*
-	     * ADD SHOT DETECTION CODE HERE
-	     */
-	     if (++update_cnt > 20) { 
-		 printf("IRsensor voltage : %f",IRSensor.GetVoltage()); 
-		 update_cnt = 0;
-	     }
-	     if (IRSensor.GetVoltage() > DEFAULT_IR_RETURN) {
-		 enter = true;
-	     }
-	     if (enter && IRSensor.GetVoltage() < DEFAULT_IR_RETURN) {
-		 exit = true;
-	     }
-	     /*
-	      * END SHOT DETECTION
-	      */ 
-	    
-	    feed.forward();
-	    feedTimer.Start();
-	    if(launch.getFrisbeeCount() > previousCount)
-	    {
-		feedTimer.Reset();
-		previousCount = launch.getFrisbeeCount();
-	    }
-	    if(feedTimer.Get() > FEEDER_TIMEOUT) 
-	    {
-		// feeder moving but launcher hasn't slowed down for a while
-		// meaning no more frisbees
-		abort();
-	    }
+            if(!launch.atSpeed())
+            {
+                feed.stop();
+                feedTimer.Stop();
+                feedTimer.Reset();
+                cur_state = SPINNING_UP;
+            }
+            if (IRSensor.GetVoltage() > DEFAULT_IR_RETURN) {
+                enter = true;
+            }
+            if (enter && IRSensor.GetVoltage() < DEFAULT_IR_RETURN) {
+                exit = true;
+            }
+            feed.forward();
+            feedTimer.Start();
+            if(launch.getFrisbeeCount() > previousCount)
+            {
+                feedTimer.Reset();
+                previousCount = launch.getFrisbeeCount();
+            }
+            if(feedTimer.Get() > FEEDER_TIMEOUT)
+            {
+                // feeder moving but launcher hasn't slowed down for a while
+                // meaning no more frisbees
+                abort();
+            }
         }
     }
     else

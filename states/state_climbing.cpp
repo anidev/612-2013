@@ -7,13 +7,14 @@
 #include "../drivetrain.h"
 #include "../EnhancedJoystick.h"
 
-const float DRIVE_TURN_SPEED = 0.6f;
-const float ARCADE_SPEED = 0.4f;
+const float DRIVE_SPEED = 0.2f;
+const float ARCADE_SPEED = 0.2f;
 
-void driver_check_update() {
+void climb_check_update() {
 }
 
-void driving_state() {
+void climbing_state() {
+    lift.set_angle(-40);
     if(!joyzero(drive_gamepad.GetRawAxis(2))||!joyzero(drive_gamepad.GetRawAxis(4))) // axis controls
     {
         driverOperation = true;
@@ -35,12 +36,12 @@ void driving_state() {
         // swiveling
         if (drive_gamepad.GetRawButton(5))// L1 
         {
-            drive_train.TankDrive(-DRIVE_TURN_SPEED,DRIVE_TURN_SPEED);
+            drive_train.TankDrive(-DRIVE_SPEED,DRIVE_SPEED);
             return;
         }
         else if(drive_gamepad.GetRawButton(6)) // R1
         {
-            drive_train.TankDrive(DRIVE_TURN_SPEED,-DRIVE_TURN_SPEED);
+            drive_train.TankDrive(DRIVE_SPEED,-DRIVE_SPEED);
             return;
         }
 

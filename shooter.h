@@ -30,7 +30,6 @@ private:
     AnalogChannel IRSensor; 
     bool enter;
     bool exit;
-    int update_cnt;
     static const double DEFAULT_IR_RETURN = 2.0;
     //~IR SENSOR STUFF
 public:
