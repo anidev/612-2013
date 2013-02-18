@@ -8,11 +8,11 @@
 enum Position {Back_Left, Back_Right, Front_Left, Front_Right}; 
 enum AutoTarget {Middle_Goal, High_Goal};
 
-static void choose_routine(Position, AutoTarget);
-static void do_autonomous();
+void choose_routine(Position, AutoTarget);
+void do_autonomous();
 
-static void drive();
-static void turn();
-static void shoot();
+void drive();
+void turn();
+void shoot();
 
 #endif
