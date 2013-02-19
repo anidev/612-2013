@@ -9,6 +9,8 @@
 #include "lift.h"
 #include "NetworkCom.h"
 
+const float LIFT_SPEED=0.4f;
+
 #ifdef Suzie
 Lift::Lift(hw_info jagInfo,hw_info potInfo) : pot(potInfo.moduleNumber,potInfo.channel)
 {
@@ -30,7 +32,7 @@ Lift::Lift(canport_t canJag)
     manual = true;
 }    
 #endif //Suzie
-//Todo add command to set angle and have jag go to it
+//Todo add command to set angle and have jag go to it(button)
 Lift::~Lift() {
     delete liftMotor;
 }
@@ -93,7 +95,7 @@ void Lift::set_direction(int d) {
 #else
     ((CANJaguar*)liftMotor) -> DisableControl();
     ((CANJaguar*)liftMotor) -> ChangeControlMode(CANJaguar::kPercentVbus);
-    ((CANJaguar*)liftMotor) -> Set(d*0.20f);
+    ((CANJaguar*)liftMotor) -> Set(d*LIFT_SPEED);
 #endif //Suzie
 }
 

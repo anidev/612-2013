@@ -12,9 +12,10 @@
 #include "AutoShooter.h"
 #include "612.h"
 #include "NetworkCom.h"
-
+#include <Counter.h>
 UpdateRegistry updateRegistry; // Must be first constructed
 Relay led_spike(led.moduleNumber,led.channel);
+Relay ledstrip_spike(ledstrip.moduleNumber,ledstrip.channel);
 EnhancedJoystick drive_gamepad   (1);
 EnhancedJoystick gunner_gamepad  (2);
 drivetrain_info dinfo={left_front_motor,left_rear_motor,right_front_motor,right_rear_motor};
@@ -24,7 +25,7 @@ DriveTrain drive_train(dinfo,einfo,side1,side2);
     Shooter shooter(launcher_wheel_1, launcher_wheel_2, launcher_sensor, feeder_1, feeder_2);
     Lift angleAdjuster(lift_motor,launch_angle_pot);
 #else
-    Shooter shooter(launcher_wheel, launcher_sensor, feeder_belt);
+    Shooter shooter(launcher_wheel, launcher_sensor, feeder_belt, feeder_sensor, IR_sensor);
     Lift angleAdjuster(lift_canJag);
 #endif
 AutoShooter auto_shoot(shooter); // Must be after #defines

@@ -1,5 +1,5 @@
-#ifndef ENHANCEDJOYSTICK_H
-#define ENHANCEDJOYSTICK_H
+#ifndef ENHANCED_JOYSTICK_H
+#define ENHANCED_JOYSTICK_H
 
 #include <vector>
 #include "joysmooth.h"
@@ -7,7 +7,7 @@
 
 class EnhancedJoystick : public joysmooth {
 public:
-    typedef void*obj;
+    typedef void* obj;
     typedef void(*funcName)(obj);
     void addBtn(UINT32,funcName,obj);
     EnhancedJoystick(UINT32);

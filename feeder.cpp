@@ -1,20 +1,29 @@
 #include "feeder.h"
 #include "612.h"
 
+
+//Todo find a way to cleanly set the original value of counter to false
+
 #ifdef Suzie
-Feeder::Feeder(hw_info info1,hw_info info2) : feederMotor(info1,info2)
-{
-    direction = STOP;
-} 
+Feeder::Feeder(hw_info info1,hw_info info2) : feederMotor(info1,info2) {
 #else
-Feeder::Feeder(hw_info info) : feederMotor(info.moduleNumber,info.channel)
+Feeder::Feeder(hw_info motorInfo,hw_info hallInfo) : feederMotor(motorInfo.moduleNumber,motorInfo.channel),
+                                                     counter(hallInfo.moduleNumber,hallInfo.channel)
 {
-    direction = STOP;
-}
+    counter.Start();
 #endif //Suzie
+    updateRegistry.addUpdateFunction(&update_helper,(void*)this);
+    direction = STOP;
+    //Add update helper
+    counting = false; 
+}
+
 
 Feeder::~Feeder() {
-
+}
+void Feeder::setRawPower(double power)
+{
+    feederMotor.Set(power);
 }
 
 void Feeder::forward() {
@@ -28,8 +37,11 @@ void Feeder::backward() {
 }
 
 void Feeder::stop() {
+    counting = false;
     direction = STOP;
-    update();
+    feederMotor.Set(direction * SPEED);
+    counter.Stop();
+    counter.Reset();
 }
 
 Feeder::direction_t Feeder::getDirection() {
@@ -37,5 +49,26 @@ Feeder::direction_t Feeder::getDirection() {
 }
 
 void Feeder::update() {
-    feederMotor.Set(direction*SPEED);
+    if(direction == STOP)
+        return;
+    static int count=0;
+    if(count%25==0) {
+        std::printf("feeder hall effect: %d\n",counter.Get());
+    }
+    count++;
+    if(!counting) {
+        counter.Start();
+        counting = true;
+    }
+    if (counting && counter.Get() > 0) {
+        stop();
+        count = 0;
+        return;
+    }
+    feederMotor.Set(direction * SPEED);
+    //TODO Add Sensors here and update helper
+}
+
+void Feeder::update_helper(void* obj) {
+    ((Feeder*)obj)->update();
 }

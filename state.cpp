@@ -1,4 +1,4 @@
-#include "state.h"
+#include "state.h"  
 
 State::State(robot_state initial):state(initial) {
 }
@@ -14,4 +14,20 @@ void State::set_state (robot_state new_state)
 robot_state State::get_state ()
 {
     return state;
+}
+
+void State::addState(int state,functs fun,obj o)
+{
+    functions.push_back(fun);
+    objects.push_back(o);
+    states.push_back(state);
+}
+void State::runState() {
+    for(unsigned int i = 0;i < states.size();i++)
+    {
+        if(states.at(i) == state)
+        {
+            (functions.at(i))(objects.at(i));
+        }
+    }
 }

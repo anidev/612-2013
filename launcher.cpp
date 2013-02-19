@@ -9,11 +9,13 @@
 #ifdef Suzie
 Launcher::Launcher(hw_info wheel1,hw_info wheel2,hw_info sensor) : launcherWheel(wheel1,wheel2),
                                                                    launcherSensor(sensor.moduleNumber, sensor.channel),
-                                                                   pid(PID_P, PID_I, PID_D, &launcherSensor, &launcherWheel) {
+                                                                   pid(PID_P, PID_I, PID_D, &launcherSensor, &launcherWheel)
+{
 #else
 Launcher::Launcher(canport_t wheelInfo,hw_info sensorInfo) : launcherWheel(wheelInfo),
                                                              launcherSensor(sensorInfo.moduleNumber, sensorInfo.channel),
-                                                             pid(PID_P, PID_I, PID_D, &launcherSensor, &launcherWheel) {
+                                                             pid(PID_P, PID_I, PID_D, &launcherSensor, &launcherWheel) 
+{
     launcherWheel.ChangeControlMode(CANJaguar::kPercentVbus);
 #endif
     count = 0;
@@ -24,6 +26,7 @@ Launcher::Launcher(canport_t wheelInfo,hw_info sensorInfo) : launcherWheel(wheel
     pid.SetTolerance(AT_SPEED_TOLERANCE);
     pid.SetInputRange(0.0f, MAX);
     pid.SetOutputRange(-1.0f, 1.0f);
+    launcherSensor.SetMaxPeriod(10);
     launcherSensor.Start();
 }
 
@@ -33,28 +36,22 @@ Launcher::~Launcher() {
 void Launcher::stop() {
     targetSet = false;
     reachedSpeed = false;
-    targetSpeed=0.0f;
+    targetSpeed = 0.0f;
     launcherWheel.Set(0.0f);
     pid.Disable();
-    launcherSensor.Start();
-    //insert more code here
 }
 
 void Launcher::setSpeed(float newSpeed) {
-    targetSpeed=newSpeed;
-    targetSet=true;
+    targetSpeed = newSpeed;
+    targetSet = true;
     reachedSpeed = false;
-    launcherWheel.Set(newSpeed);
-    launcherSensor.Start();
-//    pid.Enable();
-//    pid.SetSetpoint(newSpeed);
+    //launcherWheel.Set(newSpeed); //TODO undo if pid fails
+    pid.Enable();
+    pid.SetSetpoint(newSpeed);
 }
 
 float Launcher::getCurrentSpeed() {
-//    std::printf("getting current speed when period=%f\n",launcherSensor.PIDGet());
-    launcherSensor.Start();
     return 1.0f/(launcherSensor.GetPeriod());
-
 }
 
 float Launcher::getTargetSpeed() {
@@ -62,10 +59,11 @@ float Launcher::getTargetSpeed() {
 }
 
 bool Launcher::atSpeed(){
-    if(std::fabs(getCurrentSpeed()-targetSpeed)/targetSpeed < AT_SPEED_TOLERANCE){
+    if((std::fabs(getCurrentSpeed() - targetSpeed)/targetSpeed) < AT_SPEED_TOLERANCE){
         return true;
     }
-    return false; //Replaces OnTarget because it crashes
+    return false; //Replaces OnTarget because it locks up
+    //Todo test onTarget
 }
 
 void Launcher::resetFrisbeeCount(){
@@ -76,8 +74,13 @@ unsigned int Launcher::getFrisbeeCount(){
     return count;
 }
 //extern ports.h
+
+bool Launcher::dropDetected() {
+    return (std::fabs(getCurrentSpeed() - targetSpeed) > SHOT_DROP_TOLERANCE);
+}
+
 void Launcher::update() {
-    netcom->launcher_current_speed(getCurrentSpeed());
+    netcom -> launcher_current_speed(getCurrentSpeed()); //get current speed and send with netcom
     if(targetSet)
     {
         if(atSpeed())
@@ -86,7 +89,7 @@ void Launcher::update() {
         }
         if(reachedSpeed)
         {
-            if(std::fabs(getCurrentSpeed()-targetSpeed) > SHOT_DROP_TOLERANCE)
+            if(dropDetected())
             {
                 count++;
                 reachedSpeed = false;
@@ -94,7 +97,6 @@ void Launcher::update() {
         }
     }
 }
-//get current speed and angle and send with netcom
 void Launcher::update_helper(void* obj) {
     ((Launcher*)obj) -> update();
 }

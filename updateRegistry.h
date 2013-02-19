@@ -1,6 +1,8 @@
 #ifndef UPDATE_REGISTRY_H
 #define UPDATE_REGISTRY_H
+
 #include <vector>
+
 class UpdateRegistry {
 public:
     typedef void* inst;
