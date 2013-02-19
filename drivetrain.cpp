@@ -35,6 +35,20 @@ DriveTrain::~DriveTrain() {
     delete right_rear;
 }
 
+void DriveTrain::Scale ()
+{
+    if (global_state.get_state() == CLIMBING)  
+    {
+        DRIVE_SPEED = 0.2f;
+        TURN_SPEED = 0.2f;
+    }
+    else
+    {
+        DRIVE_SPEED = 0.75f;
+        TURN_SPEED = 0.4f;
+    }
+}
+
 void DriveTrain::TankDrive(float left,float right) {
     operation = MANUAL;
     finished = false;
