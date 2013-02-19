@@ -66,5 +66,6 @@ Target::type_t determineType(BinaryImage* image,int index) {
 }
 
 void vision::processContinuous(std::vector<Target>* targets) {
-    
+    // TODO DO STUFF in vision::processContinuous
+    delete targets; // should all be new-allocated
 }

@@ -13,11 +13,14 @@ class DriverVision : public vision
 private:
     NetworkTable* table;
     Task vision_task;
+    void setRemoteEnabled(bool);
     static int vision_entry(void*);
 public:
     DriverVision();
     void startContinuous();
     void stopContinuous();
+    void startRemoteContinuous();
+    void stopRemoteContinuous();
     std::vector<Target>* getTargetsNow();
 };
 

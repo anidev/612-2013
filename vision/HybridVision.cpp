@@ -5,11 +5,11 @@
 #include "HybridVision.h"
 
 void HybridVision::startContinuous() {
-    driver.startContinuous();
+    driver.startRemoteContinuous();
 }
 
 void HybridVision::stopContinuous() {
-    driver.stopContinuous();
+    driver.stopRemoteContinuous();
 }
 
 std::vector<Target>* HybridVision::getTargetsNow() {
