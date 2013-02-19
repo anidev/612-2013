@@ -6,6 +6,7 @@
 #include "drivetrain.h"
 #include "ports.h"
 #include "shifter.h"
+#include "EnhancedJoystick.h"
 
 DriveTrain::DriveTrain(drivetrain_info dinfo,encoders_info einfo,hw_info s1,hw_info s2):encoders(einfo),shift(s1,s2) {
 #ifdef Suzie
@@ -38,7 +39,6 @@ DriveTrain::~DriveTrain() {
 void DriveTrain::TankDrive(float left,float right) {
     operation = MANUAL;
     finished = false;
-    std::printf("left: %f, right: %f\n",left,right);
     robotDrive -> TankDrive(left,right);
 }
 
@@ -125,6 +125,11 @@ shifter::GEAR DriveTrain::getGear() {
 }
 
 void DriveTrain::update() {
+    if(drive_gamepad.GetRawButton(2)) {
+        encoders.reset_distance();
+    }
+    encoders.get_left_dist();
+    encoders.get_right_dist();
     if(operation == MANUAL) {
         return;
     }
