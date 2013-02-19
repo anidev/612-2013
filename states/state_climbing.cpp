@@ -4,10 +4,11 @@
 #include "../auto_encoders.h"
 #include "../drivetrain.h"
 #include "../EnhancedJoystick.h"
+#include "../lift.h"
 
 float CLIMBING_SPEED = 0.2f;
 // 9== select/climbing|10 == start/driving
-void climbing_state () 
+void climbing_state ()
 {
     if (drive_gamepad.GetRawButton(10))
     {
