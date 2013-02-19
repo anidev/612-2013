@@ -45,12 +45,13 @@ private:
 #ifdef Suzie
     static const float DRIVE_SPEED = 0.7f;
     static const float TURN_SPEED = 0.7f;
+    static const double CIRCUMFERENCE = 249.455117704;
 #else
     static const float DRIVE_SPEED = 0.7f;
     static const float TURN_SPEED = 0.5f;
+    static const float CIRCUMFERENCE = 65.9734457254; // 21*pi
 #endif
     static const double DIST_TOLERANCE = 3.0f;
-    static const double CIRCUMFERENCE = 249.455117704;
     enum operation_t {
         DRIVING,
         TURNING,
