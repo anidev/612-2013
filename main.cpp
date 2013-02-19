@@ -22,12 +22,12 @@ robot_class::robot_class() {
 void robot_class::RobotInit() {
     std::printf("RobotInit\n");
     netcom=new NetworkCom();
-    updateRegistry.addUpdateFunction(&driver_check_update,NULL);
 }
 
 void robot_class::DisabledInit() {
     std::printf("DisabledInit\n");
     led_spike.Set(Relay::kOff);
+    ledstrip_spike.Set(Relay::kOff);
 }
 
 void robot_class::AutonomousInit() {
@@ -75,6 +75,7 @@ void robot_class::AutonomousInit() {
 void robot_class::TeleopInit() {
     std::printf("TelopInit\n");
     led_spike.Set(Relay::kForward);
+    ledstrip_spike.Set(Relay::kForward);
 }
 
 void robot_class::DisabledPeriodic() {
