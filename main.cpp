@@ -101,6 +101,9 @@ void robot_class::TeleopPeriodic() {
     else if(global_state.get_state() == SHOOT_AUTO) {
         shooting_auto();
     }
+    else if(global_state.get_state() == CLIMBING) {
+        climbing_state();
+    }
 }
 void robot_class::TestInit() {
 }
