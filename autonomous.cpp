@@ -111,7 +111,6 @@ void choose_routine(Position pos, AutoTarget target){
 void do_autonomous() {
     if (!shooter_prepped) {
 	ShooterPrep(shoot_tar);
-	shooter_prepped = true;
     }
     else if (state.get_state()==AUTO_DRIVE) {
         drive(DRIVE_DIST);
