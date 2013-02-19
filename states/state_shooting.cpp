@@ -10,14 +10,15 @@
 #include "../EnhancedJoystick.h"
 #include "../AutoShooter.h"
 
-//double new_shooter_wheel_speed=55.0; // decrease by 0.1 or 0.2
-double new_shooter_wheel_speed = 0.85f;
+double new_shooter_wheel_speed=55.0; // decrease by 0.1 or 0.2
+//double new_shooter_wheel_speed = 0.85f;
 bool is_turning;
 bool speed_set = false;
 bool speed_changed=false;
 bool state_changed=false;
 const float SHOOT_TURN_SPEED=0.7f;
-const float WHEEL_CHANGE=0.05f;
+const float WHEEL_CHANGE=5.0f;
+//const float WHEEL_CHANGE=0.05f;
 int speed_adjust_counter=0;
 
 void shooting_auto() {
