@@ -26,7 +26,7 @@ double auto_encoders::get_distance() {
 double auto_encoders::get_left_dist() {
     static int counter=0;
     if(counter%25==0) {
-        std::printf("left pulses:  %d\n",left_encoder->Get());
+        std::printf("left dist:  %f\n",left_encoder->GetDistance());
     }
     counter++;
     return left_encoder -> GetDistance();
@@ -34,7 +34,7 @@ double auto_encoders::get_left_dist() {
 double auto_encoders::get_right_dist() {
     static int counter=0;
     if(counter%25==0) {
-        std::printf("right pulses: %d\n",right_encoder->Get());
+        std::printf("right dist: %f\n",right_encoder->GetDistance());
     }
     counter++;
     return right_encoder -> GetDistance();
