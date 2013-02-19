@@ -66,18 +66,16 @@ void shooting_manual() {
             new_shooter_wheel_speed -= WHEEL_CHANGE;
             std::printf("launcher slowed to %f\n",new_shooter_wheel_speed);
             speed_changed = true;
-            netcom->launcher_target_speed(new_shooter_wheel_speed);
         }
         speed_adjust_counter++;
     }
     else if (gunner_gamepad.GetRawButton (6)) // speed up shooter wheel
     {             
-        if(new_shooter_wheel_speed+WHEEL_CHANGE <= 1.0 && speed_adjust_counter%3==0)
+        if(new_shooter_wheel_speed+WHEEL_CHANGE <= Launcher::MAX && speed_adjust_counter%3==0)
         {
             new_shooter_wheel_speed += WHEEL_CHANGE;
             std::printf("launcher sped up to %f\n",new_shooter_wheel_speed);
             speed_changed = true;
-            netcom->launcher_target_speed(new_shooter_wheel_speed);
         }
         speed_adjust_counter++;
     }
@@ -85,6 +83,7 @@ void shooting_manual() {
     {
         speed_adjust_counter=0;
     }
+    netcom->launcher_target_speed(new_shooter_wheel_speed);
 
     if (gunner_gamepad.GetRawButton(1)) 
     {
