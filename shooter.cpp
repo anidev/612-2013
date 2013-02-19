@@ -132,7 +132,6 @@ void Shooter::shoot(int tCount,double launchSpeed) {
     launch.resetFrisbeeCount();
     launch.setSpeed(launchSpeed);
     targetCount = tCount;
-    //Todo set state variable to first state
 }
 
 void Shooter::abort() {

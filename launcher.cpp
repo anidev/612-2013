@@ -45,9 +45,9 @@ void Launcher::setSpeed(float newSpeed) {
     targetSpeed = newSpeed;
     targetSet = true;
     reachedSpeed = false;
-    launcherWheel.Set(newSpeed);
-//    pid.Enable();
-//    pid.SetSetpoint(newSpeed); // TODO uncomment when Hal Effect works
+    //launcherWheel.Set(newSpeed); //TODO undo if pid fails
+    pid.Enable();
+    pid.SetSetpoint(newSpeed);
 }
 
 float Launcher::getCurrentSpeed() {

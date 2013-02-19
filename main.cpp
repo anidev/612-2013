@@ -2,6 +2,7 @@
 #include <cmath>
 #include <Counter.h>
 #include <networktables/NetworkTable.h>
+
 #include "state.h"
 #include "states/state_driving.h"
 #include "states/state_shooting.h"
@@ -21,7 +22,7 @@ robot_class::robot_class() {
 
 void robot_class::RobotInit() {
     std::printf("RobotInit\n");
-    netcom=new NetworkCom();
+    netcom = new NetworkCom();
 }
 
 void robot_class::DisabledInit() {
