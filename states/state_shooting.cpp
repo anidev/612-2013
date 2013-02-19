@@ -18,6 +18,7 @@ bool speed_changed=false;
 bool state_changed=false;
 const float SHOOT_TURN_SPEED=0.7f;
 const float WHEEL_CHANGE=5.0f;
+const int MAX_FREESBIES = 4;
 //const float WHEEL_CHANGE=0.05f;
 int speed_adjust_counter=0;
 
@@ -86,24 +87,9 @@ void shooting_manual() {
         speed_adjust_counter=0;
     }
 
-    if (gunner_gamepad.GetRawButton(1)) 
-    {
-        if(!speed_set||speed_changed) 
-        {
-            std::printf("launcher set to %f\n",new_shooter_wheel_speed);
-            shooter.setSpeed (new_shooter_wheel_speed);
-            speed_set = true;
-            speed_changed = false;
-        }
-        std::printf("launcher speed: %f\n",shooter.getCurrentSpeed());
-    }
-    else 
-    {
-        if(speed_set) 
-        {
-            std::printf("launcher stopped\n");
-            shooter.stopLauncher();
-            speed_set = false;
+    if (gunner_gamepad.GetRawButton(1)) {
+        if (!(shooter.noFrisbees())) {
+            shooter.shoot(MAX_FREESBIES, new_shooter_wheel_speed);
         }
     }
     netcom -> launcher_current_speed(shooter.getCurrentSpeed());
