@@ -49,13 +49,13 @@ Feeder::direction_t Feeder::getDirection() {
 }
 
 void Feeder::update() {
-    if(direction == STOP)
-        return;
     static int count=0;
     if(count%25==0) {
         std::printf("feeder hall effect: %d\n",counter.Get());
     }
     count++;
+    if(direction == STOP)
+        return;
     if(!counting) {
         counter.Start();
         counting = true;
