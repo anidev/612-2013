@@ -30,7 +30,7 @@ State state(AUTO_DRIVE);
 AutoTarget shoot_tar;
 
 void ShooterPrep(AutoTarget target) {
-    if (auto_state_changed) {
+    if (auto_state_changed && !shooter_prepped) {
 	if (shooter.getCurrentSpeed() < 1.0) {
 	    shooter.setSpeed(Launcher_Speed);
 	}
@@ -43,6 +43,7 @@ void ShooterPrep(AutoTarget target) {
     }
     else if (((angleAdjuster.get_target_angle() == HIGH_LIFT_ANGLE) || (angleAdjuster.get_target_angle() == LOW_LIFT_ANGLE)) && (shooter.getTargetSpeed()==Launcher_Speed)) {
 	auto_state_changed = true;
+	shooter_prepped = true;
     }
 }
 
