@@ -6,8 +6,9 @@
 #include "drivetrain.h"
 #include "ports.h"
 #include "shifter.h"
+#include "EnhancedJoystick.h"
 
-DriveTrain::DriveTrain(drivetrain_info dinfo,encoders_info einfo,hw_info s1,hw_info s2):encoders(einfo),shift(s1,s2) {
+DriveTrain::DriveTrain(drivetrain_info dinfo,encoders_info einfo,hw_info s1,hw_info s2):encoders(einfo),shift(s1,s2),scale(1.0) {
 #ifdef Suzie
     left_front = new Jaguar(dinfo.left_front.moduleNumber,dinfo.left_front.channel);
     left_rear = new Jaguar(dinfo.left_rear.moduleNumber,dinfo.left_rear.channel);
@@ -35,11 +36,15 @@ DriveTrain::~DriveTrain() {
     delete right_rear;
 }
 
+void DriveTrain::setScale (double factor)
+{
+    scale=factor;
+}
+
 void DriveTrain::TankDrive(float left,float right) {
     operation = MANUAL;
     finished = false;
-    std::printf("left: %f, right: %f\n",left,right);
-    robotDrive -> TankDrive(left,right);
+    robotDrive -> TankDrive(left*scale,right*scale);
 }
 
 void DriveTrain::ArcadeDrive(GenericHID& joystick) {
@@ -125,6 +130,11 @@ shifter::GEAR DriveTrain::getGear() {
 }
 
 void DriveTrain::update() {
+    if(drive_gamepad.GetRawButton(2)) {
+        encoders.reset_distance();
+    }
+    encoders.get_left_dist();
+    encoders.get_right_dist();
     if(operation == MANUAL) {
         return;
     }

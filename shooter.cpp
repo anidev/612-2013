@@ -138,6 +138,7 @@ void Shooter::abort() {
     launch.stop();
     feed.stop();
     feedTimer.Stop();
+    frisCounter.Stop();
     shooting = false;
     cur_state = SPINNING_UP;
 }
@@ -147,7 +148,17 @@ bool Shooter::isShooting() {
 }
 
 bool Shooter::isShot() {
-    return ((isShooting()) && (enter && exit) && (launch.dropDetected()));
+   if ((isShooting()) && (enter && exit) && (launch.dropDetected())) {
+       printf("out of frisbees");
+       return true;
+   } else {
+       return false;
+   }
+}
+
+bool Shooter::noFrisbees() {
+    printf("out of frisbees");
+    return ((frisCounter.Get() > 2) && (launch.dropDetected()));
 }
 
 void Shooter::update_helper(void* a) {

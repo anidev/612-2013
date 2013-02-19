@@ -8,6 +8,7 @@
 #include "updateRegistry.h"
 #include "612.h"
 #include <AnalogChannel.h>
+#include <Counter.h>
 
 class Shooter {
 private:
@@ -60,6 +61,8 @@ public:
     //~IR SENSOR STUFF
     bool isShot();
     //~IR SENSOR STUFF
+    bool noFrisbees();
+    Counter frisCounter;
 };
 
 #endif

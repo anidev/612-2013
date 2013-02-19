@@ -6,7 +6,7 @@
 #include "state.h"
 #include "states/state_driving.h"
 #include "states/state_shooting.h"
-
+#include "states/state_climbing.h"
 #include "612.h"
 #include "ports.h"
 #include "auto_encoders.h"
@@ -28,6 +28,7 @@ void robot_class::RobotInit() {
 void robot_class::DisabledInit() {
     std::printf("DisabledInit\n");
     led_spike.Set(Relay::kOff);
+    ledstrip_spike.Set(Relay::kOff);
 }
 
 void robot_class::AutonomousInit() {
@@ -75,6 +76,7 @@ void robot_class::AutonomousInit() {
 void robot_class::TeleopInit() {
     std::printf("TelopInit\n");
     led_spike.Set(Relay::kForward);
+    ledstrip_spike.Set(Relay::kForward);
 }
 
 void robot_class::DisabledPeriodic() {
@@ -105,11 +107,22 @@ void robot_class::TestInit() {
 void robot_class::TestPeriodic() {
 //    static F
     updateRegistry.updateAll();
-/*    static int counter=0;
-    if(counter%10==0) {
-        std::printf("feeder speed: %f\n",drive_gamepad.GetRawAxis(1));
+    if(gunner_gamepad.GetRawButton(1))
+    {
+        shooter.setSpeed(40.0f);
     }
-    counter++;*/
+    else if(gunner_gamepad.GetRawButton(2))
+    {
+        shooter.setSpeed(45.0f);
+    }
+    else if(gunner_gamepad.GetRawButton(3))
+    {
+        shooter.setSpeed(55.0f);
+    }
+    else if(gunner_gamepad.GetRawButton(4))
+    {
+        shooter.setSpeed(60.0f);
+    }
     if(gunner_gamepad.GetRawAxis(2) > 0.5)
         shooter.setFeederForward();
     else if(gunner_gamepad.GetRawAxis(2) < -0.5)
