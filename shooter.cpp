@@ -150,7 +150,12 @@ bool Shooter::isShooting() {
 }
 
 bool Shooter::isShot() {
-    return ((isShooting()) && (enter && exit) && (launch.dropDetected()));
+   if ((isShooting()) && (enter && exit) && (launch.dropDetected())) {
+       printf("out of frisbees");
+       return true;
+   } else {
+       return false;
+   }
 }
 
 bool Shooter::noFrisbees() {
