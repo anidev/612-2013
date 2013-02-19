@@ -18,6 +18,7 @@ public:
     void lift_angle (float new_angle);
     double Autonomous_Position();
     double Autonomous_Target();
+    NetworkTable* get_table(const char*);
 private:
     NetworkTable* Main;
     NetworkTable* Tracking;
