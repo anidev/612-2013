@@ -10,7 +10,18 @@
 const float DRIVE_TURN_SPEED = 0.7f;
 const float ARCADE_SPEED = 0.4f;
 
+// 9== select/climbing|10 == start/driving
 void driving_state() {
+    if (drive_gamepad.GetRawButton(9))
+    {
+        global_state.set_state(CLIMBING);
+        return;
+    }
+    drive_train.setScale(1.0);
+    do_driving();
+}
+
+void do_driving() {
     if(!joyzero(drive_gamepad.GetRawAxis(2))||!joyzero(drive_gamepad.GetRawAxis(4))) // axis controls
     {
         driverOperation = true;
@@ -30,7 +41,7 @@ void driving_state() {
     if(driverOperation)
     {
         // swiveling
-        if (drive_gamepad.GetRawButton(5))// L1 
+        if (drive_gamepad.GetRawButton(5))// L1
         {
             drive_train.TankDrive(-DRIVE_TURN_SPEED,DRIVE_TURN_SPEED);
             return;

@@ -39,14 +39,15 @@ public:
     // shifting
     void shiftHigh();
     void shiftLow();
+    void setScale(double);
     shifter::GEAR getGear();
 private:
 #ifdef Suzie
     static const float DRIVE_SPEED = 0.7f;
     static const float TURN_SPEED = 0.7f;
 #else
-    static const float DRIVE_SPEED = 0.75f;
-    static const float TURN_SPEED = 0.4f;
+    static const float DRIVE_SPEED = 0.7f;
+    static const float TURN_SPEED = 0.5f;
 #endif
     static const double DIST_TOLERANCE = 3.0f;
     static const double CIRCUMFERENCE = 249.455117704;
@@ -68,8 +69,8 @@ private:
     double left_dist;
     double right_dist;
     double angle;
+    double scale;
     bool finished;
-
     void update();
 
 };

@@ -6,7 +6,7 @@
 #include "state.h"
 #include "states/state_driving.h"
 #include "states/state_shooting.h"
-
+#include "states/state_climbing.h"
 #include "612.h"
 #include "ports.h"
 #include "auto_encoders.h"

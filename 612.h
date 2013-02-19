@@ -13,7 +13,7 @@ extern UpdateRegistry updateRegistry;
 extern bool driverOperation;
 
 enum teleop_state {
-    DRIVE, SHOOT_AUTO
+    DRIVE, SHOOT_AUTO, CLIMBING
 };
 
 static const double M_PI=3.14159256359;
