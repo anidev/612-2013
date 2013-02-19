@@ -9,6 +9,7 @@
 
 bool isLeft;
 bool auto_state_changed = false;
+bool shooter_prepped = false;
 
 int Frisbees = 3;
 float Launcher_Speed = 0.4;
@@ -30,21 +31,19 @@ AutoTarget shoot_tar;
 
 void ShooterPrep(AutoTarget target) {
     if (auto_state_changed) {
-        if (shooter.getCurrentSpeed() == 0.0) {
-            shooter.setSpeed(Launcher_Speed);
-        }
-       else if ((angleAdjuster.get_target_angle() != (HIGH_LIFT_ANGLE)) || (angleAdjuster.get_target_angle() != (LOW_LIFT_ANGLE))) {
-            if (target == High_Goal) {
-                angleAdjuster.set_angle(HIGH_LIFT_ANGLE); 
-            } else if (target == Middle_Goal) {
-                angleAdjuster.set_angle(LOW_LIFT_ANGLE); 
-            }
-        }
-    auto_state_changed = false;
-    } else if (((angleAdjuster.get_target_angle() == HIGH_LIFT_ANGLE) || (angleAdjuster.get_target_angle() == LOW_LIFT_ANGLE)) && (shooter.getTargetSpeed()==Launcher_Speed)) {
-        state.set_state(AUTO_DRIVE);
-        auto_state_changed = true;
-        }
+	if (shooter.getCurrentSpeed() < 1.0) {
+	    shooter.setSpeed(Launcher_Speed);
+	}
+	if (target == High_Goal) {
+	    angleAdjuster.set_angle(HIGH_LIFT_ANGLE); 
+	} else if (target == Middle_Goal) {
+	    angleAdjuster.set_angle(LOW_LIFT_ANGLE); 
+	}
+	auto_state_changed = false;
+    }
+    else if (((angleAdjuster.get_target_angle() == HIGH_LIFT_ANGLE) || (angleAdjuster.get_target_angle() == LOW_LIFT_ANGLE)) && (shooter.getTargetSpeed()==Launcher_Speed)) {
+	auto_state_changed = true;
+    }
 }
 
 
@@ -109,8 +108,11 @@ void choose_routine(Position pos, AutoTarget target){
     }
 }
 void do_autonomous() {
-    ShooterPrep(shoot_tar);
-    if (state.get_state()==AUTO_DRIVE) {
+    if (!shooter_prepped) {
+	ShooterPrep(shoot_tar);
+	shooter_prepped = true;
+    }
+    else if (state.get_state()==AUTO_DRIVE) {
         drive(DRIVE_DIST);
     } else if (state.get_state()==AUTO_TURN){
         if (isLeft == true){
