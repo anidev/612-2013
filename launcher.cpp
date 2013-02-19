@@ -45,7 +45,6 @@ void Launcher::setSpeed(float newSpeed) {
     targetSpeed = newSpeed;
     targetSet = true;
     reachedSpeed = false;
-    //launcherWheel.Set(newSpeed); //TODO undo if pid fails
     pid.Enable();
     pid.SetSetpoint(newSpeed);
 }
@@ -62,8 +61,7 @@ bool Launcher::atSpeed(){
     if((std::fabs(getCurrentSpeed() - targetSpeed)/targetSpeed) < AT_SPEED_TOLERANCE){
         return true;
     }
-    return false; //Replaces OnTarget because it locks up
-    //Todo test onTarget
+    return false;
 }
 
 void Launcher::resetFrisbeeCount(){

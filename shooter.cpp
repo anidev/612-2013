@@ -119,10 +119,10 @@ void Shooter::update() {
     else
     {
         shooting = false;
+        launch.stop();
     }
 }
 void Shooter::shoot(int tCount,double launchSpeed) {
-    //TODO Add Shoot count to reach(keepSpeed)
     if(shooting) {
         return;
     }

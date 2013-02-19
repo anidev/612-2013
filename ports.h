@@ -7,6 +7,7 @@
 #include <Counter.h>
 #include "612.h"
 #include "NetworkCom.h"
+#include "EnhancedJoystick.h"
 
 class DriveTrain;
 class auto_encoders;

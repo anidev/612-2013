@@ -52,7 +52,7 @@ void do_driving() {
             return;
         }
 
-        float arcade_y=drive_gamepad.GetRawAxis(6);
+        float arcade_y = drive_gamepad.GetRawAxis(6);
         if(!joyzero(arcade_y)) {
             drive_train.TankDrive(arcade_y*ARCADE_SPEED,arcade_y*ARCADE_SPEED);
             return;
