@@ -36,7 +36,7 @@ public:
 #ifdef Suzie
     Shooter(hw_info, hw_info, hw_info, hw_info, hw_info);
 #else
-    Shooter(canport_t, hw_info, hw_info, hw_info, hw_info, hw_info);
+    Shooter(canport_t, hw_info, hw_info, hw_info, hw_info);
 #endif //Suzie
     ~Shooter();
     // Launcher
