@@ -12,11 +12,8 @@
 
 class Launcher {
 private:
-    static const float AT_SPEED_TOLERANCE = 1.5; //percent
+    static const float AT_SPEED_TOLERANCE = 0.15; //percent
     static const float SHOT_DROP_TOLERANCE = 20; //RPS
-    static const float PID_P = 0.005f;
-    static const float PID_I = 0.0f;
-    static const float PID_D = 0.002f;
     unsigned int count;
     float targetSpeed;
     bool targetSet;

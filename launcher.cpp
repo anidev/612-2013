@@ -7,6 +7,16 @@
 #include "NetworkCom.h"
 
 #ifdef Suzie
+const float PID_P = 0.002f;
+const float PID_I = 0.0f;
+const float PID_D = 0.005f;
+#else
+const float PID_P = 0.3f;
+const float PID_I = 0.005f;
+const float PID_D = 0.0f;
+#endif
+
+#ifdef Suzie
 Launcher::Launcher(hw_info wheel1,hw_info wheel2,hw_info sensor) : launcherWheel(wheel1,wheel2),
                                                                    launcherSensor(sensor.moduleNumber, sensor.channel),
                                                                    pid(PID_P, PID_I, PID_D, &launcherSensor, &launcherWheel)
@@ -45,6 +55,7 @@ void Launcher::setSpeed(float newSpeed) {
     targetSpeed = newSpeed;
     targetSet = true;
     reachedSpeed = false;
+    launcherWheel.Set(0.4f);
     //launcherWheel.Set(newSpeed); //TODO undo if pid fails
     pid.Enable();
     pid.SetSetpoint(newSpeed);
