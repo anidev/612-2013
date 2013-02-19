@@ -5,6 +5,7 @@
 #include "../drivetrain.h"
 #include "../EnhancedJoystick.h"
 #include "../lift.h"
+#include "../shifter.h"
 
 float CLIMBING_SPEED = 0.2f;
 // 9== select/climbing|10 == start/driving
@@ -16,6 +17,7 @@ void climbing_state ()
         return;
     }
     angleAdjuster.lift_down();
+    drive_train.shiftLow();
     drive_train.setScale(0.2);
     do_driving();
 }
