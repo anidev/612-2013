@@ -8,6 +8,7 @@
 
 const float ANGLE_TOLERANCE = 3; //Deg
 const float LIFT_TOLERANCE = 0.1; //Deg
+
 class AutoShooter {
 private:
     enum states {

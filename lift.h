@@ -26,6 +26,8 @@ private:
         static const float HIGHER_LIMIT = 1.0; //Todo Set Value
         static const UINT16 POT_TURNS = 50; //Todo SetValue
     #endif //Suzie only
+    bool loaded;
+    static void gunner_loaded_helper(void*);
 public:
 #ifdef Suzie
     Lift(hw_info,hw_info);
