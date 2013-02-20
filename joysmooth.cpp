@@ -1,7 +1,7 @@
 #include <Joystick.h>
 #include <bitset>
 #include "612.h"
-#include "Joysmooth.h"
+#include "joysmooth.h"
 
 const static int NUMBUTTONS = 12;
 const static int WAIT_TIME = 3;

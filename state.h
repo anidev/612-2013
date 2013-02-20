@@ -6,7 +6,7 @@ typedef int robot_state;
 typedef void* obj;
 typedef void (*functs)(obj);
 class State {
-//Todo Update Functionality
+//Todo Update Functionality elsewhere
 public:
     State(robot_state initial); // constructor
     void set_state (robot_state new_state);

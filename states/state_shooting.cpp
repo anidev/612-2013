@@ -10,23 +10,23 @@
 #include "../EnhancedJoystick.h"
 #include "../AutoShooter.h"
 
-double new_shooter_wheel_speed=55.0; // decrease by 0.1 or 0.2
+double new_shooter_wheel_speed = 55.0; // decrease by 0.1 or 0.2
 //double new_shooter_wheel_speed = 0.85f;
 bool is_turning;
 bool speed_set = false;
-bool speed_changed=false;
-bool state_changed=false;
-const float SHOOT_TURN_SPEED=0.7f;
-const float WHEEL_CHANGE=5.0f;
-//const float WHEEL_CHANGE=0.05f;
-int speed_adjust_counter=0;
+bool speed_changed = false;
+bool state_changed = false;
+const float SHOOT_TURN_SPEED = 0.7f;
+const float WHEEL_CHANGE = 5.0f;
+//const float WHEEL_CHANGE = 0.05f;
+int speed_adjust_counter = 0;
 
 void shooting_auto() {
     if (gunner_gamepad.GetRawButton (4)) {          // button Y on joystick
         // manual revision
         auto_shoot.abort();
         global_state.set_state(DRIVE);
-        state_changed=true;
+        state_changed = true;
         return;
     }
     if(state_changed) {
@@ -61,30 +61,29 @@ void shooting_manual() {
     if (gunner_gamepad.GetRawButton (5)) 
     {             // slow down shooter wheel
         // save new speed, change speed when buton is not pressed
-        if(new_shooter_wheel_speed-WHEEL_CHANGE >= 0.0 && speed_adjust_counter%3==0)
+        if(new_shooter_wheel_speed-WHEEL_CHANGE >= 0.0 && speed_adjust_counter%3 == 0)
         {
             new_shooter_wheel_speed -= WHEEL_CHANGE;
             std::printf("launcher slowed to %f\n",new_shooter_wheel_speed);
             speed_changed = true;
-            netcom->launcher_target_speed(new_shooter_wheel_speed);
         }
         speed_adjust_counter++;
     }
     else if (gunner_gamepad.GetRawButton (6)) // speed up shooter wheel
     {             
-        if(new_shooter_wheel_speed+WHEEL_CHANGE <= 1.0 && speed_adjust_counter%3==0)
+        if(new_shooter_wheel_speed+WHEEL_CHANGE <= Launcher::MAX && speed_adjust_counter%3==0)
         {
             new_shooter_wheel_speed += WHEEL_CHANGE;
             std::printf("launcher sped up to %f\n",new_shooter_wheel_speed);
             speed_changed = true;
-            netcom->launcher_target_speed(new_shooter_wheel_speed);
         }
         speed_adjust_counter++;
     }
     else
     {
-        speed_adjust_counter=0;
+        speed_adjust_counter = 0;
     }
+    netcom->launcher_target_speed(new_shooter_wheel_speed);
 
     if (gunner_gamepad.GetRawButton(1)) 
     {

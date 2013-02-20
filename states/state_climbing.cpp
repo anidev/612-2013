@@ -7,7 +7,7 @@
 #include "../lift.h"
 #include "../shifter.h"
 
-float CLIMBING_SPEED = 0.2f;
+float CLIMBING_SPEED = 0.55f;
 // 9== select/climbing|10 == start/driving
 void climbing_state ()
 {
@@ -17,7 +17,11 @@ void climbing_state ()
         return;
     }
     angleAdjuster.lift_down();
+<<<<<<< HEAD
     drive_train.shiftLow();
     drive_train.setScale(0.2);
+=======
+    drive_train.setScale(CLIMBING_SPEED);
+>>>>>>> 6a3421139bfc87260c2107978c087ce5dd6785f3
     do_driving();
 }

@@ -1,7 +1,6 @@
 #include "feeder.h"
 #include "612.h"
 
-
 //Todo find a way to cleanly set the original value of counter to false
 
 #ifdef Suzie
@@ -14,7 +13,6 @@ Feeder::Feeder(hw_info motorInfo,hw_info hallInfo) : feederMotor(motorInfo.modul
 #endif //Suzie
     updateRegistry.addUpdateFunction(&update_helper,(void*)this);
     direction = STOP;
-    //Add update helper
     counting = false; 
 }
 
@@ -49,13 +47,13 @@ Feeder::direction_t Feeder::getDirection() {
 }
 
 void Feeder::update() {
-    if(direction == STOP)
-        return;
     static int count=0;
     if(count%25==0) {
         std::printf("feeder hall effect: %d\n",counter.Get());
     }
     count++;
+    if(direction == STOP)
+        return;
     if(!counting) {
         counter.Start();
         counting = true;
@@ -66,7 +64,6 @@ void Feeder::update() {
         return;
     }
     feederMotor.Set(direction * SPEED);
-    //TODO Add Sensors here and update helper
 }
 
 void Feeder::update_helper(void* obj) {

@@ -77,7 +77,10 @@ void Shooter::setRawFeederPower(double b) {
     feed.setRawPower(b);
 }
 void Shooter::update() {
-    if(shooting && launch.getFrisbeeCount() < targetCount)
+    if(!shooting) {
+        return;
+    }
+    if(launch.getFrisbeeCount() < targetCount)
     {
         if(cur_state == SPINNING_UP)
         {
@@ -119,10 +122,10 @@ void Shooter::update() {
     else
     {
         shooting = false;
+        launch.stop();
     }
 }
 void Shooter::shoot(int tCount,double launchSpeed) {
-    //TODO Add Shoot count to reach(keepSpeed)
     if(shooting) {
         return;
     }
