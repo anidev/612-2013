@@ -46,7 +46,7 @@ double vision::getGroundDist(double angle, double target_height) {
     return (target_height - camera_height) / tan(angle);
 }
 
-Target::type_t determineType(BinaryImage* image,int index) {
+Target::type_t vision::determineType(BinaryImage* image,int index) {
     Image* imaq=image->GetImaqImage();
     double equivWidth=0.0;
     double equivHeight=0.0;
