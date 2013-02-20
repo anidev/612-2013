@@ -5,8 +5,10 @@
 #include <RobotDrive.h>
 #include <Relay.h>
 #include <Counter.h>
+#include <Vision/AxisCamera.h>
 #include "612.h"
 #include "NetworkCom.h"
+#include "EnhancedJoystick.h"
 
 class DriveTrain;
 class auto_encoders;
@@ -33,6 +35,11 @@ extern Lift angleAdjuster;
 extern Shooter shooter;
 extern AutoShooter auto_shoot;
 extern NetworkCom* netcom;
+
+static const char* const CAMERA_IP="10.6.12.2";
+inline AxisCamera* camera() {
+    return &(AxisCamera::GetInstance(CAMERA_IP));
+}
 
 #ifdef Suzie
     /*             SUZIE PORTS                    */

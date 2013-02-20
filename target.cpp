@@ -1,52 +1,49 @@
+#include <Vision2009/VisionAPI.h>
 #include "target.h"
-
-
-enum type {
-    UNKNOWN,
-    TOPGOAL,
-    MIDDLELEFTGOAL,
-    MIDDLERIGHTGOAL,
-    BOTTOMGOAL,
-    PYRAMIDGOAL
-};
 
 int Target::getPriority()
 {
     return priority;
 }
-int Target::getDistance()
+double Target::getDistance()
 {
     return distance;
 }
-int Target::getAngle()
+int Target::getXOff()
 {
-    return angle;
+    return x_off;
 }
-Target::Target(int _priority,int _distance,int _angle)
+int Target::getYOff()
 {
-    priority=_priority;
+    return y_off;
+}
+Target::type_t Target::getType()
+{
+    return type;
+}
+Target::Target(double _distance,int _xoff,int _yoff,type_t _type,ParticleAnalysisReport _report)
+{
     distance=_distance;
-    angle=_angle;
-    determinePriority(angle,distance);
+    x_off=_xoff;
+    y_off=_yoff;
+    report=_report;
+    type=_type;
+    determinePriority(type,distance);
 }
-void Target::determinePriority(int angleFromShooterT,int distanceT)
+void Target::determinePriority(Target::type_t,double distanceT)
 {
-    angle=angleFromShooterT;
-    distance=distanceT;
-    if(distance==0/*Value for the five point goal*/&&angleFromShooterT==0/*value for the five point goal*/)
-    {
-        priority=1;
-        //add shooter methond
-    }
-    if(distance==0/*Value for the four point goals*/&&angleFromShooterT==0/*value for the four point goals*/)
-    {
-        priority=2;
-        //add shooter methond
-    }
-    if(distance==0/*Value for the three point goal*/&&angleFromShooterT==0/*value for the three point goal*/)
-    {
-        priority=3;
-        //add shooter methond
-    }
+    // TODO actually get realistic priority calculations
+    priority=0;
+}
+ParticleAnalysisReport Target::getReport() {
+    return report;
 }
 
+// aspect ratio includes 4in on each side for tape
+TargetInfo targetsInfo[]={
+    {31.0,      37.0/32.0}, // LOW.  29x24
+    {793.0/8.0, 62.0/29.0}, // MID,  54x21
+    {881.0/8.0, 62.0/21.0}, // HIGH, 54x12
+    {0.0,       -1.0},      // PYRAMID TODO
+    {-1.0,      -1.0}       // UNKNOWN
+};

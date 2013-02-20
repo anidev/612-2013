@@ -86,3 +86,9 @@ void NetworkCom::lift_angle (float new_angle){
         }
     }
 }
+NetworkTable* NetworkCom::get_table(const char* name) {
+    if(Main != NULL) {
+        return Main->GetSubTable(name);
+    }
+    return NULL;
+}

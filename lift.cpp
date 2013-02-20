@@ -9,7 +9,10 @@
 #include "lift.h"
 #include "NetworkCom.h"
 
-const float LIFT_SPEED=0.4f;
+const float LIFT_SPEED = 0.4f;
+const float POWER_CHANGE_FOR_LOADED = 0.05; //%5 power change
+const float LIFT_BOOST_POWER = LIFT_SPEED + POWER_CHANGE_FOR_LOADED;
+const float LIFT_WEAKER_POWER = LIFT_SPEED - POWER_CHANGE_FOR_LOADED;
 
 #ifdef Suzie
 Lift::Lift(hw_info jagInfo,hw_info potInfo) : pot(potInfo.moduleNumber,potInfo.channel)
@@ -17,6 +20,7 @@ Lift::Lift(hw_info jagInfo,hw_info potInfo) : pot(potInfo.moduleNumber,potInfo.c
     liftMotor = new Jaguar(jagInfo.moduleNumber,jagInfo.channel);
     updateRegistry.addUpdateFunction(&updateHelper,(void*)this);
     manual = true;
+    loaded = false;
 }
 #else
 Lift::Lift(canport_t canJag)
@@ -27,9 +31,10 @@ Lift::Lift(canport_t canJag)
     liftCan -> ChangeControlMode(CANJaguar::kPosition);
     liftCan -> SetPositionReference(CANJaguar::kPosRef_Potentiometer);
     liftCan -> ConfigPotentiometerTurns(POT_TURNS);
-    //liftCan -> ConfigSoftPositionLimits(LOWER_LIMIT,HIGHER_LIMIT); //Todo Set values then add
     updateRegistry.addUpdateFunction(&updateHelper,(void*)this);
+    gunner_gamepad.addBtn(10,&gunner_loaded_helper,(void*)this);
     manual = true;
+    loaded = false;
 }    
 #endif //Suzie
 //Todo add command to set angle and have jag go to it(button)
@@ -75,11 +80,19 @@ float Lift::get_target_angle() {
 }
 
 float Lift::angleToPot(float angle) {
-    return ((-1.0207443959 * angle) + 4.1827946896); //Todo Check if this equation works
+#ifdef Suzie
+    return ((-1.0207443959 * angle) + 4.1827946896);
+#else
+    return 0.0f; //Todo get Equation
+#endif
 }
 
 float Lift::potToAngle(float voltage) {
-    return ((-0.9129997242 * voltage) + 3.9002999384); //Todo Check if this equation works
+#ifdef Suzie
+    return ((-0.9129997242 * voltage) + 3.9002999384);
+#else
+    return 0.0f; //Todo get Equation
+#endif
 }
 
 bool Lift::at_angle() {
@@ -93,9 +106,39 @@ void Lift::set_direction(int d) {
 #ifdef Suzie
     liftMotor -> Set(d*1.0f);
 #else
-    ((CANJaguar*)liftMotor) -> DisableControl();
-    ((CANJaguar*)liftMotor) -> ChangeControlMode(CANJaguar::kPercentVbus);
-    ((CANJaguar*)liftMotor) -> Set(d*LIFT_SPEED);
+    CANJaguar* LM = (CANJaguar*)liftMotor;
+    LM -> DisableControl();
+    LM -> ChangeControlMode(CANJaguar::kPercentVbus);
+    if(!loaded)
+    {
+        LM -> Set(d*LIFT_SPEED);
+    }
+    else if(potToAngle(LM -> GetPosition() > 0))
+    {
+        if(d > 0)
+        {
+            LM -> Set(d*LIFT_BOOST_POWER);
+        }
+        else
+        {
+            LM -> Set(d*LIFT_SPEED);
+        }
+    }
+    else if(potToAngle(LM -> GetPosition() < 0))
+    {
+        if(d < 0)
+        {
+            LM -> Set(d*LIFT_BOOST_POWER);
+        }
+        else
+        {
+            LM -> Set(d*LIFT_SPEED);
+        }
+    }
+    else
+    {
+        LM -> Set(d*LIFT_SPEED);
+    }
 #endif //Suzie
 }
 
@@ -122,4 +165,9 @@ void Lift::update() {
 }
 void Lift::updateHelper(void* a) {
     ((Lift*)a) -> update();
+}
+void Lift::gunner_loaded_helper(void* a)
+{
+    Lift* lift = (Lift*)a;
+    lift -> loaded = !(lift ->loaded);
 }

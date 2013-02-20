@@ -101,28 +101,35 @@ void robot_class::TeleopPeriodic() {
     else if(global_state.get_state() == SHOOT_AUTO) {
         shooting_auto();
     }
+    else if(global_state.get_state() == CLIMBING) {
+        climbing_state();
+    }
 }
 void robot_class::TestInit() {
 }
 void robot_class::TestPeriodic() {
-//    static F
+    static float target_speed=0.0f;
     updateRegistry.updateAll();
     if(gunner_gamepad.GetRawButton(1))
     {
-        shooter.setSpeed(40.0f);
+        target_speed=40.0f;
     }
     else if(gunner_gamepad.GetRawButton(2))
     {
-        shooter.setSpeed(45.0f);
+        target_speed=45.0f;
     }
     else if(gunner_gamepad.GetRawButton(3))
     {
-        shooter.setSpeed(55.0f);
+        target_speed=55.0f;
     }
     else if(gunner_gamepad.GetRawButton(4))
     {
-        shooter.setSpeed(60.0f);
+        target_speed=60.0f;
     }
+    if(target_speed!=shooter.getTargetSpeed()) {
+        shooter.setSpeed(target_speed);
+    }
+    netcom->launcher_target_speed(target_speed);
     if(gunner_gamepad.GetRawAxis(2) > 0.5)
         shooter.setFeederForward();
     else if(gunner_gamepad.GetRawAxis(2) < -0.5)
