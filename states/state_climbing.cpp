@@ -5,6 +5,7 @@
 #include "../drivetrain.h"
 #include "../EnhancedJoystick.h"
 #include "../lift.h"
+#include "../shifter.h"
 
 float CLIMBING_SPEED = 0.55f;
 // 9== select/climbing|10 == start/driving

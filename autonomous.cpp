@@ -5,16 +5,21 @@
 #include "lift.h"
 #include "shooter.h"
 #include "AutoShooter.h"
+#include "launcher.h"
 
 bool isLeft;
 bool auto_state_changed = false;
+bool shooter_prepped = false;
+bool lift_set = false;
+bool angle_set = false;
 
 int Frisbees = 3;
+float Launcher_Speed = 0.4;
 
-const int DRIVE_DIST=40;
-const int TURN_ANGLE= -34; // negative is clockwise, positive is counter-clockwise
-const int HIGH_LIFT_ANGLE = 30;
-const int LOW_LIFT_ANGLE = 26;
+const int DRIVE_DIST = 40;
+const int TURN_ANGLE = -34; // negative is clockwise, positive is counter-clockwise
+const float HIGH_LIFT_ANGLE = 30;
+const float LOW_LIFT_ANGLE = 26;
 
 enum auto_states {
     AUTO_DRIVE,
@@ -26,20 +31,29 @@ enum auto_states {
 State state(AUTO_DRIVE);
 AutoTarget shoot_tar;
 
-void lift(AutoTarget target) {
-    if (auto_state_changed) {
-        if (target == High_Goal) {
-            angleAdjuster.set_angle(HIGH_LIFT_ANGLE); /*other angle*/
-        } else if (target == Middle_Goal) {
-            angleAdjuster.set_angle(LOW_LIFT_ANGLE); /*other angle*/
-        }
-        auto_state_changed = false;
-	//shoot.set_speed(SOME_NUMBER) EFFICIENCY CODE FOR LATER
-    } else if (angleAdjuster.at_angle()) {
-        state.set_state(AUTO_DRIVE);
-        auto_state_changed = true;
+void ShooterPrep(AutoTarget target) {
+    if (auto_state_changed && !shooter_prepped) {
+	if (shooter.getCurrentSpeed() < 1.0) {
+	    shooter.setSpeed(Launcher_Speed);
+	    lift_set = true;
+	}
+	if (target == High_Goal) {
+	    angleAdjuster.set_angle(HIGH_LIFT_ANGLE); 
+	    angle_set = true;
+	} else if (target == Middle_Goal) {
+	    angleAdjuster.set_angle(LOW_LIFT_ANGLE); 
+	    angle_set = true;
+	}
+	if (lift_set && angle_set) {
+	    shooter_prepped = true;
+	}
+	auto_state_changed = false;
+    }
+    else if (((angleAdjuster.get_current_angle() == HIGH_LIFT_ANGLE) || (angleAdjuster.get_current_angle() == LOW_LIFT_ANGLE)) && (shooter.getCurrentSpeed()==Launcher_Speed)) {
+	auto_state_changed = true;
     }
 }
+
 
 void drive(double dist /*inches*/) {
     if (auto_state_changed) {
@@ -47,7 +61,6 @@ void drive(double dist /*inches*/) {
         auto_state_changed = false;
     }
     else if (drive_train.isFinished()) {
-        //disable the drive train
         state.set_state(AUTO_TURN);
         auto_state_changed = true;
     }
@@ -59,7 +72,6 @@ void turn(double angle) {
         auto_state_changed = false;
     }
     else if (drive_train.isFinished()) {
-        //disable the drive train
         state.set_state(AUTO_SHOOT);
         auto_state_changed = true;
     }
@@ -104,8 +116,10 @@ void choose_routine(Position pos, AutoTarget target){
     }
 }
 void do_autonomous() {
-    lift(shoot_tar);
-    if (state.get_state()==AUTO_DRIVE) {
+    if (!shooter_prepped) {
+	ShooterPrep(shoot_tar);
+    }
+    else if (state.get_state()==AUTO_DRIVE) {
         drive(DRIVE_DIST);
     } else if (state.get_state()==AUTO_TURN){
         if (isLeft == true){
@@ -119,5 +133,4 @@ void do_autonomous() {
         std:: printf("Autonomous is finished");
     }
 }
-/* THIS CODE BELONGS TO ZACK, PRESUME IT DOESN'T WORK*/ /*oh ya and adrian and swaraj*/
 
