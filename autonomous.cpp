@@ -10,6 +10,8 @@
 bool isLeft;
 bool auto_state_changed = false;
 bool shooter_prepped = false;
+bool lift_set = false;
+bool angle_set = false;
 
 int Frisbees = 3;
 float Launcher_Speed = 0.4;
@@ -33,17 +35,22 @@ void ShooterPrep(AutoTarget target) {
     if (auto_state_changed && !shooter_prepped) {
 	if (shooter.getCurrentSpeed() < 1.0) {
 	    shooter.setSpeed(Launcher_Speed);
+	    lift_set = true;
 	}
 	if (target == High_Goal) {
 	    angleAdjuster.set_angle(HIGH_LIFT_ANGLE); 
+	    angle_set = true;
 	} else if (target == Middle_Goal) {
 	    angleAdjuster.set_angle(LOW_LIFT_ANGLE); 
+	    angle_set = true;
+	}
+	if (lift_set && angle_set) {
+	    shooter_prepped = true;
 	}
 	auto_state_changed = false;
     }
-    else if (((angleAdjuster.get_target_angle() == HIGH_LIFT_ANGLE) || (angleAdjuster.get_target_angle() == LOW_LIFT_ANGLE)) && (shooter.getTargetSpeed()==Launcher_Speed)) {
+    else if (((angleAdjuster.get_current_angle() == HIGH_LIFT_ANGLE) || (angleAdjuster.get_current_angle() == LOW_LIFT_ANGLE)) && (shooter.getCurrentSpeed()==Launcher_Speed)) {
 	auto_state_changed = true;
-	shooter_prepped = true;
     }
 }
 
