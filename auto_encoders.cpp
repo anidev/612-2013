@@ -9,8 +9,13 @@ auto_encoders::auto_encoders(encoders_info info) {
     hw_info right2 = info.right2;
     left_encoder = new Encoder(left1.moduleNumber, left1.channel, left2.moduleNumber, left2.channel, true);
     right_encoder = new Encoder(right1.moduleNumber, right1.channel, right2.moduleNumber, right2.channel);
+#ifdef Suzie
     left_encoder -> SetDistancePerPulse(SLOPE);
     right_encoder -> SetDistancePerPulse(SLOPE);
+#else
+    left_encoder -> SetDistancePerPulse(SLOPE_LEFT);
+    right_encoder -> SetDistancePerPulse(SLOPE_RIGHT);
+#endif
     left_encoder -> Start();
     right_encoder -> Start();
 }

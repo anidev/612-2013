@@ -19,7 +19,8 @@ private:
 #ifdef Suzie
     static const double SLOPE = 0.0677751556; //inches per pulse
 #else
-    static const double SLOPE =  0.0495;
+    static const double SLOPE_LEFT =  0.0495;
+    static const double SLOPE_RIGHT = 0.03495;
 #endif //Suzie
     static const double TOLERANCE = 1.5;
 public:
