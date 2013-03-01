@@ -63,7 +63,6 @@ private:
     SpeedController* left_rear;
     SpeedController* right_front;
     SpeedController* right_rear;
-    auto_encoders encoders;
     shifter shift;
     drive_func currentOperation;
     operation_t operation;
@@ -73,7 +72,8 @@ private:
     double scale;
     bool finished;
     void update();
-
+protected:
+    auto_encoders encoders;
 };
 
 #endif // DRIVETRAIN_H

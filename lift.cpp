@@ -103,6 +103,7 @@ bool Lift::at_angle() {
 }
 
 void Lift::set_direction(int d) {
+    //TODO add when set to unloaded return to hal effect so its out of way of loading
 #ifdef Suzie
     liftMotor -> Set(d*1.0f);
 #else
