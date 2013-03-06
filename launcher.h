@@ -9,7 +9,6 @@
 #include "PIDCounter.h"
 #include "ports.h"
 #include "612.h"
-#include "dataLogger.h"
 
 class Launcher {
 private:
