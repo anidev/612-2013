@@ -31,7 +31,7 @@ double auto_encoders::get_distance() {
 double auto_encoders::get_left_dist() {
     static int counter=0;
     if(counter%25==0) {
-        std::printf("left dist:  %f\n",left_encoder->GetDistance());
+//        std::printf("left dist:  %f\n",left_encoder->GetDistance());
     }
     counter++;
     return left_encoder -> GetDistance();
@@ -39,7 +39,7 @@ double auto_encoders::get_left_dist() {
 double auto_encoders::get_right_dist() {
     static int counter=0;
     if(counter%25==0) {
-        std::printf("right dist: %f\n",right_encoder->GetDistance());
+//        std::printf("right dist: %f\n",right_encoder->GetDistance());
     }
     counter++;
     return right_encoder -> GetDistance();

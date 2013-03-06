@@ -3,7 +3,6 @@
 
 // use VisionFeedback directly and plug it straight into GunnerControl
 void shooting_auto();
-void driver_check_update(void* dummy);
 
 // display the vision feedback data on the driver station
 void shooting_manual();

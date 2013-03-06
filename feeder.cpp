@@ -38,8 +38,10 @@ void Feeder::stop() {
     counting = false;
     direction = STOP;
     feederMotor.Set(direction * SPEED);
+#ifndef Suzie
     counter.Stop();
     counter.Reset();
+#endif
 }
 
 Feeder::direction_t Feeder::getDirection() {
@@ -47,9 +49,10 @@ Feeder::direction_t Feeder::getDirection() {
 }
 
 void Feeder::update() {
+#ifndef Suzie
     static int count=0;
     if(count%25==0) {
-        std::printf("feeder hall effect: %d\n",counter.Get());
+        //std::printf("feeder hall effect: %d\n",counter.Get());
     }
     count++;
     if(direction == STOP)
@@ -64,6 +67,7 @@ void Feeder::update() {
         return;
     }
     feederMotor.Set(direction * SPEED);
+#endif
 }
 
 void Feeder::update_helper(void* obj) {

@@ -13,9 +13,13 @@
 #include "612.h"
 #include "NetworkCom.h"
 #include <Counter.h>
-UpdateRegistry updateRegistry; // Must be first constructed
+
+#ifndef Suzie
 Relay led_spike(led.moduleNumber,led.channel);
 Relay ledstrip_spike(ledstrip.moduleNumber,ledstrip.channel);
+#endif
+
+UpdateRegistry updateRegistry; // Must be first constructed
 EnhancedJoystick drive_gamepad   (1);
 EnhancedJoystick gunner_gamepad  (2);
 drivetrain_info dinfo={left_front_motor,left_rear_motor,right_front_motor,right_rear_motor};

@@ -31,6 +31,7 @@ void shooting_auto() {
     }
     if(state_changed) {
         auto_shoot.AutoShoot();
+        state_changed = false;
     }
 }
 
@@ -43,13 +44,13 @@ void shooting_manual() {
     }
 
     if(gunner_gamepad.GetRawAxis(6) > 0.98f) {
-        std::printf("angle up %f\n",angleAdjuster.get_current_angle());
+//        std::printf("angle up %f\n",angleAdjuster.get_current_angle());
         angleAdjuster.lift_up();
-        
+
     }
     else if(gunner_gamepad.GetRawAxis(6) < -0.98f)
     {
-        std::printf("angle down to %f\n",angleAdjuster.get_current_angle());
+//        std::printf("angle down to %f\n",angleAdjuster.get_current_angle());
         angleAdjuster.lift_down();
     }
     else
@@ -58,13 +59,13 @@ void shooting_manual() {
     }
     netcom -> lift_angle(angleAdjuster.get_current_angle());
     
-    if (gunner_gamepad.GetRawButton (5)) 
-    {             // slow down shooter wheel
+    if (gunner_gamepad.GetRawButton (5))              // slow down shooter wheel
+    {
         // save new speed, change speed when buton is not pressed
         if(new_shooter_wheel_speed-WHEEL_CHANGE >= 0.0 && speed_adjust_counter%3 == 0)
         {
             new_shooter_wheel_speed -= WHEEL_CHANGE;
-            std::printf("launcher slowed to %f\n",new_shooter_wheel_speed);
+//            std::printf("launcher slowed to %f\n",new_shooter_wheel_speed);
             speed_changed = true;
         }
         speed_adjust_counter++;
@@ -74,7 +75,7 @@ void shooting_manual() {
         if(new_shooter_wheel_speed+WHEEL_CHANGE <= Launcher::MAX && speed_adjust_counter%3==0)
         {
             new_shooter_wheel_speed += WHEEL_CHANGE;
-            std::printf("launcher sped up to %f\n",new_shooter_wheel_speed);
+//            std::printf("launcher sped up to %f\n",new_shooter_wheel_speed);
             speed_changed = true;
         }
         speed_adjust_counter++;
@@ -89,18 +90,18 @@ void shooting_manual() {
     {
         if(!speed_set||speed_changed) 
         {
-            std::printf("launcher set to %f\n",new_shooter_wheel_speed);
+//            std::printf("launcher set to %f\n",new_shooter_wheel_speed);
             shooter.setSpeed (new_shooter_wheel_speed);
             speed_set = true;
             speed_changed = false;
         }
-        std::printf("launcher speed: %f\n",shooter.getCurrentSpeed());
+//        std::printf("launcher speed: %f\n",shooter.getCurrentSpeed());
     }
     else 
     {
         if(speed_set) 
         {
-            std::printf("launcher stopped\n");
+//            std::printf("launcher stopped\n");
             shooter.stopLauncher();
             speed_set = false;
         }
@@ -123,12 +124,12 @@ void shooting_manual() {
     if(!driverOperation) {
         if (gunner_gamepad.GetRawButton (7)) // turn robot left
         {
-            std::printf("swivel left\n");
+//            std::printf("swivel left\n");
             drive_train.TankDrive(SHOOT_TURN_SPEED, -SHOOT_TURN_SPEED);
         }
         else if (gunner_gamepad.GetRawButton (8)) // turn robot right
         { 
-            std::printf("swivel right\n");
+//            std::printf("swivel right\n");
             drive_train.TankDrive(-SHOOT_TURN_SPEED, SHOOT_TURN_SPEED);
         }
         else

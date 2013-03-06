@@ -96,6 +96,7 @@ float Lift::potToAngle(float voltage) {
 }
 
 bool Lift::at_angle() {
+    std::printf("pot angle diff: %f\n",get_current_angle()-target_angle);
     if(std::fabs(get_current_angle()-target_angle)<AT_ANGLE_TOLERANCE) {
         return true;
     }

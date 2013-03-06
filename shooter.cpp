@@ -77,6 +77,7 @@ void Shooter::setRawFeederPower(double b) {
     feed.setRawPower(b);
 }
 void Shooter::update() {
+#ifndef Suzie
     if(!shooting) {
         return;
     }
@@ -124,6 +125,7 @@ void Shooter::update() {
         shooting = false;
         launch.stop();
     }
+#endif
 }
 void Shooter::shoot(int tCount,double launchSpeed) {
     if(shooting) {
@@ -151,16 +153,19 @@ bool Shooter::isShooting() {
 }
 
 bool Shooter::isShot() {
-   if ((isShooting()) && (enter && exit) && (launch.dropDetected())) {
-       printf("out of frisbees");
-       return true;
-   } else {
-       return false;
-   }
+#ifdef Suzie
+    return false;
+#else
+    if ((isShooting()) && (enter && exit) && (launch.dropDetected())) {
+        printf("out of frisbees");
+        return true;
+    } else {
+        return false;
+    }
+#endif
 }
 
 bool Shooter::noFrisbees() {
-    printf("out of frisbees");
     return ((frisCounter.Get() > 2) && (launch.dropDetected()));
 }
 

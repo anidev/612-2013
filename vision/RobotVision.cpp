@@ -35,15 +35,15 @@ std::vector<Target>* RobotVision::getTargetsNow() {
     ColorImage* image=camera()->GetImage();
     BinaryImage* binImage=NULL;
     if(threshold_type==RGB) {
-        image->ThresholdRGB(color1_low,color1_high,color2_low,color2_high,color3_low,color3_high);
+        binImage=image->ThresholdRGB(color1_low,color1_high,color2_low,color2_high,color3_low,color3_high);
     }
     else if(threshold_type==HSL)
     {
-        image->ThresholdHSL(color1_low,color1_high,color2_low,color2_high,color3_low,color3_high);
+        binImage=image->ThresholdHSL(color1_low,color1_high,color2_low,color2_high,color3_low,color3_high);
     }
     else
     {
-        image->ThresholdHSV(color1_low,color1_high,color2_low,color2_high,color3_low,color3_high);
+        binImage=image->ThresholdHSV(color1_low,color1_high,color2_low,color2_high,color3_low,color3_high);
     }
     BinaryImage* convexImage=binImage->ConvexHull(false);
     ParticleFilterCriteria2 criteria[]={{criteria_type,criteria_min,criteria_max,false,false}};

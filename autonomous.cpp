@@ -10,16 +10,14 @@
 bool isLeft;
 bool auto_state_changed = false;
 bool shooter_prepped = false;
-bool lift_set = false;
-bool angle_set = false;
 
-int Frisbees = 3;
+int Frisbees = 2;
 float Launcher_Speed = 0.4;
 
 const int DRIVE_DIST = 40;
 const int TURN_ANGLE = -34; // negative is clockwise, positive is counter-clockwise
-const float HIGH_LIFT_ANGLE = 30;
-const float LOW_LIFT_ANGLE = 26;
+const float HIGH_LIFT_ANGLE = 2.58;     //suzie pot angles
+const float LOW_LIFT_ANGLE = 2.14;      //suzie pot angles
 
 enum auto_states {
     AUTO_DRIVE,
@@ -30,30 +28,21 @@ enum auto_states {
 
 State state(AUTO_DRIVE);
 AutoTarget shoot_tar;
-
+/*
 void ShooterPrep(AutoTarget target) {
-    if (auto_state_changed && !shooter_prepped) {
-	if (shooter.getCurrentSpeed() < 1.0) {
-	    shooter.setSpeed(Launcher_Speed);
-	    lift_set = true;
-	}
-	if (target == High_Goal) {
-	    angleAdjuster.set_angle(HIGH_LIFT_ANGLE); 
-	    angle_set = true;
-	} else if (target == Middle_Goal) {
-	    angleAdjuster.set_angle(LOW_LIFT_ANGLE); 
-	    angle_set = true;
-	}
-	if (lift_set && angle_set) {
-	    shooter_prepped = true;
-	}
-	auto_state_changed = false;
-    }
-    else if (((angleAdjuster.get_current_angle() == HIGH_LIFT_ANGLE) || (angleAdjuster.get_current_angle() == LOW_LIFT_ANGLE)) && (shooter.getCurrentSpeed()==Launcher_Speed)) {
-	auto_state_changed = true;
+    if (!shooter_prepped) {
+        if (shooter.getCurrentSpeed() < 1.0) {
+            shooter.setSpeed(Launcher_Speed);
+        }
+        if (target == High_Goal) {
+            angleAdjuster.set_angle(HIGH_LIFT_ANGLE);
+        } else if (target == Middle_Goal) {
+            angleAdjuster.set_angle(LOW_LIFT_ANGLE);
+        }
+        shooter_prepped = true;
     }
 }
-
+*/
 
 void drive(double dist /*inches*/) {
     if (auto_state_changed) {
@@ -78,8 +67,8 @@ void turn(double angle) {
 }
 
 void shoot() {
-    std::printf("shooting");
     if (auto_state_changed) {
+        std::printf("shooting\n");
         auto_shoot.AutoShoot();
         auto_state_changed = false;
     } else if (auto_shoot.doneShooting()) {
@@ -90,6 +79,7 @@ void shoot() {
 
 void choose_routine(Position pos, AutoTarget target){
     auto_state_changed = true;
+    shooter_prepped = false;
     shoot_tar = target;
     if ((pos == Back_Left) || (pos == Front_Left)) {
         isLeft = true;
@@ -116,10 +106,10 @@ void choose_routine(Position pos, AutoTarget target){
     }
 }
 void do_autonomous() {
-    if (!shooter_prepped) {
-	ShooterPrep(shoot_tar);
+    /*if (!shooter_prepped) {
+        ShooterPrep(shoot_tar);
     }
-    else if (state.get_state()==AUTO_DRIVE) {
+    else*/ if (state.get_state()==AUTO_DRIVE) {
         drive(DRIVE_DIST);
     } else if (state.get_state()==AUTO_TURN){
         if (isLeft == true){

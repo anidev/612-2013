@@ -26,12 +26,13 @@ private:
     static void update_helper(void*);
     static const double FEEDER_TIMEOUT = 2.0;
     static const double DEFAULT_LAUNCH_SPEED = 0.9;
+#ifndef Suzie
     //~IR SENSOR STUFF
-    AnalogChannel IRSensor; 
+    AnalogChannel IRSensor;
     bool enter;
     bool exit;
     static const double DEFAULT_IR_RETURN = 2.0;
-    //~IR SENSOR STUFF
+#endif
 public:
 #ifdef Suzie
     Shooter(hw_info, hw_info, hw_info, hw_info, hw_info);

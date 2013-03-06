@@ -7,7 +7,7 @@
 #include "../lift.h"
 #include "../shifter.h"
 
-float CLIMBING_SPEED = 0.55f;
+float CLIMBING_SPEED = 0.6f;
 // 9== select/climbing|10 == start/driving
 void climbing_state ()
 {

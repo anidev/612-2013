@@ -27,13 +27,18 @@ void robot_class::RobotInit() {
 
 void robot_class::DisabledInit() {
     std::printf("DisabledInit\n");
+#ifndef Suzie
     led_spike.Set(Relay::kOff);
     ledstrip_spike.Set(Relay::kOff);
+#endif
 }
 
 void robot_class::AutonomousInit() {
     std::printf("AutonomousInit\n");
+#ifndef Suzie
     led_spike.Set(Relay::kForward);
+    ledstrip_spike.Set(Relay::kForward);
+#endif
     // 0 = Front Right
     // 1 = Back Left
     // 2 = Front Left
@@ -75,8 +80,10 @@ void robot_class::AutonomousInit() {
 
 void robot_class::TeleopInit() {
     std::printf("TelopInit\n");
+#ifndef Suzie
     led_spike.Set(Relay::kForward);
     ledstrip_spike.Set(Relay::kForward);
+#endif
 }
 
 void robot_class::DisabledPeriodic() {
