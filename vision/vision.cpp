@@ -4,6 +4,7 @@
 #include <Vision/AxisCamera.h>
 #include <Timer.h>
 #include <nivision.h>
+#include "../612.h"
 
 vision::vision(){
 }
@@ -14,9 +15,9 @@ vision::~vision(){
 double vision::getGroundDist(double angle, double target_height) {
     double length = 9.06;
     double base = 18.64;
-    double added_height = (angle > 0)?length+(length*sin(angle)):length-(length*sin(angle));
+    double added_height = (angle > 0)?length+(length*sin(angle*M_PI/180)):length-(length*sin(angle*M_PI/180));
     double camera_height = base + added_height; 
-    return (target_height - camera_height) / tan(angle);
+    return (target_height - camera_height) / tan(angle*M_PI/180);
 }
 
 Target::type_t vision::determineType(BinaryImage* image,int index) {

@@ -9,6 +9,7 @@
 #include "PIDCounter.h"
 #include "ports.h"
 #include "612.h"
+#include "dataLogger.h"
 
 class Launcher {
 private:
@@ -23,8 +24,6 @@ private:
 #else
     CANJaguar launcherWheel;
 #endif //Suzie
-    PIDCounter launcherSensor; // return RPS
-    PIDController pid;
     void update();
     static void update_helper(void*);
 public:
@@ -43,6 +42,10 @@ public:
     unsigned int getFrisbeeCount();
     void resetFrisbeeCount();
     bool dropDetected();
+protected:
+    //TODO Add dataLogger as Friend to compile
+    PIDCounter launcherSensor; // return RPS
+    PIDController pid;
 };
 
 #endif // LAUNCHER_H
