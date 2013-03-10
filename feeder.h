@@ -11,6 +11,7 @@
 
 class Feeder {
 friend class DataLogger;
+protected: Counter counter;
 public:
     enum direction_t { // Will change to proper motor speed later
         FORWARD = 1,
@@ -36,7 +37,6 @@ private:
     two_controller<Relay> feederMotor;
 #else
     Talon feederMotor;
-    protected Counter counter;
 #endif //Suzie
     void update();
     static void update_helper(void*);

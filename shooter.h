@@ -30,7 +30,8 @@ private:
     static const double DEFAULT_LAUNCH_SPEED = 0.9;
 #ifndef Suzie
     //~IR SENSOR STUFF
-    protected AnalogChannel IRSensor;
+protected: AnalogChannel IRSensor;
+private:
     bool enter;
     bool exit;
     static const double DEFAULT_IR_RETURN = 2.0;

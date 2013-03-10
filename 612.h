@@ -6,7 +6,7 @@
 #include "state.h"
 #include "updateRegistry.h"
 
-#define Suzie // Comment Out to change to current Bot
+#define Suzie // Comment out to change to current Bot
 
 extern State global_state;
 extern UpdateRegistry updateRegistry;

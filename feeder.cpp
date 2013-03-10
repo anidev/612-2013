@@ -5,8 +5,8 @@
 #ifdef Suzie
 Feeder::Feeder(hw_info info1,hw_info info2) : feederMotor(info1,info2) {
 #else
-Feeder::Feeder(hw_info motorInfo,hw_info hallInfo) : feederMotor(motorInfo.moduleNumber,motorInfo.channel),
-                                                     counter(hallInfo.moduleNumber,hallInfo.channel)
+Feeder::Feeder(hw_info motorInfo,hw_info hallInfo) : counter(hallInfo.moduleNumber,hallInfo.channel),
+                                                     feederMotor(motorInfo.moduleNumber,motorInfo.channel)
 {
     counter.Start();
 #endif //Suzie

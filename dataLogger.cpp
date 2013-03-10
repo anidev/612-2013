@@ -20,7 +20,7 @@ void DataLogger::LogShot() {
     f.addLine(buf2);
 #ifndef Suzie
     char buf4[30];
-    sprintf(buf4,"IR Raw: &f",shooter.feed.IRSensor.GetVoltage());
+    sprintf(buf4,"IR Raw: %f",shooter.IRSensor.GetVoltage());
     f.addLine(buf4);
     if(shooter.feed.counter.Get() > 0)
         f.addLine("Hal: 1");
