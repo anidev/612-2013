@@ -12,6 +12,7 @@
 #include "dataLogger.h"
 
 class Shooter {
+protected: Feeder feed;
 private:
     friend class DataLogger;
     enum ShooterStates {
@@ -21,7 +22,6 @@ private:
     unsigned int targetCount;
     unsigned int previousCount;
     Launcher launch;
-    protected Feeder feed;
     bool shooting;
     Timer feedTimer;
     static void shotBtnHelper(void*);

@@ -2,7 +2,7 @@
 #include "dataLogger.h"
 #include "ports.h"
 #include "Shooter.h"
-
+#include "612.h"
 DataLogger::DataLogger(): systemTimer(),iterativeTimer() {
 }
 
@@ -18,13 +18,15 @@ void DataLogger::LogShot() {
     char buf3[30];
     sprintf(buf3,"Wheel Current: %f",shooter.getCurrentSpeed());
     f.addLine(buf2);
+#ifndef Suzie
     char buf4[30];
-    sprintf(buf4,"IR Raw: &f",shooter.IRSensor.GetVoltage());
+    sprintf(buf4,"IR Raw: &f",shooter.feed.IRSensor.GetVoltage());
     f.addLine(buf4);
     if(shooter.feed.counter.Get() > 0)
         f.addLine("Hal: 1");
     else
         f.addLine("Hal: 0");
+#endif
     char ImageName[30];
     sprintf(ImageName,"ShotLogs/ShotLog%i_Launch",shotCount);
     LogCameraImage(ImageName);
