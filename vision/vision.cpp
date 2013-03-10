@@ -22,18 +22,18 @@ double vision::getGroundDist(double angle, double target_height) {
 
 Target::type_t vision::determineType(BinaryImage* image,int index) {
     Image* imaq=image->GetImaqImage();
-    double equivWidth=0.0;
-    double equivHeight=0.0;
+    double equivWidth = 0.0;
+    double equivHeight = 0.0;
     imaqMeasureParticle(imaq,index,0,IMAQ_MT_EQUIVALENT_RECT_LONG_SIDE,&equivWidth);
     imaqMeasureParticle(imaq,index,0,IMAQ_MT_EQUIVALENT_RECT_SHORT_SIDE,&equivHeight);
-    double aspect=equivWidth/equivHeight;
-    double minDiff=1.0;
-    int closestType=(int)Target::UNKNOWN;
+    double aspect = equivWidth/equivHeight;
+    double minDiff = 1.0;
+    int closestType = (int)Target::UNKNOWN;
     for(int i=0;i<3;i++) {
-        double aspectDiff=std::fabs(aspect-targetsInfo[i].aspect);
-        if(aspectDiff<minDiff) {
-            minDiff=aspectDiff;
-            closestType=i;
+        double aspectDiff = std::fabs(aspect-targetsInfo[i].aspect);
+        if(aspectDiff < minDiff) {
+            minDiff = aspectDiff;
+            closestType = i;
         }
     }
     return (Target::type_t)closestType;

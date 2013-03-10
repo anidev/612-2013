@@ -105,6 +105,7 @@ void Shooter::update() {
             if (enter && IRSensor.GetVoltage() < DEFAULT_IR_RETURN) {
                 exit = true;
             }
+            //todo add uses for enter/exit
             feed.forward();
             feedTimer.Start();
             if(launch.getFrisbeeCount() > previousCount)

@@ -1,6 +1,7 @@
 #include <Joystick.h>
 #include <Jaguar.h>
 #include <RobotDrive.h>
+#include <Counter.h>
 #include "ports.h"
 #include "launcher.h"
 #include "auto_encoders.h"
@@ -12,7 +13,8 @@
 #include "AutoShooter.h"
 #include "612.h"
 #include "NetworkCom.h"
-#include <Counter.h>
+#include "dataLogger.h"
+
 
 #ifndef Suzie
 Relay led_spike(led.moduleNumber,led.channel);
@@ -34,3 +36,4 @@ DriveTrain drive_train(dinfo,einfo,side1,side2);
 #endif
 AutoShooter auto_shoot(shooter); // Must be after #defines
 NetworkCom* netcom;
+DataLogger logger;

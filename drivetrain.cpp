@@ -7,6 +7,8 @@
 #include "ports.h"
 #include "shifter.h"
 #include "EnhancedJoystick.h"
+#include "ports.h"
+#include "dataLogger.h"
 
 DriveTrain::DriveTrain(drivetrain_info dinfo,encoders_info einfo,hw_info s1,hw_info s2):encoders(einfo),shift(s1,s2),scale(1.0) {
 #ifdef Suzie
@@ -26,6 +28,10 @@ DriveTrain::DriveTrain(drivetrain_info dinfo,encoders_info einfo,hw_info s1,hw_i
     encoders.reset_distance();
     finished = false;
     updateRegistry.addUpdateFunction(&update_helper,(void*)this);
+    left_dist = 0;
+    right_dist = 0;
+    logger.TrackDouble(&left_dist,"Left_Dist");
+    logger.TrackDouble(&right_dist,"Right_Dist");
 }
 
 DriveTrain::~DriveTrain() {

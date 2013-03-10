@@ -2,16 +2,18 @@
 #define SHOOTER_H
 
 #include <Timer.h>
+#include <AnalogChannel.h>
+#include <Counter.h>
 #include "feeder.h"
 #include "ports.h"
 #include "launcher.h"
 #include "updateRegistry.h"
 #include "612.h"
-#include <AnalogChannel.h>
-#include <Counter.h>
+#include "dataLogger.h"
 
 class Shooter {
 private:
+    friend class DataLogger;
     enum ShooterStates {
         SPINNING_UP,
         FEEDING
@@ -19,7 +21,7 @@ private:
     unsigned int targetCount;
     unsigned int previousCount;
     Launcher launch;
-    Feeder feed;
+    protected Feeder feed;
     bool shooting;
     Timer feedTimer;
     static void shotBtnHelper(void*);
@@ -28,7 +30,7 @@ private:
     static const double DEFAULT_LAUNCH_SPEED = 0.9;
 #ifndef Suzie
     //~IR SENSOR STUFF
-    AnalogChannel IRSensor;
+    protected AnalogChannel IRSensor;
     bool enter;
     bool exit;
     static const double DEFAULT_IR_RETURN = 2.0;

@@ -3,12 +3,14 @@
 
 #include <Talon.h>
 #include <Relay.h>
+#include <Counter.h>
 #include "two_controller.h"
 #include "ports.h"
 #include "612.h"
-#include <Counter.h>
+#include "dataLogger.h"
 
 class Feeder {
+friend class DataLogger;
 public:
     enum direction_t { // Will change to proper motor speed later
         FORWARD = 1,
@@ -34,7 +36,7 @@ private:
     two_controller<Relay> feederMotor;
 #else
     Talon feederMotor;
-    Counter counter;
+    protected Counter counter;
 #endif //Suzie
     void update();
     static void update_helper(void*);

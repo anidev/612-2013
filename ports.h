@@ -18,7 +18,7 @@ class Shooter;
 class EnhancedJoystick;
 class AutoShooter;
 class NetworkCom;
-
+class DataLogger;
 typedef int canport_t;
 
 struct hw_info {
@@ -36,7 +36,7 @@ extern Shooter shooter;
 extern AutoShooter auto_shoot;
 extern NetworkCom* netcom;
 
-static const char* const CAMERA_IP="10.6.12.2";
+static const char* const CAMERA_IP = "10.6.12.2";
 inline AxisCamera* camera() {
     return &(AxisCamera::GetInstance(CAMERA_IP));
 }
@@ -94,5 +94,5 @@ inline AxisCamera* camera() {
     static const hw_info launcher_sensor =   {1, 2};
     static const hw_info IR_sensor =         {1, 1};
 #endif //#ifdef Suzie
-    
+    extern DataLogger logger;
 #endif //PORTS_H
