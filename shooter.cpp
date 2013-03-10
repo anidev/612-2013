@@ -6,7 +6,7 @@
 
 #ifdef Suzie
 Shooter::Shooter(hw_info launchWheel1,hw_info launchWheel2,hw_info launchSensor,hw_info feedInfo1,hw_info feedInfo2):
-         launch(launchWheel1,launchWheel2,launchSensor), feed(feedInfo1,feedInfo2)
+        feed(feedInfo1,feedInfo2),launch(launchWheel1,launchWheel2,launchSensor)
 {
     shooting = false;
     updateRegistry.addUpdateFunction(&update_helper, (void*)this);
