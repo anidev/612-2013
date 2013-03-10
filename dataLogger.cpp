@@ -3,6 +3,7 @@
 #include "ports.h"
 #include "Shooter.h"
 #include "612.h"
+
 DataLogger::DataLogger(): systemTimer(),iterativeTimer() {
 }
 
@@ -30,7 +31,8 @@ void DataLogger::LogShot() {
     char ImageName[30];
     sprintf(ImageName,"ShotLogs/ShotLog%i_Launch",shotCount);
     LogCameraImage(ImageName);
-    //todo Camera Image 2 sec later(refine as needed)
+    //todo Camera Image later
+    //todo add angle
 }
 
 DataLogger::~DataLogger() {
@@ -53,12 +55,50 @@ DataLogger::~DataLogger() {
 }
 
 void DataLogger::LogCameraImage(string s) {
-    ColorImage* image = camera()->GetImage();
+    ColorImage* image = camera() -> GetImage();
     char tmp[500];
     sprintf(tmp,"%s_%f.jpeg",s.c_str(),systemTimer.Get());
     image -> Write(tmp);
     delete image;
 }
+
+void DataLogger::DumpDouble(double d,string name) {
+    char buffer[200];
+    sprintf(buffer,"loggedData/Double_%s_%f.txt",name.c_str(),systemTimer.Get());
+    File f(buffer);
+    char buf2[10];
+    sprintf(buf2,"%f",d);
+    f.addLine(buf2);
+}
+
+void DataLogger::DumpInt(int i,string name) {
+    char buffer[200];
+    sprintf(buffer,"loggedData/Int_%s_%f.txt",name.c_str(),systemTimer.Get());
+    File f(buffer);
+    char buf2[10];
+    sprintf(buf2,"%i",i);
+    f.addLine(buf2);
+}
+
+void DataLogger::DumpFloat(float val,string name) {
+    char buffer[200];
+    sprintf(buffer,"loggedData/Float_%s_%f.txt",name.c_str(),systemTimer.Get());
+    File f(buffer);
+    char buf2[10];
+    sprintf(buf2,"%f",val);
+    f.addLine(buf2);
+}
+
+void DataLogger::DumpBool(bool b,string name) {
+    char buffer[200];
+    sprintf(buffer,"loggedData/Bool_%s_%f.txt",name.c_str(),systemTimer.Get());
+    File f(buffer);
+    if(b)
+        f.addLine("1");
+    else
+        f.addLine("0");
+}
+
 
 void DataLogger::TrackDouble(double* d,string name) {
     dVals.push_back(d);
@@ -176,12 +216,51 @@ void DataLogger::StopTrackingBool(bool* target) {
     }
 }
 
+void DataLogger::TrackMotorOutput(SpeedController* motor,string name) {
+    mVals.push_back(motor);
+    previousMVals.push_back(motor -> Get());
+    double time = systemTimer.Get();
+    char buffer[500];
+    sprintf(buffer,"loggedData/%f_%s_Motor.txt",time,name.c_str());
+    File *f = new File(buffer);
+    mValFiles.push_back(f);
+    char buffer2[500];
+    sprintf(buffer2,"Motor Tracking for %s \n Start Time: %f",name.c_str(),time);
+    mValFiles.at(mValFiles.size() - 1) -> addLine(buffer2);
+}
+
+void DataLogger::StopTrackingMotorOutput(SpeedController* target) {
+    for(unsigned int i = 0; i < mVals.size(); i++)
+    {
+        if(mVals.at(i) == target)
+        {
+            mVals.erase(mVals.begin() + i);
+            previousMVals.erase(previousMVals.begin() + i);
+            char buffer[500];
+            sprintf(buffer,"End Time: %f",systemTimer.Get());
+            mValFiles.at(i) -> addLine(buffer);
+            mValFiles.erase(mValFiles.begin() + i);
+        }
+    }
+}
+
+void DataLogger::updateMotorOutputTracking() {
+    for(unsigned int i = 0; i < mVals.size(); i++)
+    {
+        previousMVals.at(i) = mVals.at(i) -> Get();
+        char buffer[10];
+        sprintf(buffer,"%f",mVals.at(i) -> Get());
+        mValFiles.at(i) -> addLine(buffer);
+    }
+}
+
 void DataLogger::update() {
     if(iterativeTimer.HasPeriodPassed(UPDATE_RATE_TIME))
     {
         updateDoubleTracking();
         updateIntTracking();
         updateBoolTracking();
+        updateMotorOutputTracking();
     }
 }
 

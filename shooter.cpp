@@ -14,7 +14,7 @@ Shooter::Shooter(hw_info launchWheel1,hw_info launchWheel2,hw_info launchSensor,
 }
 #else
 Shooter::Shooter(canport_t canJag,hw_info sensorInfo,hw_info feedInfo, hw_info feedSensor, hw_info IRInfo):
-         launch(canJag,sensorInfo), feed(feedInfo,feedSensor), IRSensor(IRInfo.moduleNumber,IRInfo.channel)
+         feed(feedInfo,feedSensor), launch(canJag,sensorInfo),IRSensor(IRInfo.moduleNumber,IRInfo.channel)
 {
     shooting = false;
     cur_state = SPINNING_UP;
@@ -160,7 +160,9 @@ bool Shooter::isShot() {
     if ((isShooting()) && (enter && exit) && (launch.dropDetected())) {
         printf("out of frisbees");
         return true;
-    } else {
+    }
+    else 
+    {
         return false;
     }
 #endif

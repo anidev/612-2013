@@ -27,16 +27,20 @@ public:
     /*void LogWheelSpeed();
     void ControllerOutputDump();
     void StartControllerTracking();
-    void StopControllerTracking();
-    void DumpDouble(double,String);
-    void DumpInt(int,String);
-    void DumpFloat(float,String);*/
+    void StopControllerTracking();*/
+    void DumpDouble(double,string);
+    void DumpInt(int,string);
+    void DumpFloat(float,string);
+    void DumpBool(bool,string);
     void TrackDouble(double*,string);
     void StopTrackingDouble(double*);
     void updateDoubleTracking();
     void TrackInt(int*,string);
     void StopTrackingInt(int*);
     void updateIntTracking();
+    void TrackMotorOutput(SpeedController*,string);
+    void StopTrackingMotorOutput(SpeedController*);
+    void updateMotorOutputTracking();
     //void TrackFloat(float*,string);
     //void StopTrackingFloat(float*);
     //void updateFloatTracking();
@@ -44,8 +48,6 @@ public:
     void StopTrackingBool(bool*);
     void updateBoolTracking();
     /*
-    void LogTalonOutput(Talon*);
-    void LogCANJagOutput(SpeedController*);
     void LogLiftAngleAdjustment();
     void LogRPSofLauncher();
     void LogTeleopStartTime();
@@ -55,7 +57,7 @@ public:
     void LogAutonomousStartTime();
     void LogAutonomousEndTime();
     void LogPowerLvl();
-    void saveNote(String);*/
+    void saveNote(string,string);*/
 private:
     Timer systemTimer;
     Timer iterativeTimer;
@@ -80,5 +82,9 @@ private:
     std::vector<double*> dVals;
     std::vector<double> previousDVals;
     std::vector<File*> dValFiles;
+        //Motors
+    std::vector<SpeedController*> mVals;
+    std::vector<float> previousMVals;
+    std::vector<File*> mValFiles;
 };
 #endif //DATA_LOGGER_H
