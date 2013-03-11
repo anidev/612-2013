@@ -66,7 +66,13 @@ void Lift::set_angle(float new_angle) {
     ((CANJaguar*)liftMotor) -> Set(new_angle);
 #endif //Suzie
 }
-
+float Lift::getRawPotValue() { //Todo find a way to get raw pot value from canjag
+#ifdef Suzie
+    return pot.GetVoltage();
+#else
+    return ((CANJaguar*)liftMotor) -> GetPosition();
+#endif //Suzie
+}
 float Lift::get_current_angle() {
 #ifdef Suzie
     return potToAngle(pot.GetVoltage());

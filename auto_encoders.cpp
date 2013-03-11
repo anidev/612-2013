@@ -30,19 +30,19 @@ double auto_encoders::get_distance() {
 }
 double auto_encoders::get_left_dist() {
     static int counter=0;
-    if(counter%25==0) {
-//        std::printf("left dist:  %f\n",left_encoder->GetDistance());
-    }
     counter++;
     return left_encoder -> GetDistance();
 }
 double auto_encoders::get_right_dist() {
     static int counter = 0;
-    if(counter%25==0) {
-//        std::printf("right dist: %f\n",right_encoder->GetDistance());
-    }
     counter++;
     return right_encoder -> GetDistance();
+}
+double auto_encoders::get_raw_left() {
+    return left_encoder -> Get();
+}
+double auto_encoders::get_raw_right() {
+    return right_encoder -> Get();
 }
 void auto_encoders::reset_left_distance() {
     left_encoder -> Reset();

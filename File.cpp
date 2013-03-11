@@ -1,4 +1,5 @@
 #include "File.h"
+
 File::File(char* n): IOAccess(n,fstream::out|fstream::app) {
     Name = n;
 }

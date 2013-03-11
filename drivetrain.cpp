@@ -10,7 +10,7 @@
 #include "ports.h"
 #include "dataLogger.h"
 
-DriveTrain::DriveTrain(drivetrain_info dinfo,encoders_info einfo,hw_info s1,hw_info s2):encoders(einfo),shift(s1,s2),scale(1.0) {
+DriveTrain::DriveTrain(drivetrain_info dinfo,encoders_info einfo,hw_info s1,hw_info s2):shift(s1,s2),scale(1.0),encoders(einfo) {
 #ifdef Suzie
     left_front = new Jaguar(dinfo.left_front.moduleNumber,dinfo.left_front.channel);
     left_rear = new Jaguar(dinfo.left_rear.moduleNumber,dinfo.left_rear.channel);

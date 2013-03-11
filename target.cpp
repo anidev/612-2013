@@ -23,17 +23,17 @@ Target::type_t Target::getType()
 }
 Target::Target(double _distance,int _xoff,int _yoff,type_t _type,ParticleAnalysisReport _report)
 {
-    distance=_distance;
-    x_off=_xoff;
-    y_off=_yoff;
-    report=_report;
-    type=_type;
+    distance = _distance;
+    x_off = _xoff;
+    y_off = _yoff;
+    report = _report;
+    type = _type;
     determinePriority(type,distance);
 }
 void Target::determinePriority(Target::type_t,double distanceT)
 {
     // TODO actually get realistic priority calculations
-    priority=0;
+    priority = 0;
 }
 ParticleAnalysisReport Target::getReport() {
     return report;

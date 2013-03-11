@@ -4,6 +4,7 @@
 #include <Encoder.h>
 #include "ports.h"
 #include "612.h"
+#include "dataLogger.h"
 
 struct encoders_info {
     hw_info left1;
@@ -13,6 +14,10 @@ struct encoders_info {
 };
 
 class auto_encoders {
+friend class DataLogger;
+protected:
+    double get_raw_left();
+    double get_raw_right();
 private:
     Encoder* left_encoder;
     Encoder* right_encoder;
