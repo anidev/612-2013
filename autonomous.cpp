@@ -122,20 +122,25 @@ void choose_routine(Position pos, AutoTarget target){
     {
         isLeft = false;
     }
-    if((pos == Back_Left) || (pos == Back_Right)) {
+    if((pos == Back_Left) || (pos == Back_Right)) 
+    {
         Frisbees = 3;
     }
     else
     {
         Frisbees = 2;
     }
-    if (target==Middle_Goal) {
+    if (target==Middle_Goal) 
+    {
         state.set_state(AUTO_SHOOT);
     }
-    if ((pos == Back_Left) || (pos == Back_Right)) {
+    if ((pos == Back_Left) || (pos == Back_Right)) 
+    {
         state.set_state(AUTO_DRIVE);
         Frisbees = 3;
-    } else if ((pos == Front_Left) || (pos == Front_Right)) {
+    }
+    else if ((pos == Front_Left) || (pos == Front_Right)) 
+    {
         state.set_state(AUTO_TURN);
     }
 }
