@@ -173,6 +173,7 @@ bool Shooter::noFrisbees() {
         ledstrip_spike.Set(Relay::kOn);
         return true;
     }    
+    return false;
 }
 
 void Shooter::update_helper(void* a) {
