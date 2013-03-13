@@ -194,7 +194,7 @@ void DataLogger::TrackInt(int* i,string name) {
 }
 
 void DataLogger::updateIntTracking() {
-    for(unsigned int i = 0; i < dVals.size(); i++)
+    for(unsigned int i = 0; i < iVals.size(); i++)
     {
         previousIVals.at(i) = *iVals.at(i);
         char buffer[500];
@@ -302,7 +302,7 @@ void DataLogger::update() {
         updateDoubleTracking();
         updateIntTracking();
         updateBoolTracking();
-        //updateMotorOutputTracking();
+        updateMotorOutputTracking();
         iterativeTimer.Reset();
     }
 }
