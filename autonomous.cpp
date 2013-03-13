@@ -116,6 +116,11 @@ void choose_routine(Position pos, AutoTarget target, bool BackDrive){
     } else if ((pos == Front_Left) || (pos == Front_Right)) {
 	Frisbees = 2;
 	state.set_state(AUTO_TURN);
+	if (target == Middle_Goal) {
+	    ShooterPrep(FrontMiddleLiftAngle,FrontMiddleLauncherSpeed); 
+	} else {
+	    ShooterPrep(FrontHighLiftAngle,FrontHighLauncherSpeed);
+	}
     }
     /*Shooter prep logic*/
 }
