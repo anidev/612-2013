@@ -21,8 +21,8 @@ public:
     void LogRealityEngineData();
     void LogAutoShot();
     void LogDriveStart(); //Same as record
-    void LogDriveStop(); //stops and stores recording
-    void SensorDataDump();*/
+    void LogDriveStop(); //stops and stores recording*/
+    void SensorDataDump();
     void LogCameraImage(string s = "CameraLog");
     /*void LogWheelSpeed();
     void ControllerOutputDump();
@@ -41,27 +41,26 @@ public:
     void TrackMotorOutput(SpeedController*,string);
     void StopTrackingMotorOutput(SpeedController*);
     void updateMotorOutputTracking();
-    //void TrackFloat(float*,string);
-    //void StopTrackingFloat(float*);
-    //void updateFloatTracking();
+    void TrackFloat(float*,string);
+    void StopTrackingFloat(float*);
+    void updateFloatTracking();
     void TrackBool(bool*,string);
     void StopTrackingBool(bool*);
     void updateBoolTracking();
-    /*
-    void LogLiftAngleAdjustment();
+    void LogLiftAngle();
     void LogRPSofLauncher();
+    /*
     void LogTeleopStartTime();
     void LogTeleopStopTime();
     void StartAutonomousLogging();
     void StopAutonomousLogging();
     void LogAutonomousStartTime();
-    void LogAutonomousEndTime();
-    void LogPowerLvl();
-    void saveNote(string,string);*/
+    void LogAutonomousEndTime();*/
+    void LogAutonomousSuccessPosition();
+    void saveNote(string,string);
 private:
     Timer systemTimer;
     Timer iterativeTimer;
-    //Might
     static const float UPDATE_RATE_TIME = 0.05; //Seconds
     void update();
     static void update_helper(void*);
@@ -77,7 +76,7 @@ private:
         //Bools
     std::vector<bool*> bVals;
     std::vector<bool> previousBVals;
-    std::vector<File*> bValFiles; //Todo Optimize space by printing 1 for true and 0 for false
+    std::vector<File*> bValFiles;
         //Doubles
     std::vector<double*> dVals;
     std::vector<double> previousDVals;

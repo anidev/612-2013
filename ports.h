@@ -30,6 +30,7 @@ extern Relay led_spike;
 extern Relay ledstrip_spike;
 extern EnhancedJoystick drive_gamepad;
 extern EnhancedJoystick gunner_gamepad;
+extern DataLogger logger;
 extern DriveTrain drive_train;
 extern Lift angleAdjuster;
 extern Shooter shooter;
@@ -94,5 +95,4 @@ inline AxisCamera* camera() {
     static const hw_info launcher_sensor =   {1, 2};
     static const hw_info IR_sensor =         {1, 1};
 #endif //#ifdef Suzie
-    extern DataLogger logger;
 #endif //PORTS_H

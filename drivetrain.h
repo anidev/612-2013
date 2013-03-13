@@ -7,7 +7,7 @@
 #include "auto_encoders.h"
 #include "shifter.h"
 #include "ports.h"
-
+#include "dataLogger.h"
 struct drivetrain_info {
     hw_info left_front;
     hw_info left_rear;
@@ -19,6 +19,7 @@ struct drivetrain_info {
 // TURNING = swiveling around the center
 
 class DriveTrain {
+    friend class DataLogger;
 public:
     static void update_helper(void*);
     DriveTrain(drivetrain_info,encoders_info,hw_info,hw_info);
@@ -63,7 +64,6 @@ private:
     SpeedController* left_rear;
     SpeedController* right_front;
     SpeedController* right_rear;
-    auto_encoders encoders;
     shifter shift;
     drive_func currentOperation;
     operation_t operation;
@@ -73,6 +73,8 @@ private:
     double scale;
     bool finished;
     void update();
+protected:
+    auto_encoders encoders;
 };
 
 #endif // DRIVETRAIN_H

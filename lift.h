@@ -42,6 +42,7 @@ public:
     float get_current_angle();
     float get_target_angle();
     bool at_angle();
+    float getRawPotValue(); 
 };
 
 #endif // LIFT_H_INCLUDED
