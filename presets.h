@@ -6,7 +6,7 @@
 
 class presets {  // two presets; speed of the wheel, angle of the launcher;
 private:
-    int wheel_speed;
+    unsigned int wheel_speed;
     float lift_angle;
     /*
      * int lift_angle_high = over 9000
@@ -16,7 +16,7 @@ private:
      * NOTE THESE PRESETS HAVEN'T BEEN SET YET. IF THEY ARE IN ANOTHER CLASS, NOTIFY ME SO THAT I MAY FIX THIS.
      */
 public:
-    presets(float, int);
+    presets(float,unsigned int);
 	~presets();
     void setShooter(Shooter*);
     void setLifter(Lift*);

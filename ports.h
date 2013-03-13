@@ -19,7 +19,7 @@ class EnhancedJoystick;
 class AutoShooter;
 class NetworkCom;
 class DataLogger;
-typedef int canport_t;
+typedef unsigned int canport_t;
 
 struct hw_info {
     UINT8 moduleNumber;

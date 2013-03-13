@@ -16,7 +16,7 @@ class vision
     protected:
         vision();
         virtual ~vision();
-        static Target::type_t determineType(BinaryImage*,int);
+        static Target::type_t determineType(BinaryImage*,unsigned int);
         static void processContinuous(std::vector<Target>*);
 };
 #endif

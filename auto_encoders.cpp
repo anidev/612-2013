@@ -29,12 +29,12 @@ double auto_encoders::get_distance() {
     return (get_left_dist() + get_right_dist()) / 2.0;
 }
 double auto_encoders::get_left_dist() {
-    static int counter=0;
+    static unsigned int counter=0;
     counter++;
     return left_encoder -> GetDistance();
 }
 double auto_encoders::get_right_dist() {
-    static int counter = 0;
+    static unsigned int counter = 0;
     counter++;
     return right_encoder -> GetDistance();
 }

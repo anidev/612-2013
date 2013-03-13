@@ -59,7 +59,7 @@ public:
     void setRawFeederPower(double);
     // Global shooter stuff
     void update();
-    void shoot(int a = 4,double launchSpeed = DEFAULT_LAUNCH_SPEED);
+    void shoot(unsigned int a = 4,double launchSpeed = DEFAULT_LAUNCH_SPEED);
     void abort();
     bool isShooting();
     //~IR SENSOR STUFF

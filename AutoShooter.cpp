@@ -88,7 +88,7 @@ void AutoShooter::doShooting() {
 void AutoShooter::update_helper(void* obj) {
     ((AutoShooter*)(obj)) -> update();
 }
-void AutoShooter::AutoShoot(int target) {
+void AutoShooter::AutoShoot(unsigned int target) {
     if(cur_state == OFF)
     {
         shooter -> resetFrisbeeCount();

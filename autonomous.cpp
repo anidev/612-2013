@@ -11,7 +11,7 @@ bool isLeft;
 bool auto_state_changed = false;
 bool shooter_prepped = false;
 
-int Frisbees = 2;
+unsigned int Frisbees = 2;
 float Launcher_Speed = 0.4;
 
 const int DRIVE_DIST = 40;

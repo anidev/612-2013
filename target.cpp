@@ -5,9 +5,11 @@ int Target::getPriority()
 {
     return priority;
 }
-double Target::getDistance()
+unsigned float Target::getDistance()
 {
-    return distance;
+    if(distance > 0)
+        return distance;
+    return 0;
 }
 int Target::getXOff()
 {
@@ -21,7 +23,7 @@ Target::type_t Target::getType()
 {
     return type;
 }
-Target::Target(double _distance,int _xoff,int _yoff,type_t _type,ParticleAnalysisReport _report)
+Target::Target(unsigned float _distance,int _xoff,int _yoff,type_t _type,ParticleAnalysisReport _report)
 {
     distance = _distance;
     x_off = _xoff;
@@ -30,7 +32,7 @@ Target::Target(double _distance,int _xoff,int _yoff,type_t _type,ParticleAnalysi
     type = _type;
     determinePriority(type,distance);
 }
-void Target::determinePriority(Target::type_t,double distanceT)
+void Target::determinePriority(Target::type_t,unsigned float distanceT)
 {
     // TODO actually get realistic priority calculations
     priority = 0;
