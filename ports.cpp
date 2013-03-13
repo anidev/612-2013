@@ -15,7 +15,12 @@
 #include "NetworkCom.h"
 #include "dataLogger.h"
 
-
+/*    Required Order Inititialization
+ * 1) Update Registry
+ * 2) Joysticks
+ * 3) dataLogger
+ * 4) Others
+*/
 #ifndef Suzie
 Relay led_spike(led.moduleNumber,led.channel);
 Relay ledstrip_spike(ledstrip.moduleNumber,ledstrip.channel);

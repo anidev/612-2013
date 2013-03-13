@@ -47,6 +47,8 @@ void robot_class::AutonomousInit() {
     AutoTarget auto_target=Middle_Goal;
     int positionVal=(int)netcom->Autonomous_Position();
     int targetVal=(int)netcom->Autonomous_Target();
+    int drivingVal=(int)netcom->Autonomous_BackDriving();
+    bool auto_driving=drivingVal==1; // Stationary=0, Driving=1
     switch(positionVal) {
     case 0:
         auto_pos=Front_Right;
@@ -75,7 +77,7 @@ void robot_class::AutonomousInit() {
         std::printf("Selected autonomous: MID GOAL\n");
         break;
     }
-    choose_routine(auto_pos, auto_target);
+    choose_routine(auto_pos, auto_target, auto_driving);
 }
 
 void robot_class::TeleopInit() {

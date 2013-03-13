@@ -8,7 +8,7 @@
 enum Position {Back_Left, Back_Right, Front_Left, Front_Right}; 
 enum AutoTarget {Middle_Goal, High_Goal};
 
-void choose_routine(Position, AutoTarget);
+void choose_routine(Position, AutoTarget, bool);
 void do_autonomous();
 
 void drive();
