@@ -14,7 +14,7 @@ const float BackHighLiftAngle = 1.46;
 const double FrontMiddleLauncherSpeed = 0.4;
 const float FrontMiddleLiftAngle  = 2.14; 
 //front and high
-const float FrontHighTurnAngle = -34;
+const float FrontHighLauncherSpeed = 0.4;
 const float FrontHighLiftAngle = 2.58;
 
 /*

@@ -16,9 +16,6 @@ bool shooter_prepped = false;
 int Frisbees = 2;
 float Launcher_Speed = 0.4;
 
-float launch_tolerance = 0.05;
-float angle_toleralce = 0.2;
-
 const double DRIVE_DIST = 40;
 const double FRONT_TURN_ANGLE = -34; // negative is clockwise, positive is counter-clockwise
 const double BACK_TURN_ANGLE = -12;
