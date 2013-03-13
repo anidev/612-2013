@@ -22,53 +22,23 @@ const float LOW_LIFT_ANGLE = 2.14;      //suzie pot angles
 enum auto_states {
     AUTO_DRIVE,
     AUTO_TURN,
+    AUTO_PREP,
     AUTO_SHOOT,
     DONE
 };
 
 State state(AUTO_DRIVE);
 AutoTarget shoot_tar;
+BackDriving back_check;
 
-void do_autonomous() {
-    if (state.get_state() == AUTO_DRIVE) 
-    {
-        drive(DRIVE_DIST);
-    } 
-    else if (state.get_state() == AUTO_TURN)
-    {
-        if (isLeft == true)
-        {
-            turn(TURN_ANGLE);
-        }
-        else 
-        {
-            turn(-TURN_ANGLE);
-        }
-    }
-    else if (state.get_state() == AUTO_SHOOT) 
-    {
-        shoot();
-    }
-    else if (state.get_state() == DONE) 
-    {
-        std:: printf("Autonomous is finished");
-    }
-}
-/*
-void ShooterPrep(AutoTarget target) {
+void ShooterPrep(double angle, float speed) {
     if (!shooter_prepped) {
-        if (shooter.getCurrentSpeed() < 1.0) {
-            shooter.setSpeed(Launcher_Speed);
-        }
-        if (target == High_Goal) {
-            angleAdjuster.set_angle(HIGH_LIFT_ANGLE);
-        } else if (target == Middle_Goal) {
-            angleAdjuster.set_angle(LOW_LIFT_ANGLE);
-        }
+	shooter.setSpeed(speed);
+	angleAdjuster.set_angle(angle);
         shooter_prepped = true;
     }
 }
-*/
+
 
 void drive(double dist /*inches*/) {
     if (auto_state_changed) 
@@ -89,9 +59,8 @@ void turn(double angle) {
         drive_train.turn(angle);
         auto_state_changed = false;
     }
-    else if (drive_train.isFinished()) 
-    {
-        state.set_state(AUTO_SHOOT);
+    else if (drive_train.isFinished()) {
+        state.set_state(AUTO_PREP);
         auto_state_changed = true;
     }
 }
@@ -110,38 +79,48 @@ void shoot() {
     }
 }
 
-void choose_routine(Position pos, AutoTarget target){
+void choose_routine(Position pos, AutoTarget target, bool BackDrive){
     auto_state_changed = true;
     shooter_prepped = false;
     shoot_tar = target;
-    if ((pos == Back_Left) || (pos == Front_Left)) 
-    {
+    if ((pos == Back_Left) || (pos == Front_Left))  {
         isLeft = true;
     }
-    else
-    {
+    else {
         isLeft = false;
     }
-    if((pos == Back_Left) || (pos == Back_Right)) 
-    {
+    if((pos == Back_Left) || (pos == Back_Right))  {
         Frisbees = 3;
     }
-    else
-    {
+    else {
         Frisbees = 2;
     }
-    if (target==Middle_Goal) 
-    {
-        state.set_state(AUTO_SHOOT);
+    if ((pos == Back_Left) || (pos == Back_Right)) {
+	if (BackDrive) {
+	    state.set_state(AUTO_DRIVE);
+	    Frisbees = 3;
+	} else {
+	    state.set_state(AUTO_SHOOT);
+	}
+    } else if ((pos == Front_Left) || (pos == Front_Right)) {
+	state.set_state(AUTO_TURN);
     }
-    if ((pos == Back_Left) || (pos == Back_Right)) 
-    {
-        state.set_state(AUTO_DRIVE);
-        Frisbees = 3;
-    }
-    else if ((pos == Front_Left) || (pos == Front_Right)) 
-    {
-        state.set_state(AUTO_TURN);
+}
+void do_autonomous() {
+    if (state.get_state()==AUTO_DRIVE) {
+	drive(DRIVE_DIST);
+    } else if (state.get_state()==AUTO_TURN){
+	if (isLeft == true){
+	    turn(TURN_ANGLE);
+	} else {
+	    turn(-TURN_ANGLE);
+	}
+    } else if (state.get_state()==AUTO_PREP){
+	state.set_state(AUTO_SHOOT);
+    } else if (state.get_state()==AUTO_SHOOT) {
+	shoot();
+    } else if (state.get_state()==DONE) {
+	std:: printf("Autonomous is finished");
     }
 }
 
