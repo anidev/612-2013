@@ -22,6 +22,13 @@ const int TURN_ANGLE = -34; // negative is clockwise, positive is counter-clockw
 const float HIGH_LIFT_ANGLE = 2.58;     //suzie pot angles
 const float LOW_LIFT_ANGLE = 2.14;      //suzie pot angles
 
+/*
+ * backaimitmiddle
+ * backaimithigh
+ * forwardaimitmiddle
+ * forwardaimithigh
+ */
+
 enum auto_states {
     AUTO_DRIVE,
     AUTO_TURN,
@@ -31,15 +38,12 @@ enum auto_states {
 
 State state(AUTO_DRIVE);
 AutoTarget shoot_tar;
-BackDriving back_check;
 
 void ShooterPrep(double angle, float speed) {
     if (!shooter_prepped) {
 	shooter.setSpeed(speed);
 	angleAdjuster.set_angle(angle);
-	if (fabs(shooter.getCurrentSpeed() - speed >= launch_tolerance)) && (fabs((angleAdjuster.get_current_angle() >= angle_toleralce)) {
-	    shooter_prepped = true;
-	}
+	shooter_prepped = true;
     }
 }
 
@@ -64,7 +68,7 @@ void turn(double angle) {
         auto_state_changed = false;
     }
     else if (drive_train.isFinished()) {
-        state.set_state(AUTO_PREP);
+        state.set_state(AUTO_SHOOT);
         auto_state_changed = true;
     }
 }
@@ -124,8 +128,6 @@ void do_autonomous() {
 	} else {
 	    turn(-TURN_ANGLE);
 	}
-    } else if (state.get_state()==AUTO_PREP){
-	state.set_state(AUTO_SHOOT);
     } else if (state.get_state()==AUTO_SHOOT) {
 	shoot();
     } else if (state.get_state()==DONE) {
