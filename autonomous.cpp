@@ -8,6 +8,7 @@
 #include "launcher.h"
 
 bool isLeft;
+bool isBack; 
 bool auto_state_changed = false;
 bool shooter_prepped = false;
 
@@ -17,8 +18,9 @@ float Launcher_Speed = 0.4;
 float launch_tolerance = 0.05;
 float angle_toleralce = 0.2;
 
-const int DRIVE_DIST = 40;
-const int TURN_ANGLE = -34; // negative is clockwise, positive is counter-clockwise
+const double DRIVE_DIST = 40;
+const double FRONT_TURN_ANGLE = -34; // negative is clockwise, positive is counter-clockwise
+const double BACK_TURN_ANGLE = -12;
 const float HIGH_LIFT_ANGLE = 2.58;     //suzie pot angles
 const float LOW_LIFT_ANGLE = 2.14;      //suzie pot angles
 
@@ -91,26 +93,24 @@ void choose_routine(Position pos, AutoTarget target, bool BackDrive){
     auto_state_changed = true;
     shooter_prepped = false;
     shoot_tar = target;
+    //check if the robot is on the left
     if ((pos == Back_Left) || (pos == Front_Left))  {
         isLeft = true;
     }
     else {
         isLeft = false;
     }
+    //check if the robot is in the back
     if((pos == Back_Left) || (pos == Back_Right))  {
+	isBack = true;
         Frisbees = 3;
-    }
-    else {
-        Frisbees = 2;
-    }
-    if ((pos == Back_Left) || (pos == Back_Right)) {
 	if (BackDrive) {
 	    state.set_state(AUTO_DRIVE);
-	    Frisbees = 3;
 	} else {
 	    state.set_state(AUTO_SHOOT);
 	}
     } else if ((pos == Front_Left) || (pos == Front_Right)) {
+	Frisbees = 2;
 	state.set_state(AUTO_TURN);
     }
     if (target == Middle_Goal) {
@@ -123,10 +123,18 @@ void do_autonomous() {
     if (state.get_state()==AUTO_DRIVE) {
 	drive(DRIVE_DIST);
     } else if (state.get_state()==AUTO_TURN){
-	if (isLeft == true){
-	    turn(TURN_ANGLE);
+	if (isBack) {
+	    if (isLeft){
+		turn(BACK_TURN_ANGLE);
+	    } else {
+		turn(-BACK_TURN_ANGLE);
+	    }
 	} else {
-	    turn(-TURN_ANGLE);
+	    if (isLeft){
+		turn(FRONT_TURN_ANGLE);
+	    } else {
+		turn(-FRONT_TURN_ANGLE);
+	    }
 	}
     } else if (state.get_state()==AUTO_SHOOT) {
 	shoot();
