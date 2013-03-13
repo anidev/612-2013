@@ -6,6 +6,7 @@
 #include "shooter.h"
 #include "AutoShooter.h"
 #include "launcher.h"
+#include "autonomous_presets.h"
 
 bool isLeft;
 bool isBack; 
@@ -23,13 +24,6 @@ const double FRONT_TURN_ANGLE = -34; // negative is clockwise, positive is count
 const double BACK_TURN_ANGLE = -12;
 const float HIGH_LIFT_ANGLE = 2.58;     //suzie pot angles
 const float LOW_LIFT_ANGLE = 2.14;      //suzie pot angles
-
-/*
- * backaimitmiddle
- * backaimithigh
- * forwardaimitmiddle
- * forwardaimithigh
- */
 
 enum auto_states {
     AUTO_DRIVE,
@@ -106,18 +100,24 @@ void choose_routine(Position pos, AutoTarget target, bool BackDrive){
         Frisbees = 3;
 	if (BackDrive) {
 	    state.set_state(AUTO_DRIVE);
+	    if (target == Middle_Goal) {
+		ShooterPrep(FrontMiddleLiftAngle,FrontMiddleLauncherSpeed); 
+	    } else {
+		ShooterPrep(FrontHighLiftAngle,FrontHighLauncherSpeed);
+	    }
 	} else {
 	    state.set_state(AUTO_SHOOT);
+	    if (target == Middle_Goal) {
+		ShooterPrep(BackMiddleLiftAngle,BackMiddleLauncherSpeed); 
+	    } else {
+		ShooterPrep(BackHighLiftAngle,BackHighLauncherSpeed);
+	    }
 	}
     } else if ((pos == Front_Left) || (pos == Front_Right)) {
 	Frisbees = 2;
 	state.set_state(AUTO_TURN);
     }
-    if (target == Middle_Goal) {
-	ShooterPrep(LOW_LIFT_ANGLE,Launcher_Speed);
-    } else {
-	ShooterPrep(HIGH_LIFT_ANGLE,Launcher_Speed);
-    }
+    /*Shooter prep logic*/
 }
 void do_autonomous() {
     if (state.get_state()==AUTO_DRIVE) {
