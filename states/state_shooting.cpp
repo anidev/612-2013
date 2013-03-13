@@ -22,12 +22,7 @@ bool state_changed = false;
 unsigned int speed_adjust_counter = 0;
 
 void shooting_auto() {
-<<<<<<< HEAD
     if (gunner_gamepad.GetRawButton (Gunner_Btn_PresetTwo)) {          // button Y on joystick
-=======
-    if (gunner_gamepad.GetRawButton (4)) // button Y on joystick
-    {
->>>>>>> f3e2d4ff9fb2fdd423b3beee10bff8d87642709b
         // manual revision
         auto_shoot.abort();
         global_state.set_state(DRIVE);
@@ -43,16 +38,11 @@ void shooting_auto() {
 
 void shooting_manual() {
     state_changed = false;
-<<<<<<< HEAD
     if (gunner_gamepad.GetRawButton (Gunner_Btn_PresetTwo)) {          // button Y on gamepad
-=======
-/*    if (gunner_gamepad.GetRawButton (4)) // button Y on gamepad
-    {
->>>>>>> f3e2d4ff9fb2fdd423b3beee10bff8d87642709b
         global_state.set_state(SHOOT_AUTO);
         state_changed = true;
         return;
-    }*/
+    }
 
     // Lift
     if(gunner_gamepad.GetRawButton(Gunner_Btn_LiftUp))
@@ -95,12 +85,8 @@ void shooting_manual() {
     }
     netcom -> launcher_target_speed(new_shooter_wheel_speed);
 
-<<<<<<< HEAD
-    if (gunner_gamepad.GetRawButton(Gunner_Btn_PresetOne)) 
-=======
     // Manual shooting
     if (gunner_gamepad.GetRawButton(Gunner_Btn_ShooterRev))
->>>>>>> f3e2d4ff9fb2fdd423b3beee10bff8d87642709b
     {
         if(!speed_set||speed_changed) 
         {
@@ -118,14 +104,6 @@ void shooting_manual() {
         }
     }
     netcom -> launcher_current_speed(shooter.getCurrentSpeed());
-
-<<<<<<< HEAD
-    if(gunner_gamepad.GetRawAxis(Gunner_Axis_Feeder)<-0.98f) // right
-    { 
-        shooter.setFeederForward();
-    }
-    else if(gunner_gamepad.GetRawAxis(Gunner_Axis_Feeder)>0.98f) // left
-=======
     // Feeder
     // When let go, feeder will continue until it hits hall effect
     if(gunner_gamepad.GetRawAxis(Gunner_Axis_Feeder) < -0.98f) // right
@@ -133,30 +111,20 @@ void shooting_manual() {
         shooter.setFeederForward();
     }
     else if(gunner_gamepad.GetRawAxis(Gunner_Axis_Feeder) > 0.98f) // left
->>>>>>> f3e2d4ff9fb2fdd423b3beee10bff8d87642709b
     {
         shooter.setFeederBackward();
     }
 
-<<<<<<< HEAD
-    if(!driverOperation) {
-=======
     // Swivel
     if(!driverOperation)
     {
->>>>>>> f3e2d4ff9fb2fdd423b3beee10bff8d87642709b
         if (gunner_gamepad.GetRawButton (Gunner_Btn_SwivelLeft)) // turn robot left
         {
             drive_train.TankDrive(SHOOT_TURN_SPEED, -SHOOT_TURN_SPEED);
         }
         else if (gunner_gamepad.GetRawButton (Gunner_Btn_SwivelRight)) // turn robot right
-<<<<<<< HEAD
-        { 
-//            std::printf("swivel right\n");
-=======
         {
             std::printf("swivel right\n");
->>>>>>> f3e2d4ff9fb2fdd423b3beee10bff8d87642709b
             drive_train.TankDrive(-SHOOT_TURN_SPEED, SHOOT_TURN_SPEED);
         }
         else
