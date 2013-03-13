@@ -6,13 +6,14 @@
 #include "../shifter.h"
 #include "../drivetrain.h"
 #include "../EnhancedJoystick.h"
+#include "../controls.h"
 
 const float DRIVE_TURN_SPEED = 0.7f;
 const float ARCADE_SPEED = 0.4f;
 
 // 9== select/climbing|10 == start/driving
 void driving_state() {
-    if (drive_gamepad.GetRawButton(9))
+    if (drive_gamepad.GetRawButton(Driver_Btn_ClimbMode))
     {
         global_state.set_state(CLIMBING);
         return;
@@ -22,18 +23,18 @@ void driving_state() {
 }
 
 void do_driving() {
-    if(gunner_gamepad.GetRawButton(7)||gunner_gamepad.GetRawButton(8)) {
+    if(gunner_gamepad.GetRawButton(Gunner_Btn_SwivelLeft)||gunner_gamepad.GetRawButton(Gunner_Btn_SwivelRight)) {
         driverOperation = false;
     }
-    else if(!joyzero(drive_gamepad.GetRawAxis(2))||!joyzero(drive_gamepad.GetRawAxis(4))) // axis controls
+    else if(!joyzero(drive_gamepad.GetRawAxis(Driver_Axis_TankLeft))||!joyzero(drive_gamepad.GetRawAxis(Driver_Axis_TankRight))) // axis controls
     {
         driverOperation = true;
     }
-    else if(drive_gamepad.GetRawButton(7)||drive_gamepad.GetRawButton(8))
+    else if(drive_gamepad.GetRawButton(Driver_Btn_SwivelLeft)||drive_gamepad.GetRawButton(Driver_Btn_SwivelRight))
     {
         driverOperation = true;
     }
-    else if(!joyzero(drive_gamepad.GetRawAxis(6))) // arcade drive
+    else if(!joyzero(drive_gamepad.GetRawAxis(Driver_Axis_Arcade))) // arcade drive
     {
         driverOperation = true;
     }
@@ -44,26 +45,26 @@ void do_driving() {
     if(driverOperation)
     {
         // swiveling
-        if (drive_gamepad.GetRawButton(7))// L1
+        if (drive_gamepad.GetRawButton(Driver_Btn_SwivelLeft))
         {
             drive_train.TankDrive(-DRIVE_TURN_SPEED,DRIVE_TURN_SPEED);
             return;
         }
-        else if(drive_gamepad.GetRawButton(8)) // R1
+        else if(drive_gamepad.GetRawButton(Driver_Btn_SwivelRight))
         {
             drive_train.TankDrive(DRIVE_TURN_SPEED,-DRIVE_TURN_SPEED);
             return;
         }
 
-        float arcade_y = drive_gamepad.GetRawAxis(6);
+        float arcade_y = drive_gamepad.GetRawAxis(Driver_Axis_Arcade);
         if(!joyzero(arcade_y)) {
             drive_train.TankDrive(arcade_y*ARCADE_SPEED,arcade_y*ARCADE_SPEED);
             return;
         }
 
         // driving
-        float left_axis = drive_gamepad.GetRawAxis(2);
-        float right_axis = drive_gamepad.GetRawAxis(4);
+        float left_axis = drive_gamepad.GetRawAxis(Driver_Axis_TankLeft);
+        float right_axis = drive_gamepad.GetRawAxis(Driver_Axis_TankRight);
         if (joyzero(left_axis) && joyzero(right_axis)) {
             drive_train.TankDrive(0, 0);
         }

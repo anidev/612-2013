@@ -15,6 +15,15 @@
 #include "main.h"
 #include "Shooter.h"
 #include "feeder.h"
+#include "controls.h"
+
+void single_shot_helper(void* dummy) {
+    shooter.shoot(1);
+}
+
+void multi_shot_helper(void* dummy) {
+    shooter.shoot(4);
+}
 
 robot_class::robot_class() {
     GetWatchdog().SetEnabled(false);
@@ -23,6 +32,8 @@ robot_class::robot_class() {
 void robot_class::RobotInit() {
     std::printf("RobotInit\n");
     netcom = new NetworkCom();
+    gunner_gamepad.addBtn(Gunner_Btn_SingleShot,single_shot_helper,NULL);
+    gunner_gamepad.addBtn(Gunner_Btn_MultiShot,multi_shot_helper,NULL);
 }
 
 void robot_class::DisabledInit() {

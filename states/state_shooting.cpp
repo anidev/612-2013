@@ -7,6 +7,7 @@
 #include "../shooter.h"
 #include "../EnhancedJoystick.h"
 #include "../AutoShooter.h"
+#include "../controls.h"
 
 //Constants
 const float SHOOT_TURN_SPEED = 0.7f;
@@ -38,17 +39,19 @@ void shooting_auto() {
 
 void shooting_manual() {
     state_changed = false;
-    if (gunner_gamepad.GetRawButton (4)) // button Y on gamepad
-    {   
+/*    if (gunner_gamepad.GetRawButton (4)) // button Y on gamepad
+    {
         global_state.set_state(SHOOT_AUTO);
         state_changed = true;
         return;
-    }
-    if(gunner_gamepad.GetRawAxis(6) > 0.98f) 
+    }*/
+
+    // Lift
+    if(gunner_gamepad.GetRawButton(Gunner_Btn_LiftUp))
     {
         angleAdjuster.lift_up();
     }
-    else if(gunner_gamepad.GetRawAxis(6) < -0.98f)
+    else if(gunner_gamepad.GetRawButton(Gunner_Btn_LiftDown))
     {
         angleAdjuster.lift_down();
     }
@@ -57,7 +60,9 @@ void shooting_manual() {
         angleAdjuster.lift_stop();
     }
     netcom -> lift_angle(angleAdjuster.get_current_angle());
-    if (gunner_gamepad.GetRawButton(5)) // slow down shooter wheel
+
+    // Target wheel speed
+    if (gunner_gamepad.GetRawAxis(Gunner_Axis_ShooterSpeed) < -0.98f) // slow down shooter wheel
     {
         // save new speed, change speed when buton is not pressed
         if(new_shooter_wheel_speed-WHEEL_CHANGE >= 0.0 && speed_adjust_counter % 3 == 0)
@@ -67,7 +72,7 @@ void shooting_manual() {
         }
         speed_adjust_counter++;
     }
-    else if (gunner_gamepad.GetRawButton (6)) // speed up shooter wheel
+    else if (gunner_gamepad.GetRawAxis(Gunner_Axis_ShooterSpeed) > 0.98f) // speed up shooter wheel
     {
         if(new_shooter_wheel_speed+WHEEL_CHANGE <= Launcher::MAX && speed_adjust_counter%3==0)
         {
@@ -81,8 +86,9 @@ void shooting_manual() {
         speed_adjust_counter = 0;
     }
     netcom -> launcher_target_speed(new_shooter_wheel_speed);
-    //Todo Fix Below Its Important for VCU
-    /*if (gunner_gamepad.GetRawButton(1)) 
+
+    // Manual shooting
+    if (gunner_gamepad.GetRawButton(Gunner_Btn_ShooterRev))
     {
         if(!speed_set||speed_changed) 
         {
@@ -98,28 +104,28 @@ void shooting_manual() {
             shooter.stopLauncher();
             speed_set = false;
         }
-    } This looks like a toggle btn but it will go through to fast for user to let go use
-      the enhanced joysticks */
+    }
     netcom -> launcher_current_speed(shooter.getCurrentSpeed());
-    if(gunner_gamepad.GetRawAxis(5) < -0.98f) // right
+
+    // Feeder
+    // When let go, feeder will continue until it hits hall effect
+    if(gunner_gamepad.GetRawAxis(Gunner_Axis_Feeder) < -0.98f) // right
     {
         shooter.setFeederForward();
     }
-    else if(gunner_gamepad.GetRawAxis(5) > 0.98f) // left
+    else if(gunner_gamepad.GetRawAxis(Gunner_Axis_Feeder) > 0.98f) // left
     {
         shooter.setFeederBackward();
     }
-    else
-    {
-        shooter.setFeederStop();
-    }
+
+    // Swivel
     if(!driverOperation)
     {
-        if (gunner_gamepad.GetRawButton (7)) // turn robot left
+        if (gunner_gamepad.GetRawButton (Gunner_Btn_SwivelLeft)) // turn robot left
         {
             drive_train.TankDrive(SHOOT_TURN_SPEED, -SHOOT_TURN_SPEED);
         }
-        else if (gunner_gamepad.GetRawButton (8)) // turn robot right
+        else if (gunner_gamepad.GetRawButton (Gunner_Btn_SwivelRight)) // turn robot right
         {
             std::printf("swivel right\n");
             drive_train.TankDrive(-SHOOT_TURN_SPEED, SHOOT_TURN_SPEED);

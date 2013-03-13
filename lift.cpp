@@ -8,6 +8,7 @@
 #include "612.h"
 #include "lift.h"
 #include "NetworkCom.h"
+#include "controls.h"
 
 const float LIFT_SPEED = 0.4f;
 const float POWER_CHANGE_FOR_LOADED = 0.05; //%5 power change
@@ -18,10 +19,6 @@ const float LIFT_WEAKER_POWER = LIFT_SPEED - POWER_CHANGE_FOR_LOADED;
 Lift::Lift(hw_info jagInfo,hw_info potInfo) : pot(potInfo.moduleNumber,potInfo.channel)
 {
     liftMotor = new Jaguar(jagInfo.moduleNumber,jagInfo.channel);
-    updateRegistry.addUpdateFunction(&updateHelper,(void*)this);
-    manual = true;
-    loaded = false;
-}
 #else
 Lift::Lift(canport_t canJag)
 {
@@ -31,12 +28,12 @@ Lift::Lift(canport_t canJag)
     liftCan -> ChangeControlMode(CANJaguar::kPosition);
     liftCan -> SetPositionReference(CANJaguar::kPosRef_Potentiometer);
     liftCan -> ConfigPotentiometerTurns(POT_TURNS);
+#endif // Suzie
+    gunner_gamepad.addBtn(Gunner_Btn_LiftLoadPreset,&gunner_loaded_helper,(void*)this);
     updateRegistry.addUpdateFunction(&updateHelper,(void*)this);
-    gunner_gamepad.addBtn(10,&gunner_loaded_helper,(void*)this);
     manual = true;
     loaded = false;
-}    
-#endif //Suzie
+}
 //Todo add command to set angle and have jag go to it(button)
 Lift::~Lift() {
     delete liftMotor;

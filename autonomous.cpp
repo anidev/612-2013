@@ -83,7 +83,7 @@ void choose_routine(Position pos, AutoTarget target, bool BackDrive){
     auto_state_changed = true;
     shooter_prepped = false;
     shoot_tar = target;
-    if ((pos == Back_Left) || (pos == Front_Left))  
+    if ((pos == Back_Left) || (pos == Front_Left))
     {
         isLeft = true;
     }
@@ -91,7 +91,7 @@ void choose_routine(Position pos, AutoTarget target, bool BackDrive){
     {
         isLeft = false;
     }
-    if((pos == Back_Left) || (pos == Back_Right))  
+    if((pos == Back_Left) || (pos == Back_Right))
     {
         Frisbees = 3;
     }
@@ -99,9 +99,9 @@ void choose_routine(Position pos, AutoTarget target, bool BackDrive){
     {
         Frisbees = 2;
     }
-    if ((pos == Back_Left) || (pos == Back_Right)) 
+    if ((pos == Back_Left) || (pos == Back_Right))
     {
-        if (BackDrive) 
+        if (BackDrive)
         {
             state.set_state(AUTO_DRIVE);
             Frisbees = 3;
@@ -111,7 +111,7 @@ void choose_routine(Position pos, AutoTarget target, bool BackDrive){
             state.set_state(AUTO_SHOOT);
         }
     }
-    else if ((pos == Front_Left) || (pos == Front_Right)) 
+    else if ((pos == Front_Left) || (pos == Front_Right))
     {
         state.set_state(AUTO_TURN);
     }
