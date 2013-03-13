@@ -14,6 +14,9 @@ bool shooter_prepped = false;
 int Frisbees = 2;
 float Launcher_Speed = 0.4;
 
+float launch_tolerance = 0.05;
+float angle_toleralce = 0.2;
+
 const int DRIVE_DIST = 40;
 const int TURN_ANGLE = -34; // negative is clockwise, positive is counter-clockwise
 const float HIGH_LIFT_ANGLE = 2.58;     //suzie pot angles
@@ -22,7 +25,6 @@ const float LOW_LIFT_ANGLE = 2.14;      //suzie pot angles
 enum auto_states {
     AUTO_DRIVE,
     AUTO_TURN,
-    AUTO_PREP,
     AUTO_SHOOT,
     DONE
 };
@@ -35,7 +37,9 @@ void ShooterPrep(double angle, float speed) {
     if (!shooter_prepped) {
 	shooter.setSpeed(speed);
 	angleAdjuster.set_angle(angle);
-        shooter_prepped = true;
+	if (fabs(shooter.getCurrentSpeed() - speed >= launch_tolerance)) && (fabs((angleAdjuster.get_current_angle() >= angle_toleralce)) {
+	    shooter_prepped = true;
+	}
     }
 }
 
@@ -104,6 +108,11 @@ void choose_routine(Position pos, AutoTarget target, bool BackDrive){
 	}
     } else if ((pos == Front_Left) || (pos == Front_Right)) {
 	state.set_state(AUTO_TURN);
+    }
+    if (target == Middle_Goal) {
+	ShooterPrep(LOW_LIFT_ANGLE,Launcher_Speed);
+    } else {
+	ShooterPrep(HIGH_LIFT_ANGLE,Launcher_Speed);
     }
 }
 void do_autonomous() {
