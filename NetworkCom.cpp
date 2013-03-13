@@ -29,6 +29,13 @@ double NetworkCom::Autonomous_Target () {
     return Autonomous -> GetNumber ("Target",1.0);
 }
 
+double NetworkCom::Autonomous_BackDriving () {
+    if (Autonomous==NULL) {
+        return 1.0;
+    }
+    return Autonomous -> GetNumber ("BackDriving",0.0);
+}
+
 //if null end function
 void NetworkCom::target_available (bool target){
     if(Tracking != NULL){
