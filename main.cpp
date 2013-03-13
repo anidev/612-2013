@@ -115,7 +115,7 @@ void robot_class::TeleopPeriodic() {
 void robot_class::TestInit() {
 }
 void robot_class::TestPeriodic() {
-    static unsigned float target_speed = 0.0f;
+    static float target_speed = 0.0f;
     updateRegistry.updateAll();
     if(gunner_gamepad.GetRawButton(1))
     {
