@@ -49,8 +49,8 @@ Feeder::direction_t Feeder::getDirection() {
 
 void Feeder::update() {
 #ifndef Suzie
-    static int count=0;
-    if(count%25==0) {
+    static unsigned int count = 0;
+    if(count%25 == 0) {
         //std::printf("feeder hall effect: %d\n",counter.Get());
     }
     count++;

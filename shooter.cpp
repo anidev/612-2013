@@ -128,7 +128,7 @@ void Shooter::update() {
     }
 #endif
 }
-void Shooter::shoot(int tCount,double launchSpeed) {
+void Shooter::shoot(unsigned int tCount,double launchSpeed) {
     if(shooting) {
         return;
     }

@@ -15,7 +15,7 @@ public:
     void updateEJ();
     static void updateEJHelper(obj);
 private:
-    void callFunct(int);
+    void callFunct(unsigned int);
     std::vector<UINT32> btnNumbers;
     std::vector<funcName> helpers;
     std::vector<obj> objects;

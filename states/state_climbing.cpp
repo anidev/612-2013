@@ -12,7 +12,11 @@ float CLIMBING_SPEED = 0.6f;
 // 9== select/climbing|10 == start/driving
 void climbing_state ()
 {
+<<<<<<< HEAD
     if (drive_gamepad.GetRawButton(Driver_Btn_ClimbMode))
+=======
+    if (drive_gamepad.GetRawButton(Driver_Btn_NormalMode))
+>>>>>>> f3e2d4ff9fb2fdd423b3beee10bff8d87642709b
     {
         global_state.set_state(DRIVE);
         return;

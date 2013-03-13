@@ -15,6 +15,15 @@
 #include "main.h"
 #include "Shooter.h"
 #include "feeder.h"
+#include "controls.h"
+
+void single_shot_helper(void* dummy) {
+    shooter.shoot(1);
+}
+
+void multi_shot_helper(void* dummy) {
+    shooter.shoot(4);
+}
 
 robot_class::robot_class() {
     GetWatchdog().SetEnabled(false);
@@ -23,6 +32,8 @@ robot_class::robot_class() {
 void robot_class::RobotInit() {
     std::printf("RobotInit\n");
     netcom = new NetworkCom();
+    gunner_gamepad.addBtn(Gunner_Btn_SingleShot,single_shot_helper,NULL);
+    gunner_gamepad.addBtn(Gunner_Btn_MultiShot,multi_shot_helper,NULL);
 }
 
 void robot_class::DisabledInit() {
@@ -97,43 +108,41 @@ void robot_class::AutonomousPeriodic() {
 }
 
 void robot_class::TeleopPeriodic() {
-    static int counter = 0;
     updateRegistry.updateAll();
-    if(counter%25 == 0) {
-//        std::printf("Driver operating: %s\n",(driverOperation?"TRUE":"FALSE"));
-    }
-    counter++;
-    if(global_state.get_state() == DRIVE) {
+    if(global_state.get_state() == DRIVE) 
+    {
         driving_state();
         shooting_manual(); // at same time as driving
     }
-    else if(global_state.get_state() == SHOOT_AUTO) {
+    else if(global_state.get_state() == SHOOT_AUTO) 
+    {
         shooting_auto();
     }
-    else if(global_state.get_state() == CLIMBING) {
+    else if(global_state.get_state() == CLIMBING) 
+    {
         climbing_state();
     }
 }
 void robot_class::TestInit() {
 }
 void robot_class::TestPeriodic() {
-    static float target_speed=0.0f;
+    static float target_speed = 0.0f;
     updateRegistry.updateAll();
     if(gunner_gamepad.GetRawButton(1))
     {
-        target_speed=40.0f;
+        target_speed = 40.0f;
     }
     else if(gunner_gamepad.GetRawButton(2))
     {
-        target_speed=45.0f;
+        target_speed = 45.0f;
     }
     else if(gunner_gamepad.GetRawButton(3))
     {
-        target_speed=55.0f;
+        target_speed = 55.0f;
     }
     else if(gunner_gamepad.GetRawButton(4))
     {
-        target_speed=60.0f;
+        target_speed = 60.0f;
     }
     if(target_speed!=shooter.getTargetSpeed()) {
         shooter.setSpeed(target_speed);

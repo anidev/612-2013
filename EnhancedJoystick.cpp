@@ -30,7 +30,7 @@ void EnhancedJoystick::updateEJ() {
     }
 }
 
-void EnhancedJoystick::callFunct(int x) {
+void EnhancedJoystick::callFunct(unsigned int x) {
     (helpers.at(x))(objects.at(x));
 }
 

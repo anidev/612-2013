@@ -13,7 +13,7 @@ bool isBack;
 bool auto_state_changed = false;
 bool shooter_prepped = false;
 
-int Frisbees = 2;
+unsigned int Frisbees = 2;
 float Launcher_Speed = 0.4;
 
 const double DRIVE_DIST = 40;
@@ -34,9 +34,9 @@ AutoTarget shoot_tar;
 
 void ShooterPrep(double angle, float speed) {
     if (!shooter_prepped) {
-	shooter.setSpeed(speed);
-	angleAdjuster.set_angle(angle);
-	shooter_prepped = true;
+        shooter.setSpeed(speed);
+        angleAdjuster.set_angle(angle);
+        shooter_prepped = true;
     }
 }
 
@@ -88,7 +88,8 @@ void choose_routine(Position pos, AutoTarget target, bool BackDrive){
     if ((pos == Back_Left) || (pos == Front_Left))  {
         isLeft = true;
     }
-    else {
+    else 
+    {
         isLeft = false;
     }
     //check if the robot is in the back
@@ -144,4 +145,3 @@ void do_autonomous() {
 	std:: printf("Autonomous is finished");
     }
 }
-

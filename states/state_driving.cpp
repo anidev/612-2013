@@ -13,7 +13,7 @@ const float ARCADE_SPEED = 0.4f;
 
 // 9== select/climbing|10 == start/driving
 void driving_state() {
-    if (drive_gamepad.GetRawButton(9))
+    if (drive_gamepad.GetRawButton(Driver_Btn_ClimbMode))
     {
         global_state.set_state(CLIMBING);
         return;
@@ -45,12 +45,20 @@ void do_driving() {
     if(driverOperation)
     {
         // swiveling
+<<<<<<< HEAD
         if (drive_gamepad.GetRawButton(Driver_Btn_SwivelLeft))// L1
+=======
+        if (drive_gamepad.GetRawButton(Driver_Btn_SwivelLeft))
+>>>>>>> f3e2d4ff9fb2fdd423b3beee10bff8d87642709b
         {
             drive_train.TankDrive(-DRIVE_TURN_SPEED,DRIVE_TURN_SPEED);
             return;
         }
+<<<<<<< HEAD
         else if(drive_gamepad.GetRawButton(Driver_Btn_SwivelRight)) // R1
+=======
+        else if(drive_gamepad.GetRawButton(Driver_Btn_SwivelRight))
+>>>>>>> f3e2d4ff9fb2fdd423b3beee10bff8d87642709b
         {
             drive_train.TankDrive(DRIVE_TURN_SPEED,-DRIVE_TURN_SPEED);
             return;

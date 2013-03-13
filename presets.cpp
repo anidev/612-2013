@@ -3,7 +3,7 @@
 #include "shooter.h"
 #include "ports.h"
 
-presets::presets(float angle, int speed) {
+presets::presets(float angle, unsigned int speed) {
      lift_angle = angle;
      wheel_speed = speed;
 }
