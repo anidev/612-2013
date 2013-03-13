@@ -169,7 +169,10 @@ bool Shooter::isShot() {
 }
 
 bool Shooter::noFrisbees() {
-    return ((frisCounter.Get() > 2) && (launch.dropDetected()));
+    if ((frisCounter.Get() > 2) && (launch.dropDetected())) {
+        ledstrip_spike.Set(Relay::kOn);
+        return true;
+    }    
 }
 
 void Shooter::update_helper(void* a) {
