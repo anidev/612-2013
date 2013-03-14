@@ -6,6 +6,7 @@
 #include "shooter.h"
 #include "AutoShooter.h"
 #include "launcher.h"
+#include "autonomous_presets.h"
 
 bool isLeft;
 bool isBack; 
@@ -15,21 +16,11 @@ bool shooter_prepped = false;
 unsigned int Frisbees = 2;
 float Launcher_Speed = 0.4;
 
-float launch_tolerance = 0.05;
-float angle_toleralce = 0.2;
-
 const double DRIVE_DIST = 40;
 const double FRONT_TURN_ANGLE = -34; // negative is clockwise, positive is counter-clockwise
 const double BACK_TURN_ANGLE = -12;
 const float HIGH_LIFT_ANGLE = 2.58;     //suzie pot angles
 const float LOW_LIFT_ANGLE = 2.14;      //suzie pot angles
-
-/*
- * backaimitmiddle
- * backaimithigh
- * forwardaimitmiddle
- * forwardaimithigh
- */
 
 enum auto_states {
     AUTO_DRIVE,
@@ -102,23 +93,49 @@ void choose_routine(Position pos, AutoTarget target, bool BackDrive){
         isLeft = false;
     }
     //check if the robot is in the back
-    if((pos == Back_Left) || (pos == Back_Right))  {
-	isBack = true;
-        Frisbees = 3;
-	if (BackDrive) {
-	    state.set_state(AUTO_DRIVE);
-	} else {
-	    state.set_state(AUTO_SHOOT);
-	}
-    } else if ((pos == Front_Left) || (pos == Front_Right)) {
-	Frisbees = 2;
-	state.set_state(AUTO_TURN);
+    if((pos == Back_Left) || (pos == Back_Right)) 
+    {
+        isBack = true;
+            Frisbees = 3;
+        if (BackDrive) 
+        {
+            state.set_state(AUTO_DRIVE);
+            if (target == Middle_Goal) 
+            {
+                ShooterPrep(FrontMiddleLiftAngle,FrontMiddleLauncherSpeed); 
+            }
+            else 
+            {
+                ShooterPrep(FrontHighLiftAngle,FrontHighLauncherSpeed);
+            }
+        }
+        else
+        {
+            state.set_state(AUTO_SHOOT);
+            if (target == Middle_Goal) 
+            {
+                ShooterPrep(BackMiddleLiftAngle,BackMiddleLauncherSpeed); 
+            }
+            else
+            {
+                ShooterPrep(BackHighLiftAngle,BackHighLauncherSpeed);
+            }
+        }
     }
-    if (target == Middle_Goal) {
-	ShooterPrep(LOW_LIFT_ANGLE,Launcher_Speed);
-    } else {
-	ShooterPrep(HIGH_LIFT_ANGLE,Launcher_Speed);
+    else if ((pos == Front_Left) || (pos == Front_Right))
+    {
+        Frisbees = 2;
+        state.set_state(AUTO_TURN);
+        if (target == Middle_Goal)
+        {
+            ShooterPrep(FrontMiddleLiftAngle,FrontMiddleLauncherSpeed); 
+        }
+        else
+        {
+            ShooterPrep(FrontHighLiftAngle,FrontHighLauncherSpeed);
+        }
     }
+    /*Shooter prep logic*/
 }
 void do_autonomous() {
     if (state.get_state()==AUTO_DRIVE) {

@@ -22,7 +22,7 @@ bool state_changed = false;
 unsigned int speed_adjust_counter = 0;
 
 void shooting_auto() {
-    if (gunner_gamepad.GetRawButton (4)) // button Y on joystick
+    if (gunner_gamepad.GetRawButton (Gunner_Btn_PresetTwo)) 
     {
         // manual revision
         auto_shoot.abort();
@@ -39,13 +39,12 @@ void shooting_auto() {
 
 void shooting_manual() {
     state_changed = false;
-/*    if (gunner_gamepad.GetRawButton (4)) // button Y on gamepad
+    if (gunner_gamepad.GetRawButton (Gunner_Btn_PresetTwo)) 
     {
         global_state.set_state(SHOOT_AUTO);
         state_changed = true;
         return;
-    }*/
-
+    }
     // Lift
     if(gunner_gamepad.GetRawButton(Gunner_Btn_LiftUp))
     {
@@ -86,9 +85,7 @@ void shooting_manual() {
         speed_adjust_counter = 0;
     }
     netcom -> launcher_target_speed(new_shooter_wheel_speed);
-
-    // Manual shooting
-    if (gunner_gamepad.GetRawButton(Gunner_Btn_ShooterRev))
+    if (gunner_gamepad.GetRawButton(Gunner_Btn_PresetOne)) 
     {
         if(!speed_set||speed_changed) 
         {
@@ -106,7 +103,6 @@ void shooting_manual() {
         }
     }
     netcom -> launcher_current_speed(shooter.getCurrentSpeed());
-
     // Feeder
     // When let go, feeder will continue until it hits hall effect
     if(gunner_gamepad.GetRawAxis(Gunner_Axis_Feeder) < -0.98f) // right
@@ -117,7 +113,6 @@ void shooting_manual() {
     {
         shooter.setFeederBackward();
     }
-
     // Swivel
     if(!driverOperation)
     {
@@ -127,7 +122,6 @@ void shooting_manual() {
         }
         else if (gunner_gamepad.GetRawButton (Gunner_Btn_SwivelRight)) // turn robot right
         {
-            std::printf("swivel right\n");
             drive_train.TankDrive(-SHOOT_TURN_SPEED, SHOOT_TURN_SPEED);
         }
         else
