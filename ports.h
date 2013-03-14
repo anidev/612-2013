@@ -30,17 +30,16 @@ extern Relay led_spike;
 extern Relay ledstrip_spike;
 extern EnhancedJoystick drive_gamepad;
 extern EnhancedJoystick gunner_gamepad;
+static const char* const CAMERA_IP = "10.6.12.11";
+inline AxisCamera* camera() {
+    return &(AxisCamera::GetInstance(CAMERA_IP));
+}
 extern DataLogger logger;
 extern DriveTrain drive_train;
 extern Lift angleAdjuster;
 extern Shooter shooter;
 extern AutoShooter auto_shoot;
 extern NetworkCom* netcom;
-
-static const char* const CAMERA_IP = "10.6.12.2";
-inline AxisCamera* camera() {
-    return &(AxisCamera::GetInstance(CAMERA_IP));
-}
 
 #ifdef Suzie
     /*             SUZIE PORTS                    */
