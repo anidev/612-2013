@@ -16,12 +16,13 @@
 #include "Shooter.h"
 #include "feeder.h"
 #include "controls.h"
+#include <Relay.h>
 
 void led_toggle_helper(void* dummy) {
-    if (ledstrip_spike.Get()==kOff) 
+    if (ledstrip_spike.Get()==Relay::kOff) 
         ledstrip_spike.Set (Relay::kForward);
     else 
-        ledstrip_spike.set (Relay::kOff);
+        ledstrip_spike.Set (Relay::kOff);
 }
 
 void single_shot_helper(void* dummy) {
@@ -41,7 +42,7 @@ void robot_class::RobotInit() {
     netcom = new NetworkCom();
     gunner_gamepad.addBtn(Gunner_Btn_SingleShot,single_shot_helper,NULL);
     gunner_gamepad.addBtn(Gunner_Btn_MultiShot,multi_shot_helper,NULL);
-    driver_gamepad.addBtn(Driver_Btn_ToggleLED,led_toggle_helper,NULL);
+    drive_gamepad.addBtn(Driver_Btn_ToggleLED,led_toggle_helper,NULL);
 }
 
 void robot_class::DisabledInit() {
