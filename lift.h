@@ -42,6 +42,9 @@ public:
     float get_current_angle();
     float get_target_angle();
     bool at_angle();
+    void set_pot(float);
+    void set_max_up();
+    void set_max_down();
     float getRawPotValue(); 
 };
 

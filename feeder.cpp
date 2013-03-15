@@ -24,7 +24,7 @@ void Feeder::setRawPower(double power)
 }
 
 void Feeder::forward() {
-    direction = FORWARD;
+    direction = FORWARD;ka
     update();
 }
 

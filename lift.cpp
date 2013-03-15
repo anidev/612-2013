@@ -10,11 +10,11 @@
 #include "NetworkCom.h"
 #include "controls.h"
 
-
 const float LIFT_SPEED = 0.4f;
-const float POWER_CHANGE_FOR_LOADED = 0.05; //%5 power change
-const float LIFT_BOOST_POWER = LIFT_SPEED + POWER_CHANGE_FOR_LOADED;
-const float LIFT_WEAKER_POWER = LIFT_SPEED - POWER_CHANGE_FOR_LOADED;
+
+const float MAX_POT_UP = 5.19; //angle = 31.5
+const float MAX_POT_DOWN = 5.498; //angle = -37.1
+const float POT_ZERO = 5.327; //angle = 0
 
 #ifdef Suzie
 Lift::Lift(hw_info jagInfo,hw_info potInfo) : pot(potInfo.moduleNumber,potInfo.channel)
@@ -33,7 +33,6 @@ Lift::Lift(canport_t canJag)
     gunner_gamepad.addBtn(Gunner_Btn_LiftLoadPreset,&gunner_loaded_helper,(void*)this);
     updateRegistry.addUpdateFunction(&updateHelper,(void*)this);
     manual = true;
-    loaded = false;
 }
 //Todo add command to set angle and have jag go to it(button)
 Lift::~Lift() {
@@ -64,6 +63,25 @@ void Lift::set_angle(float new_angle) {
     ((CANJaguar*)liftMotor) -> Set(new_angle);
 #endif //Suzie
 }
+
+void Lift::set_pot(float new_pot) {
+    manual = false;
+#ifndef Suzie
+    ((CANJaguar*)liftMotor) -> ChangeControlMode(CANJaguar::kPosition);
+    ((CANJaguar*)liftMotor) -> Set(new_pot);
+#endif //Suzie
+}
+
+void Lift::set_max_up() {
+    set_pot(MAX_POT_UP);
+}
+
+void Lift::set_max_down() {
+    set_pot(MAX_POT_DOWN);
+}   
+
+
+
 float Lift::getRawPotValue() { //Todo find a way to get raw pot value from canjag
 #ifdef Suzie
     return pot.GetVoltage();
@@ -101,10 +119,17 @@ float Lift::potToAngle(float voltage) {
 
 bool Lift::at_angle() {
     std::printf("pot angle diff: %f\n",get_current_angle()-target_angle);
+    CANJaguar* LM = (CANJaguar*)liftMotor;
+    if (LM->GetOutputCurrent() == 0) {
+        return true;
+    } else {
+        return false;
+    }
+    /*
     if(std::fabs(get_current_angle()-target_angle)<AT_ANGLE_TOLERANCE) {
         return true;
     }
-    return false;
+    return false;*/
 }
 
 void Lift::set_direction(int d) {
@@ -115,36 +140,7 @@ void Lift::set_direction(int d) {
     CANJaguar* LM = (CANJaguar*)liftMotor;
     LM -> DisableControl();
     LM -> ChangeControlMode(CANJaguar::kPercentVbus);
-    if(!loaded)
-    {
-        LM -> Set(d*LIFT_SPEED);
-    }
-    else if(potToAngle(LM -> GetPosition() > 0))
-    {
-        if(d > 0)
-        {
-            LM -> Set(d*LIFT_BOOST_POWER);
-        }
-        else
-        {
-            LM -> Set(d*LIFT_SPEED);
-        }
-    }
-    else if(potToAngle(LM -> GetPosition() < 0))
-    {
-        if(d < 0)
-        {
-            LM -> Set(d*LIFT_BOOST_POWER);
-        }
-        else
-        {
-            LM -> Set(d*LIFT_SPEED);
-        }
-    }
-    else
-    {
-        LM -> Set(d*LIFT_SPEED);
-    }
+    LM -> Set(d*LIFT_SPEED);
 #endif //Suzie
 }
 

@@ -16,9 +16,6 @@ bool shooter_prepped = false;
 unsigned int Frisbees = 2;
 float Launcher_Speed = 0.4;
 
-double AutoAngle;
-float AutoSpeed;
-
 const double DRIVE_DIST = 40;
 const double FRONT_TURN_ANGLE = -34; // negative is clockwise, positive is counter-clockwise
 const double BACK_TURN_ANGLE = -12;
@@ -35,12 +32,10 @@ enum auto_states {
 State state(AUTO_DRIVE);
 AutoTarget shoot_tar;
 
-void ShooterPrep(/*double angle,*/ float speed) {
-    //AutoAngle = angle;
-    AutoSpeed = speed;
+void ShooterPrep(double angle, float speed) {
     if (!shooter_prepped) {
         shooter.setSpeed(speed);
-        //angleAdjuster.set_angle(angle);
+        angleAdjuster.set_angle(angle);
         shooter_prepped = true;
     }
 }
@@ -72,17 +67,13 @@ void turn(double angle) {
 }
 
 void shoot() {
-    if (!shooter.noFrisbees()) 
+    if (auto_state_changed) 
     {
         std::printf("shooting\n");
-        if (shooter.getCurrentSpeed() < AutoSpeed) {
-            shooter.setFeederForward();
-        } else {
-            shooter.setFeederStop();
-        }
+        auto_shoot.AutoShoot();
         auto_state_changed = false;
     }
-    else if (shooter.noFrisbees()) 
+    else if (auto_shoot.doneShooting()) 
     {
         state.set_state(DONE);
         auto_state_changed = true;
@@ -111,11 +102,11 @@ void choose_routine(Position pos, AutoTarget target, bool BackDrive){
             state.set_state(AUTO_DRIVE);
             if (target == Middle_Goal) 
             {
-                ShooterPrep(/*FrontMiddleLiftAngle,*/FrontMiddleLauncherSpeed); 
+                ShooterPrep(FrontMiddleLiftAngle,FrontMiddleLauncherSpeed); 
             }
             else 
             {
-                ShooterPrep(/*FrontHighLiftAngle,*/FrontHighLauncherSpeed);
+                ShooterPrep(FrontHighLiftAngle,FrontHighLauncherSpeed);
             }
         }
         else
@@ -123,11 +114,11 @@ void choose_routine(Position pos, AutoTarget target, bool BackDrive){
             state.set_state(AUTO_SHOOT);
             if (target == Middle_Goal) 
             {
-                ShooterPrep(/*BackMiddleLiftAngle,*/BackMiddleLauncherSpeed); 
+                ShooterPrep(BackMiddleLiftAngle,BackMiddleLauncherSpeed); 
             }
             else
             {
-                ShooterPrep(/*BackHighLiftAngle,*/BackHighLauncherSpeed);
+                ShooterPrep(BackHighLiftAngle,BackHighLauncherSpeed);
             }
         }
     }
@@ -137,35 +128,40 @@ void choose_routine(Position pos, AutoTarget target, bool BackDrive){
         state.set_state(AUTO_TURN);
         if (target == Middle_Goal)
         {
-            ShooterPrep(/*FrontMiddleLiftAngle,*/FrontMiddleLauncherSpeed); 
+            ShooterPrep(FrontMiddleLiftAngle,FrontMiddleLauncherSpeed); 
         }
         else
         {
-            ShooterPrep(/*FrontHighLiftAngle,*/FrontHighLauncherSpeed);
+            ShooterPrep(FrontHighLiftAngle,FrontHighLauncherSpeed);
         }
     }
     /*Shooter prep logic*/
 }
 void do_autonomous() {
-    if (state.get_state()==AUTO_DRIVE) {
-    drive(DRIVE_DIST);
+    /*if (state.get_state()==AUTO_DRIVE) {
+	drive(DRIVE_DIST);
     } else if (state.get_state()==AUTO_TURN){
-    if (isBack) {
-        if (isLeft){
-        turn(BACK_TURN_ANGLE);
-        } else {
-        turn(-BACK_TURN_ANGLE);
-        }
-    } else {
-        if (isLeft){
-        turn(FRONT_TURN_ANGLE);
-        } else {
-        turn(-FRONT_TURN_ANGLE);
-        }
-    }
+	if (isBack) {
+	    if (isLeft){
+		turn(BACK_TURN_ANGLE);
+	    } else {
+		turn(-BACK_TURN_ANGLE);
+	    }
+	} else {
+	    if (isLeft){
+		turn(FRONT_TURN_ANGLE);
+	    } else {
+		turn(-FRONT_TURN_ANGLE);
+	    }
+	}
     } else if (state.get_state()==AUTO_SHOOT) {
-    shoot();
+	shoot();
     } else if (state.get_state()==DONE) {
-    std:: printf("Autonomous is finished");
-    }
+	std:: printf("Autonomous is finished");
+    }*/
+    shooter.setSpeed(50);
+    if(shooter.atSpeed())
+        shooter.setFeederForward();
+    else
+        shooter.setFeederStop();
 }
