@@ -10,6 +10,7 @@
 #include "NetworkCom.h"
 #include "controls.h"
 
+
 const float LIFT_SPEED = 0.4f;
 const float POWER_CHANGE_FOR_LOADED = 0.05; //%5 power change
 const float LIFT_BOOST_POWER = LIFT_SPEED + POWER_CHANGE_FOR_LOADED;
