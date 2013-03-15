@@ -23,7 +23,8 @@ void driving_state() {
 }
 
 void do_driving() {
-    if(gunner_gamepad.GetRawButton(Gunner_Btn_SwivelLeft)||gunner_gamepad.GetRawButton(Gunner_Btn_SwivelRight)) {
+    if(gunner_gamepad.GetRawButton(Gunner_Btn_SwivelLeft)||gunner_gamepad.GetRawButton(Gunner_Btn_SwivelRight))
+    {
         driverOperation = false;
     }
     else if(!joyzero(drive_gamepad.GetRawAxis(Driver_Axis_TankLeft))||!joyzero(drive_gamepad.GetRawAxis(Driver_Axis_TankRight))) // axis controls
@@ -45,17 +46,16 @@ void do_driving() {
     if(driverOperation)
     {
         // swiveling
-        if (drive_gamepad.GetRawButton(Driver_Btn_SwivelLeft))// L1
+        if (drive_gamepad.GetRawButton(Driver_Btn_SwivelLeft))
         {
             drive_train.TankDrive(-DRIVE_TURN_SPEED,DRIVE_TURN_SPEED);
             return;
         }
-        else if(drive_gamepad.GetRawButton(Driver_Btn_SwivelRight)) // R1
+        else if(drive_gamepad.GetRawButton(Driver_Btn_SwivelRight))
         {
             drive_train.TankDrive(DRIVE_TURN_SPEED,-DRIVE_TURN_SPEED);
             return;
         }
-
         float arcade_y = drive_gamepad.GetRawAxis(Driver_Axis_Arcade);
         if(!joyzero(arcade_y)) {
             drive_train.TankDrive(arcade_y*ARCADE_SPEED,arcade_y*ARCADE_SPEED);

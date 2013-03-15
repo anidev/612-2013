@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <vision/HSLImage.h>
+#include <vision/AxisCamera.h>
 #include "dataLogger.h"
 #include "ports.h"
 #include "Shooter.h"
@@ -6,10 +8,15 @@
 #include "lift.h"
 #include "drivetrain.h"
 
+static void AutoLogHelper(void* o) {
+    ((DataLogger*)o) -> LogAutonomousSuccessPosition();
+}
+
 DataLogger::DataLogger(): systemTimer(),iterativeTimer() {
     iterativeTimer.Start();
     systemTimer.Start();
     updateRegistry.addUpdateFunction(&update_helper,(void*)this);
+    drive_gamepad.addBtn(1,&AutoLogHelper,(void*)this);
 }
 
 void DataLogger::LogShot() {
@@ -60,8 +67,8 @@ DataLogger::~DataLogger() {
 }
 
 void DataLogger::LogCameraImage(string s) {
-    ColorImage* image = camera() -> GetImage();
-    char tmp[500];
+    HSLImage* image = camera() -> GetImage();
+    char tmp[100];
     sprintf(tmp,"%s_%f.jpeg",s.c_str(),systemTimer.GetFPGATimestamp());
     image -> Write(tmp);
     delete image;
@@ -347,14 +354,14 @@ void DataLogger::LogAutonomousSuccessPosition() {
     static unsigned int count = 0;
     count++;
     char buffer[500];
-    sprintf(buffer,"AutonomousPos_%i_%f",count,systemTimer.GetFPGATimestamp());
+    sprintf(buffer,"AutonomousPos_%i_%i.txt",count,(int)systemTimer.GetFPGATimestamp());
     File f(buffer);
     char buf2[30];
     sprintf(buf2,"Wheel Target: %f",shooter.getTargetSpeed());
     f.addLine(buf2);
     char buf3[30];
     sprintf(buf3,"Wheel Current: %f",shooter.getCurrentSpeed());
-    f.addLine(buf2);
+    f.addLine(buf3);
 #ifndef Suzie
     char buf4[30];
     sprintf(buf4,"IR Raw: %f",shooter.IRSensor.GetVoltage());

@@ -22,7 +22,8 @@ bool state_changed = false;
 unsigned int speed_adjust_counter = 0;
 
 void shooting_auto() {
-    if (gunner_gamepad.GetRawButton (Gunner_Btn_PresetTwo)) {          // button Y on joystick
+    if (gunner_gamepad.GetRawButton (Gunner_Btn_PresetTwo)) 
+    {
         // manual revision
         auto_shoot.abort();
         global_state.set_state(DRIVE);
@@ -38,12 +39,12 @@ void shooting_auto() {
 
 void shooting_manual() {
     state_changed = false;
-    if (gunner_gamepad.GetRawButton (Gunner_Btn_PresetTwo)) {          // button Y on gamepad
+    if (gunner_gamepad.GetRawButton (Gunner_Btn_PresetTwo)) 
+    {
         global_state.set_state(SHOOT_AUTO);
         state_changed = true;
         return;
     }
-
     // Lift
     if(gunner_gamepad.GetRawButton(Gunner_Btn_LiftUp))
     {
@@ -84,9 +85,7 @@ void shooting_manual() {
         speed_adjust_counter = 0;
     }
     netcom -> launcher_target_speed(new_shooter_wheel_speed);
-
-    // Manual shooting
-    if (gunner_gamepad.GetRawButton(Gunner_Btn_ShooterRev))
+    if (gunner_gamepad.GetRawButton(Gunner_Btn_PresetOne)) 
     {
         if(!speed_set||speed_changed) 
         {
@@ -114,7 +113,6 @@ void shooting_manual() {
     {
         shooter.setFeederBackward();
     }
-
     // Swivel
     if(!driverOperation)
     {
@@ -124,7 +122,6 @@ void shooting_manual() {
         }
         else if (gunner_gamepad.GetRawButton (Gunner_Btn_SwivelRight)) // turn robot right
         {
-            std::printf("swivel right\n");
             drive_train.TankDrive(-SHOOT_TURN_SPEED, SHOOT_TURN_SPEED);
         }
         else
