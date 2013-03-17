@@ -9,7 +9,11 @@
 #include "EnhancedShooter.h"
 //TODO Add Stop Task Autonomous to disableReg
 
-robot_class::robot_class(): drive_gamepad(1,(void*)this), gunner_gamepad(2,(void*)this), Autonomous("Auto",(FUNCPTR)&doAutonomous){
+robot_class::robot_class():
+        drive_gamepad(1,(void*)this),
+        gunner_gamepad(2,(void*)this),
+        Autonomous("Auto",(FUNCPTR)&doAutonomous)
+{
     GetWatchdog().SetEnabled(false);
     disableRegistry.addUpdateFunction(&disableAuto,(void*)this); // Add Autonomous disable to disableReg
     //Hardware Info
@@ -43,8 +47,6 @@ void robot_class::AutonomousInit() {
 
 void robot_class::TeleopInit() {
     enableRegistry.updateAll();
-    driveTrain -> doControls();
-    shooter -> doControls();
 }
 
 void robot_class::DisabledPeriodic() {
@@ -56,6 +58,8 @@ void robot_class::AutonomousPeriodic() {
 
 void robot_class::TeleopPeriodic() {
     updateRegistry.updateAll();
+    driveTrain -> doControls();
+    shooter -> doControls();
     
 }
 
