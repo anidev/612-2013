@@ -16,7 +16,8 @@ private:
     void set_direction(int);
     void update();
     static void updateHelper(void*);
-    SpeedController * liftMotor;
+public:    SpeedController * liftMotor;
+private:
     static float potToAngle(float);
     static float angleToPot(float);
     #ifdef Suzie
@@ -42,9 +43,6 @@ public:
     float get_current_angle();
     float get_target_angle();
     bool at_angle();
-    void set_pot(float);
-    void set_max_up();
-    void set_max_down();
     float getRawPotValue(); 
 };
 

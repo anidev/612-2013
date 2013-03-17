@@ -7,6 +7,8 @@
 #include "AutoShooter.h"
 #include "launcher.h"
 #include "autonomous_presets.h"
+#include <CANJaguar.h>
+#include <SpeedController.h>
 
 bool isLeft;
 bool isBack; 
@@ -158,10 +160,26 @@ void do_autonomous() {
 	shoot();
     } else if (state.get_state()==DONE) {
 	std:: printf("Autonomous is finished");
-    }*/
-    shooter.setSpeed(50);
-    if(shooter.atSpeed())
+    }
+    */
+    static bool set = false;
+    static bool angleReached = false;
+    if(!set)
+    {
+        angleAdjuster.lift_up();
+        shooter.setSpeed(60.0);
+        set = true;
+    }
+    if(!(((CANJaguar*)(angleAdjuster.liftMotor)) -> GetForwardLimitOK()) || ! (((CANJaguar*)(angleAdjuster.liftMotor)) -> GetReverseLimitOK())) 
+    {
+        angleReached = true;
+    }
+    if(shooter.atSpeed() && angleReached)
+    {
         shooter.setFeederForward();
+    }
     else
+    {
         shooter.setFeederStop();
+    }
 }
