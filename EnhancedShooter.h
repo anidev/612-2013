@@ -39,6 +39,11 @@ public:
     void stopWheel();
     void stopLift();
     void stopFeeder();
+    //Todo add the 4 below
+    void setAngle();
+    void setSpeed();
+    void atAngle(float);
+    void atSpeed();
     static void update_helper(void*);
     static void disable(void*);
 };
