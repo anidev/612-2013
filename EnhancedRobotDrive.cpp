@@ -3,7 +3,11 @@
 #include "EnhancedRobotDrive.h"
 #include "main.h"
 
-EnhancedRobotDrive::EnhancedRobotDrive(SpeedController* a,SpeedController* b,SpeedController* c,SpeedController* d,void* o):RobotDrive(a,b,c,d),rightShifter(2,6),leftShifter(2,5) {
+EnhancedRobotDrive::EnhancedRobotDrive(SpeedController* a,SpeedController* b,SpeedController* c,SpeedController* d,void* o):
+        RobotDrive(a,b,c,d),
+        rightShifter(2,6),
+        leftShifter(2,5) 
+{
     robot_class* robot = (robot_class*)o;
     driver = &(robot -> drive_gamepad);
     gunner = &(robot -> gunner_gamepad);
