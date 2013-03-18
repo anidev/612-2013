@@ -14,6 +14,7 @@ robot_class::robot_class():
         gunner_gamepad(2,(void*)this),
         Autonomous("Auto",(FUNCPTR)&doAutonomous)
 {
+    curState = NORMAL;
     GetWatchdog().SetEnabled(false);
     disableRegistry.addUpdateFunction(&disableAuto,(void*)this); // Add Autonomous disable to disableReg
     //Hardware Info
@@ -31,6 +32,9 @@ robot_class::robot_class():
                            new Talon(right_front_motor.moduleNumber,right_front_motor.channel),
                            new Talon(right_rear_motor.moduleNumber,right_rear_motor.channel),(void*)this);
     shooter = new EnhancedShooter(shooterWheelCanport,shooterLiftCanport,feeder,halEffect,(void*)this);
+    drive_gamepad.addBtn(BTN_CLIMBING_STATE,&setClimbing,(void*)this);
+    drive_gamepad.addBtn(BTN_NORMAL_STATE,&setNormal,(void*)this);
+    enableRegistry.updateAll();
 }
 
 void robot_class::RobotInit() {
@@ -54,6 +58,7 @@ void robot_class::DisabledPeriodic() {
 }
 
 void robot_class::AutonomousPeriodic() {
+    updateRegistry.updateAll();
 }
 
 void robot_class::TeleopPeriodic() {
@@ -67,6 +72,12 @@ void robot_class::TestInit() {
 }
 
 void robot_class::TestPeriodic() {
+}
+void robot_class::setClimbing(void* o) {
+    (((robot_class*)o) -> curState) = NORMAL;
+}
+void robot_class::setNormal(void* o) {
+    (((robot_class*)o) -> curState) = CLIMBING;
 }
 //the following macro tells the library that we want to generate code
 //for our class robot_class

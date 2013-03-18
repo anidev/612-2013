@@ -4,6 +4,7 @@ EnhancedShooter::EnhancedShooter(int w,int L,robot_class::hw_info f,robot_class:
     (((robot_class*)o) -> updateRegistry).addUpdateFunction(&update_helper,(void*)this);
     driver = &((robot_class*)o) -> drive_gamepad;
     gunner = &((robot_class*)o) -> gunner_gamepad;
+    robotState = &((robot_class*)o) -> curState;
     HalEffect.Start();
 }
 void EnhancedShooter::setWheelPower(float speed) {
@@ -18,11 +19,20 @@ void EnhancedShooter::setLiftPower(float pwr) {
     lift.Set(pwr);
 }
 void EnhancedShooter::update() {
-    if(HalEffect.Get() > 0)
+    if(*robotState == state::NORMAL)
     {
+        if(HalEffect.Get() > 0)
+        {
+            stopFeeder();
+            HalEffect.Reset();
+            HalEffect.Start();
+        }
+    }
+    else
+    {
+        setLiftPower(-1 * LIFT_POWER); //Limit Switch Will Stop It
         stopFeeder();
-        HalEffect.Reset();
-        HalEffect.Start();
+        stopWheel();
     }
 }
 void EnhancedShooter::stopAll() {
@@ -44,6 +54,8 @@ void EnhancedShooter::stopFeeder() {
     feeder.Set(0.0f);
 }
 void EnhancedShooter::doControls() {
+    if(*robotState != state::NORMAL)
+        return; // NO conrols in climbing mode
     //Wheel Control
     if(gunner -> GetRawButton(GUNNER_BTN_SHOOTER_WHEEL))
     {

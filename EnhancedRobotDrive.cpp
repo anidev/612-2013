@@ -7,6 +7,7 @@ EnhancedRobotDrive::EnhancedRobotDrive(SpeedController* a,SpeedController* b,Spe
     robot_class* robot = (robot_class*)o;
     driver = &(robot -> drive_gamepad);
     gunner = &(robot -> gunner_gamepad);
+    robotState = &(robot -> curState);
     driver -> addBtn(DRIVER_SHIFT_LOW,&shiftLowGear,(void*)this);
     driver -> addBtn(DRIVER_SHIFT_HIGH,&shiftHighGear,(void*)this);
     robot -> disableRegistry.addUpdateFunction(&disable,(void*)this);

@@ -8,6 +8,12 @@ class EnhancedRobotDrive;
 class EnhancedShooter;
 class robot_class : public IterativeRobot {
 public:
+    static unsigned int BTN_CLIMBING_STATE = 9;
+    static unsigned int BTN_NORMAL_STATE   = 10;
+    enum state {
+        CLIMBING,
+        NORMAL
+    } curState;
     robot_class();
 
     void RobotInit();
@@ -34,6 +40,9 @@ public:
     };
     EnhancedRobotDrive* driveTrain;
     EnhancedShooter* shooter;
+private:
+    static void setClimbing(void*);
+    static void setNormal(void*);
 };
 
 #endif

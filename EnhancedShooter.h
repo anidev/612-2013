@@ -22,6 +22,7 @@ private:
     Counter HalEffect;
     EnhancedJoystick* driver;
     EnhancedJoystick* gunner;
+    state* robotState;
 public:
     static const unsigned int GUNNER_BTN_SHOOTER_WHEEL    = 1;
     static const unsigned int GUNNER_BTN_LIFT_UP          = 5;

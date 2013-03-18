@@ -25,6 +25,7 @@ public:
 private:                            // Low  High  
     Servo rightShifter;
     Servo leftShifter;
+    state* robotState;
     enum dir {
         LEFT,
         RIGHT
