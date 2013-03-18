@@ -1,6 +1,10 @@
 #include "EnhancedShooter.h"
 #include "main.h"
-EnhancedShooter::EnhancedShooter(int w,int L,robot_class::hw_info f,robot_class::hw_info c,void* o):wheel(w),lift(L),feeder(f.moduleNumber,f.channel),HalEffect(c.moduleNumber,c.channel) {
+EnhancedShooter::EnhancedShooter(int w,int L,robot_class::hw_info f,robot_class::hw_info c,void* o):
+        wheel(w),
+        lift(L),
+        feeder(f.moduleNumber,f.channel),HalEffect(c.moduleNumber,c.channel) 
+{
     (((robot_class*)o) -> updateRegistry).addUpdateFunction(&update_helper,(void*)this);
     driver = &((robot_class*)o) -> drive_gamepad;
     gunner = &((robot_class*)o) -> gunner_gamepad;
