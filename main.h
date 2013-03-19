@@ -8,8 +8,8 @@ class EnhancedRobotDrive;
 class EnhancedShooter;
 class robot_class : public IterativeRobot {
 public:
-    static unsigned int BTN_CLIMBING_STATE = 9;
-    static unsigned int BTN_NORMAL_STATE   = 10;
+    static const unsigned int BTN_CLIMBING_STATE = 9;
+    static const unsigned int BTN_NORMAL_STATE   = 10;
     enum state {
         CLIMBING,
         NORMAL
@@ -28,7 +28,6 @@ public:
     void TestPeriodic();
     
     UpdateRegistry disableRegistry;
-    UpdateRegistry enableRegistry;
     UpdateRegistry updateRegistry;
     EnhancedJoystick drive_gamepad; //1
     EnhancedJoystick gunner_gamepad; //2

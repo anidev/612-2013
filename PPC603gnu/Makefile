@@ -174,6 +174,10 @@ JeffBase_partialImage/$(MODE_DIR)/Objects/JeffBase/EnhancedShooter.o : $(PRJ_ROO
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
+JeffBase_partialImage/$(MODE_DIR)/Objects/JeffBase/PIDCounter.o : $(PRJ_ROOT_DIR)/PIDCounter.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
 JeffBase_partialImage/$(MODE_DIR)/Objects/JeffBase/autonomous.o : $(PRJ_ROOT_DIR)/autonomous.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
@@ -189,6 +193,7 @@ JeffBase_partialImage/$(MODE_DIR)/Objects/JeffBase/updateRegistry.o : $(PRJ_ROOT
 OBJECTS_JeffBase_partialImage = JeffBase_partialImage/$(MODE_DIR)/Objects/JeffBase/EnhancedJoystick.o \
 	 JeffBase_partialImage/$(MODE_DIR)/Objects/JeffBase/EnhancedRobotDrive.o \
 	 JeffBase_partialImage/$(MODE_DIR)/Objects/JeffBase/EnhancedShooter.o \
+	 JeffBase_partialImage/$(MODE_DIR)/Objects/JeffBase/PIDCounter.o \
 	 JeffBase_partialImage/$(MODE_DIR)/Objects/JeffBase/autonomous.o \
 	 JeffBase_partialImage/$(MODE_DIR)/Objects/JeffBase/main.o \
 	 JeffBase_partialImage/$(MODE_DIR)/Objects/JeffBase/updateRegistry.o
@@ -206,7 +211,8 @@ JeffBase_partialImage/$(MODE_DIR)/JeffBase_partialImage_clean :
 force : 
 
 DEP_FILES := JeffBase_partialImage/$(MODE_DIR)/Objects/JeffBase/EnhancedJoystick.d JeffBase_partialImage/$(MODE_DIR)/Objects/JeffBase/EnhancedRobotDrive.d JeffBase_partialImage/$(MODE_DIR)/Objects/JeffBase/EnhancedShooter.d \
-	 JeffBase_partialImage/$(MODE_DIR)/Objects/JeffBase/autonomous.d JeffBase_partialImage/$(MODE_DIR)/Objects/JeffBase/main.d JeffBase_partialImage/$(MODE_DIR)/Objects/JeffBase/updateRegistry.d
+	 JeffBase_partialImage/$(MODE_DIR)/Objects/JeffBase/PIDCounter.d JeffBase_partialImage/$(MODE_DIR)/Objects/JeffBase/autonomous.d JeffBase_partialImage/$(MODE_DIR)/Objects/JeffBase/main.d \
+	 JeffBase_partialImage/$(MODE_DIR)/Objects/JeffBase/updateRegistry.d
 -include $(DEP_FILES)
 
 

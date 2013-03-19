@@ -15,6 +15,8 @@ EnhancedRobotDrive::EnhancedRobotDrive(SpeedController* a,SpeedController* b,Spe
     driver -> addBtn(DRIVER_SHIFT_LOW,&shiftLowGear,(void*)this);
     driver -> addBtn(DRIVER_SHIFT_HIGH,&shiftHighGear,(void*)this);
     robot -> disableRegistry.addUpdateFunction(&disable,(void*)this);
+    robot -> updateRegistry.addUpdateFunction(&update,(void*)this);
+    drivePower = 1.0;
 }
 EnhancedRobotDrive::~EnhancedRobotDrive() {
     
@@ -25,7 +27,7 @@ void EnhancedRobotDrive::doControls() {
         //Skyler Driving
         TankDrive(driver -> GetRawAxis(DRIVER_LEFT_DRIVE_AXIS),driver -> GetRawAxis(DRIVER_RIGHT_DRIVE_AXIS));
     }
-    else if(gunner -> GetRawButton(GUNNER_SWIVLE_RIGHT) || gunner -> GetRawButton(GUNNER_SWIVLE_LEFT))
+    else if((gunner -> GetRawButton(GUNNER_SWIVLE_RIGHT) || gunner -> GetRawButton(GUNNER_SWIVLE_LEFT)) && *robotState == robot_class::NORMAL)
     {
         //Ben Swivle
         if(gunner -> GetRawButton(GUNNER_SWIVLE_RIGHT))
@@ -73,4 +75,15 @@ void EnhancedRobotDrive::shiftHighGear(void* o) {
     static const float krightgear[] = {0.2, 0.8};
     (((EnhancedRobotDrive*)o) -> leftShifter).Set(kleftgear[1]);
     (((EnhancedRobotDrive*)o) -> rightShifter).Set(krightgear[1]);
+}
+void EnhancedRobotDrive::update(void* o) {
+    EnhancedRobotDrive* thisObject = (EnhancedRobotDrive*)o;
+    if(*(thisObject -> robotState) == robot_class::NORMAL)
+    {
+        thisObject -> drivePower = 1.0;
+    }
+    else
+    {
+        thisObject -> drivePower = 0.7;
+    }
 }

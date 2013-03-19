@@ -1,18 +1,12 @@
 #include "autonomous.h"
 #include "main.h"
 #include "EnhancedShooter.h"
-#include "EnhancedRobotDrive"
+#include "EnhancedRobotDrive.h"
 
 void doAutonomous(void* o) {
-    /*        Psuedo Code
-     *  1) Set Angle
-     *  2) Set Speed
-     *  3) If at both then feed
-     *  4) repeat #3
-     */
      //settings
-     static const unsigned float SPEED = 60.0f;
-     static const unsigned float ANGLE = 27.0f;
+     static const float SPEED = 60.0f;
+     static const float ANGLE = 27.0f;
      
      //Initialize Pointers
      robot_class* robot = (robot_class*)o;
@@ -22,10 +16,10 @@ void doAutonomous(void* o) {
      shooter -> setAngle(ANGLE);
      shooter -> setSpeed(SPEED);
      
-     while(!shooter -> atAngle(ANGLE)) {} //Wait for at angle
+     while(!shooter -> atAngle(ANGLE)) {} //Wait for at angle TODO add wait
      shooter -> stopLift(); //Stop PID when at speed
      
-     while(true) //yes i know not great coding practice
+     while(true) //yes i know not great coding practice Todo add wait
      {
          if(shooter -> atSpeed(SPEED))
          {

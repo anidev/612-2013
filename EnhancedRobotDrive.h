@@ -5,6 +5,8 @@
 #include <SpeedController.h>
 #include <Servo.h>
 #include "EnhancedJoystick.h"
+#include "main.h"
+
 class EnhancedRobotDrive : public RobotDrive {
 public:
     static const float DRIVE_TURN_SPEED = 0.7f;
@@ -22,10 +24,11 @@ public:
     static void disable(void*);
     static void shiftLowGear(void*);
     static void shiftHighGear(void*);
-private:                            // Low  High  
+private:
+    float drivePower; // 1.0 Normal and 0.6 Climbing
     Servo rightShifter;
     Servo leftShifter;
-    state* robotState;
+    robot_class::state* robotState;
     enum dir {
         LEFT,
         RIGHT
@@ -33,5 +36,6 @@ private:                            // Low  High
     void swivle(dir);
     EnhancedJoystick* driver;
     EnhancedJoystick* gunner;
+    static void update(void*);
 };
 #endif

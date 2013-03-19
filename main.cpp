@@ -34,11 +34,9 @@ robot_class::robot_class():
     shooter = new EnhancedShooter(shooterWheelCanport,shooterLiftCanport,feeder,halEffect,(void*)this);
     drive_gamepad.addBtn(BTN_CLIMBING_STATE,&setClimbing,(void*)this);
     drive_gamepad.addBtn(BTN_NORMAL_STATE,&setNormal,(void*)this);
-    enableRegistry.updateAll();
 }
 
 void robot_class::RobotInit() {
-    enableRegistry.updateAll();
 }
 
 void robot_class::DisabledInit() {
@@ -50,7 +48,6 @@ void robot_class::AutonomousInit() {
 }
 
 void robot_class::TeleopInit() {
-    enableRegistry.updateAll();
 }
 
 void robot_class::DisabledPeriodic() {
