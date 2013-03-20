@@ -14,8 +14,8 @@ friend class DataLogger;
 protected: Counter counter;
 public:
     enum direction_t { // Will change to proper motor speed later
-        FORWARD = 1,
-        BACKWARD = -1,
+        FORWARD = -1,
+        BACKWARD = 1,
         STOP = 0
     };
 #ifdef Suzie
