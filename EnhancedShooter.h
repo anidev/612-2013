@@ -2,7 +2,7 @@
 #define ENHANCED_SHOOTER_H
 
 #include <CANJaguar.h>
-#include <Jaguar.h>
+#include <Talon.h>
 #include <Counter.h>
 #include <PIDController.h>
 #include "main.h"
@@ -34,7 +34,7 @@ private:
     
     CANJaguar wheel;
     CANJaguar lift;
-    Jaguar feeder;
+    Talon feeder;
     Counter HalEffect;
     EnhancedJoystick* driver;
     EnhancedJoystick* gunner;
