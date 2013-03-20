@@ -244,14 +244,14 @@
         </mapAttribute>
     </attributes>
     <buildtargets>
-        <buildtarget buildtool="Linker" name="JeffBase" passed="false" targetname="JeffBase">
+        <buildtarget buildtool="Linker" name="Rootbeer" passed="false" targetname="Rootbeer">
             <contents>
-                <buildtargetreference name="/JeffBase/JeffBase_partialImage"/>
+                <buildtargetreference name="/Rootbeer/Rootbeer_partialImage"/>
             </contents>
         </buildtarget>
-        <buildtarget buildtool="Partial Image Linker" name="JeffBase_partialImage" passed="true" targetname="JeffBase_partialImage">
+        <buildtarget buildtool="Partial Image Linker" name="Rootbeer_partialImage" passed="true" targetname="Rootbeer_partialImage">
             <contents>
-                <folder name="/JeffBase" recursive="true"/>
+                <folder name="/Rootbeer" recursive="true"/>
             </contents>
         </buildtarget>
     </buildtargets>
