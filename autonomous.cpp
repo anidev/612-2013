@@ -7,179 +7,97 @@
 #include "AutoShooter.h"
 #include "launcher.h"
 #include "autonomous_presets.h"
-#include <CANJaguar.h>
-#include <SpeedController.h>
 
-bool isLeft;
-bool isBack; 
-bool auto_state_changed = false;
-bool shooter_prepped = false;
+int Routine = 4;
+//static bool set = false;
+bool isDown = false;
+bool angleReached = false;
 
-unsigned int Frisbees = 2;
+float target_angle = 0;
+
+int state = 1;
+
 float Launcher_Speed = 0.4;
 
-const double DRIVE_DIST = 40;
-const double FRONT_TURN_ANGLE = -34; // negative is clockwise, positive is counter-clockwise
-const double BACK_TURN_ANGLE = -12;
-const float HIGH_LIFT_ANGLE = 2.58;     //suzie pot angles
-const float LOW_LIFT_ANGLE = 2.14;      //suzie pot angles
-
-enum auto_states {
-    AUTO_DRIVE,
-    AUTO_TURN,
-    AUTO_SHOOT,
-    DONE
-};
-
-State state(AUTO_DRIVE);
-AutoTarget shoot_tar;
-
-void ShooterPrep(double angle, float speed) {
-    if (!shooter_prepped) {
-        shooter.setSpeed(speed);
-        angleAdjuster.set_angle(angle);
-        shooter_prepped = true;
-    }
-}
-
-
-void drive(double dist /*inches*/) {
-    if (auto_state_changed) 
-    {
-        drive_train.drive(dist);
-        auto_state_changed = false;
-    }
-    else if (drive_train.isFinished()) 
-    {
-        state.set_state(AUTO_TURN);
-        auto_state_changed = true;
-    }
-}
-
-void turn(double angle) {
-    if (auto_state_changed) 
-    {
-        drive_train.turn(angle);
-        auto_state_changed = false;
-    }
-    else if (drive_train.isFinished()) {
-        state.set_state(AUTO_SHOOT);
-        auto_state_changed = true;
-    }
-}
-
-void shoot() {
-    if (auto_state_changed) 
-    {
-        std::printf("shooting\n");
-        auto_shoot.AutoShoot();
-        auto_state_changed = false;
-    }
-    else if (auto_shoot.doneShooting()) 
-    {
-        state.set_state(DONE);
-        auto_state_changed = true;
-    }
-}
-
-void choose_routine(Position pos, AutoTarget target, bool BackDrive){
-    auto_state_changed = true;
-    shooter_prepped = false;
-    shoot_tar = target;
-    //check if the robot is on the left
-    if ((pos == Back_Left) || (pos == Front_Left))  {
-        isLeft = true;
-    }
-    else 
-    {
-        isLeft = false;
-    }
-    //check if the robot is in the back
-    if((pos == Back_Left) || (pos == Back_Right)) 
-    {
-        isBack = true;
-            Frisbees = 3;
-        if (BackDrive) 
+void do_autonomous(){
+    if (Routine == 1) {
+        static bool set = false;
+        static bool inPos = false;
+        if(set == false)
         {
-            state.set_state(AUTO_DRIVE);
-            if (target == Middle_Goal) 
-            {
-                ShooterPrep(FrontMiddleLiftAngle,FrontMiddleLauncherSpeed); 
-            }
-            else 
-            {
-                ShooterPrep(FrontHighLiftAngle,FrontHighLauncherSpeed);
-            }
+            shooter.setSpeed(60.0);
+            angleAdjuster.set_angle(5.15);
+            set = true;
         }
-        else
+        else if(angleAdjuster.at_angle())
         {
-            state.set_state(AUTO_SHOOT);
-            if (target == Middle_Goal) 
-            {
-                ShooterPrep(BackMiddleLiftAngle,BackMiddleLauncherSpeed); 
-            }
+            if(shooter.atSpeed())
+                shooter.setFeederForward();
             else
-            {
-                ShooterPrep(BackHighLiftAngle,BackHighLauncherSpeed);
-            }
-        }
-    }
-    else if ((pos == Front_Left) || (pos == Front_Right))
-    {
-        Frisbees = 2;
-        state.set_state(AUTO_TURN);
-        if (target == Middle_Goal)
-        {
-            ShooterPrep(FrontMiddleLiftAngle,FrontMiddleLauncherSpeed); 
+                shooter.setFeederStop();
+            inPos = true;
+            angleAdjuster.lift_stop();
         }
         else
         {
-            ShooterPrep(FrontHighLiftAngle,FrontHighLauncherSpeed);
+            shooter.setFeederStop();
         }
     }
-    /*Shooter prep logic*/
-}
-void do_autonomous() {
-    /*if (state.get_state()==AUTO_DRIVE) {
-	drive(DRIVE_DIST);
-    } else if (state.get_state()==AUTO_TURN){
-	if (isBack) {
-	    if (isLeft){
-		turn(BACK_TURN_ANGLE);
-	    } else {
-		turn(-BACK_TURN_ANGLE);
-	    }
-	} else {
-	    if (isLeft){
-		turn(FRONT_TURN_ANGLE);
-	    } else {
-		turn(-FRONT_TURN_ANGLE);
-	    }
-	}
-    } else if (state.get_state()==AUTO_SHOOT) {
-	shoot();
-    } else if (state.get_state()==DONE) {
-	std:: printf("Autonomous is finished");
+    
+    
+    else if (Routine == 2) {
+        static bool set = false;
+        if(set == false)
+        {
+            shooter.setSpeed(60.0);
+            angleAdjuster.lift_down();
+            set = true;
+            state = 2;
+        }
+        else if (state == 2) {
+            //encoder.reset();
+            state = 3;
+        }
+        else if (state == 3) {
+            angleAdjuster.lift_up(/*encoder value*/);
+            state = 4;
+        }
+        if ((state == 4) && (shooter.atSpeed()))
+            shooter.setFeederForward();
     }
-    */
-    static bool set = false;
-    static bool angleReached = false;
-    if(!set)
+            
+            
+    else if (Routine == 3) {
+        static bool set = false;
+        if(set == false)
+        {
+            shooter.setSpeed(60.0);
+            angleAdjuster.lift_down();
+            set = true;
+        }
+        if(shooter.atSpeed()){
+            shooter.setFeederForward();
+        }      
+    }
+    else if (Routine == 4) {
+        static bool set = false;
+        if(set == false)
     {
         angleAdjuster.lift_up();
         shooter.setSpeed(60.0);
         set = true;
     }
-    if(!(((CANJaguar*)(angleAdjuster.liftMotor)) -> GetForwardLimitOK()) || ! (((CANJaguar*)(angleAdjuster.liftMotor)) -> GetReverseLimitOK())) 
-    {
-        angleReached = true;
-    }
-    if(shooter.atSpeed() && angleReached)
-    {
-        shooter.setFeederForward();
-    }
-    else
-    {
-        shooter.setFeederStop();
-    }
+        if(!(((CANJaguar*)(angleAdjuster.liftMotor)) -> GetForwardLimitOK()) || ! (((CANJaguar*)(angleAdjuster.liftMotor)) -> GetReverseLimitOK()))
+        {
+            angleReached = true;
+        }
+        if(shooter.atSpeed() && angleReached)
+        {
+            shooter.setFeederForward();
+        }
+        else
+        {
+            shooter.setFeederStop();
+        }
+}
 }
