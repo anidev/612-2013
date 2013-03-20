@@ -2,11 +2,11 @@
 #include "EnhancedShooter.h"
 #include "main.h"
 
-EnhancedShooter::EnhancedShooter(int w,int L,robot_class::hw_info f,robot_class::hw_info c,void* o):
+EnhancedShooter::EnhancedShooter(int w,int L,hw_info f,hw_info c,void* o):
         wheel(w),
         lift(L),
         feeder(f.moduleNumber,f.channel),HalEffect(c.moduleNumber,c.channel) ,
-        wheelCount(1,2),
+        wheelCount(WHalEffectInfo.moduleNumber,WHalEffectInfo.channel),
         wheelCommandCenter(WHEEL_P,WHEEL_I,WHEEL_D,&wheelCount,&wheel)
 {
     (((robot_class*)o) -> updateRegistry).addUpdateFunction(&update_helper,(void*)this);

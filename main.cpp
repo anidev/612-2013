@@ -2,38 +2,26 @@
 #include "EnhancedRobotDrive.h"
 #include "main.h"
 #include "updateRegistry.h"
-#include "Task.h"
-#include "Autonomous.h"
 #include "Talon.h"
 #include "EnhancedJoystick.h"
 #include "EnhancedShooter.h"
-//TODO Add Stop Task Autonomous to disableReg
+#include "Hardware.h"
+#include "Controls.h"
 
 robot_class::robot_class():
         drive_gamepad(1,(void*)this),
-        gunner_gamepad(2,(void*)this),
-        Autonomous("Auto",(FUNCPTR)&doAutonomous)
+        gunner_gamepad(2,(void*)this)
 {
     curState = NORMAL;
     GetWatchdog().SetEnabled(false);
-    disableRegistry.addUpdateFunction(&disableAuto,(void*)this); // Add Autonomous disable to disableReg
-    //Hardware Info
-    hw_info left_front_motor  = {2,10};
-    hw_info left_rear_motor   = {2,9};
-    hw_info right_front_motor = {2,7};
-    hw_info right_rear_motor  = {2,8};
-    static const unsigned int shooterWheelCanport = 1;
-    static const unsigned int shooterLiftCanport = 2;
-    hw_info halEffect = {1,3};
-    hw_info feeder = {1,1};
     //Hardware
     driveTrain = new EnhancedRobotDrive(new Talon(left_front_motor.moduleNumber,left_front_motor.channel),
                            new Talon(left_rear_motor.moduleNumber,left_rear_motor.channel),
                            new Talon(right_front_motor.moduleNumber,right_front_motor.channel),
                            new Talon(right_rear_motor.moduleNumber,right_rear_motor.channel),(void*)this);
-    shooter = new EnhancedShooter(shooterWheelCanport,shooterLiftCanport,feeder,halEffect,(void*)this);
-    drive_gamepad.addBtn(BTN_CLIMBING_STATE,&setClimbing,(void*)this);
-    drive_gamepad.addBtn(BTN_NORMAL_STATE,&setNormal,(void*)this);
+    shooter = new EnhancedShooter(shooterWheel,shooterLift,feederInfo,FHalEffectInfo,(void*)this);
+    drive_gamepad.addBtn(DRIVER_BTN_CLIMBING_STATE,&setClimbing,(void*)this);
+    drive_gamepad.addBtn(DRIVER_BTN_NORMAL_STATE,&setNormal,(void*)this);
 }
 
 void robot_class::RobotInit() {
@@ -44,7 +32,8 @@ void robot_class::DisabledInit() {
 }
 
 void robot_class::AutonomousInit() {
-    //Autonomous.Start((UINT32)this); Todo add to allow autonomous
+    shooter -> setAngle(AUTO_ANGLE);
+    shooter -> setSpeed(AUTO_SPEED);
 }
 
 void robot_class::TeleopInit() {
@@ -56,6 +45,10 @@ void robot_class::DisabledPeriodic() {
 
 void robot_class::AutonomousPeriodic() {
     updateRegistry.updateAll();
+    if(shooter -> atSpeed(AUTO_SPEED) && shooter -> atAngle(AUTO_ANGLE))
+    {
+        shooter -> setFeeder(EnhancedShooter::FORWARD);
+    }
 }
 
 void robot_class::TeleopPeriodic() {

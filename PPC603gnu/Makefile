@@ -162,11 +162,36 @@ Rootbeer_partialImage/$(MODE_DIR)/% : LIBPATH =
 Rootbeer_partialImage/$(MODE_DIR)/% : LIBS = 
 Rootbeer_partialImage/$(MODE_DIR)/% : OBJ_DIR := Rootbeer_partialImage/$(MODE_DIR)
 
-Rootbeer_partialImage/$(MODE_DIR)/Objects/Rootbeer/MyRobot.o : $(PRJ_ROOT_DIR)/MyRobot.cpp $(FORCE_FILE_BUILD)
+Rootbeer_partialImage/$(MODE_DIR)/Objects/Rootbeer/EnhancedJoystick.o : $(PRJ_ROOT_DIR)/EnhancedJoystick.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
-OBJECTS_Rootbeer_partialImage = Rootbeer_partialImage/$(MODE_DIR)/Objects/Rootbeer/MyRobot.o
+Rootbeer_partialImage/$(MODE_DIR)/Objects/Rootbeer/EnhancedRobotDrive.o : $(PRJ_ROOT_DIR)/EnhancedRobotDrive.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
+Rootbeer_partialImage/$(MODE_DIR)/Objects/Rootbeer/EnhancedShooter.o : $(PRJ_ROOT_DIR)/EnhancedShooter.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
+Rootbeer_partialImage/$(MODE_DIR)/Objects/Rootbeer/PIDCounter.o : $(PRJ_ROOT_DIR)/PIDCounter.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
+Rootbeer_partialImage/$(MODE_DIR)/Objects/Rootbeer/main.o : $(PRJ_ROOT_DIR)/main.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
+Rootbeer_partialImage/$(MODE_DIR)/Objects/Rootbeer/updateRegistry.o : $(PRJ_ROOT_DIR)/updateRegistry.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
+OBJECTS_Rootbeer_partialImage = Rootbeer_partialImage/$(MODE_DIR)/Objects/Rootbeer/EnhancedJoystick.o \
+	 Rootbeer_partialImage/$(MODE_DIR)/Objects/Rootbeer/EnhancedRobotDrive.o \
+	 Rootbeer_partialImage/$(MODE_DIR)/Objects/Rootbeer/EnhancedShooter.o \
+	 Rootbeer_partialImage/$(MODE_DIR)/Objects/Rootbeer/PIDCounter.o \
+	 Rootbeer_partialImage/$(MODE_DIR)/Objects/Rootbeer/main.o \
+	 Rootbeer_partialImage/$(MODE_DIR)/Objects/Rootbeer/updateRegistry.o
 
 Rootbeer_partialImage/$(MODE_DIR)/Rootbeer_partialImage.o : $(OBJECTS_Rootbeer_partialImage)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc -r -nostdlib -Wl,-X  -o "$@" $(OBJECTS_Rootbeer_partialImage) $(LIBPATH) $(LIBS) $(ADDED_LIBPATH) $(ADDED_LIBS)  && if [ "$(EXPAND_DBG)" = "1" ]; then plink "$@";fi
@@ -180,7 +205,8 @@ Rootbeer_partialImage/$(MODE_DIR)/Rootbeer_partialImage_clean :
 
 force : 
 
-DEP_FILES := Rootbeer_partialImage/$(MODE_DIR)/Objects/Rootbeer/MyRobot.d
+DEP_FILES := Rootbeer_partialImage/$(MODE_DIR)/Objects/Rootbeer/EnhancedJoystick.d Rootbeer_partialImage/$(MODE_DIR)/Objects/Rootbeer/EnhancedRobotDrive.d Rootbeer_partialImage/$(MODE_DIR)/Objects/Rootbeer/EnhancedShooter.d \
+	 Rootbeer_partialImage/$(MODE_DIR)/Objects/Rootbeer/PIDCounter.d Rootbeer_partialImage/$(MODE_DIR)/Objects/Rootbeer/main.d Rootbeer_partialImage/$(MODE_DIR)/Objects/Rootbeer/updateRegistry.d
 -include $(DEP_FILES)
 
 

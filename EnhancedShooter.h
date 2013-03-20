@@ -7,6 +7,9 @@
 #include <PIDController.h>
 #include "main.h"
 #include "PIDCounter.h"
+#include "Hardware.h"
+#include "Controls.h"
+
 class robot_class;
 
 class EnhancedShooter {
@@ -45,14 +48,8 @@ public:
             BACKWARD = 1,
             STOP = 0
     };
-    static const unsigned int GUNNER_BTN_SHOOTER_WHEEL     = 1;
-    static const unsigned int GUNNER_BTN_SHOOTER_WHEEL_REV = 4;
-    static const unsigned int GUNNER_BTN_LIFT_UP           = 5;
-    static const unsigned int GUNNER_BTN_LIFT_DOWN         = 6;
-    static const unsigned int GUNNER_BTN_LIFT_LOAD_PRESET  = 10;
-    static const unsigned int GUNNER_AXIS_FEEDER           = 5;
     static const float LIFT_POWER = 0.4f;
-    EnhancedShooter(int,int,robot_class::hw_info,robot_class::hw_info,void*);
+    EnhancedShooter(int,int,hw_info,hw_info,void*);
     void setWheelPower(float);
     void setFeeder(direction);
     void setLiftPower(float);
@@ -62,7 +59,6 @@ public:
     void stopWheel();
     void stopLift();
     void stopFeeder();
-    //Todo add the 4 below
     void setAngle(float);
     void setSpeed(float);
     bool atAngle(float);
