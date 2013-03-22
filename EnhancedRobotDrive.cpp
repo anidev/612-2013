@@ -18,44 +18,45 @@ EnhancedRobotDrive::EnhancedRobotDrive(SpeedController* a,SpeedController* b,Spe
     robot -> updateRegistry.addUpdateFunction(&update,(void*)this);
     drivePower = 1.0;
 }
+
 EnhancedRobotDrive::~EnhancedRobotDrive() {
-    
 }
+
 void EnhancedRobotDrive::doControls() {
     if((std::fabs(driver -> GetRawAxis(DRIVER_LEFT_DRIVE_AXIS)) > EnhancedJoystick::JOYSTICK_ZERO_TOLERANCE) || (std::fabs(driver -> GetRawAxis(DRIVER_RIGHT_DRIVE_AXIS)) > EnhancedJoystick::JOYSTICK_ZERO_TOLERANCE))
     {
         //Skyler Driving
         TankDrive(driver -> GetRawAxis(DRIVER_LEFT_DRIVE_AXIS),driver -> GetRawAxis(DRIVER_RIGHT_DRIVE_AXIS));
     }
-    else if((gunner -> GetRawButton(GUNNER_SWIVLE_RIGHT) || gunner -> GetRawButton(GUNNER_SWIVLE_LEFT)) && *robotState == robot_class::NORMAL)
+    else if((gunner -> GetRawButton(GUNNER_SWIVEL_RIGHT) || gunner -> GetRawButton(GUNNER_SWIVEL_LEFT)) && *robotState == robot_class::NORMAL)
     {
-        //Ben Swivle
-        if(gunner -> GetRawButton(GUNNER_SWIVLE_RIGHT))
+        //Ben Swivel
+        if(gunner -> GetRawButton(GUNNER_SWIVEL_RIGHT))
         {
-            swivle(RIGHT);
+            swivel(RIGHT);
         }
         else
         {
-            swivle(LEFT);
+            swivel(LEFT);
         }
     }
-    else if(driver -> GetRawButton(DRIVER_SWIVLE_RIGHT) || driver -> GetRawButton(DRIVER_SWIVLE_LEFT))
+    else if(driver -> GetRawButton(DRIVER_SWIVEL_RIGHT) || driver -> GetRawButton(DRIVER_SWIVEL_LEFT))
     {
-        //Skyler Swivle
-        if(driver -> GetRawButton(DRIVER_SWIVLE_RIGHT))
+        //Skyler Swivel
+        if(driver -> GetRawButton(DRIVER_SWIVEL_RIGHT))
         {
-            swivle(RIGHT);
+            swivel(RIGHT);
         }
         else
         {
-            swivle(LEFT);
+            swivel(LEFT);
         }
     }
     else
         TankDrive(0.0f,0.0f);
 }
 
-void EnhancedRobotDrive::swivle(dir d) {
+void EnhancedRobotDrive::swivel(dir d) {
     if(d == LEFT)
         TankDrive(DRIVE_TURN_SPEED,-1.0 * DRIVE_TURN_SPEED);
     else

@@ -27,7 +27,7 @@ private:
         LEFT,
         RIGHT
     };
-    void swivle(dir);
+    void swivel(dir);
     EnhancedJoystick* driver;
     EnhancedJoystick* gunner;
     static void update(void*);
