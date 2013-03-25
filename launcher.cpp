@@ -47,15 +47,15 @@ void Launcher::stop() {
     targetSet = false;
     reachedSpeed = false;
     targetSpeed = 0.0f;
-    launcherWheel.Set(0.0f);
     pid.Disable();
+    launcherWheel.Set(0.0f);
 }
 
 void Launcher::setSpeed(float newSpeed) {
     targetSpeed = newSpeed;
     targetSet = true;
     reachedSpeed = false;
-    launcherWheel.Set(0.4f); // Set it to something small as an initial value
+    //launcherWheel.Set(0.4f); // Set it to something small as an initial value
     pid.Enable();
     pid.SetSetpoint(newSpeed);
 }
@@ -85,6 +85,7 @@ unsigned int Launcher::getFrisbeeCount(){
 //extern ports.h
 
 bool Launcher::dropDetected() {
+    //TODO add safety for reachedSpeed
     return (std::fabs(getCurrentSpeed() - targetSpeed) > SHOT_DROP_TOLERANCE);
 }
 
