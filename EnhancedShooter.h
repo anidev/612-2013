@@ -28,9 +28,9 @@ private:
     static const float FEEDER_SPEED = 0.25f;
     
 
-    static const float LIFT_TOLERANCE = 0.8f; //TODO Get Values
+    static const float LIFT_TOLERANCE = 0.1f;
     static const float MIN_POT_VAL = 0.00f; //Lift
-    static const float MAX_POT_VAL = 10.00f; //Lift
+    static const float MAX_POT_VAL = 1.00f; //Lift
     
     CANJaguar wheel;
     CANJaguar lift;

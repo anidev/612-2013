@@ -63,7 +63,7 @@ void EnhancedRobotDrive::swivel(dir d) {
         TankDrive(-1.0 *DRIVE_TURN_SPEED,DRIVE_TURN_SPEED);
 }
 void EnhancedRobotDrive::disable(void* o) {
-    ((EnhancedRobotDrive*)o) -> TankDrive(0.0f,0.0f);   
+    ((EnhancedRobotDrive*)o) -> TankDrive(0.0f,0.0f);
 }
 void EnhancedRobotDrive::shiftLowGear(void* o) {
     (((EnhancedRobotDrive*)o) -> leftShifter).Set(kleftgear[0]);

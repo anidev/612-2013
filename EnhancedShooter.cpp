@@ -10,7 +10,6 @@ EnhancedShooter::EnhancedShooter(int w,hw_info wc,int L,hw_info f,hw_info c,void
         wheelCommandCenter(WHEEL_P,WHEEL_I,WHEEL_D,&wheelCount,&wheel)
 {
     (((robot_class*)o) -> updateRegistry).addUpdateFunction(&update_helper,(void*)this);
-    wheelCommandCenter.SetAbsoluteTolerance(WHEEL_TOLERANCE);
     driver = &((robot_class*)o) -> drive_gamepad;
     gunner = &((robot_class*)o) -> gunner_gamepad;
     robotState = &((robot_class*)o) -> curState;
@@ -53,14 +52,14 @@ void EnhancedShooter::stopAll() {
 
 void EnhancedShooter::stopWheel() {
     wheelCommandCenter.Disable();
-    wheel.DisableControl();
     wheel.ChangeControlMode(CANJaguar::kVoltage);
-    wheel.Set(0.0f);
+    wheel.Set(0.0f); // Set to 0 before disabling because Set re-enables
+    wheel.DisableControl();
 }
 void EnhancedShooter::stopLift() {
-    lift.DisableControl();
     lift.ChangeControlMode(CANJaguar::kVoltage);
     lift.Set(0.0f);
+    lift.DisableControl();
 }
 void EnhancedShooter::stopFeeder() {
     feeder.Set(0.0f);
@@ -115,6 +114,7 @@ void EnhancedShooter::setAngle(float newTarget) {
 void EnhancedShooter::setSpeed(float newTarget) {
     wheelCommandCenter.Enable();
     wheelCommandCenter.SetOutputRange(-1.00,1.00);
+    wheelCommandCenter.SetAbsoluteTolerance(WHEEL_TOLERANCE);
     wheelCommandCenter.SetSetpoint(newTarget);
 }
 bool EnhancedShooter::atAngle(float target) {
@@ -136,7 +136,7 @@ bool EnhancedShooter::atSpeed(float target) {
 }
 float EnhancedShooter::liftAngleToPot(float angle) {
     //Todo insert Equation Here
-    return 5.0f;
+    return 0.5f;
 }
 void EnhancedShooter::update_helper(void* o) {
     ((EnhancedShooter*)o) -> update();
