@@ -37,6 +37,8 @@ void robot_class::AutonomousInit() {
 }
 
 void robot_class::TeleopInit() {
+    shooter->stopWheel();      // stop the shooter wheel after autonomous period is over
+                               // feeder will automatically stop at hall effect sensor
 }
 
 void robot_class::DisabledPeriodic() {

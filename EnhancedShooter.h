@@ -49,7 +49,7 @@ public:
             STOP = 0
     };
     static const float LIFT_POWER = 0.4f;
-    EnhancedShooter(int,int,hw_info,hw_info,void*);
+    EnhancedShooter(int,hw_info,int,hw_info,hw_info,void*);
     void setWheelPower(float);
     void setFeeder(direction);
     void setLiftPower(float);
