@@ -2,14 +2,15 @@
 #include "EnhancedShooter.h"
 #include "main.h"
 
-EnhancedShooter::EnhancedShooter(int w,int L,hw_info f,hw_info c,void* o):
+EnhancedShooter::EnhancedShooter(int w,hw_info wc,int L,hw_info f,hw_info c,void* o): // wheel, wheel sensor, lift, feeder, feeder sensor
         wheel(w),
         lift(L),
         feeder(f.moduleNumber,f.channel),HalEffect(c.moduleNumber,c.channel) ,
-        wheelCount(WHalEffectInfo.moduleNumber,WHalEffectInfo.channel),
+        wheelCount(wc.moduleNumber,wc.channel),
         wheelCommandCenter(WHEEL_P,WHEEL_I,WHEEL_D,&wheelCount,&wheel)
 {
     (((robot_class*)o) -> updateRegistry).addUpdateFunction(&update_helper,(void*)this);
+    wheelCommandCenter.SetAbsoluteTolerance(WHEEL_TOLERANCE);
     driver = &((robot_class*)o) -> drive_gamepad;
     gunner = &((robot_class*)o) -> gunner_gamepad;
     robotState = &((robot_class*)o) -> curState;
@@ -128,7 +129,8 @@ bool EnhancedShooter::atAngle(float target) {
     return false;
 }
 bool EnhancedShooter::atSpeed(float target) {
-    if(std::fabs(wheelCommandCenter.Get() - target) < WHEEL_TOLERANCE)
+//    if(std::fabs((1.0f/wheelCount.GetPeriod()) - target) < WHEEL_TOLERANCE)
+    if(wheelCommandCenter.OnTarget()) // should work
         return true;
     return false;
 }

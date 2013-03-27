@@ -19,7 +19,7 @@ robot_class::robot_class():
                            new Talon(left_rear_motor.moduleNumber,left_rear_motor.channel),
                            new Talon(right_front_motor.moduleNumber,right_front_motor.channel),
                            new Talon(right_rear_motor.moduleNumber,right_rear_motor.channel),(void*)this);
-    shooter = new EnhancedShooter(shooterWheel,shooterLift,feederInfo,FHalEffectInfo,(void*)this);
+    shooter = new EnhancedShooter(shooterWheel,WHalEffectInfo,shooterLift,feederInfo,FHalEffectInfo,(void*)this);
     drive_gamepad.addBtn(DRIVER_BTN_CLIMBING_STATE,&setClimbing,(void*)this);
     drive_gamepad.addBtn(DRIVER_BTN_NORMAL_STATE,&setNormal,(void*)this);
 }

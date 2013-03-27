@@ -16,13 +16,13 @@ class EnhancedShooter {
 private:
     //PID Values
     //Todo get Vlues
-    static const float LIFT_P = 0.01;
-    static const float LIFT_I = 0.01;
-    static const float LIFT_D = 0.01;
+    static const float LIFT_P = 0.01f;
+    static const float LIFT_I = 0.01f;
+    static const float LIFT_D = 0.01f;
 
-    static const float WHEEL_P = 0.01;
-    static const float WHEEL_I = 0.01;
-    static const float WHEEL_D = 0.01;
+    static const float WHEEL_P = 0.3f;
+    static const float WHEEL_I = 0.005f;
+    static const float WHEEL_D = 0.0f;
     static const float WHEEL_TOLERANCE = 2.0f;
     
     static const float FEEDER_SPEED = 0.25f;
@@ -35,7 +35,7 @@ private:
     CANJaguar wheel;
     CANJaguar lift;
     Talon feeder;
-    Counter HalEffect;
+    Counter HalEffect; // for wheel
     EnhancedJoystick* driver;
     EnhancedJoystick* gunner;
     robot_class::state* robotState;
