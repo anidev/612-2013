@@ -9,17 +9,16 @@
 #include "Hardware.h"
 #include "Controls.h"
 
-const float AUTO_SPEEDS[] = {60.0f,60.0f}; // 2disk, 3disk
 const float AUTO_ANGLES[] = {31.0f,24.5f};
-float AUTO_SPEED = 0.0f;
+static const float AUTO_SPEED = 0.0f;
 float AUTO_ANGLE = 0.0f;
 
 robot_class::robot_class():
         drive_gamepad(1,(void*)this),
-        gunner_gamepad(2,(void*)this)
+        gunner_gamepad(2,(void*)this),
+        autoSwitch(AutoSelectSwitch.moduleNumber,AutoSelectSwitch.channel)
 {
     curState = NORMAL;
-    autoState = DISKS3;
     GetWatchdog().SetEnabled(false);
     //Hardware
     driveTrain = new EnhancedRobotDrive(new Talon(left_front_motor.moduleNumber,left_front_motor.channel),
@@ -30,8 +29,6 @@ robot_class::robot_class():
     drive_gamepad.addBtn(DRIVER_BTN_CLIMBING_STATE,&setClimbing,(void*)this);
     drive_gamepad.addBtn(DRIVER_BTN_NORMAL_STATE,&setNormal,(void*)this);
     dataLogger = new DataLogger(shooter,(void*)this);
-    AUTO_SPEED = AUTO_SPEEDS[autoState];
-    AUTO_ANGLE = AUTO_ANGLES[autoState];
 }
 
 void robot_class::RobotInit() {
@@ -42,6 +39,10 @@ void robot_class::DisabledInit() {
 }
 
 void robot_class::AutonomousInit() {
+    unsigned int choice = 0;
+    if(autoSwitch.Get())
+        choice = 1;
+    AUTO_ANGLE = AUTO_ANGLES[choice];
     shooter -> setAngle(AUTO_ANGLE);
     shooter -> wheelForward = true;
     shooter -> setSpeed(AUTO_SPEED);

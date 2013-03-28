@@ -4,6 +4,7 @@
 #include <IterativeRobot.h>
 #include "updateRegistry.h"
 #include "EnhancedJoystick.h"
+#include "DigitalInput.h"
 
 class EnhancedRobotDrive;
 class EnhancedShooter;
@@ -36,10 +37,8 @@ public:
     EnhancedShooter* shooter;
     DataLogger* dataLogger;
 private:
-    enum {
-        DISKS2 = 0,
-        DISKS3 = 1
-    } autoState;
+    
+    DigitalInput autoSwitch;
     static void setClimbing(void*);
     static void setNormal(void*);
 };

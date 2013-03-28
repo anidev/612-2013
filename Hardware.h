@@ -25,4 +25,5 @@ static const hw_info feederInfo =        {1,1};
 //Sensors
 static const hw_info FHalEffectInfo =    {1,3};
 static const hw_info WHalEffectInfo =    {1,2};
+static const hw_info AutoSelectSwitch  = {1,14};
 #endif
