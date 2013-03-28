@@ -25,7 +25,7 @@ private:
     static const float WHEEL_I = 0.005f;
     static const float WHEEL_D = 0.0f;
     static const float WHEEL_TOLERANCE = 2.0f;
-    static const float WHEEL_POWER = 60.0f;
+    static const float WHEEL_POWER = 100.0f;
     
     static const float FEEDER_SPEED = 0.25f;
     

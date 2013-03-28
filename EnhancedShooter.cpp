@@ -92,6 +92,7 @@ void EnhancedShooter::stopAll() {
 }
 
 void EnhancedShooter::stopWheel() {
+    wheelForward = false;
     wheelCommandCenter.Disable();
     wheel.ChangeControlMode(CANJaguar::kPercentVbus);
     wheel.Set(0.0f); // Set to 0 before disabling because Set re-enables

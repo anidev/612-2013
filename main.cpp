@@ -39,9 +39,9 @@ void robot_class::DisabledInit() {
 }
 
 void robot_class::AutonomousInit() {
-    unsigned int choice = 0;
-    if(autoSwitch.Get())
-        choice = 1;
+    unsigned int choice = 1;
+    //if(autoSwitch.Get())
+        //choice = 1;
     AUTO_ANGLE = AUTO_ANGLES[choice];
     shooter -> setAngle(AUTO_ANGLE);
     shooter -> wheelForward = true;
