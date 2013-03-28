@@ -13,7 +13,6 @@ const float AUTO_SPEEDS[] = {60.0f,60.0f}; // 2disk, 3disk
 const float AUTO_ANGLES[] = {27.0f,23.0f};
 float AUTO_SPEED = 0.0f;
 float AUTO_ANGLE = 0.0f;
-int a = 0;
 
 robot_class::robot_class():
         drive_gamepad(1,(void*)this),
