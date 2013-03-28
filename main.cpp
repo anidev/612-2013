@@ -13,6 +13,7 @@ robot_class::robot_class():
         gunner_gamepad(2,(void*)this)
 {
     curState = NORMAL;
+    autoState = DISKS3;
     GetWatchdog().SetEnabled(false);
     //Hardware
     driveTrain = new EnhancedRobotDrive(new Talon(left_front_motor.moduleNumber,left_front_motor.channel),
@@ -32,8 +33,8 @@ void robot_class::DisabledInit() {
 }
 
 void robot_class::AutonomousInit() {
-    shooter -> setAngle(AUTO_ANGLE);
-    shooter -> setSpeed(AUTO_SPEED);
+    shooter -> setAngle(AUTO_ANGLE[autoState]);
+    shooter -> setSpeed(AUTO_SPEED[autoState]);
 }
 
 void robot_class::TeleopInit() {
