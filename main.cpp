@@ -5,8 +5,14 @@
 #include "Talon.h"
 #include "EnhancedJoystick.h"
 #include "EnhancedShooter.h"
+#include "dataLogger.h"
 #include "Hardware.h"
 #include "Controls.h"
+
+const float AUTO_SPEEDS[] = {60.0f,60.0f}; // 2disk, 3disk
+const float AUTO_ANGLES[] = {27.0f,23.0f};
+float AUTO_SPEED = 0.0f;
+float AUTO_ANGLE = 0.0f;
 
 robot_class::robot_class():
         drive_gamepad(1,(void*)this),
@@ -23,6 +29,9 @@ robot_class::robot_class():
     shooter = new EnhancedShooter(shooterWheel,WHalEffectInfo,shooterLift,feederInfo,FHalEffectInfo,(void*)this);
     drive_gamepad.addBtn(DRIVER_BTN_CLIMBING_STATE,&setClimbing,(void*)this);
     drive_gamepad.addBtn(DRIVER_BTN_NORMAL_STATE,&setNormal,(void*)this);
+    dataLogger = new DataLogger(shooter,(void*)this);
+    AUTO_SPEED = AUTO_SPEEDS[autoState];
+    AUTO_ANGLE = AUTO_ANGLES[autoState];
 }
 
 void robot_class::RobotInit() {
@@ -33,8 +42,8 @@ void robot_class::DisabledInit() {
 }
 
 void robot_class::AutonomousInit() {
-    shooter -> setAngle(AUTO_ANGLE[autoState]);
-    shooter -> setSpeed(AUTO_SPEED[autoState]);
+    shooter -> setAngle(AUTO_ANGLE);
+    shooter -> setSpeed(AUTO_SPEED);
 }
 
 void robot_class::TeleopInit() {

@@ -7,6 +7,7 @@
 
 class EnhancedRobotDrive;
 class EnhancedShooter;
+class DataLogger;
 
 class robot_class : public IterativeRobot {
 public:
@@ -33,13 +34,12 @@ public:
     EnhancedJoystick gunner_gamepad; //2
     EnhancedRobotDrive* driveTrain;
     EnhancedShooter* shooter;
+    DataLogger* dataLogger;
 private:
     enum {
         DISKS2 = 0,
         DISKS3 = 1
     } autoState;
-    static const float AUTO_SPEED[] = {60.0f,60.0f}; // 2disk, 3disk
-    static const float AUTO_ANGLE[] = {27.0f,23.0f};
     static void setClimbing(void*);
     static void setNormal(void*);
 };
