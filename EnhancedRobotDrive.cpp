@@ -5,7 +5,7 @@
 
 EnhancedRobotDrive::EnhancedRobotDrive(SpeedController* a,SpeedController* b,SpeedController* c,SpeedController* d,void* o):
         RobotDrive(a,b,c,d),
-        rightShifter(leftShifterInfo.moduleNumber,leftShifterInfo.channel),
+        rightShifter(rightShifterInfo.moduleNumber,rightShifterInfo.channel),
         leftShifter(leftShifterInfo.moduleNumber,leftShifterInfo.channel) 
 {
     robot_class* robot = (robot_class*)o;

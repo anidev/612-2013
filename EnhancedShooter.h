@@ -25,6 +25,7 @@ private:
     static const float WHEEL_I = 0.005f;
     static const float WHEEL_D = 0.0f;
     static const float WHEEL_TOLERANCE = 2.0f;
+    static const float WHEEL_POWER = 60.0f;
     
     static const float FEEDER_SPEED = 0.25f;
     
@@ -32,7 +33,9 @@ private:
     static const float LIFT_TOLERANCE = 0.1f;
     static const float MIN_POT_VAL = 0.00f; //Lift
     static const float MAX_POT_VAL = 1.00f; //Lift
-    static const float LIFT_LOAD_PRESET = 0;
+    static const float LIFT_PRESET_FRONT = 31.0f;
+    static const float LIFT_PRESET_BACK = 24.5f;
+    static const float LIFT_LOAD_PRESET = -1.8f;
     
     CANJaguar wheel;
     CANJaguar lift;
@@ -43,6 +46,7 @@ private:
     robot_class::state* robotState;
     PIDCounter wheelCount;
     PIDController wheelCommandCenter;
+    bool wheelForward;
     float liftAngleToPot(float);
     float liftPotToAngle(float);
 public:
@@ -70,6 +74,9 @@ public:
     bool atSpeed(float);
     static void update_helper(void*);
     static void disable(void*);
+    static void wheelToggle(void*);
+    static void presetFront(void*);
+    static void presetBack(void*);
     static void loadPreset(void*);
 };
 

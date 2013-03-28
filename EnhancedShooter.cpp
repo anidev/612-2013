@@ -7,13 +7,17 @@ EnhancedShooter::EnhancedShooter(int w,hw_info wc,int L,hw_info f,hw_info c,void
         lift(L),
         feeder(f.moduleNumber,f.channel),HalEffect(c.moduleNumber,c.channel) ,
         wheelCount(wc.moduleNumber,wc.channel),
-        wheelCommandCenter(WHEEL_P,WHEEL_I,WHEEL_D,&wheelCount,&wheel)
+        wheelCommandCenter(WHEEL_P,WHEEL_I,WHEEL_D,&wheelCount,&wheel),
+        wheelForward(false)
 {
     (((robot_class*)o) -> updateRegistry).addUpdateFunction(&update_helper,(void*)this);
     driver = &((robot_class*)o) -> drive_gamepad;
     gunner = &((robot_class*)o) -> gunner_gamepad;
+    driver -> addBtn(GUNNER_BTN_SHOOTER_WHEEL,&wheelToggle,(void*)this);
+    driver -> addBtn(GUNNER_BTN_PRESET_FRONT,&presetFront,(void*)this);
+    driver -> addBtn(GUNNER_BTN_PRESET_BACK,&presetBack,(void*)this);
     driver -> addBtn(GUNNER_BTN_LIFT_LOAD_PRESET,&loadPreset,(void*)this);
-    robotState = &((robot_class*)o) -> curState;
+    robotState = &(((robot_class*)o) -> curState);
     HalEffect.Start();
 }
 void EnhancedShooter::setWheelPower(float speed) {
@@ -37,10 +41,22 @@ void EnhancedShooter::update() {
             HalEffect.Reset();
             HalEffect.Start();
         }
+        if(gunner -> GetRawButton(GUNNER_BTN_SHOOTER_WHEEL_REV)) {
+            wheelForward = false;
+            setWheelPower(-1.0f * WHEEL_POWER);
+        }
+        else if(wheelForward)
+        {
+            setWheelPower(WHEEL_POWER);
+        }
+        else
+        {
+            setWheelPower(0.0f);
+        }
     }
     else
     {
-        setLiftPower(-1 * LIFT_POWER); //Limit Switch Will Stop It
+        setLiftPower(-1.0f * LIFT_POWER); //Limit Switch Will Stop It
         stopFeeder();
         stopWheel();
     }
@@ -53,12 +69,12 @@ void EnhancedShooter::stopAll() {
 
 void EnhancedShooter::stopWheel() {
     wheelCommandCenter.Disable();
-    wheel.ChangeControlMode(CANJaguar::kVoltage);
+    lift.ChangeControlMode(CANJaguar::kPercentVbus);
     wheel.Set(0.0f); // Set to 0 before disabling because Set re-enables
     wheel.DisableControl();
 }
 void EnhancedShooter::stopLift() {
-    lift.ChangeControlMode(CANJaguar::kVoltage);
+    lift.ChangeControlMode(CANJaguar::kPercentVbus);
     lift.Set(0.0f);
     lift.DisableControl();
 }
@@ -95,11 +111,11 @@ void EnhancedShooter::doControls() {
         stopLift();
     }
     //Feeder Controls
-    if(gunner -> GetRawAxis(GUNNER_AXIS_FEEDER) < -0.98f) // right
+    if(gunner -> GetRawAxis(GUNNER_AXIS_FEEDER) > 0.98f) // right
     {
         setFeeder(FORWARD);
     }
-    else if(gunner -> GetRawAxis(GUNNER_AXIS_FEEDER) > 0.98f) // left
+    else if(gunner -> GetRawAxis(GUNNER_AXIS_FEEDER) < -0.98f) // left
     {
         setFeeder(BACKWARD);
     }
@@ -143,8 +159,7 @@ bool EnhancedShooter::atSpeed(float target) {
     return false;
 }
 float EnhancedShooter::liftAngleToPot(float angle) {
-    //TODO insert Equation Here angle->pot
-    return 0.5f;
+    return ((0.0035 * angle) + 0.3763);
 }
 float EnhancedShooter::liftPotToAngle(float pot) {
     // TODO insert Equation Here pot->angle
@@ -155,6 +170,16 @@ void EnhancedShooter::update_helper(void* o) {
 }
 void EnhancedShooter::disable(void* o) {
     ((EnhancedShooter*)o) -> stopAll();
+}
+void EnhancedShooter::wheelToggle(void* o) {
+    bool wheelForward = ((EnhancedShooter*)o) -> wheelForward;
+    ((EnhancedShooter*)o) -> wheelForward = !wheelForward;
+}
+void EnhancedShooter::presetFront(void* o) {
+    ((EnhancedShooter*)o) -> setAngle(LIFT_PRESET_FRONT);
+}
+void EnhancedShooter::presetBack(void* o) {
+    ((EnhancedShooter*)o) -> setAngle(LIFT_PRESET_BACK);
 }
 void EnhancedShooter::loadPreset(void* o) {
     ((EnhancedShooter*)o) -> setAngle(LIFT_LOAD_PRESET);

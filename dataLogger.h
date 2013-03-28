@@ -8,7 +8,7 @@ class DataLogger {
 public:
     DataLogger(EnhancedShooter*,void*);
 private:
-    EnhancedJoystick* driver;
+    EnhancedJoystick* gunner;
     EnhancedShooter* shooter;
     static void successLog(void*);
 };

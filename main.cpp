@@ -67,7 +67,6 @@ void robot_class::TeleopPeriodic() {
     updateRegistry.updateAll();
     driveTrain -> doControls();
     shooter -> doControls();
-    
 }
 
 void robot_class::TestInit() {
@@ -76,10 +75,10 @@ void robot_class::TestInit() {
 void robot_class::TestPeriodic() {
 }
 void robot_class::setClimbing(void* o) {
-    (((robot_class*)o) -> curState) = NORMAL;
+    (((robot_class*)o) -> curState) = CLIMBING;
 }
 void robot_class::setNormal(void* o) {
-    (((robot_class*)o) -> curState) = CLIMBING;
+    (((robot_class*)o) -> curState) = NORMAL;
 }
 //the following macro tells the library that we want to generate code
 //for our class robot_class
