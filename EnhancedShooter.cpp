@@ -12,6 +12,7 @@ EnhancedShooter::EnhancedShooter(int w,hw_info wc,int L,hw_info f,hw_info c,void
     (((robot_class*)o) -> updateRegistry).addUpdateFunction(&update_helper,(void*)this);
     driver = &((robot_class*)o) -> drive_gamepad;
     gunner = &((robot_class*)o) -> gunner_gamepad;
+    driver -> addBtn(GUNNER_BTN_LIFT_LOAD_PRESET,&loadPreset,(void*)this)
     robotState = &((robot_class*)o) -> curState;
     HalEffect.Start();
 }
@@ -143,4 +144,7 @@ void EnhancedShooter::update_helper(void* o) {
 }
 void EnhancedShooter::disable(void* o) {
     ((EnhancedShooter*)o) -> stopAll();
+}
+void EnhancedShooter::liftPreset(void* o) {
+    ((EnhancedShooter*)o) -> setAngle(LIFT_LOAD_PRESET);
 }

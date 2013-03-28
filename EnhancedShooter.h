@@ -31,6 +31,7 @@ private:
     static const float LIFT_TOLERANCE = 0.1f;
     static const float MIN_POT_VAL = 0.00f; //Lift
     static const float MAX_POT_VAL = 1.00f; //Lift
+    static const float LIFT_LOAD_PRESET = 0;
     
     CANJaguar wheel;
     CANJaguar lift;
@@ -65,6 +66,7 @@ public:
     bool atSpeed(float);
     static void update_helper(void*);
     static void disable(void*);
+    static void liftPreset(void*);
 };
 
 #endif
