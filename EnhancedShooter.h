@@ -10,12 +10,13 @@
 #include "Hardware.h"
 #include "Controls.h"
 
+
 class robot_class;
 
 class EnhancedShooter {
 private:
     //PID Values
-    //Todo get Vlues
+    //TODO get Vlues
     static const float LIFT_P = 0.01f;
     static const float LIFT_I = 0.01f;
     static const float LIFT_D = 0.01f;
@@ -43,6 +44,7 @@ private:
     PIDCounter wheelCount;
     PIDController wheelCommandCenter;
     float liftAngleToPot(float);
+    float liftPotToAngle(float);
 public:
     enum direction { //Feeder
             FORWARD = -1,
@@ -61,12 +63,14 @@ public:
     void stopLift();
     void stopFeeder();
     void setAngle(float);
+    float getCurrentAngle();
+    float getPot();
     void setSpeed(float);
     bool atAngle(float);
     bool atSpeed(float);
     static void update_helper(void*);
     static void disable(void*);
-    static void liftPreset(void*);
+    static void loadPreset(void*);
 };
 
 #endif

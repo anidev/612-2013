@@ -12,7 +12,7 @@ EnhancedShooter::EnhancedShooter(int w,hw_info wc,int L,hw_info f,hw_info c,void
     (((robot_class*)o) -> updateRegistry).addUpdateFunction(&update_helper,(void*)this);
     driver = &((robot_class*)o) -> drive_gamepad;
     gunner = &((robot_class*)o) -> gunner_gamepad;
-    driver -> addBtn(GUNNER_BTN_LIFT_LOAD_PRESET,&loadPreset,(void*)this)
+    driver -> addBtn(GUNNER_BTN_LIFT_LOAD_PRESET,&loadPreset,(void*)this);
     robotState = &((robot_class*)o) -> curState;
     HalEffect.Start();
 }
@@ -112,6 +112,14 @@ void EnhancedShooter::setAngle(float newTarget) {
     newTarget = liftAngleToPot(newTarget);
     lift.Set(newTarget);
 }
+float EnhancedShooter::getCurrentAngle() {
+    lift.SetPositionReference(CANJaguar::kPosRef_Potentiometer);
+    return liftPotToAngle(lift.GetPosition());
+}
+float EnhancedShooter::getPot() {
+    lift.SetPositionReference(CANJaguar::kPosRef_Potentiometer);
+    return lift.GetPosition();
+}
 void EnhancedShooter::setSpeed(float newTarget) {
     wheelCommandCenter.Enable();
     wheelCommandCenter.SetOutputRange(-1.00,1.00);
@@ -119,7 +127,6 @@ void EnhancedShooter::setSpeed(float newTarget) {
     wheelCommandCenter.SetSetpoint(newTarget);
 }
 bool EnhancedShooter::atAngle(float target) {
-    //Todo Add Switch For Switches
     target = liftAngleToPot(target);
     if(target <= MIN_POT_VAL)
         return lift.GetForwardLimitOK();
@@ -136,8 +143,12 @@ bool EnhancedShooter::atSpeed(float target) {
     return false;
 }
 float EnhancedShooter::liftAngleToPot(float angle) {
-    //Todo insert Equation Here
+    //TODO insert Equation Here angle->pot
     return 0.5f;
+}
+float EnhancedShooter::liftPotToAngle(float pot) {
+    // TODO insert Equation Here pot->angle
+    return 0.0f;
 }
 void EnhancedShooter::update_helper(void* o) {
     ((EnhancedShooter*)o) -> update();
@@ -145,6 +156,6 @@ void EnhancedShooter::update_helper(void* o) {
 void EnhancedShooter::disable(void* o) {
     ((EnhancedShooter*)o) -> stopAll();
 }
-void EnhancedShooter::liftPreset(void* o) {
+void EnhancedShooter::loadPreset(void* o) {
     ((EnhancedShooter*)o) -> setAngle(LIFT_LOAD_PRESET);
 }
