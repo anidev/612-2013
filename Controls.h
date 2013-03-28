@@ -7,8 +7,8 @@ static const Button DRIVER_SHIFT_LOW    = 5;
 static const Button DRIVER_SHIFT_HIGH   = 6;
 static const Button DRIVER_SWIVEL_LEFT  = 7;
 static const Button DRIVER_SWIVEL_RIGHT = 8;
-static const Button DRIVER_BTN_CLIMBING_STATE = 10;
 static const Button DRIVER_BTN_NORMAL_STATE   = 9;
+static const Button DRIVER_BTN_CLIMBING_STATE = 10;
 
 static const unsigned int DRIVER_LEFT_DRIVE_AXIS  = 2;
 static const unsigned int DRIVER_RIGHT_DRIVE_AXIS = 4;
