@@ -164,11 +164,6 @@ bool EnhancedShooter::atPot(float target) {
     return false;
 }
 bool EnhancedShooter::atSpeed(float target) {
-    static int counter=0;
-    if(counter%20==0) {
-        printf("wheel speed = %f\n",1.0f/wheelCount.GetPeriod());
-    }
-    counter++;
     if((1.0f/wheelCount.GetPeriod()) > target)
         return true;
     return false;

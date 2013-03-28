@@ -15,6 +15,7 @@ public:
     EnhancedRobotDrive(SpeedController*,SpeedController*,SpeedController*,SpeedController*,void*);
     ~EnhancedRobotDrive();
     void doControls();
+    void setSafety(bool);
     static void disable(void*);
     static void shiftLowGear(void*);
     static void shiftHighGear(void*);

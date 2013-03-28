@@ -39,9 +39,11 @@ void robot_class::DisabledInit() {
 }
 
 void robot_class::AutonomousInit() {
-    unsigned int choice = 1;
-    //if(autoSwitch.Get())
-        //choice = 1;
+    driveTrain->SetSafetyEnabled(false);
+    unsigned int choice = 0;
+    if(autoSwitch.Get())
+        choice = 1;
+    std::printf("switch: %d\n",autoSwitch.Get());
     AUTO_ANGLE = AUTO_ANGLES[choice];
     shooter -> setAngle(AUTO_ANGLE);
     shooter -> wheelForward = true;
@@ -51,6 +53,7 @@ void robot_class::AutonomousInit() {
 void robot_class::TeleopInit() {
     shooter->stopWheel();      // stop the shooter wheel after autonomous period is over
                                // feeder will automatically stop at hall effect sensor
+    driveTrain->SetSafetyEnabled(true);
 }
 
 void robot_class::DisabledPeriodic() {
