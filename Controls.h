@@ -11,8 +11,8 @@ static const unsigned int DRIVER_SWIVEL_RIGHT = 8;
 static const unsigned int DRIVER_SWIVEL_LEFT  = 7;
 static const unsigned int DRIVER_LEFT_DRIVE_AXIS  = 2;
 static const unsigned int DRIVER_RIGHT_DRIVE_AXIS = 4;
-//Gunner
 
+//Gunner
 static const Button GUNNER_BTN_SHOOTER_WHEEL     = 1;
 static const Button GUNNER_BTN_SHOOTER_WHEEL_REV = 4;
 static const Button GUNNER_BTN_LIFT_UP           = 5;
