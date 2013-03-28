@@ -30,13 +30,12 @@ private:
     static const float FEEDER_SPEED = 0.25f;
     
 
-    static const float LIFT_TOLERANCE = 0.1f;
+    static const float LIFT_TOLERANCE = 0.01f;
     static const float MIN_POT_VAL = 0.00f; //Lift
     static const float MAX_POT_VAL = 1.00f; //Lift
     static const float LIFT_PRESET_FRONT = 31.0f;
     static const float LIFT_PRESET_BACK = 24.5f;
     static const float LIFT_LOAD_PRESET = -1.8f;
-    
     CANJaguar wheel;
     CANJaguar lift;
     Talon feeder;
@@ -46,10 +45,12 @@ private:
     robot_class::state* robotState;
     PIDCounter wheelCount;
     PIDController wheelCommandCenter;
-    bool wheelForward;
     float liftAngleToPot(float);
     float liftPotToAngle(float);
+    bool liftTargetSet;
+    float liftTarget;
 public:
+    bool wheelForward;
     enum direction { //Feeder
             FORWARD = -1,
             BACKWARD = 1,
@@ -71,6 +72,7 @@ public:
     float getPot();
     void setSpeed(float);
     bool atAngle(float);
+    bool atPot(float);
     bool atSpeed(float);
     static void update_helper(void*);
     static void disable(void*);

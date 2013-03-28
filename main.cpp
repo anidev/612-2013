@@ -10,7 +10,7 @@
 #include "Controls.h"
 
 const float AUTO_SPEEDS[] = {60.0f,60.0f}; // 2disk, 3disk
-const float AUTO_ANGLES[] = {27.0f,23.0f};
+const float AUTO_ANGLES[] = {31.0f,24.5f};
 float AUTO_SPEED = 0.0f;
 float AUTO_ANGLE = 0.0f;
 
@@ -43,6 +43,7 @@ void robot_class::DisabledInit() {
 
 void robot_class::AutonomousInit() {
     shooter -> setAngle(AUTO_ANGLE);
+    shooter -> wheelForward = true;
     shooter -> setSpeed(AUTO_SPEED);
 }
 
