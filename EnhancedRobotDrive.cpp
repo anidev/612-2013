@@ -26,7 +26,7 @@ void EnhancedRobotDrive::doControls() {
     if((std::fabs(driver -> GetRawAxis(DRIVER_LEFT_DRIVE_AXIS)) > EnhancedJoystick::JOYSTICK_ZERO_TOLERANCE) || (std::fabs(driver -> GetRawAxis(DRIVER_RIGHT_DRIVE_AXIS)) > EnhancedJoystick::JOYSTICK_ZERO_TOLERANCE))
     {
         //Skyler Driving
-        TankDrive(driver -> GetRawAxis(DRIVER_LEFT_DRIVE_AXIS),driver -> GetRawAxis(DRIVER_RIGHT_DRIVE_AXIS));
+        TankDrive((driver -> GetRawAxis(DRIVER_LEFT_DRIVE_AXIS)) * drivePower,(driver -> GetRawAxis(DRIVER_RIGHT_DRIVE_AXIS)) * drivePower);
     }
     else if((gunner -> GetRawButton(GUNNER_SWIVEL_RIGHT) || gunner -> GetRawButton(GUNNER_SWIVEL_LEFT)) && *robotState == robot_class::NORMAL)
     {
