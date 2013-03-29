@@ -170,7 +170,7 @@ bool EnhancedShooter::atSpeed(float target) {
     return false;
 }
 float EnhancedShooter::liftAngleToPot(float angle) {
-    return ((0.0035 * angle) + 0.3763);
+    return ((0.0035 * angle) + 0.384);
 }
 void EnhancedShooter::update_helper(void* o) {
     ((EnhancedShooter*)o) -> update();

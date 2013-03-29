@@ -9,7 +9,7 @@
 #include "Hardware.h"
 #include "Controls.h"
 
-const float AUTO_ANGLES[] = {31.0f,24.5f};
+const float AUTO_ANGLES[] = {32.0f,25.0f};
 static const float AUTO_SPEED = 0.0f;
 float AUTO_ANGLE = 0.0f;
 
