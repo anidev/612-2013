@@ -4,6 +4,7 @@
 #include <CANJaguar.h>
 #include <Talon.h>
 #include <Counter.h>
+#include <Relay.h>
 #include <PIDController.h>
 #include "main.h"
 #include "PIDCounter.h"
@@ -40,6 +41,7 @@ private:
     CANJaguar lift;
     Talon feeder;
     Counter HalEffect; // for wheel
+    Relay ledstrip;
     EnhancedJoystick* driver;
     EnhancedJoystick* gunner;
     robot_class::state* robotState;
@@ -57,7 +59,7 @@ public:
             STOP = 0
     };
     static const float LIFT_POWER = 0.4f;
-    EnhancedShooter(int,hw_info,int,hw_info,hw_info,void*);
+    EnhancedShooter(int,hw_info,int,hw_info,hw_info,hw_info,void*);
     void setWheelPower(float);
     void setFeeder(direction);
     void setLiftPower(float);

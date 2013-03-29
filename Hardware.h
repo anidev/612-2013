@@ -26,4 +26,6 @@ static const hw_info feederInfo =        {1,1};
 static const hw_info FHalEffectInfo =    {1,3};
 static const hw_info WHalEffectInfo =    {1,2};
 static const hw_info AutoSelectSwitch  = {1,14};
+//Relays/Spikes
+static const hw_info ledstrip_spike =    {1,2};
 #endif

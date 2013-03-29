@@ -2,10 +2,11 @@
 #include "EnhancedShooter.h"
 #include "main.h"
 
-EnhancedShooter::EnhancedShooter(int w,hw_info wc,int L,hw_info f,hw_info c,void* o): // wheel, wheel sensor, lift, feeder, feeder sensor
+EnhancedShooter::EnhancedShooter(int w,hw_info wc,int L,hw_info f,hw_info c,hw_info led,void* o): // wheel, wheel sensor, lift, feeder, feeder sensor
         wheel(w),
         lift(L),
-        feeder(f.moduleNumber,f.channel),HalEffect(c.moduleNumber,c.channel) ,
+        feeder(f.moduleNumber,f.channel),HalEffect(c.moduleNumber,c.channel),
+        ledstrip(led.moduleNumber,led.channel),
         wheelCount(wc.moduleNumber,wc.channel),
         wheelCommandCenter(WHEEL_P,WHEEL_I,WHEEL_D,&wheelCount,&wheel),
         wheelForward(false)
@@ -179,8 +180,17 @@ void EnhancedShooter::disable(void* o) {
 }
 void EnhancedShooter::wheelToggle(void* o) {
     std::printf("wheel toggle\n");
-    bool wheelForward = ((EnhancedShooter*)o) -> wheelForward;
-    ((EnhancedShooter*)o) -> wheelForward = !wheelForward;
+    EnhancedShooter* shooter = ((EnhancedShooter*)o);
+    bool wheelForward = shooter -> wheelForward;
+    wheelForward = !wheelForward;
+    shooter -> wheelForward = wheelForward;
+    if(wheelForward) { 
+        shooter -> ledstrip.Set(Relay::kForward);
+    }
+    else
+    {
+        shooter -> ledstrip.Set(Relay::kOff);
+    }
 }
 void EnhancedShooter::presetFront(void* o) {
     ((EnhancedShooter*)o) -> setAngle(LIFT_PRESET_FRONT);
