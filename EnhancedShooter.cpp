@@ -165,8 +165,11 @@ bool EnhancedShooter::atPot(float target) {
     return false;
 }
 bool EnhancedShooter::atSpeed(float target) {
-    if((1.0f/wheelCount.GetPeriod()) > target)
+//    if(std::fabs((1.0f/wheelCount.GetPeriod()) - target) < WHEEL_TOLERANCE)
+//        return true;
+    if(wheelCommandCenter.OnTarget()) {
         return true;
+    }
     return false;
 }
 float EnhancedShooter::liftAngleToPot(float angle) {
