@@ -41,11 +41,11 @@ void robot_class::DisabledInit() {
 void robot_class::AutonomousInit() {
     driveTrain->SetSafetyEnabled(false);
     unsigned int choice = 0;
-    if(autoSwitch.Get())
+    if(autoSwitch.Get())//determining pot angles
         choice = 1;
     std::printf("switch: %d\n",autoSwitch.Get());
-    AUTO_ANGLE = AUTO_ANGLES[choice];
-    shooter -> setAngle(AUTO_ANGLE);
+    AUTO_ANGLE = AUTO_ANGLES[choice];/*choices are at the top*/
+    shooter -> setAngle(AUTO_ANGLE); /*and deterined by autoSwitch*/
     shooter -> wheelForward = true;
     shooter -> setSpeed(AUTO_SPEED);
 }
@@ -61,6 +61,8 @@ void robot_class::DisabledPeriodic() {
 }
 
 void robot_class::AutonomousPeriodic() {
+    //continuesly checks if autonomous done setting the speed of the shooter
+    //wheel and the pot angle, when it is done it continuesly moves the feeder
     updateRegistry.updateAll();
     if(shooter -> atSpeed(AUTO_SPEED) && shooter -> atAngle(AUTO_ANGLE))
     {
