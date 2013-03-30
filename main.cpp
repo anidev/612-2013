@@ -32,6 +32,7 @@ robot_class::robot_class():
 }
 
 void robot_class::RobotInit() {
+    driveTrain->shiftHighGear((void*)driveTrain);
 }
 
 void robot_class::DisabledInit() {
