@@ -1,10 +1,4 @@
-#include <cstdio>
-#include <Relay.h>
-#include <networktables/NetworkTable.h>
-#include "vision.h"
 #include "main.h"
-
-NetworkTable* robot_class::mainTable=NULL;
 
 robot_class::robot_class():left_front(2,2),
                            left_rear(2,3),
@@ -12,7 +6,9 @@ robot_class::robot_class():left_front(2,2),
                            right_rear(1,4),
                            drive(left_front,left_rear,right_front,right_rear),
                            controller1(1),
-                           controller2(2)
+                           controller2(2),
+                           shift_left(1,6),
+                           shift_right(2,4)
 {
 }
 
@@ -20,18 +16,20 @@ robot_class::~robot_class() {
 }
 
 void robot_class::RobotInit() {
+    shift_left.Set(0.8f);
+    shift_right.Set(0.8f);
 }
 
 void robot_class::DisabledInit() {
-    drive.TankDrive(0,0);
+    drive.TankDrive(0.0f,0.0f);
 }
 
-void robot_class::AutonomousInit(); {
-    drive.TankDrive(0,0);
+void robot_class::AutonomousInit() {
+    drive.TankDrive(0.0f,0.0f);
 }
 
 void robot_class::TeleopInit() {
-    drive.TankDrive(0,0);
+    drive.TankDrive(0.0f,0.0f);
 }
 
 void robot_class::DisabledPeriodic() {
