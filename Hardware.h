@@ -28,4 +28,5 @@ static const hw_info WHalEffectInfo =    {1,2};
 static const hw_info AutoSelectSwitch  = {1,14};
 //Relays/Spikes
 static const hw_info ledstrip_spike =    {1,2};
+static const hw_info ledring =           {1,1};
 #endif

@@ -8,6 +8,7 @@
 #include "dataLogger.h"
 #include "Hardware.h"
 #include "Controls.h"
+#include "Relay.h"
 
 const float AUTO_ANGLES[] = {30.5f,24.0f};
 static const float AUTO_SPEED = 0.0f;
@@ -16,7 +17,8 @@ float AUTO_ANGLE = 0.0f;
 robot_class::robot_class():
         drive_gamepad(1,(void*)this),
         gunner_gamepad(2,(void*)this),
-        autoSwitch(AutoSelectSwitch.moduleNumber,AutoSelectSwitch.channel)
+        autoSwitch(AutoSelectSwitch.moduleNumber,AutoSelectSwitch.channel),
+		LEDring(ledring.moduleNumber,ledring.channel)
 {
     curState = NORMAL;
     GetWatchdog().SetEnabled(false);
@@ -55,6 +57,7 @@ void robot_class::TeleopInit() {
     shooter->stopWheel();      // stop the shooter wheel after autonomous period is over
                                // feeder will automatically stop at hall effect sensor
     driveTrain->SetSafetyEnabled(true);
+	LEDring.Set(Relay::kForward);
 }
 
 void robot_class::DisabledPeriodic() {

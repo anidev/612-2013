@@ -5,6 +5,7 @@
 #include "updateRegistry.h"
 #include "EnhancedJoystick.h"
 #include "DigitalInput.h"
+#include "Relay.h"
 
 class EnhancedRobotDrive;
 class EnhancedShooter;
@@ -36,6 +37,7 @@ public:
     EnhancedRobotDrive* driveTrain;
     EnhancedShooter* shooter;
     DataLogger* dataLogger;
+	Relay LEDring;
 private:
     
     DigitalInput autoSwitch;
