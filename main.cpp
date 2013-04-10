@@ -17,8 +17,8 @@ float AUTO_ANGLE = 0.0f;
 robot_class::robot_class():
         drive_gamepad(1,(void*)this),
         gunner_gamepad(2,(void*)this),
-        LEDring(ledring.moduleNumber,ledring.channel)
-        autoSwitch(AutoSelectSwitch.moduleNumber,AutoSelectSwitch.channel),
+        LEDring(ledring.moduleNumber,ledring.channel),
+        autoSwitch(AutoSelectSwitch.moduleNumber,AutoSelectSwitch.channel)
 {
     curState = NORMAL;
     GetWatchdog().SetEnabled(false);
