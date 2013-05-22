@@ -7,6 +7,9 @@
 #include "DigitalInput.h"
 #include "Relay.h"
 
+#include <Vision/AxisCamera.h>
+#include <Vision/HSLImage.h>
+
 class EnhancedRobotDrive;
 class EnhancedShooter;
 class DataLogger;
@@ -37,6 +40,7 @@ public:
     EnhancedRobotDrive* driveTrain;
     EnhancedShooter* shooter;
     DataLogger* dataLogger;
+    AxisCamera * camera;
 	Relay LEDring;
 private:
     
