@@ -15,6 +15,9 @@ static const float AUTO_SPEED = 0.0f;
 float AUTO_ANGLE = 0.0f;
 
 robot_class::robot_class():
+
+        camera = new AxisCamera("10.6.12.11");
+        
         drive_gamepad(1,(void*)this),
         gunner_gamepad(2,(void*)this),
         LEDring(ledring.moduleNumber,ledring.channel),
@@ -84,6 +87,10 @@ void robot_class::TestInit() {
 }
 
 void robot_class::TestPeriodic() {
+    HSLImage * hslImage;
+    hslImage = new HSLImage();
+    camera->GetImage(hslImage);
+    printf("width : %d, height : %d",hslImage->getWidth(),hslImage->getHeight());
 }
 void robot_class::setClimbing(void* o) {
     (((robot_class*)o) -> curState) = CLIMBING;

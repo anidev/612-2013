@@ -6,6 +6,8 @@
 #include "EnhancedJoystick.h"
 #include "DigitalInput.h"
 #include "Relay.h"
+#include <Vision/AxisCamera.h>
+#include <Vision/HSLImage.h>
 
 class EnhancedRobotDrive;
 class EnhancedShooter;
@@ -37,9 +39,9 @@ public:
     EnhancedRobotDrive* driveTrain;
     EnhancedShooter* shooter;
     DataLogger* dataLogger;
-	Relay LEDring;
+    AxisCamera * camera;
+    Relay LEDring;
 private:
-    
     DigitalInput autoSwitch;
     static void setClimbing(void*);
     static void setNormal(void*);
