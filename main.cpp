@@ -10,15 +10,18 @@
 #include "Controls.h"
 #include "Relay.h"
 
-const float AUTO_ANGLES[] = {31.0f,24.5f};
+const float AUTO_ANGLES[] = {30.5f,24.0f};
 static const float AUTO_SPEED = 0.0f;
 float AUTO_ANGLE = 0.0f;
 
 robot_class::robot_class():
+
+        camera = new AxisCamera("10.6.12.11");
+        
         drive_gamepad(1,(void*)this),
         gunner_gamepad(2,(void*)this),
-        autoSwitch(AutoSelectSwitch.moduleNumber,AutoSelectSwitch.channel),
-		LEDring(ledring.moduleNumber,ledring.channel)
+        LEDring(ledring.moduleNumber,ledring.channel),
+        autoSwitch(AutoSelectSwitch.moduleNumber,AutoSelectSwitch.channel)
 {
     curState = NORMAL;
     GetWatchdog().SetEnabled(false);
@@ -34,6 +37,7 @@ robot_class::robot_class():
 }
 
 void robot_class::RobotInit() {
+    driveTrain->shiftHighGear((void*)driveTrain);
 }
 
 void robot_class::DisabledInit() {
@@ -43,11 +47,11 @@ void robot_class::DisabledInit() {
 void robot_class::AutonomousInit() {
     driveTrain->SetSafetyEnabled(false);
     unsigned int choice = 0;
-    if(autoSwitch.Get())
+    if(autoSwitch.Get())//determining pot angles
         choice = 1;
     std::printf("switch: %d\n",autoSwitch.Get());
-    AUTO_ANGLE = AUTO_ANGLES[choice];
-    shooter -> setAngle(AUTO_ANGLE);
+    AUTO_ANGLE = AUTO_ANGLES[choice];/*choices are at the top*/
+    shooter -> setAngle(AUTO_ANGLE); /*and deterined by autoSwitch*/
     shooter -> wheelForward = true;
     shooter -> setSpeed(AUTO_SPEED);
 }
@@ -64,6 +68,8 @@ void robot_class::DisabledPeriodic() {
 }
 
 void robot_class::AutonomousPeriodic() {
+    //continuesly checks if autonomous done setting the speed of the shooter
+    //wheel and the pot angle, when it is done it continuesly moves the feeder
     updateRegistry.updateAll();
     if(shooter -> atSpeed(AUTO_SPEED) && shooter -> atAngle(AUTO_ANGLE))
     {
@@ -81,6 +87,10 @@ void robot_class::TestInit() {
 }
 
 void robot_class::TestPeriodic() {
+    HSLImage * hslImage;
+    hslImage = new HSLImage();
+    camera->GetImage(hslImage);
+    printf("width : %d, height : %d",hslImage->getWidth(),hslImage->getHeight());
 }
 void robot_class::setClimbing(void* o) {
     (((robot_class*)o) -> curState) = CLIMBING;
