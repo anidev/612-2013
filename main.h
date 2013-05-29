@@ -1,13 +1,14 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#include <Vision/AxisCamera.h>
+#include <Vision/HSLImage.h>
 #include <IterativeRobot.h>
 #include "updateRegistry.h"
 #include "EnhancedJoystick.h"
 #include "DigitalInput.h"
 #include "Relay.h"
-#include <Vision/AxisCamera.h>
-#include <Vision/HSLImage.h>
+#include "vision/vision.h"
 
 class EnhancedRobotDrive;
 class EnhancedShooter;
@@ -39,7 +40,8 @@ public:
     EnhancedRobotDrive* driveTrain;
     EnhancedShooter* shooter;
     DataLogger* dataLogger;
-    AxisCamera * camera;
+    AxisCamera* camera;
+    vision* engine;
     Relay LEDring;
 private:
     DigitalInput autoSwitch;

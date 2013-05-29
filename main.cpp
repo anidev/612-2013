@@ -9,18 +9,16 @@
 #include "Hardware.h"
 #include "Controls.h"
 #include "Relay.h"
+#include "vision/RobotVision.h"
 
 const float AUTO_ANGLES[] = {30.5f,24.0f};
 static const float AUTO_SPEED = 0.0f;
 float AUTO_ANGLE = 0.0f;
 
 robot_class::robot_class():
-
-        camera = new AxisCamera("10.6.12.11");
-        
         drive_gamepad(1,(void*)this),
         gunner_gamepad(2,(void*)this),
-        LEDring(ledring.moduleNumber,ledring.channel),
+        LEDring(ledring_spike.moduleNumber,ledring_spike.channel),
         autoSwitch(AutoSelectSwitch.moduleNumber,AutoSelectSwitch.channel)
 {
     curState = NORMAL;
@@ -34,6 +32,8 @@ robot_class::robot_class():
     drive_gamepad.addBtn(DRIVER_BTN_CLIMBING_STATE,&setClimbing,(void*)this);
     drive_gamepad.addBtn(DRIVER_BTN_NORMAL_STATE,&setNormal,(void*)this);
     dataLogger = new DataLogger(shooter,(void*)this);
+    camera = &AxisCamera::GetInstance(CAMERA_IP);
+    engine = new RobotVision(camera);
 }
 
 void robot_class::RobotInit() {
@@ -84,13 +84,17 @@ void robot_class::TeleopPeriodic() {
 }
 
 void robot_class::TestInit() {
+    driveTrain -> TankDrive(0.0f,0.0f);
+    LEDring.Set(Relay::kForward);
 }
 
 void robot_class::TestPeriodic() {
-    HSLImage * hslImage;
+/*    HSLImage * hslImage;
     hslImage = new HSLImage();
     camera->GetImage(hslImage);
-    printf("width : %d, height : %d",hslImage->getWidth(),hslImage->getHeight());
+    printf("width : %d, height : %d",hslImage->GetWidth(),hslImage->GetHeight());
+    delete hslImage;*/
+    engine->getTargetsNow();
 }
 void robot_class::setClimbing(void* o) {
     (((robot_class*)o) -> curState) = CLIMBING;

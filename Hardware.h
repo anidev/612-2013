@@ -1,6 +1,8 @@
 #ifndef HARDWARE_H
 #define HARDWARE_H
 
+static const char* const CAMERA_IP="10.6.12.11";
+
 typedef unsigned int CANPort;
 struct hw_info {
     UINT8 moduleNumber;
@@ -28,5 +30,5 @@ static const hw_info WHalEffectInfo =    {1,2};
 static const hw_info AutoSelectSwitch  = {1,14};
 //Relays/Spikes
 static const hw_info ledstrip_spike =    {1,2};
-static const hw_info ledring =           {1,1};
+static const hw_info ledring_spike =     {1,1};
 #endif
