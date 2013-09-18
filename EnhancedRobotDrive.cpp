@@ -1,4 +1,3 @@
-#include <cmath>
 #include <RobotDrive.h>
 #include "EnhancedRobotDrive.h"
 #include "main.h"
@@ -23,15 +22,15 @@ EnhancedRobotDrive::~EnhancedRobotDrive() {
 }
 
 void EnhancedRobotDrive::doControls() {
-    if((std::fabs(driver -> GetRawAxis(DRIVER_LEFT_DRIVE_AXIS)) > EnhancedJoystick::JOYSTICK_ZERO_TOLERANCE) || (std::fabs(driver -> GetRawAxis(DRIVER_RIGHT_DRIVE_AXIS)) > EnhancedJoystick::JOYSTICK_ZERO_TOLERANCE))
+    if(!(driver -> IsAxisZero(DRIVER_LEFT_DRIVE_AXIS)) || !(driver -> IsAxisZero(DRIVER_RIGHT_DRIVE_AXIS)))
     {
         //Skyler Driving
-        TankDrive((driver -> GetRawAxis(DRIVER_LEFT_DRIVE_AXIS)) * drivePower,(driver -> GetRawAxis(DRIVER_RIGHT_DRIVE_AXIS)) * drivePower);
+        TankDrive((driver -> GetRawAxis(DRIVER_LEFT_DRIVE_AXIS)) * drivePower * -1.0,(driver -> GetRawAxis(DRIVER_RIGHT_DRIVE_AXIS)) * drivePower * -1.0);
     }
-    else if((gunner -> GetRawButton(GUNNER_SWIVEL_RIGHT) || gunner -> GetRawButton(GUNNER_SWIVEL_LEFT)) && *robotState == robot_class::NORMAL)
+    else if(gunner -> GetTrigger() != TRIG_NONE && *robotState == robot_class::NORMAL)
     {
         //Ben Swivel
-        if(gunner -> GetRawButton(GUNNER_SWIVEL_RIGHT))
+        if(gunner -> GetTrigger() == GUNNER_SWIVEL_RIGHT)
         {
             swivel(RIGHT);
         }
@@ -40,7 +39,7 @@ void EnhancedRobotDrive::doControls() {
             swivel(LEFT);
         }
     }
-    else if(driver -> GetRawButton(DRIVER_SWIVEL_RIGHT) || driver -> GetRawButton(DRIVER_SWIVEL_LEFT))
+    else if(driver -> GetTrigger() != TRIG_NONE)
     {
         //Skyler Swivel
         if(driver -> GetRawButton(DRIVER_SWIVEL_RIGHT))

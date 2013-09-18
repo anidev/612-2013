@@ -1,5 +1,7 @@
-#include "EnhancedJoystick.h"
+#include <cmath>
 #include "Joystick.h"
+#include "EnhancedJoystick.h"
+#include "Controls.h"
 #include "main.h"
 
 EnhancedJoystick::EnhancedJoystick(UINT32 a,void* o) : Joystick(a) {
@@ -49,4 +51,17 @@ bool EnhancedJoystick::GetRawButton(UINT32 btn) {
        }
    }
    return true;
+}
+bool EnhancedJoystick::IsAxisZero(unsigned int i) {
+    float value=GetRawAxis(i);
+    return std::fabs(value)<=JOYSTICK_ZERO_TOLERANCE;
+}
+Trigger EnhancedJoystick::GetTrigger() {
+    float value=GetRawAxis(TRIGGER_AXIS);
+    if(value<TRIGGER_TOLERANCE-1) {
+        return TRIG_R;
+    } else if(value>1-TRIGGER_TOLERANCE) {
+        return TRIG_L;
+    }
+    return TRIG_NONE;
 }

@@ -4,10 +4,12 @@
 #include <vector>
 #include <bitset>
 #include <Joystick.h>
+#include "Controls.h"
 
 class EnhancedJoystick : public Joystick {
 public:
     static const float JOYSTICK_ZERO_TOLERANCE = 0.08;
+    static const float TRIGGER_TOLERANCE = 0.25;
     typedef void* obj;
     typedef void(*funcName)(obj);
     void addBtn(UINT32,funcName,obj);
@@ -16,6 +18,8 @@ public:
     void updateEJ();
     static void updateEJHelper(obj);
     bool GetRawButton(UINT32 btn);
+    bool IsAxisZero(unsigned int);
+    Trigger GetTrigger();
 private:
     const static unsigned int NUMBUTTONS = 12;
     const static unsigned int WAIT_TIME = 3; //total amount of checks

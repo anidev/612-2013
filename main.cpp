@@ -32,8 +32,8 @@ robot_class::robot_class():
     drive_gamepad.addBtn(DRIVER_BTN_CLIMBING_STATE,&setClimbing,(void*)this);
     drive_gamepad.addBtn(DRIVER_BTN_NORMAL_STATE,&setNormal,(void*)this);
     dataLogger = new DataLogger(shooter,(void*)this);
-    camera = &AxisCamera::GetInstance(CAMERA_IP);
-    engine = new RobotVision(camera);
+//    camera = &AxisCamera::GetInstance(CAMERA_IP);
+//    engine = new RobotVision(camera);
 }
 
 void robot_class::RobotInit() {
