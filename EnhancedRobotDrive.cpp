@@ -25,7 +25,7 @@ void EnhancedRobotDrive::doControls() {
     if(!(driver -> IsAxisZero(DRIVER_LEFT_DRIVE_AXIS)) || !(driver -> IsAxisZero(DRIVER_RIGHT_DRIVE_AXIS)))
     {
         //Skyler Driving
-        TankDrive((driver -> GetRawAxis(DRIVER_LEFT_DRIVE_AXIS)) * drivePower * -1.0,(driver -> GetRawAxis(DRIVER_RIGHT_DRIVE_AXIS)) * drivePower * -1.0);
+        TankDrive((driver -> GetRawAxis(DRIVER_LEFT_DRIVE_AXIS)) * drivePower,(driver -> GetRawAxis(DRIVER_RIGHT_DRIVE_AXIS)) * drivePower);
     }
     else if(gunner -> GetTrigger() != TRIG_NONE && *robotState == robot_class::NORMAL)
     {
@@ -42,7 +42,7 @@ void EnhancedRobotDrive::doControls() {
     else if(driver -> GetTrigger() != TRIG_NONE)
     {
         //Skyler Swivel
-        if(driver -> GetRawButton(DRIVER_SWIVEL_RIGHT))
+        if(driver -> GetTrigger() == GUNNER_SWIVEL_RIGHT)
         {
             swivel(RIGHT);
         }

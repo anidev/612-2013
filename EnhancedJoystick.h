@@ -8,7 +8,7 @@
 
 class EnhancedJoystick : public Joystick {
 public:
-    static const float JOYSTICK_ZERO_TOLERANCE = 0.08;
+    static const float JOYSTICK_ZERO_TOLERANCE = 0.1;
     static const float TRIGGER_TOLERANCE = 0.25;
     typedef void* obj;
     typedef void(*funcName)(obj);
