@@ -56,7 +56,7 @@ bool EnhancedJoystick::IsAxisZero(unsigned int i) {
     float value=GetRawAxis(i);
     return std::fabs(value)<=JOYSTICK_ZERO_TOLERANCE;
 }
-Trigger EnhancedJoystick::GetTrigger() {
+Trigger EnhancedJoystick::GetTriggerState() {
     float value=GetRawAxis(TRIGGER_AXIS);
     if(value<TRIGGER_TOLERANCE-1) {
         return TRIG_R;

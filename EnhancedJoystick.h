@@ -19,7 +19,7 @@ public:
     static void updateEJHelper(obj);
     bool GetRawButton(UINT32 btn);
     bool IsAxisZero(unsigned int);
-    Trigger GetTrigger();
+    Trigger GetTriggerState();
 private:
     const static unsigned int NUMBUTTONS = 12;
     const static unsigned int WAIT_TIME = 3; //total amount of checks
