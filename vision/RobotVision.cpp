@@ -1,3 +1,4 @@
+#include <cstdio>
 #include <vector>
 #include <Task.h>
 #include <Vision/ColorImage.h>
@@ -74,4 +75,5 @@ int RobotVision::vision_entry(void* obj) {
     while(true) {
         vision::processContinuous(robot->getTargetsNow());
     }
+    return 0;
 }
