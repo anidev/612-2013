@@ -18,25 +18,25 @@ class EnhancedShooter {
 private:
     //PID Values
     //TODO get Vlues
-    static const float LIFT_P = 0.01f;
-    static const float LIFT_I = 0.01f;
-    static const float LIFT_D = 0.01f;
+    static constexpr float LIFT_P = 0.01f;
+    static constexpr float LIFT_I = 0.01f;
+    static constexpr float LIFT_D = 0.01f;
 
-    static const float WHEEL_P = 0.3f;
-    static const float WHEEL_I = 0.005f;
-    static const float WHEEL_D = 0.0f;
-    static const float WHEEL_TOLERANCE = 2.0f;
-    static const float WHEEL_POWER = 60.0f;
+    static constexpr float WHEEL_P = 0.3f;
+    static constexpr float WHEEL_I = 0.005f;
+    static constexpr float WHEEL_D = 0.0f;
+    static constexpr float WHEEL_TOLERANCE = 2.0f;
+    static constexpr float WHEEL_POWER = 60.0f;
     
-    static const float FEEDER_SPEED = 0.25f;
+    static constexpr float FEEDER_SPEED = 0.25f;
     
 
-    static const float LIFT_TOLERANCE = 0.01f;
-    static const float MIN_POT_VAL = 0.00f; //Lift
-    static const float MAX_POT_VAL = 1.00f; //Lift
-    static const float LIFT_PRESET_FRONT = 30.5f;
-    static const float LIFT_PRESET_BACK = 24.0f;
-    static const float LIFT_LOAD_PRESET = -1.8f;
+    static constexpr float LIFT_TOLERANCE = 0.01f;
+    static constexpr float MIN_POT_VAL = 0.00f; //Lift
+    static constexpr float MAX_POT_VAL = 1.00f; //Lift
+    static constexpr float LIFT_PRESET_FRONT = 30.5f;
+    static constexpr float LIFT_PRESET_BACK = 24.0f;
+    static constexpr float LIFT_LOAD_PRESET = -1.8f;
     CANJaguar wheel;
     CANJaguar lift;
     Talon feeder;
@@ -58,7 +58,7 @@ public:
             BACKWARD = 1,
             STOP = 0
     };
-    static const float LIFT_POWER = 0.4f;
+    static constexpr float LIFT_POWER = 0.4f;
     EnhancedShooter(int,hw_info,int,hw_info,hw_info,hw_info,void*);
     void setWheelPower(float);
     void setFeeder(direction);

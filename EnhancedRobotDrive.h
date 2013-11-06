@@ -11,7 +11,7 @@
 
 class EnhancedRobotDrive : public RobotDrive {
 public:
-    static const float DRIVE_TURN_SPEED = 0.7f;
+    static constexpr float DRIVE_TURN_SPEED = 0.7f;
     EnhancedRobotDrive(SpeedController*,SpeedController*,SpeedController*,SpeedController*,void*);
     ~EnhancedRobotDrive();
     void doControls();

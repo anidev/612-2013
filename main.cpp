@@ -12,8 +12,8 @@
 #include "Relay.h"
 #include "vision/RobotVision.h"
 
-const float AUTO_ANGLES[] = {30.5f,24.0f};
-static const float AUTO_SPEED = 0.0f;
+constexpr float AUTO_ANGLES[] = {30.5f,24.0f};
+static constexpr float AUTO_SPEED = 0.0f;
 float AUTO_ANGLE = 0.0f;
 
 robot_class::robot_class():

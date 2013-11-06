@@ -11,8 +11,8 @@ struct hw_info {
 //Shifters
 static const hw_info leftShifterInfo =   {2,5};
 static const hw_info rightShifterInfo =  {2,6};
-static const float kleftgear[]  =        {0.2, 0.8};
-static const float krightgear[] =        {0.8, 0.2};
+static constexpr float kleftgear[]  =        {0.2, 0.8};
+static constexpr float krightgear[] =        {0.8, 0.2};
 //Drive
 static const hw_info left_front_motor  = {2,10};
 static const hw_info left_rear_motor   = {2,9};
