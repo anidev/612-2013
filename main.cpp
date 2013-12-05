@@ -33,8 +33,6 @@ robot_class::robot_class():
     drive_gamepad.addBtn(DRIVER_BTN_CLIMBING_STATE,&setClimbing,(void*)this);
     drive_gamepad.addBtn(DRIVER_BTN_NORMAL_STATE,&setNormal,(void*)this);
     dataLogger = new DataLogger(shooter,(void*)this);
-//    camera = &AxisCamera::GetInstance(CAMERA_IP);
-//    engine = new RobotVision(camera);
 }
 
 void robot_class::RobotInit() {
@@ -43,9 +41,17 @@ void robot_class::RobotInit() {
 
 void robot_class::DisabledInit() {
     disableRegistry.updateAll();
+    stop_vision();
+    AxisCamera::DeleteInstance();
+    camera=NULL;
+}
+
+void robot_class::DisabledPeriodic() {
+    //Never Put Code Here
 }
 
 void robot_class::AutonomousInit() {
+    stop_vision();
     driveTrain->SetSafetyEnabled(false);
     unsigned int choice = 0;
     if(autoSwitch.Get())//determining pot angles
@@ -55,17 +61,7 @@ void robot_class::AutonomousInit() {
     shooter -> setAngle(AUTO_ANGLE); /*and deterined by autoSwitch*/
     shooter -> wheelForward = true;
     shooter -> setSpeed(AUTO_SPEED);
-}
-
-void robot_class::TeleopInit() {
-    shooter->stopWheel();      // stop the shooter wheel after autonomous period is over
-                               // feeder will automatically stop at hall effect sensor
-    driveTrain->SetSafetyEnabled(true);
-	LEDring.Set(Relay::kForward);
-}
-
-void robot_class::DisabledPeriodic() {
-    //Never Put Code Here
+    init_vision();
 }
 
 void robot_class::AutonomousPeriodic() {
@@ -78,6 +74,14 @@ void robot_class::AutonomousPeriodic() {
     }
 }
 
+void robot_class::TeleopInit() {
+    stop_vision();
+    driveTrain->SetSafetyEnabled(true);
+    shooter->stopWheel();      // stop the shooter wheel after autonomous period is over
+                               // feeder will automatically stop at hall effect sensor
+    LEDring.Set(Relay::kForward);
+}
+
 void robot_class::TeleopPeriodic() {
     updateRegistry.updateAll();
     driveTrain -> doControls();
@@ -85,18 +89,38 @@ void robot_class::TeleopPeriodic() {
 }
 
 void robot_class::TestInit() {
+    init_vision();
+    driveTrain->SetSafetyEnabled(false);
     driveTrain -> TankDrive(0.0f,0.0f);
     LEDring.Set(Relay::kForward);
+    engine->startContinuous();
 }
 
 void robot_class::TestPeriodic() {
-/*    HSLImage * hslImage;
-    hslImage = new HSLImage();
-    camera->GetImage(hslImage);
-    printf("width : %d, height : %d",hslImage->GetWidth(),hslImage->GetHeight());
-    delete hslImage;*/
-    engine->getTargetsNow();
+//    engine->getTargetsNow();
 }
+
+void robot_class::init_vision() {
+    if(camera==NULL) {
+        camera=&AxisCamera::GetInstance(CAMERA_IP);
+        engine = new RobotVision(camera);
+    }
+}
+
+void robot_class::stop_vision() {
+    if(engine!=NULL) {
+        if(engine->isContinuousRunning()) {
+            engine->stopContinuous();
+        }
+        delete engine;
+        engine=NULL;
+    }
+    if(camera!=NULL) {
+        delete camera;
+        camera=NULL;
+    }
+}
+
 void robot_class::setClimbing(void* o) {
     (((robot_class*)o) -> curState) = CLIMBING;
 }
