@@ -1,6 +1,6 @@
 #include "vision.h"
 #include <vector>
-#include "../target.h"
+#include "target.h"
 #include <Vision/AxisCamera.h>
 #include <Timer.h>
 #include <nivision.h>
@@ -43,6 +43,9 @@ bool vision::isContinuousRunning() {
 }
 
 void vision::processContinuous(std::vector<Target>* targets) {
+    if(targets==NULL) {
+        return;
+    }
     // TODO DO STUFF in vision::processContinuous
     delete targets; // should all be new-allocated
 }

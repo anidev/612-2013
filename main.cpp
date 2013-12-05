@@ -104,6 +104,9 @@ void robot_class::init_vision() {
     if(camera==NULL) {
         camera=&AxisCamera::GetInstance(CAMERA_IP);
         engine = new RobotVision(camera);
+        // Camera sometimes freezes and needs to be reset
+        camera->WriteBrightness(0);
+        camera->WriteBrightness(50);
     }
 }
 

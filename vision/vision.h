@@ -4,7 +4,7 @@
 #include <cmath>
 #include <vector>
 #include <Vision/BinaryImage.h>
-#include "../target.h"
+#include "target.h"
 
 class vision
 {

@@ -7,7 +7,7 @@
 #include <nivision.h>
 #include "vision.h"
 #include "visionVars.h"
-#include "../target.h"
+#include "target.h"
 #include "../Hardware.h"
 #include "RobotVision.h"
 
@@ -25,7 +25,7 @@ RobotVision::~RobotVision() {
 
 void RobotVision::startContinuous() {
     continuousRunning=true;
-    vision_task.Start();
+    vision_task.Start((UINT32)this);
 }
 
 void RobotVision::stopContinuous() {
@@ -34,7 +34,7 @@ void RobotVision::stopContinuous() {
 }
 
 std::vector<Target>* RobotVision::getTargetsNow() {
-//    std::vector<Target>* targets=new std::vector<Target>();
+    std::vector<Target>* targets=new std::vector<Target>();
 /*    if(table==NULL) {
         table=netcom->get_table(TABLE_NAME);
     }
@@ -60,27 +60,27 @@ std::vector<Target>* RobotVision::getTargetsNow() {
     ParticleFilterCriteria2 criteria[]={{criteria_type,criteria_min,criteria_max,false,false}};
     BinaryImage* filteredImage=convexImage->ParticleFilter(criteria,1);
     int numParticles=filteredImage->GetNumberParticles();
-/*    for(int i=0;i<numParticles;i++) {
-        Target::type_t type=determineType(filteredImage,i);
+    printf("# particles: %d\n",numParticles);
+    for(int i=0;i<numParticles;i++) {
+//        Target::type_t type=determineType(filteredImage,i);
         double distance=0.0; // TODO fix
         ParticleAnalysisReport report=filteredImage->GetParticleAnalysisReport(i);
         int x_off=report.center_mass_x-320;
         int y_off=report.center_mass_y-240;
-        Target target(distance,x_off,y_off,type,report);
+        Target target(distance,x_off,y_off,Target::UNKNOWN,report);
         targets->push_back(target);
-    }*/
+    }
     delete filteredImage;
     delete convexImage;
-    std::printf("# particles: %d\n",numParticles);
     delete binImage;
     delete image;
     return NULL; //targets;
 }
 
 int RobotVision::vision_entry(void* obj) {
-    RobotVision* robot=(RobotVision*)obj;
+    RobotVision* vision=(RobotVision*)obj;
     while(true) {
-        vision::processContinuous(robot->getTargetsNow());
+        vision::processContinuous(vision->getTargetsNow());
     }
     return 0;
 }

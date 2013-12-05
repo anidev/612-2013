@@ -6,7 +6,7 @@
 #include <networktables/NetworkTable.h>
 #include <Vision/AxisCamera.h>
 #include "vision.h"
-#include "../target.h"
+#include "target.h"
 
 // Everything on robot
 class RobotVision : public vision
