@@ -49,3 +49,11 @@ void vision::processContinuous(std::vector<Target>* targets) {
     // TODO DO STUFF in vision::processContinuous
     delete targets; // should all be new-allocated
 }
+
+int vision::vision_entry(void* obj) {
+    vision* engine=(vision*)obj;
+    while(true) {
+        vision::processContinuous(engine->getTargetsNow());
+    }
+    return 0;
+}

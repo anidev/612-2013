@@ -15,7 +15,6 @@ private:
     NetworkTable* table;
     AxisCamera* camera;
     Task vision_task;
-    static int vision_entry(void*);
 public:
     RobotVision(AxisCamera* camera);
     ~RobotVision();

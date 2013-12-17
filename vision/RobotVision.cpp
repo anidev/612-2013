@@ -11,10 +11,11 @@
 #include "../Hardware.h"
 #include "RobotVision.h"
 
-const char* const TABLE_NAME="DriverVision";
+const char* const TABLE_NAME="RobotVision";
 
 RobotVision::RobotVision(AxisCamera* camera):camera(camera),
-                                             vision_task("RobotVision Task",(FUNCPTR)&RobotVision::vision_entry) {
+                                             vision_task("RobotVision Task",(FUNCPTR)&vision::vision_entry) {
+    printf("engine started\n");
 }
 
 RobotVision::~RobotVision() {
@@ -24,6 +25,7 @@ RobotVision::~RobotVision() {
 }
 
 void RobotVision::startContinuous() {
+    printf("starting continuous\n");
     continuousRunning=true;
     vision_task.Start((UINT32)this);
 }
@@ -75,12 +77,4 @@ std::vector<Target>* RobotVision::getTargetsNow() {
     delete binImage;
     delete image;
     return NULL; //targets;
-}
-
-int RobotVision::vision_entry(void* obj) {
-    RobotVision* vision=(RobotVision*)obj;
-    while(true) {
-        vision::processContinuous(vision->getTargetsNow());
-    }
-    return 0;
 }

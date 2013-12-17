@@ -15,6 +15,7 @@ public:
     virtual std::vector<Target>* getTargetsNow()=0;
     bool isContinuousRunning();
     double getGroundDist(double,double);
+    static int vision_entry(void*);
 protected:
     vision();
     bool continuousRunning;
