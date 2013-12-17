@@ -10,7 +10,7 @@
 #include "Hardware.h"
 #include "Controls.h"
 #include "Relay.h"
-#include "vision/RobotVision.h"
+#include "vision/DriverVision.h"
 
 const float AUTO_ANGLES[] = {30.5f,24.0f};
 static const float AUTO_SPEED = 0.0f;
@@ -19,6 +19,7 @@ float AUTO_ANGLE = 0.0f;
 robot_class::robot_class():
         drive_gamepad(1,(void*)this),
         gunner_gamepad(2,(void*)this),
+        camera(NULL),engine(NULL),
         LEDring(ledring_spike.moduleNumber,ledring_spike.channel),
         autoSwitch(AutoSelectSwitch.moduleNumber,AutoSelectSwitch.channel)
 {
@@ -42,8 +43,6 @@ void robot_class::RobotInit() {
 void robot_class::DisabledInit() {
     disableRegistry.updateAll();
     stop_vision();
-    AxisCamera::DeleteInstance();
-    camera=NULL;
 }
 
 void robot_class::DisabledPeriodic() {
@@ -89,10 +88,11 @@ void robot_class::TeleopPeriodic() {
 }
 
 void robot_class::TestInit() {
-    init_vision();
+    stop_vision();
     driveTrain->SetSafetyEnabled(false);
     driveTrain -> TankDrive(0.0f,0.0f);
     LEDring.Set(Relay::kForward);
+    init_vision();
     engine->startContinuous();
 }
 
@@ -101,13 +101,15 @@ void robot_class::TestPeriodic() {
 }
 
 void robot_class::init_vision() {
-    if(camera==NULL) {
+    printf("init vision\n");
+    engine = new DriverVision();
+/*    if(camera==NULL) {
         camera=&AxisCamera::GetInstance(CAMERA_IP);
-        engine = new RobotVision(camera);
-        // Camera sometimes freezes and needs to be reset
         camera->WriteBrightness(0);
         camera->WriteBrightness(50);
-    }
+        engine = new RobotVision(camera);
+        // Camera sometimes freezes and needs to be reset
+    }*/
 }
 
 void robot_class::stop_vision() {
@@ -118,10 +120,10 @@ void robot_class::stop_vision() {
         delete engine;
         engine=NULL;
     }
-    if(camera!=NULL) {
-        delete camera;
+/*    if(camera!=NULL) {
+        AxisCamera::DeleteInstance(); // do not delete camera ourselves
         camera=NULL;
-    }
+    }*/
 }
 
 void robot_class::setClimbing(void* o) {
