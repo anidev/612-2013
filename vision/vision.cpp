@@ -44,9 +44,10 @@ bool vision::isContinuousRunning() {
 
 void vision::processContinuous(std::vector<Target>* targets) {
     if(targets==NULL) {
+        printf("targets: none\n");
         return;
     }
-    // TODO DO STUFF in vision::processContinuous
+    printf("targets: %d\n",targets->size());
     delete targets; // should all be new-allocated
 }
 

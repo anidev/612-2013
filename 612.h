@@ -1,7 +1,11 @@
-#ifndef 612_H
-#define 612_H
+#ifndef SIXTWELVE_H
+#define SIXTWELVE_H
+
+#include "main.h"
 
 #define LIFTPOT
 //#define LIFTACCEL
 
-#endif 612_H
+extern robot_class* robot;
+
+#endif //SIXTWELVE_H

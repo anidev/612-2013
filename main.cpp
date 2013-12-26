@@ -1,5 +1,6 @@
 #include <cstdio>
 #include <cmath>
+#include "612.h"
 #include "EnhancedRobotDrive.h"
 #include "main.h"
 #include "updateRegistry.h"
@@ -12,6 +13,7 @@
 #include "Relay.h"
 #include "vision/DriverVision.h"
 
+robot_class* robot=NULL;
 const float AUTO_ANGLES[] = {30.5f,24.0f};
 static const float AUTO_SPEED = 0.0f;
 float AUTO_ANGLE = 0.0f;
@@ -34,6 +36,8 @@ robot_class::robot_class():
     drive_gamepad.addBtn(DRIVER_BTN_CLIMBING_STATE,&setClimbing,(void*)this);
     drive_gamepad.addBtn(DRIVER_BTN_NORMAL_STATE,&setNormal,(void*)this);
     dataLogger = new DataLogger(shooter,(void*)this);
+    robot=this;
+    driveTrain->SetSafetyEnabled(false);
 }
 
 void robot_class::RobotInit() {
@@ -41,8 +45,8 @@ void robot_class::RobotInit() {
 }
 
 void robot_class::DisabledInit() {
+    std::printf("disabled init\n");
     disableRegistry.updateAll();
-    stop_vision();
 }
 
 void robot_class::DisabledPeriodic() {
@@ -88,12 +92,15 @@ void robot_class::TeleopPeriodic() {
 }
 
 void robot_class::TestInit() {
+    std::printf("test init\n");
     stop_vision();
-    driveTrain->SetSafetyEnabled(false);
-    driveTrain -> TankDrive(0.0f,0.0f);
-    LEDring.Set(Relay::kForward);
+//    driveTrain->SetSafetyEnabled(false);
+    driveTrain->TankDrive(0.0f,0.0f);
+//    LEDring.Set(Relay::kForward);
     init_vision();
-    engine->startContinuous();
+    std::printf("good\n");
+    std::printf("engine: %p\n",engine);
+//    engine->startContinuous();
 }
 
 void robot_class::TestPeriodic() {
@@ -101,7 +108,7 @@ void robot_class::TestPeriodic() {
 }
 
 void robot_class::init_vision() {
-    printf("init vision\n");
+    std::printf("init vision\n");
     engine = new DriverVision();
 /*    if(camera==NULL) {
         camera=&AxisCamera::GetInstance(CAMERA_IP);
@@ -113,6 +120,7 @@ void robot_class::init_vision() {
 }
 
 void robot_class::stop_vision() {
+    std::printf("stop vision\n");
     if(engine!=NULL) {
         if(engine->isContinuousRunning()) {
             engine->stopContinuous();
