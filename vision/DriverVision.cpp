@@ -1,80 +1,55 @@
+#include <cstdio>
+#include <string>
 #include <vector>
 #include <Task.h>
+#include <networktables/NetworkTable.h>
+#include <nivision.h>
 #include "vision.h"
-#include "../target.h"
-#include "../ports.h"
-#include "../612.h"
+#include "visionVars.h"
+#include "target.h"
 #include "DriverVision.h"
 
-const char* const TABLE_NAME = "DriverVision";
+std::string TABLE_NAME="PCVision";
 
-DriverVision::DriverVision():vision_task("DriverVision task",(FUNCPTR)&DriverVision::vision_entry) {
+DriverVision::DriverVision():table(NULL/*NetworkTable::GetTable(TABLE_NAME)*/),
+                             vision_task("DriverVision Task",(FUNCPTR)&vision::vision_entry) {
+    printf("engine started\n");
+}
+
+DriverVision::~DriverVision() {
+    if(continuousRunning) {
+        stopContinuous();
+    }
 }
 
 void DriverVision::startContinuous() {
-    startRemoteContinuous();
-    vision_task.Start();
+    printf("starting continuous\n");
+    continuousRunning=true;
+//    vision_task.Start((UINT32)this);
 }
 
 void DriverVision::stopContinuous() {
-    vision_task.Stop();
-    stopRemoteContinuous();
-}
-
-void DriverVision::setRemoteEnabled(bool enabled) {
-    if(table == NULL) 
-    {
-        table = netcom -> get_table(TABLE_NAME);
-    }
-    if(table == NULL) 
-    {
-        std::printf("Failed to acquire camera or table.\n");
-        return;
-    }
-    table -> PutBoolean("Enabled",enabled);
-}
-
-void DriverVision::startRemoteContinuous() {
-    setRemoteEnabled(true);
-}
-
-void DriverVision::stopRemoteContinuous() {
-    setRemoteEnabled(false);
+//    vision_task.Stop();
+    continuousRunning=false;
 }
 
 std::vector<Target>* DriverVision::getTargetsNow() {
     std::vector<Target>* targets=new std::vector<Target>();
-    if(table == NULL) 
-    {
-        table = netcom -> get_table(TABLE_NAME);
-    }
-    if(camera() == NULL||table == NULL) 
-    {
-        std::printf("Failed to acquire camera or table.\n");
-        delete targets;
+    if(table==NULL) {
         return NULL;
     }
-    int num_targets = (int)table -> GetNumber("NumTargets",0.0);
-     for(int i = 0;i < num_targets;i++) 
-     {
-        char target_table_name[64];
-        sprintf(target_table_name,"Target%d",i);
-        NetworkTable* target_table = table -> GetSubTable(target_table_name);
-        double distance = target_table -> GetNumber("Distance",-1.0);
-        int x_off = (int)target_table -> GetNumber("Xoff",0.0);
-        int y_off = (int)target_table -> GetNumber("Yoff",0.0);
-        Target::type_t type = (Target::type_t)target_table -> GetNumber("Type",(double)Target::UNKNOWN);
-        ParticleAnalysisReport report;
-        Target target(distance,x_off,y_off,type,report);
-        targets -> push_back(target);
+    // Only 1 target for now
+    bool available=table->GetBoolean("1/Available",false);
+    if(!available) {
+        return NULL;
     }
+    double distance=0.0; // TODO fix
+    int center_x=(int)table->GetNumber("1/CenterX",cam_width/2);
+    int center_y=(int)table->GetNumber("1/CenterY",cam_height/2);
+    int x_off=center_x-cam_width;
+    int y_off=center_y-cam_height;
+    ParticleAnalysisReport report;
+    Target target(distance,x_off,y_off,Target::UNKNOWN,report);
+    targets->push_back(target);
     return targets;
-}
-
-int DriverVision::vision_entry(void* obj) {
-    DriverVision* driver = (DriverVision*)obj;
-    while(true) 
-    {
-        vision::processContinuous(driver -> getTargetsNow());
-    }
 }

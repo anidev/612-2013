@@ -9,7 +9,7 @@ configured for your system.  The build process is as follows:
     $ ucpp configure          #run each time the files in the project have changed
     $ make                    #compile and link all code (debug)
     $ make DEBUG_MODE=0       #compile and link all code (release)
-    $ make deploy             #deploy code to robot 
+    $ make deploy             #deploy code to robot
 
 ### Configuring
 

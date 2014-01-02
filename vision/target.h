@@ -12,9 +12,9 @@ public:
         PYRAMIDGOAL=3,
         UNKNOWN=4,
     };
-    Target(float,int,int,type_t,ParticleAnalysisReport);
+    Target(double,int,int,type_t,ParticleAnalysisReport);
     int getPriority();
-    float getDistance();
+    double getDistance();
     int getXOff();
     int getYOff();
     type_t getType();
@@ -27,7 +27,7 @@ private:
     int priority;
     type_t type;
     ParticleAnalysisReport report;
-    void determinePriority(type_t,float);
+    void determinePriority(type_t,double);
 };
 
 struct TargetInfo {
