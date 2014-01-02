@@ -40,7 +40,7 @@ robot_class::robot_class():
     dataLogger = new DataLogger(shooter,(void*)this);
     robot=this;
     driveTrain->SetSafetyEnabled(false);
-    compressor = new Relay(2,2,kForwardOnly);
+    compressor = new Relay(2,2,direction = kForwardOnly);
     pnumSwitch =  new DigitalInput(2,2);
 }
 
@@ -106,7 +106,7 @@ void robot_class::TestInit() {
     std::printf("engine: %p\n",engine);
 //    engine->startContinuous();
     std::printf("Pnum stuff\n");
-    compressor -> Set(kOn);
+    //compressor -> Set(kOn);
 }
 
 void robot_class::TestPeriodic() {
