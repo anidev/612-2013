@@ -12,6 +12,8 @@
 #include "Controls.h"
 #include "Relay.h"
 #include "vision/DriverVision.h"
+#include "DigitalInput.h"
+#include "Relay.h"
 
 robot_class* robot=NULL;
 const float AUTO_ANGLES[] = {30.5f,24.0f};
@@ -38,6 +40,8 @@ robot_class::robot_class():
     dataLogger = new DataLogger(shooter,(void*)this);
     robot=this;
     driveTrain->SetSafetyEnabled(false);
+    compressor = new Relay(2,2,Relay::kForwardOnly);
+    pnumSwitch =  new DigitalInput(2,2);
 }
 
 void robot_class::RobotInit() {
@@ -101,10 +105,17 @@ void robot_class::TestInit() {
     std::printf("good\n");
     std::printf("engine: %p\n",engine);
 //    engine->startContinuous();
+    std::printf("Pnum stuff\n");
+    compressor -> Set(Relay::kOn);
 }
 
 void robot_class::TestPeriodic() {
 //    engine->getTargetsNow();
+    //switch is bool
+    if (pnumSwitch->Get() == 1)
+        compressor->Set(Relay::kOn);
+    else
+        compressor->Set(Relay::kOff);
 }
 
 void robot_class::init_vision() {
