@@ -40,8 +40,8 @@ robot_class::robot_class():
     dataLogger = new DataLogger(shooter,(void*)this);
     robot=this;
     driveTrain->SetSafetyEnabled(false);
-    compressor = new Relay(2,2,Relay::kForwardOnly);
-    pnumSwitch =  new DigitalInput(2,2);
+    compressor = new Relay(1,8,Relay::kForwardOnly);
+    pnumSwitch =  new DigitalInput(1,2);
 }
 
 void robot_class::RobotInit() {
@@ -112,10 +112,12 @@ void robot_class::TestInit() {
 void robot_class::TestPeriodic() {
 //    engine->getTargetsNow();
     //switch is bool
+    /*
     if (pnumSwitch->Get() == 1)
         compressor->Set(Relay::kOn);
     else
         compressor->Set(Relay::kOff);
+    */
 }
 
 void robot_class::init_vision() {
