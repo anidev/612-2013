@@ -13,8 +13,8 @@ robot_class::robot_class()
     GetWatchdog().SetEnabled(false);
     //Hardware
     robot=this;
-    compressor = new Relay(2,8,Relay::kForwardOnly);
-    pnumSwitch =  new DigitalInput(2,2);
+    compressor = new Relay(1,8,Relay::kForwardOnly);
+    pnumSwitch =  new DigitalInput(1,2);
 }
 
 void robot_class::RobotInit() {
