@@ -151,6 +151,9 @@ void robot_class::setClimbing(void* o) {
 void robot_class::setNormal(void* o) {
     (((robot_class*)o) -> curState) = NORMAL;
 }
+
+//sup anirudh
+
 //the following macro tells the library that we want to generate code
 //for our class robot_class
 START_ROBOT_CLASS(robot_class);
