@@ -43,8 +43,6 @@ public:
     AxisCamera* camera;
     vision* engine;
     Relay LEDring;
-    DigitalInput* pnumSwitch;
-    Relay* compressor;
 private:
     DigitalInput autoSwitch;
     void init_vision();

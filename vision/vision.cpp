@@ -43,7 +43,21 @@ bool vision::isContinuousRunning() {
 }
 
 void vision::processContinuous(std::vector<Target>* targets) {
+    static Timer output;
+    static bool outputStarted=false;
+    if(!outputStarted) {
+        output.Start();
+        outputStarted=true;
+    }
+    if(output.Get()<0.5) {
+        if(targets!=NULL) {
+            delete targets;
+        }
+        return;
+    }
+    output.Reset();
     if(targets==NULL) {
+//        printf("time: %f\n",output.Get());
         printf("targets: none\n");
         return;
     }

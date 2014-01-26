@@ -11,7 +11,7 @@
 
 std::string TABLE_NAME="PCVision";
 
-DriverVision::DriverVision():table(NULL/*NetworkTable::GetTable(TABLE_NAME)*/),
+DriverVision::DriverVision():table(NetworkTable::GetTable(TABLE_NAME)),
                              vision_task("DriverVision Task",(FUNCPTR)&vision::vision_entry) {
     printf("engine started\n");
 }
@@ -25,18 +25,21 @@ DriverVision::~DriverVision() {
 void DriverVision::startContinuous() {
     printf("starting continuous\n");
     continuousRunning=true;
-//    vision_task.Start((UINT32)this);
+    vision_task.Start((UINT32)this);
 }
 
 void DriverVision::stopContinuous() {
-//    vision_task.Stop();
+    vision_task.Stop();
     continuousRunning=false;
 }
 
 std::vector<Target>* DriverVision::getTargetsNow() {
     std::vector<Target>* targets=new std::vector<Target>();
     if(table==NULL) {
-        return NULL;
+        table=NetworkTable::GetTable(TABLE_NAME);
+        if(table==NULL) {
+            return NULL;
+        }
     }
     // Only 1 target for now
     bool available=table->GetBoolean("1/Available",false);
