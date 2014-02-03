@@ -19,4 +19,7 @@ static const MeasurementType criteria_type=IMAQ_MT_AREA;
 static const int criteria_min=500;
 static const int criteria_max=65535;
 
+static const int cam_width=320;
+static const int cam_height=240;
+
 #endif

@@ -1,26 +1,23 @@
-#ifndef ROBOT_VISION_H
-#define ROBOT_VISION_H
+#ifndef DRIVER_VISION_H
+#define DRIVER_VISION_H
 
-#include <vector>
 #include <Task.h>
 #include <networktables/NetworkTable.h>
-#include <Vision/AxisCamera.h>
 #include "vision.h"
 #include "target.h"
 
-// Everything on robot
-class RobotVision : public vision
+// Everything on driver station
+class DriverVision : public vision
 {
 private:
     NetworkTable* table;
-    AxisCamera* camera;
     Task vision_task;
 public:
-    RobotVision(AxisCamera* camera);
-    ~RobotVision();
+    DriverVision();
+    ~DriverVision();
     void startContinuous();
     void stopContinuous();
     std::vector<Target>* getTargetsNow();
 };
 
-#endif // ROBOT_VISION_H
+#endif // DRIVER_VISION_H

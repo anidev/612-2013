@@ -45,6 +45,8 @@ public:
     Relay LEDring;
 private:
     DigitalInput autoSwitch;
+    void init_vision();
+    void stop_vision();
     static void setClimbing(void*);
     static void setNormal(void*);
 };
